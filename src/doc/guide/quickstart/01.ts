@@ -12,7 +12,7 @@ console.log('\n-------------------------------------------------- 01');
    *     $ ng new learning-angular
    *
    * 3. 启动开发服务器，默认端口为 4200：
-   *     $ ng serve
+   *     $ ng serve [--open | -o]
    *     或者
    *     $ npm run start
    */
