@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Hero } from './hero';
 import { HEROES } from './heroes-mock';
+import { MessageService } from './message.service';
 
 /*
  * angular 中的 service 是通过 DI（Dependency Injection）来使用的，
@@ -17,13 +18,14 @@ import { HEROES } from './heroes-mock';
   providedIn: 'root'
 })
 export class HeroService {
-  constructor() {}
+  constructor(private messageService: MessageService) {}
 
   /**
    * 获取英雄列表
    * @return {Hero[]}
    */
   getHeroes(): Observable<Array<Hero>> {
+    this.messageService.add('英雄列表加载成功');
     return of(HEROES);
   }
 }
