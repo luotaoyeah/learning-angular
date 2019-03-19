@@ -18,6 +18,9 @@ import { MessageService } from './message.service';
   providedIn: 'root'
 })
 export class HeroService {
+  /*
+   * 声明一个 parameter property，完成 service 的注入
+   */
   constructor(private messageService: MessageService) {}
 
   /**
