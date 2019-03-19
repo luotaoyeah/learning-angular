@@ -1,11 +1,33 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HeroesComponent } from './tutorial/heroes/heroes.component';
+import { DashboardComponent } from './tutorial/dashboard/dashboard.component';
 
 const routes: Routes = [
   {
     path: 'heroes',
     component: HeroesComponent
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent
+  },
+  {
+    path: '',
+    /*
+     * 如果当前路径跟上面的 path 相匹配，
+     * 则跳转到 redirectTo 指定的路径，
+     *
+     * redirectTo 指定的路径可以是绝对路径（以 / 开头），
+     * 也可以是相对路径（不以 / 开头），此时是相对于上面的 path 指定的路径
+     */
+    redirectTo: '/dashboard',
+    /*
+     * 路径匹配策略，有两种方式：
+     *     prefix（默认）：前缀匹配
+     *     full：完全匹配
+     */
+    pathMatch: 'full'
   }
 ];
 
