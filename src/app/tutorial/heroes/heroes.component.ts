@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
-import { HEROES } from '../heroes-mock';
+import { HeroService } from '../hero.service';
 
 /*
  * 使用命令 $ ng generate component <some-component> 创建一个新的 component
@@ -14,11 +14,17 @@ export class HeroesComponent implements OnInit {
   /** 当前选中的英雄 */
   selectedHero: Hero | null = null;
   /** 英雄列表 */
-  heroes: Array<Hero> = HEROES;
+  heroes: Array<Hero> = [];
 
-  constructor() {}
+  constructor(private heroService: HeroService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getHeroes();
+  }
+
+  getHeroes(): void {
+    this.heroes = this.heroService.getHeroes();
+  }
 
   /**
    * 选择某个英雄
