@@ -31,4 +31,16 @@ export class HeroService {
     this.messageService.add('英雄列表加载成功');
     return of(HEROES);
   }
+
+  getHero(id: number): Observable<Hero> {
+    this.messageService.add(`查询英雄 [ id = ${id} ]`);
+
+    const hero: Hero | undefined = HEROES.find(hero => hero.id === id);
+
+    if (!hero) {
+      throw new Error('找不到对应的英雄');
+    }
+
+    return of(hero);
+  }
 }

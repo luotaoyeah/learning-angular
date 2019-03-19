@@ -11,8 +11,6 @@ import { HeroService } from '../hero.service';
   styleUrls: ['./heroes.component.scss']
 })
 export class HeroesComponent implements OnInit {
-  /** 当前选中的英雄 */
-  selectedHero: Hero | null = null;
   /** 英雄列表 */
   heroes: Array<Hero> = [];
 
@@ -26,13 +24,5 @@ export class HeroesComponent implements OnInit {
     this.heroService.getHeroes().subscribe((heroes: Array<Hero>) => {
       this.heroes = heroes;
     });
-  }
-
-  /**
-   * 选择某个英雄
-   * @param hero 选择的英雄
-   */
-  onSelect(hero: Hero): void {
-    this.selectedHero = hero;
   }
 }
