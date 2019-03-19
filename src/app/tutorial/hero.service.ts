@@ -3,6 +3,7 @@ import { Observable, of } from 'rxjs';
 import { Hero } from './hero';
 import { HEROES } from './heroes-mock';
 import { MessageService } from './message.service';
+import { HttpClient } from '@angular/common/http';
 
 /*
  * angular 中的 service 是通过 DI（Dependency Injection）来使用的，
@@ -19,21 +20,26 @@ import { MessageService } from './message.service';
 })
 export class HeroService {
   /*
+   * InMemoryWebApi 的接口地址格式：:base/:collectionName
+   */
+  private heroesUrl: string = 'api/heroes';
+
+  /*
    * 声明一个 parameter property，完成 service 的注入
    */
-  constructor(private messageService: MessageService) {}
+  constructor(private http: HttpClient, private messageService: MessageService) {}
 
   /**
    * 获取英雄列表
    * @return {Hero[]}
    */
   getHeroes(): Observable<Array<Hero>> {
-    this.messageService.add('英雄列表加载成功');
-    return of(HEROES);
+    this.log('英雄列表加载成功');
+    return this.http.get<Array<Hero>>(this.heroesUrl);
   }
 
   getHero(id: number): Observable<Hero> {
-    this.messageService.add(`查询英雄 [ id = ${id} ]`);
+    this.log(`查询英雄 [ id = ${id} ]`);
 
     const hero: Hero | undefined = HEROES.find(hero => hero.id === id);
 
@@ -42,5 +48,9 @@ export class HeroService {
     }
 
     return of(hero);
+  }
+
+  log(message: string): void {
+    this.messageService.add(`HeroService: ${message}`);
   }
 }
