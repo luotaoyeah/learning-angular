@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
 import { HEROES } from '../heroes-mock';
 
+/*
+ * 使用命令 $ ng generate component <some-component> 创建一个新的 component
+ */
 @Component({
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
