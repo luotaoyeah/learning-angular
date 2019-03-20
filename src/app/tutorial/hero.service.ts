@@ -113,4 +113,23 @@ export class HeroService {
       return of(result as T);
     };
   }
+
+  /**
+   * 删除英雄
+   * @param hero 英雄
+   */
+  deleteHero(hero: Hero): Observable<Hero> {
+    return this.http
+      .delete<Hero>(`${this.heroesUrl}/${hero.id}`, {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json'
+        })
+      })
+      .pipe(
+        tap(() => {
+          this.log(`[删除英雄] [ id = ${hero.id} ]`);
+        }),
+        catchError(this.handleError<Hero>('deleteHero'))
+      );
+  }
 }
