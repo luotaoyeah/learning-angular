@@ -1,12 +1,15 @@
 <div id="search-component">
   <h4>搜索英雄</h4>
 
+  <!--
+      输入框中的文字发生改变时会触发 input 事件
+  -->
   <input #searchBox id="search-box" (input)="search(searchBox.value)" />
 
   <ul class="search-result">
     <!--
         按照惯例，以 $ 结尾的变量，表示是一个 Observable 对象，如下面的 heroes$，
-        使用 async 管道，将自动订阅前面的 Observable 对象的
+        对 Observable 对象使用 async 管道，将自动订阅该 Observable 对象
     -->
     <li *ngFor="let hero of (heroes$ | async)">
       <a routerLink="/heroes/{{ hero.id }}">
