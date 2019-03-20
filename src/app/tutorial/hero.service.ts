@@ -4,6 +4,7 @@ import { Hero } from './hero';
 import { HEROES } from './heroes-mock';
 import { MessageService } from './message.service';
 import { HttpClient } from '@angular/common/http';
+import { catchError } from 'rxjs/operators';
 
 /*
  * angular 中的 service 是通过 DI（Dependency Injection）来使用的，
@@ -35,9 +36,18 @@ export class HeroService {
    */
   getHeroes(): Observable<Array<Hero>> {
     this.log('英雄列表加载成功');
-    return this.http.get<Array<Hero>>(this.heroesUrl);
+    /*
+     * 通常来讲，一个 Observable 可以多次返回，
+     * 但是对于 HttpClient 来讲，它的请求方法返回的 Observable 只会返回一次
+     */
+    return this.http.get<Array<Hero>>(this.heroesUrl).pipe(catchError(this.handleError<Array<Hero>>('getHeroes', [])));
   }
 
+  /**
+   * 根据ID获取英雄
+   * @param id 英雄ID
+   * @return {Observable<Hero>}
+   */
   getHero(id: number): Observable<Hero> {
     this.log(`查询英雄 [ id = ${id} ]`);
 
@@ -50,7 +60,23 @@ export class HeroService {
     return of(hero);
   }
 
+  /**
+   * 打印日志消息
+   * @param message 消息
+   */
   log(message: string): void {
     this.messageService.add(`HeroService: ${message}`);
+  }
+
+  /**
+   * 处理请求错误
+   * @param operation 操作
+   * @param result 默认结果
+   */
+  private handleError<T>(operation: string = 'operation', result?: T) {
+    return (err: any): Observable<T> => {
+      this.log(`${operation} FAILED: ${err.body.error}`);
+      return of(result as T);
+    };
   }
 }

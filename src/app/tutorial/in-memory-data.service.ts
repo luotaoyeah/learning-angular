@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { InMemoryDbService, RequestInfo } from 'angular-in-memory-web-api';
+import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { Observable } from 'rxjs';
 import { Hero } from './hero';
 
@@ -7,7 +7,7 @@ import { Hero } from './hero';
   providedIn: 'root'
 })
 export class InMemoryDataService implements InMemoryDbService {
-  createDb(reqInfo?: RequestInfo): {} | Observable<{}> | Promise<{}> {
+  createDb(): {} | Observable<{}> | Promise<{}> {
     const heroes: Array<Hero> = [
       { id: 11, name: 'Mr. Nice' },
       { id: 12, name: 'Narco' },
@@ -20,6 +20,11 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 19, name: 'Magma' },
       { id: 20, name: 'Tornado' }
     ];
+
+    if (Math.random() < 0.5) {
+      throw new Error('模拟请求出错');
+    }
+
     return { heroes };
   }
 
