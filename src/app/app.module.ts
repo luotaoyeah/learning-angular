@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './doc/02-tutorial/in-memory-data.service';
 import { HeroSearchComponent } from './doc/02-tutorial/hero-search/hero-search.component';
+import { DocModule } from './doc/doc.module';
 
 /*
  * 通过 @NgModule 装饰器来声明一个 NgModule
@@ -35,7 +36,8 @@ import { HeroSearchComponent } from './doc/02-tutorial/hero-search/hero-search.c
     HttpClientModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService, {
       dataEncapsulation: false
-    })
+    }),
+    DocModule
   ],
   /*
    * 默认情况下，在 declarations 中声明的 declarables 都只能在当前 NgModule 中使用，
