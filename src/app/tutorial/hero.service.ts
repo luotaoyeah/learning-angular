@@ -22,7 +22,7 @@ export class HeroService {
   /*
    * InMemoryWebApi 的接口地址格式：:base/:collectionName
    */
-  private heroesUrl: string = 'api/heroes';
+  private heroesUrl = 'api/heroes';
 
   /*
    * 声明一个 parameter property，完成 service 的注入
@@ -87,11 +87,47 @@ export class HeroService {
         })
       })
       .pipe(
-        tap((hero: Hero) => {
-          this.log(`[添加英雄]: [ id = ${hero.id} ]`);
+        tap((newHero: Hero) => {
+          this.log(`[添加英雄]: [ id = ${newHero.id} ]`);
         }),
         catchError(this.handleError<Hero>('addHero'))
       );
+  }
+
+  /**
+   * 删除英雄
+   * @param hero 英雄
+   */
+  deleteHero(hero: Hero): Observable<Hero> {
+    return this.http
+      .delete<Hero>(`${this.heroesUrl}/${hero.id}`, {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json'
+        })
+      })
+      .pipe(
+        tap(() => {
+          this.log(`[删除英雄]: [ id = ${hero.id} ]`);
+        }),
+        catchError(this.handleError<Hero>('deleteHero'))
+      );
+  }
+
+  /**
+   * 搜索英雄
+   * @param term 关键字
+   */
+  searchHeroes(term: string): Observable<Array<Hero>> {
+    if (!term.trim()) {
+      return of([]);
+    }
+
+    return this.http.get<Array<Hero>>(`${this.heroesUrl}/?name=${term.trim()}`).pipe(
+      tap(() => {
+        this.log(`[搜索英雄]: [ term = ${term}]`);
+      }),
+      catchError(this.handleError<Array<Hero>>('searchHeroes'))
+    );
   }
 
   /**
@@ -112,24 +148,5 @@ export class HeroService {
       this.log(`${operation} FAILED: ${err.body.error}`);
       return of(result as T);
     };
-  }
-
-  /**
-   * 删除英雄
-   * @param hero 英雄
-   */
-  deleteHero(hero: Hero): Observable<Hero> {
-    return this.http
-      .delete<Hero>(`${this.heroesUrl}/${hero.id}`, {
-        headers: new HttpHeaders({
-          'Content-Type': 'application/json'
-        })
-      })
-      .pipe(
-        tap(() => {
-          this.log(`[删除英雄] [ id = ${hero.id} ]`);
-        }),
-        catchError(this.handleError<Hero>('deleteHero'))
-      );
   }
 }

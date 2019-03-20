@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { Hero } from '../hero';
 import { ActivatedRoute } from '@angular/router';
@@ -13,7 +13,7 @@ export class HeroDetailComponent implements OnInit {
   /*
    * @Input 用来声明一个 input property，类似于 vue 里面的 props property
    */
-  @Input('my-hero') hero: Hero | null = null;
+  hero: Hero | null = null;
 
   constructor(private activatedRoute: ActivatedRoute, private location: Location, private heroService: HeroService) {}
 

@@ -21,7 +21,7 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 20, name: 'Tornado' }
     ];
 
-    if (Math.random() < 0.5) {
+    if (Math.random() < 0.1) {
       throw new Error('模拟请求出错');
     }
 
@@ -29,9 +29,8 @@ export class InMemoryDataService implements InMemoryDbService {
   }
 
   /**
-   *
-   * @param heroes
-   * @return {number}
+   * 获取新的ID
+   * @param heroes 英雄列表
    */
   getId(heroes: Array<Hero>): number {
     return heroes.length > 0 ? Math.max(...heroes.map(i => i.id)) + 1 : 11;

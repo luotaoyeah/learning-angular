@@ -11,9 +11,10 @@ import { DashboardComponent } from './tutorial/dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './tutorial/in-memory-data.service';
+import { HeroSearchComponent } from './tutorial/hero-search/hero-search.component';
 
 @NgModule({
-  declarations: [AppComponent, HeroesComponent, HeroDetailComponent, MessagesComponent, DashboardComponent],
+  declarations: [AppComponent, HeroesComponent, HeroDetailComponent, MessagesComponent, DashboardComponent, HeroSearchComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
