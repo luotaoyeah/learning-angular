@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HeroesComponent } from './tutorial/heroes/heroes.component';
-import { DashboardComponent } from './tutorial/dashboard/dashboard.component';
-import { HeroDetailComponent } from './tutorial/hero-detail/hero-detail.component';
+import { HeroesComponent } from './doc/02-tutorial/heroes/heroes.component';
+import { DashboardComponent } from './doc/02-tutorial/dashboard/dashboard.component';
+import { HeroDetailComponent } from './doc/02-tutorial/hero-detail/hero-detail.component';
 
 const routes: Routes = [
   {
