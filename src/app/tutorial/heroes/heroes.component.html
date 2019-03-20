@@ -1,4 +1,15 @@
 <h2>英雄列表</h2>
+
+<!-- 添加英雄表单 -->
+<div>
+  <label>
+    NAME:
+    <input type="text" #heroNameInput />
+    <button (click)="addHero(heroNameInput.value); heroNameInput.value = ''">ADD</button>
+  </label>
+</div>
+
+<!-- 英雄列表 -->
 <ul class="heroes">
   <li *ngFor="let hero of heroes">
     <a routerLink="/heroes/{{ hero.id }}">

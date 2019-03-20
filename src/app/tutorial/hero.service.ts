@@ -31,7 +31,6 @@ export class HeroService {
 
   /**
    * 获取英雄列表
-   * @return {Hero[]}
    */
   getHeroes(): Observable<Array<Hero>> {
     /*
@@ -49,7 +48,6 @@ export class HeroService {
   /**
    * 根据ID获取英雄
    * @param id 英雄ID
-   * @return {Observable<Hero>}
    */
   getHero(id: number): Observable<Hero> {
     return this.http.get<Hero>(`${this.heroesUrl}/${id}`).pipe(
@@ -74,6 +72,25 @@ export class HeroService {
           this.log(`[更新英雄]: [ id = ${hero.id}]`);
         }),
         catchError(this.handleError<any>(`updateHero`))
+      );
+  }
+
+  /**
+   * 添加英雄
+   * @param hero 英雄
+   */
+  addHero(hero: Hero): Observable<Hero> {
+    return this.http
+      .post<Hero>(this.heroesUrl, hero, {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json'
+        })
+      })
+      .pipe(
+        tap((hero: Hero) => {
+          this.log(`[添加英雄]: [ id = ${hero.id} ]`);
+        }),
+        catchError(this.handleError<Hero>('addHero'))
       );
   }
 

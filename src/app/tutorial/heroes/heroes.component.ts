@@ -20,9 +20,27 @@ export class HeroesComponent implements OnInit {
     this.getHeroes();
   }
 
+  /**
+   * 获取英雄列表
+   */
   getHeroes(): void {
     this.heroService.getHeroes().subscribe((heroes: Array<Hero>) => {
       this.heroes = heroes;
+    });
+  }
+
+  /**
+   * 添加英雄
+   * @param name 英雄名称
+   */
+  addHero(name: string): void {
+    const n = name.trim();
+    if (!n) {
+      return;
+    }
+
+    this.heroService.addHero({ name } as Hero).subscribe((hero: Hero) => {
+      this.heroes.push(hero);
     });
   }
 }
