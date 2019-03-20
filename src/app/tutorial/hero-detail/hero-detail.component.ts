@@ -21,11 +21,25 @@ export class HeroDetailComponent implements OnInit {
     this.getHero();
   }
 
+  /**
+   * 获取英雄
+   */
   getHero(): void {
     const id: number = Number(this.activatedRoute.snapshot.paramMap.get('id'));
     if (!Number.isNaN(id)) {
       this.heroService.getHero(id).subscribe((hero: Hero) => {
         this.hero = hero;
+      });
+    }
+  }
+
+  /**
+   * 更新英雄
+   */
+  save(): void {
+    if (this.hero) {
+      this.heroService.updateHero(this.hero).subscribe(() => {
+        this.goBack();
       });
     }
   }

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Hero } from './hero';
 import { MessageService } from './message.service';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, tap } from 'rxjs/operators';
 
 /*
@@ -40,7 +40,7 @@ export class HeroService {
      */
     return this.http.get<Array<Hero>>(this.heroesUrl).pipe(
       tap(() => {
-        this.log('英雄列表加载成功');
+        this.log('[加载英雄列表]');
       }),
       catchError(this.handleError<Array<Hero>>('getHeroes', []))
     );
@@ -54,10 +54,27 @@ export class HeroService {
   getHero(id: number): Observable<Hero> {
     return this.http.get<Hero>(`${this.heroesUrl}/${id}`).pipe(
       tap(() => {
-        this.log(`查询英雄 [ id = ${id} ]`);
+        this.log(`[查询英雄]: [ id = ${id} ]`);
       }),
       catchError(this.handleError<Hero>(`getHero id=${id}`))
     );
+  }
+
+  /**
+   * 更新英雄
+   * @param hero 英雄
+   */
+  updateHero(hero: Hero): Observable<any> {
+    return this.http
+      .put<Hero>(this.heroesUrl, hero, {
+        headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+      })
+      .pipe(
+        tap(() => {
+          this.log(`[更新英雄]: [ id = ${hero.id}]`);
+        }),
+        catchError(this.handleError<any>(`updateHero`))
+      );
   }
 
   /**
