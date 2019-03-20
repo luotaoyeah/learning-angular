@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Hero } from './hero';
-import { HEROES } from './heroes-mock';
 import { MessageService } from './message.service';
 import { HttpClient } from '@angular/common/http';
 import { catchError, tap } from 'rxjs/operators';
@@ -53,15 +52,12 @@ export class HeroService {
    * @return {Observable<Hero>}
    */
   getHero(id: number): Observable<Hero> {
-    this.log(`查询英雄 [ id = ${id} ]`);
-
-    const hero: Hero | undefined = HEROES.find(hero => hero.id === id);
-
-    if (!hero) {
-      throw new Error('找不到对应的英雄');
-    }
-
-    return of(hero);
+    return this.http.get<Hero>(`${this.heroesUrl}/${id}`).pipe(
+      tap(() => {
+        this.log(`查询英雄 [ id = ${id} ]`);
+      }),
+      catchError(this.handleError<Hero>(`getHero id=${id}`))
+    );
   }
 
   /**
