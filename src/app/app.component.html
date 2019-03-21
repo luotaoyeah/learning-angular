@@ -1,17 +1,5 @@
-<h1>{{ title }}</h1>
-<nav>
-  <a [routerLink]="'/dashboard'">热门英雄</a>
-  &nbsp;
-  <a [routerLink]="'/heroes'">英雄列表</a>
-</nav>
+<p-tree [value]="nodes" selectionMode="single" [(selection)]="selectedNode" (onNodeSelect)="selectNode($event)"></p-tree>
 
 <router-outlet></router-outlet>
 
-<app-messages></app-messages>
-
-<app-intro-into-component-a></app-intro-into-component-a>
-<div class="app-intro-into-component-b"></div>
-<app-intro-into-component-c></app-intro-into-component-c>
-<app-intro-into-component-d></app-intro-into-component-d>
-
-<app-di-a></app-di-a>
+<app-doc-fundamental></app-doc-fundamental>

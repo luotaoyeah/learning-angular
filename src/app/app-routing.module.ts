@@ -1,21 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HeroesComponent } from './doc/02-tutorial/heroes/heroes.component';
 import { DashboardComponent } from './doc/02-tutorial/dashboard/dashboard.component';
-import { HeroDetailComponent } from './doc/02-tutorial/hero-detail/hero-detail.component';
 
 const routes: Routes = [
   {
-    path: 'heroes',
-    component: HeroesComponent
-  },
-  {
-    path: 'dashboard',
+    path: 'doc/tutorial/dashboard',
     component: DashboardComponent
-  },
-  {
-    path: 'heroes/:id',
-    component: HeroDetailComponent
   },
   {
     path: '',
@@ -26,7 +16,7 @@ const routes: Routes = [
      * redirectTo 指定的路径可以是绝对路径（以 / 开头），
      * 也可以是相对路径（不以 / 开头），此时是相对于上面的 path 指定的路径
      */
-    redirectTo: '/dashboard',
+    redirectTo: '/doc/tutorial/dashboard',
     /*
      * 路径匹配策略，有两种方式：
      *     prefix（默认）：前缀匹配

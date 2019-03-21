@@ -10,6 +10,7 @@ import { RadiusDirective } from './03-01-architecture/03-01-03-intro-to-componen
 import { DiAComponent } from './03-01-architecture/03-01-04-di/di-a.component';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/primeng';
+import { DocFundamentalComponent } from './doc-fundamental.component';
 
 /**
  * DOC: FUNDAMENTAL
@@ -22,16 +23,11 @@ import { InputTextModule } from 'primeng/primeng';
     IntroIntoComponentDComponent,
     DashPipe,
     RadiusDirective,
-    DiAComponent
+    DiAComponent,
+    DocFundamentalComponent
   ],
   imports: [CommonModule, FormsModule, ...[ButtonModule, InputTextModule]],
-  exports: [
-    IntroIntoComponentAComponent,
-    IntroIntoComponentBComponent,
-    IntroIntoComponentCComponent,
-    IntroIntoComponentDComponent,
-    DiAComponent
-  ],
+  exports: [DocFundamentalComponent],
   providers: []
 })
 export class DocFundamentalModule {}

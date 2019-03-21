@@ -4,15 +4,11 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeroesComponent } from './doc/02-tutorial/heroes/heroes.component';
-import { HeroDetailComponent } from './doc/02-tutorial/hero-detail/hero-detail.component';
-import { MessagesComponent } from './doc/02-tutorial/messages/messages.component';
-import { DashboardComponent } from './doc/02-tutorial/dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './doc/02-tutorial/in-memory-data.service';
-import { HeroSearchComponent } from './doc/02-tutorial/hero-search/hero-search.component';
 import { DocModule } from './doc/doc.module';
+import { TreeModule } from 'primeng/tree';
 
 /*
  * 通过 @NgModule 装饰器来声明一个 NgModule
@@ -23,7 +19,7 @@ import { DocModule } from './doc/doc.module';
    * 这些 component，directive，pipe 称之为 declarables，
    * 这些 declarables 不能在多个不同的 NgModule 中声明，否则编译报错
    */
-  declarations: [AppComponent, HeroesComponent, HeroDetailComponent, MessagesComponent, DashboardComponent, HeroSearchComponent],
+  declarations: [AppComponent],
   /*
    * imports 用来引入其他的 NgModule，
    * 引入一个 NgModule 就相当于将它的 exports 中声明的所有 declarables 都引入进当前的 NgModule 中，
@@ -37,6 +33,7 @@ import { DocModule } from './doc/doc.module';
     InMemoryWebApiModule.forRoot(InMemoryDataService, {
       dataEncapsulation: false
     }),
+    ...[TreeModule],
     DocModule
   ],
   /*
