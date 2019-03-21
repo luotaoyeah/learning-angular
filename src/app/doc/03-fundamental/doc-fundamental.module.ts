@@ -11,12 +11,12 @@ import { DiAComponent } from './03-01-architecture/03-01-04-di/di-a.component';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/primeng';
 import { DocFundamentalComponent } from './doc-fundamental.component';
+import { RoutingNavigationComponent } from './03-09-routing-navigation/routing-navigation.component';
+import { RoutingNavigationBasicComponent } from './03-09-routing-navigation/03-09-01-basic/routing-navigation-basic.component';
 
-/**
- * DOC: FUNDAMENTAL
- */
 @NgModule({
   declarations: [
+    DocFundamentalComponent,
     IntroIntoComponentAComponent,
     IntroIntoComponentBComponent,
     IntroIntoComponentCComponent,
@@ -24,7 +24,8 @@ import { DocFundamentalComponent } from './doc-fundamental.component';
     DashPipe,
     RadiusDirective,
     DiAComponent,
-    DocFundamentalComponent
+    RoutingNavigationComponent,
+    RoutingNavigationBasicComponent
   ],
   imports: [CommonModule, FormsModule, ...[ButtonModule, InputTextModule]],
   exports: [DocFundamentalComponent],

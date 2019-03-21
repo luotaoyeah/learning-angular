@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './doc/02-tutorial/in-memory-data.service';
+import { InMemoryDataService } from './doc/02-tutorial/service/in-memory-data.service';
 import { DocModule } from './doc/doc.module';
 import { TreeModule } from 'primeng/tree';
 

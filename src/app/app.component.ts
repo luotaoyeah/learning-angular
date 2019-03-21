@@ -20,6 +20,7 @@ export class AppComponent {
       label: 'DOC',
       expandedIcon: 'fa fa-folder-open',
       collapsedIcon: 'fa fa-folder',
+      selectable: false,
       children: [
         {
           label: 'TUTORIAL',
@@ -27,6 +28,22 @@ export class AppComponent {
           expandedIcon: 'fa fa-folder-open',
           collapsedIcon: 'fa fa-folder',
           leaf: true
+        },
+        {
+          label: 'FUNDAMENTAL',
+          expandedIcon: 'fa fa-folder-open',
+          collapsedIcon: 'fa fa-folder',
+          selectable: false,
+          children: [
+            {
+              label: 'Routing & Navigation',
+              data: {
+                path: '/doc/fundamental/routing-navigation'
+              },
+              expandedIcon: 'fa fa-folder-open',
+              collapsedIcon: 'fa fa-folder'
+            }
+          ]
         }
       ]
     }

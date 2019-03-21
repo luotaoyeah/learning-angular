@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-/**
- * DOC: FUNDAMENTAL: ARCHITECTURE: INTRO-TO-COMPONENT
- */
 @Component({
   /*
    * CSS 选择器，用来在 template 中标识当前组件

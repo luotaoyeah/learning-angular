@@ -12,7 +12,7 @@
         对 Observable 对象使用 async 管道，将自动订阅该 Observable 对象
     -->
     <li *ngFor="let hero of (heroes$ | async)">
-      <a routerLink="/heroes/{{ hero.id }}">
+      <a routerLink="/doc/tutorial/heroes/{{ hero.id }}">
         {{ hero.name }}
       </a>
     </li>

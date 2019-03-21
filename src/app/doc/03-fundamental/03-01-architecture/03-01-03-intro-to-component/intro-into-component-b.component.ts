@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-/**
- * DOC: FUNDAMENTAL: ARCHITECTURE: INTRO-TO-COMPONENT
- */
 @Component({
   /*
    * 因为 component 的 selector 可以是任意合法的 CSS 选择器，

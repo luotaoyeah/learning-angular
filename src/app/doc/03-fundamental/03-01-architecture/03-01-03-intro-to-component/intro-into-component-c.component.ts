@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-/**
- * DOC: FUNDAMENTAL: ARCHITECTURE: INTRO-TO-COMPONENT
- */
 @Component({
   selector: 'app-intro-into-component-c',
   /*

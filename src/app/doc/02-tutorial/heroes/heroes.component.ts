@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Hero } from '../hero';
-import { HeroService } from '../hero.service';
+import { Hero } from '../service/hero';
+import { HeroService } from '../service/hero.service';
 
 /*
  * 使用命令 $ ng generate component <some-component> 创建一个新的 component
