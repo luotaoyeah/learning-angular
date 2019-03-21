@@ -22,7 +22,19 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  /*
+   * 如果一个 RouterModule 是用于 root module（AppModule） 的，
+   * 则应该调用 RouterModule.forRoot() 方法
+   */
+  imports: [
+    RouterModule.forRoot(routes, {
+      /*
+       * 在开发环境方便调试，可以开启 enableTracing 选项，
+       * 开启之后，所有的路由事件都会打印到浏览器控制台
+       */
+      enableTracing: false
+    })
+  ],
   /*
    * 在 AppRoutingModule 中将 RouterModule 输出，
    * 这样在 AppModule 引入了 AppRoutingModule 之后，

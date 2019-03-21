@@ -17,6 +17,7 @@ import { DocFundamentalRoutingModule } from './doc-fundamental-routing.module';
 import { DocFundamentalArchitectureComponent } from './03-01-architecture/doc-fundamental-architecture.component';
 import { DocFundamentalArchitectureIntroToComponentComponent } from './03-01-architecture/03-01-03-intro-to-component/doc-fundamental-architecture-intro-to-component.component';
 import { DocFundamentalArchitectureDiComponent } from './03-01-architecture/03-01-04-di/doc-fundamental-architecture-di.component';
+import { RoutingNavigationNotFoundComponent } from './03-09-routing-navigation/03-09-01-basic/routing-navigation-not-found.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { DocFundamentalArchitectureDiComponent } from './03-01-architecture/03-0
     RoutingNavigationBasicComponent,
     DocFundamentalArchitectureComponent,
     DocFundamentalArchitectureIntroToComponentComponent,
-    DocFundamentalArchitectureDiComponent
+    DocFundamentalArchitectureDiComponent,
+    RoutingNavigationNotFoundComponent
   ],
   imports: [CommonModule, DocFundamentalRoutingModule, FormsModule, ...[ButtonModule, InputTextModule]]
 })
