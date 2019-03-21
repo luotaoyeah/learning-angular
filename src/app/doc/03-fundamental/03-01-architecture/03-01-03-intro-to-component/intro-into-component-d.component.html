@@ -17,7 +17,7 @@
 
   <!-- template 中可以使用 directive 对 view 进行控制 -->
   <p>
-    <button (click)="isSpanVisible = !isSpanVisible">TOGGLE</button>
+    <p-button label="TOGGLE" (onClick)="isSpanVisible = !isSpanVisible"></p-button>
     &nbsp;
     <span *ngIf="isSpanVisible">{{ property01 }}</span>
   </p>
@@ -27,7 +27,7 @@
       实际上就是将 property binding 和 event binding 结合起来
   -->
   <p>
-    <input type="text" [(ngModel)]="property02" />
+    <input type="text" pInputText [(ngModel)]="property02" />
     &nbsp;
     <span>{{ property02 | uppercase | dash: '.' }}</span>
   </p>

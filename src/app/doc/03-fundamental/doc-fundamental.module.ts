@@ -8,6 +8,8 @@ import { FormsModule } from '@angular/forms';
 import { DashPipe } from './03-01-architecture/03-01-03-intro-to-component/dash.pipe';
 import { RadiusDirective } from './03-01-architecture/03-01-03-intro-to-component/radius.directive';
 import { DiAComponent } from './03-01-architecture/03-01-04-di/di-a.component';
+import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/primeng';
 
 /**
  * DOC: FUNDAMENTAL
@@ -22,7 +24,7 @@ import { DiAComponent } from './03-01-architecture/03-01-04-di/di-a.component';
     RadiusDirective,
     DiAComponent
   ],
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, ...[ButtonModule, InputTextModule]],
   exports: [
     IntroIntoComponentAComponent,
     IntroIntoComponentBComponent,
