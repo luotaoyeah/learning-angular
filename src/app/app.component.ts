@@ -36,6 +36,30 @@ export class AppComponent {
           selectable: false,
           children: [
             {
+              label: 'Architecture',
+              expandedIcon: 'fa fa-folder-open',
+              collapsedIcon: 'fa fa-folder',
+              selectable: false,
+              children: [
+                {
+                  label: 'Intro to Components',
+                  data: {
+                    path: '/doc/fundamental/architecture/intro-into-component'
+                  },
+                  expandedIcon: 'fa fa-folder-open',
+                  collapsedIcon: 'fa fa-folder'
+                },
+                {
+                  label: 'Intro to Services and DI',
+                  data: {
+                    path: '/doc/fundamental/architecture/di'
+                  },
+                  expandedIcon: 'fa fa-folder-open',
+                  collapsedIcon: 'fa fa-folder'
+                }
+              ]
+            },
+            {
               label: 'Routing & Navigation',
               data: {
                 path: '/doc/fundamental/routing-navigation'

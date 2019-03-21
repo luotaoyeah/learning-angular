@@ -13,6 +13,10 @@ import { InputTextModule } from 'primeng/primeng';
 import { DocFundamentalComponent } from './doc-fundamental.component';
 import { RoutingNavigationComponent } from './03-09-routing-navigation/routing-navigation.component';
 import { RoutingNavigationBasicComponent } from './03-09-routing-navigation/03-09-01-basic/routing-navigation-basic.component';
+import { DocFundamentalRoutingModule } from './doc-fundamental-routing.module';
+import { DocFundamentalArchitectureComponent } from './03-01-architecture/doc-fundamental-architecture.component';
+import { DocFundamentalArchitectureIntroToComponentComponent } from './03-01-architecture/03-01-03-intro-to-component/doc-fundamental-architecture-intro-to-component.component';
+import { DocFundamentalArchitectureDiComponent } from './03-01-architecture/03-01-04-di/doc-fundamental-architecture-di.component';
 
 @NgModule({
   declarations: [
@@ -25,10 +29,11 @@ import { RoutingNavigationBasicComponent } from './03-09-routing-navigation/03-0
     RadiusDirective,
     DiAComponent,
     RoutingNavigationComponent,
-    RoutingNavigationBasicComponent
+    RoutingNavigationBasicComponent,
+    DocFundamentalArchitectureComponent,
+    DocFundamentalArchitectureIntroToComponentComponent,
+    DocFundamentalArchitectureDiComponent
   ],
-  imports: [CommonModule, FormsModule, ...[ButtonModule, InputTextModule]],
-  exports: [DocFundamentalComponent],
-  providers: []
+  imports: [CommonModule, DocFundamentalRoutingModule, FormsModule, ...[ButtonModule, InputTextModule]]
 })
 export class DocFundamentalModule {}

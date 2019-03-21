@@ -11,7 +11,6 @@ import { DocTutorialRoutingModule } from './doc-tutorial-routing.module';
 
 @NgModule({
   declarations: [DocTutorialComponent, HeroesComponent, HeroDetailComponent, MessagesComponent, DashboardComponent, HeroSearchComponent],
-  imports: [CommonModule, DocTutorialRoutingModule, FormsModule],
-  exports: [DocTutorialComponent]
+  imports: [CommonModule, DocTutorialRoutingModule, FormsModule]
 })
 export class DocTutorialModule {}

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DiAService } from './di-a.service';
+import { DiAService } from './service/di-a.service';
 
 @Component({
   selector: 'app-di-a',
