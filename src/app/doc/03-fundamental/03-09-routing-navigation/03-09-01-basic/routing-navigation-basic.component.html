@@ -26,12 +26,25 @@
   router-view 是不一样的，在 vue 中，渲染的组件会替换掉 router-view，而不是同时存在
 </p>
 
-<h3>RouterLink</h3>
+<h3>Router Links</h3>
 <p>
-  RouterLink 是一个 directive，用来将一个 &lt;a&gt; 标签标识为一个路由链接，点击这个链接，就会跳转到指定的地址
+  RouterLink（routerLink） 是一个 directive，用来将一个 &lt;a&gt; 标签标识为一个路由链接，点击这个链接，就会跳转到指定的地址
 </p>
 <p>
   <a routerLink="/doc/tutorial/heroes/13">13</a>
   &nbsp;
   <a [routerLink]="['/doc/tutorial/heroes/', 13]" [queryParams]="{ x: 'foo' }" fragment="head">13</a>
+</p>
+
+<h3>Active Router Links</h3>
+<p>
+  RouterLinkActive（routerLinkActive） 是一个 directive，用来配置一组 CSS 类， 如果当前页面的地址跟 routerLinkActive 所在的 &lt;a&gt;
+  标签的地址相匹配， 则这些 CSS 类会被添加到标签上，反之会被移除
+</p>
+<p>
+  <a routerLink="/doc/fundamental/routing-navigation" routerLinkActive="active foo">ACTIVE</a>
+  &nbsp;
+  <a routerLink="/doc/fundamental/routing-navigation" [routerLinkActive]="['active', 'foo']">ACTIVE</a>
+  &nbsp;
+  <a routerLink="/doc/fundamental/routing-navigation-2" routerLinkActive="active foo">INACTIVE</a>
 </p>
