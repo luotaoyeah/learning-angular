@@ -15,3 +15,13 @@
 <p>
   router 相关的功能位于 @angular/router 这个模块下面，比如 RouterModule，Routes
 </p>
+
+<h3>RouterOutlet</h3>
+<p>
+  RouterOutlet 是一个 directive，用法类似于一个 component：&lt;router-outlet&gt;&lt;/router-outlet&gt;，用来指示要将 component
+  渲染到哪个地方？类似于 vue 中的 &lt;router-view&gt;&lt;/router-view&gt;
+</p>
+<p>
+  当某个 component 被渲染到对应的 router-outlet 处时，实际上这个 component 和 router-outlet 是作为兄弟元素同时存在的，这一点跟 vue 中的
+  router-view 是不一样的，在 vue 中，渲染的组件会替换掉 router-view，而不是同时存在
+</p>
