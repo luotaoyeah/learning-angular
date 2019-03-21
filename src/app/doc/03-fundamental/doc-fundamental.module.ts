@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { DashPipe } from './03-01-architecture/03-01-03-intro-to-component/dash.pipe';
 import { RadiusDirective } from './03-01-architecture/03-01-03-intro-to-component/radius.directive';
+import { DiAComponent } from './03-01-architecture/03-01-04-di/di-a.component';
 
 /**
  * DOC: FUNDAMENTAL
@@ -18,9 +19,17 @@ import { RadiusDirective } from './03-01-architecture/03-01-03-intro-to-componen
     IntroIntoComponentCComponent,
     IntroIntoComponentDComponent,
     DashPipe,
-    RadiusDirective
+    RadiusDirective,
+    DiAComponent
   ],
   imports: [CommonModule, FormsModule],
-  exports: [IntroIntoComponentAComponent, IntroIntoComponentBComponent, IntroIntoComponentCComponent, IntroIntoComponentDComponent]
+  exports: [
+    IntroIntoComponentAComponent,
+    IntroIntoComponentBComponent,
+    IntroIntoComponentCComponent,
+    IntroIntoComponentDComponent,
+    DiAComponent
+  ],
+  providers: []
 })
 export class DocFundamentalModule {}
