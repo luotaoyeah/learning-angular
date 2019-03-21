@@ -15,6 +15,7 @@ import { RoutingNavigationComponent } from './03-09-routing-navigation/routing-n
 import { RoutingNavigationBasicComponent } from './03-09-routing-navigation/03-09-01-basic/routing-navigation-basic.component';
 import { DocFundamentalRoutingModule } from './doc-fundamental-routing.module';
 import { DocFundamentalArchitectureComponent } from './03-01-architecture/doc-fundamental-architecture.component';
+// tslint:disable-next-line:max-line-length
 import { DocFundamentalArchitectureIntroToComponentComponent } from './03-01-architecture/03-01-03-intro-to-component/doc-fundamental-architecture-intro-to-component.component';
 import { DocFundamentalArchitectureDiComponent } from './03-01-architecture/03-01-04-di/doc-fundamental-architecture-di.component';
 import { RoutingNavigationNotFoundComponent } from './03-09-routing-navigation/03-09-01-basic/routing-navigation-not-found.component';

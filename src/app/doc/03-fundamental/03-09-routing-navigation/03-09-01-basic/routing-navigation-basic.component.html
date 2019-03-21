@@ -25,3 +25,13 @@
   当某个 component 被渲染到对应的 router-outlet 处时，实际上这个 component 和 router-outlet 是作为兄弟元素同时存在的，这一点跟 vue 中的
   router-view 是不一样的，在 vue 中，渲染的组件会替换掉 router-view，而不是同时存在
 </p>
+
+<h3>RouterLink</h3>
+<p>
+  RouterLink 是一个 directive，用来将一个 &lt;a&gt; 标签标识为一个路由链接，点击这个链接，就会跳转到指定的地址
+</p>
+<p>
+  <a routerLink="/doc/tutorial/heroes/13">13</a>
+  &nbsp;
+  <a [routerLink]="['/doc/tutorial/heroes/', 13]" [queryParams]="{ x: 'foo' }" fragment="head">13</a>
+</p>
