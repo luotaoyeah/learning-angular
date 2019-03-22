@@ -81,7 +81,8 @@ export class AppComponent {
       if (node.label === 'Routing & Navigation') {
         this.router.navigate([node.data.path, 'foo'], {
           queryParams: {
-            x: 'foo'
+            bar: 'bar',
+            baz: ['baz01', 'baz02']
           }
         });
       } else {
