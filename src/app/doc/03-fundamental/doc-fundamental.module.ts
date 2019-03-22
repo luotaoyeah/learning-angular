@@ -9,7 +9,7 @@ import { DashPipe } from './03-01-architecture/03-01-03-intro-to-component/dash.
 import { RadiusDirective } from './03-01-architecture/03-01-03-intro-to-component/radius.directive';
 import { DiAComponent } from './03-01-architecture/03-01-04-di/di-a.component';
 import { ButtonModule } from 'primeng/button';
-import { InputTextModule } from 'primeng/primeng';
+import { AccordionModule, InputTextModule } from 'primeng/primeng';
 import { DocFundamentalComponent } from './doc-fundamental.component';
 import { RoutingNavigationComponent } from './03-09-routing-navigation/routing-navigation.component';
 import { RoutingNavigationBasicComponent } from './03-09-routing-navigation/03-09-01-basic/routing-navigation-basic.component';
@@ -43,6 +43,6 @@ import { RoutingNavigationBasicRouterEventsComponent } from './03-09-routing-nav
     RoutingNavigationBasicActivatedRouteComponent,
     RoutingNavigationBasicRouterEventsComponent
   ],
-  imports: [CommonModule, DocFundamentalRoutingModule, FormsModule, ...[ButtonModule, InputTextModule]]
+  imports: [CommonModule, DocFundamentalRoutingModule, FormsModule, ...[ButtonModule, InputTextModule, AccordionModule]]
 })
 export class DocFundamentalModule {}

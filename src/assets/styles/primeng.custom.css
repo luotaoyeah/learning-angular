@@ -1,3 +1,12 @@
 body .ui-tree .ui-tree-container .ui-treenode .ui-treenode-content {
   outline: none;
 }
+
+body .ui-accordion .ui-accordion-header a {
+  outline: none;
+  border-radius: 3px;
+}
+
+body .ui-accordion .ui-accordion-content {
+  border-radius: 3px;
+}

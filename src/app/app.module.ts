@@ -9,6 +9,7 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './doc/02-tutorial/service/in-memory-data.service';
 import { DocModule } from './doc/doc.module';
 import { TreeModule } from 'primeng/tree';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 /*
  * 通过 @NgModule 装饰器来声明一个 NgModule
@@ -27,6 +28,7 @@ import { TreeModule } from 'primeng/tree';
    */
   imports: [
     BrowserModule,
+    NoopAnimationsModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
