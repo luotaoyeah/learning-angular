@@ -78,7 +78,11 @@ export class AppComponent {
 
   selectNode({ node }: { node: TreeNode }) {
     if (node.data && node.data.path) {
-      this.router.navigate([node.data.path]);
+      this.router.navigate([node.data.path], {
+        queryParams: {
+          x: 'foo'
+        }
+      });
     }
   }
 }
