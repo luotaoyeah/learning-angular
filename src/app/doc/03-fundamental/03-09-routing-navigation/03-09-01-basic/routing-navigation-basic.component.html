@@ -48,3 +48,9 @@
   &nbsp;
   <a routerLink="/doc/fundamental/routing-navigation-2" routerLinkActive="active foo">INACTIVE</a>
 </p>
+
+<h3>Router State</h3>
+<p>
+  每次发生导航操作（navigation）之后，应用中就会构建一棵树，称之为 RouterState，它的节点就是 ActivatedRoute 对象， 可以通过
+  router.routerState 属性获取到这棵树，其中 router 是一个 Router 对象，可以通过依赖注入
+</p>
