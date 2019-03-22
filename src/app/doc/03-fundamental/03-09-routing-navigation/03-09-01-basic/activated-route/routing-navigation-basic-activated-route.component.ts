@@ -49,5 +49,13 @@ export class RoutingNavigationBasicActivatedRouteComponent implements OnInit {
       console.assert(queryParamMap.get('baz') === 'baz01');
       console.assert(queryParamMap.getAll('baz').toString() === 'baz01,baz02');
     });
+
+    /*
+     * ActivatedRoute.fragment 属性，
+     * 表示 URL 地址中的 fragment 部分，如 x/y#bottom 中的 bottom
+     */
+    this.activatedRoute.fragment.subscribe((fragment: string) => {
+      console.assert(fragment === 'top');
+    });
   }
 }

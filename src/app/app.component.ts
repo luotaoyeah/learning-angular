@@ -80,6 +80,7 @@ export class AppComponent {
     if (node.data && node.data.path) {
       if (node.label === 'Routing & Navigation') {
         this.router.navigate([node.data.path, 'foo'], {
+          fragment: 'top',
           queryParams: {
             bar: 'bar',
             baz: ['baz01', 'baz02']
