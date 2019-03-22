@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Event, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-routing-navigation-basic-router-events',
@@ -31,8 +31,10 @@ export class RoutingNavigationBasicRouterEventsComponent implements OnInit {
      *     NavigationError
      *     Scroll
      */
-    this.router.events.subscribe((event: Event) => {
-      console.log(event.constructor.name);
+    this.router.events.subscribe(() => {
+      /*
+            console.log(event.constructor.name);
+      */
     });
   }
 }
