@@ -57,5 +57,12 @@ export class RoutingNavigationBasicActivatedRouteComponent implements OnInit {
     this.activatedRoute.fragment.subscribe((fragment: string) => {
       console.assert(fragment === 'top');
     });
+
+    /*
+     * ActivatedRoute.outlet 属性，
+     * 表示渲染当前路由的是哪一个 router-outlet ？
+     * 对于未命名的 router-outlet，该属性的值为 primary
+     */
+    console.assert(this.activatedRoute.outlet === 'primary');
   }
 }
