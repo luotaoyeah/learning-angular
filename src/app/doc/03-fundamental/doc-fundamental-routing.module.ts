@@ -28,7 +28,7 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'routing-navigation',
+        path: 'routing-navigation/:foo',
         component: RoutingNavigationComponent,
         /*
          * 可以通过 data 选项，传递业务数据

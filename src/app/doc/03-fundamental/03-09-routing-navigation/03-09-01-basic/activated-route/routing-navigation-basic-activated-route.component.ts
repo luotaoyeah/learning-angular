@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, UrlSegment } from '@angular/router';
+import { ActivatedRoute, Data, ParamMap, UrlSegment } from '@angular/router';
 
 @Component({
   selector: 'app-routing-navigation-basic-activated-route',
@@ -16,6 +16,22 @@ export class RoutingNavigationBasicActivatedRouteComponent implements OnInit {
      */
     this.activatedRoute.url.subscribe((urlSegments: Array<UrlSegment>) => {
       console.assert(urlSegments[0].path === 'routing-navigation');
+    });
+
+    /*
+     * ActivatedRoute.data 属性，
+     * 表示当前匹配的路由的 data 对象
+     */
+    this.activatedRoute.data.subscribe((data: Data) => {
+      console.assert(data.someData === 'FOO');
+    });
+
+    /*
+     * ActivatedRoute.paramMap 属性，
+     * 表示当前匹配的路由的路径参数
+     */
+    this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
+      console.assert(paramMap.get('foo') === 'foo');
     });
   }
 }
