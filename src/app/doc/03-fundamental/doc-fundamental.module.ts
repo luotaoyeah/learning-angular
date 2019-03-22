@@ -23,6 +23,8 @@ import { RoutingNavigationNotFoundComponent } from './03-09-routing-navigation/0
 import { RoutingNavigationBasicActivatedRouteComponent } from './03-09-routing-navigation/03-09-01-basic/activated-route/routing-navigation-basic-activated-route.component';
 // tslint:disable-next-line:max-line-length
 import { RoutingNavigationBasicRouterEventsComponent } from './03-09-routing-navigation/03-09-01-basic/router-events/routing-navigation-basic-router-events.component';
+// tslint:disable-next-line:max-line-length
+import { DocFundamentalRoutingSampleModule } from './03-09-routing-navigation/03-09-02-sample-application/doc-fundamental-routing-sample.module';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,12 @@ import { RoutingNavigationBasicRouterEventsComponent } from './03-09-routing-nav
     RoutingNavigationBasicActivatedRouteComponent,
     RoutingNavigationBasicRouterEventsComponent
   ],
-  imports: [CommonModule, DocFundamentalRoutingModule, FormsModule, ...[ButtonModule, InputTextModule, AccordionModule]]
+  imports: [
+    CommonModule,
+    DocFundamentalRoutingModule,
+    FormsModule,
+    DocFundamentalRoutingSampleModule,
+    ...[ButtonModule, InputTextModule, AccordionModule]
+  ]
 })
 export class DocFundamentalModule {}
