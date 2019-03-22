@@ -12,7 +12,7 @@ export class RoutingNavigationBasicActivatedRouteComponent implements OnInit {
   ngOnInit() {
     /*
      * ActivatedRoute.url 属性，
-     * 表示当前匹配的路由的 URL 片段
+     * 当前路由的 URL 片段
      */
     this.activatedRoute.url.subscribe((urlSegments: Array<UrlSegment>) => {
       console.assert(urlSegments[0].path === 'routing-navigation');
@@ -20,7 +20,7 @@ export class RoutingNavigationBasicActivatedRouteComponent implements OnInit {
 
     /*
      * ActivatedRoute.data 属性，
-     * 表示当前匹配的路由的 data 对象
+     * 当前路由的 data 对象
      */
     this.activatedRoute.data.subscribe((data: Data) => {
       console.assert(data.someData === 'FOO');
@@ -28,7 +28,7 @@ export class RoutingNavigationBasicActivatedRouteComponent implements OnInit {
 
     /*
      * ActivatedRoute.paramMap 属性，
-     * 表示当前匹配的路由的路径参数
+     * 当前路由的路径参数
      */
     this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
       console.assert(paramMap.get('foo') === 'foo');
@@ -36,7 +36,7 @@ export class RoutingNavigationBasicActivatedRouteComponent implements OnInit {
 
     /*
      * ActivatedRoute.queryParamMap 属性，
-     * 表示当前匹配的路由的查询参数
+     * 当前路由的查询参数
      */
     this.activatedRoute.queryParamMap.subscribe((queryParamMap: ParamMap) => {
       console.assert(queryParamMap.get('bar') === 'bar');
@@ -64,5 +64,12 @@ export class RoutingNavigationBasicActivatedRouteComponent implements OnInit {
      * 对于未命名的 router-outlet，该属性的值为 primary
      */
     console.assert(this.activatedRoute.outlet === 'primary');
+
+    /*
+     * ActivatedRoute.routeConfig 属性，
+     * 表示当前路由的配置对象
+     */
+    // tslint:disable-next-line:no-non-null-assertion
+    console.assert(this.activatedRoute.routeConfig!.path === 'routing-navigation/:foo');
   }
 }
