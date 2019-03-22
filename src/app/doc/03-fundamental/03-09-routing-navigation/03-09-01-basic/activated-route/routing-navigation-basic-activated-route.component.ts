@@ -71,5 +71,24 @@ export class RoutingNavigationBasicActivatedRouteComponent implements OnInit {
      */
     // tslint:disable-next-line:no-non-null-assertion
     console.assert(this.activatedRoute.routeConfig!.path === 'routing-navigation/:foo');
+
+    /*
+     * ActivatedRoute.parent 属性，
+     * 表示当前路由的上级路由
+     */
+    // tslint:disable-next-line:no-non-null-assertion
+    console.assert(this.activatedRoute.parent!.routeConfig!.path === 'doc/fundamental');
+
+    /*
+     * ActivatedRoute.children 属性，
+     * 表示当前路由的下级路由列表
+     */
+    console.assert(this.activatedRoute.children.length === 0);
+
+    /*
+     * ActivatedRoute.firstChild 属性，
+     * 表示当前路由的下级路由列表中第一个路由
+     */
+    console.assert(this.activatedRoute.firstChild === null);
   }
 }
