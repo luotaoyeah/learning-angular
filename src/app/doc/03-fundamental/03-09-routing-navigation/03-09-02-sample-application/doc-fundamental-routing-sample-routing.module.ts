@@ -18,6 +18,11 @@ const routes: Routes = [
         component: HeroListComponent
       }
     ]
+  },
+  {
+    path: '',
+    redirectTo: '/doc/fundamental/routing/sample-application/heroes',
+    pathMatch: 'full'
   }
 ];
 
