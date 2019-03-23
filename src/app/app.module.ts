@@ -10,6 +10,8 @@ import { InMemoryDataService } from './doc/02-tutorial/service/in-memory-data.se
 import { DocModule } from './doc/doc.module';
 import { TreeModule } from 'primeng/tree';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { PageNotFoundComponent } from './comn/page-not-found/page-not-found.component';
+import { RouterModule } from '@angular/router';
 
 /*
  * 通过 @NgModule 装饰器来声明一个 NgModule
@@ -20,7 +22,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
    * 这些 component，directive，pipe 称之为 declarables，
    * 这些 declarables 不能在多个不同的 NgModule 中声明，否则编译报错
    */
-  declarations: [AppComponent],
+  declarations: [AppComponent, PageNotFoundComponent],
   /*
    * imports 用来引入其他的 NgModule，
    * 引入一个 NgModule 就相当于将它的 exports 中声明的所有 declarables 都引入进当前的 NgModule 中，
@@ -36,7 +38,17 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
       dataEncapsulation: false
     }),
     ...[TreeModule],
-    DocModule
+    DocModule,
+    /*
+     * 通常在最后面添加一个 path 为 ** 的路由（wildcard route），
+     * 表示，如果这之前的所有路由都没有匹配上时，就会匹配这个路由
+     */
+    RouterModule.forChild([
+      {
+        path: '**',
+        component: PageNotFoundComponent
+      }
+    ])
   ],
   /*
    * 默认情况下，在 declarations 中声明的 declarables 都只能在当前 NgModule 中使用，

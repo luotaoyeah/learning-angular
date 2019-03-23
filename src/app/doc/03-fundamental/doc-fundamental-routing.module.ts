@@ -38,20 +38,6 @@ const routes: Routes = [
       }
     ]
   }
-  /*
-    {
-      /!*
-       * 通常在最后面添加一个 path 为 ** 的路由，
-       * 表示，当前面的所有路由都没有匹配上时，
-       * 就会匹配这个路由
-       *
-       * 路由的匹配是按照从上到下的顺序进行匹配的，
-       * 一旦某个路由匹配上了，后面的路由就不会再继续进行匹配了
-       *!/
-      path: '**',
-      component: RoutingNavigationNotFoundComponent
-    }
-  */
 ];
 
 @NgModule({
