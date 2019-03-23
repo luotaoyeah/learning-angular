@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HeroService } from '../service/hero.service';
 import { Hero } from '../model/hero';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-hero-list',
@@ -10,7 +11,7 @@ import { Hero } from '../model/hero';
 export class HeroListComponent implements OnInit {
   heroes: Array<Hero> = [];
 
-  constructor(private heroService: HeroService) {}
+  constructor(private router: Router, private heroService: HeroService) {}
 
   ngOnInit() {
     this.heroService.getHeroes().subscribe((heroes: Array<Hero>) => {
@@ -23,7 +24,6 @@ export class HeroListComponent implements OnInit {
    * @param hero 英雄
    */
   gotoHeroDetailPage(hero: Hero) {
-    /* TODO */
-    console.log(hero);
+    this.router.navigate(['/doc/fundamental/routing/sample-application/heroes', hero.id]);
   }
 }

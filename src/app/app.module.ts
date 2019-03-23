@@ -11,7 +11,6 @@ import { DocModule } from './doc/doc.module';
 import { TreeModule } from 'primeng/tree';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { PageNotFoundComponent } from './comn/page-not-found/page-not-found.component';
-import { RouterModule } from '@angular/router';
 
 /*
  * 通过 @NgModule 装饰器来声明一个 NgModule
@@ -31,7 +30,6 @@ import { RouterModule } from '@angular/router';
   imports: [
     BrowserModule,
     NoopAnimationsModule,
-    AppRoutingModule,
     FormsModule,
     HttpClientModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService, {
@@ -39,16 +37,7 @@ import { RouterModule } from '@angular/router';
     }),
     ...[TreeModule],
     DocModule,
-    /*
-     * 通常在最后面添加一个 path 为 ** 的路由（wildcard route），
-     * 表示，如果这之前的所有路由都没有匹配上时，就会匹配这个路由
-     */
-    RouterModule.forChild([
-      {
-        path: '**',
-        component: PageNotFoundComponent
-      }
-    ])
+    AppRoutingModule
   ],
   /*
    * 默认情况下，在 declarations 中声明的 declarables 都只能在当前 NgModule 中使用，

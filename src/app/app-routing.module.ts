@@ -1,26 +1,33 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { PageNotFoundComponent } from './comn/page-not-found/page-not-found.component';
 
 const routes: Routes = [
+  {
+    path: '',
+    /*
+     * 如果浏览器当前路径跟上面的 path 相匹配，
+     * 则跳转到 redirectTo 指定的路径，
+     *
+     * redirectTo 指定的路径可以是绝对路径（以 / 开头），
+     * 也可以是相对路径（不以 / 开头），此时是相对于上面的 path 指定的路径
+     */
+    redirectTo: '/doc/fundamental/routing/sample-application/heroes',
+    /*
+     * 路径匹配策略，有两种方式：
+     *     prefix（默认）：前缀匹配
+     *     full：完全匹配
+     */
+    pathMatch: 'full'
+  },
   /*
-    {
-      path: '',
-      /!*
-       * 如果浏览器当前路径跟上面的 path 相匹配，
-       * 则跳转到 redirectTo 指定的路径，
-       *
-       * redirectTo 指定的路径可以是绝对路径（以 / 开头），
-       * 也可以是相对路径（不以 / 开头），此时是相对于上面的 path 指定的路径
-       *!/
-      redirectTo: '/doc/tutorial/dashboard',
-      /!*
-       * 路径匹配策略，有两种方式：
-       *     prefix（默认）：前缀匹配
-       *     full：完全匹配
-       *!/
-      pathMatch: 'full'
-    }
-  */
+   * 通常在最后面添加一个 path 为 ** 的路由（wildcard route），
+   * 表示，如果这之前的所有路由都没有匹配上时，就会匹配这个路由
+   */
+  {
+    path: '**',
+    component: PageNotFoundComponent
+  }
 ];
 
 @NgModule({
