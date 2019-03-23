@@ -28,6 +28,9 @@ export class HeroDetailComponent implements OnInit {
     this.getHero$();
   }
 
+  /**
+   * 使用 snapshot 版本的 paramMap
+   */
   getHero(): void {
     const id: number = Number(this.activatedRoute.snapshot.paramMap.get('id'));
     if (!Number.isNaN(id)) {
@@ -37,6 +40,9 @@ export class HeroDetailComponent implements OnInit {
     }
   }
 
+  /**
+   * 使用 observable 版本的 paramMap
+   */
   getHero$(): void {
     this.activatedRoute.paramMap
       .pipe(

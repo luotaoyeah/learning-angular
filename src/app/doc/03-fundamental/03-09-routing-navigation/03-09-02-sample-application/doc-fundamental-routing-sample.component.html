@@ -3,4 +3,6 @@
   &nbsp;
   <a routerLink="/doc/fundamental/routing/sample-application/heroes" routerLinkActive="active">HEROES</a>
 </p>
-<router-outlet></router-outlet>
+<div [@routeAnimation]="getAnimationData(routerOutlet)">
+  <router-outlet #routerOutlet="outlet"></router-outlet>
+</div>

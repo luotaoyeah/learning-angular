@@ -11,11 +11,17 @@ const routes: Routes = [
     children: [
       {
         path: 'heroes',
-        component: HeroListComponent
+        component: HeroListComponent,
+        data: {
+          animation: 'heroes'
+        }
       },
       {
         path: 'heroes/:id',
-        component: HeroDetailComponent
+        component: HeroDetailComponent,
+        data: {
+          animation: 'hero'
+        }
       }
     ]
   }

@@ -9,7 +9,7 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './doc/02-tutorial/service/in-memory-data.service';
 import { DocModule } from './doc/doc.module';
 import { TreeModule } from 'primeng/tree';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PageNotFoundComponent } from './comn/page-not-found/page-not-found.component';
 
 /*
@@ -29,7 +29,7 @@ import { PageNotFoundComponent } from './comn/page-not-found/page-not-found.comp
    */
   imports: [
     BrowserModule,
-    NoopAnimationsModule,
+    BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService, {
