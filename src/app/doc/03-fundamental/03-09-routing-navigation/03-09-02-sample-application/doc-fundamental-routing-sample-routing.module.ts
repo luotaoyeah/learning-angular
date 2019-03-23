@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CrisisListComponent } from './crisis-list/crisis-list.component';
-import { HeroListComponent } from './hero-list/hero-list.component';
+import { HeroListComponent } from './heroes/hero-list/hero-list.component';
 import { DocFundamentalRoutingSampleComponent } from './doc-fundamental-routing-sample.component';
 
 const routes: Routes = [
