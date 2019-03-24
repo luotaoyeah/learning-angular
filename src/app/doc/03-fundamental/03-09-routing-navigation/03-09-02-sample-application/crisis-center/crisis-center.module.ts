@@ -9,9 +9,10 @@ import { CrisisDetailComponent } from './crisis-detail/crisis-detail.component';
 import { FormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/primeng';
 import { CrisisCenterComponent } from './crisis-center/crisis-center.component';
+import { CrisisHomeComponent } from './crisis-home/crisis-home.component';
 
 @NgModule({
-  declarations: [CrisisCenterComponent, CrisisListComponent, CrisisDetailComponent],
+  declarations: [CrisisCenterComponent, CrisisListComponent, CrisisDetailComponent, CrisisHomeComponent],
   imports: [CommonModule, FormsModule, CrisisCenterRoutingModule, ...[PanelModule, ButtonModule, InputTextModule]]
 })
 export class CrisisCenterModule {}

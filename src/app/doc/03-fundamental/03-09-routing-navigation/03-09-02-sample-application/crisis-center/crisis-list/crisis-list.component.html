@@ -1,7 +1,9 @@
-<p-panel header="CRISES CENTER">
+<p-panel header="CRISES LIST" [style]="{ marginBottom: '10px' }">
   <ul>
     <li *ngFor="let crisis of crises">
       <p-button label="{{ crisis.id }} - {{ crisis.name }}" (onClick)="gotoCrisisDetailPage(crisis)"></p-button>
     </li>
   </ul>
 </p-panel>
+
+<router-outlet></router-outlet>
