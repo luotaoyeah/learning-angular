@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DocFundamentalRoutingSampleComponent } from '../doc-fundamental-routing-sample.component';
 import { CrisisListComponent } from './crisis-list/crisis-list.component';
-import { DocFundamentalRoutingSampleComponent } from './doc-fundamental-routing-sample.component';
+import { CrisisDetailComponent } from './crisis-detail/crisis-detail.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
       {
         path: 'crisis-center',
         component: CrisisListComponent
+      },
+      {
+        path: 'crisis-center/:id',
+        component: CrisisDetailComponent
       }
     ]
   }
@@ -20,4 +25,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class DocFundamentalRoutingSampleRoutingModule {}
+export class CrisisCenterRoutingModule {}

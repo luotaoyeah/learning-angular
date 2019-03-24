@@ -21,11 +21,18 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 20, name: 'Tornado' }
     ];
 
+    const crises: Array<Hero> = [
+      { id: 1, name: 'Dragon Burning Cities' },
+      { id: 2, name: 'Sky Rains Great White Sharks' },
+      { id: 3, name: 'Giant Asteroid Heading For Earth' },
+      { id: 4, name: 'Procrastinators Meeting Delayed Again' }
+    ];
+
     if (Math.random() < 0.1) {
       throw new Error('模拟请求出错');
     }
 
-    return { heroes };
+    return { heroes, crises };
   }
 
   /**
