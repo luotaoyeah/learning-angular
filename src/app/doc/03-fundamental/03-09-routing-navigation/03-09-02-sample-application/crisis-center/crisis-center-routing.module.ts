@@ -19,11 +19,11 @@ const routes: Routes = [
             path: '',
             component: CrisisListComponent,
             children: [
+              { path: '', component: CrisisHomeComponent },
               {
                 path: ':id',
                 component: CrisisDetailComponent
-              },
-              { path: '', component: CrisisHomeComponent }
+              }
             ]
           }
         ]
