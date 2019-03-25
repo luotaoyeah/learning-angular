@@ -1,4 +1,8 @@
 <p>
+  <!--
+    通过 routerLink 指定相对导航路径时，不需要通过 relativeTo 指定要相对于哪个路由进行导航，
+    默认就是相对于当前路由进行相对导航
+  -->
   <a routerLink="./crisis-center" routerLinkActive="active">CRISIS CENTER</a>
   &nbsp;
   <a routerLink="./heroes" routerLinkActive="active">HEROES</a>
@@ -6,3 +10,6 @@
 <div [@routeAnimation]="getAnimationData(routerOutlet)">
   <router-outlet #routerOutlet="outlet"></router-outlet>
 </div>
+<a [routerLink]="[{ outlets: { popup: 'doc/fundamental/routing/sample-application/compose' } }]">CONTACT</a>
+
+<router-outlet name="popup"></router-outlet>

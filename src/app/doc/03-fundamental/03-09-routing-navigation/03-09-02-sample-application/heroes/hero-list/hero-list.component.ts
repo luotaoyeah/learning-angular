@@ -25,6 +25,9 @@ export class HeroListComponent implements OnInit {
    */
   gotoHeroDetailPage(hero: Hero) {
     this.router.navigate([hero.id], {
+      /*
+       * 通过 relativeTo 指定要相对于哪个路由进行导航
+       */
       relativeTo: this.activatedRoute
     });
   }

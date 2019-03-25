@@ -1,0 +1,8 @@
+<p-panel header="CONTACT CRISIS CENTER">
+  <textarea cols="30" rows="10" [(ngModel)]="message" [disabled]="sending"></textarea>
+  <p>
+    <p-button (onClick)="send()" [disabled]="sending">SEND</p-button>
+    &nbsp;
+    <p-button (onClick)="cancel()" [disabled]="sending">CANCEL</p-button>
+  </p>
+</p-panel>
