@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DocFundamentalRoutingSampleComponent } from '../doc-fundamental-routing-sample.component';
 import { AdminComponent } from './admin/admin.component';
 import { ManageHeroesComponent } from './manage-heroes/manage-heroes.component';
 import { ManageCrisesComponent } from './manage-crises/manage-crises.component';
@@ -9,31 +8,25 @@ import { AuthGuard } from '../auth/service/auth.guard';
 
 const routes: Routes = [
   {
-    path: 'doc/fundamental/routing/sample-application',
-    component: DocFundamentalRoutingSampleComponent,
+    path: '',
+    component: AdminComponent,
+    canActivate: [AuthGuard],
     children: [
       {
-        path: 'admin',
-        component: AdminComponent,
-        canActivate: [AuthGuard],
+        path: '',
+        canActivateChild: [AuthGuard],
         children: [
           {
             path: '',
-            canActivateChild: [AuthGuard],
-            children: [
-              {
-                path: '',
-                component: AdminDashboardComponent
-              },
-              {
-                path: 'heroes',
-                component: ManageHeroesComponent
-              },
-              {
-                path: 'crises',
-                component: ManageCrisesComponent
-              }
-            ]
+            component: AdminDashboardComponent
+          },
+          {
+            path: 'heroes',
+            component: ManageHeroesComponent
+          },
+          {
+            path: 'crises',
+            component: ManageCrisesComponent
           }
         ]
       }

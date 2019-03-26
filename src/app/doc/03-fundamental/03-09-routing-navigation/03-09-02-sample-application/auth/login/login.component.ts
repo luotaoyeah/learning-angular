@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../service/auth.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,9 +8,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  constructor(private router: Router, public authService: AuthService) {}
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, public authService: AuthService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.activatedRoute.queryParamMap.subscribe((queryMap: ParamMap) => {
+      console.log(`session_id: ${queryMap.get('session_id')}`);
+    });
+
+    this.activatedRoute.fragment.subscribe((fragment: string) => {
+      console.log('fragment: #' + fragment);
+    });
+  }
 
   login() {
     this.authService.login().subscribe(() => {
