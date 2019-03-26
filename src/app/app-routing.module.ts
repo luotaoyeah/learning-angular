@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './comn/page-not-found/page-not-found.component';
+// tslint:disable-next-line:max-line-length
+import { SelectivePreloadingStrategyService } from './doc/03-fundamental/03-09-routing-navigation/03-09-02-sample-application/service/selective-preloading-strategy.service';
 
 const routes: Routes = [
   {
@@ -48,7 +50,7 @@ const routes: Routes = [
        *     PreloadAllModules（所有延迟加载的模块都要预加载）
        *     NoPreloading（所有延迟加载的模块都不要预加载）
        */
-      preloadingStrategy: PreloadAllModules
+      preloadingStrategy: SelectivePreloadingStrategyService
     })
   ],
   /*

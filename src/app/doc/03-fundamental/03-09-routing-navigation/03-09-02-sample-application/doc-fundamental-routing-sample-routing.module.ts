@@ -15,7 +15,10 @@ import { CrisisCenterModule } from './crisis-center/crisis-center.module';
         children: [
           {
             path: 'crisis-center',
-            loadChildren: () => CrisisCenterModule
+            loadChildren: () => CrisisCenterModule,
+            data: {
+              preload: true
+            }
           },
           {
             path: 'admin',
