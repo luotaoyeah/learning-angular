@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 import { ComposeMessageComponent } from './compose-message/compose-message.component';
 import { DocFundamentalRoutingSampleComponent } from './doc-fundamental-routing-sample.component';
 import { AdminModule } from './admin/admin.module';
+import { AuthGuard } from './auth/service/auth.guard';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { AdminModule } from './admin/admin.module';
         children: [
           {
             path: 'admin',
-            loadChildren: () => AdminModule
+            loadChildren: () => AdminModule,
+            canLoad: [AuthGuard]
           },
           {
             path: 'login',

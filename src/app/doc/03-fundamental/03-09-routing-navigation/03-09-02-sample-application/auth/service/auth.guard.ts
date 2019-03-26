@@ -1,12 +1,21 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, CanActivateChild, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
+import {
+  ActivatedRouteSnapshot,
+  CanActivate,
+  CanActivateChild,
+  CanLoad,
+  Route,
+  Router,
+  RouterStateSnapshot,
+  UrlTree
+} from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivate, CanActivateChild {
+export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
   constructor(private router: Router, private authService: AuthService) {}
 
   /**
@@ -44,7 +53,7 @@ export class AuthGuard implements CanActivate, CanActivateChild {
    * 检查是否登录
    * @param url 要跳转的地址
    */
-  private checkLogin(url: string) {
+  private checkLogin(url: string): boolean {
     if (this.authService.isLogin) {
       return true;
     }
@@ -57,5 +66,13 @@ export class AuthGuard implements CanActivate, CanActivateChild {
       fragment: 'anchor'
     });
     return false;
+  }
+
+  /**
+   * canLoad() 用来守护是否可以加载某个路由对应的 NgModule
+   * @param route 路由配置
+   */
+  canLoad(route: Route): Observable<boolean> | Promise<boolean> | boolean {
+    return this.checkLogin(`/doc/fundamental/routing/sample-application/${route.path}`);
   }
 }
