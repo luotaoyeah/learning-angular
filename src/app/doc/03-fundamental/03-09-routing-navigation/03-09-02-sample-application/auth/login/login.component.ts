@@ -18,7 +18,11 @@ export class LoginComponent implements OnInit {
         this.router.navigateByUrl(
           this.authService.redirectUrl
             ? this.router.parseUrl(this.authService.redirectUrl)
-            : '/doc/fundamental/routing/sample-application/admin'
+            : '/doc/fundamental/routing/sample-application/admin',
+          {
+            queryParamsHandling: 'preserve',
+            preserveFragment: true
+          }
         );
       }
     });

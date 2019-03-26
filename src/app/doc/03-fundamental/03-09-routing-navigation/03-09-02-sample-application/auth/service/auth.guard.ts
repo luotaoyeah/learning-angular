@@ -32,7 +32,12 @@ export class AuthGuard implements CanActivate, CanActivateChild {
     // @ts-ignore
     state: RouterStateSnapshot
   ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return !!childRoute.routeConfig && childRoute.routeConfig.path !== 'heroes';
+    const result = !!childRoute.routeConfig && childRoute.routeConfig.path !== 'heroes';
+    if (!result) {
+      console.warn('没有权限进入');
+    }
+
+    return result;
   }
 
   /**
@@ -45,7 +50,12 @@ export class AuthGuard implements CanActivate, CanActivateChild {
     }
 
     this.authService.redirectUrl = url;
-    this.router.navigate(['/doc/fundamental/routing/sample-application/login']);
+    this.router.navigate(['/doc/fundamental/routing/sample-application/login'], {
+      queryParams: {
+        session_id: 123456789
+      },
+      fragment: 'anchor'
+    });
     return false;
   }
 }
