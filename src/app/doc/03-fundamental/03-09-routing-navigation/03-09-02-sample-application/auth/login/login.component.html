@@ -1,0 +1,4 @@
+<p-panel header="LOGIN">
+  <p-button *ngIf="!authService.isLogin" label="LOGIN" styleClass="ui-button-success" (onClick)="login()"></p-button>
+  <p-button *ngIf="authService.isLogin" label="LOGOUT" styleClass="ui-button-danger" (onClick)="logout()"></p-button>
+</p-panel>
