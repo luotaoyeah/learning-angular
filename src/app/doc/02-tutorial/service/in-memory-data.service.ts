@@ -28,7 +28,7 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 4, name: 'Procrastinators Meeting Delayed Again' }
     ];
 
-    if (Math.random() < 0.1) {
+    if (Math.random() < 0.01) {
       throw new Error('模拟请求出错');
     }
 

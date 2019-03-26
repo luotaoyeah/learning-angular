@@ -62,7 +62,7 @@ export class CrisisService {
   private handleError<T>(operation: string = 'operation', result?: T) {
     return (err: any): Observable<T> => {
       console.log(`${operation} FAILED: ${err.body.error}`);
-      return of(result as T);
+      return of((result || null) as T);
     };
   }
 }

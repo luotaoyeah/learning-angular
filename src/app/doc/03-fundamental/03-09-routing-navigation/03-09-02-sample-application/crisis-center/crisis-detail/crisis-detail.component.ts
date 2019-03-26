@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Crisis } from '../model/crisis';
-import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CrisisService } from '../service/crisis.service';
-import { switchMap } from 'rxjs/operators';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { CanDeactivateComponent } from '../../auth/service/can-deactivate.guard';
 import { DialogService } from '../../service/dialog.service';
 
@@ -27,30 +26,11 @@ export class CrisisDetailComponent implements OnInit, CanDeactivateComponent {
   ) {}
 
   ngOnInit() {
-    this.getCrisis$();
-  }
-
-  /**
-   * 使用 observable 版本的 paramMap
-   */
-  getCrisis$(): void {
-    this.activatedRoute.paramMap
-      .pipe(
-        switchMap((paramMap: ParamMap) => {
-          const id: number = Number(paramMap.get('id'));
-          if (!Number.isNaN(id)) {
-            return this.crisisService.getCrisis(id);
-          }
-
-          return of(null);
-        })
-      )
-      .subscribe((crisis: Crisis | null) => {
-        this.crisis = crisis;
-        if (this.crisis) {
-          this.crisisModel.name = this.crisis.name;
-        }
-      });
+    console.log(`[${CrisisDetailComponent.name}] 加载完成`);
+    this.activatedRoute.data.subscribe(({ crisis }) => {
+      this.crisis = crisis as Crisis;
+      this.crisisModel.name = this.crisis.name;
+    });
   }
 
   save() {
