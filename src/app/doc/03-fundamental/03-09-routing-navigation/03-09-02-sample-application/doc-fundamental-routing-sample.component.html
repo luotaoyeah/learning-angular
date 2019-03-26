@@ -10,6 +10,11 @@
 <div [@routeAnimation]="getAnimationData(routerOutlet)">
   <router-outlet #routerOutlet="outlet"></router-outlet>
 </div>
-<a [routerLink]="[{ outlets: { popup: 'doc/fundamental/routing/sample-application/compose' } }]">CONTACT</a>
+
+<!--
+  <a [routerLink]="[{ outlets: { popup: ['compose'] } }]">CONTACT</a>
+-->
+
+<p-button label="CONTACT" (onClick)="openContact()" style="margin-top: 10px;"></p-button>
 
 <router-outlet name="popup"></router-outlet>

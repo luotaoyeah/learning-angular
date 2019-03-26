@@ -1,11 +1,11 @@
 <p-panel *ngIf="!!crisis" [header]="crisis.name">
   <div class="ui-inputgroup">
     <span class="ui-inputgroup-addon" style="width: 80px;text-align: right;">ID：</span>
-    <input type="text" pInputText [value]="crisis.id" disabled />
+    <input type="text" pInputText [value]="crisis.id" disabled style="width: 400px;" />
   </div>
   <br />
   <div class="ui-inputgroup">
     <span class="ui-inputgroup-addon" style="width: 80px;text-align: right;">名称：</span>
-    <input type="text" pInputText placeholder="名称" [(ngModel)]="crisis.name" />
+    <input type="text" pInputText placeholder="名称" [(ngModel)]="crisis.name" style="width: 400px;" />
   </div>
 </p-panel>

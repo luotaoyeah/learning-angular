@@ -5,8 +5,12 @@ import { ComposeMessageComponent } from './compose-message/compose-message.compo
 @NgModule({
   imports: [
     RouterModule.forChild([
+      /*
+       * TODO
+       * named router-outlet 没有验证成功
+       */
       {
-        path: 'doc/fundamental/routing/sample-application/compose',
+        path: 'compose',
         component: ComposeMessageComponent,
         outlet: 'popup'
       }

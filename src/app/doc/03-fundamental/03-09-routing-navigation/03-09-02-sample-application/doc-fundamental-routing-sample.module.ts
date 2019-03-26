@@ -13,11 +13,11 @@ import { DocFundamentalRoutingSampleRoutingModule } from './doc-fundamental-rout
   declarations: [DocFundamentalRoutingSampleComponent, ComposeMessageComponent],
   imports: [
     CommonModule,
+    FormsModule,
     DocFundamentalRoutingSampleRoutingModule,
     ...[PanelModule, ButtonModule],
     HeroesModule,
-    CrisisCenterModule,
-    FormsModule
+    CrisisCenterModule
   ]
 })
 export class DocFundamentalRoutingSampleModule {}

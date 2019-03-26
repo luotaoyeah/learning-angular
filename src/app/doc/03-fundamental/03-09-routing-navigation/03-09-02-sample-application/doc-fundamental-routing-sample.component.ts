@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { routeAnimation } from './animations';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-doc-fundamental-routing-sample',
@@ -9,12 +9,19 @@ import { RouterOutlet } from '@angular/router';
   animations: [routeAnimation]
 })
 export class DocFundamentalRoutingSampleComponent implements OnInit {
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {}
 
   getAnimationData(routerOutlet: RouterOutlet) {
     // tslint:disable-next-line:no-string-literal
     return routerOutlet && routerOutlet.activatedRouteData && routerOutlet.activatedRouteData['animation'];
+  }
+
+  /**
+   * 打开 CONTACT 面板
+   */
+  openContact() {
+    this.router.navigate([{ outlets: { popup: 'compose' } }]);
   }
 }
