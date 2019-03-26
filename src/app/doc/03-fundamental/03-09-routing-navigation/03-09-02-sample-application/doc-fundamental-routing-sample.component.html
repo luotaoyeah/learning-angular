@@ -6,15 +6,17 @@
   <a routerLink="./crisis-center" routerLinkActive="active">CRISIS CENTER</a>
   &nbsp;
   <a routerLink="./heroes" routerLinkActive="active">HEROES</a>
+  &nbsp;
+  <a routerLink="./admin" routerLinkActive="active">ADMIN</a>
+  &nbsp;
+  <!--
+    <a [routerLink]="[{ outlets: { popup: ['compose'] } }]">CONTACT</a>
+  -->
+  <p-button label="CONTACT" (onClick)="openContact()" style="margin-top: 10px;"></p-button>
 </p>
+
 <div [@routeAnimation]="getAnimationData(routerOutlet)">
   <router-outlet #routerOutlet="outlet"></router-outlet>
 </div>
-
-<!--
-  <a [routerLink]="[{ outlets: { popup: ['compose'] } }]">CONTACT</a>
--->
-
-<p-button label="CONTACT" (onClick)="openContact()" style="margin-top: 10px;"></p-button>
 
 <router-outlet name="popup"></router-outlet>

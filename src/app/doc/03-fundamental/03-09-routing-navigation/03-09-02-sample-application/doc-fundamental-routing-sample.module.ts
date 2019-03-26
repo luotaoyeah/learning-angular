@@ -8,6 +8,7 @@ import { ComposeMessageComponent } from './compose-message/compose-message.compo
 import { FormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { DocFundamentalRoutingSampleRoutingModule } from './doc-fundamental-routing-sample-routing.module';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [DocFundamentalRoutingSampleComponent, ComposeMessageComponent],
@@ -17,7 +18,8 @@ import { DocFundamentalRoutingSampleRoutingModule } from './doc-fundamental-rout
     DocFundamentalRoutingSampleRoutingModule,
     ...[PanelModule, ButtonModule],
     HeroesModule,
-    CrisisCenterModule
+    CrisisCenterModule,
+    AdminModule
   ]
 })
 export class DocFundamentalRoutingSampleModule {}

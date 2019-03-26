@@ -1,0 +1,10 @@
+<p-panel header="ADMINA">
+  <nav style="margin-bottom: 20px;">
+    <a routerLink="./" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">DASHBOARD</a>
+    &nbsp;
+    <a routerLink="./heroes" routerLinkActive="active">MANAGE HEROES</a>
+    &nbsp;
+    <a routerLink="./crises" routerLinkActive="active">MANAGE CISES</a>
+  </nav>
+  <router-outlet></router-outlet>
+</p-panel>
