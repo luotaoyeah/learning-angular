@@ -4,6 +4,7 @@ import { ComposeMessageComponent } from './compose-message/compose-message.compo
 import { DocFundamentalRoutingSampleComponent } from './doc-fundamental-routing-sample.component';
 import { AdminModule } from './admin/admin.module';
 import { AuthGuard } from './auth/service/auth.guard';
+import { CrisisCenterModule } from './crisis-center/crisis-center.module';
 
 @NgModule({
   imports: [
@@ -12,6 +13,10 @@ import { AuthGuard } from './auth/service/auth.guard';
         path: 'doc/fundamental/routing/sample-application',
         component: DocFundamentalRoutingSampleComponent,
         children: [
+          {
+            path: 'crisis-center',
+            loadChildren: () => CrisisCenterModule
+          },
           {
             path: 'admin',
             loadChildren: () => AdminModule,
