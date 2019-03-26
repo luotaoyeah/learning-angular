@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './comn/page-not-found/page-not-found.component';
 
 const routes: Routes = [
@@ -41,7 +41,14 @@ const routes: Routes = [
        * 在开发环境方便调试，可以开启 enableTracing 选项，
        * 开启之后，所有的路由事件都会打印到浏览器控制台
        */
-      enableTracing: false
+      enableTracing: false,
+      /*
+       * 预加载的策略，
+       * angular 默认提供两种策略：
+       *     PreloadAllModules（所有延迟加载的模块都要预加载）
+       *     NoPreloading（所有延迟加载的模块都不要预加载）
+       */
+      preloadingStrategy: PreloadAllModules
     })
   ],
   /*
