@@ -13,6 +13,10 @@ import { of } from 'rxjs';
 export class CrisisDetailComponent implements OnInit {
   crisis: Crisis | null = null;
 
+  crisisModel: Pick<Crisis, 'name'> = {
+    name: ''
+  };
+
   constructor(private activatedRoute: ActivatedRoute, private crisisService: CrisisService) {}
 
   ngOnInit() {
@@ -36,6 +40,22 @@ export class CrisisDetailComponent implements OnInit {
       )
       .subscribe((crisis: Crisis | null) => {
         this.crisis = crisis;
+        if (this.crisis) {
+          this.crisisModel.name = this.crisis.name;
+        }
       });
+  }
+
+  save() {
+    if (this.crisis) {
+      this.crisis.name = this.crisisModel.name;
+      this.crisisService.updateCrisis(this.crisis);
+    }
+  }
+
+  cancel() {
+    if (this.crisis) {
+      this.crisisModel.name = this.crisis.name;
+    }
   }
 }

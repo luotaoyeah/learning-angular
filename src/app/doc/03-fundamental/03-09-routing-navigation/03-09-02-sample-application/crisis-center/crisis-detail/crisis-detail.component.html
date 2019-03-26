@@ -6,6 +6,11 @@
   <br />
   <div class="ui-inputgroup">
     <span class="ui-inputgroup-addon" style="width: 80px;text-align: right;">名称：</span>
-    <input type="text" pInputText placeholder="名称" [(ngModel)]="crisis.name" style="width: 400px;" />
+    <input type="text" pInputText placeholder="名称" [(ngModel)]="crisisModel.name" style="width: 400px;" />
   </div>
+  <p style="margin-top: 10px;">
+    <p-button label="SAVE" (onClick)="save()"></p-button>
+    &nbsp;
+    <p-button label="CANCEL" (onClick)="cancel()"></p-button>
+  </p>
 </p-panel>

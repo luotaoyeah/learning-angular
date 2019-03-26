@@ -33,24 +33,24 @@ export class CrisisService {
       tap(() => {
         console.log(`[查询危机]: [ id = ${id} ]`);
       }),
-      catchError(this.handleError<Crisis>(`getHero id=${id}`))
+      catchError(this.handleError<Crisis>(`getCrisis id=${id}`))
     );
   }
 
   /**
    * 更新危机
-   * @param hero 危机
+   * @param crisis 危机
    */
-  updateHero(hero: Crisis): Observable<any> {
+  updateCrisis(crisis: Crisis): Observable<any> {
     return this.http
-      .put<Crisis>(this.url, hero, {
+      .put<Crisis>(this.url, crisis, {
         headers: new HttpHeaders({ 'Content-Type': 'application/json' })
       })
       .pipe(
         tap(() => {
-          console.log(`[更新危机]: [ id = ${hero.id}]`);
+          console.log(`[更新危机]: [ id = ${crisis.id}]`);
         }),
-        catchError(this.handleError<any>(`updateHero`))
+        catchError(this.handleError<any>(`updateCrisis`))
       );
   }
 
