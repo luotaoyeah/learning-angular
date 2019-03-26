@@ -11,6 +11,7 @@ import { DocModule } from './doc/doc.module';
 import { TreeModule } from 'primeng/tree';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PageNotFoundComponent } from './comn/page-not-found/page-not-found.component';
+import { Router } from '@angular/router';
 
 /*
  * 通过 @NgModule 装饰器来声明一个 NgModule
@@ -55,4 +56,13 @@ import { PageNotFoundComponent } from './comn/page-not-found/page-not-found.comp
    */
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule {
+  constructor(private router: Router) {
+    /*
+     * 通过 Router.config 属性，查看整个应用的完整的路由配置
+     */
+
+    // @ts-ignore
+    console.log(JSON.stringify(this.router.config, (key: string, value: any) => (typeof value === 'function' ? value.name : value), 2));
+  }
+}
