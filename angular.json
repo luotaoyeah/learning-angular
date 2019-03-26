@@ -24,6 +24,9 @@
         },
         "@schematics/angular:pipe": {
           "spec": false
+        },
+        "@schematics/angular:guard": {
+          "spec": false
         }
       },
       "architect": {
