@@ -9,15 +9,17 @@ const routes: Routes = [
     path: 'doc/fundamental/routing/sample-application',
     component: DocFundamentalRoutingSampleComponent,
     children: [
+      { path: 'heroes', redirectTo: 'superheroes' },
+      { path: 'heroes/:id', redirectTo: 'superheroes/:id' },
       {
-        path: 'heroes',
+        path: 'superheroes',
         component: HeroListComponent,
         data: {
           animation: 'heroes'
         }
       },
       {
-        path: 'heroes/:id',
+        path: 'superheroes/:id',
         component: HeroDetailComponent,
         data: {
           animation: 'hero'
