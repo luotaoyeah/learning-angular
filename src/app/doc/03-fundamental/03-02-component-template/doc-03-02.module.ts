@@ -24,6 +24,7 @@ import { Doc03020204Component } from './03-02-02-template-syntax/03-02-02-04-bin
 import { Doc03020205Component } from './03-02-02-template-syntax/03-02-02-05-property-binding/doc-03-02-02-05.component';
 import { Doc0302020501Component } from './03-02-02-template-syntax/03-02-02-05-property-binding/03-02-02-05-01-one-way-in/doc-03-02-02-05-01.component';
 import { Doc0302020502Component } from './03-02-02-template-syntax/03-02-02-05-property-binding/03-02-02-05-02-binding-target/doc-03-02-02-05-02.component';
+import { Doc0302020503Component } from './03-02-02-template-syntax/03-02-02-05-property-binding/03-02-02-05-03-avoid-side-effects/doc-03-02-02-05-03.component';
 
 // tslint:enable:max-line-length
 
@@ -47,7 +48,8 @@ import { Doc0302020502Component } from './03-02-02-template-syntax/03-02-02-05-p
     Doc03020204Component,
     Doc03020205Component,
     Doc0302020501Component,
-    Doc0302020502Component
+    Doc0302020502Component,
+    Doc0302020503Component
   ],
   imports: [CommonModule, Doc0302RoutingModule, PanelModule, AccordionModule, ButtonModule, ToastModule]
 })
