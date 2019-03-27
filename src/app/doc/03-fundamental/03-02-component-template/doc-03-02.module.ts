@@ -14,6 +14,7 @@ import { Doc030202Component } from './03-02-02-template-syntax/doc-03-02-02.comp
 import { Doc03020201Component } from './03-02-02-template-syntax/03-02-02-01-html-in-template/doc-03-02-02-01.component';
 import { Doc03020202Component } from './03-02-02-template-syntax/03-02-02-02-interpolation-and-template-expression/doc-03-02-02-02.component';
 import { Doc0302020201Component } from './03-02-02-template-syntax/03-02-02-02-interpolation-and-template-expression/03-02-02-02-01-interpolation/doc-03-02-02-02-01.component';
+import { Doc0302020202Component } from './03-02-02-template-syntax/03-02-02-02-interpolation-and-template-expression/03-02-02-02-02-template-expression/doc-03-02-02-02-02.component';
 
 // tslint:enable:max-line-length
 
@@ -28,7 +29,8 @@ import { Doc0302020201Component } from './03-02-02-template-syntax/03-02-02-02-i
     Doc030202Component,
     Doc03020201Component,
     Doc03020202Component,
-    Doc0302020201Component
+    Doc0302020201Component,
+    Doc0302020202Component
   ],
   imports: [CommonModule, Doc0302RoutingModule, PanelModule, AccordionModule]
 })
