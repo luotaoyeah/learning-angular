@@ -1,0 +1,26 @@
+<p-accordionTab header="Property Binding" [transitionOptions]="'0ms'">
+  <p>property binding 可以绑定到某个 element 的 property</p>
+  <img
+    [src]="picUrl"
+    [ngStyle]="{
+      width: '30px',
+      height: '30px',
+      borderRadius: '3px'
+    }"
+  />
+
+  <hr />
+  <p>property binding 可以绑定到某个 directive 的 property</p>
+  <img
+    [src]="picUrl"
+    [ngStyle]="{
+      width: '30px',
+      height: '30px'
+    }"
+    [ngClass]="'img-round'"
+  />
+
+  <hr />
+  <p>property binding 可以绑定到某个 component 的 property</p>
+  <p-button [label]="picUrl"></p-button>
+</p-accordionTab>
