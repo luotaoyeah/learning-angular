@@ -50,10 +50,10 @@ import { DocFundamentalComponentTemplateModule } from './03-02-component-templat
   ],
   imports: [
     CommonModule,
-    DocFundamentalRoutingModule,
     FormsModule,
-    DocFundamentalRoutingSampleModule,
     ...[ButtonModule, InputTextModule, AccordionModule],
+    DocFundamentalRoutingModule,
+    DocFundamentalRoutingSampleModule,
     DocFundamentalComponentTemplateModule
   ]
 })

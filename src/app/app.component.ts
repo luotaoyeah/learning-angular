@@ -60,6 +60,22 @@ export class AppComponent {
               ]
             },
             {
+              label: 'Comoponents & Templates',
+              expandedIcon: 'fa fa-folder-open',
+              collapsedIcon: 'fa fa-folder',
+              selectable: false,
+              children: [
+                {
+                  label: 'Displaying Data',
+                  data: {
+                    path: '/doc/fundamental/component-template/displaying-data'
+                  },
+                  expandedIcon: 'fa fa-folder-open',
+                  collapsedIcon: 'fa fa-folder'
+                }
+              ]
+            },
+            {
               label: 'Routing & Navigation',
               data: {
                 path: '/doc/fundamental/routing-navigation'
