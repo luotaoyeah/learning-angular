@@ -1,0 +1,21 @@
+<p-accordionTab header="Template Statement" [transitionOptions]="'0ms'">
+  <p-toast [showTransitionOptions]="'0ms'" [hideTransitionOptions]="'0ms'"></p-toast>
+
+  <p>
+    event binding 后面绑定的事件处理函数，是一个 template statement， 跟 template expression 不一样，template statement 会有 side effects
+  </p>
+
+  <hr />
+  <p>template statement 可以是一个方法调用</p>
+  <p-button label="CLICK ME" (onClick)="handleClick01()"></p-button>
+
+  <hr />
+  <p>template statement 可以是一条或者多条 js statements</p>
+  <p-button label="CLICK ME" (onClick)="messageService.add({ severity: 'success', summary: '提示', detail: 'CLICK ME' })"></p-button>
+
+  <hr />
+  <p>template statement 中不能包含自增（++），自减（--），加等（+=），减等（-=）运算符号</p>
+  <p-button [label]="i" (onClick)="i = i + 1"></p-button>
+
+  <p-accordion> </p-accordion>
+</p-accordionTab>

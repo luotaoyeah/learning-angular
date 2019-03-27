@@ -10,3 +10,7 @@ body .ui-accordion .ui-accordion-header a {
 body .ui-accordion .ui-accordion-content {
   border-radius: 3px;
 }
+
+body .ui-toast .ui-toast-message {
+  border-radius: 3px;
+}

@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { Doc0302RoutingModule } from './doc-03-02-routing.module';
 import { Doc030201Component } from './03-02-01-displaying-data/doc-03-02-01.component';
 import { PanelModule } from 'primeng/panel';
-import { AccordionModule } from 'primeng/primeng';
+import { AccordionModule, ButtonModule } from 'primeng/primeng';
 import { Doc03020101Component } from './03-02-01-displaying-data/03-02-01-01/doc-03-02-01-01.component';
 import { Doc03020102Component } from './03-02-01-displaying-data/03-02-01-02/doc-03-02-01-02.component';
 import { Doc03020103Component } from './03-02-01-displaying-data/03-02-01-03/doc-03-02-01-03.component';
@@ -17,6 +17,8 @@ import { Doc0302020201Component } from './03-02-02-template-syntax/03-02-02-02-i
 import { Doc0302020202Component } from './03-02-02-template-syntax/03-02-02-02-interpolation-and-template-expression/03-02-02-02-02-template-expression/doc-03-02-02-02-02.component';
 import { Doc0302020203Component } from './03-02-02-template-syntax/03-02-02-02-interpolation-and-template-expression/03-02-02-02-03-expression-context/doc-03-02-02-02-03.component';
 import { Doc0302020204Component } from './03-02-02-template-syntax/03-02-02-02-interpolation-and-template-expression/03-02-02-02-04-expression-guideline/doc-03-02-02-02-04.component';
+import { Doc03020203Component } from './03-02-02-template-syntax/03-02-02-03-template-statement/doc-03-02-02-03.component';
+import { ToastModule } from 'primeng/toast';
 
 // tslint:enable:max-line-length
 
@@ -34,8 +36,9 @@ import { Doc0302020204Component } from './03-02-02-template-syntax/03-02-02-02-i
     Doc0302020201Component,
     Doc0302020202Component,
     Doc0302020203Component,
-    Doc0302020204Component
+    Doc0302020204Component,
+    Doc03020203Component
   ],
-  imports: [CommonModule, Doc0302RoutingModule, PanelModule, AccordionModule]
+  imports: [CommonModule, Doc0302RoutingModule, PanelModule, AccordionModule, ButtonModule, ToastModule]
 })
 export class Doc0302Module {}
