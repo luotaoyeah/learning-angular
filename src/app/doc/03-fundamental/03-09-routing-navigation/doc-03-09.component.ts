@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-routing-navigation',
-  templateUrl: './doc-fundamental-routing-navigation.component.html',
-  styleUrls: ['./doc-fundamental-routing-navigation.component.scss']
+  selector: 'app-docc-03-09',
+  templateUrl: './doc-03-09.component.html',
+  styleUrls: ['./doc-03-09.component.scss']
 })
-export class DocFundamentalRoutingNavigationComponent implements OnInit {
+export class Doc0309Component implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {

@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-routing-navigation-not-found',
+  selector: 'app-doc-03-09-01-not-found',
   template: '<p>404</p>'
 })
-export class DocFundamentalRoutingNavigationNotFoundComponent implements OnInit {
+export class Doc030901NotFoundComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}

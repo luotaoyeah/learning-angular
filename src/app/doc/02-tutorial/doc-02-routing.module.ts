@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroesComponent } from './heroes/heroes.component';
-import { DocTutorialComponent } from './doc-tutorial.component';
+import { Doc02Component } from './doc-02.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 
 const routes: Routes = [
   {
     path: 'doc/tutorial',
-    component: DocTutorialComponent,
+    component: Doc02Component,
     children: [
       {
         path: 'dashboard',
@@ -30,4 +30,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class DocTutorialRoutingModule {}
+export class Doc02RoutingModule {}

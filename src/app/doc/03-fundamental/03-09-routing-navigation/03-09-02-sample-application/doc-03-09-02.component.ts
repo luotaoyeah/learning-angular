@@ -3,12 +3,12 @@ import { routeAnimation } from './animations';
 import { Router, RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'app-doc-fundamental-routing-sample',
-  templateUrl: './doc-fundamental-routing-sample.component.html',
-  styleUrls: ['./doc-fundamental-routing-sample.component.scss'],
+  selector: 'app-doc-03-09-02',
+  templateUrl: './doc-03-09-02.component.html',
+  styleUrls: ['./doc-03-09-02.component.scss'],
   animations: [routeAnimation]
 })
-export class DocFundamentalRoutingSampleComponent implements OnInit {
+export class Doc030902Component implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit() {}

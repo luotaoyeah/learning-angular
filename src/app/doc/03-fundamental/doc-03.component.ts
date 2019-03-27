@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-doc-fundamental',
   template: '<router-outlet></router-outlet>'
 })
-export class DocFundamentalComponent implements OnInit {
+export class Doc03Component implements OnInit {
   constructor() {}
 
   ngOnInit() {}

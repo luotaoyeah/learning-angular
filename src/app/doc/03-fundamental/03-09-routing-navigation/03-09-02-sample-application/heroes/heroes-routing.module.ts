@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HeroListComponent } from './hero-list/hero-list.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
-import { DocFundamentalRoutingSampleComponent } from '../doc-fundamental-routing-sample.component';
+import { Doc030902Component } from '../doc-03-09-02.component';
 
 const routes: Routes = [
   {
     path: 'doc/fundamental/routing/sample-application',
-    component: DocFundamentalRoutingSampleComponent,
+    component: Doc030902Component,
     children: [
       { path: 'heroes', redirectTo: 'superheroes' },
       { path: 'heroes/:id', redirectTo: 'superheroes/:id' },

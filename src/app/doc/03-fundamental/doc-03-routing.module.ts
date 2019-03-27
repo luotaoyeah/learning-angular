@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DocFundamentalComponent } from './doc-fundamental.component';
-import { DocFundamentalRoutingNavigationComponent } from './03-09-routing-navigation/doc-fundamental-routing-navigation.component';
+import { Doc03Component } from './doc-03.component';
+import { Doc0309Component } from './03-09-routing-navigation/doc-03-09.component';
 import { DocFundamentalArchitectureComponent } from './03-01-architecture/doc-fundamental-architecture.component';
 // tslint:disable-next-line:max-line-length
 import { DocFundamentalArchitectureIntroToComponentComponent } from './03-01-architecture/03-01-03-intro-to-component/doc-fundamental-architecture-intro-to-component.component';
@@ -10,7 +10,7 @@ import { DocFundamentalArchitectureDiComponent } from './03-01-architecture/03-0
 const routes: Routes = [
   {
     path: 'doc/fundamental',
-    component: DocFundamentalComponent,
+    component: Doc03Component,
     children: [
       {
         path: 'architecture',
@@ -28,7 +28,7 @@ const routes: Routes = [
       },
       {
         path: 'routing-navigation/:foo',
-        component: DocFundamentalRoutingNavigationComponent,
+        component: Doc0309Component,
         /*
          * 可以通过 data 选项，传递业务数据
          */
@@ -44,4 +44,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class DocFundamentalRoutingModule {}
+export class Doc03RoutingModule {}

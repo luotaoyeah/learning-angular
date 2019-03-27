@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ComposeMessageComponent } from './compose-message/compose-message.component';
-import { DocFundamentalRoutingSampleComponent } from './doc-fundamental-routing-sample.component';
+import { Doc030902Component } from './doc-03-09-02.component';
 import { AdminModule } from './admin/admin.module';
 import { AuthGuard } from './auth/service/auth.guard';
 import { CrisisCenterModule } from './crisis-center/crisis-center.module';
@@ -11,7 +11,7 @@ import { CrisisCenterModule } from './crisis-center/crisis-center.module';
     RouterModule.forChild([
       {
         path: 'doc/fundamental/routing/sample-application',
-        component: DocFundamentalRoutingSampleComponent,
+        component: Doc030902Component,
         children: [
           {
             path: 'crisis-center',
@@ -44,4 +44,4 @@ import { CrisisCenterModule } from './crisis-center/crisis-center.module';
   ],
   exports: [RouterModule]
 })
-export class DocFundamentalRoutingSampleRoutingModule {}
+export class Doc030902RoutingModule {}
