@@ -72,6 +72,14 @@ export class AppComponent {
                   },
                   expandedIcon: 'fa fa-folder-open',
                   collapsedIcon: 'fa fa-folder'
+                },
+                {
+                  label: 'Template Syntax',
+                  data: {
+                    path: '/doc/fundamental/component-template/template-syntax'
+                  },
+                  expandedIcon: 'fa fa-folder-open',
+                  collapsedIcon: 'fa fa-folder'
                 }
               ]
             },
