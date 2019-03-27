@@ -1,28 +1,36 @@
 <p-accordionTab header="Expression Context" [transitionOptions]="'0ms'">
-  <p>template 中的 expression context（表达式上下文）有三种，按照优先级：</p>
+  <p>template 中的 expression context（表达式上下文）有两种，按照优先级：</p>
   <ul>
-    <li>template variable</li>
-    <li>directive context</li>
+    <li>
+      template context
+      <ul>
+        <li>template input variable</li>
+        <li>template reference variable</li>
+      </ul>
+    </li>
     <li>component context</li>
   </ul>
 
   <!--
-    如下的 hero 是属于 component context，即 hero 是当前 component 的一个属性，
-    但是如果后面其他地方定义了同名的 template variable，则此处的 hero 会被覆盖，
-    从而指向那个新的 template variable
+    如下的 hero 默认是属于 component context，即 hero 是当前 component 的一个属性，
+    但是如果后面其他地方定义了同名的 template reference variable，则此处的 hero 会被覆盖，
+    从而指向那个新的 template reference variable
   -->
   <p>{{ hero }}</p>
 
   <ul>
     <li *ngFor="let hero of heroes">
+      <!--
+        此处的 hero 属于 template input variable，
+        优先级高于 template reference variable，
+        同时也高于 component context
+      -->
       {{ hero }}
     </li>
   </ul>
 
   <!--
-    如下，当定义了 hero 为一个 template variable 之后，
-    当前 template 中，除了 directive context 下面的 hero，
-    其他地方的 hero 都指向这个 template variable
+    如下，定义了一个名为 hero 的 template reference variable
   -->
   <p>
     <input type="text" #hero value="TEMPLATE VARIABLE" />
