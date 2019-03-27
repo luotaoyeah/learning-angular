@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DocFundamentalComponent } from './doc-fundamental.component';
-import { RoutingNavigationComponent } from './03-09-routing-navigation/routing-navigation.component';
+import { DocFundamentalRoutingNavigationComponent } from './03-09-routing-navigation/doc-fundamental-routing-navigation.component';
 import { DocFundamentalArchitectureComponent } from './03-01-architecture/doc-fundamental-architecture.component';
 // tslint:disable-next-line:max-line-length
 import { DocFundamentalArchitectureIntroToComponentComponent } from './03-01-architecture/03-01-03-intro-to-component/doc-fundamental-architecture-intro-to-component.component';
@@ -28,7 +28,7 @@ const routes: Routes = [
       },
       {
         path: 'routing-navigation/:foo',
-        component: RoutingNavigationComponent,
+        component: DocFundamentalRoutingNavigationComponent,
         /*
          * 可以通过 data 选项，传递业务数据
          */

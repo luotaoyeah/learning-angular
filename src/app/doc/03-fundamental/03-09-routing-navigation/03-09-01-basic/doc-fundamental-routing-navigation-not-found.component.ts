@@ -2,10 +2,9 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-routing-navigation-not-found',
-  template: '<p>404</p>',
-  styleUrls: []
+  template: '<p>404</p>'
 })
-export class RoutingNavigationNotFoundComponent implements OnInit {
+export class DocFundamentalRoutingNavigationNotFoundComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}

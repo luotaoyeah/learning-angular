@@ -3,8 +3,7 @@ import { ActivatedRoute, Data, ParamMap, UrlSegment } from '@angular/router';
 
 @Component({
   selector: 'app-routing-navigation-basic-activated-route',
-  templateUrl: './routing-navigation-basic-activated-route.component.html',
-  styleUrls: []
+  templateUrl: './routing-navigation-basic-activated-route.component.html'
 })
 export class RoutingNavigationBasicActivatedRouteComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute) {}

@@ -11,20 +11,23 @@ import { DiAComponent } from './03-01-architecture/03-01-04-di/di-a.component';
 import { ButtonModule } from 'primeng/button';
 import { AccordionModule, InputTextModule } from 'primeng/primeng';
 import { DocFundamentalComponent } from './doc-fundamental.component';
-import { RoutingNavigationComponent } from './03-09-routing-navigation/routing-navigation.component';
-import { RoutingNavigationBasicComponent } from './03-09-routing-navigation/03-09-01-basic/routing-navigation-basic.component';
+import { DocFundamentalRoutingNavigationComponent } from './03-09-routing-navigation/doc-fundamental-routing-navigation.component';
+// tslint:disable-next-line:max-line-length
+import { DocFundamentalRoutingNavigationBasicComponent } from './03-09-routing-navigation/03-09-01-basic/doc-fundamental-routing-navigation-basic.component';
 import { DocFundamentalRoutingModule } from './doc-fundamental-routing.module';
 import { DocFundamentalArchitectureComponent } from './03-01-architecture/doc-fundamental-architecture.component';
 // tslint:disable-next-line:max-line-length
 import { DocFundamentalArchitectureIntroToComponentComponent } from './03-01-architecture/03-01-03-intro-to-component/doc-fundamental-architecture-intro-to-component.component';
 import { DocFundamentalArchitectureDiComponent } from './03-01-architecture/03-01-04-di/doc-fundamental-architecture-di.component';
-import { RoutingNavigationNotFoundComponent } from './03-09-routing-navigation/03-09-01-basic/routing-navigation-not-found.component';
+// tslint:disable-next-line:max-line-length
+import { DocFundamentalRoutingNavigationNotFoundComponent } from './03-09-routing-navigation/03-09-01-basic/doc-fundamental-routing-navigation-not-found.component';
 // tslint:disable-next-line:max-line-length
 import { RoutingNavigationBasicActivatedRouteComponent } from './03-09-routing-navigation/03-09-01-basic/activated-route/routing-navigation-basic-activated-route.component';
 // tslint:disable-next-line:max-line-length
 import { RoutingNavigationBasicRouterEventsComponent } from './03-09-routing-navigation/03-09-01-basic/router-events/routing-navigation-basic-router-events.component';
 // tslint:disable-next-line:max-line-length
 import { DocFundamentalRoutingSampleModule } from './03-09-routing-navigation/03-09-02-sample-application/doc-fundamental-routing-sample.module';
+import { DocFundamentalComponentTemplateModule } from './03-02-component-template/doc-fundamental-component-template.module';
 
 @NgModule({
   declarations: [
@@ -39,9 +42,9 @@ import { DocFundamentalRoutingSampleModule } from './03-09-routing-navigation/03
     DocFundamentalArchitectureComponent,
     DocFundamentalArchitectureIntroToComponentComponent,
     DocFundamentalArchitectureDiComponent,
-    RoutingNavigationComponent,
-    RoutingNavigationNotFoundComponent,
-    RoutingNavigationBasicComponent,
+    DocFundamentalRoutingNavigationComponent,
+    DocFundamentalRoutingNavigationNotFoundComponent,
+    DocFundamentalRoutingNavigationBasicComponent,
     RoutingNavigationBasicActivatedRouteComponent,
     RoutingNavigationBasicRouterEventsComponent
   ],
@@ -50,7 +53,8 @@ import { DocFundamentalRoutingSampleModule } from './03-09-routing-navigation/03
     DocFundamentalRoutingModule,
     FormsModule,
     DocFundamentalRoutingSampleModule,
-    ...[ButtonModule, InputTextModule, AccordionModule]
+    ...[ButtonModule, InputTextModule, AccordionModule],
+    DocFundamentalComponentTemplateModule
   ]
 })
 export class DocFundamentalModule {}

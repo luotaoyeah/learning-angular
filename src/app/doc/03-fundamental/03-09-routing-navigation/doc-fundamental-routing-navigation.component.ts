@@ -3,10 +3,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-routing-navigation',
-  templateUrl: './routing-navigation.component.html',
-  styleUrls: ['./routing-navigation.component.scss']
+  templateUrl: './doc-fundamental-routing-navigation.component.html',
+  styleUrls: ['./doc-fundamental-routing-navigation.component.scss']
 })
-export class RoutingNavigationComponent implements OnInit {
+export class DocFundamentalRoutingNavigationComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
