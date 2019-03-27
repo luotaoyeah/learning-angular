@@ -13,6 +13,8 @@ import { DocFundamentalComponentTemplateDisplayingData02Component } from './03-0
 import { DocFundamentalComponentTemplateDisplayingData03Component } from './03-02-01-displaying-data/doc-fundamental-component-template-displaying-data-03/doc-fundamental-component-template-displaying-data-03.component';
 // tslint:disable-next-line:max-line-length
 import { DocFundamentalComponentTemplateDisplayingData04Component } from './03-02-01-displaying-data/doc-fundamental-component-template-displaying-data-04/doc-fundamental-component-template-displaying-data-04.component';
+// tslint:disable-next-line:max-line-length
+import { DocFundamentalComponentTemplateDisplayingData05Component } from './03-02-01-displaying-data/doc-fundamental-component-template-displaying-data-05/doc-fundamental-component-template-displaying-data-05.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { DocFundamentalComponentTemplateDisplayingData04Component } from './03-0
     DocFundamentalComponentTemplateDisplayingData01Component,
     DocFundamentalComponentTemplateDisplayingData02Component,
     DocFundamentalComponentTemplateDisplayingData03Component,
-    DocFundamentalComponentTemplateDisplayingData04Component
+    DocFundamentalComponentTemplateDisplayingData04Component,
+    DocFundamentalComponentTemplateDisplayingData05Component
   ],
   imports: [CommonModule, DocFundamentalComponentTemplateRoutingModule, PanelModule, AccordionModule]
 })
