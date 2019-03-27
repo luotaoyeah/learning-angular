@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-doc-fundamental-component-template-displaying-data02',
+  selector: 'app-doc-03-02-01-02',
   template: `
     <p-accordionTab header="Template Inline or Template File ?" [transitionOptions]="'0ms'">
       <p>
@@ -16,7 +16,7 @@ import { Component, OnInit } from '@angular/core';
     </p-accordionTab>
   `
 })
-export class DocFundamentalComponentTemplateDisplayingData02Component implements OnInit {
+export class Doc03020102Component implements OnInit {
   constructor() {}
 
   ngOnInit() {}

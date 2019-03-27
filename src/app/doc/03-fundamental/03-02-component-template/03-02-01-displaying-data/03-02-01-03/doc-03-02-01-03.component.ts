@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-doc-fundamental-component-template-displaying-data03',
+  selector: 'app-doc-03-02-01-03',
   template: `
     <p-accordionTab header="Constructor or Variable Initialization ?" [transitionOptions]="'0ms'">
       <p>组件中的属性可以在定义属性时就进行初始化：{{ foo }}</p>
@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
     </p-accordionTab>
   `
 })
-export class DocFundamentalComponentTemplateDisplayingData03Component implements OnInit {
+export class Doc03020103Component implements OnInit {
   foo = 'FOO';
   bar: string;
 
