@@ -11,9 +11,9 @@ import { DocFundamentalComponentTemplateDisplayingData03Component } from './03-0
 import { DocFundamentalComponentTemplateDisplayingData04Component } from './03-02-01-displaying-data/03-02-01-04/doc-fundamental-component-template-displaying-data-04.component';
 import { DocFundamentalComponentTemplateDisplayingData05Component } from './03-02-01-displaying-data/03-02-01-05/doc-fundamental-component-template-displaying-data-05.component';
 import { Doc030202Component } from './03-02-02-template-syntax/doc-03-02-02.component';
-import { Doc03020201Component } from './03-02-02-template-syntax/03-02-02-01/doc-03-02-02-01.component';
-import { Doc03020202Component } from './03-02-02-template-syntax/03-02-02-02/doc-03-02-02-02.component';
-import { Doc0302020201Component } from './03-02-02-template-syntax/03-02-02-02/03-02-02-02-01/doc-03-02-02-02-01.component';
+import { Doc03020201Component } from './03-02-02-template-syntax/03-02-02-01-html-in-template/doc-03-02-02-01.component';
+import { Doc03020202Component } from './03-02-02-template-syntax/03-02-02-02-interpolation-and-template-expression/doc-03-02-02-02.component';
+import { Doc0302020201Component } from './03-02-02-template-syntax/03-02-02-02-interpolation-and-template-expression/03-02-02-02-01-interpolation/doc-03-02-02-02-01.component';
 
 // tslint:enable:max-line-length
 
