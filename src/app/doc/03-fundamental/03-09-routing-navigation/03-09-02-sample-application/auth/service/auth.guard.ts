@@ -24,7 +24,7 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
    * @param state 当前路由状态
    */
   canActivate(
-    // @ts-ignore
+    // @ts-ignore: TS6133
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
@@ -38,7 +38,7 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
    */
   canActivateChild(
     childRoute: ActivatedRouteSnapshot,
-    // @ts-ignore
+    // @ts-ignore: TS6133
     state: RouterStateSnapshot
   ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     const result = !!childRoute.routeConfig && childRoute.routeConfig.path !== 'heroes';

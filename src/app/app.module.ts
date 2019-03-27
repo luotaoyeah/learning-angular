@@ -57,12 +57,14 @@ import { Router } from '@angular/router';
   bootstrap: [AppComponent]
 })
 export class AppModule {
+  // @ts-ignore: TS6138
   constructor(private router: Router) {
     /*
      * 通过 Router.config 属性，查看整个应用的完整的路由配置
      */
-
-    // @ts-ignore
-    console.log(JSON.stringify(this.router.config, (key: string, value: any) => (typeof value === 'function' ? value.name : value), 2));
+    /*
+        // @ts-ignore: TS6133
+        console.log(JSON.stringify(this.router.config, (key: string, value: any) => (typeof value === 'function' ? value.name : value), 2));
+    */
   }
 }
