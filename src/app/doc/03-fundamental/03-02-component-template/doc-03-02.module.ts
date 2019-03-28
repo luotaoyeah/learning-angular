@@ -39,27 +39,36 @@ import { Doc0302020702Component } from './03-02-02-template-syntax/03-02-02-07-e
 import { Doc030202070201Component } from './03-02-02-template-syntax/03-02-02-07-event-binding/03-02-02-07-02-$event-and-event-handling-statements/doc-03-02-02-07-02-01.component';
 import { Doc030202070301Component } from './03-02-02-template-syntax/03-02-02-07-event-binding/03-02-02-07-03-custom-events-with-eventemitter/doc-03-02-02-07-03-01.component';
 import { Doc0302020703Component } from './03-02-02-template-syntax/03-02-02-07-event-binding/03-02-02-07-03-custom-events-with-eventemitter/doc-03-02-02-07-03.component';
+import { Doc03020208Component } from './03-02-02-template-syntax/03-02-02-08-two-way-binding/doc-03-02-02-08.component';
+import { Doc0302020801Component } from './03-02-02-template-syntax/03-02-02-08-two-way-binding/doc-03-02-02-08-01.component';
+import { FormsModule } from '@angular/forms';
 
 // tslint:enable:max-line-length
 
 @NgModule({
   declarations: [
+    /* 03-02-01 */
     Doc030201Component,
     Doc03020101Component,
     Doc03020102Component,
     Doc03020103Component,
     Doc03020104Component,
     Doc03020105Component,
+    /* 03-02-02 */
     Doc030202Component,
     Doc03020201Component,
+    /* 03-02-02-02 */
     Doc03020202Component,
     Doc0302020201Component,
     Doc0302020202Component,
     Doc0302020203Component,
     Doc0302020204Component,
+    /* 03-02-02-03 */
     Doc03020203Component,
     Doc0302020301Component,
+    /* 03-02-02-04 */
     Doc03020204Component,
+    /* 03-02-02-05 */
     Doc03020205Component,
     Doc0302020501Component,
     Doc0302020502Component,
@@ -67,18 +76,23 @@ import { Doc0302020703Component } from './03-02-02-template-syntax/03-02-02-07-e
     Doc0302020504Component,
     Doc030202050401Component,
     Doc0302020505Component,
+    /* 03-02-02-06 */
     Doc03020206Component,
     Doc0302020601Component,
     Doc0302020602Component,
     Doc0302020603Component,
+    /* 03-02-02-07 */
     Doc03020207Component,
     Doc0302020701Component,
     Doc030202070101Component,
     Doc0302020702Component,
     Doc030202070201Component,
     Doc0302020703Component,
-    Doc030202070301Component
+    Doc030202070301Component,
+    /* 03-02-02-08 */
+    Doc03020208Component,
+    Doc0302020801Component
   ],
-  imports: [CommonModule, Doc0302RoutingModule, PanelModule, AccordionModule, ButtonModule, ToastModule]
+  imports: [CommonModule, Doc0302RoutingModule, PanelModule, AccordionModule, ButtonModule, ToastModule, FormsModule]
 })
 export class Doc0302Module {}
