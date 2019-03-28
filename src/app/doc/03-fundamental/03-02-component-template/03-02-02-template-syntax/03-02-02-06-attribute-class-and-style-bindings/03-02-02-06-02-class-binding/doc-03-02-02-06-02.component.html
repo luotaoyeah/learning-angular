@@ -1,0 +1,14 @@
+<p-accordionTab header="Class Binding" [transitionOptions]="'0ms'">
+  <ul>
+    <li><p class="foo bar baz">可以简单的使用 property binding 绑定 class 属性</p></li>
+    <li>
+      <p class="foo" [class]="'bar'">
+        如果 class="" 和 [class]="" 同时存在，<span [class]="'foo'" class="bar">class="" 会被 [class]="" 覆盖掉，无论谁先谁后</span>
+      </p>
+    </li>
+    <li>
+      <p>也可以只绑定某一个 CSS 类，语法形式如下：[class.foo]="isFoo"，当 expression 的值为 truthy 时，会添加这个类，否则会移除这个类</p>
+      <p-button class="bar" [class.foo]="isFoo" [label]="isFoo + ''" (onClick)="isFoo = !isFoo"></p-button>
+    </li>
+  </ul>
+</p-accordionTab>
