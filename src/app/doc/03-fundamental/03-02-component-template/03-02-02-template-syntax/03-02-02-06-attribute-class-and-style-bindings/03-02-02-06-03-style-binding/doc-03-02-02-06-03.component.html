@@ -1,0 +1,12 @@
+<p-accordionTab header="Style Binding" [transitionOptions]="'0ms'">
+  <p>使用语法形式：[style.color]="'#ff0000'" 来绑定单个 style property</p>
+  <span [style.color]="'#ff0000'">#ff0000</span>
+
+  <hr />
+  <p>某些 style property 有单位，此时可以使用：[style.font-size.px]="12" 的语法形式</p>
+  <span [style.font-size.px]="18">18</span>
+
+  <hr />
+  <p>style property name 可以使用 kebab-case，也可以使用 camelCase</p>
+  <span [style.fontSize.px]="18">18</span>&nbsp;<span [style.font-size.px]="18">18</span>
+</p-accordionTab>
