@@ -1,0 +1,17 @@
+<p-accordionTab header="$event and Event Handling Statements" [transitionOptions]="'0ms'">
+  <p-toast [showTransitionOptions]="'0ms'" [hideTransitionOptions]="'0ms'"></p-toast>
+
+  <p>
+    在 event binding 的事件处理函数中可以使用一个特殊的参数 $event，$event 的具体值是由触发事件的 element 或者 directive 或者 component
+    来决定的，比如对于普通的 HTML 标签，$event 一般表示对应的 DOM 事件对象
+  </p>
+  <input type="text" [value]="foo" (input)="foo = $event.target.value" [style.borderRadius.px]="3" />
+  &nbsp;
+  <span>
+    {{ foo | uppercase }}
+  </span>
+
+  <hr />
+  <p>对于 component 的自定义事件，$event 的具体值，是由组件内部的逻辑决定的</p>
+  <app-doc-03-02-02-07-02-01 (someChange)="handleClick01($event)"></app-doc-03-02-02-07-02-01>
+</p-accordionTab>
