@@ -1,0 +1,8 @@
+<p-accordionTab header="Template Input Variable" [transitionOptions]="'0ms'">
+  <p>如下，*ngFor 里面的迭代变量 value 称之为一个 template input variable</p>
+  <ng-container *ngFor="let value of values"><p-button [label]="value"></p-button>&nbsp;</ng-container>
+
+  <hr />
+  <p>可以使用下面的方式，获取到每次迭代的索引</p>
+  <ng-container *ngFor="let value of values; let i = index"><p-button [label]="i + '. ' + value"></p-button>&nbsp;</ng-container>
+</p-accordionTab>
