@@ -13,6 +13,6 @@ export class Doc0302020503Component implements OnInit {
    * 该方法用于 property binding，因此不应该包含 side effects
    */
   getPicUrl(): string {
-    return 'assets/images/doc-03-02-02-05.jpg';
+    return 'assets/images/20190328090519.jpg';
   }
 }
