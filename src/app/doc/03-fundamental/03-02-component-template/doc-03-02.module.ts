@@ -44,6 +44,7 @@ import { Doc0302020801Component } from './03-02-02-template-syntax/03-02-02-08-t
 import { FormsModule } from '@angular/forms';
 import { Doc03020209Component } from './03-02-02-template-syntax/03-02-02-09-built-in-attribute-directives/doc-03-02-02-09.component';
 import { Doc0302020901Component } from './03-02-02-template-syntax/03-02-02-09-built-in-attribute-directives/03-02-02-09-01-ngclass/doc-03-02-02-09-01.component';
+import { Doc0302020902Component } from './03-02-02-template-syntax/03-02-02-09-built-in-attribute-directives/03-02-02-09-02-ngstyle/doc-03-02-02-09-02.component';
 
 // tslint:enable:max-line-length
 
@@ -96,7 +97,8 @@ import { Doc0302020901Component } from './03-02-02-template-syntax/03-02-02-09-b
     Doc0302020801Component,
     /* 03-02-02-09 */
     Doc03020209Component,
-    Doc0302020901Component
+    Doc0302020901Component,
+    Doc0302020902Component
   ],
   imports: [CommonModule, Doc0302RoutingModule, PanelModule, AccordionModule, ButtonModule, ToastModule, FormsModule]
 })
