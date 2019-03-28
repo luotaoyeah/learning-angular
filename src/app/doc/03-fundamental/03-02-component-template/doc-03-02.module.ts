@@ -46,6 +46,9 @@ import { Doc03020209Component } from './03-02-02-template-syntax/03-02-02-09-bui
 import { Doc0302020901Component } from './03-02-02-template-syntax/03-02-02-09-built-in-attribute-directives/03-02-02-09-01-ngclass/doc-03-02-02-09-01.component';
 import { Doc0302020902Component } from './03-02-02-template-syntax/03-02-02-09-built-in-attribute-directives/03-02-02-09-02-ngstyle/doc-03-02-02-09-02.component';
 import { Doc0302020903Component } from './03-02-02-template-syntax/03-02-02-09-built-in-attribute-directives/03-02-02-09-03-ngmodel/doc-03-02-02-09-03.component';
+import { Doc03020210Component } from './03-02-02-template-syntax/03-02-02-10-built-in-structural-directives/doc-03-02-02-10.component';
+import { Doc0302021001Component } from './03-02-02-template-syntax/03-02-02-10-built-in-structural-directives/03-02-02-10-01-ngif/doc-03-02-02-10-01.component';
+import { Doc030202100101Component } from './03-02-02-template-syntax/03-02-02-10-built-in-structural-directives/03-02-02-10-01-ngif/doc-03-02-02-10-01-01.component';
 
 // tslint:enable:max-line-length
 
@@ -100,7 +103,11 @@ import { Doc0302020903Component } from './03-02-02-template-syntax/03-02-02-09-b
     Doc03020209Component,
     Doc0302020901Component,
     Doc0302020902Component,
-    Doc0302020903Component
+    Doc0302020903Component,
+    /* 03-02-02-10 */
+    Doc03020210Component,
+    Doc0302021001Component,
+    Doc030202100101Component
   ],
   imports: [CommonModule, Doc0302RoutingModule, PanelModule, AccordionModule, ButtonModule, ToastModule, FormsModule]
 })
