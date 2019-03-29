@@ -57,6 +57,9 @@ import { Doc03020211Component } from './03-02-02-template-syntax/03-02-02-11-tem
 import { Doc0302021101Component } from './03-02-02-template-syntax/03-02-02-11-template-reference-variable/doc-03-02-02-11-01.component';
 import { Doc03020212Component } from './03-02-02-template-syntax/03-02-02-12-input-and-output-properties/doc-03-02-02-12.component';
 import { Doc0302021201Component } from './03-02-02-template-syntax/03-02-02-12-input-and-output-properties/03-02-02-12-01-binding-to-a-different-component/doc-03-02-02-12-01.component';
+import { Doc0302021202Component } from './03-02-02-template-syntax/03-02-02-12-input-and-output-properties/03-02-02-12-02-declaring-input-and-output-properties/doc-03-02-02-12-02.component';
+import { Doc030202120201Component } from './03-02-02-template-syntax/03-02-02-12-input-and-output-properties/03-02-02-12-02-declaring-input-and-output-properties/doc-03-02-02-12-02-01.component';
+import { Doc030202120202Component } from './03-02-02-template-syntax/03-02-02-12-input-and-output-properties/03-02-02-12-02-declaring-input-and-output-properties/doc-03-02-02-12-02-02.component';
 
 // tslint:enable:max-line-length
 
@@ -125,7 +128,10 @@ import { Doc0302021201Component } from './03-02-02-template-syntax/03-02-02-12-i
     Doc0302021101Component,
     /* 03-02-02-12 */
     Doc03020212Component,
-    Doc0302021201Component
+    Doc0302021201Component,
+    Doc0302021202Component,
+    Doc030202120201Component,
+    Doc030202120202Component
   ],
   imports: [CommonModule, Doc0302RoutingModule, PanelModule, AccordionModule, ButtonModule, ToastModule, FormsModule, SelectButtonModule]
 })
