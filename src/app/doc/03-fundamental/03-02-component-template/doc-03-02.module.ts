@@ -64,6 +64,7 @@ import { Doc0302021203Component } from './03-02-02-template-syntax/03-02-02-12-i
 import { Doc030202120301Component } from './03-02-02-template-syntax/03-02-02-12-input-and-output-properties/03-02-02-12-03-aliasing-input-output-properties/doc-03-02-02-12-03-01.component';
 import { Doc03020213Component } from './03-02-02-template-syntax/03-02-02-13-template-expression-operators/doc-03-02-02-13.component';
 import { Doc0302021301Component } from './03-02-02-template-syntax/03-02-02-13-template-expression-operators/03-02-02-13-01-the-pipe-operator/doc-03-02-02-13-01.component';
+import { Doc0302021302Component } from './03-02-02-template-syntax/03-02-02-13-template-expression-operators/03-02-02-13-02-safe-navigation-operator/doc-03-02-02-13-02.component';
 
 // tslint:enable:max-line-length
 
@@ -140,7 +141,8 @@ import { Doc0302021301Component } from './03-02-02-template-syntax/03-02-02-13-t
     Doc030202120301Component,
     /* 03-02-02-13 */
     Doc03020213Component,
-    Doc0302021301Component
+    Doc0302021301Component,
+    Doc0302021302Component
   ],
   imports: [CommonModule, Doc0302RoutingModule, PanelModule, AccordionModule, ButtonModule, ToastModule, FormsModule, SelectButtonModule]
 })
