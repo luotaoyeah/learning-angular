@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { Doc0302RoutingModule } from './doc-03-02-routing.module';
 import { Doc030201Component } from './03-02-01-displaying-data/doc-03-02-01.component';
 import { PanelModule } from 'primeng/panel';
-import { AccordionModule, ButtonModule } from 'primeng/primeng';
+import { AccordionModule, ButtonModule, SelectButtonModule } from 'primeng/primeng';
 import { ToastModule } from 'primeng/toast';
 import { Doc03020101Component } from './03-02-01-displaying-data/03-02-01-01/doc-03-02-01-01.component';
 import { Doc03020102Component } from './03-02-01-displaying-data/03-02-01-02/doc-03-02-01-02.component';
@@ -52,6 +52,7 @@ import { Doc030202100101Component } from './03-02-02-template-syntax/03-02-02-10
 import { Doc0302021002Component } from './03-02-02-template-syntax/03-02-02-10-built-in-structural-directives/03-02-02-10-02-ngfor/doc-03-02-02-10-02.component';
 import { Doc030202100201Component } from './03-02-02-template-syntax/03-02-02-10-built-in-structural-directives/03-02-02-10-02-ngfor/doc-03-02-02-10-02-01.component';
 import { Doc0302021003Component } from './03-02-02-template-syntax/03-02-02-10-built-in-structural-directives/03-02-02-10-03-template-input-variable/doc-03-02-02-10-03.component';
+import { Doc0302021004Component } from './03-02-02-template-syntax/03-02-02-10-built-in-structural-directives/03-02-02-10-04-ngswitch/doc-03-02-02-10-04.component';
 
 // tslint:enable:max-line-length
 
@@ -113,8 +114,9 @@ import { Doc0302021003Component } from './03-02-02-template-syntax/03-02-02-10-b
     Doc030202100101Component,
     Doc0302021002Component,
     Doc030202100201Component,
-    Doc0302021003Component
+    Doc0302021003Component,
+    Doc0302021004Component
   ],
-  imports: [CommonModule, Doc0302RoutingModule, PanelModule, AccordionModule, ButtonModule, ToastModule, FormsModule]
+  imports: [CommonModule, Doc0302RoutingModule, PanelModule, AccordionModule, ButtonModule, ToastModule, FormsModule, SelectButtonModule]
 })
 export class Doc0302Module {}
