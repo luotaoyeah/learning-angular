@@ -1,0 +1,15 @@
+<p-accordionTab header="Get User Input from the $event Object" [transitionOptions]="'0ms'">
+  <p>
+    event binding 的事件处理函数可以传递一个参数 $event，根据不同类型的事件，$event 对象的值也不一样，比如对于按钮点击事件，$event 是一个
+    MouseEvent 对象，对于键盘按键事件，$event 是一个 KeyboardEvent 对象
+  </p>
+  <input
+    type="text"
+    (keyup)="handleKeyUp($event)"
+    [ngStyle]="{
+      borderRadius: '3px',
+      outline: 'pointer'
+    }"
+  />
+  <p>{{ values }}</p>
+</p-accordionTab>
