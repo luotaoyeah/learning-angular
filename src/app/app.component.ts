@@ -80,6 +80,14 @@ export class AppComponent {
                   },
                   expandedIcon: 'fa fa-folder-open',
                   collapsedIcon: 'fa fa-folder'
+                },
+                {
+                  label: 'User Input',
+                  data: {
+                    path: '/doc/fundamental/component-template/user-input'
+                  },
+                  expandedIcon: 'fa fa-folder-open',
+                  collapsedIcon: 'fa fa-folder'
                 }
               ]
             },

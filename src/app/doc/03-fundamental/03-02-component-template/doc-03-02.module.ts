@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { Doc0302RoutingModule } from './doc-03-02-routing.module';
 import { Doc030201Component } from './03-02-01-displaying-data/doc-03-02-01.component';
 import { PanelModule } from 'primeng/panel';
-import { AccordionModule, ButtonModule, SelectButtonModule } from 'primeng/primeng';
+import { AccordionModule, ButtonModule, MessagesModule, SelectButtonModule } from 'primeng/primeng';
 import { ToastModule } from 'primeng/toast';
 import { Doc03020101Component } from './03-02-01-displaying-data/03-02-01-01/doc-03-02-01-01.component';
 import { Doc03020102Component } from './03-02-01-displaying-data/03-02-01-02/doc-03-02-01-02.component';
@@ -68,6 +68,8 @@ import { Doc0302021302Component } from './03-02-02-template-syntax/03-02-02-13-t
 import { Doc0302021303Component } from './03-02-02-template-syntax/03-02-02-13-template-expression-operators/03-02-02-13-03-the-non-null-assertion-operator/doc-03-02-02-13-03.component';
 import { Doc03020214Component } from './03-02-02-template-syntax/03-02-02-14-built-in-template-functions/doc-03-02-02-14.component';
 import { Doc0302021401Component } from './03-02-02-template-syntax/03-02-02-14-built-in-template-functions/03-02-02-14-01-the-pipe-operator/doc-03-02-02-14-01.component';
+import { Doc030203Component } from './03-02-03-user-input/doc-03-02-03.component';
+import { Doc03020301Component } from './03-02-03-user-input/03-02-03-01-binding-to-user-input-event/doc-03-02-03-01.component';
 
 // tslint:enable:max-line-length
 
@@ -149,8 +151,22 @@ import { Doc0302021401Component } from './03-02-02-template-syntax/03-02-02-14-b
     Doc0302021303Component,
     /* 03-02-02-14 */
     Doc03020214Component,
-    Doc0302021401Component
+    Doc0302021401Component,
+    /* 03-02-03 */
+    Doc030203Component,
+    /* 03-02-03-01 */
+    Doc03020301Component
   ],
-  imports: [CommonModule, Doc0302RoutingModule, PanelModule, AccordionModule, ButtonModule, ToastModule, FormsModule, SelectButtonModule]
+  imports: [
+    CommonModule,
+    Doc0302RoutingModule,
+    PanelModule,
+    AccordionModule,
+    ButtonModule,
+    ToastModule,
+    FormsModule,
+    SelectButtonModule,
+    MessagesModule
+  ]
 })
 export class Doc0302Module {}
