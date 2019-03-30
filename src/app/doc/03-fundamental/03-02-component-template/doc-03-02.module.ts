@@ -71,6 +71,7 @@ import { Doc0302021401Component } from './03-02-02-template-syntax/03-02-02-14-b
 import { Doc030203Component } from './03-02-03-user-input/doc-03-02-03.component';
 import { Doc03020301Component } from './03-02-03-user-input/03-02-03-01-binding-to-user-input-event/doc-03-02-03-01.component';
 import { Doc03020302Component } from './03-02-03-user-input/03-02-03-02-get-user-input-from-the-$event-object/doc-03-02-03-02.component';
+import { Doc03020303Component } from './03-02-03-user-input/03-02-03-03-get-user-input-from-a-template-reference-variable/doc-03-02-03-03.component';
 
 // tslint:enable:max-line-length
 
@@ -157,7 +158,10 @@ import { Doc03020302Component } from './03-02-03-user-input/03-02-03-02-get-user
     Doc030203Component,
     /* 03-02-03-01 */
     Doc03020301Component,
-    Doc03020302Component
+    /* 03-02-03-02 */
+    Doc03020302Component,
+    /* 03-02-03-03 */
+    Doc03020303Component
   ],
   imports: [
     CommonModule,
