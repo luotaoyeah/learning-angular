@@ -77,6 +77,7 @@ import { Doc03020305Component } from './03-02-03-user-input/03-02-03-05-on-blur/
 import { Doc03020306Component } from './03-02-03-user-input/03-02-03-06-put-it-all-together/doc-03-02-03-06.component';
 import { Doc030204Component } from './03-02-04-lifecycle-hooks/doc-03-02-04.component';
 import { Doc03020401Component } from './03-02-04-lifecycle-hooks/03-02-04-01-component-lifecycle-hooks-overview/doc-03-02-04-01.component';
+import { Doc03020402Component } from './03-02-04-lifecycle-hooks/03-02-04-02-lifecycle-sequence/doc-03-02-04-02.component';
 
 // tslint:enable:max-line-length
 
@@ -169,7 +170,8 @@ import { Doc03020401Component } from './03-02-04-lifecycle-hooks/03-02-04-01-com
     Doc03020306Component,
     /* 03-02-04 */
     Doc030204Component,
-    Doc03020401Component
+    Doc03020401Component,
+    Doc03020402Component
   ],
   imports: [
     CommonModule,
