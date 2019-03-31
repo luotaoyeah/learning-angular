@@ -88,6 +88,14 @@ export class AppComponent {
                   },
                   expandedIcon: 'fa fa-folder-open',
                   collapsedIcon: 'fa fa-folder'
+                },
+                {
+                  label: 'Lifecycle Hooks',
+                  data: {
+                    path: 'doc/fundamental/component-template/lifecycle-hooks'
+                  },
+                  expandedIcon: 'fa fa-folder-open',
+                  collapsedIcon: 'fa fa-folder'
                 }
               ]
             },

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { Doc030201Component } from './03-02-01-displaying-data/doc-03-02-01.component';
 import { Doc030202Component } from './03-02-02-template-syntax/doc-03-02-02.component';
 import { Doc030203Component } from './03-02-03-user-input/doc-03-02-03.component';
+import { Doc030204Component } from './03-02-04-lifecycle-hooks/doc-03-02-04.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'doc/fundamental/component-template/user-input',
     component: Doc030203Component
+  },
+  {
+    path: 'doc/fundamental/component-template/lifecycle-hooks',
+    component: Doc030204Component
   }
 ];
 
