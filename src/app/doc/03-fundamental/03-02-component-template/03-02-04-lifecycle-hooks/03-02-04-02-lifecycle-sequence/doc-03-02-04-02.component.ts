@@ -27,6 +27,9 @@ export class Doc03020402Component
   }
 
   ngOnChanges(changes: SimpleChanges): void {
+    /*
+     * ngOnChanges() 在 input properties 的值发生变更时执行，包括第一次初始化 input properties 的值
+     */
     console.assert(!!changes);
     this.log('ngOnChange()');
   }
