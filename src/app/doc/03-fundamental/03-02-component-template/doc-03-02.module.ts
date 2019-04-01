@@ -80,6 +80,8 @@ import { Doc03020401Component } from './03-02-04-lifecycle-hooks/03-02-04-01-com
 import { Doc03020402Component } from './03-02-04-lifecycle-hooks/03-02-04-02-lifecycle-sequence/doc-03-02-04-02.component';
 import { Doc03020403Component } from './03-02-04-lifecycle-hooks/03-02-04-03-peek-a-boo/doc-03-02-04-03.component';
 import { Doc0302040301Component } from './03-02-04-lifecycle-hooks/03-02-04-03-peek-a-boo/doc-03-02-04-03-01.component';
+import { MySpyDirective } from './03-02-04-lifecycle-hooks/03-02-04-04-spying-oninit-and-ondestroy/doc-03-02-04-04.directive';
+import { Doc03020404Component } from './03-02-04-lifecycle-hooks/03-02-04-04-spying-oninit-and-ondestroy/doc-03-02-04-04.component';
 
 // tslint:enable:max-line-length
 
@@ -175,7 +177,9 @@ import { Doc0302040301Component } from './03-02-04-lifecycle-hooks/03-02-04-03-p
     Doc03020401Component,
     Doc03020402Component,
     Doc03020403Component,
-    Doc0302040301Component
+    Doc0302040301Component,
+    Doc03020404Component,
+    MySpyDirective
   ],
   imports: [
     CommonModule,
