@@ -1,0 +1,12 @@
+<p-accordionTab header="Intercept Input Property Changes with A Setter" [transitionOptions]="'0ms'">
+  <input
+    type="text"
+    [(ngModel)]="bar"
+    [ngStyle]="{
+      borderRadius: '3px',
+      outline: 'none'
+    }"
+  />
+  &nbsp;
+  <app-doc-03-02-05-02-01 [foo]="'FOO'" [bar]="bar"></app-doc-03-02-05-02-01>
+</p-accordionTab>

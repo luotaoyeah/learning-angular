@@ -97,6 +97,8 @@ import { Doc0302040802Component } from './03-02-04-lifecycle-hooks/03-02-04-08-a
 import { Doc030205Component } from './03-02-05-component-interaction/doc-03-02-05.component';
 import { Doc03020501Component } from './03-02-05-component-interaction/03-02-05-01-pass-data-from-parent-to-child-with-input-binding/doc-03-02-05-01.component';
 import { Doc0302050101Component } from './03-02-05-component-interaction/03-02-05-01-pass-data-from-parent-to-child-with-input-binding/doc-03-02-05-01-01.component';
+import { Doc03020502Component } from './03-02-05-component-interaction/03-02-05-02-intercept-input-property-changes-with-a-setter/doc-03-02-05-02.component';
+import { Doc0302050201Component } from './03-02-05-component-interaction/03-02-05-02-intercept-input-property-changes-with-a-setter/doc-03-02-05-02-01.component';
 
 // tslint:enable:max-line-length
 
@@ -210,7 +212,9 @@ import { Doc0302050101Component } from './03-02-05-component-interaction/03-02-0
     /* 03-02-05 */
     Doc030205Component,
     Doc03020501Component,
-    Doc0302050101Component
+    Doc0302050101Component,
+    Doc03020502Component,
+    Doc0302050201Component
   ],
   imports: [
     CommonModule,
