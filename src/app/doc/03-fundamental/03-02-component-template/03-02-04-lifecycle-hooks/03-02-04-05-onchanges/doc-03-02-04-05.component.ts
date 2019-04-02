@@ -6,8 +6,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Doc03020405Component implements OnInit {
   foo = '';
+  bar: { name: string } = { name: '' };
 
   constructor() {}
 
   ngOnInit() {}
+
+  handleFooChange(value: string) {
+    this.foo = value;
+    this.bar.name = this.foo;
+  }
 }
