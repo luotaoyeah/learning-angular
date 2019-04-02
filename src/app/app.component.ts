@@ -96,6 +96,14 @@ export class AppComponent {
                   },
                   expandedIcon: 'fa fa-folder-open',
                   collapsedIcon: 'fa fa-folder'
+                },
+                {
+                  label: 'Component Interaction',
+                  data: {
+                    path: 'doc/fundamental/component-template/component-interaction'
+                  },
+                  expandedIcon: 'fa fa-folder-open',
+                  collapsedIcon: 'fa fa-folder'
                 }
               ]
             },

@@ -4,6 +4,7 @@ import { Doc030201Component } from './03-02-01-displaying-data/doc-03-02-01.comp
 import { Doc030202Component } from './03-02-02-template-syntax/doc-03-02-02.component';
 import { Doc030203Component } from './03-02-03-user-input/doc-03-02-03.component';
 import { Doc030204Component } from './03-02-04-lifecycle-hooks/doc-03-02-04.component';
+import { Doc030205Component } from './03-02-05-component-interaction/doc-03-02-05.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'doc/fundamental/component-template/lifecycle-hooks',
     component: Doc030204Component
+  },
+  {
+    path: 'doc/fundamental/component-template/component-interaction',
+    component: Doc030205Component
   }
 ];
 
