@@ -89,6 +89,8 @@ import { Doc0302040501Component } from './03-02-04-lifecycle-hooks/03-02-04-05-o
 import { Doc0302040502Component } from './03-02-04-lifecycle-hooks/03-02-04-05-onchanges/doc-03-02-04-05-02.component';
 import { Doc03020406Component } from './03-02-04-lifecycle-hooks/03-02-04-06-docheck/doc-03-02-04-06.component';
 import { Doc0302040601Component } from './03-02-04-lifecycle-hooks/03-02-04-06-docheck/doc-03-02-04-06-01.component';
+import { Doc03020407Component } from './03-02-04-lifecycle-hooks/03-02-04-07-afterview/doc-03-02-04-07.component';
+import { Doc0302040701Component } from './03-02-04-lifecycle-hooks/03-02-04-07-afterview/doc-03-02-04-07-01.component';
 
 // tslint:enable:max-line-length
 
@@ -193,7 +195,9 @@ import { Doc0302040601Component } from './03-02-04-lifecycle-hooks/03-02-04-06-d
     Doc0302040501Component,
     Doc0302040502Component,
     Doc03020406Component,
-    Doc0302040601Component
+    Doc0302040601Component,
+    Doc03020407Component,
+    Doc0302040701Component
   ],
   imports: [
     CommonModule,
