@@ -107,6 +107,8 @@ import { Doc03020505Component } from './03-02-05-component-interaction/03-02-05-
 import { Doc0302050501Component } from './03-02-05-component-interaction/03-02-05-05-parent-interacts-with-child-via-local-variable/doc-03-02-05-05-01.component';
 import { Doc03020506Component } from './03-02-05-component-interaction/03-02-05-06-parent-calls-an-viewchild/doc-03-02-05-06.component';
 import { Doc0302050601Component } from './03-02-05-component-interaction/03-02-05-06-parent-calls-an-viewchild/doc-03-02-05-06-01.component';
+import { Doc03020507Component } from './03-02-05-component-interaction/03-02-05-07-parent-and-children-communicate-via-a-service/doc-03-02-05-07.component';
+import { Doc0302050701Component } from './03-02-05-component-interaction/03-02-05-07-parent-and-children-communicate-via-a-service/doc-03-02-05-07-01.component';
 
 // tslint:enable:max-line-length
 
@@ -230,7 +232,9 @@ import { Doc0302050601Component } from './03-02-05-component-interaction/03-02-0
     Doc03020505Component,
     Doc0302050501Component,
     Doc03020506Component,
-    Doc0302050601Component
+    Doc0302050601Component,
+    Doc03020507Component,
+    Doc0302050701Component
   ],
   imports: [
     CommonModule,

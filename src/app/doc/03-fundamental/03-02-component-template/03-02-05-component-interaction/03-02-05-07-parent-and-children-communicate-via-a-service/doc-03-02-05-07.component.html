@@ -1,0 +1,11 @@
+<p-accordionTab header="Parent and Children Communicate via A Service" [transitionOptions]="'0ms'">
+  <p>
+    通过父组件的 providers 属性提供的 service，可以被它的所有子组件共享，即这个父组件和它的所有子组件共享同一个 service
+    实例对象，并且其他的地方不能访问到这个 service 对象；通过这种方式，实现父组件和子组件的通信
+  </p>
+  <p>
+    <p-button label="increment foo" (onClick)="increment()"></p-button>
+  </p>
+  <br />
+  <app-doc-03-02-05-07-01></app-doc-03-02-05-07-01>
+</p-accordionTab>
