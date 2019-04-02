@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { Doc0302RoutingModule } from './doc-03-02-routing.module';
 import { Doc030201Component } from './03-02-01-displaying-data/doc-03-02-01.component';
 import { PanelModule } from 'primeng/panel';
-import { AccordionModule, ButtonModule, MessagesModule, SelectButtonModule } from 'primeng/primeng';
+import { AccordionModule, ButtonModule, InputTextModule, MessagesModule, SelectButtonModule } from 'primeng/primeng';
 import { ToastModule } from 'primeng/toast';
 import { Doc03020101Component } from './03-02-01-displaying-data/03-02-01-01/doc-03-02-01-01.component';
 import { Doc03020102Component } from './03-02-01-displaying-data/03-02-01-02/doc-03-02-01-02.component';
@@ -99,6 +99,8 @@ import { Doc03020501Component } from './03-02-05-component-interaction/03-02-05-
 import { Doc0302050101Component } from './03-02-05-component-interaction/03-02-05-01-pass-data-from-parent-to-child-with-input-binding/doc-03-02-05-01-01.component';
 import { Doc03020502Component } from './03-02-05-component-interaction/03-02-05-02-intercept-input-property-changes-with-a-setter/doc-03-02-05-02.component';
 import { Doc0302050201Component } from './03-02-05-component-interaction/03-02-05-02-intercept-input-property-changes-with-a-setter/doc-03-02-05-02-01.component';
+import { Doc03020503Component } from './03-02-05-component-interaction/03-02-05-03-intercept-input-property-changes-with-ngonchanges/doc-03-02-05-03.component';
+import { Doc0302050301Component } from './03-02-05-component-interaction/03-02-05-03-intercept-input-property-changes-with-ngonchanges/doc-03-02-05-03-01.component';
 
 // tslint:enable:max-line-length
 
@@ -214,7 +216,9 @@ import { Doc0302050201Component } from './03-02-05-component-interaction/03-02-0
     Doc03020501Component,
     Doc0302050101Component,
     Doc03020502Component,
-    Doc0302050201Component
+    Doc0302050201Component,
+    Doc03020503Component,
+    Doc0302050301Component
   ],
   imports: [
     CommonModule,
@@ -225,7 +229,8 @@ import { Doc0302050201Component } from './03-02-05-component-interaction/03-02-0
     ToastModule,
     FormsModule,
     SelectButtonModule,
-    MessagesModule
+    MessagesModule,
+    InputTextModule
   ]
 })
 export class Doc0302Module {}
