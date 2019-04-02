@@ -22,8 +22,11 @@ export class Doc03020402Component
 
   constructor() {}
 
+  // @ts-ignore: TS6133
   private log(message: any): void {
-    console.log(`[${Doc03020402Component.name}]`, message);
+    /*
+        console.log(`[${Doc03020402Component.name}]`, message);
+    */
   }
 
   ngOnChanges(changes: SimpleChanges): void {
