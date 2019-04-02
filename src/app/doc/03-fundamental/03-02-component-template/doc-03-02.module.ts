@@ -109,6 +109,8 @@ import { Doc03020506Component } from './03-02-05-component-interaction/03-02-05-
 import { Doc0302050601Component } from './03-02-05-component-interaction/03-02-05-06-parent-calls-an-viewchild/doc-03-02-05-06-01.component';
 import { Doc03020507Component } from './03-02-05-component-interaction/03-02-05-07-parent-and-children-communicate-via-a-service/doc-03-02-05-07.component';
 import { Doc0302050701Component } from './03-02-05-component-interaction/03-02-05-07-parent-and-children-communicate-via-a-service/doc-03-02-05-07-01.component';
+import { Doc030206Component } from './03-02-06-component-style/doc-03-02-06.component';
+import { Doc03020601Component } from './03-02-06-component-style/03-02-06-01-using-component-styles/doc-03-02-06-01.component';
 
 // tslint:enable:max-line-length
 
@@ -234,7 +236,10 @@ import { Doc0302050701Component } from './03-02-05-component-interaction/03-02-0
     Doc03020506Component,
     Doc0302050601Component,
     Doc03020507Component,
-    Doc0302050701Component
+    Doc0302050701Component,
+    /* 03-02-06 */
+    Doc030206Component,
+    Doc03020601Component
   ],
   imports: [
     CommonModule,
