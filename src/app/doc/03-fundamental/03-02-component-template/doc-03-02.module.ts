@@ -103,6 +103,8 @@ import { Doc03020503Component } from './03-02-05-component-interaction/03-02-05-
 import { Doc0302050301Component } from './03-02-05-component-interaction/03-02-05-03-intercept-input-property-changes-with-ngonchanges/doc-03-02-05-03-01.component';
 import { Doc03020504Component } from './03-02-05-component-interaction/03-02-05-04-parent-listens-for-child-event/doc-03-02-05-04.component';
 import { Doc0302050401Component } from './03-02-05-component-interaction/03-02-05-04-parent-listens-for-child-event/doc-03-02-05-04-01.component';
+import { Doc03020505Component } from './03-02-05-component-interaction/03-02-05-05-parent-interacts-with-child-via-local-variable/doc-03-02-05-05.component';
+import { Doc0302050501Component } from './03-02-05-component-interaction/03-02-05-05-parent-interacts-with-child-via-local-variable/doc-03-02-05-05-01.component';
 
 // tslint:enable:max-line-length
 
@@ -222,7 +224,9 @@ import { Doc0302050401Component } from './03-02-05-component-interaction/03-02-0
     Doc03020503Component,
     Doc0302050301Component,
     Doc03020504Component,
-    Doc0302050401Component
+    Doc0302050401Component,
+    Doc03020505Component,
+    Doc0302050501Component
   ],
   imports: [
     CommonModule,
