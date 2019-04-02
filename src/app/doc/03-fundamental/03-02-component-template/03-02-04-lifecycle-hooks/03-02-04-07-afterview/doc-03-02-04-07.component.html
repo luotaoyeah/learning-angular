@@ -1,5 +1,7 @@
 <p-accordionTab header="AfterView" [transitionOptions]="'0ms'">
+  <p>在 component 中可以通过 @ViewChild('#template reference variable') 来获取对下级组件实例的引用</p>
   <p>-- child view starts --</p>
   <app-doc-03-02-04-07-01 #comp01></app-doc-03-02-04-07-01>
   <p>-- child view ends --</p>
+  <p>{{ comment }}</p>
 </p-accordionTab>
