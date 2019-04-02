@@ -111,6 +111,8 @@ import { Doc03020507Component } from './03-02-05-component-interaction/03-02-05-
 import { Doc0302050701Component } from './03-02-05-component-interaction/03-02-05-07-parent-and-children-communicate-via-a-service/doc-03-02-05-07-01.component';
 import { Doc030206Component } from './03-02-06-component-style/doc-03-02-06.component';
 import { Doc03020601Component } from './03-02-06-component-style/03-02-06-01-using-component-styles/doc-03-02-06-01.component';
+import { Doc03020602Component } from './03-02-06-component-style/03-02-06-02-style-scope/doc-03-02-06-02.component';
+import { Doc0302060201Component } from './03-02-06-component-style/03-02-06-02-style-scope/doc-03-02-06-02-01.component';
 
 // tslint:enable:max-line-length
 
@@ -239,7 +241,9 @@ import { Doc03020601Component } from './03-02-06-component-style/03-02-06-01-usi
     Doc0302050701Component,
     /* 03-02-06 */
     Doc030206Component,
-    Doc03020601Component
+    Doc03020601Component,
+    Doc03020602Component,
+    Doc0302060201Component
   ],
   imports: [
     CommonModule,

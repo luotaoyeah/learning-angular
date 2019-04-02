@@ -1,0 +1,8 @@
+<p-accordionTab header="Style Scope" [transitionOptions]="'0ms'">
+  <p>通过 styles 设置的样式，只对当前组件的 template 有效，对于 template 中嵌入的子组件的样式没有影响</p>
+  <app-doc-03-02-06-02-01></app-doc-03-02-06-02-01>
+
+  <hr />
+  <p>对于 template 中的 projection content 的样式也没有影响</p>
+  <ng-content></ng-content>
+</p-accordionTab>
