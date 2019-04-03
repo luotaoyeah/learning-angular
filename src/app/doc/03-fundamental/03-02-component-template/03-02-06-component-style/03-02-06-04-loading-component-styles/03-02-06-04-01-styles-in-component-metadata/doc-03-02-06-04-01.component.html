@@ -1,5 +1,9 @@
-<p-accordionTab header="styles in Component Metadata" [transitionOptions]="'0ms'">
+<p-accordionTab header="Styles in Component Metadata" [transitionOptions]="'0ms'">
   <p>通过 @Component.styles 配置选项设置内联的（inline）CSS 样式</p>
   <div>styles 参数值为 string 数组，每一个 string 表示一些 CSS 样式规则</div>
   <p>这些规则只对当前组件的 template 中的元素有效，对于 view child 和 content child 的元素无效</p>
+  <p>
+    在使用命令 $ ng generate component 创建 component 时，可以通过参数 --inline-style 使用 inline style 的方式，而不是 styleUrls
+    引入外部样式文件的方式
+  </p>
 </p-accordionTab>
