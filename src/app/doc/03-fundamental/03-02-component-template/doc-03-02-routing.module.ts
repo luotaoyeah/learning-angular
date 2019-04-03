@@ -6,6 +6,7 @@ import { Doc030203Component } from './03-02-03-user-input/doc-03-02-03.component
 import { Doc030204Component } from './03-02-04-lifecycle-hooks/doc-03-02-04.component';
 import { Doc030205Component } from './03-02-05-component-interaction/doc-03-02-05.component';
 import { Doc030206Component } from './03-02-06-component-style/doc-03-02-06.component';
+import { Doc030207Component } from './03-02-07-angular-elements/doc-03-02-07.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'doc/fundamental/component-template/component-style',
     component: Doc030206Component
+  },
+  {
+    path: 'doc/fundamental/component-template/angular-elements',
+    component: Doc030207Component
   }
 ];
 

@@ -112,6 +112,14 @@ export class AppComponent {
                   },
                   expandedIcon: 'fa fa-folder-open',
                   collapsedIcon: 'fa fa-folder'
+                },
+                {
+                  label: 'Angular Elements(TODO)',
+                  data: {
+                    path: 'doc/fundamental/component-template/angular-elements'
+                  },
+                  expandedIcon: 'fa fa-folder-open',
+                  collapsedIcon: 'fa fa-folder'
                 }
               ]
             },
