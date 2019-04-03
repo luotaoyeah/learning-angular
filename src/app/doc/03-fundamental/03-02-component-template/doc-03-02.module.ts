@@ -122,6 +122,7 @@ import { Doc030206030302Component } from './03-02-06-component-style/03-02-06-03
 import { Doc03020604Component } from './03-02-06-component-style/03-02-06-04-loading-component-styles/doc-03-02-06-04.component';
 import { Doc0302060401Component } from './03-02-06-component-style/03-02-06-04-loading-component-styles/03-02-06-04-01-styles-in-component-metadata/doc-03-02-06-04-01.component';
 import { Doc0302060402Component } from './03-02-06-component-style/03-02-06-04-loading-component-styles/03-02-06-04-02-style-files-in-component-metadata/doc-03-02-06-04-02.component';
+import { Doc0302060403Component } from './03-02-06-component-style/03-02-06-04-loading-component-styles/03-02-06-04-03-template-inline-styles/doc-03-02-06-04-03.component';
 
 // tslint:enable:max-line-length
 
@@ -261,7 +262,8 @@ import { Doc0302060402Component } from './03-02-06-component-style/03-02-06-04-l
     Doc030206030302Component,
     Doc03020604Component,
     Doc0302060401Component,
-    Doc0302060402Component
+    Doc0302060402Component,
+    Doc0302060403Component
   ],
   imports: [
     CommonModule,
