@@ -1,8 +1,6 @@
 /*
- * 通过 :host 伪类选择器，选择组件的 host 元素
+ * 通过 :host-context() 伪类选择器，判断对应的上级元素是否存在，如果存在，则应用这些样式到当前组件
  */
-:host {
-  border: 1px solid #ff0000;
-  display: block;
-  border-radius: 3px;
+:host-context(div.active) p {
+  color: #ff0000;
 }
