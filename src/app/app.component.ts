@@ -114,9 +114,17 @@ export class AppComponent {
                   collapsedIcon: 'fa fa-folder'
                 },
                 {
-                  label: 'Angular Elements(TODO)',
+                  label: 'Angular Elements（TODO）',
                   data: {
                     path: 'doc/fundamental/component-template/angular-elements'
+                  },
+                  expandedIcon: 'fa fa-folder-open',
+                  collapsedIcon: 'fa fa-folder'
+                },
+                {
+                  label: 'Dynamic Components',
+                  data: {
+                    path: 'doc/fundamental/component-template/dynamic-components'
                   },
                   expandedIcon: 'fa fa-folder-open',
                   collapsedIcon: 'fa fa-folder'

@@ -63,7 +63,7 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
       queryParams: {
         session_id: 123456789
       },
-      fragment: 'anchor'
+      fragment: 'viewContainerRef'
     });
     return false;
   }

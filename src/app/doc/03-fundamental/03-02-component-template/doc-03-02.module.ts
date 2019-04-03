@@ -126,6 +126,8 @@ import { Doc0302060403Component } from './03-02-06-component-style/03-02-06-04-l
 import { Doc0302060404Component } from './03-02-06-component-style/03-02-06-04-loading-component-styles/03-02-06-04-04-template-link-tags/doc-03-02-06-04-04.component';
 import { Doc03020605Component } from './03-02-06-component-style/03-02-06-05-view-encapsulation/doc-03-02-06-05.component';
 import { Doc030207Component } from './03-02-07-angular-elements/doc-03-02-07.component';
+import { Doc030208Component } from './03-02-08-dynamic-components/doc-03-02-08.component';
+import { Doc03020801Component } from './03-02-08-dynamic-components/doc-03-02-08-01.component';
 
 // tslint:enable:max-line-length
 
@@ -270,7 +272,10 @@ import { Doc030207Component } from './03-02-07-angular-elements/doc-03-02-07.com
     Doc0302060404Component,
     Doc03020605Component,
     /* 03-02-07 */
-    Doc030207Component
+    Doc030207Component,
+    /* 03-02-08 */
+    Doc030208Component,
+    Doc03020801Component
   ],
   imports: [
     CommonModule,
@@ -283,6 +288,10 @@ import { Doc030207Component } from './03-02-07-angular-elements/doc-03-02-07.com
     SelectButtonModule,
     MessagesModule,
     InputTextModule
-  ]
+  ],
+  /*
+   * 动态加载的 component 需要在 NgModule 的 entryComponents 中声明
+   */
+  entryComponents: [Doc03020801Component]
 })
 export class Doc0302Module {}
