@@ -128,6 +128,8 @@ import { Doc03020605Component } from './03-02-06-component-style/03-02-06-05-vie
 import { Doc030207Component } from './03-02-07-angular-elements/doc-03-02-07.component';
 import { Doc030208Component } from './03-02-08-dynamic-components/doc-03-02-08.component';
 import { Doc03020801Component } from './03-02-08-dynamic-components/doc-03-02-08-01.component';
+import { Doc030209Component } from './03-02-09-attribute-directives/doc-03-02-09.component';
+import { Doc03020901Component } from './03-02-09-attribute-directives/03-02-09-01-directives-overview/doc-03-02-09-01.component';
 
 // tslint:enable:max-line-length
 
@@ -275,7 +277,10 @@ import { Doc03020801Component } from './03-02-08-dynamic-components/doc-03-02-08
     Doc030207Component,
     /* 03-02-08 */
     Doc030208Component,
-    Doc03020801Component
+    Doc03020801Component,
+    /* 03-02-09 */
+    Doc030209Component,
+    Doc03020901Component
   ],
   imports: [
     CommonModule,

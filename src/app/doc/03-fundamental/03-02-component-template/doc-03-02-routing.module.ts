@@ -8,6 +8,7 @@ import { Doc030205Component } from './03-02-05-component-interaction/doc-03-02-0
 import { Doc030206Component } from './03-02-06-component-style/doc-03-02-06.component';
 import { Doc030207Component } from './03-02-07-angular-elements/doc-03-02-07.component';
 import { Doc030208Component } from './03-02-08-dynamic-components/doc-03-02-08.component';
+import { Doc030209Component } from './03-02-09-attribute-directives/doc-03-02-09.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,10 @@ const routes: Routes = [
   {
     path: 'doc/fundamental/component-template/dynamic-components',
     component: Doc030208Component
+  },
+  {
+    path: 'doc/fundamental/component-template/attribute-directive',
+    component: Doc030209Component
   }
 ];
 
