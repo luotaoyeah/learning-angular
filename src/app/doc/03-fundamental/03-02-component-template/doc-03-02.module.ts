@@ -134,6 +134,8 @@ import { Doc03020902Component } from './03-02-09-attribute-directives/03-02-09-0
 import { HighlightDirective } from './03-02-09-attribute-directives/03-02-09-02-build-a-simple-attribute-directive/directive/highlight.directive';
 import { Doc03020903Component } from './03-02-09-attribute-directives/03-02-09-03-respond-to-user-initiated-events/doc-03-02-09-03.component';
 import { Highlight02Directive } from './03-02-09-attribute-directives/03-02-09-03-respond-to-user-initiated-events/directive/highlight-02.directive';
+import { Highlight04Directive } from './03-02-09-attribute-directives/03-02-09-04-pass-values-into-the-directive-with-an-input-data-binding/directive/highlight-04.directive';
+import { Doc03020904Component } from './03-02-09-attribute-directives/03-02-09-04-pass-values-into-the-directive-with-an-input-data-binding/doc-03-02-09-04.component';
 
 // tslint:enable:max-line-length
 
@@ -288,7 +290,9 @@ import { Highlight02Directive } from './03-02-09-attribute-directives/03-02-09-0
     Doc03020902Component,
     HighlightDirective,
     Doc03020903Component,
-    Highlight02Directive
+    Highlight02Directive,
+    Doc03020904Component,
+    Highlight04Directive
   ],
   imports: [
     CommonModule,
