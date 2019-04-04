@@ -143,6 +143,7 @@ import { Doc03021001Component } from './03-02-10-structural-directives/03-02-10-
 import { Doc03021002Component } from './03-02-10-structural-directives/03-02-10-02-ngif-case-study/doc-03-02-10-02.component';
 import { Doc03021003Component } from './03-02-10-structural-directives/03-02-10-03-the-asterisk-prefix/doc-03-02-10-03.component';
 import { Doc03021004Component } from './03-02-10-structural-directives/03-02-10-04-inside-ngfor/doc-03-02-10-04.component';
+import { Doc03021005Component } from './03-02-10-structural-directives/03-02-10-05-inside-ngswitch-directives/doc-03-02-10-05.component';
 
 // tslint:enable:max-line-length
 
@@ -307,7 +308,8 @@ import { Doc03021004Component } from './03-02-10-structural-directives/03-02-10-
     Doc03021001Component,
     Doc03021002Component,
     Doc03021003Component,
-    Doc03021004Component
+    Doc03021004Component,
+    Doc03021005Component
   ],
   imports: [
     CommonModule,
