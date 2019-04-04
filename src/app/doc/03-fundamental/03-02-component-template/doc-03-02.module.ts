@@ -146,6 +146,8 @@ import { Doc03021004Component } from './03-02-10-structural-directives/03-02-10-
 import { Doc03021005Component } from './03-02-10-structural-directives/03-02-10-05-inside-ngswitch-directives/doc-03-02-10-05.component';
 import { Doc03021006Component } from './03-02-10-structural-directives/03-02-10-06-ng-template/doc-03-02-10-06.component';
 import { Doc03021007Component } from './03-02-10-structural-directives/03-02-10-07-ng-container/doc-03-02-10-07.component';
+import { Doc03021008Component } from './03-02-10-structural-directives/03-02-10-08-write-a-structural-directive/doc-03-02-10-08.component';
+import { UnlessDirective } from './03-02-10-structural-directives/03-02-10-08-write-a-structural-directive/directive/unless.directive';
 
 // tslint:enable:max-line-length
 
@@ -313,7 +315,9 @@ import { Doc03021007Component } from './03-02-10-structural-directives/03-02-10-
     Doc03021004Component,
     Doc03021005Component,
     Doc03021006Component,
-    Doc03021007Component
+    Doc03021007Component,
+    Doc03021008Component,
+    UnlessDirective
   ],
   imports: [
     CommonModule,
