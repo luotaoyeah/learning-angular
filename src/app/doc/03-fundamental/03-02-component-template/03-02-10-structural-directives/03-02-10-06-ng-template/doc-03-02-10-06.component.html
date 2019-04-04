@@ -1,0 +1,8 @@
+<p-accordionTab header="&lt;ng-template&gt;" [transitionOptions]="'0ms'">
+  <p>ng-template 是一个 angular element，它跟普通的 element 的区别在于，它不会直接被显示在页面上</p>
+  <p>
+    通常 ng-template 是跟 structural directive 结合使用的，如果直接单独使用它，最终在 DOM 中会被替换为一段 HTML 注释，中间的内容会被忽略
+  </p>
+
+  <div [ngStyle]="{ borderRadius: '3px', border: '1px solid #ff0000', padding: '10px' }"><ng-template>FOO</ng-template></div>
+</p-accordionTab>
