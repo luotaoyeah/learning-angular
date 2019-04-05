@@ -1,4 +1,6 @@
 {
+  "menu.doc": "DOC",
+  "menu.doc.tutorial": "TUTORIAL",
   "menu.search.placeholder": "Search for people, file, photos...",
   "menu.fullscreen": "Fullscreen",
   "menu.fullscreen.exit": "Exit Fullscreen",

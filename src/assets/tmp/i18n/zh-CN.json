@@ -1,4 +1,6 @@
 {
+  "menu.doc": "DOC",
+  "menu.doc.tutorial": "TUTORIAL",
   "menu.search.placeholder": "搜索：员工、文件、照片等",
   "menu.fullscreen": "全屏",
   "menu.fullscreen.exit": "退出全屏",

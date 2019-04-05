@@ -2,12 +2,7 @@ import { Inject, Injectable, Injector } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { zip } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import {
-  ALAIN_I18N_TOKEN,
-  MenuService,
-  SettingsService,
-  TitleService,
-} from '@delon/theme';
+import { ALAIN_I18N_TOKEN, MenuService, SettingsService, TitleService } from '@delon/theme';
 import { DA_SERVICE_TOKEN, ITokenService } from '@delon/auth';
 import { ACLService } from '@delon/acl';
 import { TranslateService } from '@ngx-translate/core';
@@ -60,7 +55,6 @@ export class StartupService {
           this.translate.setTranslation(this.i18n.defaultLang, langData);
           this.translate.setDefaultLang(this.i18n.defaultLang);
 
-          // application data
           // tslint:disable-next-line:no-any
           const res: any = appData;
           // 应用信息：包括站点名、描述、年份
@@ -72,7 +66,7 @@ export class StartupService {
           // 初始化菜单
           this.menuService.add(res.menu);
           // 设置页面标题的后缀
-          this.titleService.suffix = res.app.name;
+          this.titleService.suffix = '';
         },
         () => {},
         () => {
@@ -89,62 +83,8 @@ export class StartupService {
         this.translate.setTranslation(this.i18n.defaultLang, langData);
         this.translate.setDefaultLang(this.i18n.defaultLang);
 
-        // this.viaMock(resolve, reject);
         this.viaHttp(resolve, reject);
       });
-  }
-
-  // @ts-ignore: TS6133
-  // tslint:disable-next-line:no-any
-  private viaMock(resolve: any, reject: any) {
-    // const tokenData = this.tokenService.get();
-    // if (!tokenData.token) {
-    //   this.injector.get(Router).navigateByUrl('/passport/login');
-    //   resolve({});
-    //   return;
-    // }
-    // mock
-    // tslint:disable-next-line:no-any
-    const app: any = {
-      name: `ng-alain`,
-      description: `Ng-zorro admin panel front-end framework`,
-    };
-    // tslint:disable-next-line:no-any
-    const user: any = {
-      name: 'Admin',
-      avatar: './assets/tmp/img/avatar.jpg',
-      email: 'cipchk@qq.com',
-      token: '123456789',
-    };
-    // 应用信息：包括站点名、描述、年份
-    this.settingService.setApp(app);
-    // 用户信息：包括姓名、头像、邮箱地址
-    this.settingService.setUser(user);
-    // ACL：设置权限为全量
-    this.aclService.setFull(true);
-    // 初始化菜单
-    this.menuService.add([
-      {
-        text: '主导航',
-        group: true,
-        children: [
-          {
-            text: '仪表盘',
-            link: '/dashboard',
-            icon: { type: 'icon', value: 'appstore' },
-          },
-          {
-            text: '快捷菜单',
-            icon: { type: 'icon', value: 'rocket' },
-            shortcutRoot: true,
-          },
-        ],
-      },
-    ]);
-    // 设置页面标题的后缀
-    this.titleService.suffix = app.name;
-
-    resolve({});
   }
 
   // tslint:disable-next-line:no-any

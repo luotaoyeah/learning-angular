@@ -31,6 +31,10 @@ const routes: Routes = [
         path: 'exception',
         loadChildren: './exception/exception.module#ExceptionModule',
       },
+      {
+        path: 'doc',
+        loadChildren: '../doc/doc.module#DocModule',
+      },
       // 业务子模块
       // { path: 'widgets', loadChildren: './widgets/widgets.module#WidgetsModule' }
     ],
@@ -77,4 +81,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule],
 })
-export class RouteRoutingModule {}
+export class RoutesRoutingModule {}

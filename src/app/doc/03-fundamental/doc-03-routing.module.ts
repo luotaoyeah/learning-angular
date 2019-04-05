@@ -9,7 +9,7 @@ import { DocFundamentalArchitectureDiComponent } from './03-01-architecture/03-0
 
 const routes: Routes = [
   {
-    path: 'doc/fundamental',
+    path: 'fundamental',
     component: Doc03Component,
     children: [
       {

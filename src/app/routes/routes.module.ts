@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
-
 import { SharedModule } from '@shared';
-import { RouteRoutingModule } from './routes-routing.module';
+import { RoutesRoutingModule } from './routes-routing.module';
 // dashboard pages
 import { DashboardComponent } from './dashboard/dashboard.component';
 // passport pages
@@ -22,11 +21,12 @@ const COMPONENTS = [
   CallbackComponent,
   UserLockComponent,
 ];
+
 // tslint:disable-next-line:no-any
 const COMPONENTS_NOROUNT: Array<any> = [];
 
 @NgModule({
-  imports: [SharedModule, RouteRoutingModule],
+  imports: [SharedModule, RoutesRoutingModule],
   declarations: [...COMPONENTS, ...COMPONENTS_NOROUNT],
   entryComponents: COMPONENTS_NOROUNT,
 })

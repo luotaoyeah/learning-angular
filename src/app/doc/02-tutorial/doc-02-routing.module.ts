@@ -7,7 +7,7 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 
 const routes: Routes = [
   {
-    path: 'doc/tutorial',
+    path: 'tutorial',
     component: Doc02Component,
     children: [
       {

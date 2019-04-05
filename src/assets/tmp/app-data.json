@@ -1,14 +1,27 @@
 {
   "app": {
-    "name": "Alain",
-    "description": "Ng-zorro admin panel front-end framework"
+    "name": "learning-angular",
+    "description": "learning-angular"
   },
   "user": {
-    "name": "Admin",
+    "name": "luotao",
     "avatar": "./assets/tmp/img/avatar.jpg",
-    "email": "cipchk@qq.com"
+    "email": "luotaoyeah@gmail.com"
   },
   "menu": [
+    {
+      "text": "DOC",
+      "i18n": "menu.doc",
+      "group": true,
+      "hideInBreadcrumb": true,
+      "children": [
+        {
+          "text": "TUTORIAL",
+          "i18n": "menu.doc.tutorial",
+          "link": "/doc/tutorial/dashboard"
+        }
+      ]
+    },
     {
       "text": "主导航",
       "i18n": "menu.main",
