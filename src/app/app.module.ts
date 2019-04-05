@@ -41,6 +41,7 @@ import { SharedModule } from '@shared';
 import { AppComponent } from './app.component';
 import { RoutesModule } from './routes/routes.module';
 import { LayoutModule } from './layout/layout.module';
+import { Router } from '@angular/router';
 
 const LANG = {
   abbr: 'en',
@@ -135,4 +136,23 @@ const APPINIT_PROVIDES = [
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  // @ts-ignore: TS6138
+  constructor(private router: Router) {
+    /*
+     * 通过 Router.config 属性，查看整个应用的完整的路由配置
+     */
+    // @ts-ignore: TS6133
+    /*
+        console.log(
+          JSON.stringify(
+            this.router.config,
+            // tslint:disable-next-line:no-any
+            (key: string, value: any) =>
+              typeof value === 'function' ? value.name : value,
+            2,
+          ),
+        );
+    */
+  }
+}

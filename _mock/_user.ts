@@ -1,5 +1,6 @@
 import { MockRequest } from '@delon/mock';
 
+// tslint:disable-next-line:no-any
 const list: Array<any> = [];
 const total = 50;
 
@@ -24,6 +25,7 @@ for (let i = 0; i < total; i += 1) {
   });
 }
 
+// tslint:disable-next-line:no-any
 function genData(params: any) {
   let ret = [...list];
   const pi = +params.pi;
@@ -37,6 +39,7 @@ function genData(params: any) {
   return { total: ret.length, list: ret.slice(start, ps * pi) };
 }
 
+// tslint:disable-next-line:no-any
 function saveData(id: number, value: any) {
   const item = list.find(w => w.id === id);
   if (!item) return { msg: '无效用户信息' };

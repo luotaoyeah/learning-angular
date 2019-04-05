@@ -14,6 +14,9 @@ import { UserRegisterResultComponent } from './passport/register-result/register
 // single pages
 import { CallbackComponent } from './callback/callback.component';
 import { UserLockComponent } from './passport/lock/lock.component';
+/* business pages */
+import { DocModule } from './doc/doc.module';
+import { ExceptionModule } from './exception/exception.module';
 
 const routes: Routes = [
   {
@@ -29,14 +32,12 @@ const routes: Routes = [
       },
       {
         path: 'exception',
-        loadChildren: './exception/exception.module#ExceptionModule',
+        loadChildren: () => ExceptionModule,
       },
       {
         path: 'doc',
-        loadChildren: '../doc/doc.module#DocModule',
+        loadChildren: () => DocModule,
       },
-      // 业务子模块
-      // { path: 'widgets', loadChildren: './widgets/widgets.module#WidgetsModule' }
     ],
   },
   // 全屏布局

@@ -14,47 +14,47 @@ import { Doc030211Component } from './03-02-11-pipe/doc-03-02-11.component';
 
 const routes: Routes = [
   {
-    path: 'doc/fundamental/component-template/displaying-data',
+    path: 'fundamental/component-template/displaying-data',
     component: Doc030201Component,
   },
   {
-    path: 'doc/fundamental/component-template/template-syntax',
+    path: 'fundamental/component-template/template-syntax',
     component: Doc030202Component,
   },
   {
-    path: 'doc/fundamental/component-template/user-input',
+    path: 'fundamental/component-template/user-input',
     component: Doc030203Component,
   },
   {
-    path: 'doc/fundamental/component-template/lifecycle-hooks',
+    path: 'fundamental/component-template/lifecycle-hooks',
     component: Doc030204Component,
   },
   {
-    path: 'doc/fundamental/component-template/component-interaction',
+    path: 'fundamental/component-template/component-interaction',
     component: Doc030205Component,
   },
   {
-    path: 'doc/fundamental/component-template/component-style',
+    path: 'fundamental/component-template/component-style',
     component: Doc030206Component,
   },
   {
-    path: 'doc/fundamental/component-template/angular-elements',
+    path: 'fundamental/component-template/angular-elements',
     component: Doc030207Component,
   },
   {
-    path: 'doc/fundamental/component-template/dynamic-components',
+    path: 'fundamental/component-template/dynamic-components',
     component: Doc030208Component,
   },
   {
-    path: 'doc/fundamental/component-template/attribute-directive',
+    path: 'fundamental/component-template/attribute-directive',
     component: Doc030209Component,
   },
   {
-    path: 'doc/fundamental/component-template/structural-directive',
+    path: 'fundamental/component-template/structural-directive',
     component: Doc030210Component,
   },
   {
-    path: 'doc/fundamental/component-template/pipes',
+    path: 'fundamental/component-template/pipes',
     component: Doc030211Component,
   },
 ];

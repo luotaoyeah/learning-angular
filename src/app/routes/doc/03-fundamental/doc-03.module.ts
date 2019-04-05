@@ -53,8 +53,8 @@ import { Doc0302Module } from './03-02-component-template/doc-03-02.module';
     FormsModule,
     ...[ButtonModule, InputTextModule, AccordionModule],
     Doc03RoutingModule,
-    Doc030902Module,
     Doc0302Module,
+    Doc030902Module,
   ],
 })
 export class Doc03Module {}

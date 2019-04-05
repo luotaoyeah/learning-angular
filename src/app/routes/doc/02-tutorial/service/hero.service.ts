@@ -22,7 +22,7 @@ export class HeroService {
   /*
    * InMemoryWebApi 的接口地址格式：:base/:collectionName
    */
-  private heroesUrl = 'api/heroes';
+  private heroesUrl = '/api/heroes';
 
   /*
    * 声明一个 parameter property，完成 service 的注入
