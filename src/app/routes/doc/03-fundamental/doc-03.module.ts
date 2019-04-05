@@ -15,7 +15,7 @@ import { Doc0309Component } from './03-09-routing-navigation/doc-03-09.component
 // tslint:disable-next-line:max-line-length
 import { Doc030901Component } from './03-09-routing-navigation/03-09-01-basic/doc-03-09-01.component';
 import { Doc03RoutingModule } from './doc-03-routing.module';
-import { DocFundamentalArchitectureComponent } from './03-01-architecture/doc-fundamental-architecture.component';
+import { Doc0301Component } from './03-01-architecture/doc-03-01.component';
 // tslint:disable-next-line:max-line-length
 import { DocFundamentalArchitectureIntroToComponentComponent } from './03-01-architecture/03-01-03-intro-to-component/doc-fundamental-architecture-intro-to-component.component';
 import { DocFundamentalArchitectureDiComponent } from './03-01-architecture/03-01-04-di/doc-fundamental-architecture-di.component';
@@ -39,7 +39,7 @@ import { Doc0302Module } from './03-02-component-template/doc-03-02.module';
     DashPipe,
     RadiusDirective,
     DiAComponent,
-    DocFundamentalArchitectureComponent,
+    Doc0301Component,
     DocFundamentalArchitectureIntroToComponentComponent,
     DocFundamentalArchitectureDiComponent,
     Doc0309Component,

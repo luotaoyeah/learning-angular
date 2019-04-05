@@ -26,11 +26,11 @@
               "children": [
                 {
                   "i18n": "menu.doc.fundamental.architecture.intro",
-                  "link": "/doc/fundamental/architecture/intro-into-component"
+                  "link": "/doc/03/01/intro-into-component"
                 },
                 {
                   "i18n": "menu.doc.fundamental.architecture.intro-to-di",
-                  "link": "/doc/fundamental/architecture/di"
+                  "link": "/doc/03/01/di"
                 }
               ]
             },
@@ -39,53 +39,53 @@
               "children": [
                 {
                   "i18n": "menu.doc.fundamental.component-template.displaying-data",
-                  "link": "/doc/fundamental/component-template/displaying-data"
+                  "link": "/doc/03/02/displaying-data"
                 },
                 {
                   "i18n": "menu.doc.fundamental.component-template.template-syntax",
-                  "link": "/doc/fundamental/component-template/template-syntax"
+                  "link": "/doc/03/02/template-syntax"
                 },
                 {
                   "i18n": "menu.doc.fundamental.component-template.user-input",
-                  "link": "/doc/fundamental/component-template/user-input"
+                  "link": "/doc/03/02/user-input"
                 },
                 {
                   "i18n": "menu.doc.fundamental.component-template.lifecycle-hooks",
-                  "link": "doc/fundamental/component-template/lifecycle-hooks"
+                  "link": "/doc/03/02/lifecycle-hooks"
                 },
                 {
                   "i18n": "menu.doc.fundamental.component-template.component-interaction",
-                  "link": "doc/fundamental/component-template/component-interaction"
+                  "link": "/doc/03/02/component-interaction"
                 },
                 {
                   "i18n": "menu.doc.fundamental.component-template.component-style",
-                  "link": "doc/fundamental/component-template/component-style"
+                  "link": "/doc/03/02/component-style"
                 },
                 {
                   "i18n": "menu.doc.fundamental.component-template.angular-elements",
-                  "link": "doc/fundamental/component-template/angular-elements"
+                  "link": "/doc/03/02/angular-elements"
                 },
                 {
                   "i18n": "menu.doc.fundamental.component-template.dynamic-components",
-                  "link": "doc/fundamental/component-template/dynamic-components"
+                  "link": "/doc/03/02/dynamic-components"
                 },
                 {
                   "i18n": "menu.doc.fundamental.component-template.attribute-directive",
-                  "link": "doc/fundamental/component-template/attribute-directive"
+                  "link": "/doc/03/02/attribute-directive"
                 },
                 {
                   "i18n": "menu.doc.fundamental.component-template.structural-directive",
-                  "link": "doc/fundamental/component-template/structural-directive"
+                  "link": "/doc/03/02/structural-directive"
                 },
                 {
                   "i18n": "menu.doc.fundamental.component-template.pipes",
-                  "link": "doc/fundamental/component-template/pipes"
+                  "link": "/doc/03/02/pipes"
                 }
               ]
             },
             {
               "i18n": "menu.doc.fundamental.routing-navigation",
-              "link": "/doc/fundamental/routing-navigation"
+              "link": "/doc/03/09"
             }
           ]
         }

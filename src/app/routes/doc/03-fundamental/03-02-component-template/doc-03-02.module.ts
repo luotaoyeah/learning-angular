@@ -4,13 +4,7 @@ import { CommonModule } from '@angular/common';
 import { Doc0302RoutingModule } from './doc-03-02-routing.module';
 import { Doc030201Component } from './03-02-01-displaying-data/doc-03-02-01.component';
 import { PanelModule } from 'primeng/panel';
-import {
-  AccordionModule,
-  ButtonModule,
-  InputTextModule,
-  MessagesModule,
-  SelectButtonModule,
-} from 'primeng/primeng';
+import { AccordionModule, ButtonModule, InputTextModule, MessagesModule, SelectButtonModule } from 'primeng/primeng';
 import { ToastModule } from 'primeng/toast';
 import { Doc03020101Component } from './03-02-01-displaying-data/03-02-01-01/doc-03-02-01-01.component';
 import { Doc03020102Component } from './03-02-01-displaying-data/03-02-01-02/doc-03-02-01-02.component';
