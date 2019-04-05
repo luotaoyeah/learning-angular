@@ -1,7 +1,7 @@
 import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
 
 @Directive({
-  selector: '[appUnless]'
+  selector: '[appUnless]',
 })
 export class UnlessDirective {
   private hasView = false;
@@ -11,7 +11,10 @@ export class UnlessDirective {
    * 即调用 ViewContainerRef.createEmbeddedView(templateRef: TemplateRef) 方法来创建，
    * 因此需要将 ViewContainerRef 和 TemplateRef 注入进来
    */
-  constructor(private templateRef: TemplateRef<any>, private viewContainerRef: ViewContainerRef) {}
+  constructor(
+    private templateRef: TemplateRef<any>,
+    private viewContainerRef: ViewContainerRef,
+  ) {}
 
   @Input()
   set appUnless(value: boolean) {

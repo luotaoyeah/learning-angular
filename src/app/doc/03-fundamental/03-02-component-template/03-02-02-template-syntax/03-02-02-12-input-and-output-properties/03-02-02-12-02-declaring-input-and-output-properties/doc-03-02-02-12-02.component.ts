@@ -4,7 +4,7 @@ import { MessageService } from 'primeng/api';
 @Component({
   selector: 'app-doc-03-02-02-12-02',
   templateUrl: './doc-03-02-02-12-02.component.html',
-  providers: [MessageService]
+  providers: [MessageService],
 })
 export class Doc0302021202Component implements OnInit {
   someProperty = 'FOOBAR';
@@ -14,6 +14,10 @@ export class Doc0302021202Component implements OnInit {
   ngOnInit() {}
 
   doSomething($event: string) {
-    this.messageService.add({ severity: 'success', summary: '提示', detail: $event });
+    this.messageService.add({
+      severity: 'success',
+      summary: '提示',
+      detail: $event,
+    });
   }
 }

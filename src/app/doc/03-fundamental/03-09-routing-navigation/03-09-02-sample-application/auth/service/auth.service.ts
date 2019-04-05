@@ -4,7 +4,7 @@ import { of } from 'rxjs/internal/observable/of';
 import { delay, tap } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
   isLogin = false;
@@ -17,7 +17,7 @@ export class AuthService {
       delay(1000),
       tap(() => {
         this.isLogin = true;
-      })
+      }),
     );
   }
 

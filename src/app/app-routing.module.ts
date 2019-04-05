@@ -20,7 +20,7 @@ const routes: Routes = [
      *     prefix（默认）：前缀匹配
      *     full：完全匹配
      */
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   /*
    * 通常在最后面添加一个 path 为 ** 的路由（wildcard route），
@@ -28,8 +28,8 @@ const routes: Routes = [
    */
   {
     path: '**',
-    component: PageNotFoundComponent
-  }
+    component: PageNotFoundComponent,
+  },
 ];
 
 @NgModule({
@@ -56,14 +56,14 @@ const routes: Routes = [
        * 这种风格更加直观，且可以跟 SSR（Server Side Rendering） 进行结合，
        * 可以通过 useHash 选项来启用 # 风格
        */
-      useHash: false
-    })
+      useHash: false,
+    }),
   ],
   /*
    * 在 AppRoutingModule 中将 RouterModule 输出，
    * 这样在 AppModule 引入了 AppRoutingModule 之后，
    * AppModule 下面所有的组件中，也都可以使用 RouterModule 中的数据
    */
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}

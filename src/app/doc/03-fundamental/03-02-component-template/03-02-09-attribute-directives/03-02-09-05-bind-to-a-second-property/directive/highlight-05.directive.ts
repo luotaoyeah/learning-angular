@@ -1,7 +1,7 @@
 import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 
 @Directive({
-  selector: '[appHighlight05]'
+  selector: '[appHighlight05]',
 })
 export class Highlight05Directive {
   @Input('appHighlight05') highlightColor!: string;
@@ -12,7 +12,8 @@ export class Highlight05Directive {
 
   @HostListener('mouseenter')
   onMouseEnter() {
-    this.elementRef.nativeElement.style.color = this.highlightColor || this.defaultColor || '#ff0000';
+    this.elementRef.nativeElement.style.color =
+      this.highlightColor || this.defaultColor || '#ff0000';
   }
 
   @HostListener('mouseleave')

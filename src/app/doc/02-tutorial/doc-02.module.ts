@@ -10,7 +10,14 @@ import { FormsModule } from '@angular/forms';
 import { Doc02RoutingModule } from './doc-02-routing.module';
 
 @NgModule({
-  declarations: [Doc02Component, HeroesComponent, HeroDetailComponent, MessagesComponent, DashboardComponent, HeroSearchComponent],
-  imports: [CommonModule, Doc02RoutingModule, FormsModule]
+  declarations: [
+    Doc02Component,
+    HeroesComponent,
+    HeroDetailComponent,
+    MessagesComponent,
+    DashboardComponent,
+    HeroSearchComponent,
+  ],
+  imports: [CommonModule, Doc02RoutingModule, FormsModule],
 })
 export class Doc02Module {}

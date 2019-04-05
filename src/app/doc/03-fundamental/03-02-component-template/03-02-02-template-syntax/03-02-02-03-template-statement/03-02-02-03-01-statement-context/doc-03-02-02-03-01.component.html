@@ -27,5 +27,10 @@
     而不是属于 component context 的
   -->
   <hr />
-  <p-button *ngFor="let hero of heroes" (onClick)="handleClick02(hero)" [label]="hero" [style.marginRight]="'10px'"></p-button>
+  <p-button
+    *ngFor="let hero of heroes"
+    (onClick)="handleClick02(hero)"
+    [label]="hero"
+    [style.marginRight]="'10px'"
+  ></p-button>
 </p-accordionTab>

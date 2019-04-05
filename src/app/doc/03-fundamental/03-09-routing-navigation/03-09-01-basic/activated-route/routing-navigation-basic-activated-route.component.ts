@@ -3,7 +3,7 @@ import { ActivatedRoute, Data, ParamMap, UrlSegment } from '@angular/router';
 
 @Component({
   selector: 'app-routing-navigation-basic-activated-route',
-  templateUrl: './routing-navigation-basic-activated-route.component.html'
+  templateUrl: './routing-navigation-basic-activated-route.component.html',
 })
 export class RoutingNavigationBasicActivatedRouteComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute) {}
@@ -69,14 +69,18 @@ export class RoutingNavigationBasicActivatedRouteComponent implements OnInit {
      * 表示当前路由的配置对象
      */
     // tslint:disable-next-line:no-non-null-assertion
-    console.assert(this.activatedRoute.routeConfig!.path === 'routing-navigation/:foo');
+    console.assert(
+      this.activatedRoute.routeConfig!.path === 'routing-navigation/:foo',
+    );
 
     /*
      * ActivatedRoute.parent 属性，
      * 表示当前路由的上级路由
      */
     // tslint:disable-next-line:no-non-null-assertion
-    console.assert(this.activatedRoute.parent!.routeConfig!.path === 'doc/fundamental');
+    console.assert(
+      this.activatedRoute.parent!.routeConfig!.path === 'doc/fundamental',
+    );
 
     /*
      * ActivatedRoute.children 属性，

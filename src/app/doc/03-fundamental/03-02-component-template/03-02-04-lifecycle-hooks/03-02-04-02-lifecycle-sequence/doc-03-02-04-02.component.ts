@@ -9,15 +9,23 @@ import {
   OnChanges,
   OnDestroy,
   OnInit,
-  SimpleChanges
+  SimpleChanges,
 } from '@angular/core';
 
 @Component({
   selector: 'app-doc-03-02-04-02',
-  templateUrl: './doc-03-02-04-02.component.html'
+  templateUrl: './doc-03-02-04-02.component.html',
 })
 export class Doc03020402Component
-  implements OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy {
+  implements
+    OnInit,
+    OnChanges,
+    DoCheck,
+    AfterContentInit,
+    AfterContentChecked,
+    AfterViewInit,
+    AfterViewChecked,
+    OnDestroy {
   @Input() foo = '';
 
   constructor() {}

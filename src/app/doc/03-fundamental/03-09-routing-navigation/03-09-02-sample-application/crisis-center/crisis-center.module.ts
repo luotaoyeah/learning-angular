@@ -12,7 +12,17 @@ import { CrisisCenterComponent } from './crisis-center/crisis-center.component';
 import { CrisisHomeComponent } from './crisis-home/crisis-home.component';
 
 @NgModule({
-  declarations: [CrisisCenterComponent, CrisisListComponent, CrisisDetailComponent, CrisisHomeComponent],
-  imports: [CommonModule, FormsModule, CrisisCenterRoutingModule, ...[PanelModule, ButtonModule, InputTextModule]]
+  declarations: [
+    CrisisCenterComponent,
+    CrisisListComponent,
+    CrisisDetailComponent,
+    CrisisHomeComponent,
+  ],
+  imports: [
+    CommonModule,
+    FormsModule,
+    CrisisCenterRoutingModule,
+    ...[PanelModule, ButtonModule, InputTextModule],
+  ],
 })
 export class CrisisCenterModule {}

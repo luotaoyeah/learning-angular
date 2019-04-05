@@ -10,6 +10,11 @@ import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [HeroListComponent, HeroDetailComponent],
-  imports: [CommonModule, FormsModule, HeroesRoutingModule, ...[PanelModule, ButtonModule, InputTextModule]]
+  imports: [
+    CommonModule,
+    FormsModule,
+    HeroesRoutingModule,
+    ...[PanelModule, ButtonModule, InputTextModule],
+  ],
 })
 export class HeroesModule {}

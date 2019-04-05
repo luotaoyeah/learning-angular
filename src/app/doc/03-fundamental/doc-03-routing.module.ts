@@ -18,13 +18,13 @@ const routes: Routes = [
         children: [
           {
             path: 'intro-into-component',
-            component: DocFundamentalArchitectureIntroToComponentComponent
+            component: DocFundamentalArchitectureIntroToComponentComponent,
           },
           {
             path: 'di',
-            component: DocFundamentalArchitectureDiComponent
-          }
-        ]
+            component: DocFundamentalArchitectureDiComponent,
+          },
+        ],
       },
       {
         path: 'routing-navigation/:foo',
@@ -33,15 +33,15 @@ const routes: Routes = [
          * 可以通过 data 选项，传递业务数据
          */
         data: {
-          someData: 'FOO'
-        }
-      }
-    ]
-  }
+          someData: 'FOO',
+        },
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class Doc03RoutingModule {}

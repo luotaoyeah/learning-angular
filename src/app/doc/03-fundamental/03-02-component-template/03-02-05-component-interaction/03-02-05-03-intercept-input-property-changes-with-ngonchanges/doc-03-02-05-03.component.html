@@ -1,7 +1,13 @@
-<p-accordionTab header="Intercept Input Property Changes with ngOnChanges()" [transitionOptions]="'0ms'">
+<p-accordionTab
+  header="Intercept Input Property Changes with ngOnChanges()"
+  [transitionOptions]="'0ms'"
+>
   <p-button label="update major" (onClick)="updateMajor()"></p-button>
   &nbsp;
   <p-button label="update minor" (onClick)="updateMinor()"></p-button>
   &nbsp;
-  <app-doc-03-02-05-03-01 [major]="major" [minor]="minor"></app-doc-03-02-05-03-01>
+  <app-doc-03-02-05-03-01
+    [major]="major"
+    [minor]="minor"
+  ></app-doc-03-02-05-03-01>
 </p-accordionTab>

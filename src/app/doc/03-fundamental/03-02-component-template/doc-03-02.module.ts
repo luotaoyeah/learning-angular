@@ -4,7 +4,13 @@ import { CommonModule } from '@angular/common';
 import { Doc0302RoutingModule } from './doc-03-02-routing.module';
 import { Doc030201Component } from './03-02-01-displaying-data/doc-03-02-01.component';
 import { PanelModule } from 'primeng/panel';
-import { AccordionModule, ButtonModule, InputTextModule, MessagesModule, SelectButtonModule } from 'primeng/primeng';
+import {
+  AccordionModule,
+  ButtonModule,
+  InputTextModule,
+  MessagesModule,
+  SelectButtonModule,
+} from 'primeng/primeng';
 import { ToastModule } from 'primeng/toast';
 import { Doc03020101Component } from './03-02-01-displaying-data/03-02-01-01/doc-03-02-01-01.component';
 import { Doc03020102Component } from './03-02-01-displaying-data/03-02-01-02/doc-03-02-01-02.component';
@@ -322,7 +328,7 @@ import { Doc03021101Component } from './03-02-11-pipe/03-02-11-01-using-pipes/do
     UnlessDirective,
     /* 03-02-11 */
     Doc030211Component,
-    Doc03021101Component
+    Doc03021101Component,
   ],
   imports: [
     CommonModule,
@@ -334,11 +340,11 @@ import { Doc03021101Component } from './03-02-11-pipe/03-02-11-01-using-pipes/do
     FormsModule,
     SelectButtonModule,
     MessagesModule,
-    InputTextModule
+    InputTextModule,
   ],
   /*
    * 动态加载的 component 需要在 NgModule 的 entryComponents 中声明
    */
-  entryComponents: [Doc03020801Component]
+  entryComponents: [Doc03020801Component],
 })
 export class Doc0302Module {}

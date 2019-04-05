@@ -1,8 +1,15 @@
-import { Component, Input, OnChanges, OnInit, SimpleChange, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChange,
+  SimpleChanges,
+} from '@angular/core';
 
 @Component({
   selector: 'app-doc-03-02-04-05-02',
-  template: '<p>{{bar.name}}</p>'
+  template: '<p>{{bar.name}}</p>',
 })
 export class Doc0302040502Component implements OnInit, OnChanges {
   @Input() bar: { name: string } = { name: 'BAR' };

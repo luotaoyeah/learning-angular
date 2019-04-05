@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
    */
   selector: 'app-intro-into-component-a',
   templateUrl: './intro-into-component-a.component.html',
-  styleUrls: ['./intro-into-component-a.component.scss']
+  styleUrls: ['./intro-into-component-a.component.scss'],
 })
 export class IntroIntoComponentAComponent implements OnInit {
   constructor() {}

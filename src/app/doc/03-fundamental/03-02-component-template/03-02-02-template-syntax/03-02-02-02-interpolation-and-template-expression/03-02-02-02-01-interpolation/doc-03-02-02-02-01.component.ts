@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-doc-03-02-02-02-01',
-  templateUrl: './doc-03-02-02-02-01.component.html'
+  templateUrl: './doc-03-02-02-02-01.component.html',
 })
 export class Doc0302020201Component implements OnInit {
   /*
@@ -14,7 +14,7 @@ export class Doc0302020201Component implements OnInit {
   foo: any = {
     toString() {
       return '[[FOO]]';
-    }
+    },
   };
 
   constructor() {}

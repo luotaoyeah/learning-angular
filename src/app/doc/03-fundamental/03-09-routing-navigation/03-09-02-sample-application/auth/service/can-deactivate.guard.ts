@@ -3,10 +3,17 @@ import { CanDeactivate, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class CanDeactivateGuard implements CanDeactivate<CanDeactivateComponent> {
-  canDeactivate(component: CanDeactivateComponent): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+export class CanDeactivateGuard
+  implements CanDeactivate<CanDeactivateComponent> {
+  canDeactivate(
+    component: CanDeactivateComponent,
+  ):
+    | Observable<boolean | UrlTree>
+    | Promise<boolean | UrlTree>
+    | boolean
+    | UrlTree {
     return component.canDeactivate ? component.canDeactivate() : true;
   }
 }

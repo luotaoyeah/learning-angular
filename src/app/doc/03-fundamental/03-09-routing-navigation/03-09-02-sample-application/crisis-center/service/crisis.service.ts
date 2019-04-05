@@ -5,7 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, tap } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CrisisService {
   private url = 'api/crises';
@@ -20,7 +20,7 @@ export class CrisisService {
       tap(() => {
         console.log('[加载危机列表]');
       }),
-      catchError(this.handleError<Array<Crisis>>('getCrises', []))
+      catchError(this.handleError<Array<Crisis>>('getCrises', [])),
     );
   }
 
@@ -33,7 +33,7 @@ export class CrisisService {
       tap(() => {
         console.log(`[查询危机]: [ id = ${id} ]`);
       }),
-      catchError(this.handleError<Crisis>(`getCrisis id=${id}`))
+      catchError(this.handleError<Crisis>(`getCrisis id=${id}`)),
     );
   }
 
@@ -44,13 +44,13 @@ export class CrisisService {
   updateCrisis(crisis: Crisis): Observable<any> {
     return this.http
       .put<Crisis>(this.url, crisis, {
-        headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+        headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
       })
       .pipe(
         tap(() => {
           console.log(`[更新危机]: [ id = ${crisis.id}]`);
         }),
-        catchError(this.handleError<any>(`updateCrisis`))
+        catchError(this.handleError<any>(`updateCrisis`)),
       );
   }
 

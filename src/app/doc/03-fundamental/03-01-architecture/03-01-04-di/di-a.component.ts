@@ -14,7 +14,7 @@ import { DiAService } from './service/di-a.service';
    * 同时，NgModule 和 component 中也都有各自的 injector，
    * 可以分别通过 @NgModule.providers 和 @Component.providers 来注册 providers
    */
-  providers: [DiAService]
+  providers: [DiAService],
 })
 export class DiAComponent implements OnInit {
   constructor(private diAService: DiAService) {}

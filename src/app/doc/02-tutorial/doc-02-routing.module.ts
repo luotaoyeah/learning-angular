@@ -12,22 +12,22 @@ const routes: Routes = [
     children: [
       {
         path: 'dashboard',
-        component: DashboardComponent
+        component: DashboardComponent,
       },
       {
         path: 'heroes',
-        component: HeroesComponent
+        component: HeroesComponent,
       },
       {
         path: 'heroes/:id',
-        component: HeroDetailComponent
-      }
-    ]
-  }
+        component: HeroDetailComponent,
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class Doc02RoutingModule {}

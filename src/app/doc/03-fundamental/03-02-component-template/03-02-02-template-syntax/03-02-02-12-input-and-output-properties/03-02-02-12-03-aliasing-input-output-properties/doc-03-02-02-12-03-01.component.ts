@@ -3,7 +3,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 @Component({
   selector: 'app-doc-03-02-02-12-03-01',
   template:
-    '<p-button label="app-doc-03-02-02-12-02-01" styleClass="ui-button-success" (onClick)="bar.emit(foo.toUpperCase())"></p-button>&nbsp;'
+    '<p-button label="app-doc-03-02-02-12-02-01" styleClass="ui-button-success" (onClick)="bar.emit(foo.toUpperCase())"></p-button>&nbsp;',
 })
 export class Doc030202120301Component implements OnInit {
   /*

@@ -16,7 +16,7 @@ import { catchError, tap } from 'rxjs/operators';
  */
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class HeroService {
   /*
@@ -27,7 +27,10 @@ export class HeroService {
   /*
    * 声明一个 parameter property，完成 service 的注入
    */
-  constructor(private http: HttpClient, private messageService: MessageService) {}
+  constructor(
+    private http: HttpClient,
+    private messageService: MessageService,
+  ) {}
 
   /**
    * 获取英雄列表
@@ -41,7 +44,7 @@ export class HeroService {
       tap(() => {
         this.log('[加载英雄列表]');
       }),
-      catchError(this.handleError<Array<Hero>>('getHeroes', []))
+      catchError(this.handleError<Array<Hero>>('getHeroes', [])),
     );
   }
 
@@ -54,7 +57,7 @@ export class HeroService {
       tap(() => {
         this.log(`[查询英雄]: [ id = ${id} ]`);
       }),
-      catchError(this.handleError<Hero>(`getHero id=${id}`))
+      catchError(this.handleError<Hero>(`getHero id=${id}`)),
     );
   }
 
@@ -65,13 +68,13 @@ export class HeroService {
   updateHero(hero: Hero): Observable<any> {
     return this.http
       .put<Hero>(this.heroesUrl, hero, {
-        headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+        headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
       })
       .pipe(
         tap(() => {
           this.log(`[更新英雄]: [ id = ${hero.id}]`);
         }),
-        catchError(this.handleError<any>(`updateHero`))
+        catchError(this.handleError<any>(`updateHero`)),
       );
   }
 
@@ -83,14 +86,14 @@ export class HeroService {
     return this.http
       .post<Hero>(this.heroesUrl, hero, {
         headers: new HttpHeaders({
-          'Content-Type': 'application/json'
-        })
+          'Content-Type': 'application/json',
+        }),
       })
       .pipe(
         tap((newHero: Hero) => {
           this.log(`[添加英雄]: [ id = ${newHero.id} ]`);
         }),
-        catchError(this.handleError<Hero>('addHero'))
+        catchError(this.handleError<Hero>('addHero')),
       );
   }
 
@@ -102,14 +105,14 @@ export class HeroService {
     return this.http
       .delete<Hero>(`${this.heroesUrl}/${hero.id}`, {
         headers: new HttpHeaders({
-          'Content-Type': 'application/json'
-        })
+          'Content-Type': 'application/json',
+        }),
       })
       .pipe(
         tap(() => {
           this.log(`[删除英雄]: [ id = ${hero.id} ]`);
         }),
-        catchError(this.handleError<Hero>('deleteHero'))
+        catchError(this.handleError<Hero>('deleteHero')),
       );
   }
 
@@ -122,12 +125,14 @@ export class HeroService {
       return of([]);
     }
 
-    return this.http.get<Array<Hero>>(`${this.heroesUrl}/?name=${term.trim()}`).pipe(
-      tap(() => {
-        this.log(`[搜索英雄]: [ term = ${term}]`);
-      }),
-      catchError(this.handleError<Array<Hero>>('searchHeroes'))
-    );
+    return this.http
+      .get<Array<Hero>>(`${this.heroesUrl}/?name=${term.trim()}`)
+      .pipe(
+        tap(() => {
+          this.log(`[搜索英雄]: [ term = ${term}]`);
+        }),
+        catchError(this.handleError<Array<Hero>>('searchHeroes')),
+      );
   }
 
   /**

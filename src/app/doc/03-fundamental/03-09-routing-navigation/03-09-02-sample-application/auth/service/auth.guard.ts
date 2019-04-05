@@ -7,13 +7,13 @@ import {
   Route,
   Router,
   RouterStateSnapshot,
-  UrlTree
+  UrlTree,
 } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
   constructor(private router: Router, private authService: AuthService) {}
@@ -26,8 +26,12 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
   canActivate(
     // @ts-ignore: TS6133
     next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
-  ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    state: RouterStateSnapshot,
+  ):
+    | Observable<boolean | UrlTree>
+    | Promise<boolean | UrlTree>
+    | boolean
+    | UrlTree {
     return this.checkLogin(state.url);
   }
 
@@ -39,9 +43,14 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
   canActivateChild(
     childRoute: ActivatedRouteSnapshot,
     // @ts-ignore: TS6133
-    state: RouterStateSnapshot
-  ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    const result = !!childRoute.routeConfig && childRoute.routeConfig.path !== 'heroes';
+    state: RouterStateSnapshot,
+  ):
+    | Observable<boolean | UrlTree>
+    | Promise<boolean | UrlTree>
+    | boolean
+    | UrlTree {
+    const result =
+      !!childRoute.routeConfig && childRoute.routeConfig.path !== 'heroes';
     if (!result) {
       console.warn('没有权限进入');
     }
@@ -59,12 +68,15 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
     }
 
     this.authService.redirectUrl = url;
-    this.router.navigate(['/doc/fundamental/routing/sample-application/login'], {
-      queryParams: {
-        session_id: 123456789
+    this.router.navigate(
+      ['/doc/fundamental/routing/sample-application/login'],
+      {
+        queryParams: {
+          session_id: 123456789,
+        },
+        fragment: 'viewContainerRef',
       },
-      fragment: 'viewContainerRef'
-    });
+    );
     return false;
   }
 
@@ -73,6 +85,8 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
    * @param route 路由配置
    */
   canLoad(route: Route): Observable<boolean> | Promise<boolean> | boolean {
-    return this.checkLogin(`/doc/fundamental/routing/sample-application/${route.path}`);
+    return this.checkLogin(
+      `/doc/fundamental/routing/sample-application/${route.path}`,
+    );
   }
 }

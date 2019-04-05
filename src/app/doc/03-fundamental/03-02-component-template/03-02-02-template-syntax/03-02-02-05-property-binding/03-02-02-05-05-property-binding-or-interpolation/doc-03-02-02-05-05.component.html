@@ -1,9 +1,21 @@
-<p-accordionTab header="Property Binding or Interpolation ?" [transitionOptions]="'0ms'">
-  <p>在某些情况下，当 target property 是 string 类型时，property binding 和 interpolation 可以达到相同的目的</p>
+<p-accordionTab
+  header="Property Binding or Interpolation ?"
+  [transitionOptions]="'0ms'"
+>
+  <p>
+    在某些情况下，当 target property 是 string 类型时，property binding 和
+    interpolation 可以达到相同的目的
+  </p>
 
-  <img src="{{ picUrl }}" [ngStyle]="{ width: '50px', height: '50px', borderRadius: '100%' }" />
+  <img
+    src="{{ picUrl }}"
+    [ngStyle]="{ width: '50px', height: '50px', borderRadius: '100%' }"
+  />
   &nbsp;
-  <img [src]="picUrl" [ngStyle]="{ width: '50px', height: '50px', borderRadius: '100%' }" />
+  <img
+    [src]="picUrl"
+    [ngStyle]="{ width: '50px', height: '50px', borderRadius: '100%' }"
+  />
 
   <hr />
   <span>{{ picUrl }}</span>
@@ -12,7 +24,8 @@
 
   <hr />
   <p>
-    property binding 和 interpolation 都可以防止 XSS，这个处理过程称之为 sanitizing， 会在控制台打印一条警告消息：
+    property binding 和 interpolation 都可以防止 XSS，这个处理过程称之为
+    sanitizing， 会在控制台打印一条警告消息：
     <img src="assets/images/20190328090520.png" [ngStyle]="{ width: '100%' }" />
   </p>
   <span>{{ maliciousHTML }}</span>

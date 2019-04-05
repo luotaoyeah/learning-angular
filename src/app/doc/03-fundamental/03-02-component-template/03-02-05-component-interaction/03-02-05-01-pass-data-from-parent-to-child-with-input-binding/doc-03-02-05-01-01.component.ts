@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
     <p-button [label]="foo"></p-button>
     &nbsp;
     <p-button [label]="bar"></p-button>
-  `
+  `,
 })
 export class Doc0302050101Component implements OnInit {
   /*

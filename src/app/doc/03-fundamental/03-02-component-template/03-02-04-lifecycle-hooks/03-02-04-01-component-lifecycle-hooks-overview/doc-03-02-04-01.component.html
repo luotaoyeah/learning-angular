@@ -1,11 +1,18 @@
-<p-accordionTab header="Component Lifecycle Hooks Overview" [transitionOptions]="'0ms'">
+<p-accordionTab
+  header="Component Lifecycle Hooks Overview"
+  [transitionOptions]="'0ms'"
+>
   <p>
-    component 是一种特殊的 directive，component 和 directive 都有一系列的生命周期函数（lifecycle hooks），每个生命周期都有一个对应的接口（如
-    OnInit 接口），component 通过实现某个接口及其对应的方法，来添加该生命周期的钩子函数；每个接口对应一个方法，方法名称为 ng + 接口名称，如
-    OnInit 接口的 ngOnInit() 方法
+    component 是一种特殊的 directive，component 和 directive
+    都有一系列的生命周期函数（lifecycle
+    hooks），每个生命周期都有一个对应的接口（如 OnInit 接口），component
+    通过实现某个接口及其对应的方法，来添加该生命周期的钩子函数；每个接口对应一个方法，方法名称为
+    ng + 接口名称，如 OnInit 接口的 ngOnInit() 方法
   </p>
   <p>
-    因为 TS 最终会被编译为 JS，而 JS 中不存在 interface 的概念，因此严格来讲，component
-    不需要实现某个生命周期接口，只要它实现了对应的方法（如 ngOnInit() 方法）就可以，但是实现对应的接口是最佳实践
+    因为 TS 最终会被编译为 JS，而 JS 中不存在 interface
+    的概念，因此严格来讲，component
+    不需要实现某个生命周期接口，只要它实现了对应的方法（如 ngOnInit()
+    方法）就可以，但是实现对应的接口是最佳实践
   </p>
 </p-accordionTab>

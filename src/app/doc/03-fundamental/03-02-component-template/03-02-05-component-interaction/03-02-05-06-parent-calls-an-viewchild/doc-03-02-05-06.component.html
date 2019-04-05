@@ -1,11 +1,22 @@
-<p-accordionTab header="Parent Calls on @ViewChild()" [transitionOptions]="'0ms'">
+<p-accordionTab
+  header="Parent Calls on @ViewChild()"
+  [transitionOptions]="'0ms'"
+>
   <p>
-    通过 template reference variable 访问子组件的实例，这种方式有个缺点，就是只能在 template 中访问，无法在 component 类中访问， 如果要在
-    component 类中访问，可以使用 @ViewChild() 装饰器将子组件的实例注入到 component 中
+    通过 template reference variable
+    访问子组件的实例，这种方式有个缺点，就是只能在 template 中访问，无法在
+    component 类中访问， 如果要在 component 类中访问，可以使用 @ViewChild()
+    装饰器将子组件的实例注入到 component 中
   </p>
-  <p-button icon="pi pi-arrow-up" (onClick)="doc0302050501Component.doVote('👍')"></p-button>
+  <p-button
+    icon="pi pi-arrow-up"
+    (onClick)="doc0302050501Component.doVote('👍')"
+  ></p-button>
   &nbsp;
-  <p-button icon="pi pi-arrow-down" (onClick)="doc0302050501Component.doVote('👎')"></p-button>
+  <p-button
+    icon="pi pi-arrow-down"
+    (onClick)="doc0302050501Component.doVote('👎')"
+  ></p-button>
   &nbsp;
   <p-button [label]="doc0302050501Component.result"></p-button>
   <br />

@@ -1,8 +1,16 @@
-import { Component, DoCheck, Input, OnChanges, OnInit, SimpleChange, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  DoCheck,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChange,
+  SimpleChanges,
+} from '@angular/core';
 
 @Component({
   selector: 'app-doc-03-02-04-06-01',
-  template: ''
+  template: '',
 })
 export class Doc0302040601Component implements OnInit, OnChanges, DoCheck {
   @Input() bar: { name: string } = { name: '' };
@@ -20,14 +28,20 @@ export class Doc0302040601Component implements OnInit, OnChanges, DoCheck {
   ngOnChanges(changes: SimpleChanges): void {
     const barChange: SimpleChange = changes.bar;
     if (barChange && !barChange.firstChange) {
-      console.log(`%c[${Doc0302040601Component.name}][ngOnChanges()] CHANGED`, 'color:#00ff00');
+      console.log(
+        `%c[${Doc0302040601Component.name}][ngOnChanges()] CHANGED`,
+        'color:#00ff00',
+      );
     }
   }
 
   ngDoCheck(): void {
     if (this.barName !== this.bar.name) {
       this.barName = this.bar.name;
-      console.log(`%c[${Doc0302040601Component.name}][ngDoCheck()] CHANGED`, 'color:#00ff00');
+      console.log(
+        `%c[${Doc0302040601Component.name}][ngDoCheck()] CHANGED`,
+        'color:#00ff00',
+      );
     }
   }
 }

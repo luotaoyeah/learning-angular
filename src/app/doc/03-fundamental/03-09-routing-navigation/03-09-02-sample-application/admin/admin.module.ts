@@ -9,7 +9,12 @@ import { ManageCrisesComponent } from './manage-crises/manage-crises.component';
 import { PanelModule } from 'primeng/panel';
 
 @NgModule({
-  declarations: [AdminComponent, AdminDashboardComponent, ManageHeroesComponent, ManageCrisesComponent],
-  imports: [CommonModule, AdminRoutingModule, PanelModule]
+  declarations: [
+    AdminComponent,
+    AdminDashboardComponent,
+    ManageHeroesComponent,
+    ManageCrisesComponent,
+  ],
+  imports: [CommonModule, AdminRoutingModule, PanelModule],
 })
 export class AdminModule {}

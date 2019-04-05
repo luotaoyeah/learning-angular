@@ -17,19 +17,19 @@ import { CrisisCenterModule } from './crisis-center/crisis-center.module';
             path: 'crisis-center',
             loadChildren: () => CrisisCenterModule,
             data: {
-              preload: true
-            }
+              preload: true,
+            },
           },
           {
             path: 'admin',
             loadChildren: () => AdminModule,
-            canLoad: [AuthGuard]
+            canLoad: [AuthGuard],
           },
           {
             path: 'login',
-            loadChildren: './auth/auth.module#AuthModule'
-          }
-        ]
+            loadChildren: './auth/auth.module#AuthModule',
+          },
+        ],
       },
       /*
        * TODO
@@ -38,10 +38,10 @@ import { CrisisCenterModule } from './crisis-center/crisis-center.module';
       {
         path: 'compose',
         component: ComposeMessageComponent,
-        outlet: 'popup'
-      }
-    ])
+        outlet: 'popup',
+      },
+    ]),
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class Doc030902RoutingModule {}

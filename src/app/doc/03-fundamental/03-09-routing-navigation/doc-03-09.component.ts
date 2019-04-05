@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-docc-03-09',
   templateUrl: './doc-03-09.component.html',
-  styleUrls: ['./doc-03-09.component.scss']
+  styleUrls: ['./doc-03-09.component.scss'],
 })
 export class Doc0309Component implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private router: Router) {}

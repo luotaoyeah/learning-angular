@@ -4,7 +4,7 @@ import { MessageService } from 'primeng/api';
 @Component({
   selector: 'app-doc-03-02-02-12-01',
   templateUrl: './doc-03-02-02-12-01.component.html',
-  providers: [MessageService]
+  providers: [MessageService],
 })
 export class Doc0302021201Component implements OnInit {
   public foo = 'FOO';

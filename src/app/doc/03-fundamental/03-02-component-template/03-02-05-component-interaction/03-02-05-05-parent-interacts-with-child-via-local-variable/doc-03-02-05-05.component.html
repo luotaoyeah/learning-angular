@@ -1,10 +1,20 @@
-<p-accordionTab header="Parent Interacts with Child via Local Variable" [transitionOptions]="'0ms'">
+<p-accordionTab
+  header="Parent Interacts with Child via Local Variable"
+  [transitionOptions]="'0ms'"
+>
   <p>
-    可以通过 template reference variable 获取到对子组件的实例引用，然后在 template 中通过这个 variable 可以访问子组件上的方法和属性
+    可以通过 template reference variable 获取到对子组件的实例引用，然后在
+    template 中通过这个 variable 可以访问子组件上的方法和属性
   </p>
-  <p-button icon="pi pi-arrow-up" (onClick)="doc0302050501Component.doVote('👍')"></p-button>
+  <p-button
+    icon="pi pi-arrow-up"
+    (onClick)="doc0302050501Component.doVote('👍')"
+  ></p-button>
   &nbsp;
-  <p-button icon="pi pi-arrow-down" (onClick)="doc0302050501Component.doVote('👎')"></p-button>
+  <p-button
+    icon="pi pi-arrow-down"
+    (onClick)="doc0302050501Component.doVote('👎')"
+  ></p-button>
   &nbsp;
   <p-button [label]="doc0302050501Component.result"></p-button>
   <br />

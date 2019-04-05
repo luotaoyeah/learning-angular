@@ -6,12 +6,16 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-hero-list',
   templateUrl: './hero-list.component.html',
-  styleUrls: ['./hero-list.component.scss']
+  styleUrls: ['./hero-list.component.scss'],
 })
 export class HeroListComponent implements OnInit {
   heroes: Array<Hero> = [];
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute, private heroService: HeroService) {}
+  constructor(
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private heroService: HeroService,
+  ) {}
 
   ngOnInit() {
     this.heroService.getHeroes().subscribe((heroes: Array<Hero>) => {
@@ -28,7 +32,7 @@ export class HeroListComponent implements OnInit {
       /*
        * 通过 relativeTo 指定要相对于哪个路由进行导航
        */
-      relativeTo: this.activatedRoute
+      relativeTo: this.activatedRoute,
     });
   }
 }

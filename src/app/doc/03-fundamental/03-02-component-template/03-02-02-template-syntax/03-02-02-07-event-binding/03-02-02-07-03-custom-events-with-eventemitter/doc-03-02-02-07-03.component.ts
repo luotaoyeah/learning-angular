@@ -4,7 +4,7 @@ import { MessageService } from 'primeng/api';
 @Component({
   selector: 'app-doc-03-02-02-07-03',
   templateUrl: './doc-03-02-02-07-03.component.html',
-  providers: [MessageService]
+  providers: [MessageService],
 })
 export class Doc0302020703Component implements OnInit {
   constructor(public messageService: MessageService) {}
@@ -15,7 +15,7 @@ export class Doc0302020703Component implements OnInit {
     this.messageService.add({
       severity: 'error',
       summary: '提示',
-      detail: $event.foo
+      detail: $event.foo,
     });
   }
 }

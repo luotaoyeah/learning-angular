@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   // tslint:disable-next-line:component-selector
   selector: '.app-intro-into-component-b',
   templateUrl: './intro-into-component-b.component.html',
-  styleUrls: ['./intro-into-component-b.component.scss']
+  styleUrls: ['./intro-into-component-b.component.scss'],
 })
 export class IntroIntoComponentBComponent implements OnInit {
   constructor() {}

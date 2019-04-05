@@ -4,7 +4,7 @@ import { MessageService } from 'primeng/api';
 @Component({
   selector: 'app-doc-03-02-02-03',
   templateUrl: './doc-03-02-02-03.component.html',
-  providers: [MessageService]
+  providers: [MessageService],
 })
 export class Doc03020203Component implements OnInit {
   i = 1;
@@ -17,7 +17,7 @@ export class Doc03020203Component implements OnInit {
     this.messageService.add({
       severity: 'info',
       summary: '提示',
-      detail: 'CLICK ME'
+      detail: 'CLICK ME',
     });
   }
 }

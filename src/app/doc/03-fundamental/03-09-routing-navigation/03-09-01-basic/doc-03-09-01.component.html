@@ -5,7 +5,9 @@
 <ul>
   <li>通过解析 URL 地址，加载对应的视图</li>
   <li>URL 中可以传递参数</li>
-  <li>可以通过点击连接进行跳转，也可以使用命令式（imperative）的方式，手动触发跳转</li>
+  <li>
+    可以通过点击连接进行跳转，也可以使用命令式（imperative）的方式，手动触发跳转
+  </li>
   <li>可以点击前进/后退按钮，在历史记录之间进行跳转</li>
 </ul>
 
@@ -18,41 +20,63 @@
 
 <h3>RouterOutlet</h3>
 <p>
-  RouterOutlet 是一个 directive，用法类似于一个 component：&lt;router-outlet&gt;&lt;/router-outlet&gt;，用来指示要将 component
+  RouterOutlet 是一个 directive，用法类似于一个
+  component：&lt;router-outlet&gt;&lt;/router-outlet&gt;，用来指示要将 component
   渲染到哪个地方？类似于 vue 中的 &lt;router-view&gt;&lt;/router-view&gt;
 </p>
 <p>
-  当某个 component 被渲染到对应的 router-outlet 处时，实际上这个 component 和 router-outlet 是作为兄弟元素同时存在的，这一点跟 vue 中的
-  router-view 是不一样的，在 vue 中，渲染的组件会替换掉 router-view，而不是同时存在
+  当某个 component 被渲染到对应的 router-outlet 处时，实际上这个 component 和
+  router-outlet 是作为兄弟元素同时存在的，这一点跟 vue 中的 router-view
+  是不一样的，在 vue 中，渲染的组件会替换掉 router-view，而不是同时存在
 </p>
 
 <h3>Router Links</h3>
 <p>
-  RouterLink（routerLink） 是一个 directive，用来将一个 &lt;a&gt; 标签标识为一个路由链接，点击这个链接，就会跳转到指定的地址
+  RouterLink（routerLink） 是一个 directive，用来将一个 &lt;a&gt;
+  标签标识为一个路由链接，点击这个链接，就会跳转到指定的地址
 </p>
 <p>
   <a routerLink="/doc/tutorial/heroes/13">13</a>
   &nbsp;
-  <a [routerLink]="['/doc/tutorial/heroes/', 13]" [queryParams]="{ x: 'foo' }" fragment="head">13</a>
+  <a
+    [routerLink]="['/doc/tutorial/heroes/', 13]"
+    [queryParams]="{ x: 'foo' }"
+    fragment="head"
+    >13</a
+  >
 </p>
 
 <h3>Active Router Links</h3>
 <p>
-  RouterLinkActive（routerLinkActive） 是一个 directive，用来配置一组 CSS 类， 如果当前页面的地址跟 routerLinkActive 所在的 &lt;a&gt;
-  标签的地址相匹配， 则这些 CSS 类会被添加到标签上，反之会被移除
+  RouterLinkActive（routerLinkActive） 是一个 directive，用来配置一组 CSS 类，
+  如果当前页面的地址跟 routerLinkActive 所在的 &lt;a&gt; 标签的地址相匹配，
+  则这些 CSS 类会被添加到标签上，反之会被移除
 </p>
 <p>
-  <a routerLink="/doc/fundamental/routing-navigation" routerLinkActive="active foo">ACTIVE</a>
+  <a
+    routerLink="/doc/fundamental/routing-navigation"
+    routerLinkActive="active foo"
+    >ACTIVE</a
+  >
   &nbsp;
-  <a routerLink="/doc/fundamental/routing-navigation" [routerLinkActive]="['active', 'foo']">ACTIVE</a>
+  <a
+    routerLink="/doc/fundamental/routing-navigation"
+    [routerLinkActive]="['active', 'foo']"
+    >ACTIVE</a
+  >
   &nbsp;
-  <a routerLink="/doc/fundamental/routing-navigation-2" routerLinkActive="active foo">INACTIVE</a>
+  <a
+    routerLink="/doc/fundamental/routing-navigation-2"
+    routerLinkActive="active foo"
+    >INACTIVE</a
+  >
 </p>
 
 <h3>Router State</h3>
 <p>
-  每次发生导航操作（navigation）之后，应用中就会构建一棵树，称之为 RouterState，它的节点就是 ActivatedRoute 对象， 可以通过
-  router.routerState 属性获取到这棵树，其中 router 是一个 Router 对象，可以通过依赖注入
+  每次发生导航操作（navigation）之后，应用中就会构建一棵树，称之为
+  RouterState，它的节点就是 ActivatedRoute 对象， 可以通过 router.routerState
+  属性获取到这棵树，其中 router 是一个 Router 对象，可以通过依赖注入
 </p>
 
 <app-routing-navigation-basic-activated-route></app-routing-navigation-basic-activated-route>

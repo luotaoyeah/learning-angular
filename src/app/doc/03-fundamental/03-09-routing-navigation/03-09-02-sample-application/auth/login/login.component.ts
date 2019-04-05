@@ -5,10 +5,14 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  constructor(private router: Router, private activatedRoute: ActivatedRoute, public authService: AuthService) {}
+  constructor(
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    public authService: AuthService,
+  ) {}
 
   ngOnInit() {
     this.activatedRoute.queryParamMap.subscribe((queryMap: ParamMap) => {
@@ -29,8 +33,8 @@ export class LoginComponent implements OnInit {
             : '/doc/fundamental/routing/sample-application/admin',
           {
             queryParamsHandling: 'preserve',
-            preserveFragment: true
-          }
+            preserveFragment: true,
+          },
         );
       }
     });

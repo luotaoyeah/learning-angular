@@ -1,7 +1,18 @@
-<p-accordionTab header="Write A Structural Directive" [transitionOptions]="'0ms'">
+<p-accordionTab
+  header="Write A Structural Directive"
+  [transitionOptions]="'0ms'"
+>
   <p-button label="TOGGLE" (onClick)="visible = !visible"></p-button>
   <br />
   <br />
-  <p-button label="TRUE" *ngIf="visible" styleClass="ui-button-success"></p-button>
-  <p-button label="FALSE" *appUnless="visible" styleClass="ui-button-danger"></p-button>
+  <p-button
+    label="TRUE"
+    *ngIf="visible"
+    styleClass="ui-button-success"
+  ></p-button>
+  <p-button
+    label="FALSE"
+    *appUnless="visible"
+    styleClass="ui-button-danger"
+  ></p-button>
 </p-accordionTab>

@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-doc-03-02-02-10-01-01',
-  template: '<p-button label="FOO"></p-button>'
+  template: '<p-button label="FOO"></p-button>',
 })
 export class Doc030202100101Component implements OnInit, OnDestroy {
   constructor() {}

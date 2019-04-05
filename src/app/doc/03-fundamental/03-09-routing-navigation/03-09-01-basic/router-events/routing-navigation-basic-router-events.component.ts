@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-routing-navigation-basic-router-events',
-  templateUrl: './routing-navigation-basic-router-events.component.html'
+  templateUrl: './routing-navigation-basic-router-events.component.html',
 })
 export class RoutingNavigationBasicRouterEventsComponent implements OnInit {
   constructor(private router: Router) {}

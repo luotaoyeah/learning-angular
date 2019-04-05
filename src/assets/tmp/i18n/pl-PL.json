@@ -129,16 +129,14 @@
   "app.register.get-verification-code": "Pobierz kod",
   "app.register.sign-in": "Już masz konto?",
   "app.register-result.msg": "Konto：zarejstrowane dla {{email}}",
-  "app.register-result.activation-email":
-    "Email aktywacyjny został wysłany na wskazany adres i będzie ważny przez 24 godiny. Proszę, sprawdź swoją pocztę w tym czasie i kliknij na link wskazany w wiadomości aby aktywować konto",
+  "app.register-result.activation-email": "Email aktywacyjny został wysłany na wskazany adres i będzie ważny przez 24 godiny. Proszę, sprawdź swoją pocztę w tym czasie i kliknij na link wskazany w wiadomości aby aktywować konto",
   "app.register-result.back-home": "Powróć do strony głównej",
   "app.register-result.view-mailbox": "Zobacz skrzynkę odbiorczą",
   "validation.email.required": "Proszę podać adres email!",
   "validation.email.wrong-format": "Adres email jest w nieprawidłowym formacie!",
   "validation.password.required": "Proszę podać swoje hasło!",
   "validation.password.twice": "Pierwsze oraz powtórzone hasło nie są identyczne!",
-  "validation.password.strength.msg":
-    "Hasło powinno być trudne do odgadnięcia oraz składać się z przynajmniej 6 znaków",
+  "validation.password.strength.msg": "Hasło powinno być trudne do odgadnięcia oraz składać się z przynajmniej 6 znaków",
   "validation.password.strength.strong": "Siła: mocne",
   "validation.password.strength.medium": "Siła: średni",
   "validation.password.strength.short": "Siła: zbyt krótkie",

@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { of } from 'rxjs/internal/observable/of';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DialogService {
   constructor() {}

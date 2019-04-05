@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { of } from 'rxjs/internal/observable/of';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SelectivePreloadingStrategyService implements PreloadingStrategy {
   modules: Array<string> = [];
@@ -17,7 +17,9 @@ export class SelectivePreloadingStrategyService implements PreloadingStrategy {
         this.modules.push(route.path);
       }
 
-      console.log(`[${SelectivePreloadingStrategyService.name}] - [${route.path}]`);
+      console.log(
+        `[${SelectivePreloadingStrategyService.name}] - [${route.path}]`,
+      );
 
       return fn();
     }

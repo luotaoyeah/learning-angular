@@ -46,7 +46,7 @@ import { Doc0302Module } from './03-02-component-template/doc-03-02.module';
     Doc030901NotFoundComponent,
     Doc030901Component,
     RoutingNavigationBasicActivatedRouteComponent,
-    RoutingNavigationBasicRouterEventsComponent
+    RoutingNavigationBasicRouterEventsComponent,
   ],
   imports: [
     CommonModule,
@@ -54,7 +54,7 @@ import { Doc0302Module } from './03-02-component-template/doc-03-02.module';
     ...[ButtonModule, InputTextModule, AccordionModule],
     Doc03RoutingModule,
     Doc030902Module,
-    Doc0302Module
-  ]
+    Doc0302Module,
+  ],
 })
 export class Doc03Module {}

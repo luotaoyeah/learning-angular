@@ -129,16 +129,14 @@
   "app.register.get-verification-code": "인증코드 받기",
   "app.register.sign-in": "기존 계정으로 로그인",
   "app.register-result.msg": "{{email}} 으로 계정이 등록 되었습니다.",
-  "app.register-result.activation-email":
-  "활성화 이메일은 귀하의 이메일 주소로 발송되었으며 24 시간 동안 유효합니다. 시간내에 해당 이메일에 로그인하고 이메일의 링크를 클릭하여 계정을 활성화하십시오.",
+  "app.register-result.activation-email": "활성화 이메일은 귀하의 이메일 주소로 발송되었으며 24 시간 동안 유효합니다. 시간내에 해당 이메일에 로그인하고 이메일의 링크를 클릭하여 계정을 활성화하십시오.",
   "app.register-result.back-home": "홈으로 가기",
   "app.register-result.view-mailbox": "메일 보기",
   "validation.email.required": "이메일 정보를 입력하세요.",
   "validation.email.wrong-format": "올바른 이메일 주소가 아닙니다.",
   "validation.password.required": "패스워드를 입력하세요",
   "validation.password.twice": "입력한 패스워드가 2 회 틀렸습니다.",
-  "validation.password.strength.msg":
-  "6 자 이상 입력하십시오. 추측하기 쉬운 암호를 사용하지 마십시오.",
+  "validation.password.strength.msg": "6 자 이상 입력하십시오. 추측하기 쉬운 암호를 사용하지 마십시오.",
   "validation.password.strength.strong": "비밀번호 강도: 강력",
   "validation.password.strength.medium": "비밀번호 강도: 중간",
   "validation.password.strength.short": "비밀번호 강도: 취약",

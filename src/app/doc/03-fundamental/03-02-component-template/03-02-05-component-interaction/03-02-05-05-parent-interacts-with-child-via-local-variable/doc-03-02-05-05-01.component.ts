@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
       &nbsp;
       <p-button [label]="'👎'" (onClick)="doVote('👎')"></p-button>
     </p>
-  `
+  `,
 })
 export class Doc0302050501Component implements OnInit {
   result = '';

@@ -6,7 +6,7 @@ import { Router, RouterOutlet } from '@angular/router';
   selector: 'app-doc-03-09-02',
   templateUrl: './doc-03-09-02.component.html',
   styleUrls: ['./doc-03-09-02.component.scss'],
-  animations: [routeAnimation]
+  animations: [routeAnimation],
 })
 export class Doc030902Component implements OnInit {
   constructor(private router: Router) {}
@@ -15,7 +15,11 @@ export class Doc030902Component implements OnInit {
 
   getAnimationData(routerOutlet: RouterOutlet) {
     // tslint:disable-next-line:no-string-literal
-    return routerOutlet && routerOutlet.activatedRouteData && routerOutlet.activatedRouteData['animation'];
+    return (
+      routerOutlet &&
+      routerOutlet.activatedRouteData &&
+      routerOutlet.activatedRouteData['animation']
+    );
   }
 
   /**

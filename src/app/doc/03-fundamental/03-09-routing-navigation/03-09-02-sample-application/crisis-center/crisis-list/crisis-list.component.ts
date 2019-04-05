@@ -6,12 +6,16 @@ import { CrisisService } from '../service/crisis.service';
 @Component({
   selector: 'app-crisis-list',
   templateUrl: './crisis-list.component.html',
-  styleUrls: ['./crisis-list.component.scss']
+  styleUrls: ['./crisis-list.component.scss'],
 })
 export class CrisisListComponent implements OnInit {
   crises: Array<Crisis> = [];
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute, private crisisService: CrisisService) {}
+  constructor(
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private crisisService: CrisisService,
+  ) {}
 
   ngOnInit() {
     this.crisisService.getCrises().subscribe((crises: Array<Crisis>) => {
@@ -21,7 +25,7 @@ export class CrisisListComponent implements OnInit {
 
   gotoCrisisDetailPage(crisis: Crisis) {
     this.router.navigate([crisis.id], {
-      relativeTo: this.activatedRoute
+      relativeTo: this.activatedRoute,
     });
   }
 }

@@ -30,18 +30,18 @@ const routes: Routes = [
              * 跟 service provider 类似，也是一个 injectable 对象
              */
             resolve: {
-              crisis: CrisisDetailResolverService
-            }
-          }
-        ]
-      }
-    ]
-  }
+              crisis: CrisisDetailResolverService,
+            },
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class CrisisCenterRoutingModule {
   constructor() {

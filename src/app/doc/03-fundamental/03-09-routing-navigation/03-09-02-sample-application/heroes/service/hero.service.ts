@@ -5,7 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, tap } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class HeroService {
   private heroesUrl = 'api/heroes';
@@ -20,7 +20,7 @@ export class HeroService {
       tap(() => {
         console.log('[加载英雄列表]');
       }),
-      catchError(this.handleError<Array<Hero>>('getHeroes', []))
+      catchError(this.handleError<Array<Hero>>('getHeroes', [])),
     );
   }
 
@@ -33,7 +33,7 @@ export class HeroService {
       tap(() => {
         console.log(`[查询英雄]: [ id = ${id} ]`);
       }),
-      catchError(this.handleError<Hero>(`getHero id=${id}`))
+      catchError(this.handleError<Hero>(`getHero id=${id}`)),
     );
   }
 
@@ -44,13 +44,13 @@ export class HeroService {
   updateHero(hero: Hero): Observable<any> {
     return this.http
       .put<Hero>(this.heroesUrl, hero, {
-        headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+        headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
       })
       .pipe(
         tap(() => {
           console.log(`[更新英雄]: [ id = ${hero.id}]`);
         }),
-        catchError(this.handleError<any>(`updateHero`))
+        catchError(this.handleError<any>(`updateHero`)),
       );
   }
 

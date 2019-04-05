@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-compose-message',
   templateUrl: './compose-message.component.html',
-  styleUrls: ['./compose-message.component.scss']
+  styleUrls: ['./compose-message.component.scss'],
 })
 export class ComposeMessageComponent implements OnInit {
   message = '';

@@ -8,6 +8,6 @@ import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [LoginComponent],
-  imports: [CommonModule, AuthRoutingModule, PanelModule, ButtonModule]
+  imports: [CommonModule, AuthRoutingModule, PanelModule, ButtonModule],
 })
 export class AuthModule {}

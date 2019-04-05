@@ -8,12 +8,15 @@ import { of } from 'rxjs';
 @Component({
   selector: 'app-hero-detail',
   templateUrl: './hero-detail.component.html',
-  styleUrls: ['./hero-detail.component.scss']
+  styleUrls: ['./hero-detail.component.scss'],
 })
 export class HeroDetailComponent implements OnInit {
   hero: Hero | null = null;
 
-  constructor(private activatedRoute: ActivatedRoute, private heroService: HeroService) {}
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private heroService: HeroService,
+  ) {}
 
   ngOnInit() {
     /*
@@ -53,7 +56,7 @@ export class HeroDetailComponent implements OnInit {
           }
 
           return of(null);
-        })
+        }),
       )
       .subscribe((hero: Hero | null) => {
         this.hero = hero;

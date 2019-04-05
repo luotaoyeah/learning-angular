@@ -1,20 +1,38 @@
 <p-accordionTab header="NgModel" [transitionOptions]="'0ms'">
   <p>
-    对于自定义的 component，我们可以通过 x/xChange 模式来实现 two-way binding，而对于内置的 HTML 标签，angular 提供了 NgModel 指令来实现
-    two-way binding，使用 NgModel 指令需要引入 FormsModule 模块
+    对于自定义的 component，我们可以通过 x/xChange 模式来实现 two-way
+    binding，而对于内置的 HTML 标签，angular 提供了 NgModel 指令来实现 two-way
+    binding，使用 NgModel 指令需要引入 FormsModule 模块
   </p>
-  <input type="text" [ngStyle]="{ borderRadius: '3px', outline: 'none' }" [(ngModel)]="foo" />
+  <input
+    type="text"
+    [ngStyle]="{ borderRadius: '3px', outline: 'none' }"
+    [(ngModel)]="foo"
+  />
   &nbsp;
   <span>{{ foo }}</span>
 
   <hr />
-  <p>实际上 NgModel 指令也是一个语法糖，它包含 ngModel/ngModelChange 两个属性</p>
-  <input type="text" [ngStyle]="{ borderRadius: '3px', outline: 'none' }" [ngModel]="foo" (ngModelChange)="foo = $event" />
+  <p>
+    实际上 NgModel 指令也是一个语法糖，它包含 ngModel/ngModelChange 两个属性
+  </p>
+  <input
+    type="text"
+    [ngStyle]="{ borderRadius: '3px', outline: 'none' }"
+    [ngModel]="foo"
+    (ngModelChange)="foo = $event"
+  />
 
   <hr />
   <p>
-    如果没有 NgModel 指令，如果我们想自己实现 two-way binding，那么对于每种不同的表单元素，我们需要使用不同的处理逻辑，比如对于 &lt;input
-    type="text"&gt;
+    如果没有 NgModel 指令，如果我们想自己实现 two-way
+    binding，那么对于每种不同的表单元素，我们需要使用不同的处理逻辑，比如对于
+    &lt;input type="text"&gt;
   </p>
-  <input type="text" [ngStyle]="{ borderRadius: '3px', outline: 'none' }" [value]="foo" (input)="foo = $event.target.value" />
+  <input
+    type="text"
+    [ngStyle]="{ borderRadius: '3px', outline: 'none' }"
+    [value]="foo"
+    (input)="foo = $event.target.value"
+  />
 </p-accordionTab>

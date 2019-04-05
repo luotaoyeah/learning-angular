@@ -15,22 +15,22 @@ const routes: Routes = [
         path: 'superheroes',
         component: HeroListComponent,
         data: {
-          animation: 'heroes'
-        }
+          animation: 'heroes',
+        },
       },
       {
         path: 'superheroes/:id',
         component: HeroDetailComponent,
         data: {
-          animation: 'hero'
-        }
-      }
-    ]
-  }
+          animation: 'hero',
+        },
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class HeroesRoutingModule {}

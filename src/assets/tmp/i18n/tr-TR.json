@@ -129,16 +129,14 @@
   "app.register.get-verification-code": "Kodu al",
   "app.register.sign-in": "Hesabınız zaten var ı?",
   "app.register-result.msg": "Hesap：{{email}} kayıtlı",
-  "app.register-result.activation-email":
-    "Aktivasyon e-postası e-posta adresinize gönderilmiştir ve 24 saat geçerlidir. Lütfen e-postaya zamanında giriş yapın ve hesabı etkinleştirmek için e-postadaki bağlantıya tıklayın.",
+  "app.register-result.activation-email": "Aktivasyon e-postası e-posta adresinize gönderilmiştir ve 24 saat geçerlidir. Lütfen e-postaya zamanında giriş yapın ve hesabı etkinleştirmek için e-postadaki bağlantıya tıklayın.",
   "app.register-result.back-home": "Ana sayfaya dön",
   "app.register-result.view-mailbox": "Posta kutusunu görüntüle",
   "validation.email.required": "Lütfen e-postanızı giriniz!",
   "validation.email.wrong-format": "E-posta adresı formatı yanlıştır!",
   "validation.password.required": "Lütfen şifrenizi giriniz!",
   "validation.password.twice": "Şifre doğrulama eşleşmiyor!",
-  "validation.password.strength.msg":
-    "Lütfen en az 6 karakter girin ve tahmin edilmesi kolay şifreler kullanmayın.",
+  "validation.password.strength.msg": "Lütfen en az 6 karakter girin ve tahmin edilmesi kolay şifreler kullanmayın.",
   "validation.password.strength.strong": "Şifre Karmaşıklığı: Güçlü",
   "validation.password.strength.medium": "Şifre Karmaşıklığı: orta",
   "validation.password.strength.short": "Şifre Karmaşıklığı: çok kısa",

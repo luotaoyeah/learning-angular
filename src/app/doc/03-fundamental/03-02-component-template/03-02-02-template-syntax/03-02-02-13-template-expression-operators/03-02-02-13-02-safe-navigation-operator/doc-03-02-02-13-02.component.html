@@ -1,7 +1,8 @@
 <p-accordionTab header="Safe Navigation Operator" [transitionOptions]="'0ms'">
   <p>
-    为了防止访问 null 对象的属性从而导致报错，可以使用 safe navigation operator 来进行避免；如下，当 x 为 null 时，访问 x.y
-    属性会直接报错，而使用了 save navigation operator 之后，当 x 为 null 时，不会报错，而是直接取值为空
+    为了防止访问 null 对象的属性从而导致报错，可以使用 safe navigation operator
+    来进行避免；如下，当 x 为 null 时，访问 x.y 属性会直接报错，而使用了 save
+    navigation operator 之后，当 x 为 null 时，不会报错，而是直接取值为空
   </p>
   <p>{{ x?.y?.z || 'FOO' }}</p>
   <p-button [label]="x?.y?.z || 'BAR'"></p-button>

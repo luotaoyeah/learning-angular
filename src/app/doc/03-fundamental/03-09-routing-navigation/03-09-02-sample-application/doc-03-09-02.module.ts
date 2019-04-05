@@ -10,6 +10,12 @@ import { Doc030902RoutingModule } from './doc-03-09-02-routing.module';
 
 @NgModule({
   declarations: [Doc030902Component, ComposeMessageComponent],
-  imports: [CommonModule, FormsModule, Doc030902RoutingModule, ...[PanelModule, ButtonModule], HeroesModule]
+  imports: [
+    CommonModule,
+    FormsModule,
+    Doc030902RoutingModule,
+    ...[PanelModule, ButtonModule],
+    HeroesModule,
+  ],
 })
 export class Doc030902Module {}

@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Hero } from './hero';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class InMemoryDataService implements InMemoryDbService {
   createDb(): {} | Observable<{}> | Promise<{}> {
@@ -18,14 +18,14 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 17, name: 'Dynama' },
       { id: 18, name: 'Dr IQ' },
       { id: 19, name: 'Magma' },
-      { id: 20, name: 'Tornado' }
+      { id: 20, name: 'Tornado' },
     ];
 
     const crises: Array<Hero> = [
       { id: 1, name: 'Dragon Burning Cities' },
       { id: 2, name: 'Sky Rains Great White Sharks' },
       { id: 3, name: 'Giant Asteroid Heading For Earth' },
-      { id: 4, name: 'Procrastinators Meeting Delayed Again' }
+      { id: 4, name: 'Procrastinators Meeting Delayed Again' },
     ];
 
     if (Math.random() < 0.01) {

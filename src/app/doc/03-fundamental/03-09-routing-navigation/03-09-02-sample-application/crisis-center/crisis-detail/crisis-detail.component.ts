@@ -9,20 +9,20 @@ import { DialogService } from '../../service/dialog.service';
 @Component({
   selector: 'app-hero-detail',
   templateUrl: './crisis-detail.component.html',
-  styleUrls: ['./crisis-detail.component.scss']
+  styleUrls: ['./crisis-detail.component.scss'],
 })
 export class CrisisDetailComponent implements OnInit, CanDeactivateComponent {
   crisis: Crisis | null = null;
 
   crisisModel: Pick<Crisis, 'name'> = {
-    name: ''
+    name: '',
   };
 
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private crisisService: CrisisService,
-    private dialogService: DialogService
+    private dialogService: DialogService,
   ) {}
 
   ngOnInit() {
@@ -52,7 +52,9 @@ export class CrisisDetailComponent implements OnInit, CanDeactivateComponent {
   }
 
   private gotoCrisesPage() {
-    this.router.navigate(['/doc/fundamental/routing/sample-application/crisis-center']);
+    this.router.navigate([
+      '/doc/fundamental/routing/sample-application/crisis-center',
+    ]);
   }
 
   canDeactivate(): Observable<boolean> | Promise<boolean> | boolean {

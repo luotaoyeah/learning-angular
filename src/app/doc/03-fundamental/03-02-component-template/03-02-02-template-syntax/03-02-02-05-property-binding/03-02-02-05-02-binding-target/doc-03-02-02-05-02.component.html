@@ -1,14 +1,22 @@
 <p-accordionTab header="Binding Target" [transitionOptions]="'0ms'">
   <p>property binding 可以使用 [property] 的语法形式</p>
-  <img [src]="picUrl" [ngStyle]="{ width: '50px', height: '50px', borderRadius: '100%' }" />
+  <img
+    [src]="picUrl"
+    [ngStyle]="{ width: '50px', height: '50px', borderRadius: '100%' }"
+  />
 
   <hr />
   <p>property binding 也可以使用 bind-property 的语法形式</p>
-  <img bind-src="picUrl" [ngStyle]="{ width: '50px', height: '50px', borderRadius: '100%' }" />
+  <img
+    bind-src="picUrl"
+    [ngStyle]="{ width: '50px', height: '50px', borderRadius: '100%' }"
+  />
 
   <hr />
   <p>
-    property binding target 可以是 element property，directive property，component property，angular 会首先检查是否存在对应的 directive
-    property，再检查是否存在对应的 component property；如果找不到对应的 property，则会报错
+    property binding target 可以是 element property，directive
+    property，component property，angular 会首先检查是否存在对应的 directive
+    property，再检查是否存在对应的 component property；如果找不到对应的
+    property，则会报错
   </p>
 </p-accordionTab>

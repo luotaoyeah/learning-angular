@@ -15,52 +15,52 @@ import { Doc030211Component } from './03-02-11-pipe/doc-03-02-11.component';
 const routes: Routes = [
   {
     path: 'doc/fundamental/component-template/displaying-data',
-    component: Doc030201Component
+    component: Doc030201Component,
   },
   {
     path: 'doc/fundamental/component-template/template-syntax',
-    component: Doc030202Component
+    component: Doc030202Component,
   },
   {
     path: 'doc/fundamental/component-template/user-input',
-    component: Doc030203Component
+    component: Doc030203Component,
   },
   {
     path: 'doc/fundamental/component-template/lifecycle-hooks',
-    component: Doc030204Component
+    component: Doc030204Component,
   },
   {
     path: 'doc/fundamental/component-template/component-interaction',
-    component: Doc030205Component
+    component: Doc030205Component,
   },
   {
     path: 'doc/fundamental/component-template/component-style',
-    component: Doc030206Component
+    component: Doc030206Component,
   },
   {
     path: 'doc/fundamental/component-template/angular-elements',
-    component: Doc030207Component
+    component: Doc030207Component,
   },
   {
     path: 'doc/fundamental/component-template/dynamic-components',
-    component: Doc030208Component
+    component: Doc030208Component,
   },
   {
     path: 'doc/fundamental/component-template/attribute-directive',
-    component: Doc030209Component
+    component: Doc030209Component,
   },
   {
     path: 'doc/fundamental/component-template/structural-directive',
-    component: Doc030210Component
+    component: Doc030210Component,
   },
   {
     path: 'doc/fundamental/component-template/pipes',
-    component: Doc030211Component
-  }
+    component: Doc030211Component,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class Doc0302RoutingModule {}
