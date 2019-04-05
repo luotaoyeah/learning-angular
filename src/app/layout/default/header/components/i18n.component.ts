@@ -52,6 +52,7 @@ export class HeaderI18nComponent {
   constructor(
     private settings: SettingsService,
     @Inject(ALAIN_I18N_TOKEN) private i18n: I18NService,
+    // tslint:disable-next-line:no-any
     @Inject(DOCUMENT) private doc: any,
   ) {}
 

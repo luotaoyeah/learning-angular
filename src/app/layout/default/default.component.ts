@@ -46,6 +46,7 @@ export class LayoutDefaultComponent
     private settings: SettingsService,
     private el: ElementRef,
     private renderer: Renderer2,
+    // tslint:disable-next-line:no-any
     @Inject(DOCUMENT) private doc: any,
   ) {
     // scroll to top in change page

@@ -35,6 +35,7 @@ const MOCK_MODULES = !environment.production
   : [];
 // #endregion
 
+// tslint:disable-next-line:no-any
 const REUSETAB_PROVIDES: Array<any> = [
   // {
   //   provide: RouteReuseStrategy,

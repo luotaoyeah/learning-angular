@@ -217,6 +217,7 @@ export class SettingDrawerComponent {
     return this.settingSrv.layout;
   }
 
+  // tslint:disable-next-line:no-any
   data: any = {};
   color: string;
   colors = DEFAULT_COLORS;
@@ -227,6 +228,7 @@ export class SettingDrawerComponent {
     private settingSrv: SettingsService,
     private lazy: LazyService,
     private zone: NgZone,
+    // tslint:disable-next-line:no-any
     @Inject(DOCUMENT) private doc: any,
   ) {
     this.color = this.cachedData['@primary-color'] || this.DEFAULT_PRIMARY;
@@ -268,6 +270,7 @@ export class SettingDrawerComponent {
 
   private genVars() {
     const { data, color, validKeys } = this;
+    // tslint:disable-next-line:no-any
     const vars: any = {
       [`@primary-color`]: color,
     };
@@ -284,6 +287,7 @@ export class SettingDrawerComponent {
     setTimeout(() => {
       zone.runOutsideAngular(() => {
         this.loadLess().then(() => {
+          // tslint:disable-next-line:no-any
           (window as any).less.modifyVars(this.genVars()).then(() => {
             msg.success('成功');
             msg.remove(msgId);
@@ -302,11 +306,13 @@ export class SettingDrawerComponent {
     this.color = color;
     Object.keys(DEFAULT_VARS)
       // @ts-ignore: TS7017
+      // tslint:disable-next-line:no-any
       .filter(key => (DEFAULT_VARS[key] as any).default === '@primary-color')
       .forEach(key => delete this.cachedData[`@${key}`]);
     this.resetData(this.cachedData, false);
   }
 
+  // tslint:disable-next-line:no-any
   setLayout(name: string, value: any) {
     this.settingSrv.setLayout(name, value);
   }

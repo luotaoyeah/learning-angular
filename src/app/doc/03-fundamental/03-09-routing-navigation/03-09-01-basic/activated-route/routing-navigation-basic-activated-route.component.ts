@@ -70,6 +70,7 @@ export class RoutingNavigationBasicActivatedRouteComponent implements OnInit {
      */
     // tslint:disable-next-line:no-non-null-assertion
     console.assert(
+      // tslint:disable-next-line:no-non-null-assertion
       this.activatedRoute.routeConfig!.path === 'routing-navigation/:foo',
     );
 
@@ -79,6 +80,7 @@ export class RoutingNavigationBasicActivatedRouteComponent implements OnInit {
      */
     // tslint:disable-next-line:no-non-null-assertion
     console.assert(
+      // tslint:disable-next-line:no-non-null-assertion
       this.activatedRoute.parent!.routeConfig!.path === 'doc/fundamental',
     );
 

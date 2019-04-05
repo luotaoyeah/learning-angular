@@ -58,6 +58,7 @@ export class DefaultInterceptor implements HttpInterceptor {
       .error(`请求错误 ${ev.status}: ${ev.url}`, errortext);
   }
 
+  // tslint:disable-next-line:no-any
   private handleData(ev: HttpResponseBase): Observable<any> {
     // 可能会因为 `throw` 导出无法执行 `_HttpClient` 的 `end()` 操作
     if (ev.status > 0) {
@@ -111,8 +112,10 @@ export class DefaultInterceptor implements HttpInterceptor {
   }
 
   intercept(
+    // tslint:disable-next-line:no-any
     req: HttpRequest<any>,
     next: HttpHandler,
+    // tslint:disable-next-line:no-any
   ): Observable<HttpEvent<any>> {
     // 统一加上服务端前缀
     let url = req.url;
@@ -122,6 +125,7 @@ export class DefaultInterceptor implements HttpInterceptor {
 
     const newReq = req.clone({ url });
     return next.handle(newReq).pipe(
+      // tslint:disable-next-line:no-any
       mergeMap((event: any) => {
         // 允许统一对请求错误处理
         if (event instanceof HttpResponseBase) return this.handleData(event);

@@ -24,9 +24,13 @@ import {
 
 interface LangData {
   text: string;
+  // tslint:disable-next-line:no-any
   ng: any;
+  // tslint:disable-next-line:no-any
   zorro: any;
+  // tslint:disable-next-line:no-any
   dateFns: any;
+  // tslint:disable-next-line:no-any
   delon: any;
   abbr: string;
 }
@@ -90,6 +94,7 @@ export class I18NService implements AlainI18NService {
     const item = LANGS[lang];
     registerLocaleData(item.ng);
     this.nzI18nService.setLocale(item.zorro);
+    // tslint:disable-next-line:no-any
     (window as any).__locale__ = item.dateFns;
     this.delonLocaleService.setLocale(item.delon);
   }

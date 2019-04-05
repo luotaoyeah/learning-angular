@@ -31,6 +31,7 @@ export class Doc03020402Component
   constructor() {}
 
   // @ts-ignore: TS6133
+  // tslint:disable-next-line:no-any
   private log(message: any): void {
     /*
         console.log(`[${Doc03020402Component.name}]`, message);

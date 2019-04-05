@@ -14,6 +14,7 @@ const COMPONENTS = [
   Exception500Component,
   ExceptionTriggerComponent,
 ];
+// tslint:disable-next-line:no-any
 const COMPONENTS_NOROUNT: Array<any> = [];
 
 @NgModule({

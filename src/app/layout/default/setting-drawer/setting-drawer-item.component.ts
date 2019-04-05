@@ -9,9 +9,11 @@ import { Component, Input } from '@angular/core';
   },
 })
 export class SettingDrawerItemComponent {
+  // tslint:disable-next-line:no-any
   i: any = {};
 
   @Input()
+  // tslint:disable-next-line:no-any
   set data(val: any) {
     this.i = val;
     if (val.type === 'px') {

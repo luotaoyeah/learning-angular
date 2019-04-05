@@ -87,6 +87,7 @@ const INTERCEPTOR_PROVIDES = [
 
 // #region global third module
 const GLOBAL_THIRD_MODULES: Array<
+  // tslint:disable-next-line:no-any
   Type<any> | ModuleWithProviders<{}> | any[]
 > = [];
 
@@ -94,6 +95,7 @@ const GLOBAL_THIRD_MODULES: Array<
 
 export function StartupServiceFactory(
   startupService: StartupService,
+  // tslint:disable-next-line:no-any
 ): () => any {
   return () => startupService.load();
 }

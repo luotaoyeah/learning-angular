@@ -13,11 +13,14 @@ import { TranslateModule } from '@ngx-translate/core';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { CountdownModule } from 'ngx-countdown';
 
+// tslint:disable-next-line:no-any
 const THIRDMODULES: Array<any> = [NgZorroAntdModule, CountdownModule];
 // #endregion
 
 // #region your componets & directives
+// tslint:disable-next-line:no-any
 const COMPONENTS: Array<any> = [];
+// tslint:disable-next-line:no-any
 const DIRECTIVES: Array<Type<any> | any[]> = [];
 
 // #endregion

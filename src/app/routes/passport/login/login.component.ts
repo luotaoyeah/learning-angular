@@ -24,6 +24,7 @@ export class UserLoginComponent implements OnDestroy {
   error = '';
   type = 0;
   count = 0;
+  // tslint:disable-next-line:no-any
   interval$: any;
 
   constructor(
@@ -70,6 +71,7 @@ export class UserLoginComponent implements OnDestroy {
 
   // #endregion
 
+  // tslint:disable-next-line:no-any
   switch(ret: any) {
     this.type = ret.index;
   }
@@ -114,6 +116,7 @@ export class UserLoginComponent implements OnDestroy {
         userName: this.userName.value,
         password: this.password.value,
       })
+      // tslint:disable-next-line:no-any
       .subscribe((res: any) => {
         if (res.msg !== 'ok') {
           this.error = res.msg;

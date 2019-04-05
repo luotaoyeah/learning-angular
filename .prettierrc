@@ -1,4 +1,12 @@
 {
+  "overrides": [
+    {
+      "files": [".prettierrc", ".lintstagedrc", ".huskyrc"],
+      "options": {
+        "parser": "json"
+      }
+    }
+  ],
   "printWidth": 80,
   "singleQuote": true,
   "trailingComma": "all"

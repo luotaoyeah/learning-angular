@@ -11,6 +11,7 @@ export class SelectivePreloadingStrategyService implements PreloadingStrategy {
 
   constructor() {}
 
+  // tslint:disable-next-line:no-any
   preload(route: Route, fn: () => Observable<any>): Observable<any> {
     if (route.data && route.data.preload) {
       if (route.path) {

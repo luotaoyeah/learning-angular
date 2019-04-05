@@ -22,6 +22,7 @@ const COMPONENTS = [
   CallbackComponent,
   UserLockComponent,
 ];
+// tslint:disable-next-line:no-any
 const COMPONENTS_NOROUNT: Array<any> = [];
 
 @NgModule({

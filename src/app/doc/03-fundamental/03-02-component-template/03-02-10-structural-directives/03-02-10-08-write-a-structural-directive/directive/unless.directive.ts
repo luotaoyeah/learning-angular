@@ -12,6 +12,7 @@ export class UnlessDirective {
    * 因此需要将 ViewContainerRef 和 TemplateRef 注入进来
    */
   constructor(
+    // tslint:disable-next-line:no-any
     private templateRef: TemplateRef<any>,
     private viewContainerRef: ViewContainerRef,
   ) {}

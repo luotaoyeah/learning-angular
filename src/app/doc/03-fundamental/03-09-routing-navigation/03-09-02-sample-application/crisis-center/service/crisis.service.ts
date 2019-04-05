@@ -41,6 +41,7 @@ export class CrisisService {
    * 更新危机
    * @param crisis 危机
    */
+  // tslint:disable-next-line:no-any
   updateCrisis(crisis: Crisis): Observable<any> {
     return this.http
       .put<Crisis>(this.url, crisis, {
@@ -50,6 +51,7 @@ export class CrisisService {
         tap(() => {
           console.log(`[更新危机]: [ id = ${crisis.id}]`);
         }),
+        // tslint:disable-next-line:no-any
         catchError(this.handleError<any>(`updateCrisis`)),
       );
   }
@@ -60,6 +62,7 @@ export class CrisisService {
    * @param result 默认结果
    */
   private handleError<T>(operation: string = 'operation', result?: T) {
+    // tslint:disable-next-line:no-any
     return (err: any): Observable<T> => {
       console.log(`${operation} FAILED: ${err.body.error}`);
       return of((result || null) as T);

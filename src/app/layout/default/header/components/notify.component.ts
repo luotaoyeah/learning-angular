@@ -66,6 +66,7 @@ export class HeaderNotifyComponent {
       const newItem = { ...item };
       if (newItem.datetime)
         newItem.datetime = distanceInWordsToNow(item.datetime || '', {
+          // tslint:disable-next-line:no-any
           locale: (window as any).__locale__,
         });
       if (newItem.extra && newItem.status) {
@@ -202,6 +203,7 @@ export class HeaderNotifyComponent {
     this.msg.success(`清空了 ${type}`);
   }
 
+  // tslint:disable-next-line:no-any
   select(res: any) {
     this.msg.success(`点击了 ${res.title} 的 ${res.item.title}`);
   }

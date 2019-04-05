@@ -41,6 +41,7 @@ export class StartupService {
   }
 
   // @ts-ignore: TS6133
+  // tslint:disable-next-line:no-any
   private viaHttp(resolve: any, reject: any) {
     zip(
       this.httpClient.get(`assets/tmp/i18n/${this.i18n.defaultLang}.json`),
@@ -60,6 +61,7 @@ export class StartupService {
           this.translate.setDefaultLang(this.i18n.defaultLang);
 
           // application data
+          // tslint:disable-next-line:no-any
           const res: any = appData;
           // 应用信息：包括站点名、描述、年份
           this.settingService.setApp(res.app);
@@ -79,6 +81,7 @@ export class StartupService {
       );
   }
 
+  // tslint:disable-next-line:no-any
   private viaMockI18n(resolve: any, reject: any) {
     this.httpClient
       .get(`assets/tmp/i18n/${this.i18n.defaultLang}.json`)
@@ -92,6 +95,7 @@ export class StartupService {
   }
 
   // @ts-ignore: TS6133
+  // tslint:disable-next-line:no-any
   private viaMock(resolve: any, reject: any) {
     // const tokenData = this.tokenService.get();
     // if (!tokenData.token) {
@@ -100,10 +104,12 @@ export class StartupService {
     //   return;
     // }
     // mock
+    // tslint:disable-next-line:no-any
     const app: any = {
       name: `ng-alain`,
       description: `Ng-zorro admin panel front-end framework`,
     };
+    // tslint:disable-next-line:no-any
     const user: any = {
       name: 'Admin',
       avatar: './assets/tmp/img/avatar.jpg',
@@ -141,6 +147,7 @@ export class StartupService {
     resolve({});
   }
 
+  // tslint:disable-next-line:no-any
   load(): Promise<any> {
     // only works with promises
     // https://github.com/angular/angular/issues/15088

@@ -27,6 +27,7 @@ export class UserRegisterComponent implements OnDestroy {
     pool: 'exception',
   };
   count = 0;
+  // tslint:disable-next-line:no-any
   interval$: any;
 
   constructor(
@@ -61,6 +62,7 @@ export class UserRegisterComponent implements OnDestroy {
 
   static checkPassword(control: FormControl) {
     if (!control) return null;
+    // tslint:disable-next-line:no-any
     const self: any = this;
 
     self.visible = !!control.value;

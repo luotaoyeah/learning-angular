@@ -19,7 +19,9 @@ const bootstrap = () => {
       defaultEncapsulation: ViewEncapsulation.Emulated,
     })
     .then(res => {
+      // tslint:disable-next-line:no-any
       if ((window as any).appBootstrap) {
+        // tslint:disable-next-line:no-any
         (window as any).appBootstrap();
       }
       return res;
@@ -27,6 +29,7 @@ const bootstrap = () => {
 };
 
 if (environment.hmr) {
+  // tslint:disable-next-line:no-any
   if ((module as any).hot) {
     hmrBootstrap(module, bootstrap);
   } else {
