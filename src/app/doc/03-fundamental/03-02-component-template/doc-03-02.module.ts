@@ -148,6 +148,8 @@ import { Doc03021006Component } from './03-02-10-structural-directives/03-02-10-
 import { Doc03021007Component } from './03-02-10-structural-directives/03-02-10-07-ng-container/doc-03-02-10-07.component';
 import { Doc03021008Component } from './03-02-10-structural-directives/03-02-10-08-write-a-structural-directive/doc-03-02-10-08.component';
 import { UnlessDirective } from './03-02-10-structural-directives/03-02-10-08-write-a-structural-directive/directive/unless.directive';
+import { Doc030211Component } from './03-02-11-pipe/doc-03-02-11.component';
+import { Doc03021101Component } from './03-02-11-pipe/03-02-11-01-using-pipes/doc-03-02-11-01.component';
 
 // tslint:enable:max-line-length
 
@@ -317,7 +319,10 @@ import { UnlessDirective } from './03-02-10-structural-directives/03-02-10-08-wr
     Doc03021006Component,
     Doc03021007Component,
     Doc03021008Component,
-    UnlessDirective
+    UnlessDirective,
+    /* 03-02-11 */
+    Doc030211Component,
+    Doc03021101Component
   ],
   imports: [
     CommonModule,

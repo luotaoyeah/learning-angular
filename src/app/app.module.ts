@@ -1,70 +1,136 @@
+import {
+  APP_INITIALIZER,
+  LOCALE_ID,
+  ModuleWithProviders,
+  NgModule,
+  Type,
+} from '@angular/core';
+// #region Http Interceptors
+import {
+  HTTP_INTERCEPTORS,
+  HttpClient,
+  HttpClientModule,
+} from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './doc/02-tutorial/service/in-memory-data.service';
-import { DocModule } from './doc/doc.module';
-import { TreeModule } from 'primeng/tree';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PageNotFoundComponent } from './comn/page-not-found/page-not-found.component';
-import { Router } from '@angular/router';
+// #region default language
+// 参考：https://ng-alain.com/docs/i18n
+import { default as ngLang } from '@angular/common/locales/en';
+import { en_US as zorroLang, NZ_I18N } from 'ng-zorro-antd';
+import {
+  ALAIN_I18N_TOKEN,
+  DELON_LOCALE,
+  en_US as delonLang,
+} from '@delon/theme';
+// register angular
+import { registerLocaleData } from '@angular/common';
+// #endregion
+// #region i18n services
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { I18NService } from '@core/i18n/i18n.service';
+// #region JSON Schema form (using @delon/form)
+import { JsonSchemaModule } from '@shared/json-schema/json-schema.module';
+import { SimpleInterceptor } from '@delon/auth';
+import { DefaultInterceptor } from '@core/net/default.interceptor';
+// #region Startup Service
+import { StartupService } from '@core/startup/startup.service';
+import { DelonModule } from './delon.module';
+import { CoreModule } from '@core/core.module';
+import { SharedModule } from '@shared';
+import { AppComponent } from './app.component';
+import { RoutesModule } from './routes/routes.module';
+import { LayoutModule } from './layout/layout.module';
 
-/*
- * 通过 @NgModule 装饰器来声明一个 NgModule
- */
+const LANG = {
+  abbr: 'en',
+  ng: ngLang,
+  zorro: zorroLang,
+  delon: delonLang,
+};
+
+registerLocaleData(LANG.ng, LANG.abbr);
+const LANG_PROVIDES = [
+  { provide: LOCALE_ID, useValue: LANG.abbr },
+  { provide: NZ_I18N, useValue: LANG.zorro },
+  { provide: DELON_LOCALE, useValue: LANG.delon },
+];
+
+// 加载i18n语言文件
+export function I18nHttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, `assets/tmp/i18n/`, '.json');
+}
+
+const I18NSERVICE_MODULES = [
+  TranslateModule.forRoot({
+    loader: {
+      provide: TranslateLoader,
+      useFactory: I18nHttpLoaderFactory,
+      deps: [HttpClient],
+    },
+  }),
+];
+
+const I18NSERVICE_PROVIDES = [
+  { provide: ALAIN_I18N_TOKEN, useClass: I18NService, multi: false },
+];
+// #region
+
+const FORM_MODULES = [JsonSchemaModule];
+// #endregion
+
+const INTERCEPTOR_PROVIDES = [
+  { provide: HTTP_INTERCEPTORS, useClass: SimpleInterceptor, multi: true },
+  { provide: HTTP_INTERCEPTORS, useClass: DefaultInterceptor, multi: true },
+];
+// #endregion
+
+// #region global third module
+const GLOBAL_THIRD_MODULES: Array<
+  Type<any> | ModuleWithProviders<{}> | any[]
+> = [];
+
+// #endregion
+
+export function StartupServiceFactory(
+  startupService: StartupService,
+): () => any {
+  return () => startupService.load();
+}
+
+const APPINIT_PROVIDES = [
+  StartupService,
+  {
+    provide: APP_INITIALIZER,
+    useFactory: StartupServiceFactory,
+    deps: [StartupService],
+    multi: true,
+  },
+];
+
+// #endregion
+
 @NgModule({
-  /*
-   * declarations 用来声明当前 NgModule 中的 component，directive，pipe 有哪些，
-   * 这些 component，directive，pipe 称之为 declarables，
-   * 这些 declarables 不能在多个不同的 NgModule 中声明，否则编译报错
-   */
-  declarations: [AppComponent, PageNotFoundComponent],
-  /*
-   * imports 用来引入其他的 NgModule，
-   * 引入一个 NgModule 就相当于将它的 exports 中声明的所有 declarables 都引入进当前的 NgModule 中，
-   * 引入之后，在当前的 NgModule 中，就可以使用它的公共的 component，directive，pipe
-   */
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    FormsModule,
     HttpClientModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService, {
-      dataEncapsulation: false
-    }),
-    ...[TreeModule],
-    DocModule,
-    AppRoutingModule
+    DelonModule.forRoot(),
+    CoreModule,
+    SharedModule,
+    LayoutModule,
+    RoutesModule,
+    ...I18NSERVICE_MODULES,
+    ...FORM_MODULES,
+    ...GLOBAL_THIRD_MODULES,
   ],
-  /*
-   * 默认情况下，在 declarations 中声明的 declarables 都只能在当前 NgModule 中使用，
-   * 如果希望某些 declarables 可以被其他的 NgModule 使用，
-   * 需要将这些 declarables 声明在 exports 中，使之成为当前 NgModule 的公共 API，
-   *
-   * 同时，也可以在 exports 中声明其他的 NgModule，
-   * 此时，这些 NgModule 中的公共 API 就也成为了当前 NgModule 的公共 API
-   */
-  exports: [],
-  providers: [],
-  /*
-   * 一个应用的 root NgModule（AppModule）需要通过 bootstrap 来声明 root component，
-   * 其他的 NgModule 不需要声明该配置
-   */
-  bootstrap: [AppComponent]
+  providers: [
+    ...LANG_PROVIDES,
+    ...INTERCEPTOR_PROVIDES,
+    ...I18NSERVICE_PROVIDES,
+    ...APPINIT_PROVIDES,
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule {
-  // @ts-ignore: TS6138
-  constructor(private router: Router) {
-    /*
-     * 通过 Router.config 属性，查看整个应用的完整的路由配置
-     */
-    /*
-        // @ts-ignore: TS6133
-        console.log(JSON.stringify(this.router.config, (key: string, value: any) => (typeof value === 'function' ? value.name : value), 2));
-    */
-  }
-}
+export class AppModule {}

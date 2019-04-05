@@ -10,6 +10,7 @@ import { Doc030207Component } from './03-02-07-angular-elements/doc-03-02-07.com
 import { Doc030208Component } from './03-02-08-dynamic-components/doc-03-02-08.component';
 import { Doc030209Component } from './03-02-09-attribute-directives/doc-03-02-09.component';
 import { Doc030210Component } from './03-02-10-structural-directives/doc-03-02-10.component';
+import { Doc030211Component } from './03-02-11-pipe/doc-03-02-11.component';
 
 const routes: Routes = [
   {
@@ -51,6 +52,10 @@ const routes: Routes = [
   {
     path: 'doc/fundamental/component-template/structural-directive',
     component: Doc030210Component
+  },
+  {
+    path: 'doc/fundamental/component-template/pipes',
+    component: Doc030211Component
   }
 ];
 
