@@ -150,6 +150,7 @@ import { Doc03021008Component } from './03-02-10-structural-directives/03-02-10-
 import { UnlessDirective } from './03-02-10-structural-directives/03-02-10-08-write-a-structural-directive/directive/unless.directive';
 import { Doc030211Component } from './03-02-11-pipe/doc-03-02-11.component';
 import { Doc03021101Component } from './03-02-11-pipe/03-02-11-01-using-pipes/doc-03-02-11-01.component';
+import { SharedModule } from '@shared';
 
 // tslint:enable:max-line-length
 
@@ -335,6 +336,7 @@ import { Doc03021101Component } from './03-02-11-pipe/03-02-11-01-using-pipes/do
     SelectButtonModule,
     MessagesModule,
     InputTextModule,
+    SharedModule,
   ],
   /*
    * 动态加载的 component 需要在 NgModule 的 entryComponents 中声明
