@@ -159,6 +159,7 @@ import { Doc03021101Component } from './03-02-11-pipe/03-02-11-01-using-pipes/do
 import { SharedModule } from '@shared';
 import { Doc03021102Component } from './03-02-11-pipe/03-02-11-02-parameterizing-a-pipe/doc-03-02-11-02.component';
 import { SomePipePipe } from './03-02-11-pipe/03-02-11-02-parameterizing-a-pipe/directive/some-pipe.pipe';
+import { Doc03021103Component } from './03-02-11-pipe/03-02-11-03-chaining-pipes/doc-03-02-11-03.component';
 
 // tslint:enable:max-line-length
 
@@ -334,6 +335,7 @@ import { SomePipePipe } from './03-02-11-pipe/03-02-11-02-parameterizing-a-pipe/
     Doc03021101Component,
     Doc03021102Component,
     SomePipePipe,
+    Doc03021103Component,
   ],
   imports: [
     CommonModule,
