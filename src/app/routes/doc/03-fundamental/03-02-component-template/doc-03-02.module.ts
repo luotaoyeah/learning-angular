@@ -158,8 +158,9 @@ import { Doc030211Component } from './03-02-11-pipe/doc-03-02-11.component';
 import { Doc03021101Component } from './03-02-11-pipe/03-02-11-01-using-pipes/doc-03-02-11-01.component';
 import { SharedModule } from '@shared';
 import { Doc03021102Component } from './03-02-11-pipe/03-02-11-02-parameterizing-a-pipe/doc-03-02-11-02.component';
-import { SomePipePipe } from './03-02-11-pipe/03-02-11-02-parameterizing-a-pipe/directive/some-pipe.pipe';
+import { SomePipePipe } from './03-02-11-pipe/03-02-11-02-parameterizing-a-pipe/pipe/some-pipe.pipe';
 import { Doc03021103Component } from './03-02-11-pipe/03-02-11-03-chaining-pipes/doc-03-02-11-03.component';
+import { Doc03021104Component } from './03-02-11-pipe/03-02-11-04-custom-pipes/doc-03-02-11-04.component';
 
 // tslint:enable:max-line-length
 
@@ -334,8 +335,13 @@ import { Doc03021103Component } from './03-02-11-pipe/03-02-11-03-chaining-pipes
     Doc030211Component,
     Doc03021101Component,
     Doc03021102Component,
+    /*
+     * 需要在 NgModule 的 declarations 中声明某个 pipe，
+     * 之后这个 pipe 才可以在下面的 template 中使用
+     */
     SomePipePipe,
     Doc03021103Component,
+    Doc03021104Component,
   ],
   imports: [
     CommonModule,

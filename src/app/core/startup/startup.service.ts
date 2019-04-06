@@ -6,7 +6,6 @@ import { ALAIN_I18N_TOKEN, MenuService, SettingsService, TitleService } from '@d
 import { DA_SERVICE_TOKEN, ITokenService } from '@delon/auth';
 import { ACLService } from '@delon/acl';
 import { TranslateService } from '@ngx-translate/core';
-
 import { NzIconService } from 'ng-zorro-antd';
 import { ICONS_AUTO } from '../../../style-icons-auto';
 import { ICONS } from '../../../style-icons';
@@ -19,11 +18,11 @@ import { I18NService } from '@core/i18n/i18n.service';
 @Injectable()
 export class StartupService {
   constructor(
-    iconSrv: NzIconService,
+    iconService: NzIconService,
     private menuService: MenuService,
-    private translate: TranslateService,
+    private translateService: TranslateService,
     @Inject(ALAIN_I18N_TOKEN) private i18n: I18NService,
-    private settingService: SettingsService,
+    private settingsService: SettingsService,
     private aclService: ACLService,
     private titleService: TitleService,
     // @ts-ignore: TS6138
@@ -32,7 +31,7 @@ export class StartupService {
     // @ts-ignore: TS6138
     private injector: Injector,
   ) {
-    iconSrv.addIcon(...ICONS_AUTO, ...ICONS);
+    iconService.addIcon(...ICONS_AUTO, ...ICONS);
   }
 
   // @ts-ignore: TS6133
@@ -52,15 +51,15 @@ export class StartupService {
       .subscribe(
         ([langData, appData]) => {
           // setting language data
-          this.translate.setTranslation(this.i18n.defaultLang, langData);
-          this.translate.setDefaultLang(this.i18n.defaultLang);
+          this.translateService.setTranslation(this.i18n.defaultLang, langData);
+          this.translateService.setDefaultLang(this.i18n.defaultLang);
 
           // tslint:disable-next-line:no-any
           const res: any = appData;
           // 应用信息：包括站点名、描述、年份
-          this.settingService.setApp(res.app);
+          this.settingsService.setApp(res.app);
           // 用户信息：包括姓名、头像、邮箱地址
-          this.settingService.setUser(res.user);
+          this.settingsService.setUser(res.user);
           // ACL：设置权限为全量
           this.aclService.setFull(true);
           // 初始化菜单
@@ -80,8 +79,8 @@ export class StartupService {
     this.httpClient
       .get(`assets/tmp/i18n/${this.i18n.defaultLang}.json`)
       .subscribe(langData => {
-        this.translate.setTranslation(this.i18n.defaultLang, langData);
-        this.translate.setDefaultLang(this.i18n.defaultLang);
+        this.translateService.setTranslation(this.i18n.defaultLang, langData);
+        this.translateService.setDefaultLang(this.i18n.defaultLang);
 
         this.viaHttp(resolve, reject);
       });
