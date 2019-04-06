@@ -4,7 +4,13 @@ import { CommonModule } from '@angular/common';
 import { Doc0302RoutingModule } from './doc-03-02-routing.module';
 import { Doc030201Component } from './03-02-01-displaying-data/doc-03-02-01.component';
 import { PanelModule } from 'primeng/panel';
-import { AccordionModule, ButtonModule, InputTextModule, MessagesModule, SelectButtonModule } from 'primeng/primeng';
+import {
+  AccordionModule,
+  ButtonModule,
+  InputTextModule,
+  MessagesModule,
+  SelectButtonModule,
+} from 'primeng/primeng';
 import { ToastModule } from 'primeng/toast';
 import { Doc03020101Component } from './03-02-01-displaying-data/03-02-01-01/doc-03-02-01-01.component';
 import { Doc03020102Component } from './03-02-01-displaying-data/03-02-01-02/doc-03-02-01-02.component';
@@ -151,6 +157,8 @@ import { UnlessDirective } from './03-02-10-structural-directives/03-02-10-08-wr
 import { Doc030211Component } from './03-02-11-pipe/doc-03-02-11.component';
 import { Doc03021101Component } from './03-02-11-pipe/03-02-11-01-using-pipes/doc-03-02-11-01.component';
 import { SharedModule } from '@shared';
+import { Doc03021102Component } from './03-02-11-pipe/03-02-11-02-parameterizing-a-pipe/doc-03-02-11-02.component';
+import { SomePipePipe } from './03-02-11-pipe/03-02-11-02-parameterizing-a-pipe/directive/some-pipe.pipe';
 
 // tslint:enable:max-line-length
 
@@ -324,6 +332,8 @@ import { SharedModule } from '@shared';
     /* 03-02-11 */
     Doc030211Component,
     Doc03021101Component,
+    Doc03021102Component,
+    SomePipePipe,
   ],
   imports: [
     CommonModule,

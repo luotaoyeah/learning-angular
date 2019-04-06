@@ -16,10 +16,12 @@
       "children": [
         {
           "i18n": "menu.doc.tutorial",
-          "link": "/doc/tutorial/dashboard"
+          "link": "/doc/tutorial/dashboard",
+          "icon": "anticon anticon-info-circle"
         },
         {
           "i18n": "menu.doc.fundamental",
+          "icon": "anticon anticon-info-circle",
           "children": [
             {
               "i18n": "menu.doc.fundamental.architecture",
