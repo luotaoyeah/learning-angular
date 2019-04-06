@@ -4,7 +4,13 @@ import { CommonModule } from '@angular/common';
 import { Doc0302RoutingModule } from './doc-03-02-routing.module';
 import { Doc030201Component } from './03-02-01-displaying-data/doc-03-02-01.component';
 import { PanelModule } from 'primeng/panel';
-import { AccordionModule, ButtonModule, InputTextModule, MessagesModule, SelectButtonModule } from 'primeng/primeng';
+import {
+  AccordionModule,
+  ButtonModule,
+  InputTextModule,
+  MessagesModule,
+  SelectButtonModule,
+} from 'primeng/primeng';
 import { ToastModule } from 'primeng/toast';
 import { Doc03020101Component } from './03-02-01-displaying-data/03-02-01-01/doc-03-02-01-01.component';
 import { Doc03020102Component } from './03-02-01-displaying-data/03-02-01-02/doc-03-02-01-02.component';
@@ -159,6 +165,7 @@ import { Doc03021105Component } from './03-02-11-pipe/03-02-11-05-pipes-and-chan
 import { Pipe03021105Pipe } from './03-02-11-pipe/03-02-11-05-pipes-and-change-detection/pipe/pipe-03-02-11-05.pipe';
 import { Pipe03021106Pipe } from './03-02-11-pipe/03-02-11-06-pure-and-impure-pipes/pipe/pipe-03-02-11-06.pipe';
 import { Doc03021106Component } from './03-02-11-pipe/03-02-11-06-pure-and-impure-pipes/doc-03-02-11-06.component';
+import { Doc0302110601Component } from './03-02-11-pipe/03-02-11-06-pure-and-impure-pipes/03-02-11-06-01-the-impure-asyncpipe/doc-03-02-11-06-01.component';
 
 // tslint:enable:max-line-length
 
@@ -344,6 +351,7 @@ import { Doc03021106Component } from './03-02-11-pipe/03-02-11-06-pure-and-impur
     Pipe03021105Pipe,
     Doc03021106Component,
     Pipe03021106Pipe,
+    Doc0302110601Component,
   ],
   imports: [
     CommonModule,
