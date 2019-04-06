@@ -161,6 +161,8 @@ import { Doc03021102Component } from './03-02-11-pipe/03-02-11-02-parameterizing
 import { SomePipePipe } from './03-02-11-pipe/03-02-11-02-parameterizing-a-pipe/pipe/some-pipe.pipe';
 import { Doc03021103Component } from './03-02-11-pipe/03-02-11-03-chaining-pipes/doc-03-02-11-03.component';
 import { Doc03021104Component } from './03-02-11-pipe/03-02-11-04-custom-pipes/doc-03-02-11-04.component';
+import { Doc03021105Component } from './03-02-11-pipe/03-02-11-05-pipes-and-change-detection/doc-03-02-11-05.component';
+import { Pipe03021105Pipe } from './03-02-11-pipe/03-02-11-05-pipes-and-change-detection/pipe/pipe-03-02-11-05.pipe';
 
 // tslint:enable:max-line-length
 
@@ -342,6 +344,8 @@ import { Doc03021104Component } from './03-02-11-pipe/03-02-11-04-custom-pipes/d
     SomePipePipe,
     Doc03021103Component,
     Doc03021104Component,
+    Doc03021105Component,
+    Pipe03021105Pipe,
   ],
   imports: [
     CommonModule,
