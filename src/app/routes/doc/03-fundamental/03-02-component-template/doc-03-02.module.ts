@@ -4,13 +4,7 @@ import { CommonModule } from '@angular/common';
 import { Doc0302RoutingModule } from './doc-03-02-routing.module';
 import { Doc030201Component } from './03-02-01-displaying-data/doc-03-02-01.component';
 import { PanelModule } from 'primeng/panel';
-import {
-  AccordionModule,
-  ButtonModule,
-  InputTextModule,
-  MessagesModule,
-  SelectButtonModule,
-} from 'primeng/primeng';
+import { AccordionModule, ButtonModule, InputTextModule, MessagesModule, SelectButtonModule } from 'primeng/primeng';
 import { ToastModule } from 'primeng/toast';
 import { Doc03020101Component } from './03-02-01-displaying-data/03-02-01-01/doc-03-02-01-01.component';
 import { Doc03020102Component } from './03-02-01-displaying-data/03-02-01-02/doc-03-02-01-02.component';
@@ -158,11 +152,13 @@ import { Doc030211Component } from './03-02-11-pipe/doc-03-02-11.component';
 import { Doc03021101Component } from './03-02-11-pipe/03-02-11-01-using-pipes/doc-03-02-11-01.component';
 import { SharedModule } from '@shared';
 import { Doc03021102Component } from './03-02-11-pipe/03-02-11-02-parameterizing-a-pipe/doc-03-02-11-02.component';
-import { SomePipePipe } from './03-02-11-pipe/03-02-11-02-parameterizing-a-pipe/pipe/some-pipe.pipe';
+import { Pipe03021102Pipe } from './03-02-11-pipe/03-02-11-02-parameterizing-a-pipe/pipe/pipe-03-02-11-02.pipe';
 import { Doc03021103Component } from './03-02-11-pipe/03-02-11-03-chaining-pipes/doc-03-02-11-03.component';
 import { Doc03021104Component } from './03-02-11-pipe/03-02-11-04-custom-pipes/doc-03-02-11-04.component';
 import { Doc03021105Component } from './03-02-11-pipe/03-02-11-05-pipes-and-change-detection/doc-03-02-11-05.component';
 import { Pipe03021105Pipe } from './03-02-11-pipe/03-02-11-05-pipes-and-change-detection/pipe/pipe-03-02-11-05.pipe';
+import { Pipe03021106Pipe } from './03-02-11-pipe/03-02-11-06-pure-and-impure-pipes/pipe/pipe-03-02-11-06.pipe';
+import { Doc03021106Component } from './03-02-11-pipe/03-02-11-06-pure-and-impure-pipes/doc-03-02-11-06.component';
 
 // tslint:enable:max-line-length
 
@@ -341,11 +337,13 @@ import { Pipe03021105Pipe } from './03-02-11-pipe/03-02-11-05-pipes-and-change-d
      * 需要在 NgModule 的 declarations 中声明某个 pipe，
      * 之后这个 pipe 才可以在下面的 template 中使用
      */
-    SomePipePipe,
+    Pipe03021102Pipe,
     Doc03021103Component,
     Doc03021104Component,
     Doc03021105Component,
     Pipe03021105Pipe,
+    Doc03021106Component,
+    Pipe03021106Pipe,
   ],
   imports: [
     CommonModule,
