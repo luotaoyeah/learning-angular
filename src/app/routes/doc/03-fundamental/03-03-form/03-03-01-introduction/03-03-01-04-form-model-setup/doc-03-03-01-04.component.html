@@ -1,0 +1,16 @@
+<p>
+  reactive form 和 template-driven form 都是通过 form model 来 track FormControl
+  和 DOM 元素之间的交互的
+</p>
+
+<p>
+  <input type="text" [formControl]="colorFormControl" />
+</p>
+
+<p>
+  template-driven form 直接在 input element 上通过 [(ngModel)] 绑定到一个
+  component property 上，会自动创建一个 FormControl 实例
+</p>
+<p>
+  <input type="text" [(ngModel)]="color" />
+</p>
