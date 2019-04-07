@@ -6,11 +6,18 @@ import { FormsModule } from '@angular/forms';
 import { SharedModule } from '@shared';
 import { Doc030301Component } from './03-03-01-introduction/doc-03-03-01.component';
 import { Doc03030101Component } from './03-03-01-introduction/03-03-01-01-introduction/doc-03-03-01-01.component';
+import { Doc03030102Component } from './03-03-01-introduction/03-03-01-02-key-differences/doc-03-03-01-02.component';
+import { Doc03030103Component } from './03-03-01-introduction/03-03-01-03-common-foundation/doc-03-03-01-03.component';
 
 // tslint:enable:max-line-length
 
 @NgModule({
-  declarations: [Doc030301Component,Doc03030101Component],
+  declarations: [
+    Doc030301Component,
+    Doc03030101Component,
+    Doc03030102Component,
+    Doc03030103Component,
+  ],
   imports: [CommonModule, Doc0303RoutingModule, FormsModule, SharedModule],
   entryComponents: [],
 })
