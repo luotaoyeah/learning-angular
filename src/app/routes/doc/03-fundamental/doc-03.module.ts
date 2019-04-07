@@ -28,6 +28,7 @@ import { RoutingNavigationBasicRouterEventsComponent } from './03-09-routing-nav
 // tslint:disable-next-line:max-line-length
 import { Doc030902Module } from './03-09-routing-navigation/03-09-02-sample-application/doc-03-09-02.module';
 import { Doc0302Module } from './03-02-component-template/doc-03-02.module';
+import { Doc0303Module } from './03-03-form/doc-03-03.module';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { Doc0302Module } from './03-02-component-template/doc-03-02.module';
     ...[ButtonModule, InputTextModule, AccordionModule],
     Doc03RoutingModule,
     Doc0302Module,
+    Doc0303Module,
     Doc030902Module,
   ],
 })

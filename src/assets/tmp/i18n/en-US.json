@@ -17,6 +17,8 @@
   "menu.doc.fundamental.component-template.attribute-directive": "Attribute Directive",
   "menu.doc.fundamental.component-template.structural-directive": "Structural Directive",
   "menu.doc.fundamental.component-template.pipes": "Pipes",
+  "menu.doc.fundamental.form": "Form",
+  "menu.doc.fundamental.form.introduction": "Introduction",
   "menu.doc.fundamental.routing-navigation": "Routing & Navigation",
   "menu.search.placeholder": "Search for people, file, photos...",
   "menu.fullscreen": "Fullscreen",
