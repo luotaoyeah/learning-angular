@@ -11,6 +11,7 @@ import { Doc03030103Component } from './03-03-01-introduction/03-03-01-03-common
 import { Doc03030104Component } from './03-03-01-introduction/03-03-01-04-form-model-setup/doc-03-03-01-04.component';
 import { Doc03030105Component } from './03-03-01-introduction/03-03-01-05-data-flow-in-forms/doc-03-03-01-05.component';
 import { Doc0303010501Component } from './03-03-01-introduction/03-03-01-05-data-flow-in-forms/03-03-01-05-01-data-flow-in-reactive-form/doc-03-03-01-05-01.component';
+import { Doc0303010502Component } from './03-03-01-introduction/03-03-01-05-data-flow-in-forms/03-03-01-05-02-data-flow-in-template-driven-form/doc-03-03-01-05-02.component';
 
 // tslint:enable:max-line-length
 
@@ -23,6 +24,7 @@ import { Doc0303010501Component } from './03-03-01-introduction/03-03-01-05-data
     Doc03030104Component,
     Doc03030105Component,
     Doc0303010501Component,
+    Doc0303010502Component,
   ],
   imports: [CommonModule, Doc0303RoutingModule, FormsModule, SharedModule],
   entryComponents: [],
