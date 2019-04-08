@@ -24,16 +24,31 @@ describe('Doc0303010701Component', () => {
   });
 
   /*
-   * reactive form 的测试不需要依赖 UI 的渲染
+   * reactive form 的测试不需要依赖 UI 的渲染，
+   * 如下，测试数据从 view 流到 model
    */
   it('should update the value of the input field', () => {
     const inputEl: HTMLInputElement | null = (fixture.nativeElement as HTMLDivElement).querySelector<
       HTMLInputElement
     >('input');
     if (inputEl) {
-      inputEl.value = 'blue';
+      inputEl.value = 'BLUE';
       inputEl.dispatchEvent(new Event('input'));
-      expect(fixture.componentInstance.colorFormControl.value).toBe('blue');
+      expect(component.colorFormControl.value).toBe('BLUE');
+    }
+  });
+
+  /*
+   * 如下，测试数据从 model 流到 view
+   */
+  it('should update the value in the control', () => {
+    component.colorFormControl.setValue('YELLOW');
+
+    const inputEl: HTMLInputElement | null = (fixture.nativeElement as HTMLDivElement).querySelector<
+      HTMLInputElement
+    >('input');
+    if (inputEl) {
+      expect(inputEl.value).toBe('YELLOW');
     }
   });
 });
