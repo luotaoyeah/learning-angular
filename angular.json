@@ -38,7 +38,15 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
-            "assets": ["src/favicon.ico", "src/assets"],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+                "output": "/assets/"
+              }
+            ],
             "styles": [
               "src/styles.less",
               "node_modules/primeicons/primeicons.css",
@@ -185,19 +193,19 @@
     },
     "@schematics/angular:module": {
       "routing": true,
-      "spec": false
+      "spec": true
     },
     "@schematics/angular:component": {
-      "spec": false,
+      "spec": true,
       "flat": false,
       "inlineStyle": true,
       "inlineTemplate": false
     },
     "@schematics/angular:directive": {
-      "spec": false
+      "spec": true
     },
     "@schematics/angular:service": {
-      "spec": false
+      "spec": true
     }
   }
 }

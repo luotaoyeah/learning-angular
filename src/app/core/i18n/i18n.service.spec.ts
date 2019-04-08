@@ -1,15 +1,19 @@
 import { TestBed, TestBedStatic } from '@angular/core/testing';
 import { TranslateService } from '@ngx-translate/core';
-import { SettingsService, DelonLocaleService } from '@delon/theme';
+import { DelonLocaleService, SettingsService } from '@delon/theme';
 import { NzI18nService } from 'ng-zorro-antd';
 import { of } from 'rxjs';
 
-import { I18NService } from './i18n.service';
+import { I18NService } from '@core/i18n/i18n.service';
 
 describe('Service: I18n', () => {
   let injector: TestBedStatic;
   let srv: I18NService;
-  const MockSettingsService = {
+  const MockSettingsService: {
+    layout: {
+      lang: string | null;
+    };
+  } = {
     layout: {
       lang: null,
     },

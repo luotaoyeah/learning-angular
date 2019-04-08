@@ -67,7 +67,7 @@ const LANGS: { [key: string]: LangData } = {
 export class I18NService implements AlainI18NService {
   // tslint:disable-next-line:variable-name
   private _default = DEFAULT;
-  private change$ = new BehaviorSubject<string>('');
+  private change$ = new BehaviorSubject<string | null>(null);
 
   // tslint:disable-next-line:variable-name
   private _langs = Object.keys(LANGS).map(code => {
@@ -100,7 +100,13 @@ export class I18NService implements AlainI18NService {
   }
 
   get change(): Observable<string> {
-    return this.change$.asObservable().pipe(filter(w => w != null));
+    return this.change$
+      .asObservable()
+      .pipe(
+        filter<string | null, string>(
+          (w: string | null): w is string => w != null,
+        ),
+      );
   }
 
   use(lang: string): void {
