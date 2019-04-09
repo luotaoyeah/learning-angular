@@ -18,6 +18,7 @@ import { Doc0303010702Component } from './03-03-01-introduction/03-03-01-07-test
 import { Doc0303010701Component } from './03-03-01-introduction/03-03-01-07-testing/03-03-01-07-01-testing-reactive-form/doc-03-03-01-07-01.component';
 import { Doc030302Component } from './03-03-02-reactive-form/doc-03-03-02.component';
 import { Doc03030201Component } from './03-03-02-reactive-form/03-03-02-01-introduction-to-reactive-forms/doc-03-03-02-01.component';
+import { Doc03030202Component } from './03-03-02-reactive-form/03-03-02-02-getting-started/doc-03-03-02-02.component';
 
 // tslint:enable:max-line-length
 
@@ -39,6 +40,7 @@ import { Doc03030201Component } from './03-03-02-reactive-form/03-03-02-01-intro
     /* 03-02-02 */
     Doc030302Component,
     Doc03030201Component,
+    Doc03030202Component,
   ],
   imports: [CommonModule, Doc0303RoutingModule, FormsModule, SharedModule],
   entryComponents: [],

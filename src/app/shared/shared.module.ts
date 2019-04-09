@@ -17,19 +17,21 @@ import { CountdownModule } from 'ngx-countdown';
 const THIRDMODULES: Array<any> = [NgZorroAntdModule, CountdownModule];
 // #endregion
 
-// #region your componets & directives
+/*
+ * your componets & directives
+ */
+
 // tslint:disable-next-line:no-any
 const COMPONENTS: Array<any> = [];
 // tslint:disable-next-line:no-any
 const DIRECTIVES: Array<Type<any> | any[]> = [];
-
-// #endregion
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     RouterModule,
+    // 使用 reactive form 之前，必须引入 ReactiveFormsModule
     ReactiveFormsModule,
     AlainThemeModule.forChild(),
     DelonABCModule,
