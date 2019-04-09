@@ -1,0 +1,9 @@
+<p>
+  <input type="text" [formControl]="nameFormControl" />
+  &nbsp;
+  {{ nameFormControl.valueChanges | async }}
+</p>
+
+<p>
+  <button nz-button (click)="updateName()">UPDATE NAME</button>
+</p>
