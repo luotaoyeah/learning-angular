@@ -16,11 +16,14 @@ import { Doc03030106Component } from './03-03-01-introduction/03-03-01-06-form-v
 import { Doc03030107Component } from './03-03-01-introduction/03-03-01-07-testing/doc-03-03-01-07.component';
 import { Doc0303010702Component } from './03-03-01-introduction/03-03-01-07-testing/03-03-01-07-02-testing-template-driven-form/doc-03-03-01-07-02.component';
 import { Doc0303010701Component } from './03-03-01-introduction/03-03-01-07-testing/03-03-01-07-01-testing-reactive-form/doc-03-03-01-07-01.component';
+import { Doc030302Component } from './03-03-02-reactive-form/doc-03-03-02.component';
+import { Doc03030201Component } from './03-03-02-reactive-form/03-03-02-01-introduction-to-reactive-forms/doc-03-03-02-01.component';
 
 // tslint:enable:max-line-length
 
 @NgModule({
   declarations: [
+    /* 03-02-01 */
     Doc030301Component,
     Doc03030101Component,
     Doc03030102Component,
@@ -33,6 +36,9 @@ import { Doc0303010701Component } from './03-03-01-introduction/03-03-01-07-test
     Doc03030107Component,
     Doc0303010701Component,
     Doc0303010702Component,
+    /* 03-02-02 */
+    Doc030302Component,
+    Doc03030201Component,
   ],
   imports: [CommonModule, Doc0303RoutingModule, FormsModule, SharedModule],
   entryComponents: [],
