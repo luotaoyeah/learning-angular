@@ -1,0 +1,21 @@
+<ul>
+  <li>
+    可以通过 AbstractControl.value 属性，获取到 FormControl 中的数据
+    <ul>
+      <li>{{ nameFormControl.value }}</li>
+    </ul>
+  </li>
+  <li>
+    也可以通过订阅 AbstractControl.valueChanges 这个 observable 来获取
+    FormControl 中的数据， 此处需要用到 AsyncPipe
+    <ul>
+      <li>
+        {{ nameFormControl.valueChanges | async }}
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>
+  <input type="text" [formControl]="nameFormControl" />
+</p>
