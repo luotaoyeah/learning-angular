@@ -23,12 +23,13 @@ import { Doc03030203Component } from './03-03-02-reactive-form/03-03-02-03-manag
 import { Doc0303020301Component } from './03-03-02-reactive-form/03-03-02-03-managing-control-values/03-03-02-03-01-displaying-a-form-control-value/doc-03-03-02-03-01.component';
 import { Doc0303020302Component } from './03-03-02-reactive-form/03-03-02-03-managing-control-values/03-03-02-03-02-replacing-a-form-control-value/doc-03-03-02-03-02.component';
 import { Doc03030204Component } from './03-03-02-reactive-form/03-03-02-04-grouping-form-controls/doc-03-03-02-04.component';
+import { Doc03030205Component } from './03-03-02-reactive-form/03-03-02-05-creating-nested-form-group/doc-03-03-02-05.component';
 
 // tslint:enable:max-line-length
 
 @NgModule({
   declarations: [
-    /* 03-02-01 */
+    /* 03-03-01 */
     Doc030301Component,
     Doc03030101Component,
     Doc03030102Component,
@@ -41,7 +42,7 @@ import { Doc03030204Component } from './03-03-02-reactive-form/03-03-02-04-group
     Doc03030107Component,
     Doc0303010701Component,
     Doc0303010702Component,
-    /* 03-02-02 */
+    /* 03-03-02 */
     Doc030302Component,
     Doc03030201Component,
     Doc03030202Component,
@@ -49,6 +50,7 @@ import { Doc03030204Component } from './03-03-02-reactive-form/03-03-02-04-group
     Doc0303020301Component,
     Doc0303020302Component,
     Doc03030204Component,
+    Doc03030205Component,
   ],
   imports: [CommonModule, Doc0303RoutingModule, FormsModule, SharedModule],
   entryComponents: [],

@@ -1,0 +1,31 @@
+<form [formGroup]="profileFormGroup" (ngSubmit)="onSubmit()">
+  <label for="firstname">
+    FIRST NAME:
+    <input type="text" id="firstname" formControlName="firstName" />
+  </label>
+  <label for="lastname">
+    LAST NAME:
+    <input type="text" id="lastname" formControlName="lastName" />
+  </label>
+
+  <p>
+    在容器元素（如：div）上通过 FormGroupName 指令，指定要关联的 child from
+    group，指定之后，在 div 里面的 &lt;input&gt; 上，就可以直接通过
+    FormControlName 指令指定它要关联的 FormControl，这个 FormControl 是 child
+    form group 下面的一个 FormControl
+  </p>
+
+  <div formGroupName="address">
+    <fieldset>
+      <legend>ADDRESS</legend>
+      <label for="street">
+        STREET:
+        <input type="text" id="street" formControlName="street" />
+      </label>
+    </fieldset>
+  </div>
+
+  <div>
+    <button type="submit" nz-button>SUBMIT</button>
+  </div>
+</form>
