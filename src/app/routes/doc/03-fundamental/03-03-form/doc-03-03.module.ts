@@ -22,6 +22,7 @@ import { Doc03030202Component } from './03-03-02-reactive-form/03-03-02-02-getti
 import { Doc03030203Component } from './03-03-02-reactive-form/03-03-02-03-managing-control-values/doc-03-03-02-03.component';
 import { Doc0303020301Component } from './03-03-02-reactive-form/03-03-02-03-managing-control-values/03-03-02-03-01-displaying-a-form-control-value/doc-03-03-02-03-01.component';
 import { Doc0303020302Component } from './03-03-02-reactive-form/03-03-02-03-managing-control-values/03-03-02-03-02-replacing-a-form-control-value/doc-03-03-02-03-02.component';
+import { Doc03030204Component } from './03-03-02-reactive-form/03-03-02-04-grouping-form-controls/doc-03-03-02-04.component';
 
 // tslint:enable:max-line-length
 
@@ -47,6 +48,7 @@ import { Doc0303020302Component } from './03-03-02-reactive-form/03-03-02-03-man
     Doc03030203Component,
     Doc0303020301Component,
     Doc0303020302Component,
+    Doc03030204Component,
   ],
   imports: [CommonModule, Doc0303RoutingModule, FormsModule, SharedModule],
   entryComponents: [],
