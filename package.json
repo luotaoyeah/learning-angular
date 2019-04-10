@@ -8,8 +8,10 @@
     "start": "npm run color-less && ng serve",
     "build": "npm run color-less && ng build --prod --build-optimizer",
     "test": "ng test",
+    "test:ci": "ng test --watch=false --progress=false --browsers=ChromeHeadlessNoSandbox --code-coverage",
     "test:coverage": "ng test --code-coverage --watch=false",
     "e2e": "ng e2e --port 42001",
+    "e2e:ci": "ng e2e --protractor-config=e2e/protractor.ci.conf.js --port 42001",
     "analyze": "npm run color-less && ng build --prod --build-optimizer --stats-json",
     "color-less": "node scripts/color-less.js",
     "icon": "ng g ng-alain:plugin icon",
@@ -90,6 +92,7 @@
     "ng-alain-codelyzer": "^0.0.1",
     "prettier": "^1.16.4",
     "protractor": "~5.4.0",
+    "puppeteer": "^1.14.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
     "typescript": "~3.2.4"
