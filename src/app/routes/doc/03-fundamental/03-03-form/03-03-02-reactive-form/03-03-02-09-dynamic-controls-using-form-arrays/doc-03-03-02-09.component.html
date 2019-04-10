@@ -1,0 +1,18 @@
+<form [formGroup]="profileFormGroup">
+  <label for="name">
+    NAME:
+    <input type="text" id="name" formControlName="name" />
+  </label>
+
+  <div formArrayName="aliases">
+    <ng-container *ngFor="let alias of aliases.controls; let i = index">
+      <label [for]="'alias-' + i">
+        <input type="text" [id]="'alias-' + i" [formControlName]="i" />
+      </label>
+    </ng-container>
+  </div>
+
+  <button nz-button (click)="addAlias()">ADD ALIAS</button>
+
+  <div>{{ profileFormGroup.value | json }}</div>
+</form>
