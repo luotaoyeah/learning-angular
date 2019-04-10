@@ -1,0 +1,32 @@
+<form [formGroup]="profileFormGroup">
+  <label for="name">
+    NAME:
+    <input type="text" id="name" formControlName="name" />
+  </label>
+
+  <span formGroupName="address">
+    <label for="street">
+      STREET:
+      <input type="text" id="street" formControlName="street" />
+    </label>
+    <label for="zip">
+      ZIP:
+      <input type="text" id="zip" formControlName="zip" />
+    </label>
+  </span>
+
+  <p>
+    AbstractControl.status
+    属性用来标识表单是否通过验证，可选值为：VALID，INVALID，PENDING，DISABLED
+  </p>
+
+  <div>
+    {{ profileFormGroup.status }}
+  </div>
+
+  <div>
+    <button type="submit" nz-button [disabled]="profileFormGroup.invalid">
+      SUBMIT
+    </button>
+  </div>
+</form>
