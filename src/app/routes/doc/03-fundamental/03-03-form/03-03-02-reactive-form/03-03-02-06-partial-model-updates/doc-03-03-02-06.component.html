@@ -1,0 +1,26 @@
+<form [formGroup]="profileFormGroup">
+  <label for="name">
+    NAME:
+    <input type="text" id="name" formControlName="name" />
+  </label>
+  <div formGroupName="address">
+    <label for="street">
+      NAME:
+      <input type="text" id="street" formControlName="street" />
+    </label>
+    <label for="zip">
+      NAME:
+      <input type="text" id="zip" formControlName="zip" />
+    </label>
+  </div>
+
+  <div>
+    {{ profileFormGroup.value | json }}
+  </div>
+
+  <div>
+    <button nz-button (click)="reset()">RESET</button>
+    <button nz-button (click)="setValue()">setValue()</button>
+    <button nz-button (click)="patchValue()">patchValue()</button>
+  </div>
+</form>
