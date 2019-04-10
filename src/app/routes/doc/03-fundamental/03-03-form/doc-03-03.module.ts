@@ -25,6 +25,7 @@ import { Doc0303020302Component } from './03-03-02-reactive-form/03-03-02-03-man
 import { Doc03030204Component } from './03-03-02-reactive-form/03-03-02-04-grouping-form-controls/doc-03-03-02-04.component';
 import { Doc03030205Component } from './03-03-02-reactive-form/03-03-02-05-creating-nested-form-group/doc-03-03-02-05.component';
 import { Doc03030206Component } from './03-03-02-reactive-form/03-03-02-06-partial-model-updates/doc-03-03-02-06.component';
+import { Doc03030207Component } from './03-03-02-reactive-form/03-03-02-07-generating-form-controls-with-formbuilder/doc-03-03-02-07.component';
 
 // tslint:enable:max-line-length
 
@@ -53,6 +54,7 @@ import { Doc03030206Component } from './03-03-02-reactive-form/03-03-02-06-parti
     Doc03030204Component,
     Doc03030205Component,
     Doc03030206Component,
+    Doc03030207Component,
   ],
   imports: [CommonModule, Doc0303RoutingModule, FormsModule, SharedModule],
   entryComponents: [],
