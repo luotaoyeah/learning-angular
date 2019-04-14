@@ -2,7 +2,7 @@
   <input type="text" name="password" formControlName="password" nz-input />
   <input
     type="text"
-    name="password"
+    name="repeatPassword"
     formControlName="repeatPassword"
     nz-input
   />
@@ -10,6 +10,22 @@
     *ngIf="
       formGroup.errors?.repeatPassword && (formGroup.dirty || formGroup.touched)
     "
+    nzType="error"
+    nzMessage="MUST THE SAME"
+  ></nz-alert>
+</form>
+
+<hr />
+<form #form02="ngForm" appPasswordValidator>
+  <input type="text" name="password" nz-input [(ngModel)]="password" />
+  <input
+    type="text"
+    name="repeatPassword"
+    nz-input
+    [(ngModel)]="repeatPassword"
+  />
+  <nz-alert
+    *ngIf="form02.errors?.repeatPassword && (form02.dirty || form02.touched)"
     nzType="error"
     nzMessage="MUST THE SAME"
   ></nz-alert>

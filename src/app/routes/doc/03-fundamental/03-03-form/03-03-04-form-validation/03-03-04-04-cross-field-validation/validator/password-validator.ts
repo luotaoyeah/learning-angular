@@ -24,7 +24,7 @@ export function passwordValidator(
     ) as FormControl | null;
 
     if (!passwordControl || !repeatPasswordControl) {
-      throw new Error('INVALID FIELD');
+      return null;
     }
 
     return passwordControl.value !== repeatPasswordControl.value

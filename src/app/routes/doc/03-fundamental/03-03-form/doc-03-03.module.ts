@@ -36,6 +36,7 @@ import { Doc03030402Component } from './03-03-04-form-validation/03-03-04-02-rea
 import { Doc03030403Component } from './03-03-04-form-validation/03-03-04-03-custom-validators/doc-03-03-04-03.component';
 import { ForbiddenNameDirective } from './03-03-04-form-validation/03-03-04-03-custom-validators/validator/forbidden-name.directive';
 import { Doc03030404Component } from './03-03-04-form-validation/03-03-04-04-cross-field-validation/doc-03-03-04-04.component';
+import { PasswordDirective } from './03-03-04-form-validation/03-03-04-04-cross-field-validation/validator/password.directive';
 
 // tslint:enable:max-line-length
 
@@ -77,6 +78,7 @@ import { Doc03030404Component } from './03-03-04-form-validation/03-03-04-04-cro
     Doc03030403Component,
     ForbiddenNameDirective,
     Doc03030404Component,
+    PasswordDirective,
   ],
   imports: [CommonModule, Doc0303RoutingModule, FormsModule, SharedModule],
   entryComponents: [],

@@ -25,6 +25,9 @@ export class Doc03030404Component implements OnInit {
     },
   );
 
+  password: string = '';
+  repeatPassword: string = '';
+
   constructor() {}
 
   ngOnInit() {}
