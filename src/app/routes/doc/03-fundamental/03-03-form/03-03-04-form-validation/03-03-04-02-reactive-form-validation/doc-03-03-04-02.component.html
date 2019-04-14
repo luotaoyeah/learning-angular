@@ -1,0 +1,33 @@
+<p>
+  对于 reactive form 来说，validator function 是直接在 component class 中 form
+  control 对象上设置的，即在创建 FormControl 实例的时候，通过构造函数参数设置
+  validator functions，validator function 有两种：
+</p>
+<ul>
+  <li>
+    sync validator
+  </li>
+  <li>
+    async validator
+  </li>
+</ul>
+
+<form [formGroup]="formGroup">
+  <input type="text" formControlName="name" nz-input />
+  <div
+    *ngIf="
+      formGroupName.invalid && (formGroupName.dirty || formGroupName.touched)
+    "
+  >
+    <nz-alert
+      *ngIf="formGroupName.invalid && formGroupName.errors.required"
+      nzType="error"
+      nzMessage="REQUIRED"
+    ></nz-alert>
+    <nz-alert
+      *ngIf="formGroupName.invalid && formGroupName.errors.minlength"
+      nzType="error"
+      nzMessage="MINLENGTH"
+    ></nz-alert>
+  </div>
+</form>
