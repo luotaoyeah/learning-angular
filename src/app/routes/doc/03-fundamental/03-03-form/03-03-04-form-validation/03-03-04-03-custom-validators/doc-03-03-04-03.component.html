@@ -15,3 +15,29 @@
     </nz-alert>
   </div>
 </form>
+
+<form>
+  <input
+    type="text"
+    name="name02"
+    nz-input
+    required
+    appForbiddenName="foo"
+    [(ngModel)]="name"
+    #nameEl="ngModel"
+  />
+  <div *ngIf="nameEl.invalid && (nameEl.dirty || nameEl.touched)">
+    <nz-alert
+      nzType="error"
+      nzMessage="REQUIRED"
+      *ngIf="nameEl.errors.required"
+    >
+    </nz-alert>
+    <nz-alert
+      nzType="error"
+      nzMessage="FORBIDDEN"
+      *ngIf="nameEl.errors.forbiddenName"
+    >
+    </nz-alert>
+  </div>
+</form>

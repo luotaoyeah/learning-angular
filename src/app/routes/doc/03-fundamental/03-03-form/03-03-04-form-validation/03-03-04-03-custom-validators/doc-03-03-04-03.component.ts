@@ -17,6 +17,8 @@ export class Doc03030403Component implements OnInit {
     }),
   });
 
+  name: string = '';
+
   constructor() {}
 
   ngOnInit() {}

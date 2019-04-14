@@ -34,6 +34,7 @@ import { Doc030304Component } from './03-03-04-form-validation/doc-03-03-04.comp
 import { Doc03030401Component } from './03-03-04-form-validation/03-03-04-01-template-driven-validation/doc-03-03-04-01.component';
 import { Doc03030402Component } from './03-03-04-form-validation/03-03-04-02-reactive-form-validation/doc-03-03-04-02.component';
 import { Doc03030403Component } from './03-03-04-form-validation/03-03-04-03-custom-validators/doc-03-03-04-03.component';
+import { ForbiddenNameDirective } from './03-03-04-form-validation/03-03-04-03-custom-validators/validator/forbidden-name.directive';
 
 // tslint:enable:max-line-length
 
@@ -73,6 +74,7 @@ import { Doc03030403Component } from './03-03-04-form-validation/03-03-04-03-cus
     Doc03030401Component,
     Doc03030402Component,
     Doc03030403Component,
+    ForbiddenNameDirective,
   ],
   imports: [CommonModule, Doc0303RoutingModule, FormsModule, SharedModule],
   entryComponents: [],
