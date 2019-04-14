@@ -21,6 +21,7 @@
   "menu.doc.fundamental.form.introduction": "Introduction",
   "menu.doc.fundamental.form.reactive-form": "Reactive Form",
   "menu.doc.fundamental.form.template-driven-form": "Template-Driven Form",
+  "menu.doc.fundamental.form.form-validation": "Form Validation",
   "menu.doc.fundamental.routing-navigation": "Routing & Navigation",
   "menu.search.placeholder": "Search for people, file, photos...",
   "menu.fullscreen": "Fullscreen",
