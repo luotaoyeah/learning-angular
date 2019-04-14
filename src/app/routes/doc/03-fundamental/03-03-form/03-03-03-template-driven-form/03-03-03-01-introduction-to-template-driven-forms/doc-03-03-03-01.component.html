@@ -7,6 +7,16 @@
   <h1>Hero Form</h1>
   <form>
     <div class="form-group">
+      <p>
+        template reference variable 默认是绑定到所在的 element 或者 component
+        实例对象， 如果 template reference variable 后面指定了参数，表示将这个
+        variable 绑定到对应的 directive 实例上去
+      </p>
+      <p>
+        directive 可以通过 exportAs 指定如何绑定到 template reference variable
+        上去，如下，NgModel 指令通过 exportAs 指定的是 ngModel，因此
+        #name="ngModel" 实际上绑定的就是对应的 NgModel 指令的实例对象
+      </p>
       <label for="name">Name</label>
       <input
         type="text"
@@ -15,7 +25,11 @@
         name="name"
         required
         [(ngModel)]="model.name"
+        #name="ngModel"
       />
+      <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+        name is required
+      </div>
     </div>
 
     <div class="form-group">
