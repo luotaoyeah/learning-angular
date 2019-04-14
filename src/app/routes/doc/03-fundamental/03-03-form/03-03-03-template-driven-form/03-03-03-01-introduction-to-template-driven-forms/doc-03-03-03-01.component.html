@@ -45,3 +45,33 @@
     <button type="submit" class="btn btn-success">Submit</button>
   </form>
 </div>
+
+<p>
+  当 ngModel 位于 &lt;form&gt; 里面时，除了 two-way data binding 之外，ngModel
+  还提供了一个特性：根据 form control 的状态，设置不同的 css class，总共有三组：
+</p>
+<ul>
+  <li>
+    form control has been visited?
+    <ul>
+      <li>是：ng-touched</li>
+      <li>否：ng-untouched</li>
+    </ul>
+  </li>
+  <li>
+    form control's value has been changed?
+    <ul>
+      <li>是：ng-dirty</li>
+      <li>否：ng-pristine</li>
+    </ul>
+  </li>
+  <li>
+    form control's value is valid?
+    <ul>
+      <li>是：ng-valid</li>
+    </ul>
+    <ul>
+      <li>否：ng-invalid</li>
+    </ul>
+  </li>
+</ul>
