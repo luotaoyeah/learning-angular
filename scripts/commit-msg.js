@@ -7,14 +7,20 @@ const message = require('fs')
 const commitRegExp = /^(revert: )?(feat|fix|polish|docs|style|refactor|perf|test|workflow|ci|chore|types|build)(\(.+\))?: .{1,50}/;
 
 if (!commitRegExp.test(message)) {
-  console.log();
+  console.log('\n--------------------------------------------------');
+
   console.error(
     `  ${chalk.bgRed.white('ERROR')} ${chalk.red(
-      `INVALID COMMIT MESSAGE FORMAT.`,
+      `invalid commit message format.`,
     )}\n\n` +
-      chalk.red(`  VALID EXAMPLES:\n\n`) +
+      chalk.red(`  valid examples:\n`) +
       `    ${chalk.green(`feat(compiler): add 'comments' option`)}\n` +
-      `    ${chalk.green(`fix(model): handle events on blur (close #28)`)}\n\n`,
+      `    ${chalk.green(
+        `fix(model): handle events on blur (close #28)`,
+      )}\n\n` +
+      chalk.red(`  see .doc/COMMIT_CONVENTION.md for more details.`),
   );
+  console.log('--------------------------------------------------\n');
+
   process.exit(1);
 }
