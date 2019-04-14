@@ -28,6 +28,8 @@ import { Doc03030206Component } from './03-03-02-reactive-form/03-03-02-06-parti
 import { Doc03030207Component } from './03-03-02-reactive-form/03-03-02-07-generating-form-controls-with-formbuilder/doc-03-03-02-07.component';
 import { Doc03030208Component } from './03-03-02-reactive-form/03-03-02-08-simple-form-validation/doc-03-03-02-08.component';
 import { Doc03030209Component } from './03-03-02-reactive-form/03-03-02-09-dynamic-controls-using-form-arrays/doc-03-03-02-09.component';
+import { Doc030303Component } from './03-03-03-template-driven-form/doc-03-03-03.component';
+import { Doc03030301Component } from './03-03-03-template-driven-form/03-03-03-01-introduction-to-template-driven-forms/doc-03-03-03-01.component';
 
 // tslint:enable:max-line-length
 
@@ -59,6 +61,9 @@ import { Doc03030209Component } from './03-03-02-reactive-form/03-03-02-09-dynam
     Doc03030207Component,
     Doc03030208Component,
     Doc03030209Component,
+    /* 03-03-03 */
+    Doc030303Component,
+    Doc03030301Component,
   ],
   imports: [CommonModule, Doc0303RoutingModule, FormsModule, SharedModule],
   entryComponents: [],

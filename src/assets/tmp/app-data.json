@@ -95,6 +95,10 @@
                 {
                   "i18n": "menu.doc.fundamental.form.reactive-form",
                   "link": "/doc/03/03/reactive-form"
+                },
+                {
+                  "i18n": "menu.doc.fundamental.form.template-driven-form",
+                  "link": "/doc/03/03/template-driven-form"
                 }
               ]
             },
