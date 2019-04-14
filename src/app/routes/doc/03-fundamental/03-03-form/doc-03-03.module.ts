@@ -33,6 +33,7 @@ import { Doc03030301Component } from './03-03-03-template-driven-form/03-03-03-0
 import { Doc030304Component } from './03-03-04-form-validation/doc-03-03-04.component';
 import { Doc03030401Component } from './03-03-04-form-validation/03-03-04-01-template-driven-validation/doc-03-03-04-01.component';
 import { Doc03030402Component } from './03-03-04-form-validation/03-03-04-02-reactive-form-validation/doc-03-03-04-02.component';
+import { Doc03030403Component } from './03-03-04-form-validation/03-03-04-03-custom-validators/doc-03-03-04-03.component';
 
 // tslint:enable:max-line-length
 
@@ -71,6 +72,7 @@ import { Doc03030402Component } from './03-03-04-form-validation/03-03-04-02-rea
     Doc030304Component,
     Doc03030401Component,
     Doc03030402Component,
+    Doc03030403Component,
   ],
   imports: [CommonModule, Doc0303RoutingModule, FormsModule, SharedModule],
   entryComponents: [],

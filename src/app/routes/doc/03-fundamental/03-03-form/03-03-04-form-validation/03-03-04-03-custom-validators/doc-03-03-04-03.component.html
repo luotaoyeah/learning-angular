@@ -1,0 +1,17 @@
+<form [formGroup]="formGroup">
+  <input type="text" formControlName="name" nz-input required />
+  <div *ngIf="formGroup.invalid && (formGroup.dirty || formGroup.touched)">
+    <nz-alert
+      nzType="error"
+      nzMessage="REQUIRED"
+      *ngIf="formGroup.get('name')!.errors.required"
+    >
+    </nz-alert>
+    <nz-alert
+      nzType="error"
+      nzMessage="FORBIDDEN"
+      *ngIf="formGroup.get('name')!.errors.forbiddenName"
+    >
+    </nz-alert>
+  </div>
+</form>
