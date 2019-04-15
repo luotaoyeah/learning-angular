@@ -8,7 +8,7 @@ import {
 import { FormsModule } from '@angular/forms';
 import { Doc0303010702Component } from './doc-03-03-01-07-02.component';
 
-describe(Doc0303010702Component.name, () => {
+describe('Doc0303010702Component', () => {
   let component: Doc0303010702Component;
   let fixture: ComponentFixture<Doc0303010702Component>;
 
