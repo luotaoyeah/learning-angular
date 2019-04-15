@@ -111,6 +111,16 @@
               "link": "/doc/03/09"
             }
           ]
+        },
+        {
+          "i18n": "menu.doc.setup-deployment",
+          "icon": "anticon anticon-info-circle",
+          "children": [
+            {
+              "i18n": "menu.doc.setup-deployment.testing",
+              "link": "/doc/05/07"
+            }
+          ]
         }
       ]
     }
