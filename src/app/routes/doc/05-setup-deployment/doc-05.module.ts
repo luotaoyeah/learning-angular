@@ -6,9 +6,15 @@ import { Doc05RoutingModule } from './doc-05-routing.module';
 import { Doc050701Component } from './05-07-testing/05-07-01-setup/doc-05-07-01.component';
 import { SharedModule } from '@shared';
 import { Doc0507Component } from './05-07-testing/doc-05-07.component';
+import { Doc050702Component } from './05-07-testing/05-07-02-service-tests/doc-05-07-02.component';
 
 @NgModule({
-  declarations: [Doc05Component, Doc0507Component, Doc050701Component],
+  declarations: [
+    Doc05Component,
+    Doc0507Component,
+    Doc050701Component,
+    Doc050702Component,
+  ],
   imports: [CommonModule, FormsModule, SharedModule, Doc05RoutingModule],
 })
 export class Doc05Module {}

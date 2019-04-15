@@ -6,9 +6,9 @@ import { of } from 'rxjs';
 
 import { I18NService } from '@core/i18n/i18n.service';
 
-describe('Service: I18n', () => {
+describe('I18NService', () => {
   let injector: TestBedStatic;
-  let srv: I18NService;
+  let i18NService: I18NService;
   const MockSettingsService: {
     layout: {
       lang: string | null;
@@ -43,15 +43,15 @@ describe('Service: I18n', () => {
         { provide: TranslateService, useValue: MockTranslateService },
       ],
     });
-    srv = injector.get(I18NService);
+    i18NService = injector.get(I18NService);
   }
 
   it('should working', () => {
     genModule();
-    expect(srv).toBeTruthy();
-    expect(srv.defaultLang).toBe('zh-CN');
-    srv.fanyi('a');
-    srv.fanyi('a', {});
+    expect(i18NService).toBeTruthy();
+    expect(i18NService.defaultLang).toBe('zh-CN');
+    i18NService.fanyi('a');
+    i18NService.fanyi('a', {});
     const t = injector.get(TranslateService) as TranslateService;
     expect(t.instant).toHaveBeenCalled();
   });
@@ -59,20 +59,20 @@ describe('Service: I18n', () => {
   it('should be used layout as default language', () => {
     MockSettingsService.layout.lang = 'en-US';
     genModule();
-    expect(srv.defaultLang).toBe('en-US');
+    expect(i18NService.defaultLang).toBe('en-US');
     MockSettingsService.layout.lang = null;
   });
 
   it('should be used browser as default language', () => {
     MockTranslateService.getBrowserLang.and.returnValue('zh-CN');
     genModule();
-    expect(srv.defaultLang).toBe('zh-CN');
+    expect(i18NService.defaultLang).toBe('zh-CN');
   });
 
   it('should be trigger notify when changed language', () => {
     genModule();
-    srv.use('en-US');
-    srv.change.subscribe(lang => {
+    i18NService.use('en-US');
+    i18NService.change.subscribe(lang => {
       expect(lang).toBe('en-US');
     });
   });
