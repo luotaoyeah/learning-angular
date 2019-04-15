@@ -158,6 +158,11 @@
     }
   },
   "defaultProject": "learning-angular",
+  "cli": {
+    "warnings": {
+      "typescriptMismatch": false
+    }
+  },
   "schematics": {
     "ng-alain:module": {
       "routing": true,
