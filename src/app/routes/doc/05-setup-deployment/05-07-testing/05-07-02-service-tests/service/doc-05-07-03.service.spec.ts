@@ -26,7 +26,7 @@ describe('Doc050703Service', () => {
   });
 
   it('should return a value from a spy', () => {
-    const spyObj = jasmine.createSpyObj<Doc050703Service>('Doc050702Service', [
+    const spyObj = jasmine.createSpyObj<Doc050702Service>('Doc050702Service', [
       'syncGet',
     ]);
     spyObj.syncGet.and.returnValue('foo');

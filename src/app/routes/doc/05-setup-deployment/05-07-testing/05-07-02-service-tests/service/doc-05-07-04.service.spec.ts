@@ -32,6 +32,8 @@ describe('Doc050704Service', () => {
   });
 
   it('should return a value', () => {
+    spyObj.syncGet.and.returnValue('foo');
+
     /*
      * 通过 TestBedStatic.get() 方法获取某个 service 实例
      */
