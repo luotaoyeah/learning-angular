@@ -18,6 +18,7 @@ module.exports = function(config) {
     client: {
       clearContext: false, // leave Jasmine Spec Runner output visible in browser
     },
+    browsers: ['Chrome'],
     customLaunchers: {
       ChromeHeadlessNoSandbox: {
         base: 'ChromeHeadless',
@@ -25,7 +26,6 @@ module.exports = function(config) {
       },
     },
     coverageIstanbulReporter: {
-      dir: require('path').join(__dirname, '../coverage/learning-angular'),
       reports: ['html', 'lcovonly', 'text-summary'],
       fixWebpackSourcePaths: true,
       thresholds: {
@@ -40,7 +40,6 @@ module.exports = function(config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
     singleRun: false,
     restartOnFileChange: true,
   });

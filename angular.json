@@ -132,7 +132,8 @@
               "node_modules/@antv/data-set/dist/data-set.min.js",
               "node_modules/@antv/g2-plugin-slider/dist/g2-plugin-slider.min.js"
             ],
-            "assets": ["src/favicon.ico", "src/assets"]
+            "assets": ["src/favicon.ico", "src/assets"],
+            "codeCoverage": true
           }
         },
         "lint": {
