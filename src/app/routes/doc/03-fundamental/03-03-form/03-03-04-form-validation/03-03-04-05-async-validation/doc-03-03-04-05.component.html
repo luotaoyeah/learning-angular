@@ -1,0 +1,46 @@
+<p>
+  synchronous validator function 相关的类型和接口有
+  ValidatorFn，Validator；asynchronous validator function 对应的类型和接口是
+  AsyncValidatorFn 和 AsyncValidator
+</p>
+
+<p>
+  synchronous validator function 返回的是 true 或者 false，asynchronous
+  validator function 返回的是一个 promise 或者 observable 对象，如果返回的是
+  observable 对象，则它必须是一个 finite observable，即必须在某个时刻调用
+  complete()
+</p>
+
+<p>
+  当所有的 synchronous validator function 都验证成功之后，才会执行 asynchronous
+  validator function，这是为了性能考虑
+</p>
+
+<p>
+  validator function 在执行的过程中，FormControl 处于 PENDDING 状态，可以通过
+  AbstractControl.pending 属性判断
+</p>
+
+<hr />
+<form [formGroup]="formGroup">
+  <nz-input-group [nzSuffix]="suffixIconLoading">
+    <input type="text" nz-input formControlName="name" />
+  </nz-input-group>
+
+  <!--
+     使用 AbstractControl.pending 属性，判断当前表单是否正在进行验证
+  -->
+  <ng-template #suffixIconLoading>
+    <i
+      *ngIf="formGroup.get('name')?.pending"
+      nz-icon
+      nzType="loading"
+      nzTheme="outline"
+    ></i>
+  </ng-template>
+  <nz-alert
+    *ngIf="formGroup.get('name')?.errors?.unique"
+    nzType="error"
+    nzMessage="UNIQUE"
+  ></nz-alert>
+</form>
