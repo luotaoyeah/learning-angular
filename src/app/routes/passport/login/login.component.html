@@ -1,4 +1,4 @@
-<form nz-form [formGroup]="form" (ngSubmit)="submit()" role="form">
+<form nz-form [formGroup]="formGroup" (ngSubmit)="submit()" role="form">
   <nz-tabset
     [nzAnimated]="false"
     class="tabs"
@@ -88,7 +88,7 @@
                 (click)="getCaptcha()"
                 [disabled]="count"
                 nzBlock
-                [nzLoading]="http.loading"
+                [nzLoading]="httpClient.loading"
               >
                 {{
                   count
@@ -109,7 +109,7 @@
       }}</label>
     </nz-col>
     <nz-col [nzSpan]="12" class="text-right">
-      <a class="forgot" (click)="msg.error('请找欧阳锋')">{{
+      <a class="forgot" (click)="messageService.error('请找欧阳锋')">{{
         'app.login.forgot-password' | translate
       }}</a>
     </nz-col>
@@ -120,7 +120,7 @@
       type="submit"
       nzType="primary"
       nzSize="large"
-      [nzLoading]="http.loading"
+      [nzLoading]="httpClient.loading"
       nzBlock
     >
       {{ 'app.login.login' | translate }}

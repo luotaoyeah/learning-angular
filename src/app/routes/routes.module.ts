@@ -4,7 +4,7 @@ import { RoutesRoutingModule } from './routes-routing.module';
 // dashboard pages
 import { DashboardComponent } from './dashboard/dashboard.component';
 // passport pages
-import { UserLoginComponent } from './passport/login/login.component';
+import { LoginComponent } from './passport/login/login.component';
 import { UserRegisterComponent } from './passport/register/register.component';
 import { UserRegisterResultComponent } from './passport/register-result/register-result.component';
 // single pages
@@ -14,7 +14,7 @@ import { UserLockComponent } from './passport/lock/lock.component';
 const COMPONENTS = [
   DashboardComponent,
   // passport pages
-  UserLoginComponent,
+  LoginComponent,
   UserRegisterComponent,
   UserRegisterResultComponent,
   // single pages
