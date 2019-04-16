@@ -39,4 +39,30 @@ describe('Doc0507030201Component', () => {
   it('should contain "DOM"', () => {
     expect((fixture.nativeElement as HTMLElement).textContent).toContain('DOM');
   });
+
+  it('should contain "DOM" in p', () => {
+    /*
+     * ComponentFixture.nativeElement 属性，表示 component 对应的 DOM 根元素
+     */
+    const nativeElement = fixture.nativeElement as HTMLElement;
+    const pEl = nativeElement.querySelector('p');
+
+    expect(pEl).toBeTruthy();
+    // tslint:disable-next-line:no-non-null-assertion
+    expect(pEl!.textContent).toContain('DOM');
+  });
+
+  /*
+   * 由于 angular 的测试可能不是在浏览器中运行的，因此 nativeElement 可能不是一个真正的 HTMLElement 对象，
+   * 因此 angular 提供了 DebugElement 对象，对 nativeElement 进行了抽象，
+   * 当我们通过 DebugElement.nativeElement 属性获取元素时，
+   * angular 会根据当前所处的具体平台，返回特定的元素对象，
+   * 同时，DebugElement 还提供了很多其他有用的工具方法
+   */
+  it('should contain "DOM" in p again', () => {
+    const nativeElement = fixture.debugElement.nativeElement as HTMLElement;
+    const pEl = nativeElement.querySelector('p');
+    expect(pEl).toBeTruthy();
+    expect(pEl.textContent).toContain('DOM');
+  });
 });
