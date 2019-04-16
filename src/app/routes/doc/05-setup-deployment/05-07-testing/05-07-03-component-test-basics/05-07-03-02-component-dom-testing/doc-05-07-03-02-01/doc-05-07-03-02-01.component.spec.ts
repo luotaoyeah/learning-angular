@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { Doc0507030201Component } from './doc-05-07-03-02-01.component';
+import { By } from '@angular/platform-browser';
 
 describe('Doc0507030201Component', () => {
   let component: Doc0507030201Component;
@@ -64,5 +64,23 @@ describe('Doc0507030201Component', () => {
     const pEl = nativeElement.querySelector('p');
     expect(pEl).toBeTruthy();
     expect(pEl.textContent).toContain('DOM');
+  });
+
+  it('should find the <p> with By.css()', () => {
+    /*
+     * 由于代码的执行环境不确定，可能是在浏览器，也可能是通过 SSR 运行，
+     * 因此为了屏蔽这些环境的差异，angular 提供了 DebugElement 类型，
+     * 我们可以通过 DebugElement 提供的许多平台无关的通用的方法，来对代码进行测试
+     */
+
+    /*
+     * 使用 DebugElement.query() 方法，可以根据一个 Predicate 对象，查询满足条件的 DebugElement 对象，
+     * By 类提供了几个通用的方法，用来构建 Predicate 对象
+     */
+    const pDebugElement = fixture.debugElement.query(By.css('p'));
+    expect(pDebugElement.nativeElement).toBeTruthy();
+    expect(
+      (pDebugElement.nativeElement as HTMLParagraphElement).textContent,
+    ).toContain('DOM');
   });
 });
