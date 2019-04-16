@@ -27,10 +27,7 @@ describe('Doc050705Service', () => {
   });
 
   it('should return heroes', () => {
-    const expectedHeroes: Array<Hero> = [
-      { id: 1, name: 'A' },
-      { id: 2, name: 'B' },
-    ];
+    const expectedHeroes: Array<Hero> = [new Hero(1, 'A'), new Hero(2, 'B')];
 
     httpClientSpy.get.and.returnValue(
       defer(() => {
