@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-doc-05-07-03-01',
-  templateUrl: './doc-05-07-03-01.component.html',
+  selector: 'app-doc-05-07-03-01-01',
+  templateUrl: './doc-05-07-03-01-01.component.html',
 })
-export class Doc05070301Component implements OnInit {
+export class Doc0507030101Component implements OnInit {
   isOn: boolean = false;
 
   get message(): string {
