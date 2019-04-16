@@ -63,7 +63,9 @@ describe('Doc0507030201Component', () => {
     const nativeElement = fixture.debugElement.nativeElement as HTMLElement;
     const pEl = nativeElement.querySelector('p');
     expect(pEl).toBeTruthy();
-    expect(pEl.textContent).toContain('DOM');
+    if (pEl) {
+      expect(pEl.textContent).toContain('DOM');
+    }
   });
 
   it('should find the <p> with By.css()', () => {
