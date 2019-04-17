@@ -2,9 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { UniqueValidator } from './validator/unique-validator';
 
-/*
- * TODO https://angular.io/guide/dynamic-form
- */
 @Component({
   selector: 'app-doc-03-03-04-05',
   templateUrl: './doc-03-03-04-05.component.html',

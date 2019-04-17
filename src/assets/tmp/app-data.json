@@ -103,6 +103,10 @@
                 {
                   "i18n": "menu.doc.fundamental.form.form-validation",
                   "link": "/doc/03/03/form-validation"
+                },
+                {
+                  "i18n": "menu.doc.fundamental.form.dynamic-forms",
+                  "link": "/doc/03/03/05"
                 }
               ]
             },
