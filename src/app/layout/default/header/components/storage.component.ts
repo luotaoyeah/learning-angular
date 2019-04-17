@@ -1,14 +1,14 @@
 import {
-  ChangeDetectionStrategy,
   Component,
   HostListener,
+  ChangeDetectionStrategy,
 } from '@angular/core';
-import { NzMessageService, NzModalService } from 'ng-zorro-antd';
+import { NzModalService, NzMessageService } from 'ng-zorro-antd';
 
 @Component({
   selector: 'header-storage',
   template: `
-    <i nz-icon type="tool"></i>
+    <i nz-icon type="tool" class="mr-sm"></i>
     {{ 'menu.clear.local.storage' | translate }}
   `,
   host: {

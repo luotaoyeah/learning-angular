@@ -1,6 +1,6 @@
 import { Router } from '@angular/router';
 import { Component, Inject } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SettingsService } from '@delon/theme';
 import { DA_SERVICE_TOKEN, ITokenService } from '@delon/auth';
 
@@ -36,7 +36,7 @@ export class UserLockComponent {
       this.tokenService.set({
         token: '123',
       });
-      this.router.navigate(['dashboard']);
+      this.router.navigate(['home']);
     }
   }
 }

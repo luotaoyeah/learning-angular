@@ -25,50 +25,30 @@
         ></i>
       </div>
     </li>
-    <!-- Github Page -->
-    <li>
-      <a
-        class="alain-default__nav-item"
-        href="//github.com/ng-alain/ng-alain"
-        target="_blank"
-      >
-        <i nz-icon type="github"></i>
-      </a>
-    </li>
     <!-- Lock Page -->
     <li class="hidden-mobile">
-      <div class="alain-default__nav-item" [routerLink]="['/lock']">
+      <div
+        class="alain-default__nav-item"
+        [routerLink]="['/passport/lock']"
+        nz-tooltip
+        [nzTitle]="'menu.header.lock.title' | translate"
+        nzPlacement="bottomLeft"
+      >
         <i nz-icon type="lock"></i>
       </div>
     </li>
-    <!-- Search Button -->
-    <li class="hidden-pc" (click)="searchToggleChange()">
-      <div class="alain-default__nav-item">
-        <i nz-icon type="search"></i>
-      </div>
-    </li>
   </ul>
-  <header-search
-    class="alain-default__search"
-    [toggleChange]="searchToggleStatus"
-  ></header-search>
   <ul class="alain-default__nav">
-    <!-- Notify -->
-    <li>
-      <header-notify></header-notify>
-    </li>
-    <!-- Task -->
-    <li class="hidden-mobile">
-      <header-task></header-task>
-    </li>
-    <!-- App Icons -->
-    <li class="hidden-mobile">
-      <header-icon></header-icon>
-    </li>
     <!-- Settings -->
     <li class="hidden-mobile">
       <nz-dropdown nzTrigger="click" nzPlacement="bottomRight">
-        <div class="alain-default__nav-item" nz-dropdown>
+        <div
+          class="alain-default__nav-item"
+          nz-dropdown
+          nz-tooltip
+          [nzTitle]="'menu.header.settings.title' | translate"
+          nzPlacement="bottomRight"
+        >
           <i nz-icon type="setting"></i>
         </div>
         <div nz-menu style="width:200px;">

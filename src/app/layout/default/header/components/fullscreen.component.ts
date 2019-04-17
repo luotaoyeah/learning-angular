@@ -8,7 +8,11 @@ import * as screenfull from 'screenfull';
 @Component({
   selector: 'header-fullscreen',
   template: `
-    <i nz-icon [type]="status ? 'fullscreen-exit' : 'fullscreen'"></i>
+    <i
+      nz-icon
+      [type]="status ? 'fullscreen-exit' : 'fullscreen'"
+      class="mr-sm"
+    ></i>
     {{ (status ? 'menu.fullscreen.exit' : 'menu.fullscreen') | translate }}
   `,
   host: {

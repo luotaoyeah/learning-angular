@@ -6,7 +6,6 @@ import { environment } from '@env/environment';
 import { LayoutDefaultComponent } from '../layout/default/default.component';
 import { LayoutPassportComponent } from '../layout/passport/passport.component';
 // dashboard pages
-import { DashboardComponent } from './dashboard/dashboard.component';
 // passport pages
 import { LoginComponent } from './passport/login/login.component';
 import { UserRegisterComponent } from './passport/register/register.component';
@@ -24,12 +23,7 @@ const routes: Routes = [
     component: LayoutDefaultComponent,
     canActivate: [SimpleGuard],
     children: [
-      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-      {
-        path: 'dashboard',
-        component: DashboardComponent,
-        data: { title: '仪表盘' },
-      },
+      { path: '', redirectTo: 'doc/tutorial/dashboard', pathMatch: 'full' },
       {
         path: 'exception',
         loadChildren: () => ExceptionModule,

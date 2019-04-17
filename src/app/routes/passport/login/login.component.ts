@@ -1,57 +1,39 @@
-import { _HttpClient, SettingsService } from '@delon/theme';
-import { Component, Inject, OnDestroy, Optional } from '@angular/core';
-import { Router } from '@angular/router';
+import { _HttpClient } from '@delon/theme';
+import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { NzMessageService, NzModalService } from 'ng-zorro-antd';
-import {
-  DA_SERVICE_TOKEN,
-  ITokenService,
-  SocialOpenType,
-  SocialService,
-} from '@delon/auth';
-import { ReuseTabService } from '@delon/abc';
-import { environment } from '@env/environment';
+import { NzModalService, NzNotificationService } from 'ng-zorro-antd';
+import { DA_SERVICE_TOKEN, ITokenService } from '@delon/auth';
 import { StartupService } from '@core';
+import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
+import { ReuseTabService } from '@delon/abc';
 
 @Component({
   selector: 'passport-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.less'],
-  providers: [SocialService],
 })
-export class LoginComponent implements OnDestroy {
+export class LoginComponent {
   formGroup: FormGroup;
-  error = '';
-  type = 0;
-  count = 0;
-  // tslint:disable-next-line:no-any
-  interval$: any;
 
   constructor(
     formBuilder: FormBuilder,
     modalService: NzModalService,
+    public httpClient: _HttpClient,
+    private translateService: TranslateService,
+    private notificationService: NzNotificationService,
     private router: Router,
-    private settingsService: SettingsService,
-    private socialService: SocialService,
-    @Optional()
     @Inject(ReuseTabService)
     private reuseTabService: ReuseTabService,
     @Inject(DA_SERVICE_TOKEN) private tokenService: ITokenService,
     private startupService: StartupService,
-    public httpClient: _HttpClient,
-    public messageService: NzMessageService,
   ) {
     this.formGroup = formBuilder.group({
-      userName: [null, [Validators.required, Validators.minLength(4)]],
-      password: [null, Validators.required],
-      mobile: [null, [Validators.required, Validators.pattern(/^1\d{10}$/)]],
-      captcha: [null, [Validators.required]],
-      remember: [true],
+      userName: ['', [Validators.required]],
+      password: ['', Validators.required],
     });
     modalService.closeAll();
   }
-
-  // #region fields
 
   get userName() {
     return this.formGroup.controls.userName;
@@ -61,67 +43,36 @@ export class LoginComponent implements OnDestroy {
     return this.formGroup.controls.password;
   }
 
-  get mobile() {
-    return this.formGroup.controls.mobile;
-  }
-
-  get captcha() {
-    return this.formGroup.controls.captcha;
-  }
-
-  // #endregion
-
-  // tslint:disable-next-line:no-any
-  switch(ret: any) {
-    this.type = ret.index;
-  }
-
-  // #region get captcha
-  getCaptcha() {
-    if (this.mobile.invalid) {
-      this.mobile.markAsDirty({ onlySelf: true });
-      this.mobile.updateValueAndValidity({ onlySelf: true });
+  /**
+   * 登录
+   */
+  login() {
+    this.userName.markAsDirty();
+    this.userName.updateValueAndValidity();
+    this.password.markAsDirty();
+    this.password.updateValueAndValidity();
+    if (this.userName.invalid || this.password.invalid) {
       return;
     }
-    this.count = 59;
-    this.interval$ = setInterval(() => {
-      this.count -= 1;
-      if (this.count <= 0) clearInterval(this.interval$);
-    }, 1000);
-  }
-
-  // #endregion
-
-  submit() {
-    this.error = '';
-    if (this.type === 0) {
-      this.userName.markAsDirty();
-      this.userName.updateValueAndValidity();
-      this.password.markAsDirty();
-      this.password.updateValueAndValidity();
-      if (this.userName.invalid || this.password.invalid) return;
-    } else {
-      this.mobile.markAsDirty();
-      this.mobile.updateValueAndValidity();
-      this.captcha.markAsDirty();
-      this.captcha.updateValueAndValidity();
-      if (this.mobile.invalid || this.captcha.invalid) return;
-    }
-
     // 默认配置中对所有HTTP请求都会强制 [校验](https://ng-alain.com/auth/getting-started) 用户 Token
     // 然一般来说登录请求不需要校验，因此可以在请求URL加上：`/login?_allow_anonymous=true` 表示不触发用户 Token 校验
     this.httpClient
       .post('/login/account?_allow_anonymous=true', {
-        type: this.type,
         userName: this.userName.value,
         password: this.password.value,
       })
       // tslint:disable-next-line:no-any
       .subscribe((res: any) => {
-        if (res.messageService !== 'ok') {
-          this.error = res.messageService;
+        if (res.msg !== 'ok') {
+          this.translateService
+            .get('app.login.login-failed')
+            .subscribe((title: string) => {
+              this.notificationService.error(title, res.msg);
+            });
+
           return;
         }
+
         // 清空路由复用信息
         this.reuseTabService.clear();
         // 设置用户Token信息
@@ -131,60 +82,11 @@ export class LoginComponent implements OnDestroy {
           let url =
             (this.tokenService.referrer && this.tokenService.referrer.url) ||
             '/';
-          if (url.includes('/passport')) url = '/';
+          if (url.includes('/passport')) {
+            url = '/';
+          }
           this.router.navigateByUrl(url);
         });
       });
-  }
-
-  // #region social
-
-  open(type: string, openType: SocialOpenType = 'href') {
-    let url = ``;
-    let callback = ``;
-    if (environment.production) {
-      callback = 'https://ng-alain.github.io/ng-alain/#/callback/' + type;
-    } else {
-      callback = 'http://localhost:4200/#/callback/' + type;
-    }
-    switch (type) {
-      case 'auth0':
-        url = `//cipchk.auth0.com/login?client=8gcNydIDzGBYxzqV0Vm1CX_RXH-wsWo5&redirect_uri=${decodeURIComponent(
-          callback,
-        )}`;
-        break;
-      case 'github':
-        url = `//github.com/login/oauth/authorize?client_id=9d6baae4b04a23fcafa2&response_type=code&redirect_uri=${decodeURIComponent(
-          callback,
-        )}`;
-        break;
-      case 'weibo':
-        url = `https://api.weibo.com/oauth2/authorize?client_id=1239507802&response_type=code&redirect_uri=${decodeURIComponent(
-          callback,
-        )}`;
-        break;
-    }
-    if (openType === 'window') {
-      this.socialService
-        .login(url, '/', {
-          type: 'window',
-        })
-        .subscribe(res => {
-          if (res) {
-            this.settingsService.setUser(res);
-            this.router.navigateByUrl('/');
-          }
-        });
-    } else {
-      this.socialService.login(url, '/', {
-        type: 'href',
-      });
-    }
-  }
-
-  // #endregion
-
-  ngOnDestroy(): void {
-    if (this.interval$) clearInterval(this.interval$);
   }
 }

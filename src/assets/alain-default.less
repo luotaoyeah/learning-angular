@@ -23482,17 +23482,59 @@ body {
 
 }
 
-/* You can add global styles to this file, and also import other style files */
+// you can add global styles to this file, and also import other style files
 
-// 可以通过 https://ng-alain.github.io/ng-alain/ 获取主题参数代码
-// The theme paraments can be generated at https://ng-alain.github.io/ng-alain/
-
-@border-radius-base: 3px;
+* {
+  outline: none !important;
+}
 
 .alain-default__content {
   padding-top: 8px;
 }
 
+.ant-dropdown-menu {
+  padding: 1px;
+}
+
+.ant-notification-notice {
+  padding: 16px;
+}
+
+.ant-notification-notice-close {
+  right: 16px;
+}
+
+.ant-tooltip-inner {
+  padding: 4px 8px;
+  min-height: auto;
+  border-radius: 2px;
+}
+
+.reuse-tab {
+  padding: 1px;
+}
+
+.ant-tabs-nav .ant-tabs-tab {
+  margin: 0 5px 0 0;
+}
+
+.reuse-tab__cm {
+  .ant-menu {
+    border-radius: 2px;
+
+    .ant-menu-item {
+      height: 30px;
+      line-height: 30px;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: 0 10px;
+    }
+  }
+}
+
+// the theme paraments can be generated at https://ng-alain.github.io/ng-alain/
+
+@border-radius-base: 3px;
 @primary-color: #1890ff;
 @alain-default-header-bg: #1890ff;
 @alain-default-header-padding: 10px;
@@ -23501,3 +23543,4 @@ body {
 @alain-default-aside-nav-selected-text-color: #1890ff;
 @alain-default-content-padding: 8px;
 @nz-table-img-radius: 2px;
+@alain-default-header-hg: 50px;

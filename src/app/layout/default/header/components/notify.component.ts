@@ -78,6 +78,7 @@ export class HeaderNotifyComponent {
           doing: 'gold',
         }[newItem.status];
       }
+
       const find = data.find(w => w.title === newItem.type);
       if (find) {
         find.list.push(newItem);

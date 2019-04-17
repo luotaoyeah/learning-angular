@@ -1,14 +1,11 @@
 import {
   AfterViewInit,
   Component,
-  ComponentFactoryResolver,
   ElementRef,
   Inject,
   OnDestroy,
   OnInit,
   Renderer2,
-  ViewChild,
-  ViewContainerRef,
 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import {
@@ -24,9 +21,6 @@ import { takeUntil } from 'rxjs/operators';
 import { updateHostClass } from '@delon/util';
 import { SettingsService } from '@delon/theme';
 
-import { environment } from '@env/environment';
-import { SettingDrawerComponent } from './setting-drawer/setting-drawer.component';
-
 @Component({
   selector: 'layout-default',
   templateUrl: './default.component.html',
@@ -34,15 +28,12 @@ import { SettingDrawerComponent } from './setting-drawer/setting-drawer.componen
 export class LayoutDefaultComponent
   implements OnInit, AfterViewInit, OnDestroy {
   private unsubscribe$ = new Subject<void>();
-  @ViewChild('settingHost', { read: ViewContainerRef })
-  private settingHost!: ViewContainerRef;
   isFetching = false;
 
   constructor(
     router: Router,
     // tslint:disable-next-line:variable-name
     _message: NzMessageService,
-    private resolver: ComponentFactoryResolver,
     private settings: SettingsService,
     private el: ElementRef,
     private renderer: Renderer2,
@@ -82,17 +73,7 @@ export class LayoutDefaultComponent
     doc.body.classList[layout.colorWeak ? 'add' : 'remove']('color-weak');
   }
 
-  ngAfterViewInit(): void {
-    // Setting componet for only developer
-    if (!environment.production) {
-      setTimeout(() => {
-        const settingFactory = this.resolver.resolveComponentFactory(
-          SettingDrawerComponent,
-        );
-        this.settingHost.createComponent(settingFactory);
-      }, 22);
-    }
-  }
+  ngAfterViewInit(): void {}
 
   ngOnInit() {
     const { settings, unsubscribe$ } = this;
