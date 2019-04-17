@@ -9,5 +9,9 @@ export class Doc0507040101Component implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    /*
+     * TODO https://angular.io/guide/testing#component-test-scenarios
+     */
+  }
 }

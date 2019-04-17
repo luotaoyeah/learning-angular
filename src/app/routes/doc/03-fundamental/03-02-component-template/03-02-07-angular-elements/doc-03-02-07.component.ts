@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 /*
- * TODO
+ * TODO https://angular.io/guide/elements
  */
 @Component({
   selector: 'app-doc-03-02-07',

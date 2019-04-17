@@ -31,10 +31,6 @@ import { CrisisCenterModule } from './crisis-center/crisis-center.module';
           },
         ],
       },
-      /*
-       * TODO
-       *   named router-outlet 没有验证成功
-       */
       {
         path: 'compose',
         component: ComposeMessageComponent,
