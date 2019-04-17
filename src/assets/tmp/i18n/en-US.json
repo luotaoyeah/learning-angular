@@ -30,6 +30,8 @@
   "menu.doc.03.04.04": "Practical Usage",
   "menu.doc.03.04.05": "Compare To Other Techniques",
   "menu.doc.03.05": "Bootstrapping",
+  "menu.doc.03.06": "NgModules",
+  "menu.doc.03.06.01": "NgModules Introduction",
   "menu.doc.03.09": "Routing & Navigation",
   "menu.doc.05": "SETUP & DEPLOYMENT",
   "menu.doc.05.07": "Testing",
