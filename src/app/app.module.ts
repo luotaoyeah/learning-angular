@@ -1,13 +1,27 @@
-import { APP_INITIALIZER, LOCALE_ID, ModuleWithProviders, NgModule, Type } from '@angular/core';
+import {
+  APP_INITIALIZER,
+  LOCALE_ID,
+  ModuleWithProviders,
+  NgModule,
+  Type,
+} from '@angular/core';
 // #region Http Interceptors
-import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
+import {
+  HTTP_INTERCEPTORS,
+  HttpClient,
+  HttpClientModule,
+} from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // #region default language
 // 参考：https://ng-alain.com/docs/i18n
 import { default as ngLang } from '@angular/common/locales/en';
 import { en_US as zorroLang, NZ_I18N } from 'ng-zorro-antd';
-import { ALAIN_I18N_TOKEN, DELON_LOCALE, en_US as delonLang } from '@delon/theme';
+import {
+  ALAIN_I18N_TOKEN,
+  DELON_LOCALE,
+  en_US as delonLang,
+} from '@delon/theme';
 // register angular
 import { registerLocaleData } from '@angular/common';
 // #endregion

@@ -2,7 +2,12 @@ import { Inject, Injectable, Injector } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { zip } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { ALAIN_I18N_TOKEN, MenuService, SettingsService, TitleService } from '@delon/theme';
+import {
+  ALAIN_I18N_TOKEN,
+  MenuService,
+  SettingsService,
+  TitleService,
+} from '@delon/theme';
 import { DA_SERVICE_TOKEN, ITokenService } from '@delon/auth';
 import { ACLService } from '@delon/acl';
 import { TranslateService } from '@ngx-translate/core';
