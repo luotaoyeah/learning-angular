@@ -8,19 +8,19 @@ import { Doc030305Component } from './03-03-05-dynamic-forms/doc-03-03-05.compon
 
 const routes: Routes = [
   {
-    path: '03/03/introduction',
+    path: '03/03/01',
     component: Doc030301Component,
   },
   {
-    path: '03/03/reactive-form',
+    path: '03/03/02',
     component: Doc030302Component,
   },
   {
-    path: '03/03/template-driven-form',
+    path: '03/03/03',
     component: Doc030303Component,
   },
   {
-    path: '03/03/form-validation',
+    path: '03/03/04',
     component: Doc030304Component,
   },
   {

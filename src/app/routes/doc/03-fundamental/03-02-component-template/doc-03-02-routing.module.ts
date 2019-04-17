@@ -14,47 +14,47 @@ import { Doc030211Component } from './03-02-11-pipe/doc-03-02-11.component';
 
 const routes: Routes = [
   {
-    path: '03/02/displaying-data',
+    path: '03/02/01',
     component: Doc030201Component,
   },
   {
-    path: '03/02/template-syntax',
+    path: '03/02/02',
     component: Doc030202Component,
   },
   {
-    path: '03/02/user-input',
+    path: '03/02/03',
     component: Doc030203Component,
   },
   {
-    path: '03/02/lifecycle-hooks',
+    path: '03/02/04',
     component: Doc030204Component,
   },
   {
-    path: '03/02/component-interaction',
+    path: '03/02/05',
     component: Doc030205Component,
   },
   {
-    path: '03/02/component-style',
+    path: '03/02/06',
     component: Doc030206Component,
   },
   {
-    path: '03/02/angular-elements',
+    path: '03/02/07',
     component: Doc030207Component,
   },
   {
-    path: '03/02/dynamic-components',
+    path: '03/02/08',
     component: Doc030208Component,
   },
   {
-    path: '03/02/attribute-directive',
+    path: '03/02/09',
     component: Doc030209Component,
   },
   {
-    path: '03/02/structural-directive',
+    path: '03/02/10',
     component: Doc030210Component,
   },
   {
-    path: '03/02/pipes',
+    path: '03/02/11',
     component: Doc030211Component,
   },
 ];

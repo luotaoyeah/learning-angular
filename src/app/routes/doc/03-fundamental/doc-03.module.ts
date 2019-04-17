@@ -29,6 +29,7 @@ import { RoutingNavigationBasicRouterEventsComponent } from './03-09-routing-nav
 import { Doc030902Module } from './03-09-routing-navigation/03-09-02-sample-application/doc-03-09-02.module';
 import { Doc0302Module } from './03-02-component-template/doc-03-02.module';
 import { Doc0303Module } from './03-03-form/doc-03-03.module';
+import { Doc0304Module } from './03-04-observables-rxjs/doc-03-04.module';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { Doc0303Module } from './03-03-form/doc-03-03.module';
     Doc03RoutingModule,
     Doc0302Module,
     Doc0303Module,
+    Doc0304Module,
     Doc030902Module,
   ],
 })

@@ -37,51 +37,51 @@
               ]
             },
             {
-              "i18n": "menu.doc.fundamental.component-template",
+              "i18n": "menu.doc.03.02",
               "children": [
                 {
-                  "i18n": "menu.doc.fundamental.component-template.displaying-data",
-                  "link": "/doc/03/02/displaying-data"
+                  "i18n": "menu.doc.03.02.01",
+                  "link": "/doc/03/02/01"
                 },
                 {
-                  "i18n": "menu.doc.fundamental.component-template.template-syntax",
-                  "link": "/doc/03/02/template-syntax"
+                  "i18n": "menu.doc.03.02.02",
+                  "link": "/doc/03/02/02"
                 },
                 {
-                  "i18n": "menu.doc.fundamental.component-template.user-input",
-                  "link": "/doc/03/02/user-input"
+                  "i18n": "menu.doc.03.02.03",
+                  "link": "/doc/03/02/03"
                 },
                 {
-                  "i18n": "menu.doc.fundamental.component-template.lifecycle-hooks",
-                  "link": "/doc/03/02/lifecycle-hooks"
+                  "i18n": "menu.doc.03.02.04",
+                  "link": "/doc/03/02/04"
                 },
                 {
-                  "i18n": "menu.doc.fundamental.component-template.component-interaction",
-                  "link": "/doc/03/02/component-interaction"
+                  "i18n": "menu.doc.03.02.05",
+                  "link": "/doc/03/02/05"
                 },
                 {
-                  "i18n": "menu.doc.fundamental.component-template.component-style",
-                  "link": "/doc/03/02/component-style"
+                  "i18n": "menu.doc.03.02.06",
+                  "link": "/doc/03/02/06"
                 },
                 {
-                  "i18n": "menu.doc.fundamental.component-template.angular-elements",
-                  "link": "/doc/03/02/angular-elements"
+                  "i18n": "menu.doc.03.02.07",
+                  "link": "/doc/03/02/07"
                 },
                 {
-                  "i18n": "menu.doc.fundamental.component-template.dynamic-components",
-                  "link": "/doc/03/02/dynamic-components"
+                  "i18n": "menu.doc.03.02.08",
+                  "link": "/doc/03/02/08"
                 },
                 {
-                  "i18n": "menu.doc.fundamental.component-template.attribute-directive",
-                  "link": "/doc/03/02/attribute-directive"
+                  "i18n": "menu.doc.03.02.09",
+                  "link": "/doc/03/02/09"
                 },
                 {
-                  "i18n": "menu.doc.fundamental.component-template.structural-directive",
-                  "link": "/doc/03/02/structural-directive"
+                  "i18n": "menu.doc.03.02.10",
+                  "link": "/doc/03/02/10"
                 },
                 {
-                  "i18n": "menu.doc.fundamental.component-template.pipes",
-                  "link": "/doc/03/02/pipes"
+                  "i18n": "menu.doc.03.02.11",
+                  "link": "/doc/03/02/11"
                 }
               ]
             },
@@ -89,39 +89,48 @@
               "i18n": "menu.doc.fundamental.form",
               "children": [
                 {
-                  "i18n": "menu.doc.fundamental.form.introduction",
-                  "link": "/doc/03/03/introduction"
+                  "i18n": "menu.doc.03.03.01",
+                  "link": "/doc/03/03/01"
                 },
                 {
-                  "i18n": "menu.doc.fundamental.form.reactive-form",
-                  "link": "/doc/03/03/reactive-form"
+                  "i18n": "menu.doc.03.03.02",
+                  "link": "/doc/03/03/02"
                 },
                 {
-                  "i18n": "menu.doc.fundamental.form.template-driven-form",
-                  "link": "/doc/03/03/template-driven-form"
+                  "i18n": "menu.doc.03.03.03",
+                  "link": "/doc/03/03/03"
                 },
                 {
-                  "i18n": "menu.doc.fundamental.form.form-validation",
-                  "link": "/doc/03/03/form-validation"
+                  "i18n": "menu.doc.03.03.04",
+                  "link": "/doc/03/03/04"
                 },
                 {
-                  "i18n": "menu.doc.fundamental.form.dynamic-forms",
+                  "i18n": "menu.doc.03.03.05",
                   "link": "/doc/03/03/05"
                 }
               ]
             },
             {
-              "i18n": "menu.doc.fundamental.routing-navigation",
+              "i18n": "menu.doc.03.04",
+              "children": [
+                {
+                  "i18n": "menu.doc.03.04.01",
+                  "link": "/doc/03/04/01"
+                }
+              ]
+            },
+            {
+              "i18n": "menu.doc.03.09",
               "link": "/doc/03/09"
             }
           ]
         },
         {
-          "i18n": "menu.doc.setup-deployment",
+          "i18n": "menu.doc.05",
           "icon": "anticon anticon-info-circle",
           "children": [
             {
-              "i18n": "menu.doc.setup-deployment.testing",
+              "i18n": "menu.doc.05.07",
               "link": "/doc/05/07"
             }
           ]
