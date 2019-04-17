@@ -27,8 +27,14 @@ import { environment } from '@env/environment';
  *  </section>
  *  ```
  */
-import { PageHeaderConfig, STConfig } from '@delon/abc';
+import {
+  PageHeaderConfig,
+  ReuseTabService,
+  ReuseTabStrategy,
+  STConfig,
+} from '@delon/abc';
 import { DelonAuthConfig } from '@delon/auth';
+import { RouteReuseStrategy } from '@angular/router';
 
 const MOCK_MODULES = !environment.production
   ? [DelonMockModule.forRoot({ data: MOCKDATA })]
@@ -37,11 +43,11 @@ const MOCK_MODULES = !environment.production
 
 // tslint:disable-next-line:no-any
 const REUSETAB_PROVIDES: Array<any> = [
-  // {
-  //   provide: RouteReuseStrategy,
-  //   useClass: ReuseTabStrategy,
-  //   deps: [ReuseTabService],
-  // },
+  {
+    provide: RouteReuseStrategy,
+    useClass: ReuseTabStrategy,
+    deps: [ReuseTabService],
+  },
 ];
 // #endregion
 

@@ -15,6 +15,7 @@ import { NzIconService } from 'ng-zorro-antd';
 import { ICONS_AUTO } from '../../../style-icons-auto';
 import { ICONS } from '../../../style-icons';
 import { I18NService } from '@core/i18n/i18n.service';
+import { ReuseTabMatchMode, ReuseTabService } from '@delon/abc';
 
 /**
  * 用于应用启动时
@@ -30,6 +31,8 @@ export class StartupService {
     private settingsService: SettingsService,
     private aclService: ACLService,
     private titleService: TitleService,
+    @Inject(ReuseTabService)
+    private reuseTabService: ReuseTabService,
     // @ts-ignore: TS6138
     @Inject(DA_SERVICE_TOKEN) private tokenService: ITokenService,
     private httpClient: HttpClient,
@@ -71,6 +74,9 @@ export class StartupService {
           this.menuService.add(res.menu);
           // 设置页面标题的后缀
           this.titleService.suffix = '';
+
+          this.reuseTabService.keepingScroll = true;
+          this.reuseTabService.mode = ReuseTabMatchMode.Menu;
         },
         () => {},
         () => {
@@ -80,26 +86,9 @@ export class StartupService {
   }
 
   // tslint:disable-next-line:no-any
-  private viaMockI18n(resolve: any, reject: any) {
-    this.httpClient
-      .get(`assets/tmp/i18n/${this.i18n.defaultLang}.json`)
-      .subscribe(langData => {
-        this.translateService.setTranslation(this.i18n.defaultLang, langData);
-        this.translateService.setDefaultLang(this.i18n.defaultLang);
-
-        this.viaHttp(resolve, reject);
-      });
-  }
-
-  // tslint:disable-next-line:no-any
   load(): Promise<any> {
-    // only works with promises
-    // https://github.com/angular/angular/issues/15088
     return new Promise((resolve, reject) => {
-      // http
-      // this.viaHttp(resolve, reject);
-      // mock：请勿在生产环境中这么使用，viaMock 单纯只是为了模拟一些数据使脚手架一开始能正常运行
-      this.viaMockI18n(resolve, reject);
+      this.viaHttp(resolve, reject);
     });
   }
 }
