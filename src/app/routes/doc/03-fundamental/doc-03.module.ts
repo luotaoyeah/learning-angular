@@ -32,6 +32,7 @@ import { Doc0303Module } from './03-03-form/doc-03-03.module';
 import { Doc0304Module } from './03-04-observables-rxjs/doc-03-04.module';
 import { Doc0305Module } from './03-05-bootstrapping/doc-03-05.module';
 import { Doc0306Module } from './03-06-ngmodules/doc-03-06.module';
+import { Doc0307Module } from './03-07-dependency-injection/doc-03-07.module';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { Doc0306Module } from './03-06-ngmodules/doc-03-06.module';
     Doc0304Module,
     Doc0305Module,
     Doc0306Module,
+    Doc0307Module,
     Doc030902Module,
   ],
 })
