@@ -13,6 +13,12 @@
       declarable 输出（exports），然后其他的 NgModule 导入这个 NgModule（通过
       imports），之后在其他的 NgModule 中就可以使用这些 declarables 了
     </p>
+
+    <p>
+      bootstrap 用来定义一个或者多个 component，这些 component
+      会在应用启动的时候被插入到 DOM 中去，bootstrap 中的 component
+      会自动被添加到 entryComponents 中去
+    </p>
   </nz-collapse-panel>
   <nz-collapse-panel nzHeader="Using Directives With @NgModule">
     <app-doc-03-05-01></app-doc-03-05-01>
