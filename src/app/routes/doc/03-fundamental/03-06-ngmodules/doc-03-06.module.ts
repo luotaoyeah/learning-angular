@@ -15,11 +15,13 @@ import { Doc030609Component } from './03-06-09-lazy-loading-ngmodules/doc-03-06-
 import { Doc030610Component } from './03-06-10-sharing-ngmodules/doc-03-06-10.component';
 import { Doc030611Component } from './03-06-11-ngmodule-api/doc-03-06-11.component';
 import { Doc030612Component } from './03-06-12-ngmodule-faq/doc-03-06-12.component';
+import { Doc03060201Component } from './03-06-02-ngmodule-vs-jsmodule/03-06-02-01-javascript-modules/doc-03-06-02-01.component';
 
 @NgModule({
   declarations: [
     Doc030601Component,
     Doc030602Component,
+    Doc03060201Component,
     Doc030603Component,
     Doc030604Component,
     Doc030605Component,
