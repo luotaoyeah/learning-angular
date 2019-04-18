@@ -34,6 +34,7 @@ import { Doc0305Module } from './03-05-bootstrapping/doc-03-05.module';
 import { Doc0306Module } from './03-06-ngmodules/doc-03-06.module';
 import { Doc0307Module } from './03-07-dependency-injection/doc-03-07.module';
 import { Doc0308Module } from './03-08-httpclient/doc-03-08.module';
+import { Doc0310Module } from './03-10-animation/doc-03-10.module';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import { Doc0308Module } from './03-08-httpclient/doc-03-08.module';
     Doc0306Module,
     Doc0307Module,
     Doc0308Module,
+    Doc0310Module,
     Doc030902Module,
   ],
 })
