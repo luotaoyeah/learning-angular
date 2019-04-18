@@ -12,7 +12,7 @@ import {
   HttpClientModule,
 } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 // #region default language
 // 参考：https://ng-alain.com/docs/i18n
 import { default as ngLang } from '@angular/common/locales/en';
@@ -116,7 +116,7 @@ const APPINIT_PROVIDES = [
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
+    NoopAnimationsModule,
     HttpClientModule,
     DelonModule.forRoot(),
     CoreModule,

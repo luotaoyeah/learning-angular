@@ -16,12 +16,14 @@ import { Doc030610Component } from './03-06-10-sharing-ngmodules/doc-03-06-10.co
 import { Doc030611Component } from './03-06-11-ngmodule-api/doc-03-06-11.component';
 import { Doc030612Component } from './03-06-12-ngmodule-faq/doc-03-06-12.component';
 import { Doc03060201Component } from './03-06-02-ngmodule-vs-jsmodule/03-06-02-01-javascript-modules/doc-03-06-02-01.component';
+import { Doc03060202Component } from './03-06-02-ngmodule-vs-jsmodule/03-06-02-02-ngmodule/doc-03-06-02-02.component';
 
 @NgModule({
   declarations: [
     Doc030601Component,
     Doc030602Component,
     Doc03060201Component,
+    Doc03060202Component,
     Doc030603Component,
     Doc030604Component,
     Doc030605Component,

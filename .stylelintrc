@@ -23,13 +23,14 @@
     "string-no-newline": null,
     "selector-type-no-unknown": null,
     "no-descending-specificity": null,
+    "length-zero-no-unit": null,
     "selector-pseudo-element-no-unknown": [
-        true,
-        {
-            "ignorePseudoElements": [
-                "ng-deep"
-            ]
-        }
+      true,
+      {
+        "ignorePseudoElements": [
+          "ng-deep"
+        ]
+      }
     ]
   }
 }
