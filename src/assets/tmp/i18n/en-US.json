@@ -49,6 +49,7 @@
   "menu.doc.03.07.03": "Dependency Providers",
   "menu.doc.03.07.04": "Dependency Injection in Action",
   "menu.doc.03.07.05": "Navigate the component tree with DI",
+  "menu.doc.03.08": "HttpClient",
   "menu.doc.03.09": "Routing & Navigation",
   "menu.doc.05": "SETUP & DEPLOYMENT",
   "menu.doc.05.07": "Testing",
