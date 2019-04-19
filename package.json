@@ -17,7 +17,7 @@
     "icon": "ng g ng-alain:plugin icon",
     "lint": "npm run lint:ts && npm run lint:style",
     "lint:ts": "tslint -c tslint.json src/**/*.ts",
-    "lint:style": "stylelint \"{src}/**/*.less\" --syntax less",
+    "lint:style": "stylelint src/**/*.less",
     "lint-staged": "lint-staged",
     "tslint-check": "tslint-config-prettier-check ./tslint.json",
     "hmr": "ng serve -c=hmr"

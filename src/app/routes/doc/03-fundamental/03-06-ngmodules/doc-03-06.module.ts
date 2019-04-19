@@ -19,6 +19,8 @@ import { Doc03060201Component } from './03-06-02-ngmodule-vs-jsmodule/03-06-02-0
 import { Doc03060202Component } from './03-06-02-ngmodule-vs-jsmodule/03-06-02-02-ngmodule/doc-03-06-02-02.component';
 import { Doc03060601Module } from './03-06-06-feature-modules/doc-03-06-06-01/doc-03-06-06-01.module';
 import { Doc03060701Component } from './03-06-07-providers/03-06-07-01-providing-a-service/doc-03-06-07-01.component';
+import { Doc03060702Component } from './03-06-07-providers/03-06-07-02-providedin-and-ngmodules/doc-03-06-07-02.component';
+import { Doc0306070202Service } from './03-06-07-providers/03-06-07-02-providedin-and-ngmodules/service/doc-03-06-07-02-02.service';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,7 @@ import { Doc03060701Component } from './03-06-07-providers/03-06-07-01-providing
     Doc030611Component,
     Doc030612Component,
     Doc03060701Component,
+    Doc03060702Component,
   ],
   imports: [
     Doc0306RoutingModule,
@@ -45,7 +48,11 @@ import { Doc03060701Component } from './03-06-07-providers/03-06-07-01-providing
     SharedModule,
     Doc03060601Module,
   ],
-
   entryComponents: [],
+  /*
+   * servide 可以通过 providedIn 主动注册到 root，或者某个 NgModule，
+   * 也可以在 NgModlue 的 providers 中被动的注册到该 NgModule 的 injector 中
+   */
+  providers: [Doc0306070202Service],
 })
 export class Doc0306Module {}

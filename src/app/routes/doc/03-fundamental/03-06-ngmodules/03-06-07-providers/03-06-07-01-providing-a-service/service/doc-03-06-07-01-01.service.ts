@@ -10,7 +10,7 @@ import { Injectable } from '@angular/core';
    */
   providedIn: 'root',
 })
-export class Doc03060701Service {
+export class Doc0306070101Service {
   constructor() {}
 
   public doSomeThing() {

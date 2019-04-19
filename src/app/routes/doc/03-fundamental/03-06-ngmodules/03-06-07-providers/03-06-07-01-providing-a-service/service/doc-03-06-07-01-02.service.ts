@@ -5,10 +5,10 @@ import { Injectable } from '@angular/core';
  * 此时，必须显示地将这个 service 在某个 NgModule 或者某个 component 的 providers 中进行声明
  */
 @Injectable()
-export class Doc03060702Service {
+export class Doc0306070102Service {
   constructor() {}
 
   public doSomeThing() {
-    console.log(`%c[${Doc03060702Service.name}] DO SOMETHING`, 'color:red');
+    console.log(`%c[${Doc0306070102Service.name}] DO SOMETHING`, 'color:red');
   }
 }
