@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-/*
- * TODO https://angular.io/guide/feature-modules
- */
 @Component({
   selector: 'app-doc-03-06-06',
   templateUrl: './doc-03-06-06.component.html',

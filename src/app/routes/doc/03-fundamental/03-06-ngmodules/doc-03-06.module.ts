@@ -17,6 +17,7 @@ import { Doc030611Component } from './03-06-11-ngmodule-api/doc-03-06-11.compone
 import { Doc030612Component } from './03-06-12-ngmodule-faq/doc-03-06-12.component';
 import { Doc03060201Component } from './03-06-02-ngmodule-vs-jsmodule/03-06-02-01-javascript-modules/doc-03-06-02-01.component';
 import { Doc03060202Component } from './03-06-02-ngmodule-vs-jsmodule/03-06-02-02-ngmodule/doc-03-06-02-02.component';
+import { Doc03060601Module } from './03-06-06-feature-modules/doc-03-06-06-01/doc-03-06-06-01.module';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,14 @@ import { Doc03060202Component } from './03-06-02-ngmodule-vs-jsmodule/03-06-02-0
     Doc030611Component,
     Doc030612Component,
   ],
-  imports: [Doc0306RoutingModule, CommonModule, FormsModule, SharedModule],
+  imports: [
+    Doc0306RoutingModule,
+    CommonModule,
+    FormsModule,
+    SharedModule,
+    Doc03060601Module,
+  ],
+
   entryComponents: [],
 })
 export class Doc0306Module {}
