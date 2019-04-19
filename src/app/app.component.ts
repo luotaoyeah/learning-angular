@@ -1,9 +1,8 @@
-import { Component, OnInit, Renderer2, ElementRef } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
-import { TitleService } from '@delon/theme';
-import { VERSION as VERSION_ALAIN } from '@delon/theme';
-import { VERSION as VERSION_ZORRO, NzModalService } from 'ng-zorro-antd';
+import { TitleService, VERSION as VERSION_ALAIN } from '@delon/theme';
+import { NzModalService, VERSION as VERSION_ZORRO } from 'ng-zorro-antd';
 
 @Component({
   selector: 'app-root',
@@ -13,19 +12,19 @@ import { VERSION as VERSION_ZORRO, NzModalService } from 'ng-zorro-antd';
 })
 export class AppComponent implements OnInit {
   constructor(
-    el: ElementRef,
-    renderer: Renderer2,
+    elementRef: ElementRef,
+    renderer2: Renderer2,
     private router: Router,
-    private titleSrv: TitleService,
-    private modalSrv: NzModalService,
+    private titleService: TitleService,
+    private modalService: NzModalService,
   ) {
-    renderer.setAttribute(
-      el.nativeElement,
+    renderer2.setAttribute(
+      elementRef.nativeElement,
       'ng-alain-version',
       VERSION_ALAIN.full,
     );
-    renderer.setAttribute(
-      el.nativeElement,
+    renderer2.setAttribute(
+      elementRef.nativeElement,
       'ng-zorro-version',
       VERSION_ZORRO.full,
     );
@@ -35,8 +34,8 @@ export class AppComponent implements OnInit {
     this.router.events
       .pipe(filter(evt => evt instanceof NavigationEnd))
       .subscribe(() => {
-        this.titleSrv.setTitle();
-        this.modalSrv.closeAll();
+        this.titleService.setTitle();
+        this.modalService.closeAll();
       });
   }
 }

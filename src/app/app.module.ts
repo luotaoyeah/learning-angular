@@ -41,6 +41,7 @@ import { SharedModule } from '@shared';
 import { AppComponent } from './app.component';
 import { RoutesModule } from './routes/routes.module';
 import { LayoutModule } from './layout/layout.module';
+import { Doc03060702Service } from './routes/doc/03-fundamental/03-06-ngmodules/03-06-07-providers/03-06-07-01-providing-a-service/service/doc-03-06-07-02.service';
 
 const LANG = {
   abbr: 'en',
@@ -132,6 +133,11 @@ const APPINIT_PROVIDES = [
     ...INTERCEPTOR_PROVIDES,
     ...I18NSERVICE_PROVIDES,
     ...APPINIT_PROVIDES,
+    /*
+     * 显示地将某个 service 声明在 root NgModule 的 providers 中，
+     * 等价于在该 service 的 @Injectable 中使用 providedIn: 'root'
+     */
+    Doc03060702Service,
   ],
   bootstrap: [AppComponent],
 })
