@@ -21,6 +21,7 @@ import { Doc03060601Module } from './03-06-06-feature-modules/doc-03-06-06-01/do
 import { Doc03060701Component } from './03-06-07-providers/03-06-07-01-providing-a-service/doc-03-06-07-01.component';
 import { Doc03060702Component } from './03-06-07-providers/03-06-07-02-providedin-and-ngmodules/doc-03-06-07-02.component';
 import { Doc0306070202Service } from './03-06-07-providers/03-06-07-02-providedin-and-ngmodules/service/doc-03-06-07-02-02.service';
+import { Doc03060801Component } from './03-06-08-singleton-services/03-06-08-01-providing-a-singleton-service/doc-03-06-08-01.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { Doc0306070202Service } from './03-06-07-providers/03-06-07-02-providedi
     Doc030612Component,
     Doc03060701Component,
     Doc03060702Component,
+    Doc03060801Component,
   ],
   imports: [
     Doc0306RoutingModule,

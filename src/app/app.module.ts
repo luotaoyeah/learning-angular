@@ -42,6 +42,7 @@ import { AppComponent } from './app.component';
 import { RoutesModule } from './routes/routes.module';
 import { LayoutModule } from './layout/layout.module';
 import { Doc0306070102Service } from './routes/doc/03-fundamental/03-06-ngmodules/03-06-07-providers/03-06-07-01-providing-a-service/service/doc-03-06-07-01-02.service';
+import { Doc03060802Service } from './routes/doc/03-fundamental/03-06-ngmodules/03-06-08-singleton-services/03-06-08-01-providing-a-singleton-service/service/doc-03-06-08-02.service';
 
 const LANG = {
   abbr: 'en',
@@ -138,6 +139,7 @@ const APPINIT_PROVIDES = [
      * 等价于在该 service 的 @Injectable 中使用 providedIn: 'root'
      */
     Doc0306070102Service,
+    Doc03060802Service,
   ],
   bootstrap: [AppComponent],
 })
