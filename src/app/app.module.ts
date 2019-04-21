@@ -45,6 +45,7 @@ import { Doc0306070102Service } from './routes/doc/03-fundamental/03-06-ngmodule
 import { Doc03060802Service } from './routes/doc/03-fundamental/03-06-ngmodules/03-06-08-singleton-services/03-06-08-01-providing-a-singleton-service/service/doc-03-06-08-02.service';
 import { Doc0306080201Module } from './routes/doc/03-fundamental/03-06-ngmodules/03-06-08-singleton-services/03-06-08-02-the-for-root-pattern/doc-03-06-08-02-01/doc-03-06-08-02-01.module';
 import { Doc0306080201Service } from './routes/doc/03-fundamental/03-06-ngmodules/03-06-08-singleton-services/03-06-08-02-the-for-root-pattern/doc-03-06-08-02-01/service/doc-03-06-08-02-01.service';
+import { Doc0306080301Module } from './routes/doc/03-fundamental/03-06-ngmodules/03-06-08-singleton-services/03-06-08-03-prevent-reimport-of-the-ngmodule/doc-03-06-08-03-01/doc-03-06-08-03-01.module';
 
 const LANG = {
   abbr: 'en',
@@ -128,6 +129,7 @@ const APPINIT_PROVIDES = [
     LayoutModule,
     RoutesModule,
     Doc0306080201Module.forRoot(),
+    Doc0306080301Module,
     ...I18NSERVICE_MODULES,
     ...FORM_MODULES,
     ...GLOBAL_THIRD_MODULES,

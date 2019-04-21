@@ -25,6 +25,8 @@ import { Doc03060801Component } from './03-06-08-singleton-services/03-06-08-01-
 import { Doc03060802Component } from './03-06-08-singleton-services/03-06-08-02-the-for-root-pattern/doc-03-06-08-02.component';
 import { Doc0306080203Module } from './03-06-08-singleton-services/03-06-08-02-the-for-root-pattern/doc-03-06-08-02-03/doc-03-06-08-02-03.module';
 import { Doc0306080202Module } from './03-06-08-singleton-services/03-06-08-02-the-for-root-pattern/doc-03-06-08-02-02/doc-03-06-08-02-02.module';
+import { Doc03060803Component } from './03-06-08-singleton-services/03-06-08-03-prevent-reimport-of-the-ngmodule/doc-03-06-08-03.component';
+import { Doc0306080301Module } from './03-06-08-singleton-services/03-06-08-03-prevent-reimport-of-the-ngmodule/doc-03-06-08-03-01/doc-03-06-08-03-01.module';
 
 @NgModule({
   declarations: [
@@ -46,6 +48,7 @@ import { Doc0306080202Module } from './03-06-08-singleton-services/03-06-08-02-t
     Doc03060702Component,
     Doc03060801Component,
     Doc03060802Component,
+    Doc03060803Component,
   ],
   imports: [
     Doc0306RoutingModule,
@@ -55,6 +58,7 @@ import { Doc0306080202Module } from './03-06-08-singleton-services/03-06-08-02-t
     Doc03060601Module,
     Doc0306080202Module,
     Doc0306080203Module,
+    Doc0306080301Module,
   ],
   entryComponents: [],
   /*
