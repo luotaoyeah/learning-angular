@@ -3,6 +3,7 @@ import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { TitleService, VERSION as VERSION_ALAIN } from '@delon/theme';
 import { NzModalService, VERSION as VERSION_ZORRO } from 'ng-zorro-antd';
+import { Doc0306080201Service } from './routes/doc/03-fundamental/03-06-ngmodules/03-06-08-singleton-services/03-06-08-02-the-for-root-pattern/doc-03-06-08-02-01/service/doc-03-06-08-02-01.service';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,7 @@ export class AppComponent implements OnInit {
     private router: Router,
     private titleService: TitleService,
     private modalService: NzModalService,
+    private doc0306080201Service: Doc0306080201Service,
   ) {
     renderer2.setAttribute(
       elementRef.nativeElement,
@@ -37,5 +39,8 @@ export class AppComponent implements OnInit {
         this.titleService.setTitle();
         this.modalService.closeAll();
       });
+
+    // @ts-ignore
+    window.DOC_0306080201_SERVICE_01 = this.doc0306080201Service;
   }
 }

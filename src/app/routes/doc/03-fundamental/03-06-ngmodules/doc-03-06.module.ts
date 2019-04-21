@@ -22,6 +22,9 @@ import { Doc03060701Component } from './03-06-07-providers/03-06-07-01-providing
 import { Doc03060702Component } from './03-06-07-providers/03-06-07-02-providedin-and-ngmodules/doc-03-06-07-02.component';
 import { Doc0306070202Service } from './03-06-07-providers/03-06-07-02-providedin-and-ngmodules/service/doc-03-06-07-02-02.service';
 import { Doc03060801Component } from './03-06-08-singleton-services/03-06-08-01-providing-a-singleton-service/doc-03-06-08-01.component';
+import { Doc03060802Component } from './03-06-08-singleton-services/03-06-08-02-the-for-root-pattern/doc-03-06-08-02.component';
+import { Doc0306080203Module } from './03-06-08-singleton-services/03-06-08-02-the-for-root-pattern/doc-03-06-08-02-03/doc-03-06-08-02-03.module';
+import { Doc0306080202Module } from './03-06-08-singleton-services/03-06-08-02-the-for-root-pattern/doc-03-06-08-02-02/doc-03-06-08-02-02.module';
 
 @NgModule({
   declarations: [
@@ -42,6 +45,7 @@ import { Doc03060801Component } from './03-06-08-singleton-services/03-06-08-01-
     Doc03060701Component,
     Doc03060702Component,
     Doc03060801Component,
+    Doc03060802Component,
   ],
   imports: [
     Doc0306RoutingModule,
@@ -49,6 +53,8 @@ import { Doc03060801Component } from './03-06-08-singleton-services/03-06-08-01-
     FormsModule,
     SharedModule,
     Doc03060601Module,
+    Doc0306080202Module,
+    Doc0306080203Module,
   ],
   entryComponents: [],
   /*
