@@ -20,3 +20,8 @@
   providers 和 ngModule；然后在 AppModule 中使用 forRoot() 方法对这个 NgModule
   进行引入，在其他地方使用 forChild() 方法进行引入
 </p>
+
+<p>
+  这样之后，该 NgModule 的 providers 就只会被注册到 root injector
+  里面去，从而实现 singleton service
+</p>

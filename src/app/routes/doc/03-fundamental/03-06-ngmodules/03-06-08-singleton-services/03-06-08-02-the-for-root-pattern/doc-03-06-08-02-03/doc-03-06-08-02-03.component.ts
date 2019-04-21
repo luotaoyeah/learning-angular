@@ -21,5 +21,7 @@ export class Doc0306080203Component implements OnInit {
       // @ts-ignore
       window.DOC_0306080201_SERVICE_01 === window.DOC_0306080201_SERVICE_03,
     );
+
+    this.doc0306080201Service.doSomething();
   }
 }
