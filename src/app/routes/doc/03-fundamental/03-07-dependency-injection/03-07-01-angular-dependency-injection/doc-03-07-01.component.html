@@ -1,5 +1,49 @@
 <nz-collapse [nzAccordion]="true">
-  <nz-collapse-panel
-    nzHeader="Dependency Injection in Angular"
-  ></nz-collapse-panel>
+  <nz-collapse-panel nzHeader="Create And Register An Injectable Service">
+    <button nz-button [ngStyle]="{ color: color }">COLOR</button>
+
+    <p>
+      通过 @Injectable 装饰器将一个 class 标注为一个 injectable
+      对象，但是还需要为这个 injectable 提供一个 provider，这样 angular
+      才知道如何对它进行实例化，即 provider 的作用就是告诉 injector
+      如果去创建一个 service 实例
+    </p>
+
+    <p>
+      injector 的作用是：创建 service 实例，并将它们注入到对应的 component 中去
+    </p>
+
+    <p>
+      一个 service 可以有多个 provider，可以在不同的场景下使用不同的 provider
+    </p>
+
+    <p>
+      service 的 provider 可以是它自己，此时，injector 就可以直接使用 new
+      来创建它的实例
+    </p>
+
+    <p>
+      injector 是有继承关系的，即如果一个 injector 找不到某个
+      dependency，它会往上级的 injector 去寻找，直到找到该 dependency 或者直到
+      root injector
+    </p>
+
+    <p>
+      可以在多个地方配置 provider：
+    </p>
+    <ul>
+      <li>
+        可以使用 @Injectable.providedIn 进行配置
+      </li>
+      <li>
+        可以使用 @NgModule.providers 进行配置
+      </li>
+      <li>
+        可以使用 @Component.providers 进行配置
+      </li>
+      <li>
+        可以使用 @Directive.providers 进行配置
+      </li>
+    </ul>
+  </nz-collapse-panel>
 </nz-collapse>
