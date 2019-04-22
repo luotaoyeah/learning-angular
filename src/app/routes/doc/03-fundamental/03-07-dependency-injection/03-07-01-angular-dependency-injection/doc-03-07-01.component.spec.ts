@@ -19,7 +19,8 @@ describe('Doc030701Component', () => {
      * 有了 DI 之后，可以更加方便的对 component 进行测试，
      * 可以直接创建一个 mock service 来进行测试
      */
-    component = new Doc030701Component(doc030701Service);
+    // @ts-ignore
+    component = new Doc030701Component(doc030701Service, null);
 
     component.ngOnInit();
 
