@@ -8,7 +8,6 @@ import { Doc030605Component } from './03-06-05-entry-components/doc-03-06-05.com
 import { Doc030606Component } from './03-06-06-feature-modules/doc-03-06-06.component';
 import { Doc030607Component } from './03-06-07-providers/doc-03-06-07.component';
 import { Doc030608Component } from './03-06-08-singleton-services/doc-03-06-08.component';
-import { Doc030609Component } from './03-06-09-lazy-loading-ngmodules/doc-03-06-09.component';
 import { Doc030610Component } from './03-06-10-sharing-ngmodules/doc-03-06-10.component';
 import { Doc030611Component } from './03-06-11-ngmodule-api/doc-03-06-11.component';
 import { Doc030612Component } from './03-06-12-ngmodule-faq/doc-03-06-12.component';
@@ -45,10 +44,6 @@ const routes: Routes = [
   {
     path: '03/06/08',
     component: Doc030608Component,
-  },
-  {
-    path: '03/06/09',
-    component: Doc030609Component,
   },
   {
     path: '03/06/10',
