@@ -66,4 +66,32 @@
       时，会往上级的 injector 去找，直到 root injector
     </p>
   </nz-collapse-panel>
+
+  <nz-collapse-panel nzHeader="Dependency Injection Tokens">
+    <p>
+      injector 的内部维护了一个映射（map），一个以 DI Token 为 key，provider 为
+      value 的 map
+    </p>
+    <p>
+      DI Token 是干嘛用的？当我们注入一个 service 时，angular 怎么知道该使用哪个
+      provider 来创建实例？就是根据 DI Token 来寻找的
+    </p>
+    <p>
+      当我们在往 injector 中注册某个 provider 时，也需要指定对应的 DI Token
+    </p>
+    <p>
+      对于一般的 service 来说，它的 class 就是它的 DI Token，当我们在注入该
+      service 时，直接声明它的类型（它的 class）就行了，angular 就会根据它的
+      class 作为 token 去寻找对应的 provider 来创建实例
+    </p>
+  </nz-collapse-panel>
+
+  <nz-collapse-panel nzHeader="Optional Dependencies">
+    <p>
+      默认情况下，当通过 constructor parameter
+      来注入一个依赖时，如果找不到对应的 provider 则会报错，我们可以给这个
+      parameter 添加一个 @Optional 标注，表示如果这个依赖的 provider
+      找不到，则它的值会为 null
+    </p>
+  </nz-collapse-panel>
 </nz-collapse>
