@@ -225,4 +225,43 @@
       </li>
     </ul>
   </nz-collapse-panel>
+
+  <nz-collapse-panel nzHeader="How Do I Restrict Service Scope To A Module?">
+    <p>
+      默认情况下，当我们引入一个 NgModule 之后，它的 providers
+      会对整个应用可见，是 application-scoped 的，即它的 providers 会被注册到
+      root injector 中去；这可能会导致一个问题：后引入的 NgModule
+      可能会覆盖掉先引入的 NgModule 中的 providers，解决方法有两个：
+    </p>
+    <ul>
+      <li>
+        <b>方法一（推荐）：</b>
+        使用 lazy-loaded module，因为 lazy-loaded module 有它自己的
+        injector，它的 providers 不会对整个应用可见，而是只对当前 NgModule 可见
+      </li>
+      <li>
+        <b>方法二：</b>
+        将 providers 声明在 component 上，而不是声明在 NgModule 上，因为每一个
+        component 都有它自己的 injector
+      </li>
+    </ul>
+  </nz-collapse-panel>
+
+  <nz-collapse-panel
+    nzHeader="Should I Add Application-Wide Providers To The Root AppModule or The Root AppComponent?"
+  >
+    <p>
+      优先使用 providedIn: 'root' 来将一个 service 注册为 application-wide 的
+      service
+    </p>
+    <p>
+      其次，如果不能使用 providedIn: 'root'，则应该将它添加到 AppModule 的
+      providers 中去
+    </p>
+    <p>
+      当把一个 service 添加到 AppComponent 的 providers 中去时，只有
+      AppComponent 的下级 component 中可以注入这个 service，其他地方（比如其他的
+      NgModule 中）不能注入这个 service
+    </p>
+  </nz-collapse-panel>
 </nz-collapse>
