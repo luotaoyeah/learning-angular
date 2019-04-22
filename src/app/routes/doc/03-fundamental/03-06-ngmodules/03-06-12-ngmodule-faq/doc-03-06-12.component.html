@@ -264,4 +264,19 @@
       NgModule 中）不能注入这个 service
     </p>
   </nz-collapse-panel>
+
+  <nz-collapse-panel nzHeader="Why Does Lazy Loading Create A Child Injector?">
+    <p>
+      为什么 lazy-loaded module 会创建一个它自己的 injector 呢？这是由 DI system
+      的一个基本特性决定的
+    </p>
+    <p>
+      因为 injector 的 providers 的配置是一次性的，当应用启动时，root injector
+      就会根据配置将它所有的 providers 配置好，然后 root injector
+      就开始为依赖注入提供 service 实例，此时，root injector 的 providers
+      就不能再更改了，所以当 lazy-loaded module 加载时，已经不能再将它的
+      providers 添加到 root injector 中去了，因此只能为它创建一个它自己的
+      injector
+    </p>
+  </nz-collapse-panel>
 </nz-collapse>
