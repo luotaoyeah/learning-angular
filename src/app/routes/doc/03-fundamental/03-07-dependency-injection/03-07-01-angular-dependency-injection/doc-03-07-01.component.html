@@ -46,4 +46,24 @@
       </li>
     </ul>
   </nz-collapse-panel>
+
+  <nz-collapse-panel nzHeader="Injecting Services">
+    <p>对于一个 injector 来说，它里面的 service 肯定是 singleton 的</p>
+
+    <p>
+      injector 是有层级关系的，最顶级的是一个 root injector，下面有很多的 child
+      injector，比如 lazy-loaded module 可以有它自己的 injector，比如提供了
+      @Component.providers 的 component 也有它自己的 injector
+    </p>
+
+    <p>
+      当 angular 销毁一个 component 时，它的 injector 以及 injector 里面的
+      service 都会被销毁
+    </p>
+
+    <p>
+      正因为 injector 有层级关系，当 child injector 找不到 dependency
+      时，会往上级的 injector 去找，直到 root injector
+    </p>
+  </nz-collapse-panel>
 </nz-collapse>
