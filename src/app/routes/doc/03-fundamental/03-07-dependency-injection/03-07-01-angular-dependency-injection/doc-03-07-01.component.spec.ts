@@ -6,11 +6,14 @@ describe('Doc030701Component', () => {
   let doc030701Service: Doc030701Service;
 
   it('should init color correctly', () => {
-    doc030701Service = {
+    doc030701Service = ({
+      doc03070101Service: {
+        log(): void {},
+      },
       getColor(): string {
         return 'GREEN';
       },
-    };
+    } as unknown) as Doc030701Service;
 
     /*
      * 有了 DI 之后，可以更加方便的对 component 进行测试，
