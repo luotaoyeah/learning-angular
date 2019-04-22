@@ -11,9 +11,6 @@ import { LoginComponent } from './passport/login/login.component';
 // single pages
 import { CallbackComponent } from './callback/callback.component';
 import { UserLockComponent } from './passport/lock/lock.component';
-/* business pages */
-import { DocModule } from './doc/doc.module';
-import { ExceptionModule } from './exception/exception.module';
 
 const routes: Routes = [
   {
@@ -24,11 +21,11 @@ const routes: Routes = [
       { path: '', redirectTo: 'doc/tutorial/dashboard', pathMatch: 'full' },
       {
         path: 'exception',
-        loadChildren: () => ExceptionModule,
+        loadChildren: './exception/exception.module#ExceptionModule',
       },
       {
         path: 'doc',
-        loadChildren: () => DocModule,
+        loadChildren: './doc/doc.module#DocModule',
       },
     ],
   },
@@ -48,7 +45,7 @@ const routes: Routes = [
       { path: 'lock', component: UserLockComponent, data: { title: '锁屏' } },
     ],
   },
-  // 单页不包裹Layout
+  // 单页不包裹布局
   { path: 'callback/:type', component: CallbackComponent },
   { path: '**', redirectTo: 'exception/404' },
 ];

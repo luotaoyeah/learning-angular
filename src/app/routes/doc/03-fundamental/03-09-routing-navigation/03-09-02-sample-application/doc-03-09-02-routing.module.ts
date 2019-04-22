@@ -2,9 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ComposeMessageComponent } from './compose-message/compose-message.component';
 import { Doc030902Component } from './doc-03-09-02.component';
-import { AdminModule } from './admin/admin.module';
 import { AuthGuard } from './auth/service/auth.guard';
-import { CrisisCenterModule } from './crisis-center/crisis-center.module';
 
 @NgModule({
   imports: [
@@ -15,14 +13,15 @@ import { CrisisCenterModule } from './crisis-center/crisis-center.module';
         children: [
           {
             path: 'crisis-center',
-            loadChildren: () => CrisisCenterModule,
+            loadChildren:
+              './crisis-center/crisis-center.module#CrisisCenterModule',
             data: {
               preload: true,
             },
           },
           {
             path: 'admin',
-            loadChildren: () => AdminModule,
+            loadChildren: './admin/admin.module#AdminModule',
             canLoad: [AuthGuard],
           },
           {
