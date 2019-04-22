@@ -161,4 +161,68 @@
       RouterModule.forChild() 方法用在其他的 routing modules 中
     </p>
   </nz-collapse-panel>
+
+  <nz-collapse-panel
+    nzHeader="Why Is A Service Provided In A Feature Module Visible Everywhere?"
+  >
+    <p>
+      假如 NgModule A 声明了 providers，里面包含了 Service01，则当 AppModule
+      引入了 NgModule A 之后，angular 会将 Service01 注册到 root
+      injector，这样整个应用所有的地方就都可以注入 Service01 了
+    </p>
+    <p>
+      也就是说，当一个 NgModule 被引入之后，它的 providers 就对整个应用可见
+    </p>
+  </nz-collapse-panel>
+
+  <nz-collapse-panel
+    nzHeader="Why Is A Service Provided In A Lazy-Loaded Module Visible Only To That Module?"
+  >
+    <p>
+      non-lazy-loaded module 的 providers 是 application-scoped
+      的，对整个应用可见，而 lazy-loaded module 的 providers 是 module-scoped
+      的，只对当前 NgModule 可见
+    </p>
+    <p>
+      angular 在加载一个 lazy-loaded module 时，会为这个 NgModule
+      创建一个它自己的 injector，这个 injector 是 root injector 的 child
+      injector，然后这个 NgModule 的 providers 以及它引入的 NgModule 的
+      providers 都会被注册到这个 injector 中去，而不是注册到 root injector 中去
+    </p>
+    <p>
+      当在这个 NgModule 中注入这些 services 时，会优先使用它的 injector 中的
+      service 实例，而不是 root injector 中的实例
+    </p>
+  </nz-collapse-panel>
+
+  <nz-collapse-panel nzHeader="What If Two Modules Provide The Same Service?">
+    <app-doc-03-06-12-01-01></app-doc-03-06-12-01-01>
+    <p>
+      当不同的 NgModule 同时声明了同一个 provider 时，有三种可能性：
+    </p>
+    <ul>
+      <li>
+        <b>后者胜出：</b>
+        如果 A 引入了 [B, C]，且 B 和 C 同时声明了 S，则 C 中的 S 胜出，即
+        A，B，C 中注入的 S 都是 C 中提供的 S
+      </li>
+      <li>
+        <b>父亲胜出：</b>
+        如果 A 引入了 B，且 A 和 B 同时声明了 S，则 A 中的 S 胜出，即 A 和 B
+        中注入的 S 都是 A 中提供的 S
+      </li>
+      <li>
+        <b>顶级胜出：</b>
+        如果 AppModule 跟其他引入的 NgModule 同时声明了 S，则 AppModule 中的 S
+        胜出
+        <ul>
+          <li>
+            有一个例外就是，如果引入的 NgModule 是一个 lazy-loaded
+            NgModule，则它会有自己的 injector，并且它会优先使用它自己的 injector
+            中的 S，而不是 AppModule 中的 S
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nz-collapse-panel>
 </nz-collapse>

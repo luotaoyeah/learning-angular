@@ -46,6 +46,7 @@ import { Doc03060802Service } from './routes/doc/03-fundamental/03-06-ngmodules/
 import { Doc0306080201Module } from './routes/doc/03-fundamental/03-06-ngmodules/03-06-08-singleton-services/03-06-08-02-the-for-root-pattern/doc-03-06-08-02-01/doc-03-06-08-02-01.module';
 import { Doc0306080201Service } from './routes/doc/03-fundamental/03-06-ngmodules/03-06-08-singleton-services/03-06-08-02-the-for-root-pattern/doc-03-06-08-02-01/service/doc-03-06-08-02-01.service';
 import { Doc0306080301Module } from './routes/doc/03-fundamental/03-06-ngmodules/03-06-08-singleton-services/03-06-08-03-prevent-reimport-of-the-ngmodule/doc-03-06-08-03-01/doc-03-06-08-03-01.module';
+import { Doc03061201Service } from './routes/doc/03-fundamental/03-06-ngmodules/03-06-12-ngmodule-faq/03-06-12-01/service/doc-03-06-12-01.service';
 
 const LANG = {
   abbr: 'en',
@@ -158,6 +159,14 @@ const APPINIT_PROVIDES = [
       useValue: {
         doSomething() {
           console.log(`%c[${Doc0306080201Service.name}]`, 'color:green');
+        },
+      },
+    },
+    {
+      provide: Doc03061201Service,
+      useValue: {
+        doSomething(): string {
+          return 'ROOT';
         },
       },
     },
