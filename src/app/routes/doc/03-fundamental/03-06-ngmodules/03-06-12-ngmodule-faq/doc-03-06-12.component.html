@@ -131,4 +131,34 @@
       declarations，只有 providers，例如：HttpClientModule，则不需要将它输出
     </p>
   </nz-collapse-panel>
+
+  <nz-collapse-panel nzHeader="What Is The forRoot() Method?">
+    <p>
+      forRoot()/forChild() 方法是一种约定，它们是定义在 NgModule
+      中的静态方法，作用是：
+    </p>
+    <p>
+      如果一个 NgModule 声明了 providers，如果这个 NgModule 被多个其他的
+      NgModule 引入，那么这些 providers 对应的 services 就不是 singleton
+      services，为了解决这个问题，就引入了 forRoot()/forChild() 方法
+    </p>
+    <p>
+      forRoot() 方法返回的是一个 ModuleWithProviders 对象，其中有两个属性
+      ngModule 和 providers，当在 AppModule 中引入该 NgModule 时，就引入
+      forRoot() 方法返回的对象
+    </p>
+    <p>
+      forChild() 方法返回的对象中不包含 providers 属性，当在其他的 NgModule
+      中引入该 NgModule 时，就引入 forChild() 方法返回的对象
+    </p>
+    <p>
+      最后达到的一个效果就是：forRoot() 方法返回的对象中声明了 providers，而
+      forChild() 方法返回的对象中没有包含 providers，因此该 NgModule 的所有的
+      providers 就只会被注册到 root injector 中，从而实现 singleton services
+    </p>
+    <p>
+      例如：RouterModule.forRoot() 方法用在 AppRoutingModule 中，而
+      RouterModule.forChild() 方法用在其他的 routing modules 中
+    </p>
+  </nz-collapse-panel>
 </nz-collapse>
