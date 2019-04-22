@@ -15,7 +15,7 @@ export class Doc0306080301Module {
     parentModule: Doc0306080301Module,
   ) {
     if (parentModule) {
-      console.error(
+      console.warn(
         `${
           Doc0306080301Module.name
         } is already loaded. Import it in the AppModule only`,
