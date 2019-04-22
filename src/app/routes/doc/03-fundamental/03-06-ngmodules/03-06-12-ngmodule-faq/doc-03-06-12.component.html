@@ -1,3 +1,134 @@
 <nz-collapse [nzAccordion]="true">
-  <nz-collapse-panel nzHeader="NgModule FAQs"></nz-collapse-panel>
+  <nz-collapse-panel
+    nzHeader="What Classes Should I Add to The Declarations Array?"
+  >
+    <ul>
+      <li>
+        declarations 中可以声明哪些东西？
+      </li>
+      <li>
+        declarations 中可以声明 declarables，包括：component，directive，pipe
+        这三种类型
+      </li>
+    </ul>
+  </nz-collapse-panel>
+
+  <nz-collapse-panel nzHeader="What Is a Declarable?">
+    <ul>
+      <li>
+        declarable 指的是什么？
+      </li>
+      <li>
+        declarable 指的是 component，directive，pipe
+        这三种类型的数据，只有这三种数据可以声明在 declarations 中
+      </li>
+    </ul>
+  </nz-collapse-panel>
+
+  <nz-collapse-panel
+    nzHeader="Why List The Same Component In Multiple NgModule Properties?"
+  >
+    <ul>
+      <li>为什么在 declarations 和 exports 中声明了同一个 component？</li>
+      <li>
+        因为 declarations 和 exports 的含义和作用是不一样的，在 declarations
+        中声明 component 表示这个 component 是属于当前 NgModule 的，而在 exports
+        中声明 component 表示这个 component 可以被其他 NgModule 使用
+      </li>
+    </ul>
+  </nz-collapse-panel>
+
+  <nz-collapse-panel
+    nzHeader="What Does 'Can't bind to 'x' since it isn't a known property of 'y'' Mean?"
+  >
+    <ul>
+      <li>组件 y 上面使用了 x，但是找不到 x 对应的定义</li>
+      <li>
+        x 可能是一个 directive，如果是当前 NgModule 中定义的
+        directive，则需要将它放到 declarations 中去，如果是其他 NgModule
+        中定义的，则其他 NgModule 中需要 exports 该 directive
+      </li>
+    </ul>
+  </nz-collapse-panel>
+
+  <nz-collapse-panel nzHeader="What Should I Import?">
+    <ul>
+      <li>imports 中应该包含什么？</li>
+      <li>
+        <p>
+          当我们需要使用某个 component，directive，pipe，而它们是在其他的
+          NgModule 中定义的，则我们需要在 imports 中引入这些 NgModule
+        </p>
+        <p>比如我们要使用 NgIf，则必须引入 CommonMudule</p>
+      </li>
+    </ul>
+  </nz-collapse-panel>
+
+  <nz-collapse-panel nzHeader="Should I Import BrowserModule or CommonModule?">
+    <ul>
+      <li>
+        <p>
+          BrowserModule 应该只在 AppModule 中被引入，在其他地方应该引入
+          CommonModule
+        </p>
+        <p>
+          因为 BrowserModule re-export 了 CommonModule，因此在 AppModule
+          中引入了 BrowserModule 之后就不需要在引入 CommonModule 了
+        </p>
+      </li>
+    </ul>
+  </nz-collapse-panel>
+
+  <nz-collapse-panel nzHeader="What If I Import The Same Module Twice?">
+    <ul>
+      <li>
+        <p>
+          多次引入同一个 NgModule，该 NgModule
+          只会被加载一次，并且会被缓存已备后续使用
+        </p>
+        <p>
+          比如：B imports A，C imports A，D imports [A, B, C]，则在解析 D
+          的过程中，A 只会被解析并加载一次
+        </p>
+        <p>
+          循环引用是不允许的，比如：B imports A，然后 A imports B
+        </p>
+      </li>
+    </ul>
+  </nz-collapse-panel>
+
+  <nz-collapse-panel nzHeader="What Should I Export?">
+    <ul>
+      <li>
+        <p>
+          exports 中可以包含四种类型的数据：
+        </p>
+        <ul>
+          <li>
+            当前 NgModule 的 declarations 中声明的 component，directive，pipe
+          </li>
+          <li>
+            当前 NgModule 的 imports 中引入的 NgModule 的 exports 中的
+            component，directive，pipe
+          </li>
+          <li>
+            当前 NgModule 的 imports 中引入的 NgModule（此时，该 NgModule 的
+            exports 中所有的数据都会给 export）
+          </li>
+          <li>
+            任意的其他 NgModule（也就是说当前 NgModule 可以不需要先引入某个
+            NgModule，而是直接 export 某个 NgModule）
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nz-collapse-panel>
+
+  <nz-collapse-panel nzHeader="What Should I Not Export?">
+    <p>
+      exports 主要的所用是输出 component，directive，pipe
+      这三种类型的数据，无论是直接地还是间接地， 因此如果一个 NgModule 没有
+      declarations，只有 providers，例如：HttpClientModule，则不需要将它输出
+    </p>
+  </nz-collapse-panel>
 </nz-collapse>

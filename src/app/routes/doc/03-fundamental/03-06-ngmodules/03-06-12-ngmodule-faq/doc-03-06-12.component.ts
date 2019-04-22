@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-/*
- * TODO https://angular.io/guide/ngmodule-faq
- */
 @Component({
   selector: 'app-doc-03-06-12',
   templateUrl: './doc-03-06-12.component.html',
