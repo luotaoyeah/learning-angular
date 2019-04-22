@@ -279,4 +279,22 @@
       injector
     </p>
   </nz-collapse-panel>
+
+  <nz-collapse-panel nzHeader="Why Does Angular Need entryComponents?">
+    <p>
+      有些 component 虽然定义了，但是没有在某个 NgModule 的 declarations
+      中声明，或者有些 component
+      虽然声明了但是实际上并没有被使用，这时候，angular
+      就需要将这些没有真正被用到的 component 从生成的代码中去除，entry component
+      就是为了这个目的
+    </p>
+    <p>
+      angular 会从 entry component 开始解析，从 entry component 的 template
+      中包含的其他 component 一直往下，将所有用到的 component 解析出来
+    </p>
+    <p>
+      如果一个 component 既不是 entry component，也没有在其他的 template
+      中使用，则它会从生成的代码中被排除
+    </p>
+  </nz-collapse-panel>
 </nz-collapse>
