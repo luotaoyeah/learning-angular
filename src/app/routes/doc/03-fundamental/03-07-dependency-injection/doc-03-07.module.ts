@@ -21,6 +21,7 @@ import { Doc030702020301Component } from './03-07-02-hierarchical-dependency-inj
 import { Doc03070202030101Component } from './03-07-02-hierarchical-dependency-injection/03-07-02-02-component-injectors/03-07-02-02-03/doc-03-07-02-02-03-01-01.component';
 import { Doc03070301Component } from './03-07-03-di-providers/03-07-03-01-the-provider-object-literal/doc-03-07-03-01.component';
 import { Doc03070302Component } from './03-07-03-di-providers/03-07-03-02-alternative-class-providers/doc-03-07-03-02.component';
+import { Doc03070303Component } from './03-07-03-di-providers/03-07-03-03-value-providers/doc-03-07-03-03.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { Doc03070302Component } from './03-07-03-di-providers/03-07-03-02-altern
     Doc030703Component,
     Doc03070301Component,
     Doc03070302Component,
+    Doc03070303Component,
     Doc030703Component,
     Doc030704Component,
     Doc030705Component,
