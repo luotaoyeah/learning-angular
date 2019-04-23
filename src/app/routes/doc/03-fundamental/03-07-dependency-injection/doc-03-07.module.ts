@@ -5,8 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { SharedModule } from '@shared';
 import { Doc030701Component } from './03-07-01-angular-dependency-injection/doc-03-07-01.component';
 import { Doc030702Component } from './03-07-02-hierarchical-dependency-injection/doc-03-07-02.component';
-import { Doc030703Component } from './03-07-03-di-in-action/doc-03-07-03.component';
-import { Doc030704Component } from './03-07-04-di-providers/doc-03-07-04.component';
+import { Doc030704Component } from './03-07-04-di-in-action/doc-03-07-04.component';
+import { Doc030703Component } from './03-07-03-di-providers/doc-03-07-03.component';
 import { Doc030705Component } from './03-07-05-navigate-the-component-tree/doc-03-07-05.component';
 import { Doc03070201Component } from './03-07-02-hierarchical-dependency-injection/03-07-02-01-where-to-configure-providers/doc-03-07-02-01.component';
 import { Doc0307020101Component } from './03-07-02-hierarchical-dependency-injection/03-07-02-01-where-to-configure-providers/03-07-02-01-01/doc-03-07-02-01-01.component';
@@ -19,6 +19,7 @@ import { Doc0307020202Component } from './03-07-02-hierarchical-dependency-injec
 import { Doc0307020203Component } from './03-07-02-hierarchical-dependency-injection/03-07-02-02-component-injectors/03-07-02-02-03/doc-03-07-02-02-03.component';
 import { Doc030702020301Component } from './03-07-02-hierarchical-dependency-injection/03-07-02-02-component-injectors/03-07-02-02-03/doc-03-07-02-02-03-01.component';
 import { Doc03070202030101Component } from './03-07-02-hierarchical-dependency-injection/03-07-02-02-component-injectors/03-07-02-02-03/doc-03-07-02-02-03-01-01.component';
+import { Doc03070301Component } from './03-07-03-di-providers/03-07-03-01-the-provider-object-literal/doc-03-07-03-01.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,8 @@ import { Doc03070202030101Component } from './03-07-02-hierarchical-dependency-i
     Doc0307020203Component,
     Doc030702020301Component,
     Doc03070202030101Component,
+    Doc030703Component,
+    Doc03070301Component,
     Doc030703Component,
     Doc030704Component,
     Doc030705Component,

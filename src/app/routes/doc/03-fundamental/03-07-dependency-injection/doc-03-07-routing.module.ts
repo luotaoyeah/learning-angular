@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { Doc030701Component } from './03-07-01-angular-dependency-injection/doc-03-07-01.component';
 import { Doc030702Component } from './03-07-02-hierarchical-dependency-injection/doc-03-07-02.component';
-import { Doc030703Component } from './03-07-03-di-in-action/doc-03-07-03.component';
-import { Doc030704Component } from './03-07-04-di-providers/doc-03-07-04.component';
+import { Doc030703Component } from './03-07-03-di-providers/doc-03-07-03.component';
+import { Doc030704Component } from './03-07-04-di-in-action/doc-03-07-04.component';
 import { Doc030705Component } from './03-07-05-navigate-the-component-tree/doc-03-07-05.component';
 
 const routes: Routes = [
