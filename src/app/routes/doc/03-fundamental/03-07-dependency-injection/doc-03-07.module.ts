@@ -8,13 +8,15 @@ import { Doc030702Component } from './03-07-02-hierarchical-dependency-injection
 import { Doc030703Component } from './03-07-03-di-in-action/doc-03-07-03.component';
 import { Doc030704Component } from './03-07-04-di-providers/doc-03-07-04.component';
 import { Doc030705Component } from './03-07-05-navigate-the-component-tree/doc-03-07-05.component';
-import { Doc03070201Component } from './03-07-02-01-where-to-configure-providers/doc-03-07-02-01.component';
+import { Doc03070201Component } from './03-07-02-hierarchical-dependency-injection/03-07-02-01-where-to-configure-providers/doc-03-07-02-01.component';
+import { Doc0307020101Component } from './03-07-02-hierarchical-dependency-injection/03-07-02-01-where-to-configure-providers/03-07-02-01-01/doc-03-07-02-01-01.component';
 
 @NgModule({
   declarations: [
     Doc030701Component,
     Doc030702Component,
     Doc03070201Component,
+    Doc0307020101Component,
     Doc030703Component,
     Doc030704Component,
     Doc030705Component,
