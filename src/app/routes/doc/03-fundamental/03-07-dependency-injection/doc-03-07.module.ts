@@ -23,6 +23,7 @@ import { Doc03070301Component } from './03-07-03-di-providers/03-07-03-01-the-pr
 import { Doc03070302Component } from './03-07-03-di-providers/03-07-03-02-alternative-class-providers/doc-03-07-03-02.component';
 import { Doc03070303Component } from './03-07-03-di-providers/03-07-03-03-value-providers/doc-03-07-03-03.component';
 import { Doc0307030301Component } from './03-07-03-di-providers/03-07-03-03-value-providers/03-07-03-03-01-non-class-dependencies/doc-03-07-03-03-01.component';
+import { Doc03070304Component } from './03-07-03-di-providers/03-07-03-04-factory-providers/doc-03-07-03-04.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { Doc0307030301Component } from './03-07-03-di-providers/03-07-03-03-valu
     Doc03070302Component,
     Doc03070303Component,
     Doc0307030301Component,
+    Doc03070304Component,
     Doc030703Component,
     Doc030704Component,
     Doc030705Component,
