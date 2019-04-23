@@ -1,0 +1,14 @@
+<p>
+  有时候，在某个 component 中需要注入某个 service，这个 service 是注册到 root
+  injector 中的，但是在这个 component 中希望对这个 service
+  进行某些特殊的配置，以满足它自己特有的一些需求，这时候，就可以在这个 component
+  中注册这个 service
+</p>
+
+<nz-card>
+  <button nz-button>{{ foo }}</button>
+  <button nz-button>{{ bar }}</button>
+  <button nz-button>{{ baz }}</button>
+  <hr />
+  <app-doc-03-07-02-02-03-01></app-doc-03-07-02-02-03-01>
+</nz-card>
