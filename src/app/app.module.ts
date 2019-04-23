@@ -47,6 +47,7 @@ import { Doc0306080201Module } from './routes/doc/03-fundamental/03-06-ngmodules
 import { Doc0306080201Service } from './routes/doc/03-fundamental/03-06-ngmodules/03-06-08-singleton-services/03-06-08-02-the-for-root-pattern/doc-03-06-08-02-01/service/doc-03-06-08-02-01.service';
 import { Doc0306080301Module } from './routes/doc/03-fundamental/03-06-ngmodules/03-06-08-singleton-services/03-06-08-03-prevent-reimport-of-the-ngmodule/doc-03-06-08-03-01/doc-03-06-08-03-01.module';
 import { Doc03061201Service } from './routes/doc/03-fundamental/03-06-ngmodules/03-06-12-ngmodule-faq/03-06-12-01/service/doc-03-06-12-01.service';
+import { Doc030702010201Service } from './routes/doc/03-fundamental/03-07-dependency-injection/03-07-02-hierarchical-dependency-injection/03-07-02-01-where-to-configure-providers/03-07-02-01-02/service/doc-03-07-02-01-02-01.service';
 
 const LANG = {
   abbr: 'en',
@@ -150,7 +151,7 @@ const APPINIT_PROVIDES = [
     /*
      * NgModule A 在引入（import） NgModule B 的时候，
      * 会自动将 NgModule B 的 providers 中的数据添加到 NgModule A 的 providers 中去，
-     * 并且是添加到 NgModule A 自己本来的 providers 数据的前面，
+     * 并且是添加到 NgModule A 自己的 providers 的前面，
      * 也就是说，如果 NgModule A 和 NgModule B 同时定义了同一个 provider，
      * 则 NgModule A 中的 provider 会覆盖 NgModule B 中的 provider
      */
@@ -167,6 +168,14 @@ const APPINIT_PROVIDES = [
       useValue: {
         doSomething(): string {
           return 'ROOT';
+        },
+      },
+    },
+    {
+      provide: Doc030702010201Service,
+      useValue: {
+        doSomething(): void {
+          console.log(`%c[${Doc030702010201Service.name}]`, 'color:red');
         },
       },
     },
