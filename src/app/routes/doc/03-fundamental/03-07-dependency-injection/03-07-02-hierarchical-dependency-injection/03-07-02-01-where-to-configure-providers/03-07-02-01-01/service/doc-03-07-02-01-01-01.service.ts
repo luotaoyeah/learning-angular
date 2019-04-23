@@ -8,8 +8,8 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root',
 })
-export class Doc03070201Service {
+export class Doc030702010101Service {
   doSomething(): void {
-    console.log(`[${Doc03070201Service.name}]`);
+    console.log(`[${Doc030702010101Service.name}]`);
   }
 }

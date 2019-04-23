@@ -10,6 +10,7 @@ import { Doc030704Component } from './03-07-04-di-providers/doc-03-07-04.compone
 import { Doc030705Component } from './03-07-05-navigate-the-component-tree/doc-03-07-05.component';
 import { Doc03070201Component } from './03-07-02-hierarchical-dependency-injection/03-07-02-01-where-to-configure-providers/doc-03-07-02-01.component';
 import { Doc0307020101Component } from './03-07-02-hierarchical-dependency-injection/03-07-02-01-where-to-configure-providers/03-07-02-01-01/doc-03-07-02-01-01.component';
+import { Doc0307020101Module } from './03-07-02-hierarchical-dependency-injection/03-07-02-01-where-to-configure-providers/03-07-02-01-01/doc-03-07-02-01-01.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,13 @@ import { Doc0307020101Component } from './03-07-02-hierarchical-dependency-injec
     Doc030704Component,
     Doc030705Component,
   ],
-  imports: [Doc0307RoutingModule, CommonModule, FormsModule, SharedModule],
+  imports: [
+    Doc0307RoutingModule,
+    CommonModule,
+    FormsModule,
+    SharedModule,
+    Doc0307020101Module,
+  ],
   entryComponents: [],
 })
 export class Doc0307Module {}
