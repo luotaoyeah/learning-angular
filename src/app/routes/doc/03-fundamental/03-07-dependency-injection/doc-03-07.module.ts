@@ -15,6 +15,7 @@ import { Doc0307020102Component } from './03-07-02-hierarchical-dependency-injec
 import { Doc0307020103Component } from './03-07-02-hierarchical-dependency-injection/03-07-02-01-where-to-configure-providers/03-07-02-01-03/doc-03-07-02-01-03.component';
 import { Doc03070202Component } from './03-07-02-hierarchical-dependency-injection/03-07-02-02-component-injectors/doc-03-07-02-02.component';
 import { Doc0307020201Component } from './03-07-02-hierarchical-dependency-injection/03-07-02-02-component-injectors/03-07-02-02-01/doc-03-07-02-02-01.component';
+import { Doc0307020202Component } from './03-07-02-hierarchical-dependency-injection/03-07-02-02-component-injectors/03-07-02-02-02/doc-03-07-02-02-02.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { Doc0307020201Component } from './03-07-02-hierarchical-dependency-injec
     Doc0307020103Component,
     Doc03070202Component,
     Doc0307020201Component,
+    Doc0307020202Component,
     Doc030703Component,
     Doc030704Component,
     Doc030705Component,
