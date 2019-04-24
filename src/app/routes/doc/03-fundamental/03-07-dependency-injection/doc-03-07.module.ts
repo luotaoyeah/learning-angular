@@ -28,6 +28,8 @@ import { Doc03070305Component } from './03-07-03-di-providers/03-07-03-05-predef
 import { Doc03070306Component } from './03-07-03-di-providers/03-07-03-06-tree-shakable-providers/doc-03-07-03-06.component';
 import { Doc03070306Module } from './03-07-03-di-providers/03-07-03-06-tree-shakable-providers/doc-03-07-03-06.module';
 import { Doc03070401Component } from './03-07-04-di-in-action/03-07-04-01-nested-service-dependencies/doc-03-07-04-01.component';
+import { Doc03070402Component } from './03-07-04-di-in-action/03-07-04-02-limit-service-scope-to-a-component-subtree/doc-03-07-04-02.component';
+import { Doc0307040201Component } from './03-07-04-di-in-action/03-07-04-02-limit-service-scope-to-a-component-subtree/03-07-04-02-01/doc-03-07-04-02-01.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +55,8 @@ import { Doc03070401Component } from './03-07-04-di-in-action/03-07-04-01-nested
     Doc03070306Component,
     Doc030704Component,
     Doc03070401Component,
+    Doc03070402Component,
+    Doc0307040201Component,
     Doc030705Component,
   ],
   imports: [

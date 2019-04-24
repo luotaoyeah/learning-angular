@@ -198,18 +198,23 @@
   <nz-collapse-panel nzHeader="What If Two Modules Provide The Same Service?">
     <app-doc-03-06-12-01-01></app-doc-03-06-12-01-01>
     <p>
-      当不同的 NgModule 同时声明了同一个 provider 时，有三种可能性：
+      当涉及到 NgModule 的相互引入时，如果相关的 NgModule 同时注册了同一个
+      provider 时，有三种可能性：
     </p>
     <ul>
       <li>
         <b>后者胜出：</b>
-        如果 A 引入了 [B, C]，且 B 和 C 同时声明了 S，则 C 中的 S 胜出，即
-        A，B，C 中注入的 S 都是 C 中提供的 S
+        如果 A 引入了 [ B, C ]，且 B 和 C 都注册了 S，则 C 中的 S 胜出，即
+        A，B，C 中注入的 S 都是 C 中提供的 S；因为这时候只有一个
+        injector，那就是 A 中的 injector，这个 injector 中只会存在一个 S
+        的实例，就是后引入的 C 中的 S
       </li>
       <li>
         <b>父亲胜出：</b>
-        如果 A 引入了 B，且 A 和 B 同时声明了 S，则 A 中的 S 胜出，即 A 和 B
-        中注入的 S 都是 A 中提供的 S
+        如果 A 引入了 B，且 A 和 B 都注册了 S，则 A 中的 S 胜出，即 A 和 B
+        中注入的 S 都是 A 中提供的 S；因为 A 在引入 B 时，会先把　B　中的 S
+        添加到 providers 中，再把 A 自己的 S 添加到 providers 中，因此会覆盖掉 B
+        中的 S
       </li>
       <li>
         <b>顶级胜出：</b>
