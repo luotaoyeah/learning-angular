@@ -1,4 +1,5 @@
 import {
+  APP_BOOTSTRAP_LISTENER,
   APP_INITIALIZER,
   LOCALE_ID,
   ModuleWithProviders,
@@ -178,6 +179,15 @@ const APPINIT_PROVIDES = [
           console.log(`%c[${Doc030702010201Service.name}]`, 'color:red');
         },
       },
+    },
+    {
+      provide: APP_BOOTSTRAP_LISTENER,
+      useFactory: () => {
+        return () => {
+          console.log('APP_BOOTSTRAP_LISTENER');
+        };
+      },
+      multi: true,
     },
   ],
   bootstrap: [AppComponent],
