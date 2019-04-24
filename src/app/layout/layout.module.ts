@@ -10,9 +10,9 @@ import { HeaderTaskComponent } from './default/header/components/task.component'
 import { HeaderIconComponent } from './default/header/components/icon.component';
 import { HeaderFullScreenComponent } from './default/header/components/fullscreen.component';
 import { HeaderStorageComponent } from './default/header/components/storage.component';
-import { HeaderUserComponent } from './default/header/components/user.component';
 import { LayoutPassportComponent } from './passport/passport.component';
 import { HeaderI18nComponent } from './default/header/components/header-i18n/header-i18n.component';
+import { HeaderUserComponent } from './default/header/components/header-user/header-user.component';
 
 const COMPONENTS = [
   LayoutDefaultComponent,

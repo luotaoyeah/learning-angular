@@ -1,0 +1,13 @@
+<p>
+  所谓 tree-shaking
+  指的是，在打包的时候，没有被用到的代码会被排除，不会包含在最终的打包里面；这个过程是在编译时进行的
+</p>
+
+<p>
+  通过 @NgModule.providers 和 @Component.providers 注册的 providers 无法实现
+  tree-shaking，因为 angular 只有在 runtime 才能知道某个 service 是否有被注入
+</p>
+
+<p>
+  要实现 provider 的 tree-shaking，需要通过 @Injectable.providedIn 来注册
+</p>

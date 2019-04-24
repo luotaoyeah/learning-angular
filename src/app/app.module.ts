@@ -49,6 +49,7 @@ import { Doc0306080201Service } from './routes/doc/03-fundamental/03-06-ngmodule
 import { Doc0306080301Module } from './routes/doc/03-fundamental/03-06-ngmodules/03-06-08-singleton-services/03-06-08-03-prevent-reimport-of-the-ngmodule/doc-03-06-08-03-01/doc-03-06-08-03-01.module';
 import { Doc03061201Service } from './routes/doc/03-fundamental/03-06-ngmodules/03-06-12-ngmodule-faq/03-06-12-01/service/doc-03-06-12-01.service';
 import { Doc030702010201Service } from './routes/doc/03-fundamental/03-07-dependency-injection/03-07-02-hierarchical-dependency-injection/03-07-02-01-where-to-configure-providers/03-07-02-01-02/service/doc-03-07-02-01-02-01.service';
+import { PageNotFoundComponent } from './comn/page-not-found/page-not-found.component';
 
 const LANG = {
   abbr: 'en',
@@ -121,7 +122,7 @@ const APPINIT_PROVIDES = [
 // #endregion
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, PageNotFoundComponent],
   imports: [
     BrowserModule,
     NoopAnimationsModule,

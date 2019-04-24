@@ -9,14 +9,14 @@ import { MessageService } from 'primeng/api';
 export class Doc0302021201Component implements OnInit {
   public foo = 'FOO';
   /*
-   * private property 也可以在 template 中使用
+   * private property 不能够在 template 中使用
    */
-  private bar = 'BAR';
+  public bar = 'BAR';
 
   /*
-   * private parameter property 也可以在 template 中使用
+   * private parameter property 不能够在 template 中使用
    */
-  constructor(private messageService: MessageService) {}
+  constructor(public messageService: MessageService) {}
 
   ngOnInit() {
     console.assert(this.bar === 'BAR');

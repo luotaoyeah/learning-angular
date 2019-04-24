@@ -8,7 +8,7 @@ import { MessageService } from 'primeng/api';
 })
 export class Doc0302021203Component implements OnInit {
   // @ts-ignore: TS6138
-  constructor(private messageService: MessageService) {}
+  constructor(public messageService: MessageService) {}
 
   ngOnInit() {}
 }

@@ -25,6 +25,8 @@ import { Doc03070303Component } from './03-07-03-di-providers/03-07-03-03-value-
 import { Doc0307030301Component } from './03-07-03-di-providers/03-07-03-03-value-providers/03-07-03-03-01-non-class-dependencies/doc-03-07-03-03-01.component';
 import { Doc03070304Component } from './03-07-03-di-providers/03-07-03-04-factory-providers/doc-03-07-03-04.component';
 import { Doc03070305Component } from './03-07-03-di-providers/03-07-03-05-predefined-tokens-and-multiple-providers/doc-03-07-03-05.component';
+import { Doc03070306Component } from './03-07-03-di-providers/03-07-03-06-tree-shakable-providers/doc-03-07-03-06.component';
+import { Doc03070306Module } from './03-07-03-di-providers/03-07-03-06-tree-shakable-providers/doc-03-07-03-06.module';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,7 @@ import { Doc03070305Component } from './03-07-03-di-providers/03-07-03-05-predef
     Doc0307030301Component,
     Doc03070304Component,
     Doc03070305Component,
+    Doc03070306Component,
     Doc030703Component,
     Doc030704Component,
     Doc030705Component,
@@ -57,6 +60,7 @@ import { Doc03070305Component } from './03-07-03-di-providers/03-07-03-05-predef
     FormsModule,
     SharedModule,
     Doc0307020101Module,
+    Doc03070306Module,
   ],
   entryComponents: [],
 })
