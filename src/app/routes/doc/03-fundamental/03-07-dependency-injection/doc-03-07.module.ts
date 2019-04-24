@@ -30,6 +30,8 @@ import { Doc03070306Module } from './03-07-03-di-providers/03-07-03-06-tree-shak
 import { Doc03070401Component } from './03-07-04-di-in-action/03-07-04-01-nested-service-dependencies/doc-03-07-04-01.component';
 import { Doc03070402Component } from './03-07-04-di-in-action/03-07-04-02-limit-service-scope-to-a-component-subtree/doc-03-07-04-02.component';
 import { Doc0307040201Component } from './03-07-04-di-in-action/03-07-04-02-limit-service-scope-to-a-component-subtree/03-07-04-02-01/doc-03-07-04-02-01.component';
+import { Doc03070403Component } from './03-07-04-di-in-action/03-07-04-03-qualify-dependency-lookup-with-parameter-decorators/doc-03-07-04-03.component';
+import { Doc0307040301Component } from './03-07-04-di-in-action/03-07-04-03-qualify-dependency-lookup-with-parameter-decorators/03-07-04-03-01-optional/doc-03-07-04-03-01.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +58,8 @@ import { Doc0307040201Component } from './03-07-04-di-in-action/03-07-04-02-limi
     Doc030704Component,
     Doc03070401Component,
     Doc03070402Component,
+    Doc03070403Component,
+    Doc0307040301Component,
     Doc0307040201Component,
     Doc030705Component,
   ],
