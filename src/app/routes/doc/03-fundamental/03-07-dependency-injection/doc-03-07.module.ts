@@ -32,6 +32,7 @@ import { Doc03070402Component } from './03-07-04-di-in-action/03-07-04-02-limit-
 import { Doc0307040201Component } from './03-07-04-di-in-action/03-07-04-02-limit-service-scope-to-a-component-subtree/03-07-04-02-01/doc-03-07-04-02-01.component';
 import { Doc03070403Component } from './03-07-04-di-in-action/03-07-04-03-qualify-dependency-lookup-with-parameter-decorators/doc-03-07-04-03.component';
 import { Doc0307040301Component } from './03-07-04-di-in-action/03-07-04-03-qualify-dependency-lookup-with-parameter-decorators/03-07-04-03-01-optional/doc-03-07-04-03-01.component';
+import { Doc0307040302Component } from './03-07-04-di-in-action/03-07-04-03-qualify-dependency-lookup-with-parameter-decorators/03-07-04-03-02-host/doc-03-07-04-03-02.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { Doc0307040301Component } from './03-07-04-di-in-action/03-07-04-03-qual
     Doc03070402Component,
     Doc03070403Component,
     Doc0307040301Component,
+    Doc0307040302Component,
     Doc0307040201Component,
     Doc030705Component,
   ],
