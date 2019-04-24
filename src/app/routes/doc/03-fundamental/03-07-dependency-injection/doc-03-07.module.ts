@@ -27,6 +27,7 @@ import { Doc03070304Component } from './03-07-03-di-providers/03-07-03-04-factor
 import { Doc03070305Component } from './03-07-03-di-providers/03-07-03-05-predefined-tokens-and-multiple-providers/doc-03-07-03-05.component';
 import { Doc03070306Component } from './03-07-03-di-providers/03-07-03-06-tree-shakable-providers/doc-03-07-03-06.component';
 import { Doc03070306Module } from './03-07-03-di-providers/03-07-03-06-tree-shakable-providers/doc-03-07-03-06.module';
+import { Doc03070401Component } from './03-07-04-di-in-action/03-07-04-01-nested-service-dependencies/doc-03-07-04-01.component';
 
 @NgModule({
   declarations: [
@@ -50,8 +51,8 @@ import { Doc03070306Module } from './03-07-03-di-providers/03-07-03-06-tree-shak
     Doc03070304Component,
     Doc03070305Component,
     Doc03070306Component,
-    Doc030703Component,
     Doc030704Component,
+    Doc03070401Component,
     Doc030705Component,
   ],
   imports: [
