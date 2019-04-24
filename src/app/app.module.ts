@@ -50,6 +50,7 @@ import { Doc0306080301Module } from './routes/doc/03-fundamental/03-06-ngmodules
 import { Doc03061201Service } from './routes/doc/03-fundamental/03-06-ngmodules/03-06-12-ngmodule-faq/03-06-12-01/service/doc-03-06-12-01.service';
 import { Doc030702010201Service } from './routes/doc/03-fundamental/03-07-dependency-injection/03-07-02-hierarchical-dependency-injection/03-07-02-01-where-to-configure-providers/03-07-02-01-02/service/doc-03-07-02-01-02-01.service';
 import { PageNotFoundComponent } from './comn/page-not-found/page-not-found.component';
+import { Doc0307030603Service } from './routes/doc/03-fundamental/03-07-dependency-injection/03-07-03-di-providers/03-07-03-06-tree-shakable-providers/service/doc-03-07-03-06-03.service';
 
 const LANG = {
   abbr: 'en',
@@ -189,6 +190,12 @@ const APPINIT_PROVIDES = [
         };
       },
       multi: true,
+    },
+    {
+      provide: Doc0307030603Service,
+      useValue: {
+        K: 'BAR',
+      },
     },
   ],
   bootstrap: [AppComponent],
