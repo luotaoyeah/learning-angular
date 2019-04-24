@@ -14,7 +14,7 @@ import { forbiddenNameValidator } from './forbidden-name-validator';
  * 返回一个 ValidationErrors 对象或者 null（表示验证通过）
  *
  * angular 如何知道这个 directive 是用来验证表单的呢 ？
- * 我们通过 provideres 选项的 provide 设置这个 directive 是给 NG_VALIDATORS 使用的
+ * 我们通过 providers 选项的 provide 设置这个 directive 是给 NG_VALIDATORS 使用的
  */
 @Directive({
   selector: '[appForbiddenName]',
