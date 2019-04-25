@@ -29,7 +29,7 @@ import {
 export class HeaderSearchComponent implements AfterViewInit {
   q = '';
 
-  qIpt: HTMLInputElement | null = null;
+  quereyInputEl: HTMLInputElement | null = null;
 
   @HostBinding('class.alain-default__search-focus')
   focus = false;
@@ -43,18 +43,17 @@ export class HeaderSearchComponent implements AfterViewInit {
     this.searchToggled = true;
     this.focus = true;
     setTimeout(() => {
-      if (this.qIpt) {
-        this.qIpt.focus();
+      if (this.quereyInputEl) {
+        this.quereyInputEl.focus();
       }
     }, 300);
   }
 
-  constructor(private el: ElementRef) {}
+  constructor(private elementRef: ElementRef) {}
 
   ngAfterViewInit() {
-    this.qIpt = (this.el.nativeElement as HTMLElement).querySelector(
-      '.ant-input',
-    );
+    this.quereyInputEl = (this.elementRef
+      .nativeElement as HTMLElement).querySelector('.ant-input');
   }
 
   qFocus() {

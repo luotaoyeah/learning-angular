@@ -19,9 +19,9 @@ import { Directive, ElementRef, OnInit } from '@angular/core';
   selector: '[tRadius]',
 })
 export class RadiusDirective implements OnInit {
-  constructor(private el: ElementRef) {}
+  constructor(private elementRef: ElementRef) {}
 
   ngOnInit(): void {
-    this.el.nativeElement.style.color = 'red';
+    this.elementRef.nativeElement.style.color = 'red';
   }
 }

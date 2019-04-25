@@ -28,14 +28,13 @@ import { SettingsService } from '@delon/theme';
 export class LayoutDefaultComponent
   implements OnInit, AfterViewInit, OnDestroy {
   private unsubscribe$ = new Subject<void>();
-  isFetching = false;
+  isFetching: boolean = false;
 
   constructor(
     router: Router,
-    // tslint:disable-next-line:variable-name
-    _message: NzMessageService,
-    private settings: SettingsService,
-    private el: ElementRef,
+    messageService: NzMessageService,
+    private settingsService: SettingsService,
+    private elementRef: ElementRef,
     private renderer: Renderer2,
     // tslint:disable-next-line:no-any
     @Inject(DOCUMENT) private doc: any,
@@ -48,7 +47,9 @@ export class LayoutDefaultComponent
       if (evt instanceof NavigationError || evt instanceof NavigationCancel) {
         this.isFetching = false;
         if (evt instanceof NavigationError) {
-          _message.error(`无法加载${evt.url}路由`, { nzDuration: 1000 * 3 });
+          messageService.error(`无法加载${evt.url}路由`, {
+            nzDuration: 1000 * 3,
+          });
         }
         return;
       }
@@ -62,9 +63,9 @@ export class LayoutDefaultComponent
   }
 
   private setClass() {
-    const { el, doc, renderer, settings } = this;
-    const layout = settings.layout;
-    updateHostClass(el.nativeElement, renderer, {
+    const { elementRef, doc, renderer, settingsService } = this;
+    const layout = settingsService.layout;
+    updateHostClass(elementRef.nativeElement, renderer, {
       ['alain-default']: true,
       [`alain-default__fixed`]: layout.fixed,
       [`alain-default__collapsed`]: layout.collapsed,
@@ -76,8 +77,8 @@ export class LayoutDefaultComponent
   ngAfterViewInit(): void {}
 
   ngOnInit() {
-    const { settings, unsubscribe$ } = this;
-    settings.notify
+    const { settingsService, unsubscribe$ } = this;
+    settingsService.notify
       .pipe(takeUntil(unsubscribe$))
       .subscribe(() => this.setClass());
     this.setClass();

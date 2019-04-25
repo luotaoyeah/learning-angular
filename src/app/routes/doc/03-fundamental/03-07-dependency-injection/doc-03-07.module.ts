@@ -38,6 +38,7 @@ import { Doc0307040304Component } from './03-07-04-di-in-action/03-07-04-03-qual
 import { Doc030704030401Component } from './03-07-04-di-in-action/03-07-04-03-qualify-dependency-lookup-with-parameter-decorators/03-07-04-03-04-self/doc-03-07-04-03-04-01.component';
 import { Doc03070404Component } from './03-07-04-di-in-action/03-07-04-04-inject-the-components-dom-element/doc-03-07-04-04.component';
 import { Doc03070404Directive } from './03-07-04-di-in-action/03-07-04-04-inject-the-components-dom-element/directive/doc-03-07-04-04.directive';
+import { Doc03070405Component } from './03-07-04-di-in-action/03-07-04-05-define-dependencies-with-providers/doc-03-07-04-05.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { Doc03070404Directive } from './03-07-04-di-in-action/03-07-04-04-inject
     Doc030704Component,
     Doc03070401Component,
     Doc03070402Component,
+    Doc0307040201Component,
     Doc03070403Component,
     Doc0307040301Component,
     Doc0307040302Component,
@@ -71,7 +73,7 @@ import { Doc03070404Directive } from './03-07-04-di-in-action/03-07-04-04-inject
     Doc0307040304Component,
     Doc030704030401Component,
     Doc03070404Component,
-    Doc0307040201Component,
+    Doc03070405Component,
     Doc030705Component,
     Doc03070404Directive,
   ],
