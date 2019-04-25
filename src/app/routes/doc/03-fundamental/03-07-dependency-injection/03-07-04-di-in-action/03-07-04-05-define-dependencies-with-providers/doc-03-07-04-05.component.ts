@@ -1,9 +1,11 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import {
+  Bar,
   Foo,
   SOME_TOKEN_01,
   SOME_TOKEN_02,
   SOME_TOKEN_03,
+  SOME_TOKEN_04,
 } from './service/doc-03-07-04-05.service';
 
 @Component({
@@ -27,6 +29,23 @@ import {
       provide: SOME_TOKEN_03,
       useExisting: SOME_TOKEN_02,
     },
+    /*
+     * 在什么场景下可以使用 useFactory 呢？
+     * 通常，当某个 service 的 constructor 的参数中，既包含注入的依赖，也包含普通的参数时，
+     * 因为普通的参数无法通过 DI 注入，此时就可以使用 useFactory 方式，
+     * useFactory 的参数同样可以注入，此时需要通过 deps 给这些需要注入的参数，声明他们对应的 token
+     */
+    {
+      provide: SOME_TOKEN_04,
+      useFactory: (foo: Foo) => {
+        return new Bar('BAR', foo);
+      },
+      /*
+       * deps 表示的是 token 列表，
+       * 这些 token 对应的 provider 返回的值会作为参数传给 useFactory() 方法
+       */
+      deps: [SOME_TOKEN_03],
+    },
   ],
 })
 export class Doc03070405Component implements OnInit {
@@ -37,11 +56,14 @@ export class Doc03070405Component implements OnInit {
     private token02: Foo,
     @Inject(SOME_TOKEN_03)
     private token03: Foo,
+    @Inject(SOME_TOKEN_04)
+    private token04: Bar,
   ) {}
 
   ngOnInit() {
     console.assert(this.token01 === 'FOO');
     console.assert(this.token02.foo === 'FOO');
-    console.assert(this.token02 === this.token03);
+    console.assert(this.token03 === this.token02);
+    console.assert(this.token04.bar === 'FOOBAR');
   }
 }
