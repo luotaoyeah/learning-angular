@@ -11,7 +11,7 @@ import { ParentComponent } from './doc-03-07-05-02.service';
     },
   ],
 })
-export class Doc03070503Component implements OnInit {
+export class Doc03070503Component implements OnInit, ParentComponent {
   foo: string = 'FOO';
 
   constructor() {}
