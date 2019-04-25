@@ -44,6 +44,7 @@ import { Doc0307040601Component } from './03-07-04-di-in-action/03-07-04-06-prov
 import { Doc0307040602Component } from './03-07-04-di-in-action/03-07-04-06-provider-token-alternatives/03-07-04-06-02/doc-03-07-04-06-02.component';
 import { Doc03070407Component } from './03-07-04-di-in-action/03-07-04-07-inject-into-a-derived-class/doc-03-07-04-07.component';
 import { Doc0307040701Component } from './03-07-04-di-in-action/03-07-04-07-inject-into-a-derived-class/doc-03-07-04-07-01.component';
+import { Doc03070408Component } from './03-07-04-di-in-action/03-07-04-08-forwardref/doc-03-07-04-08.component';
 
 @NgModule({
   declarations: [
@@ -78,14 +79,15 @@ import { Doc0307040701Component } from './03-07-04-di-in-action/03-07-04-07-inje
     Doc0307040304Component,
     Doc030704030401Component,
     Doc03070404Component,
+    Doc03070404Directive,
     Doc03070405Component,
     Doc03070406Component,
     Doc0307040601Component,
     Doc0307040602Component,
     Doc03070407Component,
     Doc0307040701Component,
+    Doc03070408Component,
     Doc030705Component,
-    Doc03070404Directive,
   ],
   imports: [
     Doc0307RoutingModule,
