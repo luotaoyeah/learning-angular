@@ -41,6 +41,7 @@ import { Doc03070404Directive } from './03-07-04-di-in-action/03-07-04-04-inject
 import { Doc03070405Component } from './03-07-04-di-in-action/03-07-04-05-define-dependencies-with-providers/doc-03-07-04-05.component';
 import { Doc03070406Component } from './03-07-04-di-in-action/03-07-04-06-provider-token-alternatives/doc-03-07-04-06.component';
 import { Doc0307040601Component } from './03-07-04-di-in-action/03-07-04-06-provider-token-alternatives/03-07-04-06-01/doc-03-07-04-06-01.component';
+import { Doc0307040602Component } from './03-07-04-di-in-action/03-07-04-06-provider-token-alternatives/03-07-04-06-02/doc-03-07-04-06-02.component';
 
 @NgModule({
   declarations: [
@@ -78,6 +79,7 @@ import { Doc0307040601Component } from './03-07-04-di-in-action/03-07-04-06-prov
     Doc03070405Component,
     Doc03070406Component,
     Doc0307040601Component,
+    Doc0307040602Component,
     Doc030705Component,
     Doc03070404Directive,
   ],
