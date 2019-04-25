@@ -45,6 +45,8 @@ import { Doc0307040602Component } from './03-07-04-di-in-action/03-07-04-06-prov
 import { Doc03070407Component } from './03-07-04-di-in-action/03-07-04-07-inject-into-a-derived-class/doc-03-07-04-07.component';
 import { Doc0307040701Component } from './03-07-04-di-in-action/03-07-04-07-inject-into-a-derived-class/doc-03-07-04-07-01.component';
 import { Doc03070408Component } from './03-07-04-di-in-action/03-07-04-08-forwardref/doc-03-07-04-08.component';
+import { Doc03070501Component } from './03-07-05-navigate-the-component-tree/03-07-05-01-find-a-parent-component-of-known-type/doc-03-07-05-01.component';
+import { Doc0307050101Component } from './03-07-05-navigate-the-component-tree/03-07-05-01-find-a-parent-component-of-known-type/doc-03-07-05-01-01.component';
 
 @NgModule({
   declarations: [
@@ -88,6 +90,8 @@ import { Doc03070408Component } from './03-07-04-di-in-action/03-07-04-08-forwar
     Doc0307040701Component,
     Doc03070408Component,
     Doc030705Component,
+    Doc03070501Component,
+    Doc0307050101Component,
   ],
   imports: [
     Doc0307RoutingModule,
