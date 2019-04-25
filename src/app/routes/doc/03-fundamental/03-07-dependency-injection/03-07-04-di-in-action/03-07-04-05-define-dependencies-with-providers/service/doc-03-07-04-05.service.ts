@@ -1,5 +1,10 @@
 import { InjectionToken } from '@angular/core';
 
-const SOME_TOKEN_01 = new InjectionToken<string>('some.token.01');
+class Foo {
+  public foo: string = 'FOO';
+}
 
-export { SOME_TOKEN_01 };
+const SOME_TOKEN_01 = new InjectionToken<string>('some.token.01');
+const SOME_TOKEN_02 = new InjectionToken<Foo>('some.token.02');
+
+export { SOME_TOKEN_01, SOME_TOKEN_02, Foo };
