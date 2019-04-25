@@ -34,6 +34,8 @@ import { Doc03070403Component } from './03-07-04-di-in-action/03-07-04-03-qualif
 import { Doc0307040301Component } from './03-07-04-di-in-action/03-07-04-03-qualify-dependency-lookup-with-parameter-decorators/03-07-04-03-01-optional/doc-03-07-04-03-01.component';
 import { Doc0307040302Component } from './03-07-04-di-in-action/03-07-04-03-qualify-dependency-lookup-with-parameter-decorators/03-07-04-03-02-host/doc-03-07-04-03-02.component';
 import { Doc0307040303Component } from './03-07-04-di-in-action/03-07-04-03-qualify-dependency-lookup-with-parameter-decorators/03-07-04-03-03-inject/doc-03-07-04-03-03.component';
+import { Doc0307040304Component } from './03-07-04-di-in-action/03-07-04-03-qualify-dependency-lookup-with-parameter-decorators/03-07-04-03-04-self/doc-03-07-04-03-04.component';
+import { Doc030704030401Component } from './03-07-04-di-in-action/03-07-04-03-qualify-dependency-lookup-with-parameter-decorators/03-07-04-03-04-self/doc-03-07-04-03-04-01.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +66,8 @@ import { Doc0307040303Component } from './03-07-04-di-in-action/03-07-04-03-qual
     Doc0307040301Component,
     Doc0307040302Component,
     Doc0307040303Component,
+    Doc0307040304Component,
+    Doc030704030401Component,
     Doc0307040201Component,
     Doc030705Component,
   ],
