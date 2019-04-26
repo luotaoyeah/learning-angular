@@ -4,6 +4,7 @@ import {
   LOCALE_ID,
   ModuleWithProviders,
   NgModule,
+  Provider,
   Type,
 } from '@angular/core';
 // #region Http Interceptors
@@ -51,6 +52,7 @@ import { Doc03061201Service } from './routes/doc/03-fundamental/03-06-ngmodules/
 import { Doc030702010201Service } from './routes/doc/03-fundamental/03-07-dependency-injection/03-07-02-hierarchical-dependency-injection/03-07-02-01-where-to-configure-providers/03-07-02-01-02/service/doc-03-07-02-01-02-01.service';
 import { PageNotFoundComponent } from './comn/page-not-found/page-not-found.component';
 import { Doc0307030603Service } from './routes/doc/03-fundamental/03-07-dependency-injection/03-07-03-di-providers/03-07-03-06-tree-shakable-providers/service/doc-03-07-03-06-03.service';
+import { Doc03080503Interceptor } from './routes/doc/03-fundamental/03-08-httpclient/03-08-05-advanced-usage/03-08-05-03-intercepting-requests-and-responses/interceptor/doc-03-08-05-03.interceptor';
 
 const LANG = {
   abbr: 'en',
@@ -89,9 +91,14 @@ const I18NSERVICE_PROVIDES = [
 const FORM_MODULES = [JsonSchemaModule];
 // #endregion
 
-const INTERCEPTOR_PROVIDES = [
+const INTERCEPTOR_PROVIDES: Array<Provider> = [
   { provide: HTTP_INTERCEPTORS, useClass: SimpleInterceptor, multi: true },
   { provide: HTTP_INTERCEPTORS, useClass: DefaultInterceptor, multi: true },
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: Doc03080503Interceptor,
+    multi: true,
+  },
 ];
 // #endregion
 
