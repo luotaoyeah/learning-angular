@@ -6,9 +6,15 @@ import { SharedModule } from '@shared';
 import { Doc0308Component } from './doc-03-08.component';
 import { Doc030801Component } from './03-08-01-getting-json-data/doc-03-08-01.component';
 import { Doc030802Component } from './03-08-02-error-handling/doc-03-08-02.component';
+import { Doc030803Component } from './03-08-03-requesting-non-json-data/doc-03-08-03.component';
 
 @NgModule({
-  declarations: [Doc0308Component, Doc030801Component, Doc030802Component],
+  declarations: [
+    Doc0308Component,
+    Doc030801Component,
+    Doc030802Component,
+    Doc030803Component,
+  ],
   imports: [Doc0308RoutingModule, CommonModule, FormsModule, SharedModule],
 })
 export class Doc0308Module {}
