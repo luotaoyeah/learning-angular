@@ -8,6 +8,8 @@ import { Doc030801Component } from './03-08-01-getting-json-data/doc-03-08-01.co
 import { Doc030802Component } from './03-08-02-error-handling/doc-03-08-02.component';
 import { Doc030803Component } from './03-08-03-requesting-non-json-data/doc-03-08-03.component';
 import { Doc030804Component } from './03-08-04-sending-data-to-the-server/doc-03-08-04.component';
+import { Doc030805Component } from './03-08-05-advanced-usage/doc-03-08-05.component';
+import { Doc03080501Component } from './03-08-05-advanced-usage/03-08-05-01-configure-request/doc-03-08-05-01.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { Doc030804Component } from './03-08-04-sending-data-to-the-server/doc-03
     Doc030802Component,
     Doc030803Component,
     Doc030804Component,
+    Doc030805Component,
+    Doc03080501Component,
   ],
   imports: [Doc0308RoutingModule, CommonModule, FormsModule, SharedModule],
 })

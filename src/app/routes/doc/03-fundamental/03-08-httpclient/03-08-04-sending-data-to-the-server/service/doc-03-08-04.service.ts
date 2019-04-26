@@ -13,7 +13,7 @@ export class Doc030804Service {
      * HttpClient 支持各种 HTTP METHOD 请求，GET/POST/PUT/DELETE/HEAD/OPTIONS/PATCH
      */
     return this.httpClient.post(
-      '/some-api',
+      '/foo',
       {
         foo: 'foo',
         bar: 'bar',

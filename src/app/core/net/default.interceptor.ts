@@ -13,9 +13,9 @@ import { catchError, mergeMap } from 'rxjs/operators';
 import { NzMessageService, NzNotificationService } from 'ng-zorro-antd';
 import { _HttpClient } from '@delon/theme';
 import { environment } from '@env/environment';
-import { DA_SERVICE_TOKEN, ITokenService } from '@delon/auth';
+import { DA_SERVICE_TOKEN } from '@delon/auth';
 
-const CODEMESSAGE = {
+const CODEMESSAGE: { [index: number]: string } = {
   200: '服务器成功返回请求的数据',
   201: '新建或修改数据成功',
   202: '一个请求已经进入后台排队（异步任务）',
@@ -40,22 +40,36 @@ const CODEMESSAGE = {
 export class DefaultInterceptor implements HttpInterceptor {
   constructor(private injector: Injector) {}
 
-  get msg(): NzMessageService {
+  get messageService(): NzMessageService {
     return this.injector.get(NzMessageService);
   }
 
+  /**
+   * 路由跳转
+   * @param url 跳转地址
+   */
   private goTo(url: string) {
     setTimeout(() => this.injector.get(Router).navigateByUrl(url));
   }
 
-  private checkStatus(ev: HttpResponseBase) {
-    if (ev.status >= 200 && ev.status < 300) return;
+  /**
+   * 检查返回的状态码
+   * @param httpResponseBase 返回数据
+   */
+  private checkStatus(httpResponseBase: HttpResponseBase) {
+    if (httpResponseBase.status >= 200 && httpResponseBase.status < 300) {
+      return;
+    }
 
-    // @ts-ignore: TS7017
-    const errorMessage = CODEMESSAGE[ev.status] || ev.statusText;
+    const errorMessage =
+      CODEMESSAGE[httpResponseBase.status] || httpResponseBase.statusText;
     this.injector
       .get(NzNotificationService)
-      .error(`请求错误 ${ev.status}`, `${ev.url}<br />${errorMessage}`, {});
+      .error(
+        `请求错误 ${httpResponseBase.status}`,
+        `${httpResponseBase.url}<br />${errorMessage}`,
+        {},
+      );
   }
 
   // tslint:disable-next-line:no-any
@@ -64,7 +78,9 @@ export class DefaultInterceptor implements HttpInterceptor {
     if (ev.status > 0) {
       this.injector.get(_HttpClient).end();
     }
+
     this.checkStatus(ev);
+
     // 业务处理：一些通用操作
     switch (ev.status) {
       case 200:
@@ -76,7 +92,7 @@ export class DefaultInterceptor implements HttpInterceptor {
         // if (event instanceof HttpResponse) {
         //     const body: any = event.body;
         //     if (body && body.status !== 0) {
-        //         this.msg.error(body.msg);
+        //         this.messageService.error(body.msg);
         //         // 继续抛出错误中断后续所有 Pipe、subscribe 操作，因此：
         //         // this.http.get('/').subscribe() 并不会触发
         //         return throwError({});
@@ -90,7 +106,7 @@ export class DefaultInterceptor implements HttpInterceptor {
         break;
       case 401: // 未登录状态码
         // 请求错误 401: https://preview.pro.ant.design/api/401 用户没有权限（令牌、用户名、密码错误）。
-        (this.injector.get(DA_SERVICE_TOKEN) as ITokenService).clear();
+        this.injector.get(DA_SERVICE_TOKEN).clear();
         this.goTo('/passport/login');
         break;
       case 403:
@@ -99,10 +115,7 @@ export class DefaultInterceptor implements HttpInterceptor {
         break;
       default:
         if (ev instanceof HttpErrorResponse) {
-          console.warn(
-            '未知错误，大部分是由于后端不支持CORS或无效配置引起',
-            ev,
-          );
+          console.warn('未知错误', ev);
           return throwError(ev);
         }
         break;
@@ -113,7 +126,7 @@ export class DefaultInterceptor implements HttpInterceptor {
   intercept(
     // tslint:disable-next-line:no-any
     request: HttpRequest<any>,
-    next: HttpHandler,
+    httpHandler: HttpHandler,
     // tslint:disable-next-line:no-any
   ): Observable<HttpEvent<any>> {
     // 统一加上服务端前缀
@@ -123,7 +136,7 @@ export class DefaultInterceptor implements HttpInterceptor {
     }
 
     const newRequest = request.clone({ url });
-    return next.handle(newRequest).pipe(
+    return httpHandler.handle(newRequest).pipe(
       // tslint:disable-next-line:no-any
       mergeMap((event: any) => {
         // 允许统一对请求错误处理
