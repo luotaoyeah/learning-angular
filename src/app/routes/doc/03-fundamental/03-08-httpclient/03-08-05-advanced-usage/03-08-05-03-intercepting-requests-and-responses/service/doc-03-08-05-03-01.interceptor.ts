@@ -12,7 +12,7 @@ import { Injectable } from '@angular/core';
  * 自定义的拦截器，需要实现 HttpInterceptor 接口，实现 intercept() 方法
  */
 @Injectable()
-export class Doc03080503Interceptor implements HttpInterceptor {
+export class Doc0308050301Interceptor implements HttpInterceptor {
   /*
    * intercept() 方法接收两个参数：
    *     HttpRequest 对象
@@ -61,7 +61,7 @@ export class Doc03080503Interceptor implements HttpInterceptor {
         },
       });
 
-      console.log(`[${Doc03080503Interceptor.name}]\n${newHttpRequest.url}`);
+      console.log(`[${Doc0308050301Interceptor.name}]\n${newHttpRequest.url}`);
       /*
        * 调用 HttpHandler.handle() 方法，表示将请求交给下一个拦截器进行处理
        */
