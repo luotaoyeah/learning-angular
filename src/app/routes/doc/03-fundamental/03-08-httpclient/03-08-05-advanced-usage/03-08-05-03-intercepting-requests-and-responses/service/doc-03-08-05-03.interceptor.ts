@@ -39,20 +39,35 @@ export class Doc03080503Interceptor implements HttpInterceptor {
     httpHandler: HttpHandler,
     // tslint:disable-next-line:no-any
   ): Observable<HttpEvent<any>> {
-    let url = httpRequest.url;
-    if (url.startsWith('./')) {
-      url = `${url}?_`;
+    if (httpRequest.url.includes('doc-03-08-05-03')) {
+      let url = httpRequest.url;
+      url = `${url}?_=${Date.now()}`;
+
+      /*
+       * HttpRequest 和 HttpResponse 对象的属性都是只读的，
+       * 如果需要修改，需要使用 HttpRequest.clone() 方法，克隆一个新的对象，然后修改这个新的请求对象，
+       * 之所以这样设计，是因为请求可以重试，为了保证请求对象在每次重试的过程中保持一致，
+       * 否则，如果某个 interceptor 修改了请求对象，则会导致每次重试请求都是不一样的
+       *
+       * 只有 HttpRequest 和 HttpResponse 对象的一级属性都是只读的，深层属性依然是可以被修改的，
+       * 比如 HttpRequest.body 的属性，就可以直接被修改，
+       * 但是，只要我们需要修改 HttpRequest 的属性，就应该使用 clone() 方法进行修改
+       */
+      const newHttpRequest = httpRequest.clone({
+        url,
+        body: {
+          ...httpRequest.body,
+          foo: 'bar',
+        },
+      });
+
+      console.log(`[${Doc03080503Interceptor.name}]\n${newHttpRequest.url}`);
+      /*
+       * 调用 HttpHandler.handle() 方法，表示将请求交给下一个拦截器进行处理
+       */
+      return httpHandler.handle(newHttpRequest);
     }
 
-    /*
-     * 使用 HttpRequest.clone() 方法，对请求对象进行修改
-     */
-    const newHttpRequest = httpRequest.clone({ url });
-
-    console.log(`[${Doc03080503Interceptor.name}]\n${newHttpRequest.url}`);
-    /*
-     * 调用 HttpHandler.handle() 方法，表示将请求交给下一个拦截器进行处理
-     */
-    return httpHandler.handle(newHttpRequest);
+    return httpHandler.handle(httpRequest);
   }
 }
