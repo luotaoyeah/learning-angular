@@ -30,7 +30,7 @@ export class Doc03080503Interceptor implements HttpInterceptor {
     // tslint:disable-next-line:no-any
   ): Observable<HttpEvent<any>> {
     let url = httpRequest.url;
-    if (url.includes('localhost')) {
+    if (url.startsWith('./')) {
       url = `${url}?_`;
     }
 

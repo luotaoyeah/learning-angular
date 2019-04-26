@@ -91,9 +91,22 @@ const I18NSERVICE_PROVIDES = [
 const FORM_MODULES = [JsonSchemaModule];
 // #endregion
 
+/*
+ * 因为 HttpClientModule 可能需要依赖 interceptors，因此 interceptors 需要和 HttpClientModule 注册到同一个 injector 中，
+ * 注册 interceptor 时使用的 injection-token 是 angular 内置的 HTTP_INTERCEPTORS，并且使用 multi: true，
+ * 多个 interceptors 的注册顺序，决定了它们的执行顺序
+ */
 const INTERCEPTOR_PROVIDES: Array<Provider> = [
-  { provide: HTTP_INTERCEPTORS, useClass: SimpleInterceptor, multi: true },
-  { provide: HTTP_INTERCEPTORS, useClass: DefaultInterceptor, multi: true },
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: SimpleInterceptor,
+    multi: true,
+  },
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: DefaultInterceptor,
+    multi: true,
+  },
   {
     provide: HTTP_INTERCEPTORS,
     useClass: Doc03080503Interceptor,
