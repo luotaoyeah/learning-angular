@@ -22,6 +22,16 @@ export class Doc03080503Interceptor implements HttpInterceptor {
    *     HttpHandler 对象
    *         通过 HttpHandler.handle() 方法，将一个 HttpRequest 对象转换为一个 Observable<HttpEvent> 数据流对象
    *         intercept() 方法中的这个 HttpHandler 参数，表示的是下一个拦截器
+   *
+   * HttpInterceptor.intercept() 方法和 HttpHandler.handle() 方法，
+   * 返回的都是一个 Observable<HttpEvent> 对象，
+   * HttpEvent 的类型有 6 中，通过 HttpEventType 枚举定义，包括：
+   *     HttpEventType.Sent：            请求发送出去
+   *     HttpEventType.UploadProgress：  上传进度
+   *     HttpEventType.ResponseHeader：  接收到响应头
+   *     HttpEventType.DownloadProgress：下载进度
+   *     HttpEventType.Response：        接收到响应体
+   *     HttpEventType.User：            用户自定义的事件
    */
   intercept(
     // tslint:disable-next-line:no-any
