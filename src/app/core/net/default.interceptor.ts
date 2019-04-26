@@ -23,7 +23,7 @@ const CODEMESSAGE = {
   400: '发出的请求有错误，服务器没有进行新建或修改数据的操作',
   401: '用户没有权限（令牌、用户名、密码错误）',
   403: '用户得到授权，但是访问是被禁止的',
-  404: '发出的请求针对的是不存在的记录，服务器没有进行操作',
+  404: '请求的地址不存在',
   406: '请求的格式不可得',
   410: '请求的资源被永久删除，且不会再得到的',
   422: '当创建一个对象时，发生一个验证错误',
@@ -52,10 +52,10 @@ export class DefaultInterceptor implements HttpInterceptor {
     if (ev.status >= 200 && ev.status < 300) return;
 
     // @ts-ignore: TS7017
-    const errortext = CODEMESSAGE[ev.status] || ev.statusText;
+    const errorMessage = CODEMESSAGE[ev.status] || ev.statusText;
     this.injector
       .get(NzNotificationService)
-      .error(`请求错误 ${ev.status}: ${ev.url}`, errortext);
+      .error(`请求错误 ${ev.status}`, `${ev.url}<br />${errorMessage}`, {});
   }
 
   // tslint:disable-next-line:no-any
@@ -96,7 +96,6 @@ export class DefaultInterceptor implements HttpInterceptor {
       case 403:
       case 404:
       case 500:
-        this.goTo(`/exception/${ev.status}`);
         break;
       default:
         if (ev instanceof HttpErrorResponse) {
@@ -113,18 +112,18 @@ export class DefaultInterceptor implements HttpInterceptor {
 
   intercept(
     // tslint:disable-next-line:no-any
-    req: HttpRequest<any>,
+    request: HttpRequest<any>,
     next: HttpHandler,
     // tslint:disable-next-line:no-any
   ): Observable<HttpEvent<any>> {
     // 统一加上服务端前缀
-    let url = req.url;
+    let url = request.url;
     if (!url.startsWith('https://') && !url.startsWith('http://')) {
       url = environment.SERVER_URL + url;
     }
 
-    const newReq = req.clone({ url });
-    return next.handle(newReq).pipe(
+    const newRequest = request.clone({ url });
+    return next.handle(newRequest).pipe(
       // tslint:disable-next-line:no-any
       mergeMap((event: any) => {
         // 允许统一对请求错误处理
