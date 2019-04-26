@@ -1,0 +1,23 @@
+<nz-select
+  style="width: 200px;"
+  nzShowSearch
+  nzAllowClear
+  [(ngModel)]="key"
+  (nzOnSearch)="handleSearch($event)"
+>
+  <nz-option
+    nzCustomContent
+    [nzLabel]="pkg.name"
+    [nzValue]="pkg.name"
+    *ngFor="let pkg of packages$ | async"
+  >
+    <span>{{ pkg.name }}@{{ pkg.version }}</span>
+    &nbsp;
+    <span
+      [ngStyle]="{
+        color: 'rgba(0, 0, 0, 0.5)'
+      }"
+      >{{ pkg.description }}</span
+    >
+  </nz-option>
+</nz-select>

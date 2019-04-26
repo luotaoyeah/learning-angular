@@ -14,7 +14,7 @@ export class Doc03080501Service {
      * HttpHeaders.set() 方法可以链式调用，添加或者修改一个 header，
      * 类似的，HttpParams.set() 方法可以链式调用，添加或者修改一个 param
      */
-    return this.httpClient.get('/foo', {
+    return this.httpClient.get('foo', {
       headers: new HttpHeaders({
         h00: 'h00',
       })

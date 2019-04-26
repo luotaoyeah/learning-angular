@@ -10,6 +10,7 @@ import { Doc030803Component } from './03-08-03-requesting-non-json-data/doc-03-0
 import { Doc030804Component } from './03-08-04-sending-data-to-the-server/doc-03-08-04.component';
 import { Doc030805Component } from './03-08-05-advanced-usage/doc-03-08-05.component';
 import { Doc03080501Component } from './03-08-05-advanced-usage/03-08-05-01-configure-request/doc-03-08-05-01.component';
+import { Doc03080502Component } from './03-08-05-advanced-usage/03-08-05-02-debouncing-requests/doc-03-08-05-02.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { Doc03080501Component } from './03-08-05-advanced-usage/03-08-05-01-conf
     Doc030804Component,
     Doc030805Component,
     Doc03080501Component,
+    Doc03080502Component,
   ],
   imports: [Doc0308RoutingModule, CommonModule, FormsModule, SharedModule],
 })
