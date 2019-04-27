@@ -2,7 +2,6 @@ import { Doc0507040101Component } from './doc-05-07-04-01-01.component';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 describe('Doc0507040101Component', () => {
-  // @ts-ignore
   let component: Doc0507040101Component;
   let fixture: ComponentFixture<Doc0507040101Component>;
   let h1El: HTMLHeadingElement | null;
