@@ -76,4 +76,28 @@ describe('Doc030806Component', () => {
 
     testRequest.flush(mockResult);
   });
+
+  it('can test multiple requests ', () => {
+    httpClient.get<string>('/foo').subscribe((result: string) => {
+      expect(result).toEqual('FOO');
+    });
+
+    httpClient.get<string>('/foo').subscribe((result: string) => {
+      expect(result).toEqual('BAR');
+    });
+
+    httpClient.get<string>('/foo').subscribe((result: string) => {
+      expect(result).toEqual('BAZ');
+    });
+
+    /*
+     * 使用 HttpTestingController.match() 方法，可以同时匹配多个请求
+     */
+    const testRequests = httpTestingController.match('/foo');
+    expect(testRequests.length).toBe(3);
+
+    testRequests[0].flush('FOO');
+    testRequests[1].flush('BAR');
+    testRequests[2].flush('BAZ');
+  });
 });
