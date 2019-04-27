@@ -55,6 +55,7 @@ import { Doc0307030603Service } from './routes/doc/03-fundamental/03-07-dependen
 import { Doc0308050301Interceptor } from './routes/doc/03-fundamental/03-08-httpclient/03-08-05-advanced-usage/03-08-05-03-intercepting-requests-and-responses/service/doc-03-08-05-03-01.interceptor';
 import { Doc0308050302Interceptor } from './routes/doc/03-fundamental/03-08-httpclient/03-08-05-advanced-usage/03-08-05-03-intercepting-requests-and-responses/service/doc-03-08-05-03-02.interceptor';
 import { Doc0308050303Interceptor } from './routes/doc/03-fundamental/03-08-httpclient/03-08-05-advanced-usage/03-08-05-03-intercepting-requests-and-responses/service/doc-03-08-05-03-03.interceptor';
+import { Doc03080502Interceptor } from './routes/doc/03-fundamental/03-08-httpclient/03-08-05-advanced-usage/03-08-05-02-debouncing-requests/service/doc-03-08-05-02.interceptor';
 
 const LANG = {
   abbr: 'en',
@@ -122,6 +123,11 @@ const INTERCEPTOR_PROVIDES: Array<Provider> = [
   {
     provide: HTTP_INTERCEPTORS,
     useClass: Doc0308050303Interceptor,
+    multi: true,
+  },
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: Doc03080502Interceptor,
     multi: true,
   },
 ];
