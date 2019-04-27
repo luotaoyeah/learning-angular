@@ -54,6 +54,7 @@ import { PageNotFoundComponent } from './comn/page-not-found/page-not-found.comp
 import { Doc0307030603Service } from './routes/doc/03-fundamental/03-07-dependency-injection/03-07-03-di-providers/03-07-03-06-tree-shakable-providers/service/doc-03-07-03-06-03.service';
 import { Doc0308050301Interceptor } from './routes/doc/03-fundamental/03-08-httpclient/03-08-05-advanced-usage/03-08-05-03-intercepting-requests-and-responses/service/doc-03-08-05-03-01.interceptor';
 import { Doc0308050302Interceptor } from './routes/doc/03-fundamental/03-08-httpclient/03-08-05-advanced-usage/03-08-05-03-intercepting-requests-and-responses/service/doc-03-08-05-03-02.interceptor';
+import { Doc0308050303Interceptor } from './routes/doc/03-fundamental/03-08-httpclient/03-08-05-advanced-usage/03-08-05-03-intercepting-requests-and-responses/service/doc-03-08-05-03-03.interceptor';
 
 const LANG = {
   abbr: 'en',
@@ -116,6 +117,11 @@ const INTERCEPTOR_PROVIDES: Array<Provider> = [
   {
     provide: HTTP_INTERCEPTORS,
     useClass: Doc0308050302Interceptor,
+    multi: true,
+  },
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: Doc0308050303Interceptor,
     multi: true,
   },
 ];
