@@ -10,7 +10,7 @@ export class Doc03080503Service {
 
   // tslint:disable-next-line:no-any
   fetch(): Observable<any> {
-    return this.httpClient.post('doc-03-08-05-03', {
+    return this.httpClient.post('doc-03-08-05-03-03', {
       foo: 'foo',
     });
   }

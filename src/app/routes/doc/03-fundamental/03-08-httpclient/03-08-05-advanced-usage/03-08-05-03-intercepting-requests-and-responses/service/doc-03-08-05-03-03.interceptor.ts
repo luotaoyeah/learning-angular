@@ -17,7 +17,7 @@ export class Doc0308050303Interceptor implements HttpInterceptor {
     httpHandler: HttpHandler,
     // tslint:disable-next-line:no-any
   ): Observable<HttpEvent<any>> {
-    if (httpRequest.url.includes('doc-03-08-05-03')) {
+    if (httpRequest.url.includes('doc-03-08-05-03-03')) {
       /*
        * 可以在 interceptor 中对请求做日志记录，使用 tap() 操作符
        */
