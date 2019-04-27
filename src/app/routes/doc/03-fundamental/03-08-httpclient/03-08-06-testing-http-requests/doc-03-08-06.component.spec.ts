@@ -1,4 +1,9 @@
-import { HttpClient, HttpHeaders, HttpRequest } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpErrorResponse,
+  HttpHeaders,
+  HttpRequest,
+} from '@angular/common/http';
 import {
   HttpClientTestingModule,
   HttpTestingController,
@@ -99,5 +104,47 @@ describe('Doc030806Component', () => {
     testRequests[0].flush('FOO');
     testRequests[1].flush('BAR');
     testRequests[2].flush('BAZ');
+  });
+
+  it('can test for 404', () => {
+    const messaage = '404 ERROR';
+
+    httpClient.get<string>('/foo').subscribe(
+      () => {},
+      (e: HttpErrorResponse) => {
+        expect(e.status).toEqual(404);
+        expect(e.error).toEqual(messaage);
+      },
+    );
+
+    const testRequest = httpTestingController.expectOne('/foo');
+
+    /*
+     * 通过 TestRequest.flush() 方法模拟返回的时候，可以设置响应状态码
+     */
+    testRequest.flush(messaage, {
+      status: 404,
+      statusText: 'Not Found',
+    });
+  });
+
+  it('can test network error', () => {
+    httpClient.get<string>('/foo').subscribe(
+      () => {},
+      (e: HttpErrorResponse) => {
+        expect(e.error.message).toEqual('NETWORK ERROR');
+      },
+    );
+
+    const testRequest = httpTestingController.expectOne('/foo');
+
+    /*
+     * 使用 TestRequest.error() 方法，模拟一个网络错误
+     */
+    testRequest.error(
+      new ErrorEvent('NETWORK ERROR', {
+        message: 'NETWORK ERROR',
+      }),
+    );
   });
 });
