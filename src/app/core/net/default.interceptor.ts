@@ -106,7 +106,6 @@ export class DefaultInterceptor implements HttpInterceptor {
         // }
         break;
       case 401: // 未登录状态码
-        this.notificationService.error(`没有登录或登录已过期，请重新登录`, ``);
         this.injector.get(DA_SERVICE_TOKEN).clear();
         this.goTo('/passport/login');
         break;
