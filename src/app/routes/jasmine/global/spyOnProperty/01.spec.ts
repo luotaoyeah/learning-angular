@@ -3,8 +3,6 @@
  * 对某个 object 的某个 access property 进行监视，返回被监视的 property
  */
 
-import Spy = jasmine.Spy;
-
 describe('jasmine.global.spyOnProperty.01', () => {
   it('01', () => {
     const obj: { name?: string } = {};
