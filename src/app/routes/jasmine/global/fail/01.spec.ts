@@ -4,10 +4,14 @@
  */
 describe('jasmine.global.fail.01', () => {
   it('01', () => {
-    fail('FOO');
+    fail();
   });
 
   it('02', () => {
+    fail('FOO');
+  });
+
+  it('03', () => {
     fail(new Error('BAR'));
   });
 });
