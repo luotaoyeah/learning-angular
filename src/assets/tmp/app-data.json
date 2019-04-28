@@ -263,6 +263,12 @@
           ]
         }
       ]
+    },
+    {
+      "i18n": "menu.jasmine",
+      "group": true,
+      "hideInBreadcrumb": true,
+      "children": []
     }
   ]
 }

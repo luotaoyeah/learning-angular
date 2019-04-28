@@ -27,6 +27,10 @@ const routes: Routes = [
         path: 'doc',
         loadChildren: './doc/doc.module#DocModule',
       },
+      {
+        path: 'jasmine',
+        loadChildren: './jasmine/jasmine.module#JasmineModule',
+      },
     ],
   },
   // 全屏布局
