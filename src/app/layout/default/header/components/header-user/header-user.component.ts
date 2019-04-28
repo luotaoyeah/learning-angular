@@ -1,4 +1,4 @@
-import { Component, Inject, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { SettingsService } from '@delon/theme';
 import { DA_SERVICE_TOKEN, ITokenService } from '@delon/auth';
@@ -17,6 +17,8 @@ export class HeaderUserComponent {
 
   logout() {
     this.tokenService.clear();
-    this.router.navigateByUrl(this.tokenService.login_url);
+    if (this.tokenService.login_url) {
+      this.router.navigateByUrl(this.tokenService.login_url);
+    }
   }
 }

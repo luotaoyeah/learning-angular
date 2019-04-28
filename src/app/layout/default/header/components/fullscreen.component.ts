@@ -23,17 +23,21 @@ import * as screenfull from 'screenfull';
 export class HeaderFullScreenComponent {
   status = false;
 
+  private get screenfull(): screenfull.Screenfull {
+    return screenfull as screenfull.Screenfull;
+  }
+
   @HostListener('window:resize')
   _resize() {
     if (screenfull) {
-      this.status = screenfull.isFullscreen;
+      this.status = this.screenfull.isFullscreen;
     }
   }
 
   @HostListener('click')
   _click() {
-    if (screenfull && screenfull.enabled) {
-      screenfull.toggle();
+    if (this.screenfull && this.screenfull.enabled) {
+      this.screenfull.toggle();
     }
   }
 }

@@ -10,7 +10,7 @@ import {
 } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import { catchError, mergeMap } from 'rxjs/operators';
-import { NzMessageService, NzNotificationService } from 'ng-zorro-antd';
+import { NzNotificationService } from 'ng-zorro-antd';
 import { _HttpClient } from '@delon/theme';
 import { environment } from '@env/environment';
 import { DA_SERVICE_TOKEN } from '@delon/auth';
@@ -40,8 +40,8 @@ const CODEMESSAGE: { [index: number]: string } = {
 export class DefaultInterceptor implements HttpInterceptor {
   constructor(private injector: Injector) {}
 
-  get messageService(): NzMessageService {
-    return this.injector.get(NzMessageService);
+  private get notificationService(): NzNotificationService {
+    return this.injector.get(NzNotificationService);
   }
 
   /**
@@ -57,19 +57,20 @@ export class DefaultInterceptor implements HttpInterceptor {
    * @param httpResponseBase 返回数据
    */
   private checkStatus(httpResponseBase: HttpResponseBase) {
-    if (httpResponseBase.status >= 200 && httpResponseBase.status < 300) {
+    if (
+      (httpResponseBase.status >= 200 && httpResponseBase.status < 300) ||
+      httpResponseBase.status === 401
+    ) {
       return;
     }
 
     const errorMessage =
       CODEMESSAGE[httpResponseBase.status] || httpResponseBase.statusText;
-    this.injector
-      .get(NzNotificationService)
-      .error(
-        `请求错误 ${httpResponseBase.status}`,
-        `${httpResponseBase.url}<br />${errorMessage}`,
-        {},
-      );
+    this.notificationService.error(
+      `请求错误 ${httpResponseBase.status}`,
+      `${httpResponseBase.url}<br />${errorMessage}`,
+      {},
+    );
   }
 
   // tslint:disable-next-line:no-any
@@ -92,7 +93,7 @@ export class DefaultInterceptor implements HttpInterceptor {
         // if (event instanceof HttpResponse) {
         //     const body: any = event.body;
         //     if (body && body.status !== 0) {
-        //         this.messageService.error(body.msg);
+        //         this.notificationService.error(body.msg);
         //         // 继续抛出错误中断后续所有 Pipe、subscribe 操作，因此：
         //         // this.http.get('/').subscribe() 并不会触发
         //         return throwError({});
@@ -105,7 +106,7 @@ export class DefaultInterceptor implements HttpInterceptor {
         // }
         break;
       case 401: // 未登录状态码
-        // 请求错误 401: https://preview.pro.ant.design/api/401 用户没有权限（令牌、用户名、密码错误）。
+        this.notificationService.error(`没有登录或登录已过期，请重新登录`, ``);
         this.injector.get(DA_SERVICE_TOKEN).clear();
         this.goTo('/passport/login');
         break;
