@@ -9,5 +9,7 @@ describe('jasmine.global.it.01', () => {
     expect(0).toBeFalsy();
     expect(9).toBeTruthy();
     expect(undefined).toBeNull('NOT NULL');
+
+    pending('PENDING');
   });
 });

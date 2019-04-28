@@ -5,13 +5,19 @@
 describe('jasmine.global.fail.01', () => {
   it('01', () => {
     fail();
+
+    pending('PENDING');
   });
 
   it('02', () => {
     fail('FOO');
+
+    pending('PENDING');
   });
 
   it('03', () => {
     fail(new Error('BAR'));
+
+    pending('PENDING');
   });
 });
