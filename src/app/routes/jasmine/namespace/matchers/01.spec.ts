@@ -33,4 +33,27 @@ describe('jasmine.namespace.matchers.01', () => {
     expect(3.14).toBeCloseTo(3.1415926, 2);
     expect(3.14).not.toBeCloseTo(3.1415926, 3);
   });
+
+  /*
+   * jasmine.Matchers.toBeDefined() 方法，
+   * 判断实际数据是否**不**为 undefined
+   */
+  it('toBeDefined()', () => {
+    expect(0).toBeDefined();
+    expect(null).toBeDefined();
+    expect(undefined).not.toBeDefined();
+  });
+
+  /*
+   * jasmine.Matchers.toBeFalsy() 方法，
+   * 判断实际数据是一个 falsy 数据，即 !! 结果为 false
+   */
+  it('toBeFalsy()', () => {
+    expect(false).toBeFalsy();
+    expect(0).toBeFalsy();
+    expect('').toBeFalsy();
+    expect(null).toBeFalsy();
+    expect(undefined).toBeFalsy();
+    expect(NaN).toBeFalsy();
+  });
 });
