@@ -2,6 +2,7 @@
  * expect() 方法返回的是一个 jasmine.Matchers 对象，
  * jasmine.Matchers 对象有很多方法，用来对数据进行检查，判断是否满足条件
  */
+
 describe('jasmine.namespace.matchers.01', () => {
   /*
    * jasmine.NothingMatcher.nothing() 方法，
@@ -131,5 +132,31 @@ describe('jasmine.namespace.matchers.01', () => {
   it('toBeUndefined()', () => {
     expect(undefined).toBeUndefined();
     expect(null).not.toBeUndefined();
+  });
+
+  /*
+   * jasmine.Matchers.toContain() 方法，
+   * jasmine.ArrayLikeMatchers.toContain() 方法，
+   * 判断实际数据是否包含某个元素，
+   * 实际数据的类型可以是 string，array，array-like object
+   */
+  it('toContain()', () => {
+    expect('foo').toContain('o');
+    expect('foo').not.toContain('x');
+    expect([1, 2, 3]).toContain(3);
+    expect([1, 2, 3]).not.toContain(9);
+  });
+
+  /*
+   * jasmine.Matchers.toEqual() 方法，
+   * 判断实际数据是否 等于 期望数据，
+   * 这儿的比较方式，使用的时 deep equality comparison
+   */
+  it('toEqual()', () => {
+    expect(0).toEqual(0);
+    expect({ x: '0' }).toEqual({ x: '0' });
+
+    expect(Number.NaN).toEqual(Number.NaN);
+    expect(Number.NaN).not.toBe(Number.NaN);
   });
 });
