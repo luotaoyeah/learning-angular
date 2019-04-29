@@ -56,4 +56,40 @@ describe('jasmine.namespace.matchers.01', () => {
     expect(undefined).toBeFalsy();
     expect(NaN).toBeFalsy();
   });
+
+  /*
+   * jasmine.Matchers.toBeGreaterThan() 方法，
+   * 判断实际数据是否 > 期望数据
+   */
+  it('toBeGreaterThan()', () => {
+    expect(9).toBeGreaterThan(8);
+    expect(9).not.toBeGreaterThan(9);
+  });
+
+  /*
+   * jasmine.Matchers.toBeGreaterThanOrEqual() 方法，
+   * 判断实际数据是否 >= 期望数据
+   */
+  it('toBeGreaterThanOrEqual()', () => {
+    expect(9).toBeGreaterThanOrEqual(9);
+    expect(9).not.toBeGreaterThanOrEqual(99);
+  });
+
+  /*
+   * jasmine.Matchers.toBeLessThan() 方法，
+   * 判断实际数据是否 < 期望数据
+   */
+  it('toBeLessThan()', () => {
+    expect(9).toBeLessThan(99);
+    expect(9).not.toBeLessThan(9);
+  });
+
+  /*
+   * jasmine.Matchers.toBeLessThanOrEqual() 方法，
+   * 判断实际数据是否 <= 期望数据
+   */
+  it('toBeLessThanOrEqual()', () => {
+    expect(9).toBeLessThanOrEqual(9);
+    expect(99).not.toBeLessThanOrEqual(9);
+  });
 });
