@@ -159,4 +159,99 @@ describe('jasmine.namespace.matchers.01', () => {
     expect(Number.NaN).toEqual(Number.NaN);
     expect(Number.NaN).not.toBe(Number.NaN);
   });
+
+  /*
+   * jasmine.Matchers.toHaveBeenCalled() 方法，
+   * 判断某个 spy 是否已经被调用了
+   */
+  it('toHaveBeenCalled()', () => {
+    const obj = {
+      foo(): string {
+        return 'FOO';
+      },
+    };
+
+    const spyObj: Spy = spyOn(obj, 'foo');
+    expect(spyObj).not.toHaveBeenCalled();
+
+    spyObj.and.returnValue('BAR');
+    expect(obj.foo()).toEqual('BAR');
+
+    expect(spyObj).toHaveBeenCalled();
+  });
+
+  /*
+   * jasmine.Matchers.toHaveBeenCalledBefore() 方法，
+   * 判断某个 spy 是否在另一个 spy 之前调用
+   */
+  it('toHaveBeenCalledBefore()', () => {
+    const obj = {
+      foo(): string {
+        return 'FOO';
+      },
+      bar(): string {
+        return 'BAR';
+      },
+      baz(): string {
+        return 'BAZ';
+      },
+    };
+
+    const spyFoo = spyOn(obj, 'foo');
+    const spyBar = spyOn(obj, 'bar');
+    const spyBaz = spyOn(obj, 'baz');
+
+    spyFoo.and.returnValue('FOO01');
+    spyBar.and.returnValue('BAR01');
+    spyBaz.and.returnValue('BAZ01');
+
+    obj.foo();
+    obj.bar();
+    obj.baz();
+
+    expect(spyFoo).toHaveBeenCalledBefore(spyBar);
+    expect(spyBaz).not.toHaveBeenCalledBefore(spyBar);
+  });
+
+  /*
+   * jasmine.Matchers.toHaveBeenCalledTimes() 方法，
+   * 判断某个 spy 是否调用了指定的次数
+   */
+  it('toHaveBeenCalledTimes()', () => {
+    const obj = {
+      foo(): string {
+        return 'FOO';
+      },
+    };
+
+    const spyFoo = spyOn(obj, 'foo');
+    expect(spyFoo).toHaveBeenCalledTimes(0);
+
+    obj.foo();
+    expect(spyFoo).toHaveBeenCalledTimes(1);
+
+    obj.foo();
+    expect(spyFoo).toHaveBeenCalledTimes(2);
+  });
+
+  /*
+   * jasmine.Matchers.toHaveBeenCalledWith() 方法，
+   * 判断某个 spy 是否使用了指定的参数进行调用
+   */
+  it('toHaveBeenCalledWith()', () => {
+    const obj = {
+      foo(x?: string): string {
+        return 'FOO';
+      },
+    };
+
+    const spyFoo = spyOn(obj, 'foo');
+
+    obj.foo();
+    expect(spyFoo).toHaveBeenCalledWith();
+
+    obj.foo('x');
+    expect(spyFoo).toHaveBeenCalledWith('x');
+    expect(spyFoo).not.toHaveBeenCalledWith('y');
+  });
 });
