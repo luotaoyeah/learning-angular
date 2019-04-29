@@ -254,4 +254,73 @@ describe('jasmine.namespace.matchers.01', () => {
     expect(spyFoo).toHaveBeenCalledWith('x');
     expect(spyFoo).not.toHaveBeenCalledWith('y');
   });
+
+  /*
+   * jasmine.Matchers.toMatch() 方法，
+   * 判断实际数据是否匹配指定的正则表达式
+   */
+  it('toMatch()', () => {
+    /*
+     * 期望数据可以是一个 RegExp
+     */
+    expect('jasmine').not.toMatch(/JAS/);
+    expect('jasmine').toMatch(/JAS/i);
+    expect(999).toMatch(/\d{3}/);
+
+    /*
+     * 期望数据可以是一个 string
+     */
+    expect('jasmine').toMatch('jas');
+  });
+
+  /*
+   * jasmine.Matchers.toThrow() 方法，
+   * 判断某个 function 是否会抛出异常，可以是任意的异常，也可以是只当的异常
+   */
+  it('toThrow()', () => {
+    expect(() => {
+      throw new Error('FOO');
+    }).toThrow();
+
+    expect(() => {
+      // tslint:disable-next-line:no-string-throw
+      throw 'FOO';
+    }).toThrow('FOO');
+
+    expect(() => {
+      // tslint:disable-next-line:no-string-throw
+      throw 'FOO';
+    }).not.toThrow('BAR');
+
+    const error = new Error('FOO');
+    expect(() => {
+      throw error;
+    }).toThrow(error);
+  });
+
+  /*
+   * jasmine.Matchers.toThrowError() 方法，
+   * 判断某个 function 是否抛出了一个 Error 对象，
+   * 或者是否抛出了一个指定类型的 Error 对象（自定义错误类型）
+   */
+  it('toThrowError()', () => {
+    /*
+     * 抛出的必须是一个 Error 对象
+     */
+    expect(() => {
+      // tslint:disable-next-line:no-string-throw
+      throw 'FOO';
+    }).not.toThrowError();
+
+    expect(() => {
+      throw new Error('FOO');
+    }).toThrowError(Error);
+
+    /*
+     * 判断抛出的错误消息是否包含指定的内容
+     */
+    expect(() => {
+      throw new Error('FOO');
+    }).not.toThrowError('BAR');
+  });
 });
