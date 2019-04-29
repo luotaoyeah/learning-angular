@@ -46,7 +46,7 @@ describe('jasmine.namespace.matchers.01', () => {
 
   /*
    * jasmine.Matchers.toBeFalsy() 方法，
-   * 判断实际数据是一个 falsy 数据，即 !! 结果为 false
+   * 判断实际数据是否是一个 falsy 数据，即 !! 结果为 false
    */
   it('toBeFalsy()', () => {
     expect(false).toBeFalsy();
@@ -91,5 +91,45 @@ describe('jasmine.namespace.matchers.01', () => {
   it('toBeLessThanOrEqual()', () => {
     expect(9).toBeLessThanOrEqual(9);
     expect(99).not.toBeLessThanOrEqual(9);
+  });
+
+  /*
+   * jasmine.Matchers.toBeNaN() 方法，
+   * 判断实际数据是否是一个 Number.NaN
+   */
+  it('toBeNaN()', () => {
+    expect(Number.NaN).toBeNaN();
+    // @ts-ignore
+    expect(0 / 0).toBeNaN();
+    // @ts-ignore: TS2363
+    expect(0 * 'x').toBeNaN();
+  });
+
+  /*
+   * jasmine.Matchers.toBeNull() 方法，
+   * 判断实际数据是否 === null
+   */
+  it('toBeNull()', () => {
+    expect(null).toBeNull();
+    expect(undefined).not.toBeNull();
+  });
+
+  /*
+   * jasmine.Matchers.toBeTruthy() 方法，
+   * 判断实际数据是否是一个 truthy 数据，即 !! 结果为 true
+   */
+  it('toBeTruthy()', () => {
+    expect(9).toBeTruthy();
+    expect(0).not.toBeTruthy();
+    expect(null).not.toBeTruthy();
+  });
+
+  /*
+   * jasmine.Matchers.toBeUndefined() 方法，
+   * 判断实际数据是否 === undefined
+   */
+  it('toBeUndefined()', () => {
+    expect(undefined).toBeUndefined();
+    expect(null).not.toBeUndefined();
   });
 });
