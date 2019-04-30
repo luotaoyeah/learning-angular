@@ -24,7 +24,7 @@ describe('jasmine.namespace.jasmine.method.createSpyObj.01', () => {
   it('02', () => {
     /*
      * 第二个参数，如果是一个 object，
-     * 则该对象的每一个属性名，表示一个方法，
+     * 则它的每一个属性名，表示一个方法，
      * 对应的属性值，表示该方法的返回值
      */
     const spyObj = jasmine.createSpyObj('obj', {

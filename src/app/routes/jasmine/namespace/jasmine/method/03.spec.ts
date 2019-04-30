@@ -1,6 +1,6 @@
 /*
  * jasmine.any() 方法，
- * 用来构造一个'期望数据'，表示实际数据是期望数据类型的一个任意的（any）实例对象，
+ * 用来构造一个'期望数据'，表示实际数据是期望数据类型的一个任意的（any）实例，
  * 通常用在 toEqual()，toContain()，toHaveBeenCalledWith() 中
  */
 

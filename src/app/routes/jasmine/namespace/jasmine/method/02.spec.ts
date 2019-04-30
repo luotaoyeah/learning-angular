@@ -1,6 +1,6 @@
 /*
  * jasmine.addMatchers() 方法，
- * 用来添加自定义的 Matchers 对象
+ * 用来添加自定义的 Matchers 方法
  */
 import CustomEqualityTester = jasmine.CustomEqualityTester;
 import MatchersUtil = jasmine.MatchersUtil;
@@ -19,7 +19,7 @@ describe('jasmine.namespace.jasmine.method.addMatchers.01', () => {
   it('01', () => {
     /*
      * jasmine.addMatchers() 方法参数是一个 CustomMatcherFactories 对象，
-     * 属性名表示 Matchers 对象的名称，属性值是一个 CustomMatcherFactory 对象
+     * 属性名表示 Matchers 方法的名称，属性值是一个 CustomMatcherFactory 对象
      */
     jasmine.addMatchers({
       /*
