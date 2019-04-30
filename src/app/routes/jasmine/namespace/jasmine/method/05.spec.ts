@@ -1,7 +1,7 @@
 /*
  * jasmine.arrayContaining() 方法，
  * 用来构造一个'期望数据'，
- * 用来判断实际数据是否是一个数组，且包含期望数据中的所有元素
+ * 用来判断实际数据是否是一个数组，且至少包含期望数据中的所有元素
  */
 
 describe('jasmine.namespace.jasmine.method.arrayContaining.01', () => {
