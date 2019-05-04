@@ -312,15 +312,28 @@ describe('jasmine.namespace.matchers.01', () => {
       throw 'FOO';
     }).not.toThrowError();
 
-    expect(() => {
-      throw new Error('FOO');
-    }).toThrowError(Error);
-
     /*
-     * 判断抛出的错误消息是否包含指定的内容
+     * 如果 toThrowError() 方法的参数是一个字符串，
+     * 表示抛出的 Error 对象的 Error.message 属性必须等于这个字符串
      */
     expect(() => {
       throw new Error('FOO');
-    }).not.toThrowError('BAR');
+    }).toThrowError('FOO');
+
+    /*
+     * 如果 toThrowError() 方法的参数是一个 RegExp，
+     * 表示抛出的 Error 对象的 Error.message 属性必须满足这个 RegExp
+     */
+    expect(() => {
+      throw new Error('FOO');
+    }).toThrowError(/OO/i);
+
+    /*
+     * 如果 toThrowError() 方法的参数是一个 constructor，
+     * 表示抛出的 Error 对象，必须是这个 constructor 的实例对象
+     */
+    expect(() => {
+      throw new Error('FOO');
+    }).toThrowError(Error);
   });
 });
