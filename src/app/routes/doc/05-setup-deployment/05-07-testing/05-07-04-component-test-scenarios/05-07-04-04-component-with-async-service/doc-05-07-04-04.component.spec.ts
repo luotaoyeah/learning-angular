@@ -81,4 +81,28 @@ describe('Doc05070404Component', () => {
       expect(messageEl.textContent).toEqual('0');
     }
   }));
+
+  it('should run timeout callback with delay after call tick() with milliseconds', fakeAsync(() => {
+    let called01 = false;
+    let called02 = false;
+
+    setTimeout(() => {
+      called01 = true;
+    }, 100);
+
+    /*
+     * tick() 函数，用来模拟针对于 timer 的时间流逝，
+     * 它只能用在 fakeAsync() zone 里面，
+     * 它接收一个参数，表示流逝的毫秒数，默认为 0
+     */
+    tick(100);
+    expect(called01).toBe(true, 'called01 be true');
+
+    setTimeout(() => {
+      called02 = true;
+    }, 1000);
+
+    tick(1000);
+    expect(called02).toBe(true, 'called02 be true');
+  }));
 });
