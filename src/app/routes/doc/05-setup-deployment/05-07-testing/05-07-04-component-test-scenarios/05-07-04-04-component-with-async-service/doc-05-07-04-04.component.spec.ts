@@ -7,8 +7,9 @@ import {
 } from '@angular/core/testing';
 import { Doc05070404Component } from './doc-05-07-04-04.component';
 import { Doc05070404Service } from './service/doc-05-07-04-04.service';
-import { of, throwError } from 'rxjs';
+import { interval, of, throwError } from 'rxjs';
 import { SharedModule } from '@shared';
+import { delay, take } from 'rxjs/operators';
 
 describe('Doc05070404Component', () => {
   let fixture: ComponentFixture<Doc05070404Component>;
@@ -141,5 +142,40 @@ describe('Doc05070404Component', () => {
 
     expect(foo).toBe(true);
     expect(bar).toBe(true);
+  }));
+
+  it('should get date difference correctly in fakeAsync with rxjs scheduler', fakeAsync(() => {
+    let result01 = false;
+
+    /*
+     * delay() 的底层使用的是 setTimeout()
+     */
+    of(true)
+      .pipe(delay(1000))
+      .subscribe((value: boolean) => {
+        result01 = value;
+      });
+    expect(result01).toBe(false);
+
+    tick(1000);
+    expect(result01).toBe(true);
+
+    const start = Date.now();
+    let elapsed = 0;
+
+    /*
+     * interval() 的底层使用的是 setInterval()
+     */
+    interval(1000)
+      .pipe(take(2))
+      .subscribe((value: number) => {
+        elapsed = Date.now() - start;
+      });
+
+    tick(1000);
+    expect(elapsed).toBe(1000);
+
+    tick(1000);
+    expect(elapsed).toBe(2000);
   }));
 });
