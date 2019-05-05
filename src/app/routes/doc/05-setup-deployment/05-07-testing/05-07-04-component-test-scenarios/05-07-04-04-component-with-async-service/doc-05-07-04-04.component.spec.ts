@@ -1,7 +1,12 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {
+  ComponentFixture,
+  fakeAsync,
+  TestBed,
+  tick,
+} from '@angular/core/testing';
 import { Doc05070404Component } from './doc-05-07-04-04.component';
 import { Doc05070404Service } from './service/doc-05-07-04-04.service';
-import { of } from 'rxjs';
+import { of, throwError } from 'rxjs';
 import { SharedModule } from '@shared';
 
 describe('Doc05070404Component', () => {
@@ -49,4 +54,31 @@ describe('Doc05070404Component', () => {
       expect(getNextSpy.calls.any()).toBe(true, 'getNext() called');
     }
   });
+
+  /*
+   * fakeAsync() 函数用来包装（wrap）一个 function，使之在 fakeAsync zone 里面执行
+   */
+  it('should display error message when service throw error', fakeAsync(() => {
+    getNextSpy.and.returnValue(throwError('SOME ERR'));
+    fixture.detectChanges();
+
+    /*
+     * tick() 函数，用在 fakeAsync zone 里面，
+     * 用来模拟计时器（timers）的时间流逝
+     */
+    tick();
+    fixture.detectChanges();
+
+    const errorMessageEl: HTMLDivElement | null = (fixture.nativeElement as HTMLElement).querySelector(
+      '.ant-alert',
+    );
+
+    expect(errorMessageEl).toBeDefined();
+    if (errorMessageEl) {
+      expect(errorMessageEl.textContent).toEqual('SOME ERR');
+    }
+    if (messageEl) {
+      expect(messageEl.textContent).toEqual('0');
+    }
+  }));
 });

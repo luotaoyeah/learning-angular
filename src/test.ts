@@ -1,6 +1,10 @@
 // This file is required by karma.conf.js and loads recursively all the .spec and framework files
 
+/*
+ * 使用 fakeAsync()，async() 进行测试时，必须引入下面的包
+ */
 import 'zone.js/dist/zone-testing';
+
 import { getTestBed } from '@angular/core/testing';
 import {
   BrowserDynamicTestingModule,
