@@ -1,6 +1,7 @@
 import {
   ComponentFixture,
   fakeAsync,
+  flushMicrotasks,
   TestBed,
   tick,
 } from '@angular/core/testing';
@@ -91,7 +92,7 @@ describe('Doc05070404Component', () => {
     }, 100);
 
     /*
-     * tick() 函数，用来模拟针对于 timer 的时间流逝，
+     * tick() 函数，用来模拟针对于 timer 的异步的时间流逝，
      * 它只能用在 fakeAsync() zone 里面，
      * 它接收一个参数，表示流逝的毫秒数，默认为 0
      */
@@ -104,5 +105,41 @@ describe('Doc05070404Component', () => {
 
     tick(1000);
     expect(called02).toBe(true, 'called02 be true');
+  }));
+
+  it('should get date difference correctly', fakeAsync(() => {
+    /*
+     * 在 fakeAsync() 中模拟时间的流逝
+     */
+    const start = Date.now();
+    tick(99);
+    const end = Date.now();
+
+    expect(end - start).toEqual(99);
+  }));
+
+  it('should execute microtask correctly', fakeAsync(() => {
+    let foo = false;
+    let bar = false;
+
+    Promise.resolve(true)
+      .then((value: boolean) => {
+        foo = value;
+        return true;
+      })
+      .then((value: boolean) => {
+        bar = value;
+      });
+
+    expect(foo).toBe(false);
+    expect(bar).toBe(false);
+
+    /*
+     * 调用 flushMicrotasks() 方法，用来执行所有的 microtasks
+     */
+    flushMicrotasks();
+
+    expect(foo).toBe(true);
+    expect(bar).toBe(true);
   }));
 });
