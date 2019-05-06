@@ -167,6 +167,7 @@ import { Pipe03021106Pipe } from './03-02-11-pipe/03-02-11-06-pure-and-impure-pi
 import { Doc03021106Component } from './03-02-11-pipe/03-02-11-06-pure-and-impure-pipes/doc-03-02-11-06.component';
 import { Doc0302110601Component } from './03-02-11-pipe/03-02-11-06-pure-and-impure-pipes/03-02-11-06-01-the-impure-asyncpipe/doc-03-02-11-06-01.component';
 import { Doc0302040201Component } from './03-02-04-lifecycle-hooks/03-02-04-02-lifecycle-sequence/03-02-04-02-01-ngonchanges/doc-03-02-04-02-01.component';
+import { Doc0302040202Component } from './03-02-04-lifecycle-hooks/03-02-04-02-lifecycle-sequence/03-02-04-02-02-ngoninit/doc-03-02-04-02-02.component';
 
 // tslint:enable:max-line-length
 
@@ -262,6 +263,7 @@ import { Doc0302040201Component } from './03-02-04-lifecycle-hooks/03-02-04-02-l
     Doc03020401Component,
     Doc03020402Component,
     Doc0302040201Component,
+    Doc0302040202Component,
     Doc03020403Component,
     Doc0302040301Component,
     Doc03020404Component,

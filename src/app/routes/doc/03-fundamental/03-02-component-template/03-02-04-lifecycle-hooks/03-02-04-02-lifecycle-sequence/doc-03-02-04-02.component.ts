@@ -7,7 +7,6 @@ import {
   DoCheck,
   Input,
   OnDestroy,
-  OnInit,
 } from '@angular/core';
 
 @Component({
@@ -16,7 +15,6 @@ import {
 })
 export class Doc03020402Component
   implements
-    OnInit,
     DoCheck,
     AfterContentInit,
     AfterContentChecked,
@@ -26,7 +24,8 @@ export class Doc03020402Component
   @Input()
   public foo: string = '';
 
-  public foo01: number = 0;
+  public foo01: number = 1;
+  public foo02: number = 1;
 
   constructor() {}
 
@@ -36,14 +35,6 @@ export class Doc03020402Component
     /*
         console.log(`[${Doc03020402Component.name}]`, message);
     */
-  }
-
-  ngOnInit() {
-    /*
-     * ngOnInit() 只会执行一次，
-     * 在第一次 ngOnChenges() 之后执行
-     */
-    this.log('ngOnInit()');
   }
 
   ngDoCheck(): void {
