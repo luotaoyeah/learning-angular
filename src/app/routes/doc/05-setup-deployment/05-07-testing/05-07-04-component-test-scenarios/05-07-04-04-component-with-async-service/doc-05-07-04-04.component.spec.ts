@@ -178,4 +178,6 @@ describe('Doc05070404Component', () => {
     tick(1000);
     expect(elapsed).toBe(2000);
   }));
+
+  /* TODO https://angular.io/guide/testing#component-with-async-service */
 });

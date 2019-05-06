@@ -1,10 +1,35 @@
-<p-accordion>
-  <app-doc-03-02-04-01></app-doc-03-02-04-01>
-  <app-doc-03-02-04-02 [foo]="'FOO'"></app-doc-03-02-04-02>
-  <app-doc-03-02-04-03></app-doc-03-02-04-03>
-  <app-doc-03-02-04-04></app-doc-03-02-04-04>
-  <app-doc-03-02-04-05></app-doc-03-02-04-05>
-  <app-doc-03-02-04-06></app-doc-03-02-04-06>
-  <app-doc-03-02-04-07></app-doc-03-02-04-07>
-  <app-doc-03-02-04-08></app-doc-03-02-04-08>
-</p-accordion>
+<nz-collapse [nzAccordion]="true">
+  <nz-collapse-panel
+    nzHeader="Component Lifecycle Hooks Overview"
+    [nzExpandedIcon]="'caret-right'"
+  >
+    <app-doc-03-02-04-01></app-doc-03-02-04-01>
+  </nz-collapse-panel>
+  <nz-collapse-panel
+    nzHeader="Lifecycle Sequence"
+    [nzExpandedIcon]="'caret-right'"
+  >
+    <app-doc-03-02-04-02 [foo]="'FOO'"></app-doc-03-02-04-02>
+  </nz-collapse-panel>
+  <nz-collapse-panel nzHeader="Peek A Boo" [nzExpandedIcon]="'caret-right'">
+    <app-doc-03-02-04-03></app-doc-03-02-04-03>
+  </nz-collapse-panel>
+  <nz-collapse-panel
+    nzHeader="Spying OnInit and OnDestroy"
+    [nzExpandedIcon]="'caret-right'"
+  >
+    <app-doc-03-02-04-04></app-doc-03-02-04-04>
+  </nz-collapse-panel>
+  <nz-collapse-panel nzHeader="ngOnChanges()" [nzExpandedIcon]="'caret-right'">
+    <app-doc-03-02-04-05></app-doc-03-02-04-05>
+  </nz-collapse-panel>
+  <nz-collapse-panel nzHeader="ngDoCheck()" [nzExpandedIcon]="'caret-right'">
+    <app-doc-03-02-04-06></app-doc-03-02-04-06>
+  </nz-collapse-panel>
+  <nz-collapse-panel nzHeader="AfterView" [nzExpandedIcon]="'caret-right'">
+    <app-doc-03-02-04-07></app-doc-03-02-04-07>
+  </nz-collapse-panel>
+  <nz-collapse-panel nzHeader="AfterContent" [nzExpandedIcon]="'caret-right'">
+    <app-doc-03-02-04-08></app-doc-03-02-04-08>
+  </nz-collapse-panel>
+</nz-collapse>

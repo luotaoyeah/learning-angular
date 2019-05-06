@@ -1,6 +1,4 @@
-<p-accordionTab header="Peek A Boo" [transitionOptions]="'0ms'">
-  <p-button label="TOGGLE" (onClick)="displayChild = !displayChild"></p-button>
-  <br />
-  <br />
-  <app-doc-03-02-04-03-01 *ngIf="displayChild"></app-doc-03-02-04-03-01>
-</p-accordionTab>
+<p-button label="TOGGLE" (onClick)="displayChild = !displayChild"></p-button>
+<br />
+<br />
+<app-doc-03-02-04-03-01 *ngIf="displayChild"></app-doc-03-02-04-03-01>
