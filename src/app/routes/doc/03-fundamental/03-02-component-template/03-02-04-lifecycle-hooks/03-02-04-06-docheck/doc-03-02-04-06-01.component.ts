@@ -3,44 +3,54 @@ import {
   DoCheck,
   Input,
   OnChanges,
-  OnInit,
   SimpleChange,
   SimpleChanges,
 } from '@angular/core';
+import { ComnService } from '@core/comn/comn.service';
 
 @Component({
   selector: 'app-doc-03-02-04-06-01',
-  template: '',
+  template: '<div><button nz-button>{{barName}}</button></div>',
 })
-export class Doc0302040601Component implements OnInit, OnChanges, DoCheck {
-  @Input() bar: { name: string } = { name: '' };
+export class Doc0302040601Component implements OnChanges, DoCheck {
+  @Input()
+  public bar: { name: string } = { name: '' };
 
-  private barName = this.bar.name;
+  public barName = this.bar.name;
 
-  constructor() {}
-
-  ngOnInit() {}
+  constructor(private comnService: ComnService) {}
 
   /*
-   * angular 没办法检测到 input property 内部属性的变更，
-   * 如下，当 bar 对象的内部属性发生变更时，不会触发 ngOnChanges() 的执行
+   * angular 默认的 change detector 比较的是 input property 对象的引用，
+   * 因此如果是 input property 对象的内部属性发生变更，angular 无法检测到 ，
+   * 也就因此不会触发 ngOnChanges() 的执行
    */
-  ngOnChanges(changes: SimpleChanges): void {
-    const barChange: SimpleChange = changes.bar;
-    if (barChange && !barChange.firstChange) {
+  ngOnChanges(simpleChanges: SimpleChanges): void {
+    const barSimpleChange: SimpleChange = simpleChanges['bar'];
+    if (barSimpleChange && !barSimpleChange.firstChange) {
       console.log(
-        `%c[${Doc0302040601Component.name}][ngOnChanges()] CHANGED`,
-        'color:#00ff00',
+        this.comnService.getComponentLabel(Doc0302040601Component),
+        'ngOnChanges()',
       );
     }
   }
 
+  /*
+   * 此时我们需要使用 ngDoCheck() 来实现自定义的 change detection 算法
+   *
+   * ngDoCheck() 会在每次 change detection cycle 之后执行，
+   * 因此它的执行会非常频繁，因此放在它里面的逻辑不能太复杂
+   */
   ngDoCheck(): void {
+    /*
+     * 如果我们在 ngDoCheck() 中，对某个 input property 实现了自定义的检测算法，
+     * 那么在 ngOnChanges() 中，我们就不应该再对这个 input property 进行处理了
+     */
     if (this.barName !== this.bar.name) {
       this.barName = this.bar.name;
       console.log(
-        `%c[${Doc0302040601Component.name}][ngDoCheck()] CHANGED`,
-        'color:#00ff00',
+        this.comnService.getComponentLabel(Doc0302040601Component),
+        'ngDoCheck()',
       );
     }
   }

@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './doc-03-02-04-06.component.html',
 })
 export class Doc03020406Component implements OnInit {
-  bar: { name: string } = { name: '' };
+  bar: { name: string } = { name: 'FOO' };
 
   constructor() {}
 
