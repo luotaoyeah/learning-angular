@@ -1,4 +1,6 @@
-<p-button label="TOGGLE" (onClick)="displayChild = !displayChild"></p-button>
+<button nz-button (click)="displayChild = !displayChild">
+  TOGGLE
+</button>
 <br />
 <br />
 <app-doc-03-02-04-03-01 *ngIf="displayChild"></app-doc-03-02-04-03-01>

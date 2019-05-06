@@ -1,17 +1,24 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ComnService } from '@core/comn/comn.service';
 
 @Component({
   selector: 'app-doc-03-02-04-03-01',
-  template: '<p-button label="app-doc-03-02-04-03-01"></p-button>',
+  template: '<button nz-button>app-doc-03-02-04-03-01</button>',
 })
 export class Doc0302040301Component implements OnInit, OnDestroy {
-  constructor() {}
+  constructor(private comnService: ComnService) {}
 
   ngOnInit() {
-    console.log(`[${Doc0302040301Component.name}]`, 'ngOnInit()');
+    console.log(
+      this.comnService.getComponentLabel(Doc0302040301Component),
+      'ngOnInit()',
+    );
   }
 
   ngOnDestroy(): void {
-    console.log(`[${Doc0302040301Component.name}]`, 'ngOnDestroy()');
+    console.log(
+      this.comnService.getComponentLabel(Doc0302040301Component),
+      'ngOnDestroy()',
+    );
   }
 }
