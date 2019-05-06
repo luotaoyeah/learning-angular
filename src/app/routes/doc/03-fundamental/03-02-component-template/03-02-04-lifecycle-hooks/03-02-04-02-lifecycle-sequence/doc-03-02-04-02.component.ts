@@ -6,10 +6,8 @@ import {
   Component,
   DoCheck,
   Input,
-  OnChanges,
   OnDestroy,
   OnInit,
-  SimpleChanges,
 } from '@angular/core';
 
 @Component({
@@ -19,14 +17,16 @@ import {
 export class Doc03020402Component
   implements
     OnInit,
-    OnChanges,
     DoCheck,
     AfterContentInit,
     AfterContentChecked,
     AfterViewInit,
     AfterViewChecked,
     OnDestroy {
-  @Input() foo = '';
+  @Input()
+  public foo: string = '';
+
+  public foo01: number = 0;
 
   constructor() {}
 
@@ -36,14 +36,6 @@ export class Doc03020402Component
     /*
         console.log(`[${Doc03020402Component.name}]`, message);
     */
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    /*
-     * ngOnChanges() 在 input properties 的值发生变更时执行，包括第一次初始化 input properties 的值
-     */
-    console.assert(!!changes);
-    this.log('ngOnChange()');
   }
 
   ngOnInit() {
