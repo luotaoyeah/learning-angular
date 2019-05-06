@@ -1,17 +1,17 @@
 <p>
-  component 的下级组件（child）分两种：
+  component 的 child component 分两种：
 </p>
 <ul>
   <li>
-    一种是直接写在组件的 template 中的，称之为 view children
+    一种是直接写在 component template 里面的，称之为 view children
     <ul>
       <li>ngAfterViewInit()</li>
       <li>ngAfterViewChecked()</li>
     </ul>
   </li>
   <li>
-    一种是写在组件标签之间的，通过 ng-content 映射进来的，称之为 content
-    children
+    一种是写在 component element 中间的，通过 ng-content 映射进来的，称之为
+    content children
     <ul>
       <li>ngAfterContentInit()</li>
       <li>ngAfterContentChecked()</li>
