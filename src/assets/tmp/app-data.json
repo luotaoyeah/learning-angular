@@ -261,6 +261,26 @@
               "link": "/doc/05/07"
             }
           ]
+        },
+        {
+          "i18n": "menu.doc.09",
+          "icon": "anticon anticon-info-circle",
+          "children": [
+            {
+              "i18n": "menu.doc.09.01",
+              "link": "/doc/09/01",
+              "children": [
+                {
+                  "i18n": "menu.doc.09.01.01",
+                  "link": "/doc/09/01/01"
+                },
+                {
+                  "i18n": "menu.doc.09.01.02",
+                  "link": "/doc/09/01/02"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
