@@ -8,7 +8,7 @@ import {
 } from '@angular/core/testing';
 import { Doc05070404Component } from './doc-05-07-04-04.component';
 import { Doc05070404Service } from './service/doc-05-07-04-04.service';
-import { defer, interval, of, throwError } from 'rxjs';
+import { defer, interval, Observable, of, throwError } from 'rxjs';
 import { SharedModule } from '@shared';
 import { delay, take } from 'rxjs/operators';
 
@@ -241,5 +241,32 @@ describe('Doc05070404Component', () => {
         });
       }
     }));
+
+    it('should display message after getNext(): spy done', (done: DoneFn) => {
+      /*
+       * fakeAsync() 和 async() 简化了 async testing 的流程，
+       * 但是我们依然可以使用 jasmine 提供的 done() 方法，自行处理异步测试流程
+       */
+
+      fixture.detectChanges();
+      if (messageEl) {
+        expect(messageEl.textContent).toEqual('');
+
+        (getNextSpy.calls.mostRecent().returnValue as Observable<
+          number
+        >).subscribe(() => {
+          fixture.detectChanges();
+
+          if (messageEl) {
+            expect(messageEl.textContent).toEqual('9');
+            /*
+             * 调用 done() 方法，表示本次异步测试结束，
+             * 如果不调用 done() 方法，则本次测试会一直进行中，直到超时（jasmine.DEFAULT_TIMEOUT_INTERVAL）
+             */
+            done();
+          }
+        });
+      }
+    });
   });
 });
