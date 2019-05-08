@@ -42,5 +42,6 @@ module.exports = function(config) {
     autoWatch: true,
     singleRun: false,
     restartOnFileChange: true,
+    browserDisconnectTimeout: 10000,
   });
 };
