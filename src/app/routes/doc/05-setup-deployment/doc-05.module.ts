@@ -30,6 +30,7 @@ import { Doc05070413Component } from './05-07-testing/05-07-04-component-test-sc
 import { Doc05070410Component } from './05-07-testing/05-07-04-component-test-scenarios/05-07-04-10-nested-component-tests/doc-05-07-04-10.component';
 import { Doc05070411Component } from './05-07-testing/05-07-04-component-test-scenarios/05-07-04-11-components-with-routerlink/doc-05-07-04-11.component';
 import { Doc05070412Component } from './05-07-testing/05-07-04-component-test-scenarios/05-07-04-12-use-a-page-object/doc-05-07-04-12.component';
+import { Doc05070414Component } from './05-07-testing/05-07-04-component-test-scenarios/05-07-04-14-setup-with-module-imports/doc-05-07-04-14.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { Doc05070412Component } from './05-07-testing/05-07-04-component-test-sc
     Doc05070411Component,
     Doc05070412Component,
     Doc05070413Component,
+    Doc05070414Component,
   ],
   imports: [CommonModule, FormsModule, SharedModule, Doc05RoutingModule],
 })
