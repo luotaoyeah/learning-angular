@@ -6,7 +6,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
     '<p-button label="CUSTOM COMPONENT EVENT" (onClick)="handleClick()"></p-button>',
 })
 export class Doc030202070101Component implements OnInit {
-  @Output() customClick: EventEmitter<string> = new EventEmitter();
+  @Output() ntClick: EventEmitter<string> = new EventEmitter();
 
   constructor() {}
 
@@ -14,7 +14,7 @@ export class Doc030202070101Component implements OnInit {
 
   handleClick() {
     setTimeout(() => {
-      this.customClick.emit('FOO');
+      this.ntClick.emit('FOO');
     }, 1000);
   }
 }
