@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { Doc05Component } from './doc-05.component';
 import { Doc0507Component } from './05-07-testing/doc-05-07.component';
 import { Doc0507040801Component } from './05-07-testing/05-07-04-component-test-scenarios/05-07-04-08-routing-component/05-07-04-08-01/doc-05-07-04-08-01.component';
+import { Doc0507040901Component } from './05-07-testing/05-07-04-component-test-scenarios/05-07-04-09-routed-component/05-07-04-09-01/doc-05-07-04-09-01.component';
 
 const routes: Routes = [
   {
@@ -14,9 +15,14 @@ const routes: Routes = [
         component: Doc0507Component,
         children: [
           {
-            path: '01',
+            path: '04/08/01',
             component: Doc0507040801Component,
             data: { title: 'app-doc-05-07-04-08-01' },
+          },
+          {
+            path: '04/09/01',
+            component: Doc0507040901Component,
+            data: { title: 'app-doc-05-07-04-09-01' },
           },
         ],
       },
