@@ -19,6 +19,7 @@ import { Doc0507040103Component } from './05-07-testing/05-07-04-component-test-
 import { Doc05070402Component } from './05-07-testing/05-07-04-component-test-scenarios/05-07-04-02-component-with-external-files/doc-05-07-04-02.component';
 import { Doc05070403Component } from './05-07-testing/05-07-04-component-test-scenarios/05-07-04-03-component-with-a-dependency/doc-05-07-04-03.component';
 import { Doc05070404Component } from './05-07-testing/05-07-04-component-test-scenarios/05-07-04-04-component-with-async-service/doc-05-07-04-04.component';
+import { Doc05070405Component } from './05-07-testing/05-07-04-component-test-scenarios/05-07-04-05-component-marble-tests/doc-05-07-04-05.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { Doc05070404Component } from './05-07-testing/05-07-04-component-test-sc
     Doc05070402Component,
     Doc05070403Component,
     Doc05070404Component,
+    Doc05070405Component,
   ],
   imports: [CommonModule, FormsModule, SharedModule, Doc05RoutingModule],
 })
