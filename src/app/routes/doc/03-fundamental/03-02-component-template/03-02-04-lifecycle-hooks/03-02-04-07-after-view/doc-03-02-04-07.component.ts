@@ -2,7 +2,6 @@ import {
   AfterViewChecked,
   AfterViewInit,
   Component,
-  OnInit,
   ViewChild,
 } from '@angular/core';
 import { Doc0302040701Component } from './doc-03-02-04-07-01.component';
@@ -11,8 +10,7 @@ import { Doc0302040701Component } from './doc-03-02-04-07-01.component';
   selector: 'app-doc-03-02-04-07',
   templateUrl: './doc-03-02-04-07.component.html',
 })
-export class Doc03020407Component
-  implements OnInit, AfterViewInit, AfterViewChecked {
+export class Doc03020407Component implements AfterViewInit, AfterViewChecked {
   /*
    * @ViewChild 装饰器，用来获取对 view child 的引用，
    * 查询参数可以是下级组件的类型
@@ -28,10 +26,6 @@ export class Doc03020407Component
   public foo: string = 'FOO';
   public comment: string = '';
 
-  constructor() {}
-
-  ngOnInit() {}
-
   /*
    * 当 component view 以及 child view 创建完成之后，会触发 ngAfterViewInit() 方法
    */
@@ -42,29 +36,28 @@ export class Doc03020407Component
   }
 
   /*
-   * 当下级组件中的状态发生变更时，会触发 ngAfterViewChecked() 方法
+   * 当 component view 和 child view 完成 check 之后，会触发 ngAfterViewChecked() 方法
    */
   ngAfterViewChecked(): void {
     if (this.foo !== this.doc0302040701Component01.foo) {
-      this.foo = this.doc0302040701Component01.foo;
-      this.doSomething();
-    }
-  }
-
-  private doSomething(): void {
-    const comt =
-      this.doc0302040701Component01.foo.length > 10 ? 'LONG NAME' : '';
-
-    if (comt !== this.comment) {
       /*
-       * angular 的单向数据流不允许在视图完成渲染（composed）之后再去更新视图，
+       * angular 的单向数据流（unidirectional data flow）不允许在视图完成渲染（composed）之后再去更新视图，
        * 而 ngAfterViewInit() 和 ngAfterViewChecked() 刚好是在 composed 之后执行的，
        * 因此，不能在这两个方法里面再去更新视图（通过修改 data binding property 触发视图更新），
        * 需要通过 setTimeout() 来执行更新
        */
       setTimeout(() => {
-        this.comment = comt;
-      }, 0);
+        this.foo = this.doc0302040701Component01.foo;
+      });
+
+      const _comment =
+        this.doc0302040701Component01.foo.length > 10 ? 'LONG NAME' : '';
+
+      if (_comment !== this.comment) {
+        setTimeout(() => {
+          this.comment = _comment;
+        });
+      }
     }
   }
 }
