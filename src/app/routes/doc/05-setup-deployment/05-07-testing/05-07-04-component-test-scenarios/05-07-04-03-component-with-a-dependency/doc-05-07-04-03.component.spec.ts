@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Doc05070403Component } from './doc-05-07-04-03.component';
 import { Doc05070403Service } from './service/doc-05-07-04-03.service';
 
@@ -17,7 +17,7 @@ describe('Doc05070403Component', () => {
   let component: Doc05070403Component;
   let pEl: HTMLParagraphElement | null;
 
-  beforeEach(async () => {
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [Doc05070403Component],
       /*
@@ -30,7 +30,7 @@ describe('Doc05070403Component', () => {
         },
       ],
     });
-  });
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(Doc05070403Component);

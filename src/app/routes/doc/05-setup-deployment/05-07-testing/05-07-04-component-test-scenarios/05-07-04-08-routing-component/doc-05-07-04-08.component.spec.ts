@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Doc05070408Component } from './doc-05-07-04-08.component';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
@@ -11,7 +11,7 @@ describe('Doc05070408Component', () => {
   let buttonDebugEl: DebugElement;
   let RouterSpy: jasmine.SpyObj<Router>;
 
-  beforeEach(async () => {
+  beforeEach(async(() => {
     /*
      * 创建一个 SpyObj 对象，用来模拟 Router
      */
@@ -27,7 +27,7 @@ describe('Doc05070408Component', () => {
         },
       ],
     }).compileComponents();
-  });
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(Doc05070408Component);

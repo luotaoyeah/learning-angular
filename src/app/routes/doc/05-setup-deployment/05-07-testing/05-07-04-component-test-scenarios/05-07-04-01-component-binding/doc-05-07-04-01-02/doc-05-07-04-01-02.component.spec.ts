@@ -1,5 +1,6 @@
 import { Doc0507040102Component } from './doc-05-07-04-01-02.component';
 import {
+  async,
   ComponentFixture,
   ComponentFixtureAutoDetect,
   TestBed,
@@ -10,7 +11,7 @@ describe('Doc0507040102Component', () => {
   let component: Doc0507040102Component;
   let h1El: HTMLHeadingElement | null;
 
-  beforeEach(async () => {
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [Doc0507040102Component],
       /*
@@ -24,7 +25,7 @@ describe('Doc0507040102Component', () => {
         },
       ],
     }).compileComponents();
-  });
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(Doc0507040102Component);

@@ -1,5 +1,5 @@
 import { Doc05070407Component } from './doc-05-07-04-07.component';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Component, DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 
@@ -8,11 +8,11 @@ describe('Doc05070407Component', () => {
   let component: TestHostComponent;
   let buttonDebugEl: DebugElement;
 
-  beforeEach(async () => {
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [TestHostComponent, Doc05070407Component],
     });
-  });
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TestHostComponent);

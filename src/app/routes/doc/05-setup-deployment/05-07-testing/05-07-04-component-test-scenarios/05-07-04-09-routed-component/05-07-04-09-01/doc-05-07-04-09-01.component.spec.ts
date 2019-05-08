@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Doc0507040901Component } from './doc-05-07-04-09-01.component';
 import { SharedModule } from '@shared';
 import { ActivatedRouteStub } from './activated-route-stub';
@@ -12,7 +12,7 @@ describe('Doc0507040901Component', () => {
   let activatedRouteStub: ActivatedRouteStub;
   let buttonDebugEl: DebugElement;
 
-  beforeEach(async () => {
+  beforeEach(async(() => {
     activatedRouteStub = new ActivatedRouteStub();
 
     TestBed.configureTestingModule({
@@ -25,7 +25,7 @@ describe('Doc0507040901Component', () => {
         },
       ],
     }).compileComponents();
-  });
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(Doc0507040901Component);

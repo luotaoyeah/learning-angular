@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Doc05070405Component } from './doc-05-07-04-05.component';
 import { Doc05070405Service } from './service/doc-05-07-04-05.service';
 import { of } from 'rxjs';
@@ -13,7 +13,7 @@ describe('Doc05070405Component', () => {
   let getNextSpy: jasmine.Spy;
   let messageEl: HTMLButtonElement | null;
 
-  beforeEach(async () => {
+  beforeEach(async(() => {
     const MockDoc05070405Service = jasmine.createSpyObj('Doc05070405Service', [
       'getNext',
     ]);
@@ -30,7 +30,7 @@ describe('Doc05070405Component', () => {
         },
       ],
     }).compileComponents();
-  });
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(Doc05070405Component);

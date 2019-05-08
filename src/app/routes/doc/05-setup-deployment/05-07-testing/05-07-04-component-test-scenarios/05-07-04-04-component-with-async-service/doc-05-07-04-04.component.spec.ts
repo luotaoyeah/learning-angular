@@ -18,7 +18,7 @@ describe('Doc05070404Component', () => {
   let getNextSpy: jasmine.Spy;
   let messageEl: HTMLButtonElement | null;
 
-  beforeEach(async () => {
+  beforeEach(async(() => {
     const MockDoc05070404Service = jasmine.createSpyObj('Doc05070404Service', [
       'getNext',
     ]);
@@ -35,7 +35,7 @@ describe('Doc05070404Component', () => {
         },
       ],
     }).compileComponents();
-  });
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(Doc05070404Component);

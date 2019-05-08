@@ -1,16 +1,16 @@
 import { Doc0507040101Component } from './doc-05-07-04-01-01.component';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 describe('Doc0507040101Component', () => {
   let component: Doc0507040101Component;
   let fixture: ComponentFixture<Doc0507040101Component>;
   let h1El: HTMLHeadingElement | null;
 
-  beforeEach(async () => {
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [Doc0507040101Component],
     }).compileComponents();
-  });
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(Doc0507040101Component);

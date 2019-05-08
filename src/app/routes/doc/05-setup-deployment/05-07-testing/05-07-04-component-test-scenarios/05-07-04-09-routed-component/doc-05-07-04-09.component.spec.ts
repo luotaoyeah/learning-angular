@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Doc05070409Component } from './doc-05-07-04-09.component';
 import { SharedModule } from '@shared';
 import { Router } from '@angular/router';
@@ -13,7 +13,7 @@ describe('Doc05070409Component', () => {
     'navigateByUrl',
   ]);
 
-  beforeEach(async () => {
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [Doc05070409Component],
       imports: [SharedModule],
@@ -24,7 +24,7 @@ describe('Doc05070409Component', () => {
         },
       ],
     }).compileComponents();
-  });
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(Doc05070409Component);

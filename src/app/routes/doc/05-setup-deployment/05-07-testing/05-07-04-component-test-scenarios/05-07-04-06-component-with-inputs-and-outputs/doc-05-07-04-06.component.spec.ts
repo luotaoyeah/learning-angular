@@ -1,5 +1,5 @@
 import { Doc05070406Component } from './doc-05-07-04-06.component';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { SharedModule } from '@shared';
@@ -10,12 +10,12 @@ describe('Doc05070406Component', () => {
   let buttonDebugEl: DebugElement;
   let buttonEl: HTMLButtonElement | null;
 
-  beforeEach(async () => {
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [Doc05070406Component],
       imports: [SharedModule],
     }).compileComponents();
-  });
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(Doc05070406Component);

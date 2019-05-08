@@ -1,5 +1,5 @@
 import { Doc0507040103Component } from './doc-05-07-04-01-03.component';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { NzButtonModule } from 'ng-zorro-antd';
 
@@ -8,12 +8,12 @@ describe('Doc0507040103Component', () => {
   // @ts-ignore: TS6133
   let component: Doc0507040103Component;
 
-  beforeEach(async () => {
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [Doc0507040103Component],
       imports: [FormsModule, NzButtonModule],
     }).compileComponents();
-  });
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(Doc0507040103Component);
