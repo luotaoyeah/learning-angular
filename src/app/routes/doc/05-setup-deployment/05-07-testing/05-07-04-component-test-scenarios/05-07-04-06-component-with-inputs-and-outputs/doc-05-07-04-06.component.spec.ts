@@ -38,4 +38,38 @@ describe('Doc05070406Component', () => {
       expect(buttonEl.textContent).toEqual('BAR');
     }
   });
+
+  it('should raise ntClick event when clicked using triggerEventHandler ', () => {
+    let $event: number = 0;
+
+    /*
+     * 通过 EventEmitter.subscribe() 方法，注册事件监听函数
+     */
+    component.ntClick.subscribe((value: number) => {
+      $event = value;
+    });
+
+    /*
+     * 通过 DebugElement.triggerEventHandler() 方法，触发一个事件
+     */
+    buttonDebugEl.triggerEventHandler('click', 0);
+
+    expect($event).toEqual(99);
+  });
+
+  it('should raise ntClick event when clicked using HTMLButtonElement.click()', () => {
+    let $event: number = 0;
+
+    component.ntClick.subscribe((value: number) => {
+      $event = value;
+    });
+
+    if (buttonEl) {
+      /*
+       * 可以直接调用 HTMLElement.click() 方法，来触发一个事件
+       */
+      buttonEl.click();
+      expect($event).toEqual(99);
+    }
+  });
 });
