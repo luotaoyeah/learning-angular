@@ -8,7 +8,7 @@ import 'zone.js/dist/zone-testing';
 
 /*
  * 在 fakeAsync() zone 中使用 rxjs scheduler 时，
- * 比如引入 'zone.js/dist/zone-patch-rxjs-fake-async'
+ * 必须引入 'zone.js/dist/zone-patch-rxjs-fake-async'
  */
 import 'zone.js/dist/zone-patch-rxjs-fake-async';
 

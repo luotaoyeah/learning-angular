@@ -1,4 +1,5 @@
 import {
+  async,
   ComponentFixture,
   fakeAsync,
   flushMicrotasks,
@@ -7,7 +8,7 @@ import {
 } from '@angular/core/testing';
 import { Doc05070404Component } from './doc-05-07-04-04.component';
 import { Doc05070404Service } from './service/doc-05-07-04-04.service';
-import { interval, of, throwError } from 'rxjs';
+import { defer, interval, of, throwError } from 'rxjs';
 import { SharedModule } from '@shared';
 import { delay, take } from 'rxjs/operators';
 
@@ -179,5 +180,66 @@ describe('Doc05070404Component', () => {
     expect(elapsed).toBe(2000);
   }));
 
-  /* TODO https://angular.io/guide/testing#component-with-async-service */
+  describe('when test with asynchronous observables', () => {
+    beforeEach(() => {
+      /*
+       * 使用 defer() 创建一个 asynchronous observable
+       */
+      getNextSpy.and.returnValue(defer(() => Promise.resolve(9)));
+    });
+
+    it('should not display message after init', () => {
+      fixture.detectChanges();
+
+      if (messageEl) {
+        expect(messageEl.textContent).toEqual('');
+        expect(getNextSpy.calls.any()).toBe(true, 'getNext() called');
+      }
+    });
+
+    it('should display message afetr getNext(): fakeAsync', fakeAsync(() => {
+      fixture.detectChanges();
+      if (messageEl) {
+        expect(messageEl.textContent).toEqual('');
+
+        tick();
+        fixture.detectChanges();
+
+        expect(messageEl.textContent).toEqual('9');
+        expect(getNextSpy).toHaveBeenCalledTimes(1);
+      }
+    }));
+
+    it('should display message after getNext(): async', async(() => {
+      /*
+       * fakeAsync() 有一个缺点，就是在它里面不能执行 XHR 请求，
+       * 如果需要执行 XHR 请求，需要使用 async() 方法
+       */
+
+      fixture.detectChanges();
+      if (messageEl) {
+        expect(messageEl.textContent).toEqual('');
+
+        /*
+         * 在 fakeAsync() 中使用的是 tick()，
+         * 在 async() 中使用的是 ComponentFixture.whenStable()，
+         * ComponentFixture.whenStable() 方法在本次 event loop 的 task queue 清空之后返回，
+         * 也就是所有的 async task 执行完毕之后
+         *
+         * ComponentFixture.isStable() 方法，可以用来判断 whether the fixture is stable or not
+         */
+        expect(fixture.isStable()).toBe(false);
+        fixture.whenStable().then(() => {
+          expect(fixture.isStable()).toBe(true);
+
+          fixture.detectChanges();
+
+          if (messageEl) {
+            expect(messageEl.textContent).toEqual('9');
+            expect(getNextSpy.calls.count()).toEqual(1);
+          }
+        });
+      }
+    }));
+  });
 });
