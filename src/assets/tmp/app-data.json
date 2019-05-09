@@ -10,6 +10,18 @@
   },
   "menu": [
     {
+      "i18n": "menu.home",
+      "group": true,
+      "hideInBreadcrumb": true,
+      "children": [
+        {
+          "i18n": "menu.home.home",
+          "link": "/home",
+          "icon": "anticon anticon-info-circle"
+        }
+      ]
+    },
+    {
       "i18n": "menu.doc",
       "group": true,
       "hideInBreadcrumb": true,

@@ -18,7 +18,8 @@ describe('Doc0507041501Component', () => {
        * 而通过 @Component.providers 注册的 service 是注册到了 component injector 中去，
        * component injector 是 TestingModule injector 的下级，
        * 因此通过 TestModuleMetadata.providers 注册的 service 不能覆盖 component injector 中的 service，
-       * 如下，注册的 Doc05070415Service 并不会被 Doc0507041501Component 使用
+       * 如下，在 TestingModule 中注册的 Doc05070415Service 并不会被 Doc0507041501Component 使用，
+       * Doc0507041501Component 使用的是它自己的 injector 中的 Doc05070415Service
        */
       providers: [
         {

@@ -1,4 +1,6 @@
 {
+  "menu.home": "HOME",
+  "menu.home.home": "HOME",
   "menu.doc": "DOC",
   "menu.doc.tutorial": "TUTORIAL",
   "menu.doc.fundamental": "FUNDAMENTAL",
@@ -72,7 +74,6 @@
   "menu.header.settings.title": "设置",
   "menu.header.lock.title": "锁屏",
   "menu.main": "导航菜单",
-  "menu.home": "首页",
   "menu.account": "用户管理",
   "menu.account.settings": "个人设置",
   "menu.account.logout": "退出登录",
