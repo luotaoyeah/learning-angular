@@ -168,6 +168,7 @@ import { Doc03021106Component } from './03-02-11-pipe/03-02-11-06-pure-and-impur
 import { Doc0302110601Component } from './03-02-11-pipe/03-02-11-06-pure-and-impure-pipes/03-02-11-06-01-the-impure-asyncpipe/doc-03-02-11-06-01.component';
 import { Doc0302040201Component } from './03-02-04-lifecycle-hooks/03-02-04-02-lifecycle-sequence/03-02-04-02-01-ngonchanges/doc-03-02-04-02-01.component';
 import { Doc0302040202Component } from './03-02-04-lifecycle-hooks/03-02-04-02-lifecycle-sequence/03-02-04-02-02-ngoninit/doc-03-02-04-02-02.component';
+import { Doc0302090201Directive } from './03-02-09-attribute-directives/03-02-09-02-build-a-simple-attribute-directive/directive/doc-03-02-09-02-01.directive';
 
 // tslint:enable:max-line-length
 
@@ -267,7 +268,6 @@ import { Doc0302040202Component } from './03-02-04-lifecycle-hooks/03-02-04-02-l
     Doc03020403Component,
     Doc0302040301Component,
     Doc03020404Component,
-    MySpyDirective,
     Doc0302040401Component,
     Doc0302040402Component,
     Doc03020405Component,
@@ -322,13 +322,9 @@ import { Doc0302040202Component } from './03-02-04-lifecycle-hooks/03-02-04-02-l
     Doc030209Component,
     Doc03020901Component,
     Doc03020902Component,
-    HighlightDirective,
     Doc03020903Component,
-    Highlight02Directive,
     Doc03020904Component,
-    Highlight04Directive,
     Doc03020905Component,
-    Highlight05Directive,
     /* 03-02-10 */
     Doc030210Component,
     Doc03021001Component,
@@ -339,7 +335,6 @@ import { Doc0302040202Component } from './03-02-04-lifecycle-hooks/03-02-04-02-l
     Doc03021006Component,
     Doc03021007Component,
     Doc03021008Component,
-    UnlessDirective,
     /* 03-02-11 */
     Doc030211Component,
     Doc03021101Component,
@@ -356,6 +351,15 @@ import { Doc0302040202Component } from './03-02-04-lifecycle-hooks/03-02-04-02-l
     Doc03021106Component,
     Pipe03021106Pipe,
     Doc0302110601Component,
+    [
+      MySpyDirective,
+      HighlightDirective,
+      Highlight02Directive,
+      Highlight04Directive,
+      Highlight05Directive,
+      UnlessDirective,
+      Doc0302090201Directive,
+    ],
   ],
   imports: [
     CommonModule,
