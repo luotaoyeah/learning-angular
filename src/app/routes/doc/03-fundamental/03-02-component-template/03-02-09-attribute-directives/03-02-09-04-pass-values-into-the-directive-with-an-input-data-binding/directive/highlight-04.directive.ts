@@ -4,7 +4,8 @@ import { Directive, ElementRef, HostListener, Input } from '@angular/core';
   selector: '[appHighlight04]',
 })
 export class Highlight04Directive {
-  @Input('appHighlight04') highlightColor!: string;
+  @Input('appHighlight04')
+  public highlightColor!: string;
 
   constructor(private elementRef: ElementRef<HTMLParagraphElement>) {}
 

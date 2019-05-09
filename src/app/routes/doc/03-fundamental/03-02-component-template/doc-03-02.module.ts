@@ -170,6 +170,7 @@ import { Doc0302040201Component } from './03-02-04-lifecycle-hooks/03-02-04-02-l
 import { Doc0302040202Component } from './03-02-04-lifecycle-hooks/03-02-04-02-lifecycle-sequence/03-02-04-02-02-ngoninit/doc-03-02-04-02-02.component';
 import { Doc0302090201Directive } from './03-02-09-attribute-directives/03-02-09-02-build-a-simple-attribute-directive/directive/doc-03-02-09-02-01.directive';
 import { Doc0302090301Directive } from './03-02-09-attribute-directives/03-02-09-03-respond-to-user-initiated-events/directive/doc-03-02-09-03-01.directive';
+import { Doc0302090401Directive } from './03-02-09-attribute-directives/03-02-09-04-pass-values-into-the-directive-with-an-input-data-binding/directive/doc-03-02-09-04-01.directive';
 
 // tslint:enable:max-line-length
 
@@ -361,6 +362,7 @@ import { Doc0302090301Directive } from './03-02-09-attribute-directives/03-02-09
       UnlessDirective,
       Doc0302090201Directive,
       Doc0302090301Directive,
+      Doc0302090401Directive,
     ],
   ],
   imports: [
