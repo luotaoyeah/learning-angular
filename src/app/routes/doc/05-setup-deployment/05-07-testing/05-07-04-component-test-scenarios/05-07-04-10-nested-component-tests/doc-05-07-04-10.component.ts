@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-/*
- * TODO https://angular.io/guide/testing#nested-component-tests
- */
 @Component({
   selector: 'app-doc-05-07-04-10',
   templateUrl: './doc-05-07-04-10.component.html',

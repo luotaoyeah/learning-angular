@@ -33,6 +33,7 @@ import { Doc05070412Component } from './05-07-testing/05-07-04-component-test-sc
 import { Doc05070414Component } from './05-07-testing/05-07-04-component-test-scenarios/05-07-04-14-setup-with-module-imports/doc-05-07-04-14.component';
 import { Doc05070415Component } from './05-07-testing/05-07-04-component-test-scenarios/05-07-04-15-override-component-providers/doc-05-07-04-15.component';
 import { Doc0507041501Component } from './05-07-testing/05-07-04-component-test-scenarios/05-07-04-15-override-component-providers/05-07-04-15-01/doc-05-07-04-15-01.component';
+import { Doc0507041001Component } from './05-07-testing/05-07-04-component-test-scenarios/05-07-04-10-nested-component-tests/05-07-04-10-01/doc-05-07-04-10-01.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { Doc0507041501Component } from './05-07-testing/05-07-04-component-test-
     Doc05070409Component,
     Doc0507040901Component,
     Doc05070410Component,
+    Doc0507041001Component,
     Doc05070411Component,
     Doc05070412Component,
     Doc05070413Component,
