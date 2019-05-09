@@ -8,11 +8,11 @@ export class Highlight02Directive {
 
   @HostListener('mouseenter')
   onMouseEnter() {
-    this.elementRef.nativeElement.style.color = '#ff0000';
+    this.elementRef.nativeElement.style.color = '#f00';
   }
 
   @HostListener('mouseleave')
   onMouseLeave() {
-    this.elementRef.nativeElement.style.color = '#000000';
+    this.elementRef.nativeElement.style.color = '#000';
   }
 }
