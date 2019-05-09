@@ -31,6 +31,8 @@ import { Doc05070410Component } from './05-07-testing/05-07-04-component-test-sc
 import { Doc05070411Component } from './05-07-testing/05-07-04-component-test-scenarios/05-07-04-11-components-with-routerlink/doc-05-07-04-11.component';
 import { Doc05070412Component } from './05-07-testing/05-07-04-component-test-scenarios/05-07-04-12-use-a-page-object/doc-05-07-04-12.component';
 import { Doc05070414Component } from './05-07-testing/05-07-04-component-test-scenarios/05-07-04-14-setup-with-module-imports/doc-05-07-04-14.component';
+import { Doc05070415Component } from './05-07-testing/05-07-04-component-test-scenarios/05-07-04-15-override-component-providers/doc-05-07-04-15.component';
+import { Doc0507041501Component } from './05-07-testing/05-07-04-component-test-scenarios/05-07-04-15-override-component-providers/05-07-04-15-01/doc-05-07-04-15-01.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +67,8 @@ import { Doc05070414Component } from './05-07-testing/05-07-04-component-test-sc
     Doc05070412Component,
     Doc05070413Component,
     Doc05070414Component,
+    Doc05070415Component,
+    Doc0507041501Component,
   ],
   imports: [CommonModule, FormsModule, SharedModule, Doc05RoutingModule],
 })
