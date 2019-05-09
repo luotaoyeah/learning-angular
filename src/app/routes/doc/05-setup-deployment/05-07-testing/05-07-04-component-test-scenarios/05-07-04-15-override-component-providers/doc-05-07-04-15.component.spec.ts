@@ -8,7 +8,11 @@ describe('Doc05070415Component', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [Doc05070415Component, Doc0507041501StubComponent],
+      declarations: [
+        Doc05070415Component,
+        Doc0507041501StubComponent,
+        Doc0507041502StubComponent,
+      ],
     }).compileComponents();
   }));
 
@@ -27,3 +31,9 @@ describe('Doc05070415Component', () => {
   template: '',
 })
 class Doc0507041501StubComponent {}
+
+@Component({
+  selector: 'app-doc-05-07-04-15-02',
+  template: '',
+})
+class Doc0507041502StubComponent {}
