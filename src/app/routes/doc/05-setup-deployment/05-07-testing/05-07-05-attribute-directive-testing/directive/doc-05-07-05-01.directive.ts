@@ -10,7 +10,7 @@ import {
   selector: '[appDoc05070501]',
 })
 export class Doc05070501Directive implements OnChanges {
-  private defaultColor: string = 'rgb(211, 211, 211)';
+  public defaultColor: string = 'rgb(211, 211, 211)';
 
   @Input('appDoc05070501')
   public bgColor!: string;
