@@ -8,7 +8,7 @@ import { Directive, ElementRef } from '@angular/core';
   selector: 'doc-09-01-02-03-05-01-01',
 })
 export class Doc09010203050101Directive {
-  constructor(elementRef: ElementRef<HTMLButtonElement>) {
+  constructor(elementRef: ElementRef<HTMLElement>) {
     elementRef.nativeElement.textContent = 'doc-09-01-02-03-05-01-01';
     elementRef.nativeElement.style.color = '#f00';
   }
