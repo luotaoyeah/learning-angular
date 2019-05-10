@@ -28,6 +28,9 @@ import { Doc09010203050401Directive } from './09-01-02-primary-entry-point-expor
 import { Doc090102030505Component } from './09-01-02-primary-entry-point-exports/09-01-02-03-decorators/09-01-02-03-05/09-01-02-03-05-05/doc-09-01-02-03-05-05.component';
 import { Doc09010203050501Directive } from './09-01-02-primary-entry-point-exports/09-01-02-03-decorators/09-01-02-03-05/09-01-02-03-05-05/directive/doc-09-01-02-03-05-05-01.directive';
 import { Doc09010203050502Directive } from './09-01-02-primary-entry-point-exports/09-01-02-03-decorators/09-01-02-03-05/09-01-02-03-05-05/directive/doc-09-01-02-03-05-05-02.directive';
+import { Doc090102030506Component } from './09-01-02-primary-entry-point-exports/09-01-02-03-decorators/09-01-02-03-05/09-01-02-03-05-06/doc-09-01-02-03-05-06.component';
+import { Doc090102030507Component } from './09-01-02-primary-entry-point-exports/09-01-02-03-decorators/09-01-02-03-05/09-01-02-03-05-07/doc-09-01-02-03-05-07.component';
+import { Doc090102030508Component } from './09-01-02-primary-entry-point-exports/09-01-02-03-decorators/09-01-02-03-05/09-01-02-03-05-08/doc-09-01-02-03-05-08.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +48,9 @@ import { Doc09010203050502Directive } from './09-01-02-primary-entry-point-expor
     Doc090102030503Component,
     Doc090102030504Component,
     Doc090102030505Component,
+    Doc090102030506Component,
+    Doc090102030507Component,
+    Doc090102030508Component,
     [
       Doc090102030304Directive,
       Doc09010203050101Directive,
