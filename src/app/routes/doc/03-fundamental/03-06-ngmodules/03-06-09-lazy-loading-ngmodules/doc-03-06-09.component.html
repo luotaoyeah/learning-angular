@@ -1,5 +1,8 @@
 <nz-collapse [nzAccordion]="true">
-  <nz-collapse-panel nzHeader="Lazy Loading Feature Modules">
+  <nz-collapse-panel
+    nzHeader="Lazy Loading Feature Modules"
+    nzExpandedIcon="caret-right"
+  >
     <button nz-button (click)="goto01Page()">01</button>
     <button nz-button (click)="goto02Page()">02</button>
     <router-outlet></router-outlet>

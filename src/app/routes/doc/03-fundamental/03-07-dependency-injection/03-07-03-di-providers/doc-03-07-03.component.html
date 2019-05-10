@@ -1,5 +1,8 @@
 <nz-collapse [nzAccordion]="true">
-  <nz-collapse-panel nzHeader="Dependency Providers">
+  <nz-collapse-panel
+    nzHeader="Dependency Providers"
+    nzExpandedIcon="caret-right"
+  >
     <p>
       injector 内部维护了一个 token 到 provider 的映射，我们在注册一个 provider
       的时候，实际上就是往这个 map 里面添加一个数据，当 injector
