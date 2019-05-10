@@ -10,5 +10,5 @@ import { Component, OnInit } from '@angular/core';
 export class Doc030403Component implements OnInit {
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 }

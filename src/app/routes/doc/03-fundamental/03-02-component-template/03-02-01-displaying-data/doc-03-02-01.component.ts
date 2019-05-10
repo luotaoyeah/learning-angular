@@ -5,10 +5,10 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './doc-03-02-01.component.html',
 })
 export class Doc030201Component implements OnInit {
-  title = 'TOUR OF HEROES';
-  myHero = 'Windstorm';
+  public title = 'TOUR OF HEROES';
+  public myHero = 'Windstorm';
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 }

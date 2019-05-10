@@ -9,9 +9,9 @@ import { MessageService } from 'primeng/api';
 export class Doc03020301Component implements OnInit {
   constructor(private messageService: MessageService) {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 
-  handleClick(event: MouseEvent) {
+  public handleClick(event: MouseEvent) {
     this.messageService.clear();
     this.messageService.add({
       severity: 'info',

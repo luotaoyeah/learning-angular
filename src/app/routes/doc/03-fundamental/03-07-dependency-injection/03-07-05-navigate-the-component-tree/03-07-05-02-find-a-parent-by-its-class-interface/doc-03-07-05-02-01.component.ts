@@ -8,7 +8,7 @@ import { ParentComponent } from './doc-03-07-05-02.service';
 export class Doc0307050201Component implements OnInit {
   constructor(@Optional() private doc03070501Component: ParentComponent) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     console.assert(this.doc03070501Component.foo === 'FOO');
   }
 }

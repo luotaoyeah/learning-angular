@@ -1,5 +1,5 @@
 abstract class ILogger {
-  abstract log(): string;
+  public abstract log(): string;
 }
 
 export { ILogger };

@@ -21,7 +21,7 @@ import { Directive, ElementRef, OnInit } from '@angular/core';
 export class RadiusDirective implements OnInit {
   constructor(private elementRef: ElementRef) {}
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.elementRef.nativeElement.style.color = 'red';
   }
 }

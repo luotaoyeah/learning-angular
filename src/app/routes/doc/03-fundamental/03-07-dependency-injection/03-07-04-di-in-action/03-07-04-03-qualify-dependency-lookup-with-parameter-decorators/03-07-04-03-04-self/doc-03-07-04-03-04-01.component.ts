@@ -38,7 +38,7 @@ export class Doc030704030401Component implements OnInit {
     private sessionStorage: Storage,
   ) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     console.assert(this.localStorage === window.localStorage);
     console.assert(this.sessionStorage === window.sessionStorage);
   }

@@ -12,7 +12,7 @@ import { Injectable } from '@angular/core';
 export class DiAService {
   constructor() {}
 
-  test(): void {
+  public test(): void {
     console.log('WORKS');
   }
 }

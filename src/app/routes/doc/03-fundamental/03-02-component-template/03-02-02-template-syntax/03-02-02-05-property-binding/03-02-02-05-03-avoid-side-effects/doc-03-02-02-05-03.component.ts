@@ -7,12 +7,12 @@ import { Component, OnInit } from '@angular/core';
 export class Doc0302020503Component implements OnInit {
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 
   /**
    * 该方法用于 property binding，因此不应该包含 side effects
    */
-  getPicUrl(): string {
+  public getPicUrl(): string {
     return 'assets/images/20190328090519.jpg';
   }
 }

@@ -7,13 +7,13 @@ import { MessageService } from 'primeng/api';
   providers: [MessageService],
 })
 export class Doc0302020702Component implements OnInit {
-  foo = 'foo';
+  public foo = 'foo';
 
   constructor(public messageService: MessageService) {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 
-  handleClick01($event: boolean) {
+  public handleClick01($event: boolean) {
     this.messageService.add({
       severity: 'info',
       summary: '提示',

@@ -13,5 +13,5 @@ import { Component, OnInit } from '@angular/core';
 export class IntroIntoComponentBComponent implements OnInit {
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 }

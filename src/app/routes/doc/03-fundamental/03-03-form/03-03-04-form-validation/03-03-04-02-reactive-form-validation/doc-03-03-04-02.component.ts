@@ -6,7 +6,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   templateUrl: './doc-03-03-04-02.component.html',
 })
 export class Doc03030402Component implements OnInit {
-  formGroup: FormGroup = new FormGroup({
+  public formGroup: FormGroup = new FormGroup({
     name: new FormControl('', {
       validators: [Validators.required, Validators.minLength(4)],
     }),
@@ -18,5 +18,5 @@ export class Doc03030402Component implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 }

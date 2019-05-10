@@ -7,7 +7,7 @@ import { forbiddenNameValidator } from './validator/forbidden-name-validator';
   templateUrl: './doc-03-03-04-03.component.html',
 })
 export class Doc03030403Component implements OnInit {
-  formGroup: FormGroup = new FormGroup({
+  public formGroup: FormGroup = new FormGroup({
     name: new FormControl('', {
       /*
        * custom validator function 如何在 reactive form 中使用？
@@ -17,9 +17,9 @@ export class Doc03030403Component implements OnInit {
     }),
   });
 
-  name: string = '';
+  public name: string = '';
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 }

@@ -15,7 +15,7 @@ export class CrisisService {
   /**
    * 获取危机列表
    */
-  getCrises(): Observable<Array<Crisis>> {
+  public getCrises(): Observable<Array<Crisis>> {
     return this.http.get<Array<Crisis>>(this.url).pipe(
       tap(() => {
         console.log('[加载危机列表]');
@@ -28,7 +28,7 @@ export class CrisisService {
    * 根据ID获取危机
    * @param id 危机ID
    */
-  getCrisis(id: number): Observable<Crisis> {
+  public getCrisis(id: number): Observable<Crisis> {
     return this.http.get<Crisis>(`${this.url}/${id}`).pipe(
       tap(() => {
         console.log(`[查询危机]: [ id = ${id} ]`);
@@ -42,7 +42,7 @@ export class CrisisService {
    * @param crisis 危机
    */
   // tslint:disable-next-line:no-any
-  updateCrisis(crisis: Crisis): Observable<any> {
+  public updateCrisis(crisis: Crisis): Observable<any> {
     return this.http
       .put<Crisis>(this.url, crisis, {
         headers: new HttpHeaders({ 'Content-Type': 'application/json' }),

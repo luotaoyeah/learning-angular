@@ -13,7 +13,7 @@ export class HeroDetailComponent implements OnInit {
   /*
    * @Input 用来声明一个 input property，类似于 vue 里面的 props property
    */
-  hero: Hero | null = null;
+  public hero: Hero | null = null;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -21,14 +21,14 @@ export class HeroDetailComponent implements OnInit {
     private heroService: HeroService,
   ) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     this.getHero();
   }
 
   /**
    * 获取英雄
    */
-  getHero(): void {
+  public getHero(): void {
     const id: number = Number(this.activatedRoute.snapshot.paramMap.get('id'));
     if (!Number.isNaN(id)) {
       this.heroService.getHero(id).subscribe((hero: Hero) => {
@@ -40,7 +40,7 @@ export class HeroDetailComponent implements OnInit {
   /**
    * 更新英雄
    */
-  save(): void {
+  public save(): void {
     if (this.hero) {
       this.heroService.updateHero(this.hero).subscribe(() => {
         this.goBack();
@@ -48,7 +48,7 @@ export class HeroDetailComponent implements OnInit {
     }
   }
 
-  goBack() {
+  public goBack() {
     this.location.back();
   }
 }

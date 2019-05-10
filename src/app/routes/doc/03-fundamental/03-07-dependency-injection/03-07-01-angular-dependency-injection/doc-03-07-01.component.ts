@@ -23,7 +23,7 @@ export class Doc030701Component implements OnInit {
     console.assert(doc03070102Service === null);
   }
 
-  ngOnInit() {
+  public ngOnInit() {
     this.color = this.doc030701Service.getColor();
   }
 }

@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
     );
   }
 
-  ngOnInit() {
+  public ngOnInit() {
     this.router.events
       .pipe(filter(evt => evt instanceof NavigationEnd))
       .subscribe(() => {

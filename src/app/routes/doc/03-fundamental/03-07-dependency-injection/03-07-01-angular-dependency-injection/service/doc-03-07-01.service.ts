@@ -11,7 +11,7 @@ export class Doc030701Service {
    */
   constructor(private doc03070101Service: Doc03070101Service) {}
 
-  getColor(): string {
+  public getColor(): string {
     this.doc03070101Service.log(COLOR);
 
     return COLOR;

@@ -14,7 +14,7 @@ import { ReuseTabService } from '@delon/abc';
   styleUrls: ['./login.component.less'],
 })
 export class LoginComponent {
-  formGroup: FormGroup;
+  public formGroup: FormGroup;
 
   constructor(
     formBuilder: FormBuilder,
@@ -46,7 +46,7 @@ export class LoginComponent {
   /**
    * 登录
    */
-  login() {
+  public login() {
     this.userName.markAsDirty();
     this.userName.updateValueAndValidity();
     this.password.markAsDirty();

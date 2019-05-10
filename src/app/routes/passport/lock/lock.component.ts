@@ -10,29 +10,30 @@ import { DA_SERVICE_TOKEN, ITokenService } from '@delon/auth';
   styleUrls: ['./lock.component.less'],
 })
 export class UserLockComponent {
-  f: FormGroup;
+  public formGroup: FormGroup;
 
   constructor(
-    fb: FormBuilder,
-    @Inject(DA_SERVICE_TOKEN) private tokenService: ITokenService,
-    public settings: SettingsService,
+    formBuilder: FormBuilder,
+    @Inject(DA_SERVICE_TOKEN)
+    private tokenService: ITokenService,
+    public settingsService: SettingsService,
     private router: Router,
   ) {
     tokenService.clear();
-    this.f = fb.group({
+    this.formGroup = formBuilder.group({
       password: [null, Validators.required],
     });
   }
 
-  submit() {
+  public submit() {
     // tslint:disable-next-line:forin
-    for (const i in this.f.controls) {
-      this.f.controls[i].markAsDirty();
-      this.f.controls[i].updateValueAndValidity();
+    for (const i in this.formGroup.controls) {
+      this.formGroup.controls[i].markAsDirty();
+      this.formGroup.controls[i].updateValueAndValidity();
     }
-    if (this.f.valid) {
+    if (this.formGroup.valid) {
       console.log('Valid!');
-      console.log(this.f.value);
+      console.log(this.formGroup.value);
       this.tokenService.set({
         token: '123',
       });

@@ -7,11 +7,11 @@ import { Directive, OnDestroy, OnInit } from '@angular/core';
 export class MySpyDirective implements OnInit, OnDestroy {
   constructor() {}
 
-  ngOnInit() {
+  public ngOnInit() {
     console.log(`[${MySpyDirective.name}]`, 'ngOnInit()');
   }
 
-  ngOnDestroy(): void {
+  public ngOnDestroy(): void {
     console.log(`[${MySpyDirective.name}]`, 'ngOnDestroy()');
   }
 }

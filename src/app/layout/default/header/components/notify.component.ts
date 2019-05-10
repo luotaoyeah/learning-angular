@@ -27,7 +27,7 @@ import { NoticeIconList, NoticeItem } from '@delon/abc';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderNotifyComponent {
-  data: NoticeItem[] = [
+  public data: NoticeItem[] = [
     {
       title: '通知',
       list: [],
@@ -53,8 +53,8 @@ export class HeaderNotifyComponent {
       clearText: '清空待办',
     },
   ];
-  count = 5;
-  loading = false;
+  public count = 5;
+  public loading = false;
 
   constructor(private msg: NzMessageService, private cdr: ChangeDetectorRef) {}
 
@@ -87,7 +87,7 @@ export class HeaderNotifyComponent {
     return data;
   }
 
-  loadData() {
+  public loadData() {
     if (this.loading) return;
     this.loading = true;
     setTimeout(() => {
@@ -200,12 +200,12 @@ export class HeaderNotifyComponent {
     }, 1000);
   }
 
-  clear(type: string) {
+  public clear(type: string) {
     this.msg.success(`清空了 ${type}`);
   }
 
   // tslint:disable-next-line:no-any
-  select(res: any) {
+  public select(res: any) {
     this.msg.success(`点击了 ${res.title} 的 ${res.item.title}`);
   }
 }

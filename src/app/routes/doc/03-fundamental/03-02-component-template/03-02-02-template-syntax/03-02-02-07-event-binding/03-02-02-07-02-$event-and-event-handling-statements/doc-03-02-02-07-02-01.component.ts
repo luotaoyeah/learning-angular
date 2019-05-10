@@ -6,9 +6,9 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
     '<p-button label="$event" (onClick)="someChange.emit(true)"></p-button>',
 })
 export class Doc030202070201Component implements OnInit {
-  @Output() someChange: EventEmitter<boolean> = new EventEmitter();
+  @Output() public someChange: EventEmitter<boolean> = new EventEmitter();
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 }

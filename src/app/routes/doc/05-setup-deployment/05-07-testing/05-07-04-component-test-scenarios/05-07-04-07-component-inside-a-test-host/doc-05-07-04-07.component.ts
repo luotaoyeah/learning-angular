@@ -13,9 +13,9 @@ export class Doc05070407Component implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 
-  handleClick() {
+  public handleClick() {
     this.ntClick.emit(99);
   }
 }

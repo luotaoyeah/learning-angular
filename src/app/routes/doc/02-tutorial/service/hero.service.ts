@@ -35,7 +35,7 @@ export class HeroService {
   /**
    * 获取英雄列表
    */
-  getHeroes(): Observable<Array<Hero>> {
+  public getHeroes(): Observable<Array<Hero>> {
     /*
      * 通常来讲，一个 Observable 可以多次返回，
      * 但是对于 HttpClient 来讲，它的请求方法返回的 Observable 只会返回一次
@@ -52,7 +52,7 @@ export class HeroService {
    * 根据ID获取英雄
    * @param id 英雄ID
    */
-  getHero(id: number): Observable<Hero> {
+  public getHero(id: number): Observable<Hero> {
     return this.http.get<Hero>(`${this.heroesUrl}/${id}`).pipe(
       tap(() => {
         this.log(`[查询英雄]: [ id = ${id} ]`);
@@ -66,7 +66,7 @@ export class HeroService {
    * @param hero 英雄
    */
   // tslint:disable-next-line:no-any
-  updateHero(hero: Hero): Observable<any> {
+  public updateHero(hero: Hero): Observable<any> {
     return this.http
       .put<Hero>(this.heroesUrl, hero, {
         headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
@@ -84,7 +84,7 @@ export class HeroService {
    * 添加英雄
    * @param hero 英雄
    */
-  addHero(hero: Hero): Observable<Hero> {
+  public addHero(hero: Hero): Observable<Hero> {
     return this.http
       .post<Hero>(this.heroesUrl, hero, {
         headers: new HttpHeaders({
@@ -103,7 +103,7 @@ export class HeroService {
    * 删除英雄
    * @param hero 英雄
    */
-  deleteHero(hero: Hero): Observable<Hero> {
+  public deleteHero(hero: Hero): Observable<Hero> {
     return this.http
       .delete<Hero>(`${this.heroesUrl}/${hero.id}`, {
         headers: new HttpHeaders({
@@ -122,7 +122,7 @@ export class HeroService {
    * 搜索英雄
    * @param term 关键字
    */
-  searchHeroes(term: string): Observable<Array<Hero>> {
+  public searchHeroes(term: string): Observable<Array<Hero>> {
     if (!term.trim()) {
       return of([]);
     }
@@ -141,7 +141,7 @@ export class HeroService {
    * 打印日志消息
    * @param message 消息
    */
-  log(message: string): void {
+  public log(message: string): void {
     this.messageService.add(`HeroService: ${message}`);
   }
 

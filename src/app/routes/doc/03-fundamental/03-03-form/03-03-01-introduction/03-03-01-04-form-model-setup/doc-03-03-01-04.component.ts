@@ -10,11 +10,11 @@ export class Doc03030104Component implements OnInit {
    * 在 component class 中显式创建一个 FormControl 实例，
    * 然后在 template 中通过 formControl(FormControlDirective) 指令绑定到某个 input element 上去
    */
-  colorFormControl: FormControl = new FormControl('red');
+  public colorFormControl: FormControl = new FormControl('red');
 
-  color = 'red';
+  public color = 'red';
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 }

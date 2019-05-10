@@ -11,14 +11,14 @@ import { of } from 'rxjs';
   styleUrls: ['./hero-detail.component.scss'],
 })
 export class HeroDetailComponent implements OnInit {
-  hero: Hero | null = null;
+  public hero: Hero | null = null;
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private heroService: HeroService,
   ) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     /*
      * ActivatedRoute 中的属性默认都是 observable 对象，
      * 相对应的，ActivatedRoute.snapshot 对象中的属性，都是非 observable 对象，
@@ -34,7 +34,7 @@ export class HeroDetailComponent implements OnInit {
   /**
    * 使用 snapshot 版本的 paramMap
    */
-  getHero(): void {
+  public getHero(): void {
     const id: number = Number(this.activatedRoute.snapshot.paramMap.get('id'));
     if (!Number.isNaN(id)) {
       this.heroService.getHero(id).subscribe((hero: Hero) => {
@@ -46,7 +46,7 @@ export class HeroDetailComponent implements OnInit {
   /**
    * 使用 observable 版本的 paramMap
    */
-  getHero$(): void {
+  public getHero$(): void {
     this.activatedRoute.paramMap
       .pipe(
         switchMap((paramMap: ParamMap) => {

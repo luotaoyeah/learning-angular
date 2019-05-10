@@ -17,13 +17,13 @@ export class Doc0302050401Component implements OnInit {
    * output property 是一个 EventEmitter 对象，通过调用 EventEmitter.emit() 方法，发出一个事件，
    * 父组件可以监听这个事件（event binding）
    */
-  @Output() vote: EventEmitter<string> = new EventEmitter();
+  @Output() public vote: EventEmitter<string> = new EventEmitter();
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 
-  doVote(result: string) {
+  public doVote(result: string) {
     this.vote.emit(result);
   }
 }

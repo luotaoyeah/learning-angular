@@ -99,7 +99,7 @@ export class I18NService implements AlainI18NService {
       );
   }
 
-  use(lang: string): void {
+  public use(lang: string): void {
     lang = lang || this.translate.getDefaultLang();
     if (this.currentLang === lang) return;
     this.updateLangData(lang);
@@ -107,12 +107,12 @@ export class I18NService implements AlainI18NService {
   }
 
   /** 获取语言列表 */
-  getLangs() {
+  public getLangs() {
     return this._langs;
   }
 
   /** 翻译 */
-  fanyi(key: string, interpolateParams?: object) {
+  public fanyi(key: string, interpolateParams?: object) {
     return this.translate.instant(key, interpolateParams);
   }
 

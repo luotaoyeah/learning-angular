@@ -15,7 +15,7 @@ export class HeaderUserComponent {
     @Inject(DA_SERVICE_TOKEN) private tokenService: ITokenService,
   ) {}
 
-  logout() {
+  public logout() {
     this.tokenService.clear();
     if (this.tokenService.login_url) {
       this.router.navigateByUrl(this.tokenService.login_url);

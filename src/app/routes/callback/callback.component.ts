@@ -9,7 +9,7 @@ import { SettingsService } from '@delon/theme';
   providers: [SocialService],
 })
 export class CallbackComponent implements OnInit {
-  type = '';
+  public type = '';
 
   constructor(
     private socialService: SocialService,
@@ -17,7 +17,7 @@ export class CallbackComponent implements OnInit {
     private route: ActivatedRoute,
   ) {}
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.type = this.route.snapshot.params.type;
     this.mockModel();
   }

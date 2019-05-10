@@ -9,9 +9,9 @@ import { MessageService } from 'primeng/api';
 export class Doc0302020701Component implements OnInit {
   constructor(public messageService: MessageService) {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 
-  handleClick01() {
+  public handleClick01() {
     this.messageService.add({
       severity: 'info',
       summary: '提示',
@@ -19,7 +19,7 @@ export class Doc0302020701Component implements OnInit {
     });
   }
 
-  handleClick02(msg: string) {
+  public handleClick02(msg: string) {
     this.messageService.add({
       severity: 'success',
       summary: '提示',

@@ -1,15 +1,16 @@
 import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 
 @Directive({
-  selector: '[appDoc0302090401]',
+  selector: '[appDoc0302090403]',
 })
-export class Doc0302090401Directive {
+export class Doc0302090403Directive {
   /*
-   * directive 可以通过 @Input() 添加 input property，
-   * 在使用的时候，这个 directive 和这个 input property 作为某个 element 的两个不同的 attribute
+   * 如果 input property 的名称跟 directive 的 selector 一样，
+   * 则在 element 上，directive attribute 和 input property attribute 可以合二为一，
+   * 但是这种方式的缺点是，input property 的名称变得不直观，不能知其意
    */
   @Input()
-  public borderColor: string = '#f00';
+  public appDoc0302090403!: string;
 
   constructor(private elementRef: ElementRef<HTMLParagraphElement>) {
     elementRef.nativeElement.style.padding = '10px';
@@ -18,12 +19,12 @@ export class Doc0302090401Directive {
   }
 
   @HostListener('mouseenter')
-  public onMouseEntere(): void {
-    this.hover(this.borderColor);
+  protected onMouseEnter(): void {
+    this.hover(this.appDoc0302090403);
   }
 
   @HostListener('mouseleave')
-  public onMouseLeave(): void {
+  protected onMouseLeave(): void {
     this.hover('');
   }
 

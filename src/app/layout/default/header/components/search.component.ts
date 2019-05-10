@@ -27,15 +27,15 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderSearchComponent implements AfterViewInit {
-  q = '';
+  public q = '';
 
-  quereyInputEl: HTMLInputElement | null = null;
+  public quereyInputEl: HTMLInputElement | null = null;
 
   @HostBinding('class.alain-default__search-focus')
-  focus = false;
+  public focus = false;
 
   @HostBinding('class.alain-default__search-toggled')
-  searchToggled = false;
+  public searchToggled = false;
 
   @Input()
   set toggleChange(value: boolean) {
@@ -51,16 +51,16 @@ export class HeaderSearchComponent implements AfterViewInit {
 
   constructor(private elementRef: ElementRef) {}
 
-  ngAfterViewInit() {
+  public ngAfterViewInit() {
     this.quereyInputEl = (this.elementRef
       .nativeElement as HTMLElement).querySelector('.ant-input');
   }
 
-  qFocus() {
+  public qFocus() {
     this.focus = true;
   }
 
-  qBlur() {
+  public qBlur() {
     this.focus = false;
     this.searchToggled = false;
   }

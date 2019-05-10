@@ -10,7 +10,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class Doc03080502Interceptor implements HttpInterceptor {
-  intercept(
+  public intercept(
     // tslint:disable-next-line:no-any
     httpRequest: HttpRequest<any>,
     httpHandler: HttpHandler,

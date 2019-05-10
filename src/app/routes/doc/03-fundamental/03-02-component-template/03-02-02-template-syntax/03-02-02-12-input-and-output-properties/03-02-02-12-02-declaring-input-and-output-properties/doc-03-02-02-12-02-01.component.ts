@@ -9,14 +9,14 @@ export class Doc030202120201Component implements OnInit {
   /*
    * 使用 @Input 装饰器来声明一个 input property
    */
-  @Input() foo = '';
+  @Input() public foo = '';
 
   /*
    * 使用 @Output 装饰器来声明一个 output property
    */
-  @Output() bar: EventEmitter<string> = new EventEmitter();
+  @Output() public bar: EventEmitter<string> = new EventEmitter();
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 }

@@ -10,7 +10,7 @@ export class Doc05070403Component implements OnInit {
 
   constructor(private doc05070403Service: Doc05070403Service) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     this.message = `${this.doc05070403Service.name}BAR`;
   }
 }

@@ -7,15 +7,15 @@ import { SettingsService } from '@delon/theme';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent {
-  searchToggleStatus = false;
+  public searchToggleStatus = false;
 
   constructor(public settings: SettingsService) {}
 
-  toggleCollapsedSidebar() {
+  public toggleCollapsedSidebar() {
     this.settings.setLayout('collapsed', !this.settings.layout.collapsed);
   }
 
-  searchToggleChange() {
+  public searchToggleChange() {
     this.searchToggleStatus = !this.searchToggleStatus;
   }
 }

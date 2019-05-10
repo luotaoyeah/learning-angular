@@ -21,19 +21,19 @@ import * as screenfull from 'screenfull';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderFullScreenComponent {
-  status = false;
+  public status = false;
 
   private get screenfull(): screenfull.Screenfull {
     return screenfull as screenfull.Screenfull;
   }
 
   @HostListener('window:resize')
-  _resize() {
+  public _resize() {
     this.status = this.screenfull.isFullscreen;
   }
 
   @HostListener('click')
-  _click() {
+  public _click() {
     if (this.screenfull.enabled) {
       this.screenfull.toggle();
     }

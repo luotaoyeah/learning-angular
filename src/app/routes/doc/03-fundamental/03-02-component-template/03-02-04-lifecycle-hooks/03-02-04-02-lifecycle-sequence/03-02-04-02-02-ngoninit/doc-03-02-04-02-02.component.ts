@@ -19,7 +19,7 @@ export class Doc0302040202Component implements OnInit, OnChanges {
 
   constructor(private comnService: ComnService) {}
 
-  ngOnChanges(simpleChanges: SimpleChanges): void {
+  public ngOnChanges(simpleChanges: SimpleChanges): void {
     console.log(
       `${this.comnService.getComponentLabel(Doc0302040202Component)}`,
       'ngOnChanges()',
@@ -32,7 +32,7 @@ export class Doc0302040202Component implements OnInit, OnChanges {
    *     ngOnChanges() 已经完成了第一次执行，因此 input property 已经完成了初始化，
    *     但是 template 中的 data-binding 尚未进行渲染
    */
-  ngOnInit(): void {
+  public ngOnInit(): void {
     console.log(
       `${this.comnService.getComponentLabel(Doc0302040202Component)}`,
       'ngOnInit()',

@@ -5,9 +5,9 @@ import { Component, Input, OnInit } from '@angular/core';
   template: '<p-button [label]="msg"></p-button>&nbsp;',
 })
 export class Doc030202100201Component implements OnInit {
-  @Input() msg = '';
+  @Input() public msg = '';
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 }

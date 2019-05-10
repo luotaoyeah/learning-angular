@@ -10,7 +10,7 @@ export class Doc03030209Component implements OnInit {
    * FormArray 表示一组没有名字的 FormControl，
    * 可以通过 FormArray.push() 方法动态添加 FormControl
    */
-  profileFormGroup: FormGroup = this.formBuilder.group({
+  public profileFormGroup: FormGroup = this.formBuilder.group({
     name: ['', Validators.required],
     aliases: this.formBuilder.array([this.formBuilder.control('')]),
   });
@@ -21,12 +21,12 @@ export class Doc03030209Component implements OnInit {
 
   constructor(private formBuilder: FormBuilder) {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 
   /**
    * 往 FormArray 中添加一个新的 FormControl
    */
-  addAlias() {
+  public addAlias() {
     this.aliases.push(this.formBuilder.control(''));
   }
 }

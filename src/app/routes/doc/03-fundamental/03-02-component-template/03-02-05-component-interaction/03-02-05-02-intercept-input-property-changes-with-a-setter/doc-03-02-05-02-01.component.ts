@@ -9,7 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
   `,
 })
 export class Doc0302050201Component implements OnInit {
-  @Input() foo = '';
+  @Input() public foo = '';
 
   // tslint:disable-next-line:variable-name
   private _bar = '';
@@ -31,5 +31,5 @@ export class Doc0302050201Component implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 }

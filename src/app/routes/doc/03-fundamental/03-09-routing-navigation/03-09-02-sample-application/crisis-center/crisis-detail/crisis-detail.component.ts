@@ -12,9 +12,9 @@ import { DialogService } from '../../service/dialog.service';
   styleUrls: ['./crisis-detail.component.scss'],
 })
 export class CrisisDetailComponent implements OnInit, CanDeactivateComponent {
-  crisis: Crisis | null = null;
+  public crisis: Crisis | null = null;
 
-  crisisModel: Pick<Crisis, 'name'> = {
+  public crisisModel: Pick<Crisis, 'name'> = {
     name: '',
   };
 
@@ -25,7 +25,7 @@ export class CrisisDetailComponent implements OnInit, CanDeactivateComponent {
     private dialogService: DialogService,
   ) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     console.log(`[${CrisisDetailComponent.name}] 加载完成`);
     this.activatedRoute.data.subscribe(({ crisis }) => {
       this.crisis = crisis as Crisis;
@@ -33,7 +33,7 @@ export class CrisisDetailComponent implements OnInit, CanDeactivateComponent {
     });
   }
 
-  save() {
+  public save() {
     if (this.crisis) {
       this.crisis.name = this.crisisModel.name;
       this.crisisService.updateCrisis(this.crisis).subscribe(() => {
@@ -44,7 +44,7 @@ export class CrisisDetailComponent implements OnInit, CanDeactivateComponent {
     }
   }
 
-  cancel() {
+  public cancel() {
     if (this.crisis) {
       this.crisisModel.name = this.crisis.name;
     }
@@ -57,7 +57,7 @@ export class CrisisDetailComponent implements OnInit, CanDeactivateComponent {
     ]);
   }
 
-  canDeactivate(): Observable<boolean> | Promise<boolean> | boolean {
+  public canDeactivate(): Observable<boolean> | Promise<boolean> | boolean {
     if (!this.crisis || this.crisis.name === this.crisisModel.name) {
       return true;
     }

@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class Doc0309Component implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private router: Router) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     /*
      * 通过 ActivatedRoute.data 属性，可以获取到路由配置中的 data 对象
      */

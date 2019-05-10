@@ -28,9 +28,9 @@ import { forbiddenNameValidator } from './forbidden-name-validator';
 })
 export class ForbiddenNameDirective implements Validator {
   // tslint:disable-next-line:no-input-rename
-  @Input('appForbiddenName') forbiddenName!: string;
+  @Input('appForbiddenName') public forbiddenName!: string;
 
-  validate(control: AbstractControl): ValidationErrors | null {
+  public validate(control: AbstractControl): ValidationErrors | null {
     return this.forbiddenName
       ? forbiddenNameValidator(new RegExp(this.forbiddenName))(control)
       : null;

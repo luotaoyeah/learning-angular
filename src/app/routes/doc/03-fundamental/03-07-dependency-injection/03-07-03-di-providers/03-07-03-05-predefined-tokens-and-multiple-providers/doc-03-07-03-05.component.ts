@@ -25,7 +25,7 @@ import { SOME_TOKEN } from './service/doc-03-07-03-05.service';
 export class Doc03070305Component implements OnInit {
   constructor(@Inject(SOME_TOKEN) private token: Array<string | number>) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     console.assert(this.token.join('') === '99');
   }
 }

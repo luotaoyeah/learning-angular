@@ -29,7 +29,7 @@ export class Doc03020407Component implements AfterViewInit, AfterViewChecked {
   /*
    * 当 component view 以及 child view 创建完成之后，会触发 ngAfterViewInit() 方法
    */
-  ngAfterViewInit(): void {
+  public ngAfterViewInit(): void {
     console.assert(
       this.doc0302040701Component01 === this.doc0302040701Component02,
     );
@@ -38,7 +38,7 @@ export class Doc03020407Component implements AfterViewInit, AfterViewChecked {
   /*
    * 当 component view 和 child view 完成 check 之后，会触发 ngAfterViewChecked() 方法
    */
-  ngAfterViewChecked(): void {
+  public ngAfterViewChecked(): void {
     if (this.foo !== this.doc0302040701Component01.foo) {
       /*
        * angular 的单向数据流（unidirectional data flow）不允许在视图完成渲染（composed）之后再去更新视图，

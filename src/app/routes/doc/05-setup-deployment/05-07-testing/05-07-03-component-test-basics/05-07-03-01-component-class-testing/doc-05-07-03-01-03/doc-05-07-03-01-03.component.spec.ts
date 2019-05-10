@@ -3,13 +3,13 @@ import { TranslateService } from '@ngx-translate/core';
 import { TestBed } from '@angular/core/testing';
 
 class MockTranslateService {
-  defaultLang: string = '';
+  public defaultLang: string = '';
 
-  getDefaultLang(): string {
+  public getDefaultLang(): string {
     return this.defaultLang;
   }
 
-  setDefaultLang(lang: string): void {
+  public setDefaultLang(lang: string): void {
     this.defaultLang = lang;
   }
 }

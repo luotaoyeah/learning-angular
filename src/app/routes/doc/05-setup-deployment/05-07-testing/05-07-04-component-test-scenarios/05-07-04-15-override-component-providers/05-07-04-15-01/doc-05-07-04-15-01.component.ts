@@ -11,7 +11,7 @@ export class Doc0507041501Component implements OnInit {
 
   constructor(public doc05070415Service: Doc05070415Service) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     this.foo = this.doc05070415Service.foo();
   }
 }

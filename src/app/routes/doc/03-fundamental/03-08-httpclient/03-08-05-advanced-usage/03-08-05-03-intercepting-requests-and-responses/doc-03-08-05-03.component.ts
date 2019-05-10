@@ -16,13 +16,13 @@ export class Doc03080503Component implements OnInit {
     private doc0308050304Service: Doc0308050304Service,
   ) {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 
-  request() {
+  public request() {
     this.doc03080503Service.fetch().subscribe();
   }
 
-  handleChange(fileInputEl: HTMLInputElement) {
+  public handleChange(fileInputEl: HTMLInputElement) {
     if (fileInputEl.files && fileInputEl.files.length > 0) {
       const file = fileInputEl.files[0];
       this.doc0308050304Service

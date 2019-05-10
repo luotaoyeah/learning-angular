@@ -13,11 +13,11 @@ export class Doc05070405Component implements OnInit {
 
   constructor(private doc05070405Service: Doc05070405Service) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     this.getNext();
   }
 
-  getNext(): void {
+  public getNext = (): void => {
     this.errorMessage = '';
     this.num = this.doc05070405Service.getNext().pipe(
       catchError((e: Error) => {
@@ -27,5 +27,5 @@ export class Doc05070405Component implements OnInit {
         return of(0);
       }),
     );
-  }
+  };
 }

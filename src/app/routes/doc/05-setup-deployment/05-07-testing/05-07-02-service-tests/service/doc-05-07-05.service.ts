@@ -8,14 +8,14 @@ import { HttpClient } from '@angular/common/http';
 export class Doc050705Service {
   constructor(private httpClient: HttpClient) {}
 
-  getHeroes(): Observable<Array<Hero>> {
+  public getHeroes(): Observable<Array<Hero>> {
     return this.httpClient.get<Array<Hero>>('/api/heroes');
   }
 }
 
 export class Hero {
-  id: number = 0;
-  name: string = '';
+  public id: number = 0;
+  public name: string = '';
 
   constructor(id: number, name: string) {
     this.id = id;

@@ -28,13 +28,13 @@ import { ParentComponent } from './doc-03-07-05-02.service';
  * 因此当我们使用了 class interface 之后，对应的 component 就应该实现这个 class interface
  */
 export class Doc0307050301Component implements OnInit, ParentComponent {
-  foo: string = 'BAR';
+  public foo: string = 'BAR';
 
   constructor(
     @Optional() @SkipSelf() private parentComponent: ParentComponent,
   ) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     console.assert(this.parentComponent.foo === 'FOO');
   }
 }

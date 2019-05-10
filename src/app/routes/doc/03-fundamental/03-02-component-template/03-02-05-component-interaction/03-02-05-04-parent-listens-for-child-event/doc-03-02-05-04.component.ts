@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 export class Doc03020504Component implements OnInit {
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 
-  handleVote($event: string) {
+  public handleVote($event: string) {
     console.log($event);
   }
 }

@@ -2,14 +2,14 @@
   <div class="ant-card-body">
     <div class="avatar">
       <nz-avatar
-        [nzSrc]="settings.user.avatar"
+        [nzSrc]="settingsService.user.avatar"
         nzIcon="anticon anticon-user"
         nzSize="large"
       ></nz-avatar>
     </div>
     <form
       nz-form
-      [formGroup]="f"
+      [formGroup]="formGroup"
       (ngSubmit)="submit()"
       role="form"
       class="mt-md"
@@ -21,13 +21,21 @@
           </nz-input-group>
 
           <ng-template #suffixIconButton>
-            <button nz-button nzSearch nzType="primary" [disabled]="!f.valid">
+            <button
+              nz-button
+              nzSearch
+              nzType="primary"
+              [disabled]="!formGroup.valid"
+            >
               {{ 'app.lock' | translate }}
             </button>
           </ng-template>
 
           <nz-form-explain
-            *ngIf="f.get('password')?.dirty && f.get('password')?.errors"
+            *ngIf="
+              formGroup.get('password')?.dirty &&
+              formGroup.get('password')?.errors
+            "
           >
             {{ 'validation.password.required' | translate }}
           </nz-form-explain>

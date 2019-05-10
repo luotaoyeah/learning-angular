@@ -10,7 +10,7 @@ export class Doc03070407Component implements OnInit {
 
   constructor(public doc03070407Service: Doc03070407Service) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     this.items = this.doc03070407Service.getNumbers();
     this.afterInit();
   }

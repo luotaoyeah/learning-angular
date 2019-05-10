@@ -5,9 +5,9 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './doc-03-02-02-05-02.component.html',
 })
 export class Doc0302020502Component implements OnInit {
-  picUrl = 'assets/images/20190328090519.jpg';
+  public picUrl = 'assets/images/20190328090519.jpg';
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 }

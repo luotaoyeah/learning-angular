@@ -8,7 +8,7 @@ import { TOKEN } from './service/doc-03-07-04-03-01.service';
 export class Doc0307040301Component implements OnInit {
   constructor(@Optional() @Inject(TOKEN) private token: string) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     console.assert(this.token === null);
   }
 }

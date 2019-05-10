@@ -6,21 +6,21 @@ import { FormControl } from '@angular/forms';
   templateUrl: './doc-03-03-01-05-01.component.html',
 })
 export class Doc0303010501Component implements OnInit {
-  @ViewChild('colorInputEl') colorInputEl!: ElementRef<HTMLInputElement>;
+  @ViewChild('colorInputEl') public colorInputEl!: ElementRef<HTMLInputElement>;
 
-  colorFormControl: FormControl = new FormControl('red');
+  public colorFormControl: FormControl = new FormControl('red');
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 
-  getValue() {
+  public getValue() {
     console.assert(
       this.colorFormControl.value === this.colorInputEl.nativeElement.value,
     );
   }
 
-  setValue() {
+  public setValue() {
     this.colorFormControl.valueChanges.subscribe((value: string) => {
       console.log(value);
     });

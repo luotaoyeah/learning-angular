@@ -5,15 +5,17 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   templateUrl: './doc-05-07-03-01-02.component.html',
 })
 export class Doc0507030102Component implements OnInit {
-  @Input() myInput: string = '';
+  @Input()
+  public myInput: string = '';
 
-  @Output() myOutput: EventEmitter<string> = new EventEmitter();
+  @Output()
+  public myOutput: EventEmitter<string> = new EventEmitter();
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 
-  click(): void {
+  public click(): void {
     this.myOutput.emit(this.myInput.toUpperCase());
   }
 }

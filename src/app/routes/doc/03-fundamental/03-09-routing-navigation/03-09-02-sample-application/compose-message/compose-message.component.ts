@@ -7,14 +7,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./compose-message.component.scss'],
 })
 export class ComposeMessageComponent implements OnInit {
-  message = '';
-  sending = false;
+  public message = '';
+  public sending = false;
 
   constructor(private router: Router) {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 
-  send() {
+  public send() {
     this.sending = true;
 
     setTimeout(() => {
@@ -23,7 +23,7 @@ export class ComposeMessageComponent implements OnInit {
     }, 1000);
   }
 
-  cancel() {
+  public cancel() {
     this.router.navigate([{ outlets: { popup: null } }]);
   }
 }

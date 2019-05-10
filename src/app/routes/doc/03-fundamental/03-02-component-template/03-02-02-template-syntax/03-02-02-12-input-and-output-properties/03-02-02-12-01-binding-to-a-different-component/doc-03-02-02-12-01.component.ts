@@ -18,7 +18,7 @@ export class Doc0302021201Component implements OnInit {
    */
   constructor(public messageService: MessageService) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     console.assert(this.bar === 'BAR');
     console.assert(!!this.messageService);
   }

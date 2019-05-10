@@ -17,7 +17,7 @@ export class Doc0307020103Component implements OnInit {
     private doc030702010302ervice: Doc030702010302ervice,
   ) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     if (
       // @ts-ignore
       window.DOC_030702010301_SERVICES &&

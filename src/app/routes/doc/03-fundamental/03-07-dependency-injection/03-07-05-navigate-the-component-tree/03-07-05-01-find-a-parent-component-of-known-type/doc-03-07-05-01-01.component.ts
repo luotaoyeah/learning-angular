@@ -14,7 +14,7 @@ export class Doc0307050101Component implements OnInit {
    */
   constructor(@Optional() private doc03070501Component: Doc03070501Component) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     console.assert(this.doc03070501Component.foo === 'FOO');
   }
 }

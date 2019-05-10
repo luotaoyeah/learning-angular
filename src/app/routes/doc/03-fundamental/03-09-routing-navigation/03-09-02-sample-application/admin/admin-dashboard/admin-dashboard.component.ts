@@ -11,7 +11,7 @@ export class AdminDashboardComponent implements OnInit {
     private selectivePreloadingStrategyService: SelectivePreloadingStrategyService,
   ) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     console.log(
       `[${AdminDashboardComponent.name}] - [${
         this.selectivePreloadingStrategyService.modules[0]

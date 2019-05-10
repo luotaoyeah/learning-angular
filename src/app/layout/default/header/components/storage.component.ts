@@ -23,7 +23,7 @@ export class HeaderStorageComponent {
   ) {}
 
   @HostListener('click')
-  _click() {
+  public _click() {
     this.modalSrv.confirm({
       nzTitle: 'Make sure clear all local storage?',
       nzOnOk: () => {

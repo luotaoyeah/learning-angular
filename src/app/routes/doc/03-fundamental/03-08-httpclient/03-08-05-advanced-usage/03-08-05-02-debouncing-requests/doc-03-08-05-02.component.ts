@@ -15,7 +15,7 @@ export class Doc03080502Component implements OnInit {
 
   constructor(private doc03080502Service: Doc03080502Service) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     this.packages$ = this.key$.pipe(
       debounceTime(500),
       distinctUntilChanged(),
@@ -23,7 +23,7 @@ export class Doc03080502Component implements OnInit {
     );
   }
 
-  handleSearch(key: string) {
+  public handleSearch(key: string) {
     if (!!key.trim()) {
       this.key$.next(key.trim());
     }

@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./hero-list.component.scss'],
 })
 export class HeroListComponent implements OnInit {
-  heroes: Array<Hero> = [];
+  public heroes: Array<Hero> = [];
 
   constructor(
     private router: Router,
@@ -17,7 +17,7 @@ export class HeroListComponent implements OnInit {
     private heroService: HeroService,
   ) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     this.heroService.getHeroes().subscribe((heroes: Array<Hero>) => {
       this.heroes = heroes;
     });
@@ -27,7 +27,7 @@ export class HeroListComponent implements OnInit {
    * 跳转到英雄详情页
    * @param hero 英雄
    */
-  gotoHeroDetailPage(hero: Hero) {
+  public gotoHeroDetailPage(hero: Hero) {
     this.router.navigate([hero.id], {
       /*
        * 通过 relativeTo 指定要相对于哪个路由进行导航

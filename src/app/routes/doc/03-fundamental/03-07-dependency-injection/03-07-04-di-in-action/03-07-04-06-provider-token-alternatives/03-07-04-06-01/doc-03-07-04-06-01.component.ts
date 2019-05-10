@@ -18,7 +18,7 @@ import { ILogger } from './service/doc-03-07-04-06-01.service';
 export class Doc0307040601Component implements OnInit {
   constructor(@Inject(ILogger) private logger: ILogger) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     console.assert(this.logger.log() === 'FOO');
   }
 }

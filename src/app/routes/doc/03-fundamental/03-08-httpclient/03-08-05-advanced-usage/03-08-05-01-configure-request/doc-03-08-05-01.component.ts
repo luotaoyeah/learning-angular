@@ -8,7 +8,7 @@ import { Doc03080501Service } from './service/doc-03-08-05-01.service';
 export class Doc03080501Component implements OnInit {
   constructor(private doc03080501Service: Doc03080501Service) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     this.doc03080501Service.getSomething().subscribe();
   }
 }

@@ -12,7 +12,7 @@ export class Doc030802Service {
 
   constructor(private httpClient: HttpClient) {}
 
-  getConfig(): Observable<IConfig> {
+  public getConfig(): Observable<IConfig> {
     return this.httpClient.get<IConfig>(this.configUrl).pipe(
       /*
        * 可以使用 retry() 操作符，对请求进行重试，

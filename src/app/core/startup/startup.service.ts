@@ -86,7 +86,7 @@ export class StartupService {
   }
 
   // tslint:disable-next-line:no-any
-  load(): Promise<any> {
+  public load(): Promise<any> {
     return new Promise((resolve, reject) => {
       this.viaHttp(resolve, reject);
     });

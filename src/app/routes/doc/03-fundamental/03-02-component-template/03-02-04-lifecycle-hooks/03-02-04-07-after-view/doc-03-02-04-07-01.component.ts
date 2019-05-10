@@ -9,5 +9,5 @@ export class Doc0302040701Component implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 }

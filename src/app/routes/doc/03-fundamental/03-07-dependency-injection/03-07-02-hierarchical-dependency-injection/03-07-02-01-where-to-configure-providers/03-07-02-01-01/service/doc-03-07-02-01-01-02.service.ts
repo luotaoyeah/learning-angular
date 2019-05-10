@@ -10,7 +10,7 @@ import { Doc0307020101Module } from '../doc-03-07-02-01-01.module';
   providedIn: Doc0307020101Module,
 })
 export class Doc030702010102Service {
-  doSomething(): void {
+  public doSomething(): void {
     console.log(`[${Doc030702010102Service.name}]`);
   }
 }

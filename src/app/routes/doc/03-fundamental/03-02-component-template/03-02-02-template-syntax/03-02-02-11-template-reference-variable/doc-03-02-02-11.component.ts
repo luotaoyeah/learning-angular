@@ -10,9 +10,9 @@ import { Doc0302021101Component } from './doc-03-02-02-11-01.component';
 export class Doc03020211Component implements OnInit {
   constructor(private messageService: MessageService) {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 
-  doSomething(someEl: HTMLInputElement) {
+  public doSomething(someEl: HTMLInputElement) {
     this.messageService.add({
       severity: 'info',
       summary: '提示',
@@ -20,7 +20,7 @@ export class Doc03020211Component implements OnInit {
     });
   }
 
-  handleClick(doc0302021101Component: Doc0302021101Component) {
+  public handleClick(doc0302021101Component: Doc0302021101Component) {
     this.messageService.add({
       severity: 'success',
       summary: '提示',

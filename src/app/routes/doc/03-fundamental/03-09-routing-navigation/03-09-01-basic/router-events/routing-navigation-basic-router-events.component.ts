@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 export class RoutingNavigationBasicRouterEventsComponent implements OnInit {
   constructor(private router: Router) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     /*
      * 每次触发路由导航的时候，都会触发一系列的事件，
      * 可以通过 Router.events 对象进行订阅和监听，

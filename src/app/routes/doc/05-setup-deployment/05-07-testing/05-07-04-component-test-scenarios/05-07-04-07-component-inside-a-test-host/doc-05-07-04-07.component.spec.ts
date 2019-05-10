@@ -50,7 +50,7 @@ class TestHostComponent {
   public foo: string = 'foo';
   public bar: number = 0;
 
-  handleNtClick($event: number) {
+  public handleNtClick($event: number) {
     this.bar = $event;
   }
 }

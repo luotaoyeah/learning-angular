@@ -31,7 +31,7 @@ import {
 export class Doc03070408Component implements OnInit {
   constructor(@Inject(forwardRef(() => TOKEN)) private token: string) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     console.assert(this.token === 'FOO');
   }
 }

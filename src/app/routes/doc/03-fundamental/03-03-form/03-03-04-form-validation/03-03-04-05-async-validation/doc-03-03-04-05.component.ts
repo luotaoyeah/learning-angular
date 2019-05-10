@@ -7,7 +7,7 @@ import { UniqueValidator } from './validator/unique-validator';
   templateUrl: './doc-03-03-04-05.component.html',
 })
 export class Doc03030405Component implements OnInit {
-  formGroup: FormGroup = new FormGroup({
+  public formGroup: FormGroup = new FormGroup({
     name: new FormControl('', {
       /*
        * 考虑到 async validator function 的性能影响，
@@ -22,5 +22,5 @@ export class Doc03030405Component implements OnInit {
 
   constructor(private uniqueValidator: UniqueValidator) {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 }

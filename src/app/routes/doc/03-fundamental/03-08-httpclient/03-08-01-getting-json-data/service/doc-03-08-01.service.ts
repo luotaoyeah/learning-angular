@@ -11,7 +11,7 @@ export class Doc030801Service {
 
   constructor(private httpClient: HttpClient) {}
 
-  getConfig(): Observable<IConfig> {
+  public getConfig(): Observable<IConfig> {
     /*
      * HttpClient.get() 方法的类型参数，用来标识返回数据的类型，
      * 这个类型只是期望返回的类型，实际返回的可能跟这个类型有出入
@@ -23,7 +23,7 @@ export class Doc030801Service {
    * 默认情况下，HttpClient.get() 方法返回的是 body 数据，
    * 如果需要返回完整的 response 数据，需要配置参数 observe: 'response'
    */
-  getConfigResponse(): Observable<HttpResponse<IConfig>> {
+  public getConfigResponse(): Observable<HttpResponse<IConfig>> {
     return this.httpClient.get<IConfig>(this.configUrl, {
       observe: 'response',
     });

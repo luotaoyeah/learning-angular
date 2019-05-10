@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class Doc030702020303Service {
-  getSome(): string {
+  public getSome(): string {
     return 'BAZ';
   }
 }

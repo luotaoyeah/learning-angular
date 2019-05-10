@@ -8,9 +8,9 @@ import { Router } from '@angular/router';
 export class Doc05070409Component implements OnInit {
   constructor(private router: Router) {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 
-  handleClick() {
+  public handleClick() {
     this.router.navigateByUrl('/doc/05/07/04/09/01', {
       queryParams: {
         foo: 99,

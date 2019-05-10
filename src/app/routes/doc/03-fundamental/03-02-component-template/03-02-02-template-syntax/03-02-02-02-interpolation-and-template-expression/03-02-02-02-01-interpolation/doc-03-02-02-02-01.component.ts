@@ -12,7 +12,7 @@ export class Doc0302020201Component implements OnInit {
    * 因此，可以通过覆写 toString() 方法，提供自定义的 string 类型转换方式
    */
   // tslint:disable-next-line:no-any
-  foo: any = {
+  public foo: any = {
     toString() {
       return '[[FOO]]';
     },
@@ -20,9 +20,9 @@ export class Doc0302020201Component implements OnInit {
 
   constructor() {}
 
-  getVal(): number {
+  public getVal(): number {
     return 8;
   }
 
-  ngOnInit() {}
+  public ngOnInit() {}
 }

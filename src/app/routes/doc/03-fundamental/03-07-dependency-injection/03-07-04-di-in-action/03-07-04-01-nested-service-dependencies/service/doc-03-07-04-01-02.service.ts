@@ -7,7 +7,7 @@ import { Doc0307040103Service } from './doc-03-07-04-01-03.service';
 export class Doc0307040102Service {
   constructor(private doc0307040103Service: Doc0307040103Service) {}
 
-  getSomething(): string {
+  public getSomething(): string {
     return `02${this.doc0307040103Service.getSomething()}`;
   }
 }

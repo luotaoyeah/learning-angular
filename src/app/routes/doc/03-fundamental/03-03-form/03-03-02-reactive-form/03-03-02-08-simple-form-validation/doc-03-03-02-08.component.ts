@@ -10,7 +10,7 @@ export class Doc03030208Component implements OnInit {
    * angular 内置了一些常用的 validator function，
    * 可以通过 Validators 的静态方法来使用它们
    */
-  profileFormGroup: FormGroup = this.formBuilder.group({
+  public profileFormGroup: FormGroup = this.formBuilder.group({
     name: [''],
     address: this.formBuilder.group({
       street: ['', [Validators.required]],
@@ -20,5 +20,5 @@ export class Doc03030208Component implements OnInit {
 
   constructor(private formBuilder: FormBuilder) {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 }

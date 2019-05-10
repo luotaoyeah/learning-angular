@@ -12,7 +12,7 @@ export class Doc03030207Component implements OnInit {
    * 比较方便的创建比较复杂的表单，
    * 如下，每一个 FormControl 的值是一个数组，它的第一个元素表示初始值
    */
-  profileFormGroup: FormGroup = this.formBuilder.group({
+  public profileFormGroup: FormGroup = this.formBuilder.group({
     name: [''],
     address: this.formBuilder.group({
       street: [''],
@@ -22,5 +22,5 @@ export class Doc03030207Component implements OnInit {
 
   constructor(private formBuilder: FormBuilder) {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 }

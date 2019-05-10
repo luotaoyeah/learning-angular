@@ -7,12 +7,12 @@ import { delay, tap } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class AuthService {
-  isLogin = false;
-  redirectUrl = '';
+  public isLogin = false;
+  public redirectUrl = '';
 
   constructor() {}
 
-  login(): Observable<boolean> {
+  public login(): Observable<boolean> {
     return of(true).pipe(
       delay(1000),
       tap(() => {
@@ -21,7 +21,7 @@ export class AuthService {
     );
   }
 
-  logout() {
+  public logout() {
     this.isLogin = false;
   }
 }

@@ -11,12 +11,12 @@ export class Doc0302090301Directive {
   }
 
   @HostListener('mouseenter')
-  onMouseEnter() {
+  public onMouseEnter() {
     this.hover('#f00');
   }
 
   @HostListener('mouseleave')
-  onMouseLeave() {
+  public onMouseLeave() {
     this.hover('');
   }
 

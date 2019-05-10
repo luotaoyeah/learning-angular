@@ -11,7 +11,7 @@ export class Doc03070404Directive implements OnInit {
    */
   constructor(private elementRef: ElementRef) {}
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     const el = document.querySelector('#doc-03-07-04-04');
     console.assert(this.elementRef.nativeElement === el);
   }

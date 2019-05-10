@@ -12,18 +12,18 @@ import { HeroService } from '../service/hero.service';
 })
 export class HeroesComponent implements OnInit {
   /** 英雄列表 */
-  heroes: Array<Hero> = [];
+  public heroes: Array<Hero> = [];
 
   constructor(private heroService: HeroService) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     this.getHeroes();
   }
 
   /**
    * 获取英雄列表
    */
-  getHeroes(): void {
+  public getHeroes(): void {
     this.heroService.getHeroes().subscribe((heroes: Array<Hero>) => {
       this.heroes = heroes;
     });
@@ -33,7 +33,7 @@ export class HeroesComponent implements OnInit {
    * 添加英雄
    * @param name 英雄名称
    */
-  addHero(name: string): void {
+  public addHero(name: string): void {
     const n = name.trim();
     if (!n) {
       return;
@@ -48,7 +48,7 @@ export class HeroesComponent implements OnInit {
    * 删除英雄
    * @param hero 英雄
    */
-  deleteHero(hero: Hero): void {
+  public deleteHero(hero: Hero): void {
     this.heroes = this.heroes.filter(i => i !== hero);
     this.heroService.deleteHero(hero).subscribe();
   }

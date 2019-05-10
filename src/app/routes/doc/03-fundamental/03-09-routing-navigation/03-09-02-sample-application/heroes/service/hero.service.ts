@@ -15,20 +15,19 @@ export class HeroService {
   /**
    * 获取英雄列表
    */
-  getHeroes(): Observable<Array<Hero>> {
-    return this.http.get<Array<Hero>>(this.heroesUrl).pipe(
+  public getHeroes = (): Observable<Array<Hero>> =>
+    this.http.get<Array<Hero>>(this.heroesUrl).pipe(
       tap(() => {
         console.log('[加载英雄列表]');
       }),
       catchError(this.handleError<Array<Hero>>('getHeroes', [])),
     );
-  }
 
   /**
    * 根据ID获取英雄
    * @param id 英雄ID
    */
-  getHero(id: number): Observable<Hero> {
+  public getHero(id: number): Observable<Hero> {
     return this.http.get<Hero>(`${this.heroesUrl}/${id}`).pipe(
       tap(() => {
         console.log(`[查询英雄]: [ id = ${id} ]`);
@@ -42,7 +41,7 @@ export class HeroService {
    * @param hero 英雄
    */
   // tslint:disable-next-line:no-any
-  updateHero(hero: Hero): Observable<any> {
+  public updateHero(hero: Hero): Observable<any> {
     return this.http
       .put<Hero>(this.heroesUrl, hero, {
         headers: new HttpHeaders({ 'Content-Type': 'application/json' }),

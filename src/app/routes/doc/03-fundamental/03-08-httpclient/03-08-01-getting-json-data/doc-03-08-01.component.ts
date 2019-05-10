@@ -12,7 +12,7 @@ export class Doc030801Component implements OnInit {
 
   constructor(private doc030801Service: Doc030801Service) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     this.doc030801Service.getConfig().subscribe((config: IConfig) => {
       this.config = config;
     });

@@ -22,20 +22,20 @@ export class Doc0302040801Component
 
   constructor() {}
 
-  ngOnInit(): void {}
+  public ngOnInit(): void {}
 
-  ngDoCheck(): void {}
+  public ngDoCheck(): void {}
 
   /*
    * ngAfterContentInit() 在 content projection 初始化完成之后调用，
    * 在 ngDoCheck() 第一次执行之后调用
    *
    */
-  ngAfterContentInit(): void {}
+  public ngAfterContentInit(): void {}
 
   /*
    * ngAfterContentChecked() 在 ngAfterContentInit() 之后执行，
    * 并且在后续的每一次 ngDoCheck() 之后执行
    */
-  ngAfterContentChecked(): void {}
+  public ngAfterContentChecked(): void {}
 }

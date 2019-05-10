@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: [],
 })
 export class Doc03020101Component implements OnInit {
-  title = 'TOUR OF HEROES';
-  myHero = 'Windstorm';
+  public title = 'TOUR OF HEROES';
+  public myHero = 'Windstorm';
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 }

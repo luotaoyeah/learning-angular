@@ -10,7 +10,7 @@ export class Doc03070404Component implements OnInit {
    */
   constructor(private elementRef: ElementRef) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     this.elementRef.nativeElement.style.color = 'red';
   }
 }

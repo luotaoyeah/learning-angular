@@ -13,7 +13,7 @@ import { Doc0307040201Service } from './service/doc-03-07-04-02-01.service';
 export class Doc03070402Component implements OnInit {
   constructor(private doc0307040201Service: Doc0307040201Service) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     // @ts-ignore
     window.DOC_0307040201_SERVICE = this.doc0307040201Service;
   }

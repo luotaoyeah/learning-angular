@@ -11,16 +11,16 @@ import {
   template: '',
 })
 export class Doc0302040501Component implements OnInit, OnChanges {
-  @Input() foo = '';
+  @Input() public foo = '';
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 
   /*
    * 当 input properties 发生变更时，就会触发 ngOnChanges() 方法
    */
-  ngOnChanges(changes: SimpleChanges): void {
+  public ngOnChanges(changes: SimpleChanges): void {
     for (const change in changes) {
       if (changes.hasOwnProperty(change)) {
         console.log(

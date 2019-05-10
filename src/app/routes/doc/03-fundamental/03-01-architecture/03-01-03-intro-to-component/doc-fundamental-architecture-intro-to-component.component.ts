@@ -12,5 +12,5 @@ export class DocFundamentalArchitectureIntroToComponentComponent
   implements OnInit {
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 }

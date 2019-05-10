@@ -6,14 +6,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Doc0302021004Component implements OnInit {
   // tslint:disable-next-line:no-any
-  items: Array<{ label: string; value: any }> = [
+  public items: Array<{ label: string; value: any }> = [
     { label: 'FOO', value: 'FOO' },
     { label: 'BAR', value: 'BAR' },
     { label: 'BAZ', value: 'BAZ' },
   ];
-  item: string | null = null;
+  public item: string | null = null;
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 }

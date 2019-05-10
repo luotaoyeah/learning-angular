@@ -5,11 +5,16 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './doc-03-02-01-04.component.html',
 })
 export class Doc03020104Component implements OnInit {
-  title = 'TOUR OF HEROES';
-  heroes: Array<string> = ['Windstorm', 'Bombasto', 'Magneta', 'Tornado'];
-  hero: string = this.heroes[0];
+  public title = 'TOUR OF HEROES';
+  public heroes: Array<string> = [
+    'Windstorm',
+    'Bombasto',
+    'Magneta',
+    'Tornado',
+  ];
+  public hero: string = this.heroes[0];
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 }

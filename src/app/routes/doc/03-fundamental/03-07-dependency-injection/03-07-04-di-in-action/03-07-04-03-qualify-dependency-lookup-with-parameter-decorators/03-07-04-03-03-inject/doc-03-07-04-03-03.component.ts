@@ -16,7 +16,7 @@ export class Doc0307040303Component implements OnInit {
    */
   constructor(@Inject(TOKEN) private storage: Storage) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     console.assert(this.storage === window.localStorage);
   }
 }

@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class MessageService {
   /** 消息列表 */
-  messages: string[] = [];
+  public messages: string[] = [];
 
   constructor() {}
 
@@ -13,14 +13,14 @@ export class MessageService {
    * 添加一条消息
    * @param message 消息
    */
-  add(message: string): void {
+  public add(message: string): void {
     this.messages.push(message);
   }
 
   /**
    * 清空消息
    */
-  clear(): void {
+  public clear(): void {
     this.messages = [];
   }
 }

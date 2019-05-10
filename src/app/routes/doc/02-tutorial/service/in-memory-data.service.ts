@@ -7,7 +7,7 @@ import { Hero } from './hero';
   providedIn: 'root',
 })
 export class InMemoryDataService implements InMemoryDbService {
-  createDb(): {} | Observable<{}> | Promise<{}> {
+  public createDb(): {} | Observable<{}> | Promise<{}> {
     const heroes: Array<Hero> = [
       { id: 11, name: 'Mr. Nice' },
       { id: 12, name: 'Narco' },
@@ -39,7 +39,7 @@ export class InMemoryDataService implements InMemoryDbService {
    * 获取新的ID
    * @param heroes 英雄列表
    */
-  getId(heroes: Array<Hero>): number {
+  public getId(heroes: Array<Hero>): number {
     return heroes.length > 0 ? Math.max(...heroes.map(i => i.id)) + 1 : 11;
   }
 }

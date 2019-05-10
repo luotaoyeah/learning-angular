@@ -12,7 +12,7 @@ export class Doc0307020101Component implements OnInit {
     private doc030702010103Service: Doc030702010103Service,
   ) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     this.doc030702010102Service.doSomething();
     this.doc030702010103Service.doSomething();
   }

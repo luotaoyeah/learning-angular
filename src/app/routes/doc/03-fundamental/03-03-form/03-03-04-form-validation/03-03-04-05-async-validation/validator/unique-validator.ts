@@ -10,7 +10,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class UniqueValidator implements AsyncValidator {
-  validate(
+  public validate(
     control: AbstractControl,
   ): Promise<ValidationErrors | null> | Observable<ValidationErrors | null> {
     return new Observable((subscriber: Subscriber<ValidationErrors | null>) => {

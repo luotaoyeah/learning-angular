@@ -13,13 +13,13 @@ import { Doc03020801Component } from './doc-03-02-08-01.component';
 })
 export class Doc030208Component implements OnInit {
   @ViewChild('dyn', { read: ViewContainerRef })
-  viewContainerRef!: ViewContainerRef;
+  public viewContainerRef!: ViewContainerRef;
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver) {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 
-  loadComponent(): void {
+  public loadComponent(): void {
     this.viewContainerRef.clear();
     this.viewContainerRef.createComponent(
       this.componentFactoryResolver.resolveComponentFactory(
@@ -28,7 +28,7 @@ export class Doc030208Component implements OnInit {
     );
   }
 
-  unloadComponent() {
+  public unloadComponent() {
     this.viewContainerRef.remove();
   }
 }

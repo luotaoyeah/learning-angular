@@ -12,7 +12,7 @@ export class Doc030608Component implements OnInit {
     private doc03060802Service: Doc03060802Service,
   ) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     // @ts-ignore
     window._DOC_03060801_SERVICE = this.doc03060801Service;
     // @ts-ignore

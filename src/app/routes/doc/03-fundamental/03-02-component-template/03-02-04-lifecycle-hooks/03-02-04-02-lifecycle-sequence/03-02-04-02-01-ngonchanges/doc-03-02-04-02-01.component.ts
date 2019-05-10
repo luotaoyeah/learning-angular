@@ -30,7 +30,7 @@ export class Doc0302040201Component implements OnInit, OnChanges {
    *
    *     2. 后续当任何某个 input property 发生变更时
    */
-  ngOnChanges(simpleChanges: SimpleChanges): void {
+  public ngOnChanges(simpleChanges: SimpleChanges): void {
     /*
      * 参数 simpleChanges 中只包含发生变更的 input property，
      * 没有发生变更的 input property 不会包含在参数 simpleChanges 中，
@@ -48,7 +48,7 @@ export class Doc0302040201Component implements OnInit, OnChanges {
     );
   }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     console.log(
       `${this.comnService.getComponentLabel(Doc0302040201Component)}`,
       'ngOnInit()',

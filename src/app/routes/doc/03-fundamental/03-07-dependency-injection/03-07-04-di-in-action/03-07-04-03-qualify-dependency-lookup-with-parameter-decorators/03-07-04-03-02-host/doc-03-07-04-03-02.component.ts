@@ -16,7 +16,7 @@ export class Doc0307040302Component implements OnInit {
    */
   constructor(@Host() @Optional() private httpClient: HttpClient) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     console.assert(this.httpClient === null);
   }
 }

@@ -5,9 +5,9 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './doc-03-03-01-07-02.component.html',
 })
 export class Doc0303010702Component implements OnInit {
-  color = 'RED';
+  public color = 'RED';
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 }

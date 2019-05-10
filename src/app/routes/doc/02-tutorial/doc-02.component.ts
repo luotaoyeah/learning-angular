@@ -6,9 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./doc-02.component.scss'],
 })
 export class Doc02Component implements OnInit {
-  title = 'TOUR OF HEROES';
+  public title = 'TOUR OF HEROES';
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 }

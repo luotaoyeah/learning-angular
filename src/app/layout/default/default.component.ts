@@ -28,7 +28,7 @@ import { SettingsService } from '@delon/theme';
 export class LayoutDefaultComponent
   implements OnInit, AfterViewInit, OnDestroy {
   private unsubscribe$ = new Subject<void>();
-  isFetching: boolean = false;
+  public isFetching: boolean = false;
 
   constructor(
     router: Router,
@@ -74,9 +74,9 @@ export class LayoutDefaultComponent
     doc.body.classList[layout.colorWeak ? 'add' : 'remove']('color-weak');
   }
 
-  ngAfterViewInit(): void {}
+  public ngAfterViewInit(): void {}
 
-  ngOnInit() {
+  public ngOnInit() {
     const { settingsService, unsubscribe$ } = this;
     settingsService.notify
       .pipe(takeUntil(unsubscribe$))
@@ -84,7 +84,7 @@ export class LayoutDefaultComponent
     this.setClass();
   }
 
-  ngOnDestroy() {
+  public ngOnDestroy() {
     const { unsubscribe$ } = this;
     unsubscribe$.next();
     unsubscribe$.complete();

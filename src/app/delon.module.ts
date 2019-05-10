@@ -93,7 +93,7 @@ export class DelonModule {
     throwIfAlreadyLoaded(parentModule, 'DelonModule');
   }
 
-  static forRoot(): ModuleWithProviders {
+  public static forRoot(): ModuleWithProviders {
     return {
       ngModule: DelonModule,
       providers: [...REUSETAB_PROVIDES, ...GLOBAL_CONFIG_PROVIDES],

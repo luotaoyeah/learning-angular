@@ -7,11 +7,11 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 export class Doc03020801Component implements OnInit, OnDestroy {
   constructor() {}
 
-  ngOnInit() {
+  public ngOnInit() {
     console.log(`[${Doc03020801Component.name}][ngOnInit()]`);
   }
 
-  ngOnDestroy(): void {
+  public ngOnDestroy(): void {
     console.log(`[${Doc03020801Component.name}][ngOnDestroy()]`);
   }
 }

@@ -11,9 +11,9 @@ import { Router, RouterOutlet } from '@angular/router';
 export class Doc030902Component implements OnInit {
   constructor(private router: Router) {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 
-  getAnimationData(routerOutlet: RouterOutlet) {
+  public getAnimationData(routerOutlet: RouterOutlet) {
     // tslint:disable-next-line:no-string-literal
     return (
       routerOutlet &&
@@ -25,7 +25,7 @@ export class Doc030902Component implements OnInit {
   /**
    * 打开 CONTACT 面板
    */
-  openContact() {
+  public openContact() {
     this.router.navigate([{ outlets: { popup: 'compose' } }]);
   }
 }

@@ -11,22 +11,22 @@ export class Doc0302020801Component implements OnInit {
    *     1. 需要有一个 @Input 属性和一个 @Output 属性
    *     2. @Output 属性的名称为 @Input 属性的名称 + Change 后缀
    */
-  @Input() fontSize = 0;
-  @Output() fontSizeChange: EventEmitter<number> = new EventEmitter();
+  @Input() public fontSize = 0;
+  @Output() public fontSizeChange: EventEmitter<number> = new EventEmitter();
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 
-  decrease() {
+  public decrease() {
     this.resize(-1);
   }
 
-  increase() {
+  public increase() {
     this.resize(1);
   }
 
-  resize(offset: number) {
+  public resize(offset: number) {
     this.fontSize = Math.max(8, Math.min(18, this.fontSize + offset));
     this.fontSizeChange.emit(this.fontSize);
   }

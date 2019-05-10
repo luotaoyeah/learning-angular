@@ -24,9 +24,9 @@ import { Doc030702020302Service } from './service/doc-03-07-02-02-03-02.service'
   ],
 })
 export class Doc03070202030101Component implements OnInit {
-  foo: string = '';
-  bar: string = '';
-  baz: string = '';
+  public foo: string = '';
+  public bar: string = '';
+  public baz: string = '';
 
   constructor(
     private doc030702020301Service: Doc030702020301Service,
@@ -38,5 +38,5 @@ export class Doc03070202030101Component implements OnInit {
     this.baz = this.doc030702020303Service.getSome();
   }
 
-  ngOnInit() {}
+  public ngOnInit() {}
 }

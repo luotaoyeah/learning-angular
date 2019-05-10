@@ -8,7 +8,7 @@ import { Doc030702010302ervice } from './03-07-02-01-03/service/doc-03-07-02-01-
 export class Doc03070201Component implements OnInit {
   constructor(private doc030702010302ervice: Doc030702010302ervice) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     this.doc030702010302ervice.doSomething(Doc03070201Component.name);
   }
 }

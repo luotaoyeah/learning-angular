@@ -23,7 +23,7 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
    * @param next 要跳转的路由
    * @param state 当前路由状态
    */
-  canActivate(
+  public canActivate(
     // @ts-ignore: TS6133
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot,
@@ -40,7 +40,7 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
    * @param childRoute 下级路由
    * @param state 当前路由状态
    */
-  canActivateChild(
+  public canActivateChild(
     childRoute: ActivatedRouteSnapshot,
     // @ts-ignore: TS6133
     state: RouterStateSnapshot,
@@ -84,7 +84,9 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
    * canLoad() 用来守护是否可以加载某个路由对应的 NgModule
    * @param route 路由配置
    */
-  canLoad(route: Route): Observable<boolean> | Promise<boolean> | boolean {
+  public canLoad(
+    route: Route,
+  ): Observable<boolean> | Promise<boolean> | boolean {
     return this.checkLogin(
       `/doc/fundamental/routing/sample-application/${route.path}`,
     );

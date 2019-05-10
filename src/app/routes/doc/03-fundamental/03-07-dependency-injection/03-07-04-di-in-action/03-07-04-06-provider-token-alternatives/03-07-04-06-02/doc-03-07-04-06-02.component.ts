@@ -14,7 +14,7 @@ export class Doc0307040602Component implements OnInit {
     private token02: string,
   ) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     console.assert(this.token01 === null);
     console.assert(this.token02 === 'FOO');
   }

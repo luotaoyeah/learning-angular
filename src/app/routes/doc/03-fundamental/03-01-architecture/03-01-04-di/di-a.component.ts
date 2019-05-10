@@ -19,7 +19,7 @@ import { DiAService } from './service/di-a.service';
 export class DiAComponent implements OnInit {
   constructor(private diAService: DiAService) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     this.diAService.test();
   }
 }

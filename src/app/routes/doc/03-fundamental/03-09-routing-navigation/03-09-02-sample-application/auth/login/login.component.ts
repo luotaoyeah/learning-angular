@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
     public authService: AuthService,
   ) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     this.activatedRoute.queryParamMap.subscribe((queryMap: ParamMap) => {
       console.log(`session_id: ${queryMap.get('session_id')}`);
     });
@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  login() {
+  public login() {
     this.authService.login().subscribe(() => {
       if (this.authService.isLogin) {
         this.router.navigateByUrl(
@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  logout() {
+  public logout() {
     this.authService.logout();
   }
 }

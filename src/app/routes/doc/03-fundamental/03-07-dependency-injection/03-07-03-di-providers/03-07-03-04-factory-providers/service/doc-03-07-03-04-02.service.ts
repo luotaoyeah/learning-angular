@@ -16,7 +16,7 @@ export class Doc0307030402Service {
     private bar: string,
   ) {}
 
-  doSomething(): string {
+  public doSomething(): string {
     return this.doc0307030401Service.foo + this.bar;
   }
 }

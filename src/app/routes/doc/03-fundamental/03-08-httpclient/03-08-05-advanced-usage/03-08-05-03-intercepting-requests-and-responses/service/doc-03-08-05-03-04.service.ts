@@ -9,7 +9,7 @@ export class Doc0308050304Service {
   constructor(private httpClient: HttpClient) {}
 
   // tslint:disable-next-line:no-any
-  upload(file: File): Observable<any> {
+  public upload(file: File): Observable<any> {
     /*
      * 通过 HttpRequest() 手动构建一个请求对象，
      * 然后通过 reportProgress 配置，报告文件上传进度事件（HttpEventType.UploadProgress）,

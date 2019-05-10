@@ -9,28 +9,33 @@ import { NgForm } from '@angular/forms';
 })
 export class Doc03030301Component implements OnInit {
   @ViewChild('heroForm')
-  heroForm!: NgForm;
+  public heroForm!: NgForm;
 
-  powers: Array<string> = [
+  public powers: Array<string> = [
     'Really Smart',
     'Super Flexible',
     'Super Hot',
     'Weather Changer',
   ];
 
-  model: Hero = new Hero(18, 'Dr IQ', this.powers[0], 'Chuck Overstreet');
+  public model: Hero = new Hero(
+    18,
+    'Dr IQ',
+    this.powers[0],
+    'Chuck Overstreet',
+  );
 
-  submitted: boolean = false;
+  public submitted: boolean = false;
 
-  onSubmit() {
+  public onSubmit() {
     this.submitted = true;
   }
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 
-  addHero() {
+  public addHero() {
     this.model = new Hero(20, '', '');
 
     /*

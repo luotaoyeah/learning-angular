@@ -15,5 +15,5 @@ export class Doc03Component implements OnInit {
     this.doc0306070202Service.doSomeThing();
   }
 
-  ngOnInit() {}
+  public ngOnInit() {}
 }

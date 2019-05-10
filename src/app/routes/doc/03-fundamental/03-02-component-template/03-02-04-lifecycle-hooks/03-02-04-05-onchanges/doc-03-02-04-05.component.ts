@@ -5,14 +5,14 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './doc-03-02-04-05.component.html',
 })
 export class Doc03020405Component implements OnInit {
-  foo = '';
-  bar: { name: string } = { name: '' };
+  public foo = '';
+  public bar: { name: string } = { name: '' };
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 
-  handleFooChange(value: string) {
+  public handleFooChange(value: string) {
     this.foo = value;
     this.bar.name = this.foo;
   }

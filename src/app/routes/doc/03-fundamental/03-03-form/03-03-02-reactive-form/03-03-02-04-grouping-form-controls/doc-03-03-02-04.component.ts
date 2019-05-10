@@ -11,16 +11,16 @@ export class Doc03030204Component implements OnInit {
    * FormGroup 对它的 FormControl 进行统一管理，
    * FormGroup 跟 FormControl 拥有相同的属性和方法
    */
-  profileFormGroup: FormGroup = new FormGroup({
+  public profileFormGroup: FormGroup = new FormGroup({
     firstName: new FormControl(''),
     lastName: new FormControl(''),
   });
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 
-  onSubmit() {
+  public onSubmit() {
     console.log(this.profileFormGroup.value);
   }
 }

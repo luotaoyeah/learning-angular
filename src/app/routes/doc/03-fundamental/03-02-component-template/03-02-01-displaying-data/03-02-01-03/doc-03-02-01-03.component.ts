@@ -13,12 +13,12 @@ import { Component, OnInit } from '@angular/core';
   `,
 })
 export class Doc03020103Component implements OnInit {
-  foo = 'FOO';
-  bar: string;
+  public foo = 'FOO';
+  public bar: string;
 
   constructor() {
     this.bar = 'BAR';
   }
 
-  ngOnInit() {}
+  public ngOnInit() {}
 }

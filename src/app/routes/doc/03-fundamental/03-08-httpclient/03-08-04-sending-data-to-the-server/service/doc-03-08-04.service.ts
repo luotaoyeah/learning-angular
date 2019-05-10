@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class Doc030804Service {
   constructor(private httpClient: HttpClient) {}
 
-  request(): Observable<object> {
+  public request(): Observable<object> {
     /*
      * HttpClient 支持各种 HTTP METHOD 请求，GET/POST/PUT/DELETE/HEAD/OPTIONS/PATCH
      */

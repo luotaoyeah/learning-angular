@@ -7,12 +7,12 @@ import { of } from 'rxjs/internal/observable/of';
   providedIn: 'root',
 })
 export class SelectivePreloadingStrategyService implements PreloadingStrategy {
-  modules: Array<string> = [];
+  public modules: Array<string> = [];
 
   constructor() {}
 
   // tslint:disable-next-line:no-any
-  preload(route: Route, fn: () => Observable<any>): Observable<any> {
+  public preload(route: Route, fn: () => Observable<any>): Observable<any> {
     if (route.data && route.data.preload) {
       if (route.path) {
         this.modules.push(route.path);

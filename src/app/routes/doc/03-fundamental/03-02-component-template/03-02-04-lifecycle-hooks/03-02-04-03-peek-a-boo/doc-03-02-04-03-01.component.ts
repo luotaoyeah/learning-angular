@@ -8,14 +8,14 @@ import { ComnService } from '@core/comn/comn.service';
 export class Doc0302040301Component implements OnInit, OnDestroy {
   constructor(private comnService: ComnService) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     console.log(
       this.comnService.getComponentLabel(Doc0302040301Component),
       'ngOnInit()',
     );
   }
 
-  ngOnDestroy(): void {
+  public ngOnDestroy(): void {
     console.log(
       this.comnService.getComponentLabel(Doc0302040301Component),
       'ngOnDestroy()',

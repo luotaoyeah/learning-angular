@@ -12,7 +12,7 @@ export class Pipe03021105Pipe implements PipeTransform {
    * 一个解决方法是：每次都重新给这个 object 或者 array 赋值，
    * 使之成为一个新的对象
    */
-  transform(value: Array<number>): Array<number> {
+  public transform(value: Array<number>): Array<number> {
     return value.map(i => i * 2);
   }
 }

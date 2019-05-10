@@ -6,13 +6,13 @@ import { Doc030803Service } from './service/doc-03-08-03.service';
   templateUrl: './doc-03-08-03.component.html',
 })
 export class Doc030803Component implements OnInit {
-  txt: string = '';
+  public txt: string = '';
 
   constructor(private doc030803Service: Doc030803Service) {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 
-  request() {
+  public request() {
     this.doc030803Service.getTxt().subscribe((txt: string) => {
       this.txt = txt;
     });

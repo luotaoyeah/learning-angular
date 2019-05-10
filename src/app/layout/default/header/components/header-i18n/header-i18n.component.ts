@@ -18,7 +18,7 @@ import { I18NService } from '@core';
 })
 export class HeaderI18nComponent {
   /** Whether to display language text */
-  @Input() @InputBoolean() showLangText = true;
+  @Input() @InputBoolean() public showLangText = true;
 
   get langs() {
     return this.i18n.getLangs();
@@ -35,7 +35,7 @@ export class HeaderI18nComponent {
     @Inject(DOCUMENT) private doc: any,
   ) {}
 
-  changeLang(lang: string) {
+  public changeLang(lang: string) {
     const spinEl = this.doc.createElement('div');
     spinEl.setAttribute(
       'class',

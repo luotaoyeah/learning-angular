@@ -10,13 +10,13 @@ export class Highlight04Directive {
   constructor(private elementRef: ElementRef<HTMLParagraphElement>) {}
 
   @HostListener('mouseenter')
-  onMouseEnter() {
+  public onMouseEnter() {
     this.elementRef.nativeElement.style.color =
       this.highlightColor || '#ff0000';
   }
 
   @HostListener('mouseleave')
-  onMouseLeave() {
+  public onMouseLeave() {
     this.elementRef.nativeElement.style.color = '#000000';
   }
 }

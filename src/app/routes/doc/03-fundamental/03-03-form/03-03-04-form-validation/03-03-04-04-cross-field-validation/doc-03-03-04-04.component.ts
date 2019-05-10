@@ -7,7 +7,7 @@ import { passwordValidator } from './validator/password-validator';
   templateUrl: './doc-03-03-04-04.component.html',
 })
 export class Doc03030404Component implements OnInit {
-  formGroup: FormGroup = new FormGroup(
+  public formGroup: FormGroup = new FormGroup(
     {
       password: new FormControl('', {
         validators: [Validators.required],
@@ -25,10 +25,10 @@ export class Doc03030404Component implements OnInit {
     },
   );
 
-  password: string = '';
-  repeatPassword: string = '';
+  public password: string = '';
+  public repeatPassword: string = '';
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 }

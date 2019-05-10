@@ -12,11 +12,11 @@ import {
   template: '<p>{{bar.name}}</p>',
 })
 export class Doc0302040502Component implements OnInit, OnChanges {
-  @Input() bar: { name: string } = { name: 'BAR' };
+  @Input() public bar: { name: string } = { name: 'BAR' };
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 
   /*
    * ngOnChanges() 会在 input properties 发生变更时触发，
@@ -24,7 +24,7 @@ export class Doc0302040502Component implements OnInit, OnChanges {
    * 因此如果 input property 是一个对象，当它的属性发生变更时，不会触发 ngOnChanges()，
    * 只有当它的对象引用发生变更时，才会触发 ngOnChanges()
    */
-  ngOnChanges(changes: SimpleChanges): void {
+  public ngOnChanges(changes: SimpleChanges): void {
     const barChange: SimpleChange = changes.bar;
     if (barChange && !barChange.firstChange) {
       console.log(`[${Doc0302040502Component.name}] ngOnChange()`);

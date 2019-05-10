@@ -12,7 +12,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class Doc030702010302ervice {
-  doSomething(message: string = ''): void {
+  public doSomething(message: string = ''): void {
     console.log(`[${Doc030702010302ervice.name}] ${message}`);
   }
 }

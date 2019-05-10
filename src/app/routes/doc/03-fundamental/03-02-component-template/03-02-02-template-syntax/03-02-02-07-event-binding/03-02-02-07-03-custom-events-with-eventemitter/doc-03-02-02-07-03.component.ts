@@ -9,9 +9,9 @@ import { MessageService } from 'primeng/api';
 export class Doc0302020703Component implements OnInit {
   constructor(public messageService: MessageService) {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 
-  handleSomeCustomEvent($event: { foo: string }) {
+  public handleSomeCustomEvent($event: { foo: string }) {
     this.messageService.add({
       severity: 'error',
       summary: '提示',

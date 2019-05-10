@@ -15,7 +15,7 @@ import { Observable } from 'rxjs';
  */
 @Injectable()
 export class Doc0308050304Interceptor implements HttpInterceptor {
-  intercept(
+  public intercept(
     // tslint:disable-next-line:no-any
     httpRequest: HttpRequest<any>,
     httpHandler: HttpHandler,

@@ -6,9 +6,9 @@ import { FormControl } from '@angular/forms';
   templateUrl: './doc-03-03-02-03-01.component.html',
 })
 export class Doc0303020301Component implements OnInit {
-  nameFormControl: FormControl = new FormControl('');
+  public nameFormControl: FormControl = new FormControl('');
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 }

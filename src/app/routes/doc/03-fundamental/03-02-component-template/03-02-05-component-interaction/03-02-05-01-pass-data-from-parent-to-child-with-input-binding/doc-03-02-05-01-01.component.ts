@@ -13,11 +13,11 @@ export class Doc0302050101Component implements OnInit {
    * 父组件如何向子组件传递数据？
    * 通过 @Input() 装饰器，设置 input properties（input binding）
    */
-  @Input() foo = '';
+  @Input() public foo = '';
   // tslint:disable-next-line:no-input-rename
-  @Input('myBar') bar = '';
+  @Input('myBar') public bar = '';
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 }

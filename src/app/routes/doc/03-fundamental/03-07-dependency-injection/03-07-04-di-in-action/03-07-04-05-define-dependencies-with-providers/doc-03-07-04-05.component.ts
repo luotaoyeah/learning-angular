@@ -60,7 +60,7 @@ export class Doc03070405Component implements OnInit {
     private token04: Bar,
   ) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     console.assert(this.token01 === 'FOO');
     console.assert(this.token02.foo === 'FOO');
     console.assert(this.token03 === this.token02);

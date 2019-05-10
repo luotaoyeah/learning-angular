@@ -10,7 +10,7 @@ export class Doc0507040901Component implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     this.activatedRoute.queryParamMap.subscribe((paramMap: ParamMap) => {
       this.foo = paramMap.get('foo') || '';
     });

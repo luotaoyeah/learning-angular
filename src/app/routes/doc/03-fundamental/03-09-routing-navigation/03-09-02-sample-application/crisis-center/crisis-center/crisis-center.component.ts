@@ -8,5 +8,5 @@ import { Component, OnInit } from '@angular/core';
 export class CrisisCenterComponent implements OnInit {
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 }

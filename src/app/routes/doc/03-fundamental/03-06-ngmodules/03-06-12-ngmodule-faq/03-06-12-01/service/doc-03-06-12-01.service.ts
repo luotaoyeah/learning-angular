@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 export class Doc03061201Service {
   constructor() {}
 
-  doSomething(): string {
+  public doSomething(): string {
     return 'RED';
   }
 }

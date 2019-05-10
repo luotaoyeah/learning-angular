@@ -11,7 +11,7 @@ export class Doc030803Service {
 
   constructor(private httpClient: HttpClient) {}
 
-  getTxt(): Observable<string> {
+  public getTxt(): Observable<string> {
     return this.httpClient
       .get(this.url, {
         /*

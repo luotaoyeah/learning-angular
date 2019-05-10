@@ -5,13 +5,13 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './doc-03-02-03-04.component.html',
 })
 export class Doc03020304Component implements OnInit {
-  value = '';
+  public value = '';
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 
-  handleKeyUp(value: string) {
+  public handleKeyUp(value: string) {
     this.value = value;
   }
 }

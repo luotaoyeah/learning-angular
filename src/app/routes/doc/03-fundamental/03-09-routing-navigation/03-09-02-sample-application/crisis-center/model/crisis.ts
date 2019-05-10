@@ -1,5 +1,5 @@
 export class Crisis {
-  id = 0;
+  public id = 0;
   /** 名称 */
-  name = '';
+  public name = '';
 }

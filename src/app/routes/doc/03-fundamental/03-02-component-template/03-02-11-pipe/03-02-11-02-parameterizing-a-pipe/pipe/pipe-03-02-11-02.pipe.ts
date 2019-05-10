@@ -17,7 +17,7 @@ export class Pipe03021102Pipe implements PipeTransform {
    * 或者上一个 pipe 的返回值，
    * transform() 方法除了第一个输入参数之外，还可以定义任意的其他参数
    */
-  transform(value: number, x: number, y: number): string {
+  public transform(value: number, x: number, y: number): string {
     return String((value * x) / y);
   }
 }

@@ -13,14 +13,14 @@ import {
   `,
 })
 export class Doc0302050301Component implements OnInit, OnChanges {
-  @Input() major = 0;
-  @Input() minor = 0;
+  @Input() public major = 0;
+  @Input() public minor = 0;
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 
-  ngOnChanges(changes: SimpleChanges): void {
+  public ngOnChanges(changes: SimpleChanges): void {
     for (const key in changes) {
       if (changes.hasOwnProperty(key)) {
         const prop = changes[key];

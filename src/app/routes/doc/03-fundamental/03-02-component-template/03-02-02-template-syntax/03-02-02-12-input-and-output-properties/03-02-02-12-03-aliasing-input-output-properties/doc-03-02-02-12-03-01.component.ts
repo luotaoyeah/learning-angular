@@ -12,11 +12,11 @@ export class Doc030202120301Component implements OnInit {
    */
 
   // tslint:disable-next-line:no-input-rename
-  @Input('myFoo') foo = '';
+  @Input('myFoo') public foo = '';
   // tslint:disable-next-line:no-output-rename
-  @Output('myBar') bar: EventEmitter<string> = new EventEmitter();
+  @Output('myBar') public bar: EventEmitter<string> = new EventEmitter();
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 }

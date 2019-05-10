@@ -9,7 +9,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   pure: false,
 })
 export class Pipe03021106Pipe implements PipeTransform {
-  transform(value: Array<number>): Array<number> {
+  public transform(value: Array<number>): Array<number> {
     return value.map(i => i * 2);
   }
 }

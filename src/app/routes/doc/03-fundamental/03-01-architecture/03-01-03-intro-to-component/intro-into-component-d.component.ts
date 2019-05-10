@@ -6,17 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./intro-into-component-d.component.scss'],
 })
 export class IntroIntoComponentDComponent implements OnInit {
-  property01 = 'FOO';
+  public property01 = 'FOO';
 
-  property02 = 'BAR';
+  public property02 = 'BAR';
 
-  isSpanVisible = true;
+  public isSpanVisible = true;
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 
-  onClick() {
+  public onClick() {
     alert('CLICK');
   }
 }

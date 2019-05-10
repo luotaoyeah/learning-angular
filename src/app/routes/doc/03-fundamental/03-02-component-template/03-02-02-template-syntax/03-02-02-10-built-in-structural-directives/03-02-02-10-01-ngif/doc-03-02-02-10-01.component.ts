@@ -5,9 +5,9 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './doc-03-02-02-10-01.component.html',
 })
 export class Doc0302021001Component implements OnInit {
-  visible = true;
+  public visible = true;
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 }

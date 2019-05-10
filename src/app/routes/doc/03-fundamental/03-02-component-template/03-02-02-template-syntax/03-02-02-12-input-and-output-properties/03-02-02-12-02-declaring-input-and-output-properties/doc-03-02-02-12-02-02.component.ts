@@ -15,10 +15,10 @@ import { Component, EventEmitter, OnInit } from '@angular/core';
   outputs: ['bar'],
 })
 export class Doc030202120202Component implements OnInit {
-  foo = '';
-  bar: EventEmitter<string> = new EventEmitter();
+  public foo = '';
+  public bar: EventEmitter<string> = new EventEmitter();
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 }

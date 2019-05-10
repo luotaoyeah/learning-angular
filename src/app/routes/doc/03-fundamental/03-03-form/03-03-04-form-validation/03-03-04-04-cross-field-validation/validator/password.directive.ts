@@ -20,7 +20,7 @@ import { passwordValidator } from './password-validator';
 export class PasswordDirective implements Validator {
   constructor() {}
 
-  validate(control: AbstractControl): ValidationErrors | null {
+  public validate(control: AbstractControl): ValidationErrors | null {
     return passwordValidator('password', 'repeatPassword')(control);
   }
 }

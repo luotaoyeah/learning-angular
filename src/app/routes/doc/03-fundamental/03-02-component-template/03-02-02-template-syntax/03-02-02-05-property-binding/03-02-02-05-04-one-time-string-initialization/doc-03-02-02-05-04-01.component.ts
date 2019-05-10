@@ -5,10 +5,10 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './doc-03-02-02-05-04-01.component.html',
 })
 export class Doc030202050401Component implements OnInit {
-  @Input() foo = '';
-  @Input() bar = '';
+  @Input() public foo = '';
+  @Input() public bar = '';
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 }

@@ -15,9 +15,9 @@ export class Doc030802Component implements OnInit {
 
   constructor(private doc030802Service: Doc030802Service) {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 
-  request() {
+  public request() {
     this.doc030802Service.getConfig().subscribe(
       (config: IConfig) => {
         this.config = config;

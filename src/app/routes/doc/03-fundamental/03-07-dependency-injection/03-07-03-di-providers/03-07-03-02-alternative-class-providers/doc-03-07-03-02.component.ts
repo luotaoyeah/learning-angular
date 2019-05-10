@@ -39,7 +39,7 @@ export class Doc03070302Component implements OnInit {
     private doc0307030204Service: Doc0307030204Service,
   ) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     this.doc0307030201Service.doSomething();
     console.assert(this.doc0307030203Service === this.doc0307030204Service);
   }

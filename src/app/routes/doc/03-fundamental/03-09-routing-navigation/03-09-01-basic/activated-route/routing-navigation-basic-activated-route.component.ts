@@ -8,7 +8,7 @@ import { ActivatedRoute, Data, ParamMap, UrlSegment } from '@angular/router';
 export class RoutingNavigationBasicActivatedRouteComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     /*
      * ActivatedRoute.url 属性，
      * 当前路由的 URL 片段

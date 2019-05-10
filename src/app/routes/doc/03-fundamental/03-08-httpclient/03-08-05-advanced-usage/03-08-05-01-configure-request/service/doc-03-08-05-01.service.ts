@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class Doc03080501Service {
   constructor(private httpClient: HttpClient) {}
 
-  getSomething(): Observable<object> {
+  public getSomething(): Observable<object> {
     /*
      * 可以配置请求的 headers 和 query params，
      * HttpHeaders.set() 方法可以链式调用，添加或者修改一个 header，

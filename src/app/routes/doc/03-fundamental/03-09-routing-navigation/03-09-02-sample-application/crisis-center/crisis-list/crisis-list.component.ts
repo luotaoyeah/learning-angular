@@ -9,7 +9,7 @@ import { CrisisService } from '../service/crisis.service';
   styleUrls: ['./crisis-list.component.scss'],
 })
 export class CrisisListComponent implements OnInit {
-  crises: Array<Crisis> = [];
+  public crises: Array<Crisis> = [];
 
   constructor(
     private router: Router,
@@ -17,13 +17,13 @@ export class CrisisListComponent implements OnInit {
     private crisisService: CrisisService,
   ) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     this.crisisService.getCrises().subscribe((crises: Array<Crisis>) => {
       this.crises = crises;
     });
   }
 
-  gotoCrisisDetailPage(crisis: Crisis) {
+  public gotoCrisisDetailPage(crisis: Crisis) {
     this.router.navigate([crisis.id], {
       relativeTo: this.activatedRoute,
     });

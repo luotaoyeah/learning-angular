@@ -7,12 +7,12 @@ export class Highlight02Directive {
   constructor(private elementRef: ElementRef<HTMLParagraphElement>) {}
 
   @HostListener('mouseenter')
-  onMouseEnter() {
+  public onMouseEnter() {
     this.elementRef.nativeElement.style.color = '#f00';
   }
 
   @HostListener('mouseleave')
-  onMouseLeave() {
+  public onMouseLeave() {
     this.elementRef.nativeElement.style.color = '#000';
   }
 }

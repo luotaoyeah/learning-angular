@@ -33,7 +33,7 @@ export class Doc0308050301Interceptor implements HttpInterceptor {
    *     HttpEventType.Response：        接收到响应体
    *     HttpEventType.User：            用户自定义的事件
    */
-  intercept(
+  public intercept(
     // tslint:disable-next-line:no-any
     httpRequest: HttpRequest<any>,
     httpHandler: HttpHandler,

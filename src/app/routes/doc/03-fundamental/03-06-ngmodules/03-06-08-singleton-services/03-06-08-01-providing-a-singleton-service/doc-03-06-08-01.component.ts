@@ -12,7 +12,7 @@ export class Doc03060801Component implements OnInit {
     private doc03060802Service: Doc03060802Service,
   ) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     /*
      * 使用 providedIn: 'root' 声明的 service 是 singleton 的，
      * 在 AppModule 的 providers 中声明的 service 也是 singleton 的，

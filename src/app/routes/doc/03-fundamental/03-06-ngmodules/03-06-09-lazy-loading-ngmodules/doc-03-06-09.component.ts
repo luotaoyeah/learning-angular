@@ -8,15 +8,15 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class Doc030609Component implements OnInit {
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 
-  goto01Page() {
+  public goto01Page() {
     this.router.navigate(['01'], {
       relativeTo: this.activatedRoute,
     });
   }
 
-  goto02Page() {
+  public goto02Page() {
     this.router.navigate(['02'], {
       relativeTo: this.activatedRoute,
     });

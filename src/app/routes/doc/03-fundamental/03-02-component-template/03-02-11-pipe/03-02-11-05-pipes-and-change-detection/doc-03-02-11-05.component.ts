@@ -5,17 +5,17 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './doc-03-02-11-05.component.html',
 })
 export class Doc03021105Component implements OnInit {
-  items: Array<number> = [1, 2, 3];
+  public items: Array<number> = [1, 2, 3];
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 
-  push01() {
+  public push01() {
     this.items.push(this.items.length + 1);
   }
 
-  push02() {
+  public push02() {
     this.items.push(this.items.length + 1);
     this.items = this.items.slice();
   }

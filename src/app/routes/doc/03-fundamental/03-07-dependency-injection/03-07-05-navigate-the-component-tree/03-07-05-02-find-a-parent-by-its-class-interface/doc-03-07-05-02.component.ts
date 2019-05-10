@@ -17,9 +17,9 @@ import { ParentComponent } from './doc-03-07-05-02.service';
   ],
 })
 export class Doc03070502Component implements OnInit {
-  foo: string = 'FOO';
+  public foo: string = 'FOO';
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 }

@@ -9,11 +9,11 @@ import { HeroService } from '../service/hero.service';
 })
 export class DashboardComponent implements OnInit {
   /** 热门英雄列表 */
-  heroes: Array<Hero> = [];
+  public heroes: Array<Hero> = [];
 
   constructor(private heroService: HeroService) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     this.getHeroes();
   }
 

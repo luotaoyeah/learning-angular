@@ -1,3 +1,3 @@
 export abstract class ParentComponent {
-  abstract foo: string;
+  public abstract foo: string;
 }

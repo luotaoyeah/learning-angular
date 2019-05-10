@@ -5,9 +5,9 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './doc-03-02-02-06-02.component.html',
 })
 export class Doc0302020602Component implements OnInit {
-  isFoo = false;
+  public isFoo = false;
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 }

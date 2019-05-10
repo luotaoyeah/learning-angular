@@ -12,7 +12,7 @@ import { of } from 'rxjs/internal/observable/of';
 export class CrisisDetailResolverService implements Resolve<Crisis> {
   constructor(private crisisService: CrisisService, private router: Router) {}
 
-  resolve(
+  public resolve(
     route: ActivatedRouteSnapshot,
   ): Observable<Crisis> | Promise<Crisis> | Crisis {
     const id: number = Number(route.paramMap.get('id'));

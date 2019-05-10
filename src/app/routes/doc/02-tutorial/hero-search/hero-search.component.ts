@@ -10,12 +10,12 @@ import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
   styleUrls: ['./hero-search.component.scss'],
 })
 export class HeroSearchComponent implements OnInit {
-  heroes$!: Observable<Array<Hero>>;
+  public heroes$!: Observable<Array<Hero>>;
   private searchTerms: Subject<string> = new Subject<string>();
 
   constructor(private heroService: HeroService) {}
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.heroes$ = this.searchTerms.pipe(
       debounceTime(300),
       distinctUntilChanged(),
@@ -23,7 +23,7 @@ export class HeroSearchComponent implements OnInit {
     );
   }
 
-  search(value: string): void {
+  public search(value: string): void {
     this.searchTerms.next(value);
   }
 }

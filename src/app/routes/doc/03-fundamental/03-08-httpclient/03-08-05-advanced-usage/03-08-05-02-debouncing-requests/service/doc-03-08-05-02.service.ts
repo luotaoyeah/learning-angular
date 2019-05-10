@@ -10,7 +10,7 @@ import { map } from 'rxjs/operators';
 export class Doc03080502Service {
   constructor(private httpClient: HttpClient) {}
 
-  search(key: string): Observable<Array<IPackageInfo>> {
+  public search(key: string): Observable<Array<IPackageInfo>> {
     return this.httpClient
       .get('http://npmsearch.com/query', {
         headers: new HttpHeaders({ 'x-refresh': 'true' }),

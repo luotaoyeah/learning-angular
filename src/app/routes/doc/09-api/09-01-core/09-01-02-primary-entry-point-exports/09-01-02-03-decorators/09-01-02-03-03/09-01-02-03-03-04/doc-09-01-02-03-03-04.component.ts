@@ -25,9 +25,9 @@ export class Doc090102030304Component implements OnInit, AfterContentInit {
 
   constructor(private comnService: ComnService) {}
 
-  ngOnInit(): void {}
+  public ngOnInit(): void {}
 
-  ngAfterContentInit(): void {
+  public ngAfterContentInit(): void {
     console.log(
       this.comnService.getComponentLabel(Doc090102030304Component),
       this.button01,

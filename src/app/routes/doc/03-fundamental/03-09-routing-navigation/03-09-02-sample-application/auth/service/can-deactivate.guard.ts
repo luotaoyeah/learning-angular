@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class CanDeactivateGuard
   implements CanDeactivate<CanDeactivateComponent> {
-  canDeactivate(
+  public canDeactivate(
     component: CanDeactivateComponent,
   ):
     | Observable<boolean | UrlTree>

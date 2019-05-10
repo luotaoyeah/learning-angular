@@ -24,9 +24,9 @@ export class Doc090102030303Component implements OnInit, AfterContentInit {
 
   constructor(private comnService: ComnService) {}
 
-  ngOnInit(): void {}
+  public ngOnInit(): void {}
 
-  ngAfterContentInit(): void {
+  public ngAfterContentInit(): void {
     /*
      * 通过 @ContentChild 引用的 content child，
      * 会在 ngAfterContentInit() 调用之前设置完成

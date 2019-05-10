@@ -6,11 +6,11 @@ import { Injectable } from '@angular/core';
 export class Doc050702Service {
   constructor() {}
 
-  syncGet(): string {
+  public syncGet(): string {
     return 'foo';
   }
 
-  async asyncGet(): Promise<string> {
+  public async asyncGet(): Promise<string> {
     return new Promise<string>((resolve: (value: string) => void) => {
       setTimeout(() => {
         resolve('foo');

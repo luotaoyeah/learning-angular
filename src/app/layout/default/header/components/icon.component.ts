@@ -64,11 +64,11 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderIconComponent {
-  loading = true;
+  public loading = true;
 
   constructor(private cdr: ChangeDetectorRef) {}
 
-  change() {
+  public change() {
     setTimeout(() => {
       this.loading = false;
       this.cdr.detectChanges();

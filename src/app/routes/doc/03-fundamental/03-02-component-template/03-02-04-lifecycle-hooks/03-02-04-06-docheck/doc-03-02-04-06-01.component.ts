@@ -25,7 +25,7 @@ export class Doc0302040601Component implements OnChanges, DoCheck {
    * 因此如果是 input property 对象的内部属性发生变更，angular 无法检测到 ，
    * 也就因此不会触发 ngOnChanges() 的执行
    */
-  ngOnChanges(simpleChanges: SimpleChanges): void {
+  public ngOnChanges(simpleChanges: SimpleChanges): void {
     const barSimpleChange: SimpleChange = simpleChanges['bar'];
     if (barSimpleChange && !barSimpleChange.firstChange) {
       console.log(
@@ -41,7 +41,7 @@ export class Doc0302040601Component implements OnChanges, DoCheck {
    * ngDoCheck() 会在每次 change detection cycle 之后执行，
    * 因此它的执行会非常频繁，因此放在它里面的逻辑不能太复杂
    */
-  ngDoCheck(): void {
+  public ngDoCheck(): void {
     /*
      * 如果我们在 ngDoCheck() 中，对某个 input property 实现了自定义的检测算法，
      * 那么在 ngOnChanges() 中，我们就不应该再对这个 input property 进行处理了

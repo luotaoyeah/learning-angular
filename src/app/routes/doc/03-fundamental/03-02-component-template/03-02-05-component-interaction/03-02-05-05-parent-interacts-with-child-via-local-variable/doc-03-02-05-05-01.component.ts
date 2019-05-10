@@ -11,11 +11,11 @@ import { Component, OnInit } from '@angular/core';
   `,
 })
 export class Doc0302050501Component implements OnInit {
-  result = '';
+  public result = '';
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 
   public doVote(result: string) {
     this.result = result;

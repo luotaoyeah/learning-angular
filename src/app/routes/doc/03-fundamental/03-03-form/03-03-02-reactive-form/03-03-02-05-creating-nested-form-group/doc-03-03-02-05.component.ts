@@ -6,7 +6,7 @@ import { FormControl, FormGroup } from '@angular/forms';
   templateUrl: './doc-03-03-02-05.component.html',
 })
 export class Doc03030205Component implements OnInit {
-  profileFormGroup: FormGroup = new FormGroup({
+  public profileFormGroup: FormGroup = new FormGroup({
     firstName: new FormControl(''),
     lastName: new FormControl(''),
     /*
@@ -22,9 +22,9 @@ export class Doc03030205Component implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 
-  onSubmit() {
+  public onSubmit() {
     console.log(this.profileFormGroup.value);
   }
 }

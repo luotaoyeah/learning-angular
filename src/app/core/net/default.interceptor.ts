@@ -123,7 +123,7 @@ export class DefaultInterceptor implements HttpInterceptor {
     return of(ev);
   }
 
-  intercept(
+  public intercept(
     // tslint:disable-next-line:no-any
     request: HttpRequest<any>,
     httpHandler: HttpHandler,

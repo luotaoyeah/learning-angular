@@ -5,10 +5,10 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './doc-03-02-02-09-01.component.html',
 })
 export class Doc0302020901Component implements OnInit {
-  isFoo = true;
-  isBar = false;
+  public isFoo = true;
+  public isBar = false;
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 }

@@ -6,9 +6,9 @@ import { FormControl } from '@angular/forms';
   templateUrl: './doc-03-03-01-07-01.component.html',
 })
 export class Doc0303010701Component implements OnInit {
-  colorFormControl: FormControl = new FormControl('RED');
+  public colorFormControl: FormControl = new FormControl('RED');
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 }

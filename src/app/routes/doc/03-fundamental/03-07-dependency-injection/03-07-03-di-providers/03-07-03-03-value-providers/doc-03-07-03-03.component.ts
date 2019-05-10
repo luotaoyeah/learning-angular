@@ -20,7 +20,7 @@ import { Doc0307030301Service } from './service/doc-03-07-03-03-01.service';
 export class Doc03070303Component implements OnInit {
   constructor(private doc0307030301Service: Doc0307030301Service) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     console.assert(this.doc0307030301Service.foo === 'BAR');
   }
 }

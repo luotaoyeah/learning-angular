@@ -29,7 +29,7 @@ export class Doc0307030301Component implements OnInit {
     @Inject(CONFIG_TOKEN_02) private config02: IConfig,
   ) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     console.assert(this.config01.value === 'BAR');
     console.assert(this.config02.value === 'BAZ');
   }
