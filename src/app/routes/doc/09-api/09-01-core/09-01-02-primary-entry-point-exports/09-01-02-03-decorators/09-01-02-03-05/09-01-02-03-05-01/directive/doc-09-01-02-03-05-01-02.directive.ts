@@ -5,7 +5,7 @@ import { Directive, ElementRef } from '@angular/core';
  */
 @Directive({
   // tslint:disable-next-line:directive-selector
-  selector: '.doc-09-01-02-03-05-01-01',
+  selector: 'doc-09-01-02-03-05-01-02',
 })
 export class Doc09010203050102Directive {
   constructor(elementRef: ElementRef<HTMLButtonElement>) {
