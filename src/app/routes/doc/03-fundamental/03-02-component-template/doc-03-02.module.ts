@@ -173,6 +173,7 @@ import { Doc0302090301Directive } from './03-02-09-attribute-directives/03-02-09
 import { Doc0302090401Directive } from './03-02-09-attribute-directives/03-02-09-04-pass-values-into-the-directive-with-an-input-data-binding/directive/doc-03-02-09-04-01.directive';
 import { Doc0302090402Directive } from './03-02-09-attribute-directives/03-02-09-04-pass-values-into-the-directive-with-an-input-data-binding/directive/doc-03-02-09-04-02.directive';
 import { Doc0302090403Directive } from './03-02-09-attribute-directives/03-02-09-04-pass-values-into-the-directive-with-an-input-data-binding/directive/doc-03-02-09-04-03.directive';
+import { Doc0302090404Directive } from './03-02-09-attribute-directives/03-02-09-04-pass-values-into-the-directive-with-an-input-data-binding/directive/doc-03-02-09-04-04.directive';
 
 // tslint:enable:max-line-length
 
@@ -367,6 +368,7 @@ import { Doc0302090403Directive } from './03-02-09-attribute-directives/03-02-09
       Doc0302090401Directive,
       Doc0302090402Directive,
       Doc0302090403Directive,
+      Doc0302090404Directive,
     ],
   ],
   imports: [
