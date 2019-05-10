@@ -36,6 +36,8 @@ import { Doc0507041501Component } from './05-07-testing/05-07-04-component-test-
 import { Doc0507041001Component } from './05-07-testing/05-07-04-component-test-scenarios/05-07-04-10-nested-component-tests/05-07-04-10-01/doc-05-07-04-10-01.component';
 import { Doc0507041002Component } from './05-07-testing/05-07-04-component-test-scenarios/05-07-04-10-nested-component-tests/05-07-04-10-02/doc-05-07-04-10-02.component';
 import { Doc0507041502Component } from './05-07-testing/05-07-04-component-test-scenarios/05-07-04-15-override-component-providers/05-07-04-15-02/doc-05-07-04-15-02.component';
+import { Doc050705Component } from './05-07-testing/05-07-05-attribute-directive-testing/doc-05-07-05.component';
+import { Doc05070501Directive } from './05-07-testing/05-07-05-attribute-directive-testing/directive/doc-05-07-05-01.directive';
 
 @NgModule({
   declarations: [
@@ -75,6 +77,9 @@ import { Doc0507041502Component } from './05-07-testing/05-07-04-component-test-
     Doc05070415Component,
     Doc0507041501Component,
     Doc0507041502Component,
+    /* 05-07-05 */
+    Doc050705Component,
+    [Doc05070501Directive],
   ],
   imports: [CommonModule, FormsModule, SharedModule, Doc05RoutingModule],
 })
