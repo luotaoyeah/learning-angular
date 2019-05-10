@@ -1,0 +1,13 @@
+<nz-divider
+  nzText="doc-09-01-02-03-05-03-01"
+  [nzOrientation]="'left'"
+  [nzDashed]="true"
+></nz-divider>
+<button
+  #btn
+  nz-button
+  appDoc090102030503
+  (appDoc090102030503ChangeColor)="btn.el.style.color = $event"
+>
+  FOO
+</button>
