@@ -284,7 +284,6 @@
           "children": [
             {
               "i18n": "menu.doc.09.01",
-              "link": "/doc/09/01",
               "children": [
                 {
                   "i18n": "menu.doc.09.01.01",
@@ -293,6 +292,15 @@
                 {
                   "i18n": "menu.doc.09.01.02",
                   "link": "/doc/09/01/02"
+                }
+              ]
+            },
+            {
+              "i18n": "menu.doc.09.02",
+              "children": [
+                {
+                  "i18n": "menu.doc.09.02.02",
+                  "link": "/doc/09/02/02"
                 }
               ]
             }

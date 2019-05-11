@@ -66,6 +66,8 @@
   "menu.doc.09.01": "@angular/core",
   "menu.doc.09.01.01": "Entry Points",
   "menu.doc.09.01.02": "Primary Entry Point Exports",
+  "menu.doc.09.02": "@angular/common",
+  "menu.doc.09.02.02": "Primary Entry Point Exports",
   "menu.jasmine": "JASMINE",
   "menu.search.placeholder": "Search...",
   "menu.fullscreen": "Fullscreen",

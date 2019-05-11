@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { SharedModule } from '@shared';
 import { Doc09RoutingModule } from './doc-09-routing.module';
 import { Doc0901Module } from './09-01-core/doc-09-01.module';
+import { Doc0902Module } from './09-02-common/doc-09-02.module';
 
 @NgModule({
   declarations: [],
@@ -13,7 +14,8 @@ import { Doc0901Module } from './09-01-core/doc-09-01.module';
     SharedModule,
     Doc09RoutingModule,
     Doc0901Module,
+    Doc0902Module,
   ],
-  exports: [Doc0901Module],
+  exports: [Doc0901Module, Doc0902Module],
 })
 export class Doc09Module {}
