@@ -9,6 +9,7 @@ import { Doc050202Component } from './05-02-02-project-configuration-options/doc
 import { Doc050203Component } from './05-02-03-generation-schematics/doc-05-02-03.component';
 import { Doc050204Component } from './05-02-04-project-tool-configuration-options/doc-05-02-04.component';
 import { Doc050205Component } from './05-02-05-build-target/doc-05-02-05.component';
+import { Doc050206Component } from './05-02-06-project-asset-configuration/doc-05-02-06.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { Doc050205Component } from './05-02-05-build-target/doc-05-02-05.compone
     Doc050203Component,
     Doc050204Component,
     Doc050205Component,
+    Doc050206Component,
   ],
   imports: [CommonModule, FormsModule, SharedModule, Doc0502RoutingModule],
 })
