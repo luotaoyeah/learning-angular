@@ -1,0 +1,18 @@
+<p>architect 下面的每一个 target，通常又包含三个配置选项：</p>
+<ul>
+  <li>
+    <b>builder</b>
+    指定要使用哪个 npm package 来创建这个 target
+  </li>
+  <li>
+    <b>options</b>
+    用来对 builder 进行默认配置
+  </li>
+  <li>
+    <b>configurations</b>
+    用来对 builder 进行各种不同环境的配置，如: production/hmr/stage 等等，
+    当通过 ng build 命令的 --configuration 参数指定某个特定的配置文件时,
+    就会使用对应的配置, 例如: 指定了 ng build --prod 参数, 则会使用
+    configurations#production 下面的配置
+  </li>
+</ul>
