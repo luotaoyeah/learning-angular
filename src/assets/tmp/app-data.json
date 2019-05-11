@@ -269,6 +269,10 @@
           "icon": "anticon anticon-info-circle",
           "children": [
             {
+              "i18n": "menu.doc.05.02",
+              "link": "/doc/05/02"
+            },
+            {
               "i18n": "menu.doc.05.07",
               "link": "/doc/05/07"
             }
