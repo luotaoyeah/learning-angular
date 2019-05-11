@@ -154,18 +154,7 @@ import { Doc03021006Component } from './03-02-10-structural-directives/03-02-10-
 import { Doc03021007Component } from './03-02-10-structural-directives/03-02-10-07-ng-container/doc-03-02-10-07.component';
 import { Doc03021008Component } from './03-02-10-structural-directives/03-02-10-08-write-a-structural-directive/doc-03-02-10-08.component';
 import { UnlessDirective } from './03-02-10-structural-directives/03-02-10-08-write-a-structural-directive/directive/unless.directive';
-import { Doc030211Component } from './03-02-11-pipe/doc-03-02-11.component';
-import { Doc03021101Component } from './03-02-11-pipe/03-02-11-01-using-pipes/doc-03-02-11-01.component';
 import { SharedModule } from '@shared';
-import { Doc03021102Component } from './03-02-11-pipe/03-02-11-02-parameterizing-a-pipe/doc-03-02-11-02.component';
-import { Pipe03021102Pipe } from './03-02-11-pipe/03-02-11-02-parameterizing-a-pipe/pipe/pipe-03-02-11-02.pipe';
-import { Doc03021103Component } from './03-02-11-pipe/03-02-11-03-chaining-pipes/doc-03-02-11-03.component';
-import { Doc03021104Component } from './03-02-11-pipe/03-02-11-04-custom-pipes/doc-03-02-11-04.component';
-import { Doc03021105Component } from './03-02-11-pipe/03-02-11-05-pipes-and-change-detection/doc-03-02-11-05.component';
-import { Pipe03021105Pipe } from './03-02-11-pipe/03-02-11-05-pipes-and-change-detection/pipe/pipe-03-02-11-05.pipe';
-import { Pipe03021106Pipe } from './03-02-11-pipe/03-02-11-06-pure-and-impure-pipes/pipe/pipe-03-02-11-06.pipe';
-import { Doc03021106Component } from './03-02-11-pipe/03-02-11-06-pure-and-impure-pipes/doc-03-02-11-06.component';
-import { Doc0302110601Component } from './03-02-11-pipe/03-02-11-06-pure-and-impure-pipes/03-02-11-06-01-the-impure-asyncpipe/doc-03-02-11-06-01.component';
 import { Doc0302040201Component } from './03-02-04-lifecycle-hooks/03-02-04-02-lifecycle-sequence/03-02-04-02-01-ngonchanges/doc-03-02-04-02-01.component';
 import { Doc0302040202Component } from './03-02-04-lifecycle-hooks/03-02-04-02-lifecycle-sequence/03-02-04-02-02-ngoninit/doc-03-02-04-02-02.component';
 import { Doc0302090201Directive } from './03-02-09-attribute-directives/03-02-09-02-build-a-simple-attribute-directive/directive/doc-03-02-09-02-01.directive';
@@ -174,6 +163,7 @@ import { Doc0302090401Directive } from './03-02-09-attribute-directives/03-02-09
 import { Doc0302090402Directive } from './03-02-09-attribute-directives/03-02-09-04-pass-values-into-the-directive-with-an-input-data-binding/directive/doc-03-02-09-04-02.directive';
 import { Doc0302090403Directive } from './03-02-09-attribute-directives/03-02-09-04-pass-values-into-the-directive-with-an-input-data-binding/directive/doc-03-02-09-04-03.directive';
 import { Doc0302090404Directive } from './03-02-09-attribute-directives/03-02-09-04-pass-values-into-the-directive-with-an-input-data-binding/directive/doc-03-02-09-04-04.directive';
+import { Doc030211Module } from './03-02-11-pipes/doc-03-02-11.module';
 
 // tslint:enable:max-line-length
 
@@ -340,22 +330,6 @@ import { Doc0302090404Directive } from './03-02-09-attribute-directives/03-02-09
     Doc03021006Component,
     Doc03021007Component,
     Doc03021008Component,
-    /* 03-02-11 */
-    Doc030211Component,
-    Doc03021101Component,
-    Doc03021102Component,
-    /*
-     * 需要在 NgModule 的 declarations 中声明某个 pipe，
-     * 之后这个 pipe 才可以在下面的 template 中使用
-     */
-    Pipe03021102Pipe,
-    Doc03021103Component,
-    Doc03021104Component,
-    Doc03021105Component,
-    Pipe03021105Pipe,
-    Doc03021106Component,
-    Pipe03021106Pipe,
-    Doc0302110601Component,
     [
       MySpyDirective,
       HighlightDirective,
@@ -383,6 +357,7 @@ import { Doc0302090404Directive } from './03-02-09-attribute-directives/03-02-09
     MessagesModule,
     InputTextModule,
     SharedModule,
+    Doc030211Module,
   ],
   /*
    * 动态加载的 component 需要在 NgModule 的 entryComponents 中声明
