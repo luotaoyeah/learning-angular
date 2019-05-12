@@ -1,36 +1,12 @@
-<p>DatePipe 的输入有三种形式:</p>
-<ul>
-  <li>
-    a Date object
-    <ul>
-      <li>
-        <p>
-          <button nz-button>{{ now01 | date }}</button>
-          <button nz-button>{{ now01 }}</button>
-        </p>
-      </li>
-    </ul>
-  </li>
-  <li>
-    a number
-    <ul>
-      <li>
-        <p>
-          <button nz-button>{{ now02 | date }}</button>
-          <button nz-button>{{ now02 }}</button>
-        </p>
-      </li>
-    </ul>
-  </li>
-  <li>
-    a ISO string
-    <ul>
-      <li>
-        <p>
-          <button nz-button>{{ now03 | date }}</button>
-          <button nz-button>{{ now03 }}</button>
-        </p>
-      </li>
-    </ul>
-  </li>
-</ul>
+<nz-collapse [nzAccordion]="true">
+  <nz-collapse-panel nzHeader="input" nzExpandedIcon="caret-right">
+    <app-doc-09-02-02-06-03-01></app-doc-09-02-02-06-03-01>
+  </nz-collapse-panel>
+
+  <nz-collapse-panel
+    nzHeader="pre-defined format options"
+    nzExpandedIcon="caret-right"
+  >
+    <app-doc-09-02-02-06-03-02></app-doc-09-02-02-06-03-02>
+  </nz-collapse-panel>
+</nz-collapse>
