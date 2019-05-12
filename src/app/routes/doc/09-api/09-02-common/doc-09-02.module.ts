@@ -5,6 +5,7 @@ import { Doc090202Component } from './09-02-02-primary-entry-point-exports/doc-0
 import { Doc09020206Component } from './09-02-02-primary-entry-point-exports/09-02-02-06-pipes/doc-09-02-02-06.component';
 import { Doc0902020601Component } from './09-02-02-primary-entry-point-exports/09-02-02-06-pipes/09-02-02-06-01-async-pipe/doc-09-02-02-06-01.component';
 import { Doc0902020602Component } from './09-02-02-primary-entry-point-exports/09-02-02-06-pipes/09-02-02-06-02-currency-pipe/doc-09-02-02-06-02.component';
+import { Doc0902020603Component } from './09-02-02-primary-entry-point-exports/09-02-02-06-pipes/09-02-02-06-03-date-pipe/doc-09-02-02-06-03.component';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { Doc0902020602Component } from './09-02-02-primary-entry-point-exports/0
     Doc09020206Component,
     Doc0902020601Component,
     Doc0902020602Component,
+    Doc0902020603Component,
   ],
   imports: [Doc0902RoutingModule, SharedModule],
 })
