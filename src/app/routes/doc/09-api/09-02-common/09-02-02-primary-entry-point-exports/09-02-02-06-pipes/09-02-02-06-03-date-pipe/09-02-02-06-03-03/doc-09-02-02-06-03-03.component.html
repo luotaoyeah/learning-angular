@@ -1,0 +1,11 @@
+<p>
+  除了预定义的日期格式选项, 也可以自定义各种日期格式:
+</p>
+<ul>
+  <li>
+    <button nz-button>
+      {{ now | date: 'yyyy-MM-dd HH:mm:ss.SSS':'+0800' }}
+      {{ now | date: 'EEEE':'+0800' }}
+    </button>
+  </li>
+</ul>
