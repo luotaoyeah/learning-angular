@@ -265,6 +265,16 @@
           ]
         },
         {
+          "i18n": "menu.doc.04",
+          "icon": "anticon anticon-info-circle",
+          "children": [
+            {
+              "i18n": "menu.doc.04.02",
+              "link": "/doc/04/02"
+            }
+          ]
+        },
+        {
           "i18n": "menu.doc.05",
           "icon": "anticon anticon-info-circle",
           "children": [
