@@ -13,6 +13,7 @@ import { Doc090202060304Component } from './09-02-02-primary-entry-point-exports
 import { Doc090202060305Component } from './09-02-02-primary-entry-point-exports/09-02-02-06-pipes/09-02-02-06-03-date-pipe/09-02-02-06-03-05/doc-09-02-02-06-03-05.component';
 import { Doc0902020604Component } from './09-02-02-primary-entry-point-exports/09-02-02-06-pipes/09-02-02-06-04-decimal-pipe/doc-09-02-02-06-04.component';
 import { Doc090202060401Component } from './09-02-02-primary-entry-point-exports/09-02-02-06-pipes/09-02-02-06-04-decimal-pipe/09-02-02-06-04-01/doc-09-02-02-06-04-01.component';
+import { Doc090202060402Component } from './09-02-02-primary-entry-point-exports/09-02-02-06-pipes/09-02-02-06-04-decimal-pipe/09-02-02-06-04-02/doc-09-02-02-06-04-02.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { Doc090202060401Component } from './09-02-02-primary-entry-point-exports
     Doc090202060305Component,
     Doc0902020604Component,
     Doc090202060401Component,
+    Doc090202060402Component,
   ],
   imports: [Doc0902RoutingModule, SharedModule],
 })

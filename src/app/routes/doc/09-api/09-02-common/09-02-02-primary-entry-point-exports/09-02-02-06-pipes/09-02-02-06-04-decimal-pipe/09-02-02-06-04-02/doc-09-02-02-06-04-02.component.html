@@ -1,0 +1,11 @@
+<p>DecimalPipe's second parameter is locale</p>
+
+<p>
+  <button nz-button>{{ e }}</button>
+</p>
+
+<nz-divider [nzDashed]="true" nzOrientation="left"></nz-divider>
+<p>
+  <button nz-button>{{ e | number: '1.0-5':'en-US' }}</button>
+  <button nz-button>{{ e | number: '1.0-5':'zh-CN' }}</button>
+</p>
