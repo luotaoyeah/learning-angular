@@ -18,7 +18,9 @@ import { I18NService } from '@core';
 })
 export class HeaderI18nComponent {
   /** Whether to display language text */
-  @Input() @InputBoolean() public showLangText = true;
+  @Input()
+  @InputBoolean()
+  public showLangText = true;
 
   get langs() {
     return this.i18n.getLangs();
@@ -30,9 +32,10 @@ export class HeaderI18nComponent {
 
   constructor(
     private settingsService: SettingsService,
-    @Inject(ALAIN_I18N_TOKEN) private i18n: I18NService,
-    // tslint:disable-next-line:no-any
-    @Inject(DOCUMENT) private doc: any,
+    @Inject(ALAIN_I18N_TOKEN)
+    private i18n: I18NService,
+    @Inject(DOCUMENT)
+    private doc: any, // tslint:disable-line:no-any
   ) {}
 
   public changeLang(lang: string) {
