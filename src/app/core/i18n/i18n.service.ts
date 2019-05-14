@@ -56,7 +56,7 @@ const LANGS: { [key: string]: LangData } = {
 @Injectable({ providedIn: 'root' })
 export class I18NService implements AlainI18NService {
   // tslint:disable-next-line:variable-name
-  private _default = DEFAULT;
+  private readonly _default: string = DEFAULT;
   private change$ = new BehaviorSubject<string | null>(null);
 
   // tslint:disable-next-line:variable-name
@@ -69,14 +69,15 @@ export class I18NService implements AlainI18NService {
     settings: SettingsService,
     private nzI18nService: NzI18nService,
     private delonLocaleService: DelonLocaleService,
-    private translate: TranslateService,
+    private translateService: TranslateService,
   ) {
-    const defaultLan = settings.layout.lang || translate.getBrowserLang();
+    const defaultLang =
+      settings.layout.lang || translateService.getBrowserLang();
     // `@ngx-translate/core` 预先知道支持哪些语言
-    const lans = this._langs.map(item => item.code);
-    translate.addLangs(lans);
+    const langs = this._langs.map(item => item.code);
+    translateService.addLangs(langs);
 
-    this._default = lans.includes(defaultLan) ? defaultLan : lans[0];
+    this._default = langs.includes(defaultLang) ? defaultLang : langs[0];
     this.updateLangData(this._default);
   }
 
@@ -100,12 +101,12 @@ export class I18NService implements AlainI18NService {
   }
 
   public use(lang: string): void {
-    lang = lang || this.translate.getDefaultLang();
+    lang = lang || this.translateService.getDefaultLang();
     if (this.currentLang === lang) {
       return;
     }
     this.updateLangData(lang);
-    this.translate.use(lang).subscribe(() => this.change$.next(lang));
+    this.translateService.use(lang).subscribe(() => this.change$.next(lang));
   }
 
   /** 获取语言列表 */
@@ -115,7 +116,7 @@ export class I18NService implements AlainI18NService {
 
   /** 翻译 */
   public fanyi(key: string, interpolateParams?: object) {
-    return this.translate.instant(key, interpolateParams);
+    return this.translateService.instant(key, interpolateParams);
   }
 
   /** 默认语言 */
@@ -126,8 +127,8 @@ export class I18NService implements AlainI18NService {
   /** 当前语言 */
   get currentLang() {
     return (
-      this.translate.currentLang ||
-      this.translate.getDefaultLang() ||
+      this.translateService.currentLang ||
+      this.translateService.getDefaultLang() ||
       this._default
     );
   }

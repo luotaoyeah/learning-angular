@@ -72,9 +72,12 @@ const LANG_PROVIDES = [
   { provide: DELON_LOCALE, useValue: LANG.delon },
 ];
 
-// 加载i18n语言文件
-export function I18nHttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, `assets/tmp/i18n/`, '.json');
+/**
+ * load i18n language files
+ * @param httpClient HttpClient
+ */
+export function I18nHttpLoaderFactory(httpClient: HttpClient) {
+  return new TranslateHttpLoader(httpClient, `assets/tmp/i18n/`, '.json');
 }
 
 const I18NSERVICE_MODULES = [
@@ -90,10 +93,8 @@ const I18NSERVICE_MODULES = [
 const I18NSERVICE_PROVIDES = [
   { provide: ALAIN_I18N_TOKEN, useClass: I18NService, multi: false },
 ];
-// #region
 
 const FORM_MODULES = [JsonSchemaModule];
-// #endregion
 
 /*
  * 因为 HttpClientModule 可能需要依赖 interceptors，因此 interceptors 需要和 HttpClientModule 注册到同一个 injector 中，
@@ -137,15 +138,14 @@ const INTERCEPTOR_PROVIDES: Array<Provider> = [
     multi: true,
   },
 ];
-// #endregion
 
-// #region global third module
+// region global third module
 const GLOBAL_THIRD_MODULES: Array<
   // tslint:disable-next-line:no-any
   Type<any> | ModuleWithProviders<{}> | any[]
 > = [];
 
-// #endregion
+// endregion
 
 export function StartupServiceFactory(
   startupService: StartupService,

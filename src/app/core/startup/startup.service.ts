@@ -1,4 +1,4 @@
-import { Inject, Injectable, Injector } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { zip } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -8,7 +8,6 @@ import {
   SettingsService,
   TitleService,
 } from '@delon/theme';
-import { DA_SERVICE_TOKEN, ITokenService } from '@delon/auth';
 import { ACLService } from '@delon/acl';
 import { TranslateService } from '@ngx-translate/core';
 import { NzIconService } from 'ng-zorro-antd';
@@ -24,29 +23,28 @@ import { ReuseTabMatchMode, ReuseTabService } from '@delon/abc';
 @Injectable()
 export class StartupService {
   constructor(
-    iconService: NzIconService,
+    nzIconService: NzIconService,
     private menuService: MenuService,
     private translateService: TranslateService,
-    @Inject(ALAIN_I18N_TOKEN) private i18n: I18NService,
+    @Inject(ALAIN_I18N_TOKEN)
+    private i18NService: I18NService,
     private settingsService: SettingsService,
     private aclService: ACLService,
     private titleService: TitleService,
     @Inject(ReuseTabService)
     private reuseTabService: ReuseTabService,
-    // @ts-ignore: TS6138
-    @Inject(DA_SERVICE_TOKEN) private tokenService: ITokenService,
     private httpClient: HttpClient,
-    // @ts-ignore: TS6138
-    private injector: Injector,
   ) {
-    iconService.addIcon(...ICONS_AUTO, ...ICONS);
+    nzIconService.addIcon(...ICONS_AUTO, ...ICONS);
   }
 
   // @ts-ignore: TS6133
   // tslint:disable-next-line:no-any
   private viaHttp(resolve: any, reject: any) {
     zip(
-      this.httpClient.get(`assets/tmp/i18n/${this.i18n.defaultLang}.json`),
+      this.httpClient.get(
+        `assets/tmp/i18n/${this.i18NService.defaultLang}.json`,
+      ),
       this.httpClient.get('assets/tmp/app-data.json'),
     )
       .pipe(
@@ -59,8 +57,11 @@ export class StartupService {
       .subscribe(
         ([langData, appData]) => {
           // setting language data
-          this.translateService.setTranslation(this.i18n.defaultLang, langData);
-          this.translateService.setDefaultLang(this.i18n.defaultLang);
+          this.translateService.setTranslation(
+            this.i18NService.defaultLang,
+            langData,
+          );
+          this.translateService.setDefaultLang(this.i18NService.defaultLang);
 
           // tslint:disable-next-line:no-any
           const res: any = appData;

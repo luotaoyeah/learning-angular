@@ -30,8 +30,13 @@ const routes: Routes = [
         loadChildren: './doc/doc.module#DocModule',
       },
       {
-        path: 'jasmine',
-        loadChildren: './jasmine/jasmine.module#JasmineModule',
+        path: 'pkgs/jasmine',
+        loadChildren: './pkgs/jasmine/jasmine.module#JasmineModule',
+      },
+      {
+        path: 'pkgs/ngx-translate',
+        loadChildren:
+          './pkgs/ngx-translate/ngx-translate.module#NgxTranslateModule',
       },
     ],
   },

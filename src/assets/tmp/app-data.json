@@ -319,10 +319,21 @@
       ]
     },
     {
-      "i18n": "menu.jasmine",
+      "i18n": "menu.pkgs",
       "group": true,
       "hideInBreadcrumb": true,
-      "children": []
+      "children": [
+        {
+          "i18n": "menu.pkgs.jasmine",
+          "icon": "anticon anticon-info-circle",
+          "children": []
+        },
+        {
+          "i18n": "menu.pkgs.ngx-translate",
+          "icon": "anticon anticon-info-circle",
+          "link": "/pkgs/ngx-translate"
+        }
+      ]
     }
   ]
 }
