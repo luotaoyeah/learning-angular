@@ -49,7 +49,7 @@ const LANGS: { [key: string]: LangData } = {
     zorro: en_US,
     dateFns: df_en,
     delon: delonEnUS,
-    abbr: 'GB',
+    abbr: 'EN',
   },
 };
 
@@ -60,21 +60,21 @@ export class I18NService implements AlainI18NService {
   private change$ = new BehaviorSubject<string | null>(null);
 
   // tslint:disable-next-line:variable-name
-  private _langs = Object.keys(LANGS).map(code => {
+  private langs = Object.keys(LANGS).map(code => {
     const item = LANGS[code];
     return { code, text: item.text, abbr: item.abbr };
   });
 
   constructor(
-    settings: SettingsService,
+    settingsService: SettingsService,
     private nzI18nService: NzI18nService,
     private delonLocaleService: DelonLocaleService,
     private translateService: TranslateService,
   ) {
     const defaultLang =
-      settings.layout.lang || translateService.getBrowserLang();
+      settingsService.layout.lang || translateService.getBrowserLang();
     // `@ngx-translate/core` 预先知道支持哪些语言
-    const langs = this._langs.map(item => item.code);
+    const langs: Array<string> = this.langs.map(item => item.code);
     translateService.addLangs(langs);
 
     this._default = langs.includes(defaultLang) ? defaultLang : langs[0];
@@ -82,12 +82,12 @@ export class I18NService implements AlainI18NService {
   }
 
   private updateLangData(lang: string) {
-    const item = LANGS[lang];
-    registerLocaleData(item.ng);
-    this.nzI18nService.setLocale(item.zorro);
+    const langData = LANGS[lang];
+    registerLocaleData(langData.ng);
+    this.nzI18nService.setLocale(langData.zorro);
     // tslint:disable-next-line:no-any
-    (window as any).__locale__ = item.dateFns;
-    this.delonLocaleService.setLocale(item.delon);
+    (window as any).__locale__ = langData.dateFns;
+    this.delonLocaleService.setLocale(langData.delon);
   }
 
   get change(): Observable<string> {
@@ -111,7 +111,7 @@ export class I18NService implements AlainI18NService {
 
   /** 获取语言列表 */
   public getLangs() {
-    return this._langs;
+    return this.langs;
   }
 
   /** 翻译 */

@@ -23,7 +23,7 @@ export class HeaderI18nComponent {
   public showLangText = true;
 
   get langs() {
-    return this.i18n.getLangs();
+    return this.i18NService.getLangs();
   }
 
   get curLangCode() {
@@ -33,22 +33,22 @@ export class HeaderI18nComponent {
   constructor(
     private settingsService: SettingsService,
     @Inject(ALAIN_I18N_TOKEN)
-    private i18n: I18NService,
+    private i18NService: I18NService,
     @Inject(DOCUMENT)
-    private doc: any, // tslint:disable-line:no-any
+    private document: Document,
   ) {}
 
   public changeLang(lang: string) {
-    const spinEl = this.doc.createElement('div');
+    const spinEl = this.document.createElement('div');
     spinEl.setAttribute(
       'class',
       `page-loading ant-spin ant-spin-lg ant-spin-spinning`,
     );
     spinEl.innerHTML = `<span class="ant-spin-dot ant-spin-dot-spin"><i></i><i></i><i></i><i></i></span>`;
-    this.doc.body.appendChild(spinEl);
+    this.document.body.appendChild(spinEl);
 
-    this.i18n.use(lang);
+    this.i18NService.use(lang);
     this.settingsService.setLayout('lang', lang);
-    setTimeout(() => this.doc.location.reload());
+    setTimeout(() => this.document.location.reload());
   }
 }

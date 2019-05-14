@@ -6,6 +6,7 @@ import { SharedModule } from '@shared';
 import { NgxTranslate01Component } from './01-translate-module/ngx-translate-01.component';
 import { NgxTranslate02Component } from './02-translate-pipe/ngx-translate-02.component';
 import { NgxTranslate03Component } from './03-translate-directive/ngx-translate-03.component';
+import { NgxTranslate04Component } from './04-translate-service/ngx-translate-04.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { NgxTranslate03Component } from './03-translate-directive/ngx-translate-
     NgxTranslate01Component,
     NgxTranslate02Component,
     NgxTranslate03Component,
+    NgxTranslate04Component,
   ],
   imports: [CommonModule, NgxTranslateRoutingModule, SharedModule],
 })
