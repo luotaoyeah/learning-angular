@@ -27,7 +27,7 @@
         Build using Ahead Of Time compilation
       </li>
       <li>
-        <nz-tag>--baseHref=baseHref</nz-tag>
+        <nz-tag>--baseHref=string</nz-tag>
         Base url
       </li>
       <li>
@@ -38,6 +38,12 @@
       <li>
         <nz-tag>--commonChunk=<b>true</b>|false</nz-tag>
         是否将被多个 bundle 使用的代码放到一个单独的 bundle 中去
+      </li>
+      <li>
+        <nz-tag>--configuration|-c=string</nz-tag>
+        angular.json#projects.learning-angular.architect.build.configurations
+        下面定义了多个命名的 build target, 通过 --configuration
+        可以指定要使用哪个 build target
       </li>
     </ul>
   </nz-collapse-panel>

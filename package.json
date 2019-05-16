@@ -20,7 +20,7 @@
     "lint:style": "stylelint src/**/*.less",
     "lint-staged": "lint-staged",
     "tslint-check": "tslint-config-prettier-check ./tslint.json",
-    "hmr": "ng serve -c=hmr"
+    "hmr": "ng serve --configuration=hmr"
   },
   "dependencies": {
     "@angular/animations": "^7.2.15",
