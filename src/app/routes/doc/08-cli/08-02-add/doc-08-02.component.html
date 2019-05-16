@@ -1,0 +1,43 @@
+<nz-collapse [nzAccordion]="true">
+  <nz-collapse-panel nzHeader="Overview" nzExpandedIcon="caret-right">
+    <p>
+      <b>`ng add`</b>
+      将一个 external library 添加到当前 project 中
+    </p>
+
+    <p>支持 3 个参数:</p>
+    <ul>
+      <li>
+        <b>--defaults</b>
+        <ul>
+          <li>
+            <nz-tag>true</nz-tag>
+            所有选项都使用默认的配置
+          </li>
+        </ul>
+      </li>
+      <li>
+        <b>--help</b>
+        <ul>
+          <li>
+            <nz-tag>true</nz-tag>
+            显示帮助信息
+          </li>
+          <li>
+            <nz-tag>json/JSON</nz-tag>
+            以 JSON 格式显示帮助信息
+          </li>
+        </ul>
+      </li>
+      <li>
+        <b>--interactive</b>
+        <ul>
+          <li>
+            <nz-tag>true</nz-tag>
+            启用交互输入提示
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nz-collapse-panel>
+</nz-collapse>

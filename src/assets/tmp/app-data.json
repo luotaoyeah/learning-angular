@@ -289,6 +289,20 @@
           ]
         },
         {
+          "i18n": "menu.doc.08",
+          "icon": "anticon anticon-info-circle",
+          "children": [
+            {
+              "i18n": "menu.doc.08.01",
+              "link": "/doc/08/01"
+            },
+            {
+              "i18n": "menu.doc.08.02",
+              "link": "/doc/08/02"
+            }
+          ]
+        },
+        {
           "i18n": "menu.doc.09",
           "icon": "anticon anticon-info-circle",
           "children": [
