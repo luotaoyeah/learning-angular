@@ -18,7 +18,7 @@ import { NgxTranslate05Component } from './05-missing-translation-handler/ngx-tr
  * 根据某个 key 找不到对应的 i18n 文本时的处理逻辑, 我们可以进行自定义,
  * 实现 MissingTranslationHandler 接口的 handle() 方法
  */
-class NtMissingTranstionHandler implements MissingTranslationHandler {
+export class NtMissingTranstionHandler implements MissingTranslationHandler {
   public handle(params: MissingTranslationHandlerParams): void {
     console.log('[NtMissingTranstionHandler]\n', params.key);
   }

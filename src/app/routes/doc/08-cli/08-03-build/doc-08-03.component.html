@@ -1,0 +1,27 @@
+<nz-collapse [nzAccordion]="true">
+  <nz-collapse-panel nzHeader="ng build" nzExpandedIcon="caret-right">
+    <p>
+      <b>`ng build`</b> 使用 webpack 进行构建打包, 默认的配置选项位于
+      angular.json#projects.learning-angular.architect.build
+    </p>
+
+    <p>
+      当使用 --prod 参数时, 就会使用
+      angular.json#projects.learning-angular.architect.build.configurations.production
+      下面的配置
+    </p>
+
+    <p>
+      angular.json#projects.learning-angular.architect.build.options 和
+      angular.json#projects.learning-angular.architect.build.configurations.production
+      下面的配置, 大部分都是跟命令行参数一一对应的, 但是命令行参数可以使用
+      camelCase 和 dash-case 两种格式, 但是 angular.json 配置文件中只能使用
+      camelCase 格式; 有一部分配置选项只能在 angular.json 中配置, 如:
+      assets/styles/scripts
+    </p>
+  </nz-collapse-panel>
+  <nz-collapse-panel
+    nzHeader="Options"
+    nzExpandedIcon="caret-right"
+  ></nz-collapse-panel>
+</nz-collapse>

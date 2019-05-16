@@ -67,6 +67,7 @@
   "menu.doc.08": "CLI",
   "menu.doc.08.01": "Overview",
   "menu.doc.08.02": "ng add",
+  "menu.doc.08.03": "ng build",
   "menu.doc.09": "API",
   "menu.doc.09.01": "@angular/core",
   "menu.doc.09.01.01": "Entry Points",
