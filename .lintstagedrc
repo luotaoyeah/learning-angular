@@ -2,7 +2,7 @@
   "linters": {
     "*.ts": ["npm run lint:ts"],
     "*.less": ["npm run lint:style"],
-    "*.{ts,js,json,html,css,scss,less,md}": ["prettier --write", "git add"]
+    "*.{ts,js,json,html,css,scss,less,md,yml}": ["prettier --write", "git add"]
   },
   "ignore": ["src/assets/*"]
 }
