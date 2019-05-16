@@ -84,7 +84,7 @@ export class NgxTranslate04Component implements OnInit {
     /*
      * stream() 和 get() 的区别在于,
      * get() 方法只会返回一次,
-     * stream() 方法会持续返回数据,translateService.
+     * stream() 方法会持续返回数据,
      * 当前语言发生变更时, stream() 会返回变更后的新的数据
      */
     this.translateService
