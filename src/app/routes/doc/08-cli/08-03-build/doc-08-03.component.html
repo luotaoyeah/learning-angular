@@ -85,6 +85,35 @@
         <nz-tag>--ngswConfigPath = string</nz-tag>
         ngsw-config.json 文件的路径, ngsw 表示 angular service worker
       </li>
+      <li>
+        <nz-tag>
+          --optimization = true | false | {{ '{' }} scripts: boolean, styles:
+          boolean }
+        </nz-tag>
+        是否对打包的文件进行优化
+      </li>
+      <li>
+        <nz-tag>--outputHashing = none | all | media | bundles</nz-tag>
+        是否根据文件的内容计算 hash 值, 并将 hash 作为文件名的一部分
+        <ul>
+          <li>
+            <nz-tag>none</nz-tag>
+            所有文件都不计算
+          </li>
+          <li>
+            <nz-tag>all</nz-tag>
+            所有文件都要计算
+          </li>
+          <li>
+            <nz-tag>media</nz-tag>
+            只计算媒体文件(图片/字体/视频)
+          </li>
+          <li>
+            <nz-tag>bundles</nz-tag>
+            只计算 JS/CSS 文件
+          </li>
+        </ul>
+      </li>
     </ul>
   </nz-collapse-panel>
 </nz-collapse>
