@@ -23,39 +23,43 @@
   <nz-collapse-panel nzHeader="Options" nzExpandedIcon="caret-right">
     <ul>
       <li>
-        <nz-tag>--aot=true|<b>false</b></nz-tag>
+        <nz-tag>--aot = true | <b>false</b></nz-tag>
         Build using Ahead Of Time compilation
       </li>
       <li>
-        <nz-tag>--baseHref=string</nz-tag>
+        <nz-tag>--baseHref = string</nz-tag>
         Base url
       </li>
       <li>
-        <nz-tag>--buildOptimizer=true|<b>false</b></nz-tag>
+        <nz-tag>--buildOptimizer = true | <b>false</b></nz-tag>
         enable `@angular-devkit/build-optimizer` when using `--aot`,
         即必须同时启用 --aot
       </li>
       <li>
-        <nz-tag>--commonChunk=<b>true</b>|false</nz-tag>
+        <nz-tag>--commonChunk = <b>true</b> | false</nz-tag>
         是否将被多个 bundle 使用的代码放到一个单独的 bundle 中去
       </li>
       <li>
-        <nz-tag>--configuration|-c=string</nz-tag>
+        <nz-tag>--configuration / -c = string</nz-tag>
         angular.json#projects.learning-angular.architect.build.configurations
         下面定义了多个命名的 build target, 通过 --configuration
         可以指定要使用哪个 build target
       </li>
       <li>
-        <nz-tag>--deleteOutputPath=<b>true</b>|false</nz-tag>
+        <nz-tag>--deleteOutputPath = <b>true</b> | false</nz-tag>
         在 build 之前, 是否删除输出目录(dist)
       </li>
       <li>
-        <nz-tag>--deployUrl=string</nz-tag>
+        <nz-tag>--deployUrl = string</nz-tag>
         打包后, index.html 中资源文件(.js/.css)路径前面的前缀
       </li>
       <li>
-        <nz-tag>--es5BrowserSupport=true|<b>false</b></nz-tag>
+        <nz-tag>--es5BrowserSupport = true | <b>false</b></nz-tag>
         是否启用 ES2015 polyfill
+      </li>
+      <li>
+        <nz-tag>--extractCss=true | <b>false</b></nz-tag>
+        是否将 CSS 提取到单独的文件, 否则会将 CSS 嵌入到 JS 文件中去
       </li>
     </ul>
   </nz-collapse-panel>
