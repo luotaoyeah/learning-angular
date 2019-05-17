@@ -136,6 +136,22 @@
         <nz-tag>--resourcesOutputPath = string</nz-tag>
         样式文件中引用的资源文件(imag/font)的存放目录, 相对于 --outputPath
       </li>
+      <li>
+        <nz-tag>--serviceWorker = true | <b>false</b></nz-tag>
+        是否生成 service worker 的配置文件(ngsw-config.json)
+      </li>
+      <li>
+        <nz-tag>--showCircularDependencies = <b>true</b> | false</nz-tag>
+        是否显示循环引用的警告消息
+      </li>
+      <li>
+        <nz-tag>--sourceMap = <b>true</b> | false</nz-tag>
+        是否生成 sourcemap 文件
+      </li>
+      <li>
+        <nz-tag>--statsJson = true | <b>false</b></nz-tag>
+        是否生成一个 stats.json 文件, 可以用来分析打包之后的一些统计信息
+      </li>
     </ul>
   </nz-collapse-panel>
 </nz-collapse>
