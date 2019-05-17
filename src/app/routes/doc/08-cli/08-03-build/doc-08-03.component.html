@@ -114,6 +114,20 @@
           </li>
         </ul>
       </li>
+      <li>
+        <nz-tag>--outputPath = string</nz-tag>
+        打包之后文件的存放目录, 默认为 dist/
+      </li>
+      <li>
+        <nz-tag>--polyfills = string</nz-tag>
+        polyfill 文件的路径
+      </li>
+      <li>
+        <nz-tag>--prod = true | <b>false</b></nz-tag>
+        是否启用 production 配置, 当设置为 true 时, 会启用
+        angular.json#projects.learning-angular.architect.build.configurations.production
+        下面的配置
+      </li>
     </ul>
   </nz-collapse-panel>
 </nz-collapse>
