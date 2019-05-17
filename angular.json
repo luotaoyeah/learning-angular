@@ -87,7 +87,6 @@
               "node_modules/@antv/g2-plugin-slider/dist/g2-plugin-slider.min.js"
             ],
             "es5BrowserSupport": true,
-            "statsJson": true,
             "resourcesOutputPath": "img"
           },
           "configurations": {
