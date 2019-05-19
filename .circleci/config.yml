@@ -13,9 +13,19 @@ jobs:
           key: learning-angular-{{ .Branch }}-{{ checksum "package-lock.json" }}
           paths:
             - 'node_modules'
-      - run: npm run build
-      - run: npm run test -- --watch=false --progress=false --browsers=ChromeHeadlessNoSandbox --code-coverage
-      - run: npm run e2e -- --protractor-config=e2e/protractor.ci.conf.js --port 42001
+
       - run:
-          name: Coveralls
-          command: cat ./coverage/learning-angular/lcov.info  | ./node_modules/coveralls/bin/coveralls.js
+          name: build
+          command: npm run build
+
+      - run:
+          name: unit test
+          command: npm run test -- --watch=false --progress=false --browsers=ChromeHeadlessNoSandbox --code-coverage
+
+      - run:
+          name: e2e test
+          command: npm run e2e -- --protractor-config=e2e/protractor.ci.conf.js --port 42001
+
+      - run:
+          name: coveralls(test coverage)
+          command: cat coverage/learning-angular/lcov.info  | node_modules/coveralls/bin/coveralls.js
