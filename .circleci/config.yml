@@ -1,4 +1,4 @@
-version: 2.1
+version: 2.0
 
 jobs:
   build:
@@ -31,7 +31,3 @@ jobs:
       - run:
           name: e2e test
           command: npm run e2e -- --protractor-config=e2e/protractor.ci.conf.js --port 42001
-
-      - run:
-          name: codecov
-          command: npm run codecov
