@@ -1,13 +1,9 @@
 version: 2.1
-orbs:
-  codecov: codecov/codecov@1.0.4
 jobs:
   build:
     working_directory: ~/learning-angular
     docker:
       - image: circleci/node:10-browsers
-    environment:
-      CODECOV_TOKEN: 7f372a79-168a-42b9-be13-b752aef85ecf
     steps:
       - checkout
       - restore_cache:
@@ -30,5 +26,6 @@ jobs:
           name: e2e test
           command: npm run e2e -- --protractor-config=e2e/protractor.ci.conf.js --port 42001
 
-      - codecov/upload:
-          file: ./coverage/learning-angular/lcov.info
+      - run:
+          name: codecov
+          command: npm run codecov
