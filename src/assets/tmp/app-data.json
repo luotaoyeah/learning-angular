@@ -311,6 +311,50 @@
             {
               "i18n": "menu.doc.08.05",
               "link": "/doc/08/05"
+            },
+            {
+              "i18n": "menu.doc.08.06",
+              "link": "/doc/08/06"
+            },
+            {
+              "i18n": "menu.doc.08.07",
+              "link": "/doc/08/07"
+            },
+            {
+              "i18n": "menu.doc.08.08",
+              "link": "/doc/08/08"
+            },
+            {
+              "i18n": "menu.doc.08.09",
+              "link": "/doc/08/09"
+            },
+            {
+              "i18n": "menu.doc.08.10",
+              "link": "/doc/08/10"
+            },
+            {
+              "i18n": "menu.doc.08.11",
+              "link": "/doc/08/11"
+            },
+            {
+              "i18n": "menu.doc.08.12",
+              "link": "/doc/08/12"
+            },
+            {
+              "i18n": "menu.doc.08.13",
+              "link": "/doc/08/13"
+            },
+            {
+              "i18n": "menu.doc.08.14",
+              "link": "/doc/08/14"
+            },
+            {
+              "i18n": "menu.doc.08.15",
+              "link": "/doc/08/15"
+            },
+            {
+              "i18n": "menu.doc.08.16",
+              "link": "/doc/08/16"
             }
           ]
         },
