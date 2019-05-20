@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 /*
  * https://angular.io/cli/help
- * TODO
  */
 @Component({
   selector: 'app-doc-08-08',
