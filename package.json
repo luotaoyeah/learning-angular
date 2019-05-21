@@ -16,7 +16,7 @@
     "color-less": "node scripts/color-less.js",
     "icon": "ng g ng-alain:plugin icon",
     "lint": "npm run lint:ts && npm run lint:style",
-    "lint:ts": "tslint -c tslint.json src/**/*.ts",
+    "lint:ts": "ng lint learning-angular",
     "lint:style": "stylelint src/**/*.less",
     "lint-staged": "lint-staged",
     "tslint-check": "tslint-config-prettier-check ./tslint.json",
