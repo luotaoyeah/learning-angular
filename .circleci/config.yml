@@ -76,3 +76,16 @@ jobs:
       - run:
           name: unit test
           command: npm run test:learning-angular-lib -- --watch=false --progress=false --browsers=ChromeHeadlessNoSandbox --code-coverage
+
+workflows:
+  version: 2
+  learning-angular-workflow:
+    jobs:
+      - build-learning-angular-lib
+      - test-learning-angular-lib:
+          requires:
+            - build-learning-angular-lib
+      - build-learning-angular
+      - test-learning-angular:
+          requires:
+            - build-learning-angular
