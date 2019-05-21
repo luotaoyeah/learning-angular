@@ -54,6 +54,9 @@ jobs:
           paths:
             - 'node_modules'
       - run:
+          name: build learning-angular-lib
+          command: npm run build:learning-angular-lib
+      - run:
           name: unit test
           command: npm run test -- --watch=false --progress=false --browsers=ChromeHeadlessNoSandbox --code-coverage
       - run:
