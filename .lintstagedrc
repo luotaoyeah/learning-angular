@@ -1,7 +1,9 @@
 {
   "linters": {
     "src/**/*.ts": ["npm run lint:ts"],
+    "projects/learning-angular-lib/src/**/*.ts": ["tslint -c projects/learning-angular-lib/tslint.json projects/learning-angular-lib/src/**/*.ts"],
     "src/**/*.less": ["npm run lint:style"],
+    "projects/learning-angular-lib/src/**/*.less": ["npm run lint:style"],
     "*.{ts,js,json,html,css,scss,less,md,yml}": ["prettier --write", "git add"]
   },
   "ignore": ["src/assets/*"]

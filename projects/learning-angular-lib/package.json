@@ -7,7 +7,7 @@
     "test:ci": "ng test learning-angular-lib --watch=false --progress=false --browsers=ChromeHeadlessNoSandbox --code-coverage",
     "test:coverage": "ng test learning-angular-lib --code-coverage --watch=false",
     "lint": "npm run lint:ts && npm run lint:style",
-    "lint:ts": "tslint -c tslint.json src/**/*.ts",
+    "lint:ts": "-c tslint.json src/**/*.ts",
     "lint:style": "stylelint src/**/*.less"
   },
   "peerDependencies": {
