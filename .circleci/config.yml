@@ -32,6 +32,9 @@ jobs:
           paths:
             - 'node_modules'
       - run:
+          name: build learning-angular-lib
+          command: npm run build:learning-angular-lib
+      - run:
           name: build
           command: npm run build
 
@@ -82,9 +85,7 @@ workflows:
   learning-angular-workflow:
     jobs:
       - build-learning-angular-lib
-      - build-learning-angular:
-          requires:
-            - build-learning-angular-lib
+      - build-learning-angular
       - test-learning-angular-lib:
           requires:
             - build-learning-angular-lib
