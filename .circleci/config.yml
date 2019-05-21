@@ -82,10 +82,12 @@ workflows:
   learning-angular-workflow:
     jobs:
       - build-learning-angular-lib
+      - build-learning-angular:
+          requires:
+            - build-learning-angular-lib
       - test-learning-angular-lib:
           requires:
             - build-learning-angular-lib
-      - build-learning-angular
       - test-learning-angular:
           requires:
             - build-learning-angular
