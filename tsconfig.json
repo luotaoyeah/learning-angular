@@ -21,7 +21,9 @@
       "@shared/*": ["app/shared/*"],
       "@core": ["app/core/index"],
       "@core/*": ["app/core/*"],
-      "@env/*": ["environments/*"]
+      "@env/*": ["environments/*"],
+      "@luotao/learning-angular-lib": ["../dist/learning-angular-lib"],
+      "@luotao/learning-angular-lib/*": ["../dist/learning-angular-lib/*"]
     }
   },
   "angularCompilerOptions": {

@@ -44,3 +44,6 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# learning-angular-lib
+projects/learning-angular-lib/coverage
