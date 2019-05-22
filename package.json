@@ -44,6 +44,7 @@
     "@delon/mock": "^7.3.2",
     "@delon/theme": "^7.3.2",
     "@delon/util": "^7.3.2",
+    "@luotao/learning-angular-lib": "0.0.2",
     "@ngx-translate/core": "^11.0.1",
     "@ngx-translate/http-loader": "^4.0.0",
     "ajv": "^6.9.2",
