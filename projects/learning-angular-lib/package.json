@@ -3,6 +3,7 @@
   "version": "0.0.2",
   "scripts": {
     "build:learning-angular-lib": "ng build learning-angular-lib",
+    "build:learning-angular-lib:watch": "ng build learning-angular-lib --watch",
     "publish": "npm publish ../../dist/learning-angular-lib --access public"
   },
   "peerDependencies": {

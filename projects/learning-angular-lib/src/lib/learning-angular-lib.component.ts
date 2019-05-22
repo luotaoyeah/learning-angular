@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'lib-learning-angular-lib',
   template: `
     <p>
-      LEARNING-ANGULAR-LIB
+      LEARNING ANGULAR LIB
     </p>
   `,
   styles: [],
