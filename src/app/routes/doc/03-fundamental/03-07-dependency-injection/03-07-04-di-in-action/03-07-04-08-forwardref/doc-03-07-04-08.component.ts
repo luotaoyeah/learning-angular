@@ -6,6 +6,8 @@ import {
   OnInit,
 } from '@angular/core';
 
+export const TOKEN = new InjectionToken<string>('some.token');
+
 /*
  * forwardRef() 方法的作用是，用来指向一个尚未定义的引用，
  * 意思就是，将来我会引用某个数据，但是现在暂时不会引用这个数据，
@@ -35,5 +37,3 @@ export class Doc03070408Component implements OnInit {
     console.assert(this.token === 'FOO');
   }
 }
-
-export const TOKEN = new InjectionToken<string>('some.token');

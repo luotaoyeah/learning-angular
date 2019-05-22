@@ -4,6 +4,20 @@ import { Doc05070501Directive } from './doc-05-07-05-01.directive';
 import { SharedModule } from '@shared';
 import { By } from '@angular/platform-browser';
 
+/*
+ * 在测试 directive 的时候，通常可以构建一个 test component，
+ * 里面应该包含该 directive 的各种使用场景
+ */
+@Component({
+  template: `
+    <h2 appDoc05070501="yellow">Something Yellow</h2>
+    <h2 appDoc05070501>The Default (Gray)</h2>
+    <h2>No Highlight</h2>
+    <input nz-input #box [appDoc05070501]="box.value" value="cyan" />>
+  `,
+})
+class TestComponent {}
+
 describe('Doc05070501Directive', () => {
   let fixture: ComponentFixture<TestComponent>;
   let h2DebugElements: Array<DebugElement>;
@@ -79,17 +93,3 @@ describe('Doc05070501Directive', () => {
     expect(h2DebugElements[0].providerTokens).toContain(Doc05070501Directive);
   });
 });
-
-/*
- * 在测试 directive 的时候，通常可以构建一个 test component，
- * 里面应该包含该 directive 的各种使用场景
- */
-@Component({
-  template: `
-    <h2 appDoc05070501="yellow">Something Yellow</h2>
-    <h2 appDoc05070501>The Default (Gray)</h2>
-    <h2>No Highlight</h2>
-    <input nz-input #box [appDoc05070501]="box.value" value="cyan" />>
-  `,
-})
-class TestComponent {}

@@ -1,13 +1,6 @@
 {
   "name": "@luotao/learning-angular-lib",
   "version": "0.0.1",
-  "scripts": {
-    "build": "ng build learning-angular-lib",
-    "test": "ng test learning-angular-lib",
-    "test:ci": "ng test learning-angular-lib --watch=false --progress=false --browsers=ChromeHeadlessNoSandbox --code-coverage",
-    "test:coverage": "ng test learning-angular-lib --code-coverage --watch=false",
-    "lint:ts": "ng lint learning-angular-lib"
-  },
   "peerDependencies": {
     "@angular/common": "^7.2.15",
     "@angular/core": "^7.2.15"

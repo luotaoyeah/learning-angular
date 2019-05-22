@@ -2,6 +2,18 @@ import { Doc05070415Component } from './doc-05-07-04-15.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Component } from '@angular/core';
 
+@Component({
+  selector: 'app-doc-05-07-04-15-01',
+  template: '',
+})
+class Doc0507041501StubComponent {}
+
+@Component({
+  selector: 'app-doc-05-07-04-15-02',
+  template: '',
+})
+class Doc0507041502StubComponent {}
+
 describe('Doc05070415Component', () => {
   let fixture: ComponentFixture<Doc05070415Component>;
   let component: Doc05070415Component;
@@ -25,15 +37,3 @@ describe('Doc05070415Component', () => {
     expect(component).toBeTruthy();
   });
 });
-
-@Component({
-  selector: 'app-doc-05-07-04-15-01',
-  template: '',
-})
-class Doc0507041501StubComponent {}
-
-@Component({
-  selector: 'app-doc-05-07-04-15-02',
-  template: '',
-})
-class Doc0507041502StubComponent {}

@@ -5,4 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class LearningAngularLibService {
   constructor() {}
+
+  public doSomething(): void {
+    console.log(`[${LearningAngularLibService.name}]\n`, 'doSomething()');
+  }
 }
