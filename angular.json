@@ -160,7 +160,10 @@
               "node_modules/@antv/g2-plugin-slider/dist/g2-plugin-slider.min.js"
             ],
             "assets": ["src/favicon.ico", "src/assets"],
-            "codeCoverage": true
+            "codeCoverage": true,
+            "watch": false,
+            "progress": false,
+            "browsers": "ChromeHeadlessNoSandbox"
           }
         },
         "lint": {
@@ -217,7 +220,11 @@
           "options": {
             "main": "projects/learning-angular-lib/src/test.ts",
             "tsConfig": "projects/learning-angular-lib/tsconfig.spec.json",
-            "karmaConfig": "projects/learning-angular-lib/karma.conf.js"
+            "karmaConfig": "projects/learning-angular-lib/karma.conf.js",
+            "watch": false,
+            "progress": false,
+            "browsers": "ChromeHeadlessNoSandbox",
+            "codeCoverage": true
           }
         },
         "lint": {
