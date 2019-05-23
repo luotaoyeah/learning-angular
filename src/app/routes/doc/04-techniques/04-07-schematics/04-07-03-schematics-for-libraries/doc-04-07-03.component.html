@@ -18,4 +18,26 @@
       </li>
     </ul>
   </nz-collapse-panel>
+
+  <nz-collapse-panel
+    nzHeader="Providing Installation Support"
+    nzExpandedIcon="caret-right"
+  >
+    <p>
+      <b>
+        通常 library 中的 schematics 需要支持通过
+        <code>ng add @luotao/learning-angular-lib</code> 命令执行安装操作,
+        如何实现?
+      </b>
+    </p>
+    <ul>
+      <li>
+        在 collection.json#schematics 中添加一个名为 ng-add 的 schematic
+      </li>
+      <li>
+        在 ng-add 的 factory function 中, 调用
+        <code>context.addTask(new NodePackageInstallTask())</code> 执行安装
+      </li>
+    </ul>
+  </nz-collapse-panel>
 </nz-collapse>

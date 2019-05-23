@@ -1,10 +1,15 @@
 {
   "name": "@luotao/learning-angular-lib",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "scripts": {
     "build:learning-angular-lib": "ng build learning-angular-lib",
     "build:learning-angular-lib:watch": "ng build learning-angular-lib --watch",
-    "publish": "npm publish ../../dist/learning-angular-lib --access public"
+    "publish": "npm publish ../../dist/learning-angular-lib --access public",
+    "build:schematics:win": "..\\..\\node_modules\\.bin\\tsc -p tsconfig.schematics.json",
+    "copy:schemas::win": "copy schematics\\*\\schema.json ..\\..\\dist\\learning-angular-lib\\",
+    "copy:files::win": "copy schematics\\*\\files\\** ..\\..\\dist\\learning-angular-lib\\",
+    "copy:collection:win": "copy .\\schematics\\collection.json ..\\..\\dist\\learning-angular-lib\\schematics\\collection.json",
+    "postbuild:schematics:win": "npm run copy:collection:win"
   },
   "peerDependencies": {
     "@angular/common": "^7.2.15",
