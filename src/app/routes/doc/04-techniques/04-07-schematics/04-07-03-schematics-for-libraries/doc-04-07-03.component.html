@@ -1,8 +1,21 @@
 <nz-collapse [nzAccordion]="true">
   <nz-collapse-panel
-    nzHeader="Schematics for Libraries"
+    nzHeader="Creating a Schematics Collection"
     nzExpandedIcon="caret-right"
   >
-    <p></p>
+    <p>
+      <b>如何给一个 angular library project 添加 schematics 支持?</b>
+    </p>
+    <ul>
+      <li>在 library root 中创建一个 <code>schematics</code> 目录</li>
+      <li>
+        在 <code>schematics</code> 目录中添加一个
+        <code>collection.json</code> 文件
+      </li>
+      <li>
+        在 library 的 package.json 中添加一个属性:
+        <code>"schematics": "./schematics/collection.json"</code>
+      </li>
+    </ul>
   </nz-collapse-panel>
 </nz-collapse>

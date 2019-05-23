@@ -9,5 +9,6 @@
   "peerDependencies": {
     "@angular/common": "^7.2.15",
     "@angular/core": "^7.2.15"
-  }
+  },
+  "schematics": "./schematics/collection.json"
 }
