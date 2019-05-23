@@ -2,8 +2,12 @@
   "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
   "schematics": {
     "nt-component": {
-      "description": "a blank schematic.",
+      "description": "A blank schematic.",
       "factory": "./nt-component/index#ntComponent"
+    },
+    "nt-service": {
+      "description": "A blank schematic.",
+      "factory": "./nt-service/index#ntService"
     }
   }
 }
