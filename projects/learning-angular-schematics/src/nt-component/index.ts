@@ -5,6 +5,7 @@ import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
 // tslint:disable-next-line:no-any
 export function ntComponent(_options: any): Rule {
   return (tree: Tree, _context: SchematicContext) => {
+    console.log('[ntComponent]\n');
     return tree;
   };
 }
