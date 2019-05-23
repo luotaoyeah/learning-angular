@@ -40,4 +40,20 @@
       </li>
     </ul>
   </nz-collapse-panel>
+
+  <nz-collapse-panel
+    nzHeader="Building Your Schematics"
+    nzExpandedIcon="caret-right"
+  >
+    <p>
+      schematics 和 library 需要分开编译构建, 先构建 library, 再构建 schematics
+    </p>
+    <ul>
+      <li>
+        首先为 schematics 创建一个单独的 <code>tsconfig.schematics.json</code>,
+        并正确配置 rootDir 和 outDir
+      </li>
+      <li>将 <code>collection.json</code> 等文件复制到对应的目录</li>
+    </ul>
+  </nz-collapse-panel>
 </nz-collapse>
