@@ -1,0 +1,2 @@
+- src 目录下, 每一个子目录代表一个 schematic, `collection.json` 是一个 schema 文件, 里面描述了所有的 schematics, 包括 name, description, factory function
+- 可以通过 `aliases` 来指定 schematic 的别名

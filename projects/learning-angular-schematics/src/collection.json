@@ -3,11 +3,13 @@
   "schematics": {
     "nt-component": {
       "description": "A blank schematic.",
-      "factory": "./nt-component/index#ntComponent"
+      "factory": "./nt-component/index#ntComponent",
+      "aliases": ["c"]
     },
     "nt-service": {
       "description": "A blank schematic.",
-      "factory": "./nt-service/index#ntService"
+      "factory": "./nt-service/index#ntService",
+      "aliases": ["s"]
     }
   }
 }
