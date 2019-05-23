@@ -19550,36 +19550,18 @@ nz-table {
  * found in the LICENSE file at https://github.com/NG-ZORRO/ng-zorro-antd/blob/master/LICENSE
  */
 
-.ant-tree {
-  &.ant-tree-show-line {
-    > nz-tree-node:not(:last-child), .ant-tree-child-tree > nz-tree-node:not(:last-child) {
-      > li:before {
-        content: ' ';
-        width: 1px;
-        border-left: 1px solid @border-color-base;
-        height: 100%;
-        position: absolute;
-        left: 12px;
-        margin: 22px 0;
-      }
-    }
+.ant-tree.ant-tree-show-line nz-tree-node:not(:last-child) > li::before {
+  content: ' ';
+  width: 1px;
+  border-left: 1px solid @border-color-base;
+  height: 100%;
+  position: absolute;
+  left: 12px;
+  margin: 22px 0;
+}
 
-    .ant-tree-child-tree > nz-tree-node:last-child {
-      > li:before {
-        content: ' ';
-        width: 1px;
-        border-left: 0px solid @border-color-base;
-        height: 100%;
-        position: absolute;
-        left: 12px;
-        margin: 22px 0;
-      }
-    }
-  }
-
-  .font-highlight {
-    color: @highlight-color;
-  }
+.font-highlight {
+  color: @highlight-color;
 }
 
 @select-prefix-cls: ~'@{ant-prefix}-select';
@@ -19770,6 +19752,15 @@ nz-table {
 
 // style dependencies
 // deps-lint-skip: select
+.ant-tree.ant-select-tree.ant-tree-show-line nz-tree-node:not(:last-child) > li::before {
+  content: ' ';
+  width: 1px;
+  border-left: 1px solid #d9d9d9;
+  height: calc(100% - 16px);
+  position: absolute;
+  left: 12px;
+  margin: 26px 0;
+}
 
 @full-calendar-prefix-cls: ~'@{ant-prefix}-fullcalendar';
 
@@ -20424,6 +20415,7 @@ a:focus {
   }
 }
 
+// 限定单元格的图像大小
 .@{ant-prefix}-table {
   td {
     > img,
@@ -20437,6 +20429,7 @@ a:focus {
   }
 }
 
+// 表格响应式
 .@{ant-prefix}-table-rep {
   &__title {
     display: none;
@@ -20450,45 +20443,44 @@ a:focus {
 }
 
 @media screen and (max-width: @nz-table-rep-max-width) {
-  .@{ant-prefix}-table {
-    &-rep {
-      &__title {
-        display: inline-block;
-        width: @nz-table-rep-column-name-width;
-        padding-right: @nz-table-rep-column-name-padding-right;
-        color: @nz-table-rep-column-name-color;
-        text-align: @nz-table-rep-column-name-text-align;
-      }
-      &__hide-header-footer {
-        .@{ant-prefix}-table-title,
-        .@{ant-prefix}-table-footer {
-          display: block;
-        }
+  .@{ant-prefix}-table-rep {
+    &__title {
+      display: inline-block;
+      width: @nz-table-rep-column-name-width;
+      padding-right: @nz-table-rep-column-name-padding-right;
+      color: @nz-table-rep-column-name-color;
+      text-align: @nz-table-rep-column-name-text-align;
+    }
+    &__hide-header-footer {
+      .@{ant-prefix}-table-title,
+      .@{ant-prefix}-table-footer {
+        display: block;
       }
     }
-    &-thead {
-      display: none;
-    }
-    &-title {
-      text-align: center;
-      background: @nz-table-rep-header-background;
-    }
-    &-tbody {
-      > tr {
-        &:nth-child(3n) {
-          background: @nz-table-rep-even-background;
-        }
-        > td {
-          display: flex;
-          align-items: center;
-          width: 100%;
-          padding: @nz-table-rep-padding-vertical
-            @nz-table-rep-padding-horizontal;
-          text-align: left !important;
-          border-bottom: none;
+    .@{ant-prefix}-table {
+      &-thead {
+        display: none;
+      }
+      &-title {
+        text-align: center;
+        background: @nz-table-rep-header-background;
+      }
+      &-tbody {
+        > tr {
+          &:nth-child(3n) {
+            background: @nz-table-rep-even-background;
+          }
+          > td {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: @nz-table-rep-padding-vertical @nz-table-rep-padding-horizontal;
+            text-align: left !important;
+            border-bottom: none;
 
-          .@{ant-prefix}-table-rep__title + *:not(.@{ant-prefix}-avatar) {
-            flex: 1;
+            .@{ant-prefix}-table-rep__title + *:not(.@{ant-prefix}-avatar) {
+              flex: 1;
+            }
           }
         }
       }
