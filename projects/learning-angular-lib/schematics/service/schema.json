@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "SchematicsService",
+  "title": "service schema",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "the name of the service",
+      "type": "string"
+    },
+    "path": {
+      "type": "string",
+      "format": "path",
+      "description": "the path to create the service",
+      "visible": false
+    },
+    "project": {
+      "type": "string",
+      "description": "the name of the project",
+      "$default": {
+        "$source": "projectName"
+      }
+    }
+  },
+  "required": ["name"]
+}

@@ -1,12 +1,12 @@
 {
   "name": "@luotao/learning-angular-lib",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "scripts": {
     "build:learning-angular-lib": "ng build learning-angular-lib",
     "build:learning-angular-lib:watch": "ng build learning-angular-lib --watch",
-    "publish": "npm publish ../../dist/learning-angular-lib --access public",
     "build:schematics": "..\\..\\node_modules\\.bin\\tsc -p tsconfig.schematics.json",
-    "postbuild:schematics": "gulp copy"
+    "postbuild:schematics": "gulp copy",
+    "publish": "npm publish ../../dist/learning-angular-lib --access public"
   },
   "peerDependencies": {
     "@angular/common": "^7.2.15",

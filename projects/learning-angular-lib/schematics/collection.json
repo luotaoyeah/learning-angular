@@ -4,6 +4,11 @@
     "ng-add": {
       "description": "add @luotao/learning-angular-lib to the project",
       "factory": "./ng-add/index#ngAdd"
+    },
+    "service": {
+      "description": "a custom service schematic",
+      "factory": "./service/index#service",
+      "schema": "./service/schema.json"
     }
   }
 }
