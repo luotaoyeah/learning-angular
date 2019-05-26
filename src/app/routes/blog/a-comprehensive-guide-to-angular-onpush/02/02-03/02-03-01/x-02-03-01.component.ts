@@ -24,6 +24,11 @@ export class X020301Component implements OnInit {
   public ngOnInit(): void {
     setTimeout(() => {
       this.count = 9;
+
+      /*
+       * ChangeDetectorRef.detectChanges() 方法,
+       * 触发该 component 及其下级 component 的 change detection cycle
+       */
       this.changeDetectorRef.detectChanges();
     }, 5000);
   }

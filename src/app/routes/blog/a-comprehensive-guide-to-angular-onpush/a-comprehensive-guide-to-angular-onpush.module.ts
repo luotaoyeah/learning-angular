@@ -9,6 +9,7 @@ import { X0201Component } from './02/02-01/x-02-01.component';
 import { X0202Component } from './02/02-02/x-02-02.component';
 import { X0203Component } from './02/02-03/x-02-03.component';
 import { X020301Component } from './02/02-03/02-03-01/x-02-03-01.component';
+import { X020302Component } from './02/02-03/02-03-02/x-02-03-02.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { X020301Component } from './02/02-03/02-03-01/x-02-03-01.component';
     X0202Component,
     X0203Component,
     X020301Component,
+    X020302Component,
   ],
   imports: [
     CommonModule,
