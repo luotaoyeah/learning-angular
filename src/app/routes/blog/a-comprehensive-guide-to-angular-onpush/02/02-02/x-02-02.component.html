@@ -1,0 +1,6 @@
+<button nz-button>{{ foo }}</button>
+
+<p>
+  如下, 触发 DOM 事件, 会触发 component 的 change detection cycle
+</p>
+<button nz-button (click)="handleClick()">{{ count }}</button>
