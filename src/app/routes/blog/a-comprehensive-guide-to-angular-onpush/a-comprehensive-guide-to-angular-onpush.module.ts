@@ -11,6 +11,8 @@ import { X0203Component } from './02/02-03/x-02-03.component';
 import { X020301Component } from './02/02-03/02-03-01/x-02-03-01.component';
 import { X020302Component } from './02/02-03/02-03-02/x-02-03-02.component';
 import { X020303Component } from './02/02-03/02-03-03/x-02-03-03.component';
+import { X0204Component } from './02/02-04/x-02-04.component';
+import { X020401Component } from './02/02-04/02-04-01/x-02-04-01.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { X020303Component } from './02/02-03/02-03-03/x-02-03-03.component';
     X020301Component,
     X020302Component,
     X020303Component,
+    X0204Component,
+    X020401Component,
   ],
   imports: [
     CommonModule,

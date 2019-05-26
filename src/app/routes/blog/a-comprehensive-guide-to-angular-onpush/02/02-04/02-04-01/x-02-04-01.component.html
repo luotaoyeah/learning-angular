@@ -1,0 +1,17 @@
+<button nz-button>{{ foo }}</button>
+
+<p>
+  前面说了, 如果 component 的 change detection strategy 设置为
+  <code>ChangeDetectionStrategy.OnPush</code> , 则当某个 input property 的
+  reference 发生变更时, 会触发 change detection cycle
+</p>
+
+<p>
+  如果 input property 是一个 observable, 则当该 observable 推送数据时,
+  是否会触发 change detection cycle 呢? 答案: 如果使用了
+  <code>AsyncPipe</code> 就会触发
+</p>
+
+<ng-container *ngFor="let item of items$ | async">
+  <button nz-button>{{ item }}</button>
+</ng-container>
