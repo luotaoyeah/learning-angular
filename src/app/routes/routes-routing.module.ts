@@ -30,6 +30,10 @@ const routes: Routes = [
         loadChildren: './doc/doc.module#DocModule',
       },
       {
+        path: 'blog',
+        loadChildren: './blog/blog.module#BlogModule',
+      },
+      {
         path: 'pkgs/jasmine',
         loadChildren: './pkgs/jasmine/jasmine.module#JasmineModule',
       },

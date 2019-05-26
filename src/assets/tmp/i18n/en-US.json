@@ -96,6 +96,8 @@
   "menu.pkgs": "PKGS",
   "menu.pkgs.jasmine": "jasmine",
   "menu.pkgs.ngx-translate": "ngx-translate",
+  "menu.blog": "BLOG",
+  "menu.blog.a-comprehensive-guide-to-angular-onpush": "A Comprehensive Guide to Angular onPush Change Detection Strategy",
   "menu.search.placeholder": "Search...",
   "menu.fullscreen": "Fullscreen",
   "menu.fullscreen.exit": "Exit Fullscreen",

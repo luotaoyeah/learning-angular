@@ -430,6 +430,18 @@
           "link": "/pkgs/ngx-translate"
         }
       ]
+    },
+    {
+      "i18n": "menu.blog",
+      "group": true,
+      "hideInBreadcrumb": true,
+      "children": [
+        {
+          "i18n": "menu.blog.a-comprehensive-guide-to-angular-onpush",
+          "icon": "anticon anticon-info-circle",
+          "link": "/blog/a-comprehensive-guide-to-angular-onpush"
+        }
+      ]
     }
   ]
 }

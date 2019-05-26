@@ -18,12 +18,16 @@ import { delay } from 'rxjs/operators';
 })
 export class Doc090102050602Component implements OnInit, OnDestroy {
   public count: number = 0;
-  private subscription: Subscription | null = null;
+  private detectChangesSubscription: Subscription | null = null;
+  private updateSubscription: Subscription | null = null;
 
   constructor(private changeDetectorRef: ChangeDetectorRef) {}
 
+  /**
+   *
+   */
   public ngOnInit(): void {
-    interval(5000)
+    this.detectChangesSubscription = interval(5000)
       .pipe(delay(1000))
       .subscribe(() => {
         /*
@@ -33,19 +37,25 @@ export class Doc090102050602Component implements OnInit, OnDestroy {
         this.changeDetectorRef.detectChanges();
       });
 
-    this.subscription = interval(1000).subscribe((value: number) => {
+    this.updateSubscription = interval(1000).subscribe((value: number) => {
       /*
        * 由于使用的是 ChangeDetectionStrategy.OnPush,
-       * 因此此处对 this.count 进行赋值之后, angular 不会触发 change detection cycle,
+       * 因此, 此处对 this.count 进行赋值之后, angular **不会**触发 change detection cycle,
        * 从而不会更新 template 中的 data binding
        */
       this.count = value;
     });
   }
 
+  /**
+   *
+   */
   public ngOnDestroy(): void {
-    if (this.subscription) {
-      this.subscription.unsubscribe();
+    if (this.updateSubscription) {
+      this.updateSubscription.unsubscribe();
+    }
+    if (this.detectChangesSubscription) {
+      this.detectChangesSubscription.unsubscribe();
     }
   }
 }

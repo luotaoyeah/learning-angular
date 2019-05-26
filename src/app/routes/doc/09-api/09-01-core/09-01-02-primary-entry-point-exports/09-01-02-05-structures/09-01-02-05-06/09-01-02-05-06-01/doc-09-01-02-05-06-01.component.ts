@@ -24,7 +24,7 @@ export class Doc090102050601Component implements OnInit, OnDestroy {
     this.subscription = interval(1000).subscribe((value: number) => {
       /*
        * 由于使用的是 ChangeDetectionStrategy.Default,
-       * 因此此处对 this.count 进行赋值之后, angular 就会触发 change detection cycle,
+       * 因此, 此处对 this.count 进行赋值之后, angular 就会触发 change detection cycle,
        * 从而更新 template 中的 data binding
        */
       this.count = value;
