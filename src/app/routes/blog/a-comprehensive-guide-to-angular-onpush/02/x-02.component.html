@@ -1,0 +1,17 @@
+<p>
+  当 component 的 change detection 设置为
+  <code>ChangeDetectionStrategy.OnPush</code> 时, 只有在某些情况下, angular
+  才会触发 change detection:
+</p>
+
+<ol>
+  <li>
+    当某个 input property 的 reference 发生变更时
+  </li>
+</ol>
+
+<button nz-button (click)="handleClick01()">CLICK</button>
+<button nz-button (click)="handleClick02()">CLICK</button>
+<nz-divider [nzDashed]="true"></nz-divider>
+
+<app-x-02-01 [config]="config"></app-x-02-01>
