@@ -1,42 +1,27 @@
-const fs = require('fs');
 const path = require('path');
-const chalk = require('chalk');
-const { generateTheme } = require('antd-theme-generator');
+const fs = require('fs');
+const bundle = require('less-bundle-promise');
 
 const root = path.resolve(__dirname, '../');
-const tmpVarFilePath = path.join(root, 'scripts/var.less');
-const options = {
-  stylesDir: path.join(root, './src'),
-  antdStylesDir: path.join(root, './node_modules/ng-zorro-antd'),
-  varFile: path.join(root, './scripts/var.less'),
-  mainLessFile: path.join(root, './src/styles.less'),
-  themeVariables: ['@primary-color'],
-  outputFilePath: path.join(root, './src/assets/alain-default.less'),
-};
+const allLessPath = path.join(root, '_all.less');
+const target = path.join(root, 'src/assets/alain-default.less');
 
-function genVarFile() {
-  const ALLVAR = `
-@import '~@delon/theme/styles/default';
-@import '~@delon/theme/styles/layout/default/variable';
-@import '~@delon/theme/styles/layout/fullscreen/variable';
-@import '../src/styles/theme.less';
-  `;
+const content = `
+@import 'node_modules/@delon/theme/styles/index';
+@import 'node_modules/@delon/abc/index';
+@import 'node_modules/@delon/chart/index';
+@import 'node_modules/@delon/theme/styles/layout/default/index';
+@import 'node_modules/@delon/theme/styles/layout/fullscreen/index';
 
-  fs.writeFileSync(tmpVarFilePath, ALLVAR);
-}
+@import 'src/styles/index';
+@import 'src/styles/theme';
+`;
 
-function removeVarFile() {
-  fs.unlinkSync(tmpVarFilePath);
-}
+fs.writeFileSync(allLessPath, content);
 
-genVarFile();
-
-generateTheme(options)
-  .then(() => {
-    removeVarFile();
-    console.log(chalk.green('THEME GENERATED SUCCESSFULLY'));
-  })
-  .catch(error => {
-    removeVarFile();
-    console.log(chalk.red('ERROR'), chalk.red(error));
-  });
+bundle({
+  src: allLessPath,
+}).then(colorsLess => {
+  fs.writeFileSync(target, colorsLess);
+  fs.unlinkSync(allLessPath);
+});

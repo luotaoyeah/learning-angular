@@ -1,12 +1,9 @@
-import { Action, ActionReducer } from '@ngrx/store';
 import { ActionTypeEnum } from '../actions/counter.actions';
+import { Action } from '@ngrx/store';
 
 const initialState: number = 0;
 
-const counterReducer: ActionReducer<number, Action> = (
-  state: number = initialState,
-  action: Action,
-): number => {
+function counterReducer(state: number = initialState, action: Action): number {
   switch (action.type) {
     case ActionTypeEnum.Increment:
       return state + 1;
@@ -17,6 +14,6 @@ const counterReducer: ActionReducer<number, Action> = (
     default:
       return state;
   }
-};
+}
 
 export { initialState, counterReducer };

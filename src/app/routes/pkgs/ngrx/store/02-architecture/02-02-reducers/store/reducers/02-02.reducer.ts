@@ -1,5 +1,4 @@
 import { IState } from '../state/IState';
-import { ActionReducer } from '@ngrx/store';
 import { ActionTypeEnum, ActionUnion } from '../actions/02-02.actions';
 
 const initialState: IState = {
@@ -7,10 +6,10 @@ const initialState: IState = {
   date: new Date(),
 };
 
-const x0202Reducer: ActionReducer<IState, ActionUnion> = (
+function x0202Reducer(
   state: IState = initialState,
   action: ActionUnion,
-): IState => {
+): IState {
   switch (action.type) {
     case ActionTypeEnum.Increment:
       return {
@@ -33,6 +32,6 @@ const x0202Reducer: ActionReducer<IState, ActionUnion> = (
     default:
       return state;
   }
-};
+}
 
 export { initialState, x0202Reducer };

@@ -23,4 +23,12 @@ class ResetAction implements TypedAction<ActionTypeEnum> {
   public readonly type: ActionTypeEnum = ActionTypeEnum.Reset;
 }
 
-export { ActionTypeEnum, IncrementAction, DecrementAction, ResetAction };
+type ActionUnion = IncrementAction | DecrementAction | ResetAction;
+
+export {
+  ActionTypeEnum,
+  IncrementAction,
+  DecrementAction,
+  ResetAction,
+  ActionUnion,
+};
