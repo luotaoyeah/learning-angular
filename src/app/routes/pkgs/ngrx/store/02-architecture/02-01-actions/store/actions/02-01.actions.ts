@@ -7,7 +7,7 @@ import { Action } from '@ngrx/store';
 /**
  *
  */
-class SomeAction implements Action {
+class SomeAction01 implements Action {
   /*
    * type 属性是一个字符串, 它的内容格式为: "[Source] Event"
    */
@@ -34,6 +34,6 @@ class SomeAction02 implements Action {
  * 通常, 将当前的所有 actions 通过一个 union type 输出,
  * 方便其他地方使用
  */
-type SomeActions = SomeAction | SomeAction02;
+type SomeActions = SomeAction01 | SomeAction02;
 
-export { SomeAction, SomeAction02, SomeActions };
+export { SomeAction01, SomeAction02, SomeActions };
