@@ -422,7 +422,16 @@
         {
           "i18n": "menu.pkgs.jasmine",
           "icon": "anticon anticon-info-circle",
-          "children": []
+          "children": [
+            {
+              "i18n": "menu.pkgs.jasmine.global",
+              "link": "/pkgs/jasmine/global"
+            },
+            {
+              "i18n": "menu.pkgs.jasmine.namespace",
+              "link": "/pkgs/jasmine/namespace"
+            }
+          ]
         },
         {
           "i18n": "menu.pkgs.ngx-translate",

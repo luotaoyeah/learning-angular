@@ -95,6 +95,8 @@
   "menu.doc.09.02.02": "Primary Entry Point Exports",
   "menu.pkgs": "PKGS",
   "menu.pkgs.jasmine": "jasmine",
+  "menu.pkgs.jasmine.global": "global",
+  "menu.pkgs.jasmine.namespace": "namespace",
   "menu.pkgs.ngx-translate": "ngx-translate",
   "menu.blog": "BLOG",
   "menu.blog.a-comprehensive-guide-to-angular-onpush": "A Comprehensive Guide to Angular onPush Change Detection Strategy",
