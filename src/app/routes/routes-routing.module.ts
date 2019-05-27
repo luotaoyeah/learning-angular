@@ -42,6 +42,10 @@ const routes: Routes = [
         loadChildren:
           './pkgs/ngx-translate/ngx-translate.module#NgxTranslateModule',
       },
+      {
+        path: 'pkgs/ngrx',
+        loadChildren: './pkgs/ngrx/ngrx.module#NgrxModule',
+      },
     ],
   },
   // 全屏布局

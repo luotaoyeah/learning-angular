@@ -437,6 +437,21 @@
           "i18n": "menu.pkgs.ngx-translate",
           "icon": "anticon anticon-info-circle",
           "link": "/pkgs/ngx-translate"
+        },
+        {
+          "i18n": "menu.pkgs.ngrx",
+          "icon": "anticon anticon-info-circle",
+          "children": [
+            {
+              "i18n": "menu.pkgs.ngrx.store",
+              "children": [
+                {
+                  "i18n": "menu.pkgs.ngrx.store.01",
+                  "link": "/pkgs/ngrx/store/01"
+                }
+              ]
+            }
+          ]
         }
       ]
     },

@@ -57,6 +57,8 @@ import { Doc0308050302Interceptor } from './routes/doc/03-fundamental/03-08-http
 import { Doc0308050303Interceptor } from './routes/doc/03-fundamental/03-08-httpclient/03-08-05-advanced-usage/03-08-05-03-intercepting-requests-and-responses/service/doc-03-08-05-03-03.interceptor';
 import { Doc03080502Interceptor } from './routes/doc/03-fundamental/03-08-httpclient/03-08-05-advanced-usage/03-08-05-02-debouncing-requests/service/doc-03-08-05-02.interceptor';
 import { Doc0308050304Interceptor } from './routes/doc/03-fundamental/03-08-httpclient/03-08-05-advanced-usage/03-08-05-03-intercepting-requests-and-responses/service/doc-03-08-05-03-04.interceptor';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './reducers';
 
 const LANG = {
   abbr: 'en',
@@ -182,6 +184,7 @@ const APPINIT_PROVIDES = [
     ...I18NSERVICE_MODULES,
     ...FORM_MODULES,
     ...GLOBAL_THIRD_MODULES,
+    StoreModule.forRoot(reducers, { metaReducers }),
   ],
   providers: [
     ...LANG_PROVIDES,

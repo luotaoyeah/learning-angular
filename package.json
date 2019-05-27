@@ -45,6 +45,7 @@
     "@delon/theme": "^7.5.0",
     "@delon/util": "^7.5.0",
     "@luotao/learning-angular-lib": "0.0.2",
+    "@ngrx/store": "^7.4.0",
     "@ngx-translate/core": "^11.0.1",
     "@ngx-translate/http-loader": "^4.0.0",
     "ajv": "^6.9.2",
