@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { IState } from '../../../../../reducers';
-import { Decrement, Increment, Reset } from './store/actions/counter.actions';
+import {
+  DecrementAction,
+  IncrementAction,
+  ResetAction,
+} from './store/actions/counter.actions';
 
 /*
  * https://ngrx.io/guide/store
@@ -17,14 +21,14 @@ export class X01Component implements OnInit {
   public ngOnInit() {}
 
   public increment() {
-    this.store.dispatch(new Increment());
+    this.store.dispatch(new IncrementAction());
   }
 
   public decrement() {
-    this.store.dispatch(new Decrement());
+    this.store.dispatch(new DecrementAction());
   }
 
   public reset() {
-    this.store.dispatch(new Reset());
+    this.store.dispatch(new ResetAction());
   }
 }

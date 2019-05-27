@@ -11,16 +11,16 @@ enum ActionTypeEnum {
   Reset = '[Counter Component] Reset',
 }
 
-class Increment implements TypedAction<ActionTypeEnum> {
+class IncrementAction implements TypedAction<ActionTypeEnum> {
   public readonly type: ActionTypeEnum = ActionTypeEnum.Increment;
 }
 
-class Decrement implements TypedAction<string> {
+class DecrementAction implements TypedAction<ActionTypeEnum> {
   public readonly type: ActionTypeEnum = ActionTypeEnum.Decrement;
 }
 
-class Reset implements TypedAction<string> {
+class ResetAction implements TypedAction<ActionTypeEnum> {
   public readonly type: ActionTypeEnum = ActionTypeEnum.Reset;
 }
 
-export { ActionTypeEnum, Increment, Decrement, Reset };
+export { ActionTypeEnum, IncrementAction, DecrementAction, ResetAction };
