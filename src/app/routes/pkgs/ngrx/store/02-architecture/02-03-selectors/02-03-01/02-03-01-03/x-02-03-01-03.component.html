@@ -1,0 +1,7 @@
+<ng-container *ngFor="let counter of counter$ | async">
+  <button nz-button>{{ counter }}</button>
+</ng-container>
+
+<nz-divider [nzDashed]="true"></nz-divider>
+<button nz-button (click)="setCounter()">SET COUNTER</button>
+<button nz-button (click)="resetCounter()">RESET COUNTER</button>
