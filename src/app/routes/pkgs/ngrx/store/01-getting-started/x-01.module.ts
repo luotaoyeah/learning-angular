@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { X01Component } from './x-01.component';
 import { StoreModule } from '@ngrx/store';
-import { x01Reducer } from './store/reducers/x-01.reducer';
+import { x01Reducer } from './store/reducers/01.reducer';
 import { SharedModule } from '@shared';
 import { X0101Component } from './01-01/x-01-01.component';
 
