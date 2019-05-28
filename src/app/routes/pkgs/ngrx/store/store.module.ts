@@ -17,6 +17,7 @@ import { X02030101Module } from './02-architecture/02-03-selectors/02-03-01/02-0
 import { X02030102Module } from './02-architecture/02-03-selectors/02-03-01/02-03-01-02/x-02-03-01-02.module';
 import { X02030103Module } from './02-architecture/02-03-selectors/02-03-01/02-03-01-03/x-02-03-01-03.module';
 import { X020302Module } from './02-architecture/02-03-selectors/02-03-02/x-02-03-02.module';
+import { X020303Module } from './02-architecture/02-03-selectors/02-03-03/x-02-03-03.module';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { X020302Module } from './02-architecture/02-03-selectors/02-03-02/x-02-0
     X02030102Module,
     X02030103Module,
     X020302Module,
+    X020303Module,
   ],
 })
 export class StoreModule {}
