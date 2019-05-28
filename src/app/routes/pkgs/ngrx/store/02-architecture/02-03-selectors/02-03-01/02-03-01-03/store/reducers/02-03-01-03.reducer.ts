@@ -28,15 +28,15 @@ function x02030103Reducer(
         ...state,
         counter: [
           {
-            id: '4',
+            id: '1',
             value: 4,
           },
           {
-            id: '5',
+            id: '2',
             value: 5,
           },
           {
-            id: '6',
+            id: '3',
             value: 6,
           },
         ],

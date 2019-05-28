@@ -1,7 +1,11 @@
-<ng-container *ngFor="let counter of counter$ | async">
+<ng-container *ngFor="let counter of counter01$ | async">
   <button nz-button>{{ counter }}</button>
 </ng-container>
 
 <nz-divider [nzDashed]="true"></nz-divider>
 <button nz-button (click)="setCounter()">SET COUNTER</button>
 <button nz-button (click)="resetCounter()">RESET COUNTER</button>
+
+<nz-divider [nzDashed]="true"></nz-divider>
+<button nz-button>{{ counter02$ | async }}</button>
+<button nz-button>{{ counter03$ | async }}</button>
