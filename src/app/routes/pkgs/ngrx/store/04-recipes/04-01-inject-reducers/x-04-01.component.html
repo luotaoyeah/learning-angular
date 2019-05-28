@@ -1,0 +1,8 @@
+<nz-collapse [nzAccordion]="true">
+  <nz-collapse-panel nzHeader="Injecting Reducers" nzExpandedIcon="caret-right">
+    <button nz-button>{{ x$ | async }}</button>
+
+    <nz-divider [nzDashed]="true"></nz-divider>
+    <button nz-button (click)="handleX()">GENERATE A RANDOM NUM</button>
+  </nz-collapse-panel>
+</nz-collapse>

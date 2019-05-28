@@ -103,6 +103,7 @@
   "menu.pkgs.ngrx.store.01": "Getting Started",
   "menu.pkgs.ngrx.store.02": "Architecture",
   "menu.pkgs.ngrx.store.03": "Advanced",
+  "menu.pkgs.ngrx.store.04": "Recipes",
   "menu.blog": "BLOG",
   "menu.blog.a-comprehensive-guide-to-angular-onpush": "A Comprehensive Guide to Angular onPush Change Detection Strategy",
   "menu.search.placeholder": "Search...",

@@ -20,6 +20,8 @@ import { X020304Module } from './02-architecture/02-03-selectors/02-03-04/x-02-0
 import { X01Module } from './01-getting-started/x-01.module';
 import { X03Component } from './03-advanced/x-03.component';
 import { X0301Module } from './03-advanced/03-01-meta-reducer/x-03-01.module';
+import { X04Component } from './04-recipes/x-04.component';
+import { X0401Module } from './04-recipes/04-01-inject-reducers/x-04-01.module';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import { X0301Module } from './03-advanced/03-01-meta-reducer/x-03-01.module';
     X0203Component,
     X020301Component,
     X03Component,
+    X04Component,
     [CountPipe],
   ],
   imports: [
@@ -48,6 +51,7 @@ import { X0301Module } from './03-advanced/03-01-meta-reducer/x-03-01.module';
     X020303Module,
     X020304Module,
     X0301Module,
+    X0401Module,
   ],
 })
 export class StoreModule {}

@@ -7,15 +7,15 @@ enum ActionTypeEnum {
 }
 
 class AAction implements Action {
-  public readonly type: string = ActionTypeEnum.A;
+  public readonly type: ActionTypeEnum = ActionTypeEnum.A;
 }
 
 class BAction implements Action {
-  public readonly type: string = ActionTypeEnum.B;
+  public readonly type: ActionTypeEnum = ActionTypeEnum.B;
 }
 
 class CAction implements Action {
-  public readonly type: string = ActionTypeEnum.C;
+  public readonly type: ActionTypeEnum = ActionTypeEnum.C;
 }
 
 type ActionUnion = AAction | BAction | CAction;

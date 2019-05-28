@@ -1,6 +1,6 @@
 import { Doc0507041502Component } from './doc-05-07-04-15-02.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { Doc05070415Service } from '../service/05-07-04-15.service';
+import { Doc05070415Service } from '../service/doc-05-07-04-15.service';
 
 describe('Doc0507041502Component', () => {
   let fixture: ComponentFixture<Doc0507041502Component>;

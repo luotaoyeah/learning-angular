@@ -456,6 +456,10 @@
                 {
                   "i18n": "menu.pkgs.ngrx.store.03",
                   "link": "/pkgs/ngrx/store/03"
+                },
+                {
+                  "i18n": "menu.pkgs.ngrx.store.04",
+                  "link": "/pkgs/ngrx/store/04"
                 }
               ]
             }
