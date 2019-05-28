@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { select, Store } from '@ngrx/store';
-import { IState } from '../../../../../../reducers';
+import {
+  createFeatureSelector,
+  createSelector,
+  select,
+  Store,
+} from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { IState } from '../store/state/IState';
 
 @Component({
   selector: 'app-x-01-01',
@@ -11,8 +16,15 @@ import { Observable } from 'rxjs';
 export class X0101Component implements OnInit {
   public count$: Observable<number>;
 
-  constructor(store: Store<IState>) {
-    this.count$ = store.pipe(select('count'));
+  constructor(store: Store<{ '01': IState }>) {
+    this.count$ = store.pipe(
+      select(
+        createSelector(
+          createFeatureSelector<{ '01': IState }, IState>('01'),
+          (state: IState) => state.count,
+        ),
+      ),
+    );
   }
 
   public ngOnInit() {}

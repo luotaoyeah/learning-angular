@@ -5,7 +5,7 @@ import {
   DecrementAction,
   IncrementAction,
   ResetAction,
-} from './store/actions/counter.actions';
+} from './store/actions/x-01.actions';
 
 /*
  * https://ngrx.io/guide/store
