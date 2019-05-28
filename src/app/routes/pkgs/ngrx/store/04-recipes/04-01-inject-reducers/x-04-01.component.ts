@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { select, Store } from '@ngrx/store';
 import { IState } from './store/state/IState';
 import { selectX } from './store/selectors/04-01.selectors';
-import { AAction } from './store/actions/04-01.actions';
+import { AAction, BAction } from './store/actions/04-01.actions';
 
 /*
  * https://ngrx.io/guide/store/recipes/injecting
@@ -22,7 +22,11 @@ export class X0401Component implements OnInit {
 
   public ngOnInit() {}
 
-  public handleX() {
+  public handleA() {
     this.store.dispatch(new AAction());
+  }
+
+  public handleB() {
+    this.store.dispatch(new BAction());
   }
 }

@@ -3,6 +3,16 @@
     <button nz-button>{{ x$ | async }}</button>
 
     <nz-divider [nzDashed]="true"></nz-divider>
-    <button nz-button (click)="handleX()">GENERATE A RANDOM NUM</button>
+    <button nz-button (click)="handleA()">GENERATE A RANDOM NUM</button>
+  </nz-collapse-panel>
+
+  <nz-collapse-panel
+    nzHeader="Injecting Meta-Reducers"
+    nzExpandedIcon="caret-right"
+  >
+    <button nz-button>{{ x$ | async }}</button>
+
+    <nz-divider [nzDashed]="true"></nz-divider>
+    <button nz-button (click)="handleB()">GENERATE A RANDOM NUM</button>
   </nz-collapse-panel>
 </nz-collapse>

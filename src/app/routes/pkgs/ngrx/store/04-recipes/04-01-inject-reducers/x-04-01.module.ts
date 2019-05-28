@@ -2,7 +2,7 @@ import { InjectionToken, NgModule } from '@angular/core';
 import { X0401Component } from './x-04-01.component';
 import { SharedModule } from '@shared';
 import { ActionReducer, StoreModule } from '@ngrx/store';
-import { X0401Reducer } from './store/reducers/04-01.reducer';
+import { metaReducer01, X0401Reducer } from './store/reducers/04-01.reducer';
 import { IState } from './store/state/IState';
 import { ActionUnion } from './store/actions/04-01.actions';
 
@@ -28,7 +28,12 @@ const X0401REDUCER_TOKEN: InjectionToken<
    * 可以直接是一个 reducer 函数,
    * 也可以是一个 InjectionToken 对象, 这样我们就可以通过 DI 注入这个 reducer
    */
-  imports: [SharedModule, StoreModule.forFeature('04-01', X0401REDUCER_TOKEN)],
+  imports: [
+    SharedModule,
+    StoreModule.forFeature('04-01', X0401REDUCER_TOKEN, {
+      metaReducers: [metaReducer01],
+    }),
+  ],
   exports: [X0401Component],
 })
 export class X0401Module {}
