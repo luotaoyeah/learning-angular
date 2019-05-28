@@ -14,6 +14,7 @@ import { CountPipe } from './02-architecture/02-02-reducers/02-02-01/count.pipe'
 import { X0203Component } from './02-architecture/02-03-selectors/x-02-03.component';
 import { X020301Component } from './02-architecture/02-03-selectors/02-03-01/x-02-03-01.component';
 import { X02030101Module } from './02-architecture/02-03-selectors/02-03-01/02-03-01-01/x-02-03-01-01.module';
+import { X02030102Module } from './02-architecture/02-03-selectors/02-03-01/02-03-01-02/x-02-03-01-02.module';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { X02030101Module } from './02-architecture/02-03-selectors/02-03-01/02-0
      */
     NgrxStoreModule.forFeature('02-02', x0202Reducer),
     X02030101Module,
+    X02030102Module,
   ],
 })
 export class StoreModule {}
