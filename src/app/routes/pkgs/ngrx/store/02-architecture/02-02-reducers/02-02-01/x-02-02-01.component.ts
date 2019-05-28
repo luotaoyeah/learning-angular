@@ -9,7 +9,8 @@ import { select, Store } from '@ngrx/store';
   styles: [],
 })
 export class X020201Component implements OnInit {
-  public count$: Observable<IState>;
+  public count01$: Observable<IState>;
+  public count02$: Observable<number>;
 
   /*
    * 注入 ngrx 中的 store 对象,
@@ -18,7 +19,8 @@ export class X020201Component implements OnInit {
    * 通过 select 过滤我们需要的数据
    */
   constructor(private store: Store<IState>) {
-    this.count$ = this.store.pipe(select('02-02'));
+    this.count01$ = this.store.pipe(select('02-02'));
+    this.count02$ = this.store.pipe(select('02-02', 'count'));
   }
 
   public ngOnInit() {}

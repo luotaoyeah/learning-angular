@@ -11,6 +11,9 @@ import { X0202Component } from './02-architecture/02-02-reducers/x-02-02.compone
 import { X020201Component } from './02-architecture/02-02-reducers/02-02-01/x-02-02-01.component';
 import { x0202Reducer } from './02-architecture/02-02-reducers/store/reducers/02-02.reducer';
 import { CountPipe } from './02-architecture/02-02-reducers/02-02-01/count.pipe';
+import { X0203Component } from './02-architecture/02-03-selectors/x-02-03.component';
+import { X020301Component } from './02-architecture/02-03-selectors/02-03-01/x-02-03-01.component';
+import { X02030101Module } from './02-architecture/02-03-selectors/02-03-01/02-03-01-01/x-02-03-01-01.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,9 @@ import { CountPipe } from './02-architecture/02-02-reducers/02-02-01/count.pipe'
     X0201Component,
     X0202Component,
     X020201Component,
-    CountPipe,
+    X0203Component,
+    X020301Component,
+    [CountPipe],
   ],
   imports: [
     CommonModule,
@@ -30,6 +35,7 @@ import { CountPipe } from './02-architecture/02-02-reducers/02-02-01/count.pipe'
      * 通过 StoreModule.forFeature() 方法, 往全局的 store 中添加一个 feature state
      */
     NgrxStoreModule.forFeature('02-02', x0202Reducer),
+    X02030101Module,
   ],
 })
 export class StoreModule {}
