@@ -1,10 +1,21 @@
 import { Injectable } from '@angular/core';
-import { Actions, Effect, ofType, ROOT_EFFECTS_INIT } from '@ngrx/effects';
+import {
+  Actions,
+  Effect,
+  ofType,
+  OnInitEffects,
+  ROOT_EFFECTS_INIT,
+} from '@ngrx/effects';
 import { map, tap } from 'rxjs/operators';
-import { AAction, ActionTypeEnum } from '../store/actions/03.actions';
+import {
+  AAction,
+  ActionTypeEnum,
+  InitAction,
+} from '../store/actions/03.actions';
+import { Action } from '@ngrx/store';
 
 @Injectable()
-export class X03Effects {
+class X03Effects implements OnInitEffects {
   /*
    * 当所有的 root effects 都加载完成之后, 会触发一个 type 为 ROOT_EFFECTS_INIT 的 action,
    * 可以通过监听这个 action 来执行相应的操作
@@ -35,4 +46,32 @@ export class X03Effects {
   );
 
   constructor(private actions$: Actions) {}
+
+  /*
+   * effects class 可以实现 OnInitEffects 接口,
+   * 然后实现 OnInitEffects.ngrxOnInitEffects() 方法,
+   * 当这个 effect class 注册成功之后, 就会触发这个方法,
+   * 该方法通过返回一个 action 来 dispatch 这个 action,
+   * 其他的 effects 就可以监听这个 action 从而执行操作
+   */
+  public ngrxOnInitEffects(): Action {
+    return new InitAction();
+  }
 }
+
+@Injectable()
+class X0301Effects {
+  @Effect({
+    dispatch: false,
+  })
+  public init$ = this.actions$.pipe(
+    ofType(ActionTypeEnum.Init),
+    tap((action: InitAction) => {
+      console.log(`[${X0301Effects.name}]\n`, 'init$', action.type);
+    }),
+  );
+
+  constructor(private actions$: Actions) {}
+}
+
+export { X03Effects, X0301Effects };
