@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+/*
+ * https://ngrx.io/guide/effects
+ */
 @Component({
   selector: 'app-x-01',
   templateUrl: './x-01.component.html',

@@ -107,6 +107,7 @@
   "menu.pkgs.ngrx.store.05": "Testing",
   "menu.pkgs.ngrx.effects": "EFFECTS",
   "menu.pkgs.ngrx.effects.01": "Overview",
+  "menu.pkgs.ngrx.effects.02": "Testing",
   "menu.blog": "BLOG",
   "menu.blog.a-comprehensive-guide-to-angular-onpush": "A Comprehensive Guide to Angular onPush Change Detection Strategy",
   "menu.search.placeholder": "Search...",
