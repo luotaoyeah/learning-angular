@@ -5,10 +5,6 @@ import { X0401Service } from '../../service/x-04-01.service';
 import { ActionReducer, MetaReducer } from '@ngrx/store';
 import { X0401Component } from '../../x-04-01.component';
 
-const initialState: IState = {
-  x: 0,
-};
-
 /*
  * 如果一个 reducer 中, 需要依赖其他的 service,
  * 这时我们可以声明一个 injectable class, 作为这个 reducer 的工厂类, 然后在这个工厂类中注入这个依赖的 service,
@@ -21,14 +17,14 @@ class X0401Reducer {
   constructor(private x0401Service: X0401Service) {}
 
   public createReducer(): ActionReducer<IState, ActionUnion> {
-    return (state: IState = initialState, action: ActionUnion) => {
+    return (state: IState | undefined, action: ActionUnion) => {
       switch (action.type) {
         case ActionTypeEnum.A:
           return { ...state, x: this.x0401Service.getRandom() };
         case ActionTypeEnum.B:
           return { ...state, x: this.x0401Service.getRandom() };
         default:
-          return state;
+          return state || { x: 0 };
       }
     };
   }

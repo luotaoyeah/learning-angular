@@ -5,34 +5,56 @@ import { ActionReducer, StoreModule } from '@ngrx/store';
 import { metaReducer01, X0401Reducer } from './store/reducers/04-01.reducer';
 import { IState } from './store/state/IState';
 import { ActionUnion } from './store/actions/04-01.actions';
+import { StoreConfig } from '@ngrx/store/src/store_module';
+import { X0401Service } from './service/x-04-01.service';
 
-const X0401REDUCER_TOKEN: InjectionToken<
+const X0401_REDUCER_TOKEN: InjectionToken<
   ActionReducer<IState, ActionUnion>
 > = new InjectionToken<ActionReducer<IState, ActionUnion>>(
-  'X0401REDUCER_TOKEN',
+  'X0401_REDUCER_TOKEN',
 );
+
+const X0401_FEATURE_CONFIG_TOKEN: InjectionToken<
+  StoreConfig<IState>
+> = new InjectionToken<StoreConfig<IState>>('X0401_FEATURE_CONFIG_TOKEN');
 
 @NgModule({
   declarations: [X0401Component],
   providers: [
     {
-      provide: X0401REDUCER_TOKEN,
+      provide: X0401_REDUCER_TOKEN,
       useFactory: (x0401Reducer: X0401Reducer) => {
         return x0401Reducer.createReducer();
       },
       deps: [X0401Reducer],
     },
+    {
+      provide: X0401_FEATURE_CONFIG_TOKEN,
+      useFactory: (x0401Service: X0401Service) => {
+        return {
+          metaReducers: [metaReducer01],
+          initialState: x0401Service.getInitialState(),
+        };
+      },
+      deps: [X0401Service],
+    },
   ],
   /*
    * StoreModule.forFeature() 方法的第二个参数,
    * 可以直接是一个 reducer 函数,
-   * 也可以是一个 InjectionToken 对象, 这样我们就可以通过 DI 注入这个 reducer
+   * 也可以是一个 InjectionToken 对象, 这样我们就可以通过 DI 注入这个 reducer,
+   *
+   * StoreModule.forFeature() 方法的第三个参数,
+   * 可以直接是一个 StoreConfig 对象,
+   * 也可以是一个 InjectionToken 对象, 这样我们就可以通过 DI 注入这个 reducer,
    */
   imports: [
     SharedModule,
-    StoreModule.forFeature('04-01', X0401REDUCER_TOKEN, {
-      metaReducers: [metaReducer01],
-    }),
+    StoreModule.forFeature(
+      '04-01',
+      X0401_REDUCER_TOKEN,
+      X0401_FEATURE_CONFIG_TOKEN,
+    ),
   ],
   exports: [X0401Component],
 })
