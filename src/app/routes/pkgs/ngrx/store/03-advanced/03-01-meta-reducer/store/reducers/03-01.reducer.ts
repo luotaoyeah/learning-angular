@@ -31,11 +31,7 @@ function x0301Reducer(state: IState = initialState, action: ActionUnion) {
   }
 }
 
-const metaReducer01: (
-  reducer: ActionReducer<IState, ActionUnion>,
-) => ActionReducer<IState, ActionUnion> = (
-  reducer: ActionReducer<IState, ActionUnion>,
-) => {
+function metaReducer01(reducer: ActionReducer<IState, ActionUnion>) {
   return (state: IState | undefined, action: ActionUnion) => {
     if (
       [ActionTypeEnum.A, ActionTypeEnum.B, ActionTypeEnum.C].includes(
@@ -51,13 +47,9 @@ const metaReducer01: (
     }
     return reducer(state, action);
   };
-};
+}
 
-const metaReducer02: (
-  reducer: ActionReducer<IState, ActionUnion>,
-) => ActionReducer<IState, ActionUnion> = (
-  reducer: ActionReducer<IState, ActionUnion>,
-) => {
+function metaReducer02(reducer: ActionReducer<IState, ActionUnion>) {
   return (state: IState | undefined, action: ActionUnion) => {
     if (
       [ActionTypeEnum.A, ActionTypeEnum.B, ActionTypeEnum.C].includes(
@@ -74,6 +66,6 @@ const metaReducer02: (
 
     return reducer(state, action);
   };
-};
+}
 
 export { initialState, x0301Reducer, metaReducer01, metaReducer02 };

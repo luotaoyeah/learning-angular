@@ -34,9 +34,7 @@ class X0401Reducer {
   }
 }
 
-const metaReducer01: MetaReducer<IState, ActionUnion> = (
-  reducer: ActionReducer<IState, ActionUnion>,
-) => {
+function metaReducer01(reducer: ActionReducer<IState, ActionUnion>) {
   return (state: IState | undefined, action: ActionUnion) => {
     if (action.type === ActionTypeEnum.B) {
       console.log(
@@ -48,7 +46,7 @@ const metaReducer01: MetaReducer<IState, ActionUnion> = (
     }
     return reducer(state, action);
   };
-};
+}
 
 /*
  * meta-reducer 也可以使用 DI 注入的方式来进行注册,
