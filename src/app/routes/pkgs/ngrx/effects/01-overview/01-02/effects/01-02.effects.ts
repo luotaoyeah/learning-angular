@@ -15,7 +15,7 @@ import { catchError, map, mergeMap } from 'rxjs/operators';
  * 最后 dispatch 一个新的 action, 并附加上数据
  */
 @Injectable()
-class MovieEffects {
+class X0102Effects {
   @Effect()
   public fetchMovies$ = this.actions$.pipe(
     ofType(ActionTypeEnum.FetchMovies),
@@ -30,4 +30,4 @@ class MovieEffects {
   constructor(private actions$: Actions, private x01Service: X01Service) {}
 }
 
-export { MovieEffects };
+export { X0102Effects };

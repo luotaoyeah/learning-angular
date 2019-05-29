@@ -4,14 +4,14 @@ import { SharedModule } from '@shared';
 import { StoreModule } from '@ngrx/store';
 import { x0102Reducer } from './store/reducers/01-02.reducers';
 import { EffectsModule } from '@ngrx/effects';
-import { MovieEffects } from './effects/01-02.effects';
+import { X0102Effects } from './effects/01-02.effects';
 
 @NgModule({
   declarations: [X0102Component],
   imports: [
     SharedModule,
     StoreModule.forFeature('pkgs-ngrx-effect-01-02', x0102Reducer),
-    EffectsModule.forFeature([MovieEffects]),
+    EffectsModule.forFeature([X0102Effects]),
   ],
   exports: [X0102Component],
 })

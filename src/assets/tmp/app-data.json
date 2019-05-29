@@ -477,6 +477,10 @@
                 {
                   "i18n": "menu.pkgs.ngrx.effects.02",
                   "link": "/pkgs/ngrx/effects/02"
+                },
+                {
+                  "i18n": "menu.pkgs.ngrx.effects.03",
+                  "link": "/pkgs/ngrx/effects/03"
                 }
               ]
             }

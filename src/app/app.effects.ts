@@ -1,8 +1,16 @@
 import { Injectable } from '@angular/core';
-import { Actions } from '@ngrx/effects';
+import { Actions, Effect, ofType } from '@ngrx/effects';
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class AppEffects {
-  // @ts-ignore
+  @Effect()
+  public foo$ = this.actions$.pipe(
+    ofType(''),
+    map(() => {
+      return {};
+    }),
+  );
+
   constructor(private actions$: Actions) {}
 }
