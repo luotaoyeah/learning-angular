@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { X01Component } from './01-actions/x-01.component';
+import { X02Component } from './02-configuration/x-02.component';
 
 const routes: Routes = [
   {
     path: 'router-store/01',
     component: X01Component,
+  },
+  {
+    path: 'router-store/02',
+    component: X02Component,
   },
 ];
 

@@ -6,7 +6,7 @@ import { routerReducer } from '@ngrx/router-store';
 export interface IState {}
 
 export const reducers: ActionReducerMap<IState> = {
-  router: routerReducer,
+  ngrxRouter: routerReducer,
 };
 
 export const metaReducers: MetaReducer<IState>[] = !environment.production

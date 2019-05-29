@@ -192,7 +192,9 @@ const APPINIT_PROVIDES = [
     ...GLOBAL_THIRD_MODULES,
     StoreModule.forRoot(reducers, { metaReducers }),
     EffectsModule.forRoot([AppEffects]),
-    StoreRouterConnectingModule.forRoot(),
+    StoreRouterConnectingModule.forRoot({
+      stateKey: 'ngrxRouter',
+    }),
     StoreDevtoolsModule.instrument({
       maxAge: 100,
       logOnly: environment.production,
@@ -204,7 +206,7 @@ const APPINIT_PROVIDES = [
     ...I18NSERVICE_PROVIDES,
     ...APPINIT_PROVIDES,
     /*
-     * 显示地将某个 service 声明在 root NgModule 的 providers 中，
+     * 显式地将某个 service 声明在 root NgModule 的 providers 中，
      * 等价于在该 service 的 @Injectable 中使用 providedIn: 'root'
      */
     Doc0306070102Service,
