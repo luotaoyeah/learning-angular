@@ -11,22 +11,6 @@ import {
 import { throwIfAlreadyLoaded } from '@core';
 
 import { AlainThemeModule } from '@delon/theme';
-// #region mock
-import { DelonMockModule } from '@delon/mock';
-import * as MOCKDATA from '../../_mock';
-import { environment } from '@env/environment';
-// #region reuse-tab
-/**
- * 若需要[路由复用](https://ng-alain.com/components/reuse-tab)需要：
- * 1、增加 `REUSETAB_PROVIDES`
- * 2、在 `src/app/layout/default/default.component.html` 修改：
- *  ```html
- *  <section class="alain-default__content">
- *    <reuse-tab></reuse-tab>
- *    <router-outlet></router-outlet>
- *  </section>
- *  ```
- */
 import {
   PageHeaderConfig,
   ReuseTabService,
@@ -36,11 +20,6 @@ import {
 import { DelonAuthConfig } from '@delon/auth';
 import { RouteReuseStrategy } from '@angular/router';
 
-const MOCK_MODULES = !environment.production
-  ? [DelonMockModule.forRoot({ data: MOCKDATA })]
-  : [];
-// #endregion
-
 // tslint:disable-next-line:no-any
 const REUSETAB_PROVIDES: Array<any> = [
   {
@@ -49,10 +28,8 @@ const REUSETAB_PROVIDES: Array<any> = [
     deps: [ReuseTabService],
   },
 ];
-// #endregion
 
-// #region global config functions
-
+// region global config functions
 export function fnPageHeaderConfig(): PageHeaderConfig {
   return {
     ...new PageHeaderConfig(),
@@ -83,10 +60,10 @@ const GLOBAL_CONFIG_PROVIDES = [
   { provide: DelonAuthConfig, useFactory: fnDelonAuthConfig },
 ];
 
-// #endregion
+// endregion
 
 @NgModule({
-  imports: [AlainThemeModule.forRoot(), ...MOCK_MODULES],
+  imports: [AlainThemeModule.forRoot()],
 })
 export class DelonModule {
   constructor(@Optional() @SkipSelf() parentModule: DelonModule) {
