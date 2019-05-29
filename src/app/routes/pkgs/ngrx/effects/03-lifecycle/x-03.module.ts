@@ -7,9 +7,10 @@ import { StoreModule } from '@ngrx/store';
 import { x03Reducer } from './store/reducers/03.reducers';
 import { X0302Component } from './03-02/x-03-02.component';
 import { X0303Module } from './03-03/x-03-03.module';
+import { X0304Component } from './03-04/x-03-04.component';
 
 @NgModule({
-  declarations: [X03Component, X0302Component],
+  declarations: [X03Component, X0302Component, X0304Component],
   imports: [
     SharedModule,
     StoreModule.forFeature('pkgs-ngrx-effects-03', x03Reducer),
