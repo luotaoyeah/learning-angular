@@ -3,6 +3,7 @@ import { Action } from '@ngrx/store';
 enum ActionTypeEnum {
   A = '[X03Component] A',
   Init = '[X03Component] Init',
+  Identity = '[X03Component] Identity',
 }
 
 class AAction implements Action {
@@ -13,6 +14,10 @@ class InitAction implements Action {
   public readonly type: ActionTypeEnum.Init = ActionTypeEnum.Init;
 }
 
-type ActionUnion = AAction | InitAction;
+class IdentityAction implements Action {
+  public readonly type: ActionTypeEnum.Identity = ActionTypeEnum.Identity;
+}
 
-export { ActionTypeEnum, AAction, InitAction, ActionUnion };
+type ActionUnion = AAction | InitAction | IdentityAction;
+
+export { ActionTypeEnum, AAction, InitAction, IdentityAction, ActionUnion };
