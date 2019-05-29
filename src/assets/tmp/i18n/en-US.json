@@ -109,6 +109,8 @@
   "menu.pkgs.ngrx.effects.01": "Overview",
   "menu.pkgs.ngrx.effects.02": "Testing",
   "menu.pkgs.ngrx.effects.03": "Lifecycle",
+  "menu.pkgs.ngrx.router-store": "ROUTER STORE",
+  "menu.pkgs.ngrx.router-store.01": "Actions",
   "menu.blog": "BLOG",
   "menu.blog.a-comprehensive-guide-to-angular-onpush": "A Comprehensive Guide to Angular onPush Change Detection Strategy",
   "menu.search.placeholder": "Search...",

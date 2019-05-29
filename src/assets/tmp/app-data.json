@@ -483,6 +483,15 @@
                   "link": "/pkgs/ngrx/effects/03"
                 }
               ]
+            },
+            {
+              "i18n": "menu.pkgs.ngrx.router-store",
+              "children": [
+                {
+                  "i18n": "menu.pkgs.ngrx.router-store.01",
+                  "link": "/pkgs/ngrx/router-store/01"
+                }
+              ]
             }
           ]
         }

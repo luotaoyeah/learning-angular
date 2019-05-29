@@ -62,6 +62,7 @@ import { metaReducers, reducers } from './reducers';
 import { MetaReducer02 } from './routes/pkgs/ngrx/store/04-recipes/04-01-inject-reducers/store/reducers/04-01.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './app.effects';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
 
 const LANG = {
   abbr: 'en',
@@ -189,6 +190,7 @@ const APPINIT_PROVIDES = [
     ...GLOBAL_THIRD_MODULES,
     StoreModule.forRoot(reducers, { metaReducers }),
     EffectsModule.forRoot([AppEffects]),
+    StoreRouterConnectingModule.forRoot(),
   ],
   providers: [
     ...LANG_PROVIDES,
