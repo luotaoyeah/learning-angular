@@ -10,7 +10,7 @@ import { X0102Effects } from './effects/01-02.effects';
   declarations: [X0102Component],
   imports: [
     SharedModule,
-    StoreModule.forFeature('pkgs-ngrx-effect-01-02', x0102Reducer),
+    StoreModule.forFeature('pkgs-ngrx-effects-01-02', x0102Reducer),
     EffectsModule.forFeature([X0102Effects]),
   ],
   exports: [X0102Component],

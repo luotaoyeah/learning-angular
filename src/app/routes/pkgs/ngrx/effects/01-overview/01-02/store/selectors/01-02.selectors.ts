@@ -7,11 +7,11 @@ import { IState } from '../state/IState';
 import { IMovie } from '../../../vms/IMovie';
 
 interface IAppState {
-  'pkgs-ngrx-effect-01-02': IState;
+  'pkgs-ngrx-effects-01-02': IState;
 }
 
 const selectFeature = createFeatureSelector<IAppState, IState>(
-  'pkgs-ngrx-effect-01-02',
+  'pkgs-ngrx-effects-01-02',
 );
 
 const selectMovies: MemoizedSelector<IAppState, Array<IMovie>> = createSelector<
