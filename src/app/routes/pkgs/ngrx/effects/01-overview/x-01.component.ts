@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { _HttpClient } from '@delon/theme';
 
 @Component({
   selector: 'app-x-01',
@@ -7,15 +6,7 @@ import { _HttpClient } from '@delon/theme';
   styles: [],
 })
 export class X01Component implements OnInit {
-  constructor(private httpClient: _HttpClient) {}
+  constructor() {}
 
-  public ngOnInit() {
-    this.httpClient
-      .get('api/health-check')
-      .subscribe((value: { data: string }) => {
-        if (value.data !== 'OK') {
-          console.error('JSON-SERVER IS NOT STARTED');
-        }
-      });
-  }
+  public ngOnInit() {}
 }

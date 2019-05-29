@@ -1,13 +1,11 @@
-import { Application, RequestHandler, Router } from 'express';
-import { Request, Response } from 'express-serve-static-core';
+import { Application } from 'express';
 
 const jsonServer = require('json-server');
 const db = require('./db');
 
 const app: Application = jsonServer.create();
-const middlewares: Array<RequestHandler> = jsonServer.defaults();
 
-app.use(middlewares);
+app.use(jsonServer.defaults());
 app.use(jsonServer.bodyParser);
 app.use(
   jsonServer.rewriter({
@@ -17,19 +15,11 @@ app.use(
 
 // region 自定义的接口
 
-/*
- * health check
- */
-app.get('/health-check', (req: Request, res: Response) => {
-  res.jsonp({
-    data: 'OK',
-  });
-});
+require('./api/pkgs-ngrx/pkgs-ngrx').init(app);
 
 // endregion
 
-const router: Router = jsonServer.router(db);
-app.use(router);
+app.use(jsonServer.router(db));
 
 /*
  * 启动模拟服务

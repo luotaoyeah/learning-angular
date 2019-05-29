@@ -1,5 +1,5 @@
-const province = require('./province');
+const provinces = require('./provinces');
 
 module.exports = {
-  ...province,
+  ...provinces,
 };
