@@ -60,6 +60,8 @@ import { Doc0308050304Interceptor } from './routes/doc/03-fundamental/03-08-http
 import { META_REDUCERS, StoreModule } from '@ngrx/store';
 import { metaReducers, reducers } from './reducers';
 import { MetaReducer02 } from './routes/pkgs/ngrx/store/04-recipes/04-01-inject-reducers/store/reducers/04-01.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { AppEffects } from './app.effects';
 
 const LANG = {
   abbr: 'en',
@@ -186,6 +188,7 @@ const APPINIT_PROVIDES = [
     ...FORM_MODULES,
     ...GLOBAL_THIRD_MODULES,
     StoreModule.forRoot(reducers, { metaReducers }),
+    EffectsModule.forRoot([AppEffects]),
   ],
   providers: [
     ...LANG_PROVIDES,
