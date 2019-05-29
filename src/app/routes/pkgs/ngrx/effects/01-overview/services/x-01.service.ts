@@ -6,7 +6,7 @@ import { _HttpClient } from '@delon/theme';
 @Injectable({
   providedIn: 'root',
 })
-export class X0101Service {
+export class X01Service {
   constructor(private httpClient: _HttpClient) {}
 
   /**

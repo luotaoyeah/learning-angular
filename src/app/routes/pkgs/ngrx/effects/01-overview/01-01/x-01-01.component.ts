@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { X0101Service } from '../services/x-01-01.service';
+import { X01Service } from '../services/x-01.service';
 import { IMovie } from '../vms/IMovie';
 
 /*
@@ -13,10 +13,10 @@ import { IMovie } from '../vms/IMovie';
 export class X0101Component implements OnInit {
   public movies: Array<IMovie> = [];
 
-  constructor(private x0101Service: X0101Service) {}
+  constructor(private x01Service: X01Service) {}
 
   public ngOnInit() {
-    this.x0101Service.listMovies().subscribe((movies: Array<IMovie>) => {
+    this.x01Service.listMovies().subscribe((movies: Array<IMovie>) => {
       this.movies = movies;
     });
   }
