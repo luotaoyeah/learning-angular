@@ -22,6 +22,10 @@ import { X03Component } from './03-advanced/x-03.component';
 import { X0301Module } from './03-advanced/03-01-meta-reducer/x-03-01.module';
 import { X04Component } from './04-recipes/x-04.component';
 import { X0401Module } from './04-recipes/04-01-inject-reducers/x-04-01.module';
+import { X05Component } from './05-testing/x-05.component';
+import { X0501Module } from './05-testing/05-01-using-a-mock-store/x-05-01.module';
+import { X0502Module } from './05-testing/05-02-using-store-for-integration-testing/x-05-02.module';
+import { X0503Module } from './05-testing/05-03-testing-selectors/x-05-03.module';
 
 @NgModule({
   declarations: [
@@ -33,6 +37,7 @@ import { X0401Module } from './04-recipes/04-01-inject-reducers/x-04-01.module';
     X020301Component,
     X03Component,
     X04Component,
+    X05Component,
     [CountPipe],
   ],
   imports: [
@@ -52,6 +57,9 @@ import { X0401Module } from './04-recipes/04-01-inject-reducers/x-04-01.module';
     X020304Module,
     X0301Module,
     X0401Module,
+    X0501Module,
+    X0502Module,
+    X0503Module,
   ],
 })
 export class StoreModule {}
