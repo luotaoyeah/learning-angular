@@ -30,16 +30,16 @@ import { registerLocaleData } from '@angular/common';
 // #region i18n services
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { I18NService } from '@core/i18n/i18n.service';
+import { I18NService } from '@app/core/i18n/i18n.service';
 // #region JSON Schema form (using @delon/form)
-import { JsonSchemaModule } from '@shared/json-schema/json-schema.module';
+import { JsonSchemaModule } from '@app/shared/json-schema/json-schema.module';
 import { SimpleInterceptor } from '@delon/auth';
-import { DefaultInterceptor } from '@core/net/default.interceptor';
+import { DefaultInterceptor } from '@app/core/net/default.interceptor';
 // #region Startup Service
-import { StartupService } from '@core/startup/startup.service';
+import { StartupService } from '@app/core/startup/startup.service';
 import { DelonModule } from './delon.module';
-import { CoreModule } from '@core/core.module';
-import { SharedModule } from '@shared';
+import { CoreModule } from '@app/core/core.module';
+import { SharedModule } from '@app/shared';
 import { AppComponent } from './app.component';
 import { RoutesModule } from './routes/routes.module';
 import { LayoutModule } from './layout/layout.module';
@@ -67,7 +67,7 @@ import {
   StoreRouterConnectingModule,
 } from '@ngrx/router-store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { environment } from '@env/environment';
+import { environment } from '@app/env/environment';
 import { X01CustomRouterStateSerializer } from './routes/pkgs/ngrx/router-store/02-configuration/service/x-01-custom-router-state-serializer';
 
 const LANG = {

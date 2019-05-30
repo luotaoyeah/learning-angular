@@ -3,7 +3,7 @@ import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NzModalService, NzNotificationService } from 'ng-zorro-antd';
 import { DA_SERVICE_TOKEN, ITokenService } from '@delon/auth';
-import { StartupService } from '@core';
+import { StartupService } from '@app/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { ReuseTabService } from '@delon/abc';

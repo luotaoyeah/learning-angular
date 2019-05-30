@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { EffectsModule } from '@ngrx/effects';
 import { X03Effects } from './effects/03.effects';
 import { X03Component } from './x-03.component';
-import { SharedModule } from '@shared';
+import { SharedModule } from '@app/shared';
 import { StoreModule } from '@ngrx/store';
 import { x03Reducer } from './store/reducers/03.reducers';
 import { X0302Component } from './03-02/x-03-02.component';

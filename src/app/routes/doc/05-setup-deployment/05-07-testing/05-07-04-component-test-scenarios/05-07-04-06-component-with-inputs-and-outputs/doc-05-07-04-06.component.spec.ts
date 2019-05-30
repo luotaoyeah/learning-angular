@@ -2,7 +2,7 @@ import { Doc05070406Component } from './doc-05-07-04-06.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { SharedModule } from '@shared';
+import { SharedModule } from '@app/shared';
 
 describe('Doc05070406Component', () => {
   let fixture: ComponentFixture<Doc05070406Component>;

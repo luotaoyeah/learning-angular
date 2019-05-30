@@ -4,7 +4,7 @@ import {
   ContentChild,
   OnInit,
 } from '@angular/core';
-import { ComnService } from '@core/comn/comn.service';
+import { ComnService } from '@app/core/comn/comn.service';
 import { NzButtonComponent, NzTagComponent } from 'ng-zorro-antd';
 
 @Component({

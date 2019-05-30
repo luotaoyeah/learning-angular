@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Doc05070409Component } from './doc-05-07-04-09.component';
-import { SharedModule } from '@shared';
+import { SharedModule } from '@app/shared';
 import { Router } from '@angular/router';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { NamespaceRoutingModule } from './namespace-routing.module';
 import { NamespaceComponent } from './namespace.component';
-import { SharedModule } from '@shared';
+import { SharedModule } from '@app/shared';
 
 @NgModule({
   declarations: [NamespaceComponent],

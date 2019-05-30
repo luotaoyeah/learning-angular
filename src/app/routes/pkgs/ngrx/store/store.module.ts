@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StoreModule as NgrxStoreModule } from '@ngrx/store';
 import { StoreRoutingModule } from './store-routing.module';
-import { SharedModule } from '@shared';
+import { SharedModule } from '@app/shared';
 import { X02Component } from './02-architecture/x-02.component';
 import { X0201Component } from './02-architecture/02-01-actions/x-02-01.component';
 import { X0202Component } from './02-architecture/02-02-reducers/x-02-02.component';

@@ -4,7 +4,7 @@ import {
   ContentChild,
   OnInit,
 } from '@angular/core';
-import { ComnService } from '@core/comn/comn.service';
+import { ComnService } from '@app/core/comn/comn.service';
 import { NzButtonComponent } from 'ng-zorro-antd';
 import { Doc090102030304Directive } from './doc-09-01-02-03-03-04.directive';
 

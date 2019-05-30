@@ -1,6 +1,6 @@
 import { InjectionToken, NgModule } from '@angular/core';
 import { X0401Component } from './x-04-01.component';
-import { SharedModule } from '@shared';
+import { SharedModule } from '@app/shared';
 import { ActionReducer, StoreModule } from '@ngrx/store';
 import { metaReducer01, X0401Reducer } from './store/reducers/04-01.reducer';
 import { IState } from './store/state/IState';

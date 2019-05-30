@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Doc0310RoutingModule } from './doc-03-10-routing.module';
 import { FormsModule } from '@angular/forms';
-import { SharedModule } from '@shared';
+import { SharedModule } from '@app/shared';
 import { Doc031001Component } from './03-10-01-introduction/doc-03-10-01.component';
 import { Doc031002Component } from './03-10-02-transition-and-triggers/doc-03-10-02.component';
 import { Doc031003Component } from './03-10-03-complex-sequences/doc-03-10-03.component';

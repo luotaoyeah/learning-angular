@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { SharedModule } from '@shared';
+import { SharedModule } from '@app/shared';
 import { Doc0502RoutingModule } from './doc-05-02-routing.module';
 import { Doc0502Component } from './doc-05-02.component';
 import { Doc050201Component } from './05-02-01-overall-json-structure/doc-05-02-01.component';

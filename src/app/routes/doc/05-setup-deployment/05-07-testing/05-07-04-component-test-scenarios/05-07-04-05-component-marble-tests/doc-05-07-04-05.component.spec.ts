@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Doc05070405Component } from './doc-05-07-04-05.component';
 import { Doc05070405Service } from './service/doc-05-07-04-05.service';
 import { of } from 'rxjs';
-import { SharedModule } from '@shared';
+import { SharedModule } from '@app/shared';
 
 /*
  * TODO https://angular.io/guide/testing#component-marble-tests

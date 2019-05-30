@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Doc0306RoutingModule } from './doc-03-06-routing.module';
 import { FormsModule } from '@angular/forms';
-import { SharedModule } from '@shared';
+import { SharedModule } from '@app/shared';
 import { Doc030601Component } from './03-06-01-ngmodules-introduction/doc-03-06-01.component';
 import { Doc030602Component } from './03-06-02-ngmodule-vs-jsmodule/doc-03-06-02.component';
 import { Doc030603Component } from './03-06-03-frequent-ngmodules/doc-03-06-03.component';

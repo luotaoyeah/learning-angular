@@ -154,7 +154,7 @@ import { Doc03021006Component } from './03-02-10-structural-directives/03-02-10-
 import { Doc03021007Component } from './03-02-10-structural-directives/03-02-10-07-ng-container/doc-03-02-10-07.component';
 import { Doc03021008Component } from './03-02-10-structural-directives/03-02-10-08-write-a-structural-directive/doc-03-02-10-08.component';
 import { UnlessDirective } from './03-02-10-structural-directives/03-02-10-08-write-a-structural-directive/directive/unless.directive';
-import { SharedModule } from '@shared';
+import { SharedModule } from '@app/shared';
 import { Doc0302040201Component } from './03-02-04-lifecycle-hooks/03-02-04-02-lifecycle-sequence/03-02-04-02-01-ngonchanges/doc-03-02-04-02-01.component';
 import { Doc0302040202Component } from './03-02-04-lifecycle-hooks/03-02-04-02-lifecycle-sequence/03-02-04-02-02-ngoninit/doc-03-02-04-02-02.component';
 import { Doc0302090201Directive } from './03-02-09-attribute-directives/03-02-09-02-build-a-simple-attribute-directive/directive/doc-03-02-09-02-01.directive';

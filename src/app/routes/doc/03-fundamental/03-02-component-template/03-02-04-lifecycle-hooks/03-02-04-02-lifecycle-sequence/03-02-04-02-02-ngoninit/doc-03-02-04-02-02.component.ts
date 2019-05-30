@@ -5,7 +5,7 @@ import {
   OnInit,
   SimpleChanges,
 } from '@angular/core';
-import { ComnService } from '@core/comn/comn.service';
+import { ComnService } from '@app/core/comn/comn.service';
 
 @Component({
   selector: 'app-doc-03-02-04-02-02',

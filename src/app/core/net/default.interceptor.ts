@@ -12,7 +12,7 @@ import { Observable, of, throwError } from 'rxjs';
 import { catchError, mergeMap } from 'rxjs/operators';
 import { NzNotificationService } from 'ng-zorro-antd';
 import { _HttpClient } from '@delon/theme';
-import { environment } from '@env/environment';
+import { environment } from '@app/env/environment';
 import { DA_SERVICE_TOKEN } from '@delon/auth';
 
 const CODEMESSAGE: { [index: number]: string } = {

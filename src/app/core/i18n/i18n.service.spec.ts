@@ -4,7 +4,7 @@ import { DelonLocaleService, SettingsService } from '@delon/theme';
 import { NzI18nService } from 'ng-zorro-antd';
 import { of } from 'rxjs';
 
-import { I18NService } from '@core/i18n/i18n.service';
+import { I18NService } from '@app/core/i18n/i18n.service';
 
 describe('I18NService', () => {
   let injector: TestBedStatic;

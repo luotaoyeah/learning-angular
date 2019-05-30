@@ -6,7 +6,7 @@ import {
   metaReducer02,
   x0301Reducer,
 } from './store/reducers/03-01.reducer';
-import { SharedModule } from '@shared';
+import { SharedModule } from '@app/shared';
 
 @NgModule({
   declarations: [X0301Component],

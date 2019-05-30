@@ -8,7 +8,7 @@ import { DOCUMENT } from '@angular/common';
 import { ALAIN_I18N_TOKEN, SettingsService } from '@delon/theme';
 import { InputBoolean } from '@delon/util';
 
-import { I18NService } from '@core';
+import { I18NService } from '@app/core';
 
 @Component({
   selector: 'header-i18n',

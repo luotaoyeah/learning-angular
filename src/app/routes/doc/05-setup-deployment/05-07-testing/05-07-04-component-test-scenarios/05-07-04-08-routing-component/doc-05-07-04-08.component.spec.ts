@@ -3,7 +3,7 @@ import { Doc05070408Component } from './doc-05-07-04-08.component';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { Router } from '@angular/router';
-import { SharedModule } from '@shared';
+import { SharedModule } from '@app/shared';
 
 describe('Doc05070408Component', () => {
   let fixture: ComponentFixture<Doc05070408Component>;

@@ -2,7 +2,7 @@ import { enableProdMode, ViewEncapsulation } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
-import { environment } from '@env/environment';
+import { environment } from '@app/env/environment';
 
 import { preloaderFinished } from '@delon/theme';
 import { hmrBootstrap } from './hmr';

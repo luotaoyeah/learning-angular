@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
-import { SharedModule } from '@shared';
+import { SharedModule } from '@app/shared';
 import { X020302Component } from './x-02-03-02.component';
 import { x020302Reducer } from './store/reducers/02-03-02.reducer';
 

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Doc0307RoutingModule } from './doc-03-07-routing.module';
 import { FormsModule } from '@angular/forms';
-import { SharedModule } from '@shared';
+import { SharedModule } from '@app/shared';
 import { Doc030701Component } from './03-07-01-angular-dependency-injection/doc-03-07-01.component';
 import { Doc030702Component } from './03-07-02-hierarchical-dependency-injection/doc-03-07-02.component';
 import { Doc030704Component } from './03-07-04-di-in-action/doc-03-07-04.component';

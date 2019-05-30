@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { SharedModule } from '@shared';
+import { SharedModule } from '@app/shared';
 import { LayoutDefaultComponent } from './default/default.component';
 import { LayoutFullScreenComponent } from './fullscreen/fullscreen.component';
 import { HeaderComponent } from './default/header/header.component';

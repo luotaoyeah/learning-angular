@@ -8,7 +8,7 @@ import {
   Optional,
   SkipSelf,
 } from '@angular/core';
-import { throwIfAlreadyLoaded } from '@core';
+import { throwIfAlreadyLoaded } from '@app/core';
 
 import { AlainThemeModule } from '@delon/theme';
 import {

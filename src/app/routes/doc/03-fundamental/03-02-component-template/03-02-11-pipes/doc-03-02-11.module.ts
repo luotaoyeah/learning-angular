@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Doc030211RoutingModule } from './doc-03-02-11-routing.module';
 import { FormsModule } from '@angular/forms';
-import { SharedModule } from '@shared';
+import { SharedModule } from '@app/shared';
 import { Doc030211Component } from './doc-03-02-11.component';
 import { Doc03021106Component } from './03-02-11-06-pure-and-impure-pipes/doc-03-02-11-06.component';
 import { Doc03021103Component } from './03-02-11-03-chaining-pipes/doc-03-02-11-03.component';

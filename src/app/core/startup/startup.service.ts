@@ -13,7 +13,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { NzIconService } from 'ng-zorro-antd';
 import { ICONS_AUTO } from '../../../style-icons-auto';
 import { ICONS } from '../../../style-icons';
-import { I18NService } from '@core/i18n/i18n.service';
+import { I18NService } from '@app/core/i18n/i18n.service';
 import { ReuseTabMatchMode, ReuseTabService } from '@delon/abc';
 
 /**

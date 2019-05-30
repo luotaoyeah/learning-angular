@@ -1,7 +1,7 @@
 import { Component, DebugElement } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Doc05070501Directive } from './doc-05-07-05-01.directive';
-import { SharedModule } from '@shared';
+import { SharedModule } from '@app/shared';
 import { By } from '@angular/platform-browser';
 
 /*

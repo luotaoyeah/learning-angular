@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Doc030609RoutingModule } from './doc-03-06-09-routing.module';
 import { Doc030609Component } from './doc-03-06-09.component';
-import { SharedModule } from '@shared';
+import { SharedModule } from '@app/shared';
 
 @NgModule({
   declarations: [Doc030609Component],

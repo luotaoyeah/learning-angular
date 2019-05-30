@@ -1,6 +1,6 @@
 import { Doc05070414Component } from './doc-05-07-04-14.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { SharedModule } from '@shared';
+import { SharedModule } from '@app/shared';
 
 describe('Doc05070414Component', () => {
   let fixture: ComponentFixture<Doc05070414Component>;

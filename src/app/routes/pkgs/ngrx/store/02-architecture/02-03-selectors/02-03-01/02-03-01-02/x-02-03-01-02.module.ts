@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { X02030102Component } from './x-02-03-01-02.component';
 import { StoreModule } from '@ngrx/store';
 import { x02030102Reducer } from './store/reducers/02-03-01-02.reducer';
-import { SharedModule } from '@shared';
+import { SharedModule } from '@app/shared';
 
 @NgModule({
   declarations: [X02030102Component],

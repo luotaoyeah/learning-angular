@@ -9,7 +9,7 @@ import {
 import { Doc05070404Component } from './doc-05-07-04-04.component';
 import { Doc05070404Service } from './service/doc-05-07-04-04.service';
 import { defer, interval, Observable, of, throwError } from 'rxjs';
-import { SharedModule } from '@shared';
+import { SharedModule } from '@app/shared';
 import { delay, take } from 'rxjs/operators';
 
 describe('Doc05070404Component', () => {

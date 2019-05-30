@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Doc0507040901Component } from './doc-05-07-04-09-01.component';
-import { SharedModule } from '@shared';
+import { SharedModule } from '@app/shared';
 import { ActivatedRouteStub } from './activated-route-stub';
 import { ActivatedRoute } from '@angular/router';
 import { DebugElement } from '@angular/core';

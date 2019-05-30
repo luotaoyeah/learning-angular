@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SimpleGuard } from '@delon/auth';
-import { environment } from '@env/environment';
+import { environment } from '@app/env/environment';
 // layout
 import { LayoutDefaultComponent } from '../layout/default/default.component';
 import { LayoutPassportComponent } from '../layout/passport/passport.component';

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { SharedModule } from '@shared';
+import { SharedModule } from '@app/shared';
 import { Doc0901RoutingModule } from './doc-09-01-routing.module';
 import { Doc090102Component } from './09-01-02-primary-entry-point-exports/doc-09-01-02.component';
 import { Doc090101Component } from './09-01-01-entry-points/doc-09-01-01.component';
