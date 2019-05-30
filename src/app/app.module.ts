@@ -68,6 +68,7 @@ import {
 } from '@ngrx/router-store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { X01CustomRouterStateSerializer } from './routes/pkgs/ngrx/router-store/02-configuration/service/x-01-custom-router-state-serializer';
 
 const LANG = {
   abbr: 'en',
@@ -198,6 +199,7 @@ const APPINIT_PROVIDES = [
     StoreRouterConnectingModule.forRoot({
       stateKey: 'ngrxRouter',
       navigationActionTiming: NavigationActionTiming.PostActivation,
+      serializer: X01CustomRouterStateSerializer,
     }),
     StoreDevtoolsModule.instrument({
       maxAge: 100,
