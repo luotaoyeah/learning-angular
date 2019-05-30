@@ -62,7 +62,10 @@ import { metaReducers, reducers } from './reducers';
 import { MetaReducer02 } from './routes/pkgs/ngrx/store/04-recipes/04-01-inject-reducers/store/reducers/04-01.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './app.effects';
-import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import {
+  NavigationActionTiming,
+  StoreRouterConnectingModule,
+} from '@ngrx/router-store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 
@@ -194,6 +197,7 @@ const APPINIT_PROVIDES = [
     EffectsModule.forRoot([AppEffects]),
     StoreRouterConnectingModule.forRoot({
       stateKey: 'ngrxRouter',
+      navigationActionTiming: NavigationActionTiming.PostActivation,
     }),
     StoreDevtoolsModule.instrument({
       maxAge: 100,

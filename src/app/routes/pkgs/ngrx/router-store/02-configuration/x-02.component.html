@@ -19,5 +19,11 @@
     nzHeader="StoreRouterConfig.navigationActionTiming"
     nzExpandedIcon="caret-right"
   >
+    <p>
+      默认情况下, <code>ROUTER_NAVIGATION</code> 会在 guard 和 resolve 之前触发,
+      可以将 <code>StoreRouterConfig.navigationActionTiming</code> 设置为
+      <code>NavigationActionTiming.PostActivation</code> , 表示在 guard 和
+      resolve 之后触发
+    </p>
   </nz-collapse-panel>
 </nz-collapse>

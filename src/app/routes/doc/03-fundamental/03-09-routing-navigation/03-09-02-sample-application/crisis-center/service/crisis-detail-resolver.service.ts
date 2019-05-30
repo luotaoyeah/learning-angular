@@ -31,11 +31,11 @@ export class CrisisDetailResolverService implements Resolve<Crisis> {
           }
         }),
       );
+    } else {
+      this.router.navigate([
+        '/doc/fundamental/routing/sample-application/crisis-center',
+      ]);
+      return EMPTY;
     }
-
-    this.router.navigate([
-      '/doc/fundamental/routing/sample-application/crisis-center',
-    ]);
-    return EMPTY;
   }
 }

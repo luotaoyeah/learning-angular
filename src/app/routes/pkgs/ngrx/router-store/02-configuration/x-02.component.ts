@@ -9,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
   styles: [],
 })
 export class X02Component implements OnInit {
+  public foo: string | null = null;
+
   constructor() {}
 
   public ngOnInit() {}
