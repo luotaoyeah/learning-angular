@@ -1,40 +1,46 @@
 <p>
-  在 reactive form 中，以 text input element 为例，数据从 view 流向 model
-  的一个过程是：
+  在 reactive form 中, 以 &lt;input type="text"/&gt; 为例, 数据从 view 流向
+  model 的一个过程是:
 </p>
-<ul>
+<ol>
+  <li>用户在 &lt;input /&gt; 中输入文本</li>
+  <li>&lt;input /&gt; 触发 <code>input</code> 事件</li>
   <li>
-    用户输入文本，text input element 触发 input 事件
+    control value accessor 监听到 <code>input</code> 事件, 将最新数据传给
+    <code>FormControl</code> 实例
   </li>
   <li>
-    control value accessor 监听到 input 事件，触发 FormControl 实例调用
-    FormControl.setValue() 方法更新数据
+    <code>FormControl</code> 实例通过 <code>valueChanges</code> 这个 observable
+    推送最新数据
   </li>
-  <li>
-    FormControl 实例通过 valueChanges 这个 observable 推送最新数据，所有订阅了
-    valueChanges 的对象都可以接收到数据
-  </li>
-</ul>
+  <li>所有订阅了 <code>valueChanges</code> 的订阅者都会接收到最新数据</li>
+</ol>
+
+<nz-divider [nzDashed]="true"></nz-divider>
 
 <p>
-  数据从 model 流向 view 的一个过程是：
+  数据从 model 流向 view 的一个过程是:
 </p>
 <ul>
   <li>
-    调用 FormControl 实例的 setValue() 方法
+    调用 <code>FormControl.setValue()</code> 方法, 更新
+    <code>FormControl</code> 中的数据
   </li>
   <li>
-    valueChanges 这个 observable 推送数据
+    <code>FormControl</code> 通过 <code>valueChanges</code> 这个 observable
+    推送数据
   </li>
+  <li>所有订阅了 <code>valueChanges</code> 的对象都会接收到数据</li>
   <li>
-    所有订阅了 valueChanges 的对象都可以接收到数据
-  </li>
-  <li>
-    control value accessor 负责将新的数据更新到 input element 中去
+    control value accessor 负责将新的数据更新到 &lt;input /&gt; 中去
   </li>
 </ul>
 
-<p><input #colorInputEl type="text" [formControl]="colorFormControl" /></p>
+<nz-divider [nzDashed]="true"></nz-divider>
+
+<p>
+  <input nz-input #colorInputEl type="text" [formControl]="colorFormControl" />
+</p>
 
 <p>
   <button nz-button (click)="getValue()">GET VALUE</button>
