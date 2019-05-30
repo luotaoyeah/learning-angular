@@ -12,6 +12,8 @@ import { Doc03030107Component } from './03-03-01-07-testing/doc-03-03-01-07.comp
 import { Doc0303010701Component } from './03-03-01-07-testing/03-03-01-07-01-testing-reactive-form/doc-03-03-01-07-01.component';
 import { Doc0303010702Component } from './03-03-01-07-testing/03-03-01-07-02-testing-template-driven-form/doc-03-03-01-07-02.component';
 import { SharedModule } from '@app/shared';
+import { Doc0303010401Component } from './03-03-01-04-form-model-setup/03-03-01-04-01/doc-03-03-01-04-01.component';
+import { Doc0303010402Component } from './03-03-01-04-form-model-setup/03-03-01-04-02/doc-03-03-01-04-02.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { SharedModule } from '@app/shared';
     Doc03030102Component,
     Doc03030103Component,
     Doc03030104Component,
+    Doc0303010401Component,
+    Doc0303010402Component,
     Doc03030105Component,
     Doc0303010501Component,
     Doc0303010502Component,

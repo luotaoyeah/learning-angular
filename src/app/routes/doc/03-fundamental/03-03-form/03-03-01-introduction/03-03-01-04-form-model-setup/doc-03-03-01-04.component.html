@@ -1,16 +1,15 @@
-<p>
-  reactive form 和 template-driven form 都是通过 form model 来 track FormControl
-  和 DOM 元素之间的交互的
-</p>
+<nz-collapse [nzAccordion]="true">
+  <nz-collapse-panel
+    nzHeader="Setup In Reactive Forms"
+    nzExpandedIcon="caret-right"
+  >
+    <app-doc-03-03-01-04-01></app-doc-03-03-01-04-01>
+  </nz-collapse-panel>
 
-<p>
-  <input type="text" [formControl]="colorFormControl" />
-</p>
-
-<p>
-  template-driven form 直接在 input element 上通过 [(ngModel)] 绑定到一个
-  component property 上，会自动创建一个 FormControl 实例
-</p>
-<p>
-  <input type="text" [(ngModel)]="color" />
-</p>
+  <nz-collapse-panel
+    nzHeader="Setup In Template-Driven Forms"
+    nzExpandedIcon="caret-right"
+  >
+    <app-doc-03-03-01-04-02></app-doc-03-03-01-04-02>
+  </nz-collapse-panel>
+</nz-collapse>
