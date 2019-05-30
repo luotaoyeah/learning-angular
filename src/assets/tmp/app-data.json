@@ -509,6 +509,15 @@
                   "link": "/pkgs/ngrx/entity/02"
                 }
               ]
+            },
+            {
+              "i18n": "menu.pkgs.ngrx.schematics",
+              "children": [
+                {
+                  "i18n": "menu.pkgs.ngrx.schematics.01",
+                  "link": "/pkgs/ngrx/schematics/01"
+                }
+              ]
             }
           ]
         }

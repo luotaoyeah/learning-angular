@@ -115,6 +115,8 @@
   "menu.pkgs.ngrx.entity": "ENTITY",
   "menu.pkgs.ngrx.entity.01": "Entity Interfaces",
   "menu.pkgs.ngrx.entity.02": "Entity Adapter",
+  "menu.pkgs.ngrx.schematics": "SCHEMATICS",
+  "menu.pkgs.ngrx.schematics.01": "Schematics",
   "menu.blog": "BLOG",
   "menu.blog.a-comprehensive-guide-to-angular-onpush": "A Comprehensive Guide to Angular onPush Change Detection Strategy",
   "menu.search.placeholder": "搜索...",

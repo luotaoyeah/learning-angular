@@ -6,7 +6,8 @@
   "cli": {
     "warnings": {
       "typescriptMismatch": false
-    }
+    },
+    "defaultCollection": "@ngrx/schematics"
   },
   "schematics": {
     "ng-alain:module": {

@@ -67,7 +67,7 @@ import {
   StoreRouterConnectingModule,
 } from '@ngrx/router-store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { environment } from '../environments/environment';
+import { environment } from '@env/environment';
 import { X01CustomRouterStateSerializer } from './routes/pkgs/ngrx/router-store/02-configuration/service/x-01-custom-router-state-serializer';
 
 const LANG = {

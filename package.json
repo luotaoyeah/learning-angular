@@ -79,6 +79,7 @@
     "@angular/language-service": "^7.2.15",
     "@angularclass/hmr": "^2.1.3",
     "@delon/testing": "^7.5.0",
+    "@ngrx/schematics": "^7.4.0",
     "@types/jasmine": "^2.8.16",
     "@types/jasminewd2": "^2.0.6",
     "@types/json-server": "^0.14.0",
