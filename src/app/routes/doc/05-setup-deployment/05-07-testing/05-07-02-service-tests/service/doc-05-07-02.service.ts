@@ -4,8 +4,6 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class Doc050702Service {
-  constructor() {}
-
   public syncGet(): string {
     return 'foo';
   }

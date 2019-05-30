@@ -9,8 +9,6 @@ export class Doc0302020301Component implements OnInit {
 
   public hero = 'C';
 
-  constructor() {}
-
   public ngOnInit() {}
 
   public handleClick01(mouseEvent: MouseEvent) {

@@ -10,7 +10,5 @@ import { Component, OnInit } from '@angular/core';
 export class Doc090202060402Component implements OnInit {
   public e: number = 11111.11111;
 
-  constructor() {}
-
   public ngOnInit() {}
 }

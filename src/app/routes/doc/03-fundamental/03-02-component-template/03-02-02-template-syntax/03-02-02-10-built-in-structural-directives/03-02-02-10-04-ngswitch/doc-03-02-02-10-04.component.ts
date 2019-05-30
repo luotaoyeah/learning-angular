@@ -13,7 +13,5 @@ export class Doc0302021004Component implements OnInit {
   ];
   public item: string | null = null;
 
-  constructor() {}
-
   public ngOnInit() {}
 }

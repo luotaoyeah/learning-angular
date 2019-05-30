@@ -11,7 +11,5 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./intro-into-component-b.component.scss'],
 })
 export class IntroIntoComponentBComponent implements OnInit {
-  constructor() {}
-
   public ngOnInit() {}
 }

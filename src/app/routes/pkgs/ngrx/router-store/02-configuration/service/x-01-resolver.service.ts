@@ -10,8 +10,6 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class X01ResolverService implements Resolve<string> {
-  constructor() {}
-
   public resolve(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot,

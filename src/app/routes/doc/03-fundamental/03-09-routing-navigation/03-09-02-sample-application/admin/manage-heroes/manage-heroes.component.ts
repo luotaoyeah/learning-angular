@@ -6,7 +6,5 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./manage-heroes.component.scss'],
 })
 export class ManageHeroesComponent implements OnInit {
-  constructor() {}
-
   public ngOnInit() {}
 }

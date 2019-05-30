@@ -31,8 +31,6 @@ export class Doc03030301Component implements OnInit {
     this.submitted = true;
   }
 
-  constructor() {}
-
   public ngOnInit() {}
 
   public addHero() {

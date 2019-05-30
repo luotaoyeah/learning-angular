@@ -20,8 +20,6 @@ export class Doc0302040801Component
   @ContentChild(Doc0302040802Component)
   public contentChild!: Doc0302040802Component;
 
-  constructor() {}
-
   public ngOnInit(): void {}
 
   public ngDoCheck(): void {}

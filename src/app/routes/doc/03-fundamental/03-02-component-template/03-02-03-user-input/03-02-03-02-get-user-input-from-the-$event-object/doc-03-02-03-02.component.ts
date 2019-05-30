@@ -7,8 +7,6 @@ import { Component, OnInit } from '@angular/core';
 export class Doc03020302Component implements OnInit {
   public values = '';
 
-  constructor() {}
-
   public ngOnInit() {}
 
   public handleKeyUp(event: KeyboardEvent) {

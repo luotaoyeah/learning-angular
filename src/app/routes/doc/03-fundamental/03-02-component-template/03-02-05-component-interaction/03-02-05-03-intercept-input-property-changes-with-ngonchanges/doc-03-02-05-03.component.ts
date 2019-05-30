@@ -8,8 +8,6 @@ export class Doc03020503Component implements OnInit {
   public minor = 0;
   public major = 0;
 
-  constructor() {}
-
   public ngOnInit() {}
 
   public updateMajor() {

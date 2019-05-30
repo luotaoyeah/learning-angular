@@ -14,8 +14,6 @@ export class Doc03030206Component implements OnInit {
     }),
   });
 
-  constructor() {}
-
   public ngOnInit() {}
 
   public setValue() {

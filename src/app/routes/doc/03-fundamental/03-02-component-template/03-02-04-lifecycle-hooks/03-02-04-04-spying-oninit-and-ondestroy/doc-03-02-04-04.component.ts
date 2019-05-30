@@ -7,7 +7,5 @@ import { Component, OnInit } from '@angular/core';
 export class Doc03020404Component implements OnInit {
   public displayChild = true;
 
-  constructor() {}
-
   public ngOnInit() {}
 }

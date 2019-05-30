@@ -16,8 +16,6 @@ export class Doc03030204Component implements OnInit {
     lastName: new FormControl(''),
   });
 
-  constructor() {}
-
   public ngOnInit() {}
 
   public onSubmit() {

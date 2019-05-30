@@ -9,7 +9,5 @@ export class Doc0302020203Component implements OnInit {
 
   public hero = 'COMPONENT HERO';
 
-  constructor() {}
-
   public ngOnInit() {}
 }

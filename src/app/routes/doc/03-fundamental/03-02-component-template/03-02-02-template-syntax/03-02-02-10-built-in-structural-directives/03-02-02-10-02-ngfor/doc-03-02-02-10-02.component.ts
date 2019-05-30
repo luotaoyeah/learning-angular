@@ -7,7 +7,5 @@ import { Component, OnInit } from '@angular/core';
 export class Doc0302021002Component implements OnInit {
   public values: Array<string> = ['FOO', 'BAR', 'BAZ'];
 
-  constructor() {}
-
   public ngOnInit() {}
 }

@@ -10,7 +10,5 @@ import { Component, OnInit } from '@angular/core';
   styles: [],
 })
 export class Doc0806Component implements OnInit {
-  constructor() {}
-
   public ngOnInit() {}
 }

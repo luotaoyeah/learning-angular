@@ -8,7 +8,5 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './doc-03-04-02.component.html',
 })
 export class Doc030402Component implements OnInit {
-  constructor() {}
-
   public ngOnInit() {}
 }

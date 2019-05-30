@@ -12,7 +12,5 @@ import { STORE_TOKEN } from './service/doc-03-07-04-03-04-01.service';
   ],
 })
 export class Doc0307040304Component implements OnInit {
-  constructor() {}
-
   public ngOnInit() {}
 }

@@ -20,8 +20,6 @@ export class Doc03030205Component implements OnInit {
     }),
   });
 
-  constructor() {}
-
   public ngOnInit() {}
 
   public onSubmit() {

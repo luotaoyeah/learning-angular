@@ -6,7 +6,5 @@ import { Component, OnInit } from '@angular/core';
   styles: [],
 })
 export class GlobalComponent implements OnInit {
-  constructor() {}
-
   public ngOnInit() {}
 }

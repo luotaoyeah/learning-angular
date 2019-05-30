@@ -10,7 +10,5 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DocFundamentalArchitectureIntroToComponentComponent
   implements OnInit {
-  constructor() {}
-
   public ngOnInit() {}
 }

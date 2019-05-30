@@ -16,7 +16,5 @@ export class Doc030202120301Component implements OnInit {
   // tslint:disable-next-line:no-output-rename
   @Output('myBar') public bar: EventEmitter<string> = new EventEmitter();
 
-  constructor() {}
-
   public ngOnInit() {}
 }

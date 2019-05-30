@@ -8,7 +8,5 @@ import { FormControl } from '@angular/forms';
 export class Doc0303010701Component implements OnInit {
   public colorFormControl: FormControl = new FormControl('RED');
 
-  constructor() {}
-
   public ngOnInit() {}
 }

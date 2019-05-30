@@ -6,7 +6,5 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./doc-fundamental-architecture-di.component.scss'],
 })
 export class DocFundamentalArchitectureDiComponent implements OnInit {
-  constructor() {}
-
   public ngOnInit() {}
 }

@@ -9,7 +9,5 @@ export class Doc03020506Component implements OnInit {
   @ViewChild(Doc0302050601Component)
   public doc0302050501Component!: Doc0302050601Component;
 
-  constructor() {}
-
   public ngOnInit() {}
 }

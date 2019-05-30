@@ -7,7 +7,5 @@ import { Component, OnInit } from '@angular/core';
 export class Doc0302021101Component implements OnInit {
   public readonly SOME_PROPERTY = 'SOME_PROPERTY_VALUE';
 
-  constructor() {}
-
   public ngOnInit() {}
 }

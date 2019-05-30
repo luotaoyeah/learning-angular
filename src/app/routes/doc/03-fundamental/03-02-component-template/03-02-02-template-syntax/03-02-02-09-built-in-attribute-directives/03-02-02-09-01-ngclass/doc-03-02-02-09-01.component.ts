@@ -8,7 +8,5 @@ export class Doc0302020901Component implements OnInit {
   public isFoo = true;
   public isBar = false;
 
-  constructor() {}
-
   public ngOnInit() {}
 }

@@ -14,7 +14,5 @@ export class Doc030202070301Component implements OnInit {
     foo: string;
   }> = new EventEmitter();
 
-  constructor() {}
-
   public ngOnInit() {}
 }

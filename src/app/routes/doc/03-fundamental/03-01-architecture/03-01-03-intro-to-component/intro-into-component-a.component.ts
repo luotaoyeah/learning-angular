@@ -9,7 +9,5 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./intro-into-component-a.component.scss'],
 })
 export class IntroIntoComponentAComponent implements OnInit {
-  constructor() {}
-
   public ngOnInit() {}
 }

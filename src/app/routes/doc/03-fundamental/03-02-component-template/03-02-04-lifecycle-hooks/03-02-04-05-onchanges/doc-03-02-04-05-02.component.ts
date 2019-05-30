@@ -14,8 +14,6 @@ import {
 export class Doc0302040502Component implements OnInit, OnChanges {
   @Input() public bar: { name: string } = { name: 'BAR' };
 
-  constructor() {}
-
   public ngOnInit() {}
 
   /*

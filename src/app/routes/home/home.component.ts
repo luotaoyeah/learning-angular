@@ -8,7 +8,5 @@ import { Component, OnInit } from '@angular/core';
   styles: [],
 })
 export class HomeComponent implements OnInit {
-  constructor() {}
-
   public ngOnInit() {}
 }

@@ -7,8 +7,6 @@ import { Component, OnInit } from '@angular/core';
 export class Doc03021106Component implements OnInit {
   public items: Array<number> = [1, 2, 3];
 
-  constructor() {}
-
   public ngOnInit() {}
 
   public push01() {

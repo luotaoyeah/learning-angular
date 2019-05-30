@@ -28,8 +28,6 @@ export class Doc0902020601Component implements OnInit {
     },
   );
 
-  constructor() {}
-
   public ngOnInit() {}
 
   public handleClick() {

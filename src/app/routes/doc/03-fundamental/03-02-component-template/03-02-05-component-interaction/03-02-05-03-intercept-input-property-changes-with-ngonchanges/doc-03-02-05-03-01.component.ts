@@ -16,8 +16,6 @@ export class Doc0302050301Component implements OnInit, OnChanges {
   @Input() public major = 0;
   @Input() public minor = 0;
 
-  constructor() {}
-
   public ngOnInit() {}
 
   public ngOnChanges(changes: SimpleChanges): void {

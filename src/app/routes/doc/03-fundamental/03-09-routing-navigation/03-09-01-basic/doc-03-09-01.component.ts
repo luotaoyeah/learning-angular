@@ -6,7 +6,5 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./doc-03-09-01.component.scss'],
 })
 export class Doc030901Component implements OnInit {
-  constructor() {}
-
   public ngOnInit() {}
 }

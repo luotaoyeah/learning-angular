@@ -18,8 +18,6 @@ export class Doc090102050601Component implements OnInit, OnDestroy {
   public count: number = 0;
   private subscription: Subscription | null = null;
 
-  constructor() {}
-
   public ngOnInit(): void {
     this.subscription = interval(1000).subscribe((value: number) => {
       /*

@@ -35,6 +35,4 @@ export class ForbiddenNameDirective implements Validator {
       ? forbiddenNameValidator(new RegExp(this.forbiddenName))(control)
       : null;
   }
-
-  constructor() {}
 }

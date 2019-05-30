@@ -8,8 +8,6 @@ export class Doc03020405Component implements OnInit {
   public foo = '';
   public bar: { name: string } = { name: '' };
 
-  constructor() {}
-
   public ngOnInit() {}
 
   public handleFooChange(value: string) {

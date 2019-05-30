@@ -8,7 +8,5 @@ import { Component, OnInit } from '@angular/core';
 export class Doc02Component implements OnInit {
   public title = 'TOUR OF HEROES';
 
-  constructor() {}
-
   public ngOnInit() {}
 }

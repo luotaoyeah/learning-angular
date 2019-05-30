@@ -11,8 +11,6 @@ export class Doc05070406Component implements OnInit {
   @Output()
   public ntClick: EventEmitter<number> = new EventEmitter();
 
-  constructor() {}
-
   public ngOnInit() {}
 
   public handleClick() {

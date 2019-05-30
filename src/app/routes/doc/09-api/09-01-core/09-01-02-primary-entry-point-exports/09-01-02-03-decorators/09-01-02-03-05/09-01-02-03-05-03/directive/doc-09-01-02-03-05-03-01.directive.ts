@@ -17,8 +17,6 @@ import { Directive, EventEmitter, OnInit } from '@angular/core';
 export class Doc09010203050301Directive implements OnInit {
   public changeColor: EventEmitter<string> = new EventEmitter();
 
-  constructor() {}
-
   public ngOnInit(): void {
     setTimeout(() => {
       this.changeColor.emit('#f00');

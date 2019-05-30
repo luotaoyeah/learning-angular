@@ -17,7 +17,5 @@ export class Doc0302050101Component implements OnInit {
   // tslint:disable-next-line:no-input-rename
   @Input('myBar') public bar = '';
 
-  constructor() {}
-
   public ngOnInit() {}
 }

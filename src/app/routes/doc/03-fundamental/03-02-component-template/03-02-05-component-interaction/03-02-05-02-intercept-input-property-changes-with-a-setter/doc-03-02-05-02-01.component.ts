@@ -29,7 +29,5 @@ export class Doc0302050201Component implements OnInit {
     return this._bar;
   }
 
-  constructor() {}
-
   public ngOnInit() {}
 }

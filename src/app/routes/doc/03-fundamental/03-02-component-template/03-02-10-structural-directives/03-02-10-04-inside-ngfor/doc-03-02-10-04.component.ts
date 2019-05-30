@@ -12,8 +12,6 @@ export class Doc03021004Component implements OnInit {
     { id: 3, name: 'BAZ' },
   ];
 
-  constructor() {}
-
   public ngOnInit() {}
 
   public trackById(hero: { id: number; name: string }): number {

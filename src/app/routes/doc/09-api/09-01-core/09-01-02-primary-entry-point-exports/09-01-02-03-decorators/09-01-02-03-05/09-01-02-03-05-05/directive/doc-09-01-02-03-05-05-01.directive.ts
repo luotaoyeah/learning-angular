@@ -8,6 +8,4 @@ import { Directive } from '@angular/core';
   selector: '[appDoc09010203050501]',
   exportAs: 'appDoc09010203050501',
 })
-export class Doc09010203050501Directive {
-  constructor() {}
-}
+export class Doc09010203050501Directive {}

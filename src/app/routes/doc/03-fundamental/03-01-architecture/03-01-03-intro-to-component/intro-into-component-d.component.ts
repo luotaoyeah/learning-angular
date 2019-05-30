@@ -12,8 +12,6 @@ export class IntroIntoComponentDComponent implements OnInit {
 
   public isSpanVisible = true;
 
-  constructor() {}
-
   public ngOnInit() {}
 
   public onClick() {

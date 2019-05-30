@@ -7,7 +7,5 @@ import { Component, OnInit } from '@angular/core';
 export class Doc0303010702Component implements OnInit {
   public color = 'RED';
 
-  constructor() {}
-
   public ngOnInit() {}
 }

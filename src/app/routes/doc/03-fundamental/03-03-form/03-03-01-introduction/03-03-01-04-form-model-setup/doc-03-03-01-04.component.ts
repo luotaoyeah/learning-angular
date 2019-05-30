@@ -14,7 +14,5 @@ export class Doc03030104Component implements OnInit {
 
   public color = 'red';
 
-  constructor() {}
-
   public ngOnInit() {}
 }

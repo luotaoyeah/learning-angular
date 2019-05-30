@@ -19,7 +19,5 @@ export class Doc03030403Component implements OnInit {
 
   public name: string = '';
 
-  constructor() {}
-
   public ngOnInit() {}
 }

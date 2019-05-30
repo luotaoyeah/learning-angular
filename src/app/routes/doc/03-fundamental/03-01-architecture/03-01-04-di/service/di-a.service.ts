@@ -10,8 +10,6 @@ import { Injectable } from '@angular/core';
  */
 @Injectable()
 export class DiAService {
-  constructor() {}
-
   public test(): void {
     console.log('WORKS');
   }

@@ -5,6 +5,4 @@ import { Directive } from '@angular/core';
 })
 export class Doc090102030304Directive {
   public readonly foo: string = 'FOO';
-
-  constructor() {}
 }

@@ -10,6 +10,4 @@ export class Doc03020402Component {
 
   public foo01: number = 1;
   public foo02: number = 1;
-
-  constructor() {}
 }

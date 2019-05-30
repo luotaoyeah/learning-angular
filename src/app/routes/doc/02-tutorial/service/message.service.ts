@@ -7,8 +7,6 @@ export class MessageService {
   /** 消息列表 */
   public messages: string[] = [];
 
-  constructor() {}
-
   /**
    * 添加一条消息
    * @param message 消息

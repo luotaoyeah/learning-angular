@@ -7,7 +7,5 @@ import { Component, OnInit } from '@angular/core';
 export class Doc0302021302Component implements OnInit {
   public x: { y: { z: string } | null } | null = null;
 
-  constructor() {}
-
   public ngOnInit() {}
 }

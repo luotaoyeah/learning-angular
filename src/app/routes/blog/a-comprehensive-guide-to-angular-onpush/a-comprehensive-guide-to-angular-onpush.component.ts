@@ -9,7 +9,5 @@ import { Component, OnInit } from '@angular/core';
   styles: [],
 })
 export class AComprehensiveGuideToAngularOnpushComponent implements OnInit {
-  constructor() {}
-
   public ngOnInit() {}
 }

@@ -9,7 +9,5 @@ import { Component, OnInit } from '@angular/core';
   styles: [],
 })
 export class SchematicsComponent implements OnInit {
-  constructor() {}
-
   public ngOnInit() {}
 }

@@ -8,8 +8,6 @@ export class Doc09010203050302Directive implements OnInit {
   @Output('appDoc09010203050301ChangeColor')
   public changeColor: EventEmitter<string> = new EventEmitter();
 
-  constructor() {}
-
   public ngOnInit(): void {
     setTimeout(() => {
       this.changeColor.emit('#0f0');

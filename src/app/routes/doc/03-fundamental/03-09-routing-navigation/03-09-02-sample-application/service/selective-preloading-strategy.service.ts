@@ -9,8 +9,6 @@ import { of } from 'rxjs/internal/observable/of';
 export class SelectivePreloadingStrategyService implements PreloadingStrategy {
   public modules: Array<string> = [];
 
-  constructor() {}
-
   // tslint:disable-next-line:no-any
   public preload(route: Route, fn: () => Observable<any>): Observable<any> {
     if (route.data && route.data.preload) {

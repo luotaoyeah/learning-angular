@@ -6,7 +6,5 @@ import { Component, OnInit } from '@angular/core';
   styles: [],
 })
 export class Doc03060902Component implements OnInit {
-  constructor() {}
-
   public ngOnInit() {}
 }

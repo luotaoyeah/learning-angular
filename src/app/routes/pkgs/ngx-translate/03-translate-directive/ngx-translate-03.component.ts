@@ -8,7 +8,5 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './ngx-translate-03.component.html',
 })
 export class NgxTranslate03Component implements OnInit {
-  constructor() {}
-
   public ngOnInit() {}
 }

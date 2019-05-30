@@ -12,7 +12,5 @@ export class Doc090202060301Component implements OnInit {
   public now02: number = Date.now();
   public now03: string = this.now01.toISOString();
 
-  constructor() {}
-
   public ngOnInit() {}
 }

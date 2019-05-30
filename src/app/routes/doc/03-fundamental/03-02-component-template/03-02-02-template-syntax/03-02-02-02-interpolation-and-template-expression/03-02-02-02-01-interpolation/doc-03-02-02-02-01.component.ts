@@ -18,8 +18,6 @@ export class Doc0302020201Component implements OnInit {
     },
   };
 
-  constructor() {}
-
   public getVal(): number {
     return 8;
   }

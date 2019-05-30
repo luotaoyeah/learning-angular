@@ -5,8 +5,6 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './doc-03-02-05-04.component.html',
 })
 export class Doc03020504Component implements OnInit {
-  constructor() {}
-
   public ngOnInit() {}
 
   public handleVote($event: string) {

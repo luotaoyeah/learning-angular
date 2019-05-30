@@ -10,7 +10,5 @@ import { Component, OnInit } from '@angular/core';
 export class Doc03021101Component implements OnInit {
   public birthday: Date = new Date(1999, 0, 1);
 
-  constructor() {}
-
   public ngOnInit() {}
 }

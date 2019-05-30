@@ -19,8 +19,6 @@ export class Doc0302050401Component implements OnInit {
    */
   @Output() public vote: EventEmitter<string> = new EventEmitter();
 
-  constructor() {}
-
   public ngOnInit() {}
 
   public doVote(result: string) {

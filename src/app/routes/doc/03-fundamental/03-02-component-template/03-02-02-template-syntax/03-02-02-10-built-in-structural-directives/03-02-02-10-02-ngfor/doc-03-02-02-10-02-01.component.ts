@@ -7,7 +7,5 @@ import { Component, Input, OnInit } from '@angular/core';
 export class Doc030202100201Component implements OnInit {
   @Input() public msg = '';
 
-  constructor() {}
-
   public ngOnInit() {}
 }

@@ -16,8 +16,6 @@ export class Doc090102030505Component implements OnInit {
   @ViewChild('tpl02')
   public appDoc09010203050502!: Doc09010203050502Directive;
 
-  constructor() {}
-
   public ngOnInit() {
     console.assert(
       this.appDoc09010203050501 instanceof Doc09010203050501Directive,

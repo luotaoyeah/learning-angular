@@ -11,8 +11,6 @@ export class Doc0507030102Component implements OnInit {
   @Output()
   public myOutput: EventEmitter<string> = new EventEmitter();
 
-  constructor() {}
-
   public ngOnInit() {}
 
   public click(): void {

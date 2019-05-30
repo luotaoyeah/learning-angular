@@ -8,7 +8,5 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class Doc030202070201Component implements OnInit {
   @Output() public someChange: EventEmitter<boolean> = new EventEmitter();
 
-  constructor() {}
-
   public ngOnInit() {}
 }

@@ -7,7 +7,5 @@ import { Component, OnInit } from '@angular/core';
 export class Doc03021008Component implements OnInit {
   public visible = true;
 
-  constructor() {}
-
   public ngOnInit() {}
 }

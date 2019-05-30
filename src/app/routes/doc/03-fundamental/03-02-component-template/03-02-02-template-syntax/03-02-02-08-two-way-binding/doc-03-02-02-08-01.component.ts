@@ -14,8 +14,6 @@ export class Doc0302020801Component implements OnInit {
   @Input() public fontSize = 0;
   @Output() public fontSizeChange: EventEmitter<number> = new EventEmitter();
 
-  constructor() {}
-
   public ngOnInit() {}
 
   public decrease() {

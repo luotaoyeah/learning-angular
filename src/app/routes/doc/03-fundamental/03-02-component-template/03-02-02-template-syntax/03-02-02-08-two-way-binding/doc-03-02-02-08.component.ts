@@ -7,7 +7,5 @@ import { Component, OnInit } from '@angular/core';
 export class Doc03020208Component implements OnInit {
   public fontSizePx = 12;
 
-  constructor() {}
-
   public ngOnInit() {}
 }

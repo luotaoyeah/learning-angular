@@ -4,8 +4,6 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class Doc05070415Service {
-  constructor() {}
-
   public foo(): string {
     return 'FOO';
   }

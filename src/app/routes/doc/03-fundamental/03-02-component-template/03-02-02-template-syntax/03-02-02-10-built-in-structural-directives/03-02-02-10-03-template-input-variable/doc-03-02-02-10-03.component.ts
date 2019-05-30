@@ -12,8 +12,6 @@ export class Doc0302021003Component implements OnInit {
     { id: 3, name: 'c' },
   ];
 
-  constructor() {}
-
   public ngOnInit() {}
 
   public reset() {

@@ -12,7 +12,5 @@ export class Doc03030202Component implements OnInit {
    */
   public nameFormControl: FormControl = new FormControl('');
 
-  constructor() {}
-
   public ngOnInit() {}
 }

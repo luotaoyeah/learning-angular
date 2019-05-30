@@ -11,8 +11,6 @@ export class Doc0507030101Component implements OnInit {
     return `the light is ${this.isOn ? 'ON' : 'OFF'}`;
   }
 
-  constructor() {}
-
   public ngOnInit() {}
 
   public click(): void {

@@ -5,7 +5,5 @@ import { Component, OnInit } from '@angular/core';
   template: '<p>404</p>',
 })
 export class Doc030901NotFoundComponent implements OnInit {
-  constructor() {}
-
   public ngOnInit() {}
 }

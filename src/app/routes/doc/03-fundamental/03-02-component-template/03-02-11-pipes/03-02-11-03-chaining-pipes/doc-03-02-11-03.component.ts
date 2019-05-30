@@ -12,8 +12,6 @@ export class Doc03021103Component implements OnInit {
     return this.toggle ? 'shortDate' : 'fullDate';
   }
 
-  constructor() {}
-
   public ngOnInit() {}
 
   public toggleFormat(): void {

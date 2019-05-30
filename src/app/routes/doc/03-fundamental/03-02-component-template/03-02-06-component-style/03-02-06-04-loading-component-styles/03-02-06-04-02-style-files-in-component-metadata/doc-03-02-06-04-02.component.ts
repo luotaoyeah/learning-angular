@@ -10,7 +10,5 @@ import { Component, OnInit } from '@angular/core';
   styles: ['p{font-weight: bold}'],
 })
 export class Doc0302060402Component implements OnInit {
-  constructor() {}
-
   public ngOnInit() {}
 }

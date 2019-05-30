@@ -16,7 +16,5 @@ export class Doc03030402Component implements OnInit {
     return this.formGroup.get(['name']) as FormControl;
   }
 
-  constructor() {}
-
   public ngOnInit() {}
 }

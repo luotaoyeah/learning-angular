@@ -9,7 +9,5 @@ export class Doc03020101Component implements OnInit {
   public title = 'TOUR OF HEROES';
   public myHero = 'Windstorm';
 
-  constructor() {}
-
   public ngOnInit() {}
 }

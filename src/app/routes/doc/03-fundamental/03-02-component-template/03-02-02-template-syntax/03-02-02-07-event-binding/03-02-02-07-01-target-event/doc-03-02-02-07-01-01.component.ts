@@ -8,8 +8,6 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class Doc030202070101Component implements OnInit {
   @Output() public ntClick: EventEmitter<string> = new EventEmitter();
 
-  constructor() {}
-
   public ngOnInit() {}
 
   public handleClick() {

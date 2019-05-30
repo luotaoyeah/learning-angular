@@ -9,7 +9,5 @@ export class Doc0302020505Component implements OnInit {
 
   public maliciousHTML = 'FOO <script>alert("BAZ")</script> BAR';
 
-  constructor() {}
-
   public ngOnInit() {}
 }

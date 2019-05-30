@@ -7,8 +7,6 @@ import { Component, OnInit } from '@angular/core';
 export class Doc03020306Component implements OnInit {
   public heroes: Array<string> = [];
 
-  constructor() {}
-
   public ngOnInit() {}
 
   public addHero(inputEl: HTMLInputElement) {

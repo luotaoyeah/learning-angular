@@ -7,7 +7,5 @@ import { Component, OnInit } from '@angular/core';
 export class Doc03020406Component implements OnInit {
   public bar: { name: string } = { name: 'FOO' };
 
-  constructor() {}
-
   public ngOnInit() {}
 }

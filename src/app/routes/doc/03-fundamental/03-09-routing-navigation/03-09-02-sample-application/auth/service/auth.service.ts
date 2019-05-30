@@ -10,8 +10,6 @@ export class AuthService {
   public isLogin = false;
   public redirectUrl = '';
 
-  constructor() {}
-
   public login(): Observable<boolean> {
     return of(true).pipe(
       delay(1000),

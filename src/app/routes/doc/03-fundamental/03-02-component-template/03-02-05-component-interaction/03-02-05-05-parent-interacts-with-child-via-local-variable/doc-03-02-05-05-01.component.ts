@@ -13,8 +13,6 @@ import { Component, OnInit } from '@angular/core';
 export class Doc0302050501Component implements OnInit {
   public result = '';
 
-  constructor() {}
-
   public ngOnInit() {}
 
   public doVote(result: string) {

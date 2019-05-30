@@ -10,8 +10,6 @@ export class Doc0303010501Component implements OnInit {
 
   public colorFormControl: FormControl = new FormControl('red');
 
-  constructor() {}
-
   public ngOnInit() {}
 
   public getValue() {

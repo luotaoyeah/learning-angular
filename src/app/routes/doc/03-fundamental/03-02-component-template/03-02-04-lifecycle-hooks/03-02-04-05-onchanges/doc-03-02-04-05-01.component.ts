@@ -13,8 +13,6 @@ import {
 export class Doc0302040501Component implements OnInit, OnChanges {
   @Input() public foo = '';
 
-  constructor() {}
-
   public ngOnInit() {}
 
   /*

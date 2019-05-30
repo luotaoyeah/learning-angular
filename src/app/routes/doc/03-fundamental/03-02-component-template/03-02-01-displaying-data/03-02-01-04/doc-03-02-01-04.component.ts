@@ -14,7 +14,5 @@ export class Doc03020104Component implements OnInit {
   ];
   public hero: string = this.heroes[0];
 
-  constructor() {}
-
   public ngOnInit() {}
 }

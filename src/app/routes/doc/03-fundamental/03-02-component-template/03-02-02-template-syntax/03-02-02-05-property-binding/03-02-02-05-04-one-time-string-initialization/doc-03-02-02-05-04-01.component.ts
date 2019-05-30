@@ -8,7 +8,5 @@ export class Doc030202050401Component implements OnInit {
   @Input() public foo = '';
   @Input() public bar = '';
 
-  constructor() {}
-
   public ngOnInit() {}
 }

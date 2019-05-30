@@ -10,7 +10,5 @@ import { Component, OnInit } from '@angular/core';
 export class Doc090202060303Component implements OnInit {
   public now: Date = new Date();
 
-  constructor() {}
-
   public ngOnInit() {}
 }

@@ -5,8 +5,6 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
   template: '<p-button label="FOO"></p-button>',
 })
 export class Doc030202100101Component implements OnInit, OnDestroy {
-  constructor() {}
-
   public ngOnInit() {
     console.log(`%c${Doc030202100101Component.name} CREATED`, 'color:green');
   }

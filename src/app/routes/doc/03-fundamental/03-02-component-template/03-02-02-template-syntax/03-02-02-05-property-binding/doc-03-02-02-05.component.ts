@@ -8,7 +8,5 @@ import { Component, OnInit } from '@angular/core';
 export class Doc03020205Component implements OnInit {
   public picUrl = 'assets/images/20190328090519.jpg';
 
-  constructor() {}
-
   public ngOnInit() {}
 }
