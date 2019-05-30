@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 import { EntityRoutingModule } from './entity-routing.module';
 import { SharedModule } from '@shared';
 import { X01Component } from './01-entity-interfaces/x-01.component';
+import { X02Module } from './02-entity-adapter/x-02.module';
 
 @NgModule({
   declarations: [X01Component],
-  imports: [CommonModule, EntityRoutingModule, SharedModule],
+  imports: [CommonModule, EntityRoutingModule, SharedModule, X02Module],
 })
 export class EntityModule {}

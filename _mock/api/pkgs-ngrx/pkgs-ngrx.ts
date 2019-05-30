@@ -9,6 +9,16 @@ function init(app: Application) {
       { id: 3, name: '第六感生死缘' },
     ]);
   });
+
+  app.get('/pkgs/ngrx/entity/02/users', (req: Request, res: Response) => {
+    setTimeout(() => {
+      res.jsonp([
+        { id: 1, name: '张三' },
+        { id: 2, name: '李四' },
+        { id: 3, name: '王五' },
+      ]);
+    }, 2000);
+  });
 }
 
 module.exports = { init };

@@ -1,0 +1,33 @@
+<nz-collapse [nzAccordion]="true">
+  <nz-collapse-panel
+    nzHeader="createEntityAdapter()"
+    nzExpandedIcon="caret-right"
+  >
+    <button nz-button (click)="loadUsers()">LOAD</button>
+    <button nz-button (click)="clearUsers()">CLEAR</button>
+
+    <nz-divider [nzDashed]="true"></nz-divider>
+
+    <nz-table
+      #userTable
+      [nzData]="users$ | async"
+      [nzBordered]="true"
+      nzSize="middle"
+      [nzShowPagination]="false"
+      [nzLoading]="userTableLoading"
+    >
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>NAME</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of userTable.data">
+          <td>{{ user.id }}</td>
+          <td>{{ user.name }}</td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </nz-collapse-panel>
+</nz-collapse>

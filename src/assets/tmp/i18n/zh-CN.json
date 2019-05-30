@@ -114,6 +114,7 @@
   "menu.pkgs.ngrx.router-store.02": "Configuration",
   "menu.pkgs.ngrx.entity": "ENTITY",
   "menu.pkgs.ngrx.entity.01": "Entity Interfaces",
+  "menu.pkgs.ngrx.entity.02": "Entity Adapter",
   "menu.blog": "BLOG",
   "menu.blog.a-comprehensive-guide-to-angular-onpush": "A Comprehensive Guide to Angular onPush Change Detection Strategy",
   "menu.search.placeholder": "搜索...",
