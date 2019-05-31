@@ -1,29 +1,46 @@
 <form [formGroup]="profileFormGroup" (ngSubmit)="onSubmit()">
   <label for="firstname">
     FIRST NAME:
-    <input type="text" id="firstname" formControlName="firstName" />
+    <input type="text" nz-input id="firstname" formControlName="firstName" />
   </label>
   <label for="lastname">
     LAST NAME:
-    <input type="text" id="lastname" formControlName="lastName" />
+    <input type="text" nz-input id="lastname" formControlName="lastName" />
   </label>
 
   <p>
-    在容器元素（如：div）上通过 FormGroupName 指令，指定要关联的 child from
-    group，指定之后，在 div 里面的 &lt;input&gt; 上，就可以直接通过
-    FormControlName 指令指定它要关联的 FormControl，这个 FormControl 是 child
-    form group 下面的一个 FormControl
+    在容器元素 (如: div) 上通过 <code>FormGroupName</code> 指令, 指定要关联的
+    child from group, 指定之后, 在 div 里面的 &lt;input&gt; 上, 就可以直接通过
+    <code>FormControlName</code> 指令指定它要关联的 <code>FormControl</code>,
+    这个 <code>FormControl</code> 是 child form group 下面的一个
+    <code>FormControl</code>
   </p>
 
-  <div formGroupName="address">
-    <fieldset>
-      <legend>ADDRESS</legend>
-      <label for="street">
-        STREET:
-        <input type="text" id="street" formControlName="street" />
-      </label>
-    </fieldset>
-  </div>
+  <nz-collapse>
+    <nz-collapse-panel nzExpandedIcon="caret-right" nzHeader="ADDRESS">
+      <div formGroupName="address">
+        <label for="street">
+          STREET:
+          <input type="text" nz-input id="street" formControlName="street" />
+        </label>
+
+        <label for="city">
+          STREET:
+          <input type="text" nz-input id="city" formControlName="city" />
+        </label>
+
+        <label for="state">
+          STREET:
+          <input type="text" nz-input id="state" formControlName="state" />
+        </label>
+
+        <label for="zip">
+          CITY:
+          <input type="text" nz-input id="zip" formControlName="zip" />
+        </label>
+      </div>
+    </nz-collapse-panel>
+  </nz-collapse>
 
   <div>
     <button type="submit" nz-button>SUBMIT</button>
