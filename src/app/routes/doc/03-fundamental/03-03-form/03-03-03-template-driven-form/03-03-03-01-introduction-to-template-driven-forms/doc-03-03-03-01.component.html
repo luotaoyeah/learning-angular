@@ -12,11 +12,17 @@
         实例对象, 如果 template reference variable 后面指定了参数, 表示将这个
         variable 绑定到对应的 directive 实例上去
       </p>
+
       <p>
-        directive 可以通过 exportAs 指定如何绑定到 template reference variable
-        上去, 如下, NgModel 指令通过 exportAs 指定的是 ngModel, 因此
-        #name="ngModel" 实际上绑定的就是对应的 NgModel 指令的实例对象
+        directive 可以通过 <code>exportAs</code> 指定如何绑定到 template
+        reference variable 上去, 如下, <code>NgModel</code> 指令通过
+        <code>exportAs</code>
+        指定的是 ngModel, 因此
+        <code>#name="ngModel"</code> 实际上绑定的就是对应的
+        <code>NgModel</code>
+        指令的实例对象
       </p>
+
       <label for="name">Name</label>
       <input
         type="text"
@@ -25,9 +31,12 @@
         name="name"
         required
         [(ngModel)]="hero.name"
-        #name="ngModel"
+        #nameNgModel="ngModel"
       />
-      <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+      <div
+        [hidden]="nameNgModel.valid || nameNgModel.pristine"
+        class="alert alert-danger"
+      >
         name is required
       </div>
     </div>
@@ -52,7 +61,9 @@
         name="power"
         [(ngModel)]="hero.power"
       >
-        <option *ngFor="let pow of powers" [value]="pow">{{ pow }}</option>
+        <option *ngFor="let power of powers" [value]="power">
+          {{ power }}
+        </option>
       </select>
     </div>
 
@@ -67,12 +78,13 @@
 </div>
 
 <p>
-  当 ngModel 位于 &lt;form&gt; 里面时, 除了 two-way data binding 之外, ngModel
-  还提供了一个特性: 根据 form control 的状态, 设置不同的 css class, 总共有三组:
+  当 <code>ngModel</code> 位于 &lt;form&gt; 里面时, 除了 two-way data binding
+  之外, <code>ngModel</code> 还提供了一个特性: 根据 form control 的状态,
+  设置不同的 css class, 总共有三组:
 </p>
 <ul>
   <li>
-    form control has been visited?
+    form control has been visited ?
     <ul>
       <li>是: ng-touched</li>
       <li>否: ng-untouched</li>
