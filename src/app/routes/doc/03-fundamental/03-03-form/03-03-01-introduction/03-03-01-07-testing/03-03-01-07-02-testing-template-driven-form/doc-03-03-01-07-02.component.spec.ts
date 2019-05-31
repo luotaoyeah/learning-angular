@@ -9,8 +9,8 @@ import { FormsModule } from '@angular/forms';
 import { Doc0303010702Component } from './doc-03-03-01-07-02.component';
 
 describe('Doc0303010702Component', () => {
-  let component: Doc0303010702Component;
   let fixture: ComponentFixture<Doc0303010702Component>;
+  let component: Doc0303010702Component;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -29,10 +29,14 @@ describe('Doc0303010702Component', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should update the favorite color in the component', fakeAsync(() => {
-    const inputEl: HTMLInputElement | null = (fixture.nativeElement as HTMLDivElement).querySelector<
-      HTMLInputElement
-    >('input');
+  it('should update the color in the component', fakeAsync(() => {
+    const inputEl: HTMLInputElement | null = (fixture.debugElement
+      .nativeElement as HTMLDivElement).querySelector<HTMLInputElement>(
+      'input',
+    );
+
+    expect(inputEl).toBeTruthy();
+
     if (inputEl) {
       inputEl.value = 'BLUE';
       inputEl.dispatchEvent(new Event('input'));
@@ -43,17 +47,21 @@ describe('Doc0303010702Component', () => {
     }
   }));
 
-  it('should update the favorite color on the input field', fakeAsync(() => {
-    component.color = 'YELLOW';
+  it('should update the color on the input field', fakeAsync(() => {
+    component.color = 'BLUE';
     fixture.detectChanges();
 
     tick();
 
-    const inputEl: HTMLInputElement | null = (fixture.nativeElement as HTMLDivElement).querySelector<
-      HTMLInputElement
-    >('input');
+    const inputEl: HTMLInputElement | null = (fixture.debugElement
+      .nativeElement as HTMLDivElement).querySelector<HTMLInputElement>(
+      'input',
+    );
+
+    expect(inputEl).toBeTruthy();
+
     if (inputEl) {
-      expect(component.color).toBe('YELLOW');
+      expect(component.color).toBe('BLUE');
     }
   }));
 });
