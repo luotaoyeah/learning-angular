@@ -1,13 +1,16 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Hero } from '../model/Hero';
 import { NgForm } from '@angular/forms';
 
+/*
+ * https://angular.io/guide/forms#introduction-to-template-driven-forms
+ */
 @Component({
   selector: 'app-doc-03-03-03-01',
   templateUrl: './doc-03-03-03-01.component.html',
   styleUrls: ['./doc-03-03-03-01.component.scss'],
 })
-export class Doc03030301Component implements OnInit {
+export class Doc03030301Component {
   @ViewChild('heroForm')
   public heroForm!: NgForm;
 
@@ -18,26 +21,19 @@ export class Doc03030301Component implements OnInit {
     'Weather Changer',
   ];
 
-  public model: Hero = new Hero(
-    18,
-    'Dr IQ',
-    this.powers[0],
-    'Chuck Overstreet',
-  );
+  public hero: Hero = new Hero(18, 'Dr IQ', this.powers[0], 'Chuck Overstreet');
 
   public submitted: boolean = false;
 
-  public onSubmit() {
+  public handleSubmit() {
     this.submitted = true;
   }
 
-  public ngOnInit() {}
-
   public addHero() {
-    this.model = new Hero(20, '', '');
+    this.hero = new Hero(20, '', '');
 
     /*
-     * 如果需要重置表单的相关状态（ng-touched, ng-dirty, ng-invalid），
+     * 如果需要重置表单的相关状态 (ng-touched, ng-dirty, ng-invalid),
      * 需要调用 AbstractControlDirective.reset() 方法
      */
     this.heroForm.reset();
