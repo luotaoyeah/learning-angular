@@ -1,7 +1,14 @@
 <p>
-  <input type="text" [formControl]="nameFormControl" />
+  <input
+    type="text"
+    nz-input
+    [formControl]="nameFormControl"
+    [ngStyle]="{
+      width: '200px'
+    }"
+  />
   &nbsp;
-  {{ nameFormControl.valueChanges | async }}
+  <button nz-button>{{ nameFormControl.value }}</button>
 </p>
 
 <p>
