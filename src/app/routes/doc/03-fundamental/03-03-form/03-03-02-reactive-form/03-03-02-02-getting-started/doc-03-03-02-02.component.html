@@ -1,10 +1,13 @@
 <p>
-  在 template 中，通过 ReactiveFormsModule 模块提供的 FormControlDirective
-  指令的 formControl 属性，将 FormControl 对象跟 input element 关联起来
+  在 template 中，通过 <code>ReactiveFormsModule</code> 模块提供的
+  <code>FormControlDirective(formControl)</code>
+  指令, 将 component class 中的 <code>FormControl</code> 对象跟 &lt;input /&gt;
+  关联起来
 </p>
+
 <p>
   <label for="name">
     NAME:
-    <input id="name" type="text" [formControl]="nameFormControl" />
+    <input nz-input id="name" type="text" [formControl]="nameFormControl" />
   </label>
 </p>
