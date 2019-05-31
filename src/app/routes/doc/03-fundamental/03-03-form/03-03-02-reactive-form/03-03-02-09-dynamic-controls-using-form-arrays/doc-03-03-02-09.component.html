@@ -1,18 +1,44 @@
-<form [formGroup]="profileFormGroup">
+<form [formGroup]="profileFormGroup" (ngSubmit)="handleSubmit()">
   <label for="name">
     NAME:
-    <input type="text" id="name" formControlName="name" />
+    <input type="text" nz-input id="name" formControlName="name" />
   </label>
 
   <div formArrayName="aliases">
     <ng-container *ngFor="let alias of aliases.controls; let i = index">
-      <label [for]="'alias-' + i">
-        <input type="text" [id]="'alias-' + i" [formControlName]="i" />
-      </label>
+      <div
+        [ngStyle]="{
+          marginTop: '3px'
+        }"
+      >
+        <nz-input-group nzSearch [nzAddOnAfter]="suffixIconButton">
+          <input
+            type="text"
+            nz-input
+            [id]="'alias-' + i"
+            [formControlName]="i"
+            [ngStyle]="{
+              width: '200px'
+            }"
+          />
+        </nz-input-group>
+        <ng-template #suffixIconButton>
+          <button nz-button nzSearch nzType="danger" (click)="removeAlias(i)">
+            <i nz-icon type="delete"></i>
+          </button>
+        </ng-template>
+      </div>
     </ng-container>
   </div>
 
-  <button nz-button (click)="addAlias()">ADD ALIAS</button>
+  <button nz-button>{{ profileFormGroup.status }}</button>
+
+  <button nz-button (click)="addAlias()">
+    <i nz-icon type="plus-circle"></i>
+    ADD ALIAS
+  </button>
+
+  <button nz-button type="submit">SUBMIT</button>
 
   <div>{{ profileFormGroup.value | json }}</div>
 </form>

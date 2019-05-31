@@ -1,32 +1,60 @@
-import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 
+/*
+ * https://angular.io/guide/reactive-forms#dynamic-controls-using-form-arrays
+ */
 @Component({
   selector: 'app-doc-03-03-02-09',
   templateUrl: './doc-03-03-02-09.component.html',
 })
-export class Doc03030209Component implements OnInit {
+export class Doc03030209Component {
   /*
-   * FormArray 表示一组没有名字的 FormControl，
+   * FormArray 表示一个 FormControl 数组,
    * 可以通过 FormArray.push() 方法动态添加 FormControl
    */
-  public profileFormGroup: FormGroup = this.formBuilder.group({
-    name: ['', Validators.required],
-    aliases: this.formBuilder.array([this.formBuilder.control('')]),
+  public profileFormGroup: FormGroup = new FormGroup({
+    name: new FormControl('', {
+      validators: [Validators.required],
+    }),
+    aliases: new FormArray([
+      new FormControl('a', {
+        validators: Validators.required,
+      }),
+    ]),
   });
 
   get aliases(): FormArray {
     return this.profileFormGroup.get('aliases') as FormArray;
   }
 
-  constructor(private formBuilder: FormBuilder) {}
-
-  public ngOnInit() {}
-
   /**
-   * 往 FormArray 中添加一个新的 FormControl
+   * Add a new FormControl into the FormArray
    */
   public addAlias() {
-    this.aliases.push(this.formBuilder.control(''));
+    this.aliases.push(
+      new FormControl('', {
+        validators: Validators.required,
+      }),
+    );
+  }
+
+  /**
+   * Remove an alias
+   * @param index The index
+   */
+  public removeAlias(index: number) {
+    this.aliases.removeAt(index);
+  }
+
+  public handleSubmit() {
+    if (this.profileFormGroup.invalid) {
+      return;
+    }
+
+    console.log(
+      `[${Doc03030209Component.name}]\n`,
+      this.profileFormGroup.value,
+    );
   }
 }
