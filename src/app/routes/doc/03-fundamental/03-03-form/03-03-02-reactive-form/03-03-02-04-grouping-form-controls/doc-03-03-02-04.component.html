@@ -1,28 +1,33 @@
 <p>
-  在 template 中，在 &lt;form&gt; 标签上通过 FormGroupDirective 指令的 formGroup
-  属性绑定我们在 component class 中定义的 FormGroup 对象
+  在 template 中, 在 &lt;form&gt; 标签上通过
+  <code>FormGroupDirective(formGroup)</code> 指令绑定我们在 component class
+  中定义的 <code>FormGroup</code> 对象
 </p>
 
 <p>
-  然后在 &lt;form&gt; 里面的 &lt;input&gt; 标签上，通过 FormControlName 指令的
-  formControlName 属性绑定到 FormGroup 对象中的某个 FormControl
+  然后在 &lt;form&gt; 里面的 &lt;input&gt; 标签上, 通过
+  <code>FormControlName(formControlName)</code> 指令绑定到
+  <code>FormGroup</code> 对象中的某个 <code>FormControl</code> 对象
 </p>
 
 <p>
-  我们可以在 &lt;form&gt; 中添加一个 submit 类型的
-  &lt;button&gt;，当点击这个按钮时，会自动触发 &lt;form&gt; 的 submit
-  事件，FormGroupDirective 指令会监听 &lt;form&gt; 的 submit 事件，然后 emit
-  一个 ngSubmit 事件，然后我们再监听 ngSubmit 事件，来处理表单提交
+  我们可以在 &lt;form&gt; 中添加一个 submit 类型的 &lt;button&gt;,
+  当点击这个按钮时, 会自动触发 &lt;form&gt; 的 <code>submit</code> 事件,
+  <code>FormGroupDirective</code> 指令会监听到 &lt;form&gt; 的
+  <code>submit</code> 事件, 然后发出一个 <code>ngSubmit</code> 事件,
+  然后我们再监听 &lt;form&gt; 上的 <code>ngSubmit</code> 事件, 来处理表单提交
 </p>
+
+<nz-divider [nzDashed]="true"></nz-divider>
 
 <form [formGroup]="profileFormGroup" (ngSubmit)="onSubmit()">
   <label for="firstname">
     FIRST NAME:
-    <input type="text" id="firstname" formControlName="firstName" />
+    <input type="text" nz-input id="firstname" formControlName="firstName" />
   </label>
   <label for="lastname">
     LAST NAME:
-    <input type="text" id="lastname" formControlName="lastName" />
+    <input type="text" nz-input id="lastname" formControlName="lastName" />
   </label>
   <button type="submit" nz-button [disabled]="!profileFormGroup.valid">
     SUBMIT
