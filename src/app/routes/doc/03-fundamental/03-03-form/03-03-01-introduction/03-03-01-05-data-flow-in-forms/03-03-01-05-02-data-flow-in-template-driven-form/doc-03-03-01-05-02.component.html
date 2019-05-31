@@ -1,44 +1,52 @@
+<input
+  type="text"
+  nz-input
+  [(ngModel)]="color"
+  #ngModel="ngModel"
+  (input)="handleInput($event)"
+/>
+<nz-divider [nzDashed]="true"></nz-divider>
+
 <p>
-  在 template-driven form 中，数据从 view 流向 model 的一个过程是：
+  在 template-driven form 中, 数据从 view 流向 model 的一个过程是:
 </p>
 
 <ul>
   <li>
-    用户输入，触发 input 事件
+    用户输入文本
+  </li>
+  <li>&lt;input /&gt; 触发 <code>input</code> 事件</li>
+  <li>
+    control value accessor 监听到 input 事件, 然后调用
+    <code>FormControl.setValue()</code> 方法
   </li>
   <li>
-    control value accessor 监听到 input 事件，然后调用 FormControl.setValue()
-    方法
+    <code>FormControl</code> 对象通过 <code>valueChanges</code> 推送新的数据
   </li>
   <li>
-    FormControl 对象通过 valueChanges 这个 observable 推送新的数据
-  </li>
-  <li>
-    control value accessor 在调用 FromControl.setValue() 方法的同时，出发了
-    NgModel.viewToModelUpdate() 方法，从而触发了 ngModelChange
-    事件，从而更新了对应的 property
+    control value accessor 在调用
+    <code>FromControl.setValue()</code> 方法的同时, 调用了
+    <code>NgModel.viewToModelUpdate()</code> 方法, 从而触发了
+    <code>ngModelChange</code> 事件, 从而更新了 component class 中对应的
+    property
   </li>
 </ul>
 
+<nz-divider [nzDashed]="true"></nz-divider>
+
 <p>
-  在 template-driven form 中，数据从 model 流向 view 的一个过程是：
+  在 template-driven form 中, 数据从 model 流向 view 的一个过程是:
 </p>
 <ul>
   <li>
     在 component 中更新了 property
   </li>
   <li>
-    触发了 change detection
+    触发 change detection
   </li>
-  <li>
-    NgModel 指令的 ngOnChanges() 方法执行
-  </li>
-  <li>
-    触发 FormControl 对象更新数据
-  </li>
-  <li>
-    FormControl 通过 valueChanges 这个 observable 推送数据
-  </li>
+  <li>执行 <code>NgModel.ngOnChanges()</code> 方法</li>
+  <li>触发 <code>FormControl</code> 对象更新数据</li>
+  <li><code>FormControl</code> 通过 <code>valueChanges</code> 推送数据</li>
   <li>
     control value accessor 更新 input element 的值
   </li>
