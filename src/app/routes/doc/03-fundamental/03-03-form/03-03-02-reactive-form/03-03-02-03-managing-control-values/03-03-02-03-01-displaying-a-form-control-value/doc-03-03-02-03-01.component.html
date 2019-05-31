@@ -1,21 +1,22 @@
 <ul>
   <li>
-    可以通过 AbstractControl.value 属性，获取到 FormControl 中的数据
-    <ul>
-      <li>{{ nameFormControl.value }}</li>
-    </ul>
+    在 template 中, 可以通过 <code>FormControl.value</code> 属性, 获取到
+    <code>FormControl</code> 中的数据
+
+    <p>
+      <button nz-button>{{ nameFormControl.value }}</button>
+    </p>
   </li>
   <li>
-    也可以通过订阅 AbstractControl.valueChanges 这个 observable 来获取
-    FormControl 中的数据， 此处需要用到 AsyncPipe
-    <ul>
-      <li>
-        {{ nameFormControl.valueChanges | async }}
-      </li>
-    </ul>
+    也可以通过订阅 <code>FormControl.valueChanges</code> 这个 observable 来获取
+    <code>FormControl</code> 中的数据, 此处需要用到 <code>AsyncPipe</code>
+
+    <p>
+      <button nz-button>{{ nameFormControl.valueChanges | async }}</button>
+    </p>
   </li>
 </ul>
 
 <p>
-  <input type="text" [formControl]="nameFormControl" />
+  <input type="text" nz-input [formControl]="nameFormControl" />
 </p>
