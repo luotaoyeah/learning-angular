@@ -33,23 +33,21 @@ const REUSETAB_PROVIDES: Array<any> = [
 export function fnPageHeaderConfig(): PageHeaderConfig {
   return {
     ...new PageHeaderConfig(),
-    ...({ homeI18n: 'home' } as PageHeaderConfig),
+    homeI18n: 'home',
   };
 }
 
 export function fnDelonAuthConfig(): DelonAuthConfig {
   return {
     ...new DelonAuthConfig(),
-    ...({ login_url: '/passport/login' } as DelonAuthConfig),
+    login_url: '/passport/login',
   };
 }
 
 export function fnSTConfig(): STConfig {
   return {
     ...new STConfig(),
-    ...({
-      modal: { size: 'lg' },
-    } as STConfig),
+    modal: { size: 'lg' },
   };
 }
 

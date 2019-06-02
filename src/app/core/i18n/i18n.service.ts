@@ -115,7 +115,7 @@ export class I18NService implements AlainI18NService {
   }
 
   /** 翻译 */
-  public fanyi(key: string, interpolateParams?: object) {
+  public fanyi(key: string, interpolateParams?: {}) {
     return this.translateService.instant(key, interpolateParams);
   }
 
