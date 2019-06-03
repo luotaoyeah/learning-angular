@@ -1,8 +1,8 @@
 <nz-collapse [nzAccordion]="true">
-  <nz-collapse-panel
-    nzExpandedIcon="caret-right"
-    nzHeader="Default Change Detection Strategy"
-  >
-    <lib-ngx-jquery-slider></lib-ngx-jquery-slider>
+  <nz-collapse-panel nzExpandedIcon="caret-right" nzHeader="ngx-jquery-slider">
+    <lib-ngx-jquery-slider
+      [value]="sliderValue"
+      (valueChange)="handleSliderValueChange($event)"
+    ></lib-ngx-jquery-slider>
   </nz-collapse-panel>
 </nz-collapse>

@@ -9,4 +9,10 @@ import { Component } from '@angular/core';
   templateUrl:
     './never-again-be-confused-when-implementing-controlvalueaccessor.component.html',
 })
-export class NeverAgainBeConfusedWhenImplementingControlvalueaccessorComponent {}
+export class NeverAgainBeConfusedWhenImplementingControlvalueaccessorComponent {
+  public sliderValue: number = 50;
+
+  public handleSliderValueChange(value: number): void {
+    this.sliderValue = value;
+  }
+}

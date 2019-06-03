@@ -1,6 +1,6 @@
 {
   "name": "@luotao/learning-angular-lib",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "scripts": {
     "build:learning-angular-lib": "ng build learning-angular-lib",
     "build:learning-angular-lib:watch": "ng build learning-angular-lib --watch",
