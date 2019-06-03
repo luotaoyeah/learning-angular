@@ -1,12 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { QuestionService } from './services/question.service';
+import { QuestionBase } from './vms/question-base';
 
 /*
- * TODO https://angular.io/guide/dynamic-form
+ * https://angular.io/guide/dynamic-form
  */
 @Component({
   selector: 'app-doc-03-03-05',
   templateUrl: './doc-03-03-05.component.html',
+  providers: [QuestionService],
 })
-export class Doc030305Component implements OnInit {
-  public ngOnInit() {}
+export class Doc030305Component {
+  // tslint:disable-next-line:no-any
+  public questions: Array<QuestionBase<any>>;
+
+  constructor(questionService: QuestionService) {
+    this.questions = questionService.getQuestions();
+  }
 }

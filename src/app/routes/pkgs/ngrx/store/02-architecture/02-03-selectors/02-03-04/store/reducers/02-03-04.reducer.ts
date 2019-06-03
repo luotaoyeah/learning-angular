@@ -1,4 +1,4 @@
-import { IState } from '../state/IState';
+import { IState } from '../state/istate';
 import { ActionTypeEnum, ActionUnion } from '../actions/02-03-04.actions';
 
 const initialState: IState = {};

@@ -1,6 +1,5 @@
 <nz-collapse [nzAccordion]="true">
-  <nz-collapse-panel
-    nzHeader="Dynamic Forms"
-    nzExpandedIcon="caret-right"
-  ></nz-collapse-panel>
+  <nz-collapse-panel nzHeader="Dynamic Forms" nzExpandedIcon="caret-right">
+    <app-dynamic-form [questions]="questions"></app-dynamic-form>
+  </nz-collapse-panel>
 </nz-collapse>
