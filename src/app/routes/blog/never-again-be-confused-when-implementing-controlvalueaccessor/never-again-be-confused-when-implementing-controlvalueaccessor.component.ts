@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 /*
  * https://blog.angularindepth.com/never-again-be-confused-when-implementing-controlvalueaccessor-in-angular-forms-93b9eee9ee83
@@ -10,9 +11,11 @@ import { Component } from '@angular/core';
     './never-again-be-confused-when-implementing-controlvalueaccessor.component.html',
 })
 export class NeverAgainBeConfusedWhenImplementingControlvalueaccessorComponent {
-  public sliderValue: number = 50;
+  public sliderControl: FormControl = new FormControl(50);
 
   public handleSliderValueChange(value: number): void {
-    this.sliderValue = value;
+    this.sliderControl.setValue(value, {
+      emitModelToViewChange: true,
+    });
   }
 }
