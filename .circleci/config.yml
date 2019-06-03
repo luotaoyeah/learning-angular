@@ -9,7 +9,12 @@ jobs:
       - checkout
       - restore_cache:
           key: learning-angular-{{ .Branch }}-{{ checksum "package-lock.json" }}
-      - run: npm install
+      - run:
+          name: install for learning-angular-lib
+          command: cd projects/learning-angular-lib && npm install
+      - run:
+          name: install
+          command: npm install
       - save_cache:
           key: learning-angular-{{ .Branch }}-{{ checksum "package-lock.json" }}
           paths:
@@ -74,7 +79,12 @@ jobs:
       - checkout
       - restore_cache:
           key: learning-angular-{{ .Branch }}-{{ checksum "package-lock.json" }}
-      - run: npm install
+      - run:
+          name: install for learning-angular-lib
+          command: cd projects/learning-angular-lib && npm install
+      - run:
+          name: install
+          command: npm install
       - save_cache:
           key: learning-angular-{{ .Branch }}-{{ checksum "package-lock.json" }}
           paths:
