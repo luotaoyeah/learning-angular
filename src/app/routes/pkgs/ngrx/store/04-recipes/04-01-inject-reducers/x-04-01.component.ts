@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { select, Store } from '@ngrx/store';
-import { IState } from './store/state/IState';
+import { IState } from './store/state/i-state';
 import { selectX } from './store/selectors/04-01.selectors';
 import { AAction, BAction } from './store/actions/04-01.actions';
 

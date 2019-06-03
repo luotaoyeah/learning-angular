@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { IPackageInfo } from '../model/IPackageInfo';
+import { IPackageInfo } from '../model/i-package-info';
 import { map } from 'rxjs/operators';
 
 @Injectable({

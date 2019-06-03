@@ -1,4 +1,4 @@
-import { IState } from '../state/IState';
+import { IState } from '../state/i-state';
 import { ActionTypeEnum, ActionUnion } from '../actions/01-02.actions';
 
 function x0102Reducer(state: IState = { movies: [] }, action: ActionUnion) {

@@ -3,7 +3,7 @@ import { X0401Component } from './x-04-01.component';
 import { SharedModule } from '@app/shared';
 import { ActionReducer, StoreModule } from '@ngrx/store';
 import { metaReducer01, X0401Reducer } from './store/reducers/04-01.reducer';
-import { IState } from './store/state/IState';
+import { IState } from './store/state/i-state';
 import { ActionUnion } from './store/actions/04-01.actions';
 import { StoreConfig } from '@ngrx/store/src/store_module';
 import { X0401Service } from './service/x-04-01.service';

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Doc03080502Service } from './service/doc-03-08-05-02.service';
 import { Observable, of, Subject } from 'rxjs';
-import { IPackageInfo } from './model/IPackageInfo';
+import { IPackageInfo } from './model/i-package-info';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 
 @Component({

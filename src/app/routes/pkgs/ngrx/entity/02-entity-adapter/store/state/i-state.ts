@@ -1,5 +1,5 @@
 import { EntityState } from '@ngrx/entity';
-import { User } from './User';
+import { User } from './user';
 
 /*
  * 继承 EntityState<T> 接口, 并添加额外的属性

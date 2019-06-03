@@ -1,4 +1,4 @@
-import { IMovie } from '../../../vms/IMovie';
+import { IMovie } from '../../../vms/i-movie';
 
 export interface IState {
   movies: Array<IMovie>;

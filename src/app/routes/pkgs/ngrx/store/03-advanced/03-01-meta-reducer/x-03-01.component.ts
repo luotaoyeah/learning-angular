@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
-import { IState } from './store/state/IState';
+import { IState } from './store/state/i-state';
 import { Observable } from 'rxjs';
 import { selectX } from './store/selectors/03-01.selectors';
 import { AAction, BAction, CAction } from './store/actions/03-01.actions';

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IBook } from './store/state/IBook';
+import { IBook } from './store/state/i-book';
 import { createSelector, select, Store } from '@ngrx/store';
-import { IAppState } from './store/state/IAppState';
+import { IAppState } from './store/state/i-app-state';
 import { selectVisibleBooks } from './store/selectors/02-03-01-02.selectors';
 import {
   ClearSelectedUserAction,

@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { IMovie } from '../../../vms/IMovie';
+import { IMovie } from '../../../vms/i-movie';
 
 enum ActionTypeEnum {
   FetchMovies = '[X0102Component] FetchMovies',

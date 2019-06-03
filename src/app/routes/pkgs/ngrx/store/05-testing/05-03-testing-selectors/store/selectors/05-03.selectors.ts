@@ -1,4 +1,4 @@
-import { IState } from '../state/IState';
+import { IState } from '../state/i-state';
 import { createSelector } from '@ngrx/store';
 
 const selectEvens = (state: IState): Array<number> => state.evens;

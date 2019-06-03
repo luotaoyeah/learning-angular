@@ -1,5 +1,5 @@
 import { ActionTypeEnum, ActionUnion } from '../actions/01.actions';
-import { IState } from '../state/IState';
+import { IState } from '../state/i-state';
 
 const initialState: IState = {
   count: 0,

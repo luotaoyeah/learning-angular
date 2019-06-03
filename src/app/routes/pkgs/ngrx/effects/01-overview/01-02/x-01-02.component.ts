@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IMovie } from '../vms/IMovie';
+import { IMovie } from '../vms/i-movie';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { IAppState, selectMovies } from './store/selectors/01-02.selectors';

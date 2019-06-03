@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IConfig } from '../model/IConfig';
+import { IConfig } from '../model/i-config';
 import { Observable, throwError } from 'rxjs';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, retry } from 'rxjs/operators';

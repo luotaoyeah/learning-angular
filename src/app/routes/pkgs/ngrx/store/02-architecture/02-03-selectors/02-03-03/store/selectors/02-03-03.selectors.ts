@@ -1,4 +1,4 @@
-import { IState } from '../state/IState';
+import { IState } from '../state/i-state';
 import { createSelector } from '@ngrx/store';
 
 const selectFeature = (rootState: { '02-03-03': IState }) => {

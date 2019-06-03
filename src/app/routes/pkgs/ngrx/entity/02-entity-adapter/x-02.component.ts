@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { IAppState } from './store/state/IState';
+import { IAppState } from './store/state/i-state';
 import { createSelector, select, Store } from '@ngrx/store';
 import { ClearUsersAction, LoadUsersAction } from './store/actions/02.actions';
 import { X02Service } from './service/x02.service';
-import { User } from './store/state/User';
+import { User } from './store/state/user';
 import { Observable } from 'rxjs';
 import { selectAllUsers, selectFeature } from './store/selectors/02.selectors';
 

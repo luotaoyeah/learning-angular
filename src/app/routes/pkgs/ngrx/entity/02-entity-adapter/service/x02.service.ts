@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { User } from '../store/state/User';
+import { User } from '../store/state/user';
 import { _HttpClient } from '@delon/theme';
 
 @Injectable({

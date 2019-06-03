@@ -1,6 +1,6 @@
 import { createEntityAdapter } from '@ngrx/entity';
-import { User } from '../state/User';
-import { IState } from '../state/IState';
+import { User } from '../state/user';
+import { IState } from '../state/i-state';
 import { ActionTypeEnum, ActionUnion } from '../actions/02.actions';
 
 const userEntityAdapter = createEntityAdapter<User>();

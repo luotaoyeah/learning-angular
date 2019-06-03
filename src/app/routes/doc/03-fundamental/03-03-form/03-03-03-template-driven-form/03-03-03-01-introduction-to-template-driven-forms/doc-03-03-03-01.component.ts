@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Hero } from '../vms/Hero';
+import { Hero } from '../vms/hero';
 import { NgForm } from '@angular/forms';
 
 /*

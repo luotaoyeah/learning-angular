@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { X02Component } from './x-02.component';
 import { StoreModule } from '@ngrx/store';
-import { NGRX_STATE_KEY } from './store/state/IState';
+import { NGRX_STATE_KEY } from './store/state/i-state';
 import { x02Reducer } from './store/reducers/02.reducers';
 import { SharedModule } from '@app/shared';
 

@@ -1,4 +1,4 @@
-import { IState } from '../state/IState';
+import { IState } from '../state/i-state';
 import { ActionTypeEnum, ActionUnion } from '../actions/04-01.actions';
 import { Injectable } from '@angular/core';
 import { X0401Service } from '../../service/x-04-01.service';

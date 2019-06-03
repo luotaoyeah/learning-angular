@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IState } from '../store/state/IState';
+import { IState } from '../store/state/i-state';
 import { select, Store } from '@ngrx/store';
 
 @Component({

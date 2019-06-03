@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IMovie } from '../vms/IMovie';
+import { IMovie } from '../vms/i-movie';
 import { _HttpClient } from '@delon/theme';
 
 @Injectable({

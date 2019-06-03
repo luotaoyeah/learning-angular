@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { IState } from '../store/state/IState';
+import { IState } from '../store/state/i-state';
 
 @Pipe({
   name: 'count',

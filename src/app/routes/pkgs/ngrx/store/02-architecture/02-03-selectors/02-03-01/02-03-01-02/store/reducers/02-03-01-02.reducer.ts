@@ -1,4 +1,4 @@
-import { IAppState } from '../state/IAppState';
+import { IAppState } from '../state/i-app-state';
 import { ActionTypeEnum, ActionUnion } from '../actions/02-03-01-02.actions';
 
 const initialState: IAppState = {

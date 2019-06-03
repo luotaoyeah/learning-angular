@@ -6,7 +6,7 @@ import {
   Store,
 } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { IState } from '../store/state/IState';
+import { IState } from '../store/state/i-state';
 
 @Component({
   selector: 'app-x-01-01',

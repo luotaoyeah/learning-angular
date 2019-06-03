@@ -1,7 +1,7 @@
-import { IAppState } from '../state/IAppState';
+import { IAppState } from '../state/i-app-state';
 import { createSelector, MemoizedSelector } from '@ngrx/store';
-import { IUser } from '../state/IUser';
-import { IBook } from '../state/IBook';
+import { IUser } from '../state/i-user';
+import { IBook } from '../state/i-book';
 
 const selectUser = (state: IAppState) => state.selectedUser;
 const selectAllBooks = (state: IAppState) => state.allBooks;

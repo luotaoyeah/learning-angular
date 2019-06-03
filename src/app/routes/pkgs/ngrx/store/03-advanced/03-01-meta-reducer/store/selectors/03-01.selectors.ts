@@ -1,5 +1,5 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { IState } from '../state/IState';
+import { IState } from '../state/i-state';
 
 const selectFeature = createFeatureSelector<{ '03-01': IState }, IState>(
   '03-01',

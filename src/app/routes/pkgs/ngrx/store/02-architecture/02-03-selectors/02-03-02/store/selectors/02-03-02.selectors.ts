@@ -1,4 +1,4 @@
-import { IState } from '../state/IState';
+import { IState } from '../state/i-state';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 
 /*

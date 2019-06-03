@@ -1,4 +1,4 @@
-import { ICounter } from './ICounter';
+import { ICounter } from './i-counter';
 
 export interface IAppState {
   counter: Array<ICounter>;

@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { IConfig } from '../vms/IConfig';
+import { IConfig } from '../vms/i-config';
 
 @Component({
   selector: 'app-x-02-01',

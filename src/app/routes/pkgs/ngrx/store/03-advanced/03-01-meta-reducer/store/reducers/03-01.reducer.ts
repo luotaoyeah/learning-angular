@@ -1,4 +1,4 @@
-import { IState } from '../state/IState';
+import { IState } from '../state/i-state';
 import { ActionTypeEnum, ActionUnion } from '../actions/03-01.actions';
 import { ActionReducer } from '@ngrx/store';
 import { X0301Component } from '../../x-03-01.component';

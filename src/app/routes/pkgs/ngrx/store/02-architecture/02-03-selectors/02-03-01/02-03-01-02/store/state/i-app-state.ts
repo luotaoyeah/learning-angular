@@ -1,5 +1,5 @@
-import { IBook } from './IBook';
-import { IUser } from './IUser';
+import { IBook } from './i-book';
+import { IUser } from './i-user';
 
 export interface IAppState {
   selectedUser: IUser;

@@ -1,4 +1,4 @@
-import { IState } from '../state/IState';
+import { IState } from '../state/i-state';
 import { ActionTypeEnum, ActionUnion } from '../actions/03.actions';
 
 function x03Reducer(state: IState = { x: Math.random() }, action: ActionUnion) {

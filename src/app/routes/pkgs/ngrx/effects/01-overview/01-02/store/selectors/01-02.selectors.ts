@@ -3,8 +3,8 @@ import {
   createSelector,
   MemoizedSelector,
 } from '@ngrx/store';
-import { IState } from '../state/IState';
-import { IMovie } from '../../../vms/IMovie';
+import { IState } from '../state/i-state';
+import { IMovie } from '../../../vms/i-movie';
 
 interface IAppState {
   'pkgs-ngrx-effects-01-02': IState;

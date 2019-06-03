@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { createSelector, select, Store } from '@ngrx/store';
-import { IAppState } from './store/state/IAppState';
+import { IAppState } from './store/state/i-app-state';
 import { selectFeatureCount } from './store/selectors/02-03-01-01.selectors';
 
 /*

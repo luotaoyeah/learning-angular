@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Doc030802Service } from './service/doc-03-08-02.service';
-import { IConfig } from './model/IConfig';
+import { IConfig } from './model/i-config';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
