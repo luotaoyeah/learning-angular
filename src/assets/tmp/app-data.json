@@ -532,6 +532,11 @@
           "i18n": "menu.blog.a-comprehensive-guide-to-angular-onpush",
           "icon": "anticon anticon-info-circle",
           "link": "/blog/a-comprehensive-guide-to-angular-onpush"
+        },
+        {
+          "i18n": "menu.blog.never-again-be-confused-when-implementing-controlvalueaccessor",
+          "icon": "anticon anticon-info-circle",
+          "link": "/blog/never-again-be-confused-when-implementing-controlvalueaccessor"
         }
       ]
     }

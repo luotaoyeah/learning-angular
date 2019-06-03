@@ -3,5 +3,5 @@
  */
 
 export * from './lib/learning-angular-lib.service';
-export * from './lib/learning-angular-lib.component';
+export * from './lib/components/learning-angular-lib.component';
 export * from './lib/learning-angular-lib.module';

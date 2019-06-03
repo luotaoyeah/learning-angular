@@ -119,6 +119,7 @@
   "menu.pkgs.ngrx.schematics.01": "Schematics",
   "menu.blog": "BLOG",
   "menu.blog.a-comprehensive-guide-to-angular-onpush": "A Comprehensive Guide to Angular onPush Change Detection Strategy",
+  "menu.blog.never-again-be-confused-when-implementing-controlvalueaccessor": "Never Again Be Confused When Implementing Control Value Accessor In Angular Forms",
   "menu.search.placeholder": "Search...",
   "menu.fullscreen": "Fullscreen",
   "menu.fullscreen.exit": "Exit Fullscreen",

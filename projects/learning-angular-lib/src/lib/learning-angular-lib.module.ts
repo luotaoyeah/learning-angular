@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
-import { LearningAngularLibComponent } from './learning-angular-lib.component';
+import { LearningAngularLibComponent } from './components/learning-angular-lib.component';
+import { NgxJquerySliderComponent } from './components/ngx-jquery-slider/ngx-jquery-slider.component';
 
 @NgModule({
-  declarations: [LearningAngularLibComponent],
+  declarations: [LearningAngularLibComponent, NgxJquerySliderComponent],
   imports: [],
-  exports: [LearningAngularLibComponent],
+  exports: [LearningAngularLibComponent, NgxJquerySliderComponent],
 })
 export class LearningAngularLibModule {}

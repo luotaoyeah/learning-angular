@@ -1,6 +1,6 @@
 {
   "name": "@luotao/learning-angular-lib",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "scripts": {
     "build:learning-angular-lib": "ng build learning-angular-lib",
     "build:learning-angular-lib:watch": "ng build learning-angular-lib --watch",
@@ -15,6 +15,11 @@
   "schematics": "./schematics/collection.json",
   "devDependencies": {
     "@types/gulp": "^4.0.6",
+    "@types/jquery": "^3.3.29",
     "gulp": "^4.0.2"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "jquery-ui": "^1.12.1"
   }
 }
