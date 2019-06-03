@@ -1,11 +1,31 @@
 <form [formGroup]="formGroup">
-  <input type="text" name="password" formControlName="password" nz-input />
-  <input
-    type="text"
-    name="repeatPassword"
-    formControlName="repeatPassword"
-    nz-input
-  />
+  <label>
+    PASSWORD:
+    <input
+      type="text"
+      name="password"
+      formControlName="password"
+      nz-input
+      [ngStyle]="{
+        width: '200px',
+        marginBottom: '3px'
+      }"
+    />
+  </label>
+  <br />
+  <label>
+    REPEAT PASSWORD:
+    <input
+      type="text"
+      name="repeatPassword"
+      formControlName="repeatPassword"
+      nz-input
+      [ngStyle]="{
+        width: '200px',
+        marginBottom: '3px'
+      }"
+    />
+  </label>
   <nz-alert
     *ngIf="
       formGroup.errors?.repeatPassword && (formGroup.dirty || formGroup.touched)
@@ -15,15 +35,36 @@
   ></nz-alert>
 </form>
 
-<hr />
+<nz-divider [nzDashed]="true"></nz-divider>
+
 <form #form02="ngForm" appPasswordValidator>
-  <input type="text" name="password" nz-input [(ngModel)]="password" />
-  <input
-    type="text"
-    name="repeatPassword"
-    nz-input
-    [(ngModel)]="repeatPassword"
-  />
+  <label>
+    PASSWORD:
+    <input
+      type="text"
+      name="password"
+      nz-input
+      [(ngModel)]="password"
+      [ngStyle]="{
+        width: '200px',
+        marginBottom: '3px'
+      }"
+    />
+  </label>
+  <br />
+  <label>
+    REPEAT PASSWORD:
+    <input
+      type="text"
+      name="repeatPassword"
+      nz-input
+      [(ngModel)]="repeatPassword"
+      [ngStyle]="{
+        width: '200px',
+        marginBottom: '3px'
+      }"
+    />
+  </label>
   <nz-alert
     *ngIf="form02.errors?.repeatPassword && (form02.dirty || form02.touched)"
     nzType="error"

@@ -5,7 +5,7 @@ import { Doc03030402Component } from './03-03-04-02-reactive-form-validation/doc
 import { Doc03030403Component } from './03-03-04-03-custom-validators/doc-03-03-04-03.component';
 import { ForbiddenNameDirective } from './03-03-04-03-custom-validators/validators/forbidden-name.directive';
 import { Doc03030404Component } from './03-03-04-04-cross-field-validation/doc-03-03-04-04.component';
-import { PasswordDirective } from './03-03-04-04-cross-field-validation/validator/password.directive';
+import { PasswordDirective } from './03-03-04-04-cross-field-validation/validators/password.directive';
 import { Doc03030405Component } from './03-03-04-05-async-validation/doc-03-03-04-05.component';
 import { SharedModule } from '@app/shared';
 
