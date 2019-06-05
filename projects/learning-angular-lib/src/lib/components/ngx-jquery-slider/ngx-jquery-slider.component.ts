@@ -25,7 +25,8 @@ export class NgxJquerySliderComponent implements OnInit, ControlValueAccessor {
   private onChange: (value: number) => void = () => {};
 
   /**
-   * 当 FormControl 的数据流向 DOM 时, 会调用该方法
+   * 当 FormControl 的数据流向 custom form control 时,
+   * FormControl 会负责调用该方法, 从而更新 custom form control 的值
    */
   public writeValue(value: number): void {
     this.value = value;
@@ -50,7 +51,8 @@ export class NgxJquerySliderComponent implements OnInit, ControlValueAccessor {
     this.widget = $(this.location.nativeElement).slider();
     this.widget.on('slidestop', (event: MouseEvent, ui: any) => {
       /*
-       * 当 DOM 的数据流向 FormControl 时, 我们需要调用保存的回调方法
+       * 当 custom form control 的数据流向 FormControl 时,
+       * 我们需要调用前面保存的回调方法, 从而更新 FormControl 的值
        */
       this.onChange(ui.value);
     });
