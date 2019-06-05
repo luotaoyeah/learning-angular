@@ -84,7 +84,7 @@
     "@types/jasminewd2": "^2.0.6",
     "@types/json-server": "^0.14.0",
     "@types/lodash-es": "^4.17.3",
-    "@types/node": "^10.14.8",
+    "@types/node": "^12.0.4",
     "antd-theme-generator": "^1.1.6",
     "chalk": "^2.4.2",
     "codecov": "^3.5.0",
