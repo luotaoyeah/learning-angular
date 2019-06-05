@@ -1,0 +1,367 @@
+// tslint:disable:max-line-length
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Doc0303RoutingModule } from './doc-03-03-routing.module';
+import { Doc030201Component } from './03-02-01-displaying-data/doc-03-02-01.component';
+import { PanelModule } from 'primeng/panel';
+import {
+  AccordionModule,
+  ButtonModule,
+  InputTextModule,
+  MessagesModule,
+  SelectButtonModule,
+} from 'primeng/primeng';
+import { ToastModule } from 'primeng/toast';
+import { Doc03020101Component } from './03-02-01-displaying-data/03-02-01-01/doc-03-02-01-01.component';
+import { Doc03020102Component } from './03-02-01-displaying-data/03-02-01-02/doc-03-02-01-02.component';
+import { Doc03020103Component } from './03-02-01-displaying-data/03-02-01-03/doc-03-02-01-03.component';
+import { Doc03020104Component } from './03-02-01-displaying-data/03-02-01-04/doc-03-02-01-04.component';
+import { Doc03020105Component } from './03-02-01-displaying-data/03-02-01-05/doc-03-02-01-05.component';
+import { Doc030202Component } from './03-02-02-template-syntax/doc-03-02-02.component';
+import { Doc03020201Component } from './03-02-02-template-syntax/03-02-02-01-html-in-template/doc-03-02-02-01.component';
+import { Doc03020202Component } from './03-02-02-template-syntax/03-02-02-02-interpolation-and-template-expression/doc-03-02-02-02.component';
+import { Doc0302020201Component } from './03-02-02-template-syntax/03-02-02-02-interpolation-and-template-expression/03-02-02-02-01-interpolation/doc-03-02-02-02-01.component';
+import { Doc0302020202Component } from './03-02-02-template-syntax/03-02-02-02-interpolation-and-template-expression/03-02-02-02-02-template-expression/doc-03-02-02-02-02.component';
+import { Doc0302020203Component } from './03-02-02-template-syntax/03-02-02-02-interpolation-and-template-expression/03-02-02-02-03-expression-context/doc-03-02-02-02-03.component';
+import { Doc0302020204Component } from './03-02-02-template-syntax/03-02-02-02-interpolation-and-template-expression/03-02-02-02-04-expression-guideline/doc-03-02-02-02-04.component';
+import { Doc03020203Component } from './03-02-02-template-syntax/03-02-02-03-template-statement/doc-03-02-02-03.component';
+import { Doc0302020301Component } from './03-02-02-template-syntax/03-02-02-03-template-statement/03-02-02-03-01-statement-context/doc-03-02-02-03-01.component';
+import { Doc03020204Component } from './03-02-02-template-syntax/03-02-02-04-binding-syntax-an-overview/doc-03-02-02-04.component';
+import { Doc03020205Component } from './03-02-02-template-syntax/03-02-02-05-property-binding/doc-03-02-02-05.component';
+import { Doc0302020501Component } from './03-02-02-template-syntax/03-02-02-05-property-binding/03-02-02-05-01-one-way-in/doc-03-02-02-05-01.component';
+import { Doc0302020502Component } from './03-02-02-template-syntax/03-02-02-05-property-binding/03-02-02-05-02-binding-target/doc-03-02-02-05-02.component';
+import { Doc0302020503Component } from './03-02-02-template-syntax/03-02-02-05-property-binding/03-02-02-05-03-avoid-side-effects/doc-03-02-02-05-03.component';
+import { Doc0302020504Component } from './03-02-02-template-syntax/03-02-02-05-property-binding/03-02-02-05-04-one-time-string-initialization/doc-03-02-02-05-04.component';
+import { Doc030202050401Component } from './03-02-02-template-syntax/03-02-02-05-property-binding/03-02-02-05-04-one-time-string-initialization/doc-03-02-02-05-04-01.component';
+import { Doc0302020505Component } from './03-02-02-template-syntax/03-02-02-05-property-binding/03-02-02-05-05-property-binding-or-interpolation/doc-03-02-02-05-05.component';
+import { Doc03020206Component } from './03-02-02-template-syntax/03-02-02-06-attribute-class-and-style-bindings/doc-03-02-02-06.component';
+import { Doc0302020601Component } from './03-02-02-template-syntax/03-02-02-06-attribute-class-and-style-bindings/03-02-02-06-01-attribute-binding/doc-03-02-02-06-01.component';
+import { Doc0302020602Component } from './03-02-02-template-syntax/03-02-02-06-attribute-class-and-style-bindings/03-02-02-06-02-class-binding/doc-03-02-02-06-02.component';
+import { Doc0302020603Component } from './03-02-02-template-syntax/03-02-02-06-attribute-class-and-style-bindings/03-02-02-06-03-style-binding/doc-03-02-02-06-03.component';
+import { Doc03020207Component } from './03-02-02-template-syntax/03-02-02-07-event-binding/doc-03-02-02-07.component';
+import { Doc0302020701Component } from './03-02-02-template-syntax/03-02-02-07-event-binding/03-02-02-07-01-target-event/doc-03-02-02-07-01.component';
+import { Doc030202070101Component } from './03-02-02-template-syntax/03-02-02-07-event-binding/03-02-02-07-01-target-event/doc-03-02-02-07-01-01.component';
+import { Doc0302020702Component } from './03-02-02-template-syntax/03-02-02-07-event-binding/03-02-02-07-02-$event-and-event-handling-statements/doc-03-02-02-07-02.component';
+import { Doc030202070201Component } from './03-02-02-template-syntax/03-02-02-07-event-binding/03-02-02-07-02-$event-and-event-handling-statements/doc-03-02-02-07-02-01.component';
+import { Doc030202070301Component } from './03-02-02-template-syntax/03-02-02-07-event-binding/03-02-02-07-03-custom-events-with-eventemitter/doc-03-02-02-07-03-01.component';
+import { Doc0302020703Component } from './03-02-02-template-syntax/03-02-02-07-event-binding/03-02-02-07-03-custom-events-with-eventemitter/doc-03-02-02-07-03.component';
+import { Doc03020208Component } from './03-02-02-template-syntax/03-02-02-08-two-way-binding/doc-03-02-02-08.component';
+import { Doc0302020801Component } from './03-02-02-template-syntax/03-02-02-08-two-way-binding/doc-03-02-02-08-01.component';
+import { FormsModule } from '@angular/forms';
+import { Doc03020209Component } from './03-02-02-template-syntax/03-02-02-09-built-in-attribute-directives/doc-03-02-02-09.component';
+import { Doc0302020901Component } from './03-02-02-template-syntax/03-02-02-09-built-in-attribute-directives/03-02-02-09-01-ngclass/doc-03-02-02-09-01.component';
+import { Doc0302020902Component } from './03-02-02-template-syntax/03-02-02-09-built-in-attribute-directives/03-02-02-09-02-ngstyle/doc-03-02-02-09-02.component';
+import { Doc0302020903Component } from './03-02-02-template-syntax/03-02-02-09-built-in-attribute-directives/03-02-02-09-03-ngmodel/doc-03-02-02-09-03.component';
+import { Doc03020210Component } from './03-02-02-template-syntax/03-02-02-10-built-in-structural-directives/doc-03-02-02-10.component';
+import { Doc0302021001Component } from './03-02-02-template-syntax/03-02-02-10-built-in-structural-directives/03-02-02-10-01-ngif/doc-03-02-02-10-01.component';
+import { Doc030202100101Component } from './03-02-02-template-syntax/03-02-02-10-built-in-structural-directives/03-02-02-10-01-ngif/doc-03-02-02-10-01-01.component';
+import { Doc0302021002Component } from './03-02-02-template-syntax/03-02-02-10-built-in-structural-directives/03-02-02-10-02-ngfor/doc-03-02-02-10-02.component';
+import { Doc030202100201Component } from './03-02-02-template-syntax/03-02-02-10-built-in-structural-directives/03-02-02-10-02-ngfor/doc-03-02-02-10-02-01.component';
+import { Doc0302021003Component } from './03-02-02-template-syntax/03-02-02-10-built-in-structural-directives/03-02-02-10-03-template-input-variable/doc-03-02-02-10-03.component';
+import { Doc0302021004Component } from './03-02-02-template-syntax/03-02-02-10-built-in-structural-directives/03-02-02-10-04-ngswitch/doc-03-02-02-10-04.component';
+import { Doc03020211Component } from './03-02-02-template-syntax/03-02-02-11-template-reference-variable/doc-03-02-02-11.component';
+import { Doc0302021101Component } from './03-02-02-template-syntax/03-02-02-11-template-reference-variable/doc-03-02-02-11-01.component';
+import { Doc03020212Component } from './03-02-02-template-syntax/03-02-02-12-input-and-output-properties/doc-03-02-02-12.component';
+import { Doc0302021201Component } from './03-02-02-template-syntax/03-02-02-12-input-and-output-properties/03-02-02-12-01-binding-to-a-different-component/doc-03-02-02-12-01.component';
+import { Doc0302021202Component } from './03-02-02-template-syntax/03-02-02-12-input-and-output-properties/03-02-02-12-02-declaring-input-and-output-properties/doc-03-02-02-12-02.component';
+import { Doc030202120201Component } from './03-02-02-template-syntax/03-02-02-12-input-and-output-properties/03-02-02-12-02-declaring-input-and-output-properties/doc-03-02-02-12-02-01.component';
+import { Doc030202120202Component } from './03-02-02-template-syntax/03-02-02-12-input-and-output-properties/03-02-02-12-02-declaring-input-and-output-properties/doc-03-02-02-12-02-02.component';
+import { Doc0302021203Component } from './03-02-02-template-syntax/03-02-02-12-input-and-output-properties/03-02-02-12-03-aliasing-input-output-properties/doc-03-02-02-12-03.component';
+import { Doc030202120301Component } from './03-02-02-template-syntax/03-02-02-12-input-and-output-properties/03-02-02-12-03-aliasing-input-output-properties/doc-03-02-02-12-03-01.component';
+import { Doc03020213Component } from './03-02-02-template-syntax/03-02-02-13-template-expression-operators/doc-03-02-02-13.component';
+import { Doc0302021301Component } from './03-02-02-template-syntax/03-02-02-13-template-expression-operators/03-02-02-13-01-the-pipe-operator/doc-03-02-02-13-01.component';
+import { Doc0302021302Component } from './03-02-02-template-syntax/03-02-02-13-template-expression-operators/03-02-02-13-02-safe-navigation-operator/doc-03-02-02-13-02.component';
+import { Doc0302021303Component } from './03-02-02-template-syntax/03-02-02-13-template-expression-operators/03-02-02-13-03-the-non-null-assertion-operator/doc-03-02-02-13-03.component';
+import { Doc03020214Component } from './03-02-02-template-syntax/03-02-02-14-built-in-template-functions/doc-03-02-02-14.component';
+import { Doc0302021401Component } from './03-02-02-template-syntax/03-02-02-14-built-in-template-functions/03-02-02-14-01-the-pipe-operator/doc-03-02-02-14-01.component';
+import { Doc030203Component } from './03-02-03-user-input/doc-03-02-03.component';
+import { Doc03020301Component } from './03-02-03-user-input/03-02-03-01-binding-to-user-input-event/doc-03-02-03-01.component';
+import { Doc03020302Component } from './03-02-03-user-input/03-02-03-02-get-user-input-from-the-$event-object/doc-03-02-03-02.component';
+import { Doc03020303Component } from './03-02-03-user-input/03-02-03-03-get-user-input-from-a-template-reference-variable/doc-03-02-03-03.component';
+import { Doc03020304Component } from './03-02-03-user-input/03-02-03-04-key-event-filtering/doc-03-02-03-04.component';
+import { Doc03020305Component } from './03-02-03-user-input/03-02-03-05-on-blur/doc-03-02-03-05.component';
+import { Doc03020306Component } from './03-02-03-user-input/03-02-03-06-put-it-all-together/doc-03-02-03-06.component';
+import { Doc030204Component } from './03-02-04-lifecycle-hooks/doc-03-02-04.component';
+import { Doc03020401Component } from './03-02-04-lifecycle-hooks/03-02-04-01-component-lifecycle-hooks-overview/doc-03-02-04-01.component';
+import { Doc03020402Component } from './03-02-04-lifecycle-hooks/03-02-04-02-lifecycle-sequence/doc-03-02-04-02.component';
+import { Doc03020403Component } from './03-02-04-lifecycle-hooks/03-02-04-03-peek-a-boo/doc-03-02-04-03.component';
+import { Doc0302040301Component } from './03-02-04-lifecycle-hooks/03-02-04-03-peek-a-boo/doc-03-02-04-03-01.component';
+import { MySpyDirective } from './03-02-04-lifecycle-hooks/03-02-04-04-spying-oninit-and-ondestroy/doc-03-02-04-04.directive';
+import { Doc03020404Component } from './03-02-04-lifecycle-hooks/03-02-04-04-spying-oninit-and-ondestroy/doc-03-02-04-04.component';
+import { Doc0302040401Component } from './03-02-04-lifecycle-hooks/03-02-04-04-spying-oninit-and-ondestroy/03-02-04-04-01-oninit/doc-03-02-04-04-01.component';
+import { Doc0302040402Component } from './03-02-04-lifecycle-hooks/03-02-04-04-spying-oninit-and-ondestroy/03-02-04-04-02-ondestroy/doc-03-02-04-04-02.component';
+import { Doc03020405Component } from './03-02-04-lifecycle-hooks/03-02-04-05-onchanges/doc-03-02-04-05.component';
+import { Doc0302040501Component } from './03-02-04-lifecycle-hooks/03-02-04-05-onchanges/doc-03-02-04-05-01.component';
+import { Doc0302040502Component } from './03-02-04-lifecycle-hooks/03-02-04-05-onchanges/doc-03-02-04-05-02.component';
+import { Doc03020406Component } from './03-02-04-lifecycle-hooks/03-02-04-06-docheck/doc-03-02-04-06.component';
+import { Doc0302040601Component } from './03-02-04-lifecycle-hooks/03-02-04-06-docheck/doc-03-02-04-06-01.component';
+import { Doc03020407Component } from './03-02-04-lifecycle-hooks/03-02-04-07-after-view/doc-03-02-04-07.component';
+import { Doc0302040701Component } from './03-02-04-lifecycle-hooks/03-02-04-07-after-view/doc-03-02-04-07-01.component';
+import { Doc03020408Component } from './03-02-04-lifecycle-hooks/03-02-04-08-after-content/doc-03-02-04-08.component';
+import { Doc0302040801Component } from './03-02-04-lifecycle-hooks/03-02-04-08-after-content/doc-03-02-04-08-01.component';
+import { Doc0302040802Component } from './03-02-04-lifecycle-hooks/03-02-04-08-after-content/doc-03-02-04-08-02.component';
+import { Doc030205Component } from './03-02-05-component-interaction/doc-03-02-05.component';
+import { Doc03020501Component } from './03-02-05-component-interaction/03-02-05-01-pass-data-from-parent-to-child-with-input-binding/doc-03-02-05-01.component';
+import { Doc0302050101Component } from './03-02-05-component-interaction/03-02-05-01-pass-data-from-parent-to-child-with-input-binding/doc-03-02-05-01-01.component';
+import { Doc03020502Component } from './03-02-05-component-interaction/03-02-05-02-intercept-input-property-changes-with-a-setter/doc-03-02-05-02.component';
+import { Doc0302050201Component } from './03-02-05-component-interaction/03-02-05-02-intercept-input-property-changes-with-a-setter/doc-03-02-05-02-01.component';
+import { Doc03020503Component } from './03-02-05-component-interaction/03-02-05-03-intercept-input-property-changes-with-ngonchanges/doc-03-02-05-03.component';
+import { Doc0302050301Component } from './03-02-05-component-interaction/03-02-05-03-intercept-input-property-changes-with-ngonchanges/doc-03-02-05-03-01.component';
+import { Doc03020504Component } from './03-02-05-component-interaction/03-02-05-04-parent-listens-for-child-event/doc-03-02-05-04.component';
+import { Doc0302050401Component } from './03-02-05-component-interaction/03-02-05-04-parent-listens-for-child-event/doc-03-02-05-04-01.component';
+import { Doc03020505Component } from './03-02-05-component-interaction/03-02-05-05-parent-interacts-with-child-via-local-variable/doc-03-02-05-05.component';
+import { Doc0302050501Component } from './03-02-05-component-interaction/03-02-05-05-parent-interacts-with-child-via-local-variable/doc-03-02-05-05-01.component';
+import { Doc03020506Component } from './03-02-05-component-interaction/03-02-05-06-parent-calls-an-viewchild/doc-03-02-05-06.component';
+import { Doc0302050601Component } from './03-02-05-component-interaction/03-02-05-06-parent-calls-an-viewchild/doc-03-02-05-06-01.component';
+import { Doc03020507Component } from './03-02-05-component-interaction/03-02-05-07-parent-and-children-communicate-via-a-service/doc-03-02-05-07.component';
+import { Doc0302050701Component } from './03-02-05-component-interaction/03-02-05-07-parent-and-children-communicate-via-a-service/doc-03-02-05-07-01.component';
+import { Doc030206Component } from './03-02-06-component-style/doc-03-02-06.component';
+import { Doc03020601Component } from './03-02-06-component-style/03-02-06-01-using-component-styles/doc-03-02-06-01.component';
+import { Doc03020602Component } from './03-02-06-component-style/03-02-06-02-style-scope/doc-03-02-06-02.component';
+import { Doc0302060201Component } from './03-02-06-component-style/03-02-06-02-style-scope/doc-03-02-06-02-01.component';
+import { Doc03020603Component } from './03-02-06-component-style/03-02-06-03-special-selectors/doc-03-02-06-03.component';
+import { Doc0302060301Component } from './03-02-06-component-style/03-02-06-03-special-selectors/03-02-06-03-01-host/doc-03-02-06-03-01.component';
+import { Doc0302060302Component } from './03-02-06-component-style/03-02-06-03-special-selectors/03-02-06-03-02-host-context/doc-03-02-06-03-02.component';
+import { Doc0302060303Component } from './03-02-06-component-style/03-02-06-03-special-selectors/03-02-06-03-03-ng-deep/doc-03-02-06-03-03.component';
+import { Doc030206030301Component } from './03-02-06-component-style/03-02-06-03-special-selectors/03-02-06-03-03-ng-deep/doc-03-02-06-03-03-01.component';
+import { Doc030206030302Component } from './03-02-06-component-style/03-02-06-03-special-selectors/03-02-06-03-03-ng-deep/doc-03-02-06-03-03-02.component';
+import { Doc03020604Component } from './03-02-06-component-style/03-02-06-04-loading-component-styles/doc-03-02-06-04.component';
+import { Doc0302060401Component } from './03-02-06-component-style/03-02-06-04-loading-component-styles/03-02-06-04-01-styles-in-component-metadata/doc-03-02-06-04-01.component';
+import { Doc0302060402Component } from './03-02-06-component-style/03-02-06-04-loading-component-styles/03-02-06-04-02-style-files-in-component-metadata/doc-03-02-06-04-02.component';
+import { Doc0302060403Component } from './03-02-06-component-style/03-02-06-04-loading-component-styles/03-02-06-04-03-template-inline-styles/doc-03-02-06-04-03.component';
+import { Doc0302060404Component } from './03-02-06-component-style/03-02-06-04-loading-component-styles/03-02-06-04-04-template-link-tags/doc-03-02-06-04-04.component';
+import { Doc03020605Component } from './03-02-06-component-style/03-02-06-05-view-encapsulation/doc-03-02-06-05.component';
+import { Doc030207Component } from './03-02-07-angular-elements/doc-03-02-07.component';
+import { Doc030208Component } from './03-02-08-dynamic-components/doc-03-02-08.component';
+import { Doc03020801Component } from './03-02-08-dynamic-components/doc-03-02-08-01.component';
+import { Doc030209Component } from './03-02-09-attribute-directives/doc-03-02-09.component';
+import { Doc03020901Component } from './03-02-09-attribute-directives/03-02-09-01-directives-overview/doc-03-02-09-01.component';
+import { Doc03020902Component } from './03-02-09-attribute-directives/03-02-09-02-build-a-simple-attribute-directive/doc-03-02-09-02.component';
+import { HighlightDirective } from './03-02-09-attribute-directives/03-02-09-02-build-a-simple-attribute-directive/directive/highlight.directive';
+import { Doc03020903Component } from './03-02-09-attribute-directives/03-02-09-03-respond-to-user-initiated-events/doc-03-02-09-03.component';
+import { Highlight02Directive } from './03-02-09-attribute-directives/03-02-09-03-respond-to-user-initiated-events/directive/highlight-02.directive';
+import { Highlight04Directive } from './03-02-09-attribute-directives/03-02-09-04-pass-values-into-the-directive-with-an-input-data-binding/directive/highlight-04.directive';
+import { Doc03020904Component } from './03-02-09-attribute-directives/03-02-09-04-pass-values-into-the-directive-with-an-input-data-binding/doc-03-02-09-04.component';
+import { Highlight05Directive } from './03-02-09-attribute-directives/03-02-09-05-bind-to-a-second-property/directive/highlight-05.directive';
+import { Doc03020905Component } from './03-02-09-attribute-directives/03-02-09-05-bind-to-a-second-property/doc-03-02-09-05.component';
+import { Doc030210Component } from './03-02-10-structural-directives/doc-03-02-10.component';
+import { Doc03021001Component } from './03-02-10-structural-directives/03-02-10-01-what-are-structural-directives/doc-03-02-10-01.component';
+import { Doc03021002Component } from './03-02-10-structural-directives/03-02-10-02-ngif-case-study/doc-03-02-10-02.component';
+import { Doc03021003Component } from './03-02-10-structural-directives/03-02-10-03-the-asterisk-prefix/doc-03-02-10-03.component';
+import { Doc03021004Component } from './03-02-10-structural-directives/03-02-10-04-inside-ngfor/doc-03-02-10-04.component';
+import { Doc03021005Component } from './03-02-10-structural-directives/03-02-10-05-inside-ngswitch-directives/doc-03-02-10-05.component';
+import { Doc03021006Component } from './03-02-10-structural-directives/03-02-10-06-ng-template/doc-03-02-10-06.component';
+import { Doc03021007Component } from './03-02-10-structural-directives/03-02-10-07-ng-container/doc-03-02-10-07.component';
+import { Doc03021008Component } from './03-02-10-structural-directives/03-02-10-08-write-a-structural-directive/doc-03-02-10-08.component';
+import { UnlessDirective } from './03-02-10-structural-directives/03-02-10-08-write-a-structural-directive/directive/unless.directive';
+import { SharedModule } from '@app/shared';
+import { Doc0302040201Component } from './03-02-04-lifecycle-hooks/03-02-04-02-lifecycle-sequence/03-02-04-02-01-ngonchanges/doc-03-02-04-02-01.component';
+import { Doc0302040202Component } from './03-02-04-lifecycle-hooks/03-02-04-02-lifecycle-sequence/03-02-04-02-02-ngoninit/doc-03-02-04-02-02.component';
+import { Doc0302090201Directive } from './03-02-09-attribute-directives/03-02-09-02-build-a-simple-attribute-directive/directive/doc-03-02-09-02-01.directive';
+import { Doc0302090301Directive } from './03-02-09-attribute-directives/03-02-09-03-respond-to-user-initiated-events/directive/doc-03-02-09-03-01.directive';
+import { Doc0302090401Directive } from './03-02-09-attribute-directives/03-02-09-04-pass-values-into-the-directive-with-an-input-data-binding/directive/doc-03-02-09-04-01.directive';
+import { Doc0302090402Directive } from './03-02-09-attribute-directives/03-02-09-04-pass-values-into-the-directive-with-an-input-data-binding/directive/doc-03-02-09-04-02.directive';
+import { Doc0302090403Directive } from './03-02-09-attribute-directives/03-02-09-04-pass-values-into-the-directive-with-an-input-data-binding/directive/doc-03-02-09-04-03.directive';
+import { Doc0302090404Directive } from './03-02-09-attribute-directives/03-02-09-04-pass-values-into-the-directive-with-an-input-data-binding/directive/doc-03-02-09-04-04.directive';
+import { Doc030211Module } from './03-02-11-pipes/doc-03-02-11.module';
+
+// tslint:enable:max-line-length
+
+@NgModule({
+  declarations: [
+    /* 03-02-01 */
+    Doc030201Component,
+    Doc03020101Component,
+    Doc03020102Component,
+    Doc03020103Component,
+    Doc03020104Component,
+    Doc03020105Component,
+    /* 03-02-02 */
+    Doc030202Component,
+    Doc03020201Component,
+    /* 03-02-02-02 */
+    Doc03020202Component,
+    Doc0302020201Component,
+    Doc0302020202Component,
+    Doc0302020203Component,
+    Doc0302020204Component,
+    /* 03-02-02-03 */
+    Doc03020203Component,
+    Doc0302020301Component,
+    /* 03-02-02-04 */
+    Doc03020204Component,
+    /* 03-02-02-05 */
+    Doc03020205Component,
+    Doc0302020501Component,
+    Doc0302020502Component,
+    Doc0302020503Component,
+    Doc0302020504Component,
+    Doc030202050401Component,
+    Doc0302020505Component,
+    /* 03-02-02-06 */
+    Doc03020206Component,
+    Doc0302020601Component,
+    Doc0302020602Component,
+    Doc0302020603Component,
+    /* 03-02-02-07 */
+    Doc03020207Component,
+    Doc0302020701Component,
+    Doc030202070101Component,
+    Doc0302020702Component,
+    Doc030202070201Component,
+    Doc0302020703Component,
+    Doc030202070301Component,
+    /* 03-02-02-08 */
+    Doc03020208Component,
+    Doc0302020801Component,
+    /* 03-02-02-09 */
+    Doc03020209Component,
+    Doc0302020901Component,
+    Doc0302020902Component,
+    Doc0302020903Component,
+    /* 03-02-02-10 */
+    Doc03020210Component,
+    Doc0302021001Component,
+    Doc030202100101Component,
+    Doc0302021002Component,
+    Doc030202100201Component,
+    Doc0302021003Component,
+    Doc0302021004Component,
+    /* 03-02-02-11 */
+    Doc03020211Component,
+    Doc0302021101Component,
+    /* 03-02-02-12 */
+    Doc03020212Component,
+    Doc0302021201Component,
+    Doc0302021202Component,
+    Doc030202120201Component,
+    Doc030202120202Component,
+    Doc0302021203Component,
+    Doc030202120301Component,
+    /* 03-02-02-13 */
+    Doc03020213Component,
+    Doc0302021301Component,
+    Doc0302021302Component,
+    Doc0302021303Component,
+    /* 03-02-02-14 */
+    Doc03020214Component,
+    Doc0302021401Component,
+    /* 03-02-03 */
+    Doc030203Component,
+    Doc03020301Component,
+    Doc03020302Component,
+    Doc03020303Component,
+    Doc03020304Component,
+    Doc03020305Component,
+    Doc03020306Component,
+    /* 03-02-04 */
+    Doc030204Component,
+    Doc03020401Component,
+    Doc03020402Component,
+    Doc0302040201Component,
+    Doc0302040202Component,
+    Doc03020403Component,
+    Doc0302040301Component,
+    Doc03020404Component,
+    Doc0302040401Component,
+    Doc0302040402Component,
+    Doc03020405Component,
+    Doc0302040501Component,
+    Doc0302040502Component,
+    Doc03020406Component,
+    Doc0302040601Component,
+    Doc03020407Component,
+    Doc0302040701Component,
+    Doc03020408Component,
+    Doc0302040801Component,
+    Doc0302040802Component,
+    /* 03-02-05 */
+    Doc030205Component,
+    Doc03020501Component,
+    Doc0302050101Component,
+    Doc03020502Component,
+    Doc0302050201Component,
+    Doc03020503Component,
+    Doc0302050301Component,
+    Doc03020504Component,
+    Doc0302050401Component,
+    Doc03020505Component,
+    Doc0302050501Component,
+    Doc03020506Component,
+    Doc0302050601Component,
+    Doc03020507Component,
+    Doc0302050701Component,
+    /* 03-02-06 */
+    Doc030206Component,
+    Doc03020601Component,
+    Doc03020602Component,
+    Doc0302060201Component,
+    Doc03020603Component,
+    Doc0302060301Component,
+    Doc0302060302Component,
+    Doc0302060303Component,
+    Doc030206030301Component,
+    Doc030206030302Component,
+    Doc03020604Component,
+    Doc0302060401Component,
+    Doc0302060402Component,
+    Doc0302060403Component,
+    Doc0302060404Component,
+    Doc03020605Component,
+    /* 03-02-07 */
+    Doc030207Component,
+    /* 03-02-08 */
+    Doc030208Component,
+    Doc03020801Component,
+    /* 03-02-09 */
+    Doc030209Component,
+    Doc03020901Component,
+    Doc03020902Component,
+    Doc03020903Component,
+    Doc03020904Component,
+    Doc03020905Component,
+    /* 03-02-10 */
+    Doc030210Component,
+    Doc03021001Component,
+    Doc03021002Component,
+    Doc03021003Component,
+    Doc03021004Component,
+    Doc03021005Component,
+    Doc03021006Component,
+    Doc03021007Component,
+    Doc03021008Component,
+    [
+      MySpyDirective,
+      HighlightDirective,
+      Highlight02Directive,
+      Highlight04Directive,
+      Highlight05Directive,
+      UnlessDirective,
+      Doc0302090201Directive,
+      Doc0302090301Directive,
+      Doc0302090401Directive,
+      Doc0302090402Directive,
+      Doc0302090403Directive,
+      Doc0302090404Directive,
+    ],
+  ],
+  imports: [
+    CommonModule,
+    Doc0303RoutingModule,
+    PanelModule,
+    AccordionModule,
+    ButtonModule,
+    ToastModule,
+    FormsModule,
+    SelectButtonModule,
+    MessagesModule,
+    InputTextModule,
+    SharedModule,
+    Doc030211Module,
+  ],
+  /*
+   * 动态加载的 component 需要在 NgModule 的 entryComponents 中声明
+   */
+  entryComponents: [Doc03020801Component],
+})
+export class Doc0303Module {}

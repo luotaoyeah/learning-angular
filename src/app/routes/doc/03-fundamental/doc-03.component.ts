@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Doc0306070201Service } from './03-06-ngmodules/03-06-07-providers/03-06-07-02-providedin-and-ngmodules/service/doc-03-06-07-02-01.service';
-import { Doc0306070202Service } from './03-06-ngmodules/03-06-07-providers/03-06-07-02-providedin-and-ngmodules/service/doc-03-06-07-02-02.service';
+import { Doc0306070201Service } from './03-07-ngmodules/03-06-07-providers/03-06-07-02-providedin-and-ngmodules/service/doc-03-06-07-02-01.service';
+import { Doc0306070202Service } from './03-07-ngmodules/03-06-07-providers/03-06-07-02-providedin-and-ngmodules/service/doc-03-06-07-02-02.service';
 
 @Component({
   selector: 'app-doc-fundamental',

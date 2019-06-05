@@ -32,24 +32,25 @@
           "icon": "anticon anticon-info-circle"
         },
         {
-          "i18n": "menu.doc.tutorial",
-          "link": "/doc/tutorial/dashboard",
-          "icon": "anticon anticon-info-circle"
-        },
-        {
-          "i18n": "menu.doc.fundamental",
+          "i18n": "menu.doc.03",
           "icon": "anticon anticon-info-circle",
           "children": [
             {
-              "i18n": "menu.doc.fundamental.architecture",
+              "i18n": "menu.doc.03.tutorial",
+              "link": "/doc/tutorial/dashboard",
+              "icon": "anticon anticon-info-circle"
+            },
+
+            {
+              "i18n": "menu.doc.03.architecture",
               "children": [
                 {
-                  "i18n": "menu.doc.fundamental.architecture.intro",
-                  "link": "/doc/03/01/intro-into-component"
+                  "i18n": "menu.doc.03.02.intro",
+                  "link": "/doc/03/02/intro-into-component"
                 },
                 {
-                  "i18n": "menu.doc.fundamental.architecture.intro-to-di",
-                  "link": "/doc/03/01/di"
+                  "i18n": "menu.doc.03.02.intro-to-di",
+                  "link": "/doc/03/02/di"
                 }
               ]
             },

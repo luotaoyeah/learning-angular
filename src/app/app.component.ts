@@ -3,7 +3,7 @@ import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { TitleService, VERSION as VERSION_ALAIN } from '@delon/theme';
 import { NzModalService, VERSION as VERSION_ZORRO } from 'ng-zorro-antd';
-import { Doc0306080201Service } from './routes/doc/03-fundamental/03-06-ngmodules/03-06-08-singleton-services/03-06-08-02-the-for-root-pattern/doc-03-06-08-02-01/service/doc-03-06-08-02-01.service';
+import { Doc0306080201Service } from './routes/doc/03-fundamental/03-07-ngmodules/03-06-08-singleton-services/03-06-08-02-the-for-root-pattern/doc-03-06-08-02-01/service/doc-03-06-08-02-01.service';
 
 @Component({
   selector: 'app-root',
