@@ -244,27 +244,27 @@
               "link": "/doc/03/09"
             },
             {
-              "i18n": "menu.doc.03.10",
+              "i18n": "menu.doc.03.11",
               "children": [
                 {
-                  "i18n": "menu.doc.03.10.01",
-                  "link": "/doc/03/10/01"
+                  "i18n": "menu.doc.03.11.01",
+                  "link": "/doc/03/11/01"
                 },
                 {
-                  "i18n": "menu.doc.03.10.02",
-                  "link": "/doc/03/10/02"
+                  "i18n": "menu.doc.03.11.02",
+                  "link": "/doc/03/11/02"
                 },
                 {
-                  "i18n": "menu.doc.03.10.03",
-                  "link": "/doc/03/10/03"
+                  "i18n": "menu.doc.03.11.03",
+                  "link": "/doc/03/11/03"
                 },
                 {
-                  "i18n": "menu.doc.03.10.04",
-                  "link": "/doc/03/10/04"
+                  "i18n": "menu.doc.03.11.04",
+                  "link": "/doc/03/11/04"
                 },
                 {
-                  "i18n": "menu.doc.03.10.05",
-                  "link": "/doc/03/10/05"
+                  "i18n": "menu.doc.03.11.05",
+                  "link": "/doc/03/11/05"
                 }
               ]
             }

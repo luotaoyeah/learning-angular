@@ -51,8 +51,8 @@ import { Doc0302Module } from './03-02-architecture/doc-03-02.module';
     Doc0307Module,
     Doc0308Module,
     Doc0309Module,
-    Doc0311Module,
     Doc030902Module,
+    Doc0311Module,
   ],
 })
 export class Doc03Module {}
