@@ -27,6 +27,11 @@
       "hideInBreadcrumb": true,
       "children": [
         {
+          "i18n": "menu.doc.02",
+          "link": "/doc/02",
+          "icon": "anticon anticon-info-circle"
+        },
+        {
           "i18n": "menu.doc.tutorial",
           "link": "/doc/tutorial/dashboard",
           "icon": "anticon anticon-info-circle"

@@ -35,6 +35,7 @@ import { Doc0306Module } from './03-06-ngmodules/doc-03-06.module';
 import { Doc0307Module } from './03-07-dependency-injection/doc-03-07.module';
 import { Doc0308Module } from './03-08-httpclient/doc-03-08.module';
 import { Doc0310Module } from './03-10-animation/doc-03-10.module';
+import { Doc0301Module } from './03-01-tour-of-heroes-app/doc-03-01.module';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { Doc0310Module } from './03-10-animation/doc-03-10.module';
     FormsModule,
     ...[ButtonModule, InputTextModule, AccordionModule],
     Doc03RoutingModule,
+    Doc0301Module,
     Doc0302Module,
     Doc0303Module,
     Doc0304Module,

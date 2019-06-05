@@ -2,6 +2,7 @@
   "menu.home": "HOME",
   "menu.home.home": "HOME",
   "menu.doc": "DOC",
+  "menu.doc.02": "SETUP",
   "menu.doc.tutorial": "TUTORIAL",
   "menu.doc.fundamental": "FUNDAMENTAL",
   "menu.doc.fundamental.architecture": "Architecture",
