@@ -61,6 +61,12 @@
   .alain-default__fixed .reuse-tab + router-outlet {
     height: 38px;
   }
+
+  .full-content__opened {
+    .alain-default__fixed .reuse-tab + router-outlet {
+      height: 0px;
+    }
+  }
 }
 
 .ant-tabs-nav .ant-tabs-tab {
@@ -122,4 +128,11 @@
 
 .ant-modal-confirm .ant-modal-body {
   padding: 16px;
+}
+
+.full-content__opened {
+  .alain-default__content {
+    padding: 0;
+    margin: 10px !important;
+  }
 }

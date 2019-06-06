@@ -34,6 +34,10 @@ const routes: Routes = [
         loadChildren: './blog/blog.module#BlogModule',
       },
       {
+        path: 'pkgs/ng-alain',
+        loadChildren: './pkgs/ng-alain/ng-alain.module#NgAlainModule',
+      },
+      {
         path: 'pkgs/jasmine',
         loadChildren: './pkgs/jasmine/jasmine.module#JasmineModule',
       },

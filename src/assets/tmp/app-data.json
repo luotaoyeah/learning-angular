@@ -431,6 +431,21 @@
       "hideInBreadcrumb": true,
       "children": [
         {
+          "i18n": "menu.pkgs.ng-alain",
+          "icon": "anticon anticon-info-circle",
+          "children": [
+            {
+              "i18n": "menu.pkgs.ng-alain.delon",
+              "children": [
+                {
+                  "i18n": "menu.pkgs.ng-alain.delon.abc",
+                  "link": "/pkgs/ng-alain/delon/abc"
+                }
+              ]
+            }
+          ]
+        },
+        {
           "i18n": "menu.pkgs.jasmine",
           "icon": "anticon anticon-info-circle",
           "children": [
