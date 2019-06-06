@@ -57,4 +57,10 @@ export class X02Component implements OnInit {
       }
     });
   }
+
+  public handleDraggableChange() {
+    if (this.options.api && this.options.api.optionsChanged) {
+      this.options.api.optionsChanged();
+    }
+  }
 }
