@@ -122,20 +122,10 @@ export class X01Component implements OnInit {
     ];
   }
 
-  public changedOptions() {
-    if (this.options.api && this.options.api.optionsChanged) {
-      this.options.api.optionsChanged();
-    }
-  }
-
   // tslint:disable-next-line:no-any
   public removeItem($event: any, item: any) {
     $event.preventDefault();
     $event.stopPropagation();
     this.dashboard.splice(this.dashboard.indexOf(item), 1);
-  }
-
-  public addItem() {
-    this.dashboard.push({ x: 0, y: 0, cols: 1, rows: 1 });
   }
 }

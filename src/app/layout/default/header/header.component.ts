@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { SettingsService } from '@delon/theme';
 
 @Component({
@@ -9,10 +9,13 @@ import { SettingsService } from '@delon/theme';
 export class HeaderComponent {
   public searchToggleStatus = false;
 
-  constructor(public settings: SettingsService) {}
+  constructor(public settingsService: SettingsService) {}
 
   public toggleCollapsedSidebar() {
-    this.settings.setLayout('collapsed', !this.settings.layout.collapsed);
+    this.settingsService.setLayout(
+      'collapsed',
+      !this.settingsService.layout.collapsed,
+    );
   }
 
   public searchToggleChange() {

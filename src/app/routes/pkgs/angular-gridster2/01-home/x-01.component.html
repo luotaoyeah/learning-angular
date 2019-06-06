@@ -1,15 +1,15 @@
 <gridster [options]="options">
   <gridster-item [item]="item" *ngFor="let item of dashboard">
-    <div class="button-holder">
-      <div class="gridster-item-content" *ngIf="item.hasContent">
-        <div class="stuff">
+    <div>
+      <div *ngIf="item.hasContent">
+        <div>
           <span>
             Some content to select and click without dragging the widget
           </span>
           <a href="https://www.google.com" target="_blank">GOOGLE</a>
         </div>
       </div>
-      <div class="item-buttons" *ngIf="item.hasContent">
+      <div *ngIf="item.hasContent">
         <button nz-button>
           <i nz-icon nzType="drag" nzTheme="outline"></i>
         </button>

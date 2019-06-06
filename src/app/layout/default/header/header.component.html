@@ -3,13 +3,13 @@
     <img
       class="alain-default__header-logo-expanded"
       src="./assets/logo-full.svg"
-      alt="{{ settings.app.name }}"
+      alt="{{ settingsService.app.name }}"
       style="max-height:40px;"
     />
     <img
       class="alain-default__header-logo-collapsed"
       src="./assets/logo.svg"
-      alt="{{ settings.app.name }}"
+      alt="{{ settingsService.app.name }}"
       style="max-height:30px;"
     />
   </a>
@@ -21,7 +21,7 @@
       <div class="alain-default__nav-item" (click)="toggleCollapsedSidebar()">
         <i
           nz-icon
-          type="menu-{{ settings.layout.collapsed ? 'unfold' : 'fold' }}"
+          type="menu-{{ settingsService.layout.collapsed ? 'unfold' : 'fold' }}"
         ></i>
       </div>
     </li>
