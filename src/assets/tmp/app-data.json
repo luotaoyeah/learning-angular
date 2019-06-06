@@ -546,6 +546,16 @@
               ]
             }
           ]
+        },
+        {
+          "i18n": "menu.pkgs.angular-gridster2",
+          "icon": "anticon anticon-info-circle",
+          "children": [
+            {
+              "i18n": "menu.pkgs.angular-gridster2.01",
+              "link": "/pkgs/angular-gridster2/01"
+            }
+          ]
         }
       ]
     },

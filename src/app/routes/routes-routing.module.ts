@@ -50,6 +50,11 @@ const routes: Routes = [
         path: 'pkgs/ngrx',
         loadChildren: './pkgs/ngrx/ngrx.module#NgrxModule',
       },
+      {
+        path: 'pkgs/angular-gridster2',
+        loadChildren:
+          './pkgs/angular-gridster2/angular-gridster2.module#AngularGridster2Module',
+      },
     ],
   },
   // 全屏布局

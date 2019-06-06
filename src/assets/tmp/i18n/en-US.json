@@ -122,6 +122,8 @@
   "menu.pkgs.ngrx.entity.02": "Entity Adapter",
   "menu.pkgs.ngrx.schematics": "SCHEMATICS",
   "menu.pkgs.ngrx.schematics.01": "Schematics",
+  "menu.pkgs.angular-gridster2": "angular-gridster2",
+  "menu.pkgs.angular-gridster2.01": "Home",
   "menu.blog": "BLOG",
   "menu.blog.a-comprehensive-guide-to-angular-onpush": "A Comprehensive Guide to Angular onPush Change Detection Strategy",
   "menu.blog.never-again-be-confused-when-implementing-controlvalueaccessor": "Never Again Be Confused When Implementing Control Value Accessor In Angular Forms",
