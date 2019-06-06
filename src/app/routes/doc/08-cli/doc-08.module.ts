@@ -39,6 +39,5 @@ import { Doc0816Component } from './08-16-xi18n/doc-08-16.component';
     Doc0816Component,
   ],
   imports: [CommonModule, Doc08RoutingModule, SharedModule],
-  exports: [],
 })
 export class Doc08Module {}

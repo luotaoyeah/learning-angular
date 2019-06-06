@@ -29,11 +29,7 @@ function removeVarFile() {
 }
 
 function removeOutputFile() {
-  try {
-    fs.unlinkSync(options.outputFilePath);
-  } catch (e) {
-    /* the output file is already deleted */
-  }
+  fs.writeFileSync(options.outputFilePath, '');
 }
 
 removeOutputFile();

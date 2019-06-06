@@ -16,6 +16,5 @@ import { Doc0902Module } from './09-02-common/doc-09-02.module';
     Doc0901Module,
     Doc0902Module,
   ],
-  exports: [Doc0901Module, Doc0902Module],
 })
 export class Doc09Module {}

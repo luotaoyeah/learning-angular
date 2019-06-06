@@ -5,6 +5,7 @@ import { Doc04Module } from './04-techniques/doc-04.module';
 import { Doc05Module } from './05-dev-workflow/doc-05.module';
 import { Doc08Module } from './08-cli/doc-08.module';
 import { Doc09Module } from './09-api/doc-09.module';
+import { Doc06Module } from './06-configuration/doc-06.module';
 
 @NgModule({
   imports: [
@@ -12,14 +13,7 @@ import { Doc09Module } from './09-api/doc-09.module';
     Doc03Module,
     Doc04Module,
     Doc05Module,
-    Doc08Module,
-    Doc09Module,
-  ],
-  exports: [
-    Doc02Module,
-    Doc03Module,
-    Doc04Module,
-    Doc05Module,
+    Doc06Module,
     Doc08Module,
     Doc09Module,
   ],

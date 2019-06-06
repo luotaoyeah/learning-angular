@@ -10,6 +10,5 @@ import { NeverAgainBeConfusedWhenImplementingControlvalueaccessorModule } from '
     AComprehensiveGuideToAngularOnpushModule,
     NeverAgainBeConfusedWhenImplementingControlvalueaccessorModule,
   ],
-  exports: [AComprehensiveGuideToAngularOnpushModule],
 })
 export class BlogModule {}

@@ -18,6 +18,5 @@ import { Doc0407Module } from './04-07-schematics/doc-04-07.module';
     Doc0406Module,
     Doc0407Module,
   ],
-  exports: [Doc0402Module, Doc0406Module, Doc0407Module],
 })
 export class Doc04Module {}

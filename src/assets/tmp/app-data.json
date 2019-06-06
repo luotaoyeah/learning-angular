@@ -40,7 +40,6 @@
               "link": "/doc/tutorial/dashboard",
               "icon": "anticon anticon-info-circle"
             },
-
             {
               "i18n": "menu.doc.03.architecture",
               "children": [
@@ -311,12 +310,18 @@
           "icon": "anticon anticon-info-circle",
           "children": [
             {
-              "i18n": "menu.doc.05.02",
-              "link": "/doc/05/02"
-            },
-            {
               "i18n": "menu.doc.05.04",
               "link": "/doc/05/04"
+            }
+          ]
+        },
+        {
+          "i18n": "menu.doc.06",
+          "icon": "anticon anticon-info-circle",
+          "children": [
+            {
+              "i18n": "menu.doc.06.02",
+              "link": "/doc/06/02"
             }
           ]
         },

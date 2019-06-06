@@ -4,6 +4,5 @@ import { GlobalModule } from './global/global.module';
 
 @NgModule({
   imports: [NamespaceModule, GlobalModule],
-  exports: [NamespaceModule, GlobalModule],
 })
 export class JasmineModule {}
