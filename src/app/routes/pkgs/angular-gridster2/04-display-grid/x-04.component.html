@@ -1,0 +1,17 @@
+<nz-card>
+  <nz-select
+    style="width: 300px;"
+    [ngModel]="options.displayGrid"
+    (ngModelChange)="handleDisplayGridChange($event)"
+  >
+    <nz-option nzValue="always" nzLabel="always"></nz-option>
+    <nz-option nzValue="onDrag&Resize" nzLabel="onDrag&Resize"></nz-option>
+    <nz-option nzValue="none" nzLabel="none"></nz-option>
+  </nz-select>
+</nz-card>
+
+<nz-divider [nzDashed]="true"></nz-divider>
+
+<gridster [options]="options">
+  <gridster-item [item]="item" *ngFor="let item of items"></gridster-item>
+</gridster>
