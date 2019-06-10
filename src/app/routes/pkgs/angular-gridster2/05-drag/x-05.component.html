@@ -14,6 +14,20 @@
         ></nz-input-number>
       </nz-form-control>
     </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24">
+        <code>draggable.enabled</code>
+      </nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24">
+        <label
+          nz-checkbox
+          [(ngModel)]="options.draggable.enabled"
+          (ngModelChange)="handleOptionsChange()"
+          [ngModelOptions]="{ standalone: true }"
+        ></label>
+      </nz-form-control>
+    </nz-form-item>
   </form>
 </nz-card>
 
