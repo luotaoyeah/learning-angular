@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 /*
  * https://angular.io/api/common#primary-entry-point-exports
@@ -7,6 +7,4 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-doc-09-02-02',
   templateUrl: './doc-09-02-02.component.html',
 })
-export class Doc090202Component implements OnInit {
-  public ngOnInit() {}
-}
+export class Doc090202Component {}
