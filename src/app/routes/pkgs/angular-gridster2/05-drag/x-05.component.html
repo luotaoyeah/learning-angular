@@ -42,6 +42,34 @@
         ></label>
       </nz-form-control>
     </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24">
+        <code>disableScrollHorizontal</code>
+      </nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24">
+        <label
+          nz-checkbox
+          [(ngModel)]="options.disableScrollHorizontal"
+          (ngModelChange)="handleOptionsChange()"
+          [ngModelOptions]="{ standalone: true }"
+        ></label>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24">
+        <code>disableScrollVertical</code>
+      </nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24">
+        <label
+          nz-checkbox
+          [(ngModel)]="options.disableScrollVertical"
+          (ngModelChange)="handleOptionsChange()"
+          [ngModelOptions]="{ standalone: true }"
+        ></label>
+      </nz-form-control>
+    </nz-form-item>
   </form>
 </nz-card>
 

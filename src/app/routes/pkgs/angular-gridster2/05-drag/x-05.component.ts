@@ -72,6 +72,8 @@ export class X05Component implements OnInit {
         dropOverItems: false,
         dropOverItemsCallback: X05Component.handleDragOverlap,
       },
+      disableScrollHorizontal: false,
+      disableScrollVertical: false,
       resizable: {
         enabled: true,
       },
