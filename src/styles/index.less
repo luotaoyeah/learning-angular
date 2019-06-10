@@ -135,9 +135,35 @@
   padding: 16px;
 }
 
-.full-content__opened {
+.full-content__body {
   .alain-default__content {
-    padding: 0;
-    margin: 10px !important;
+    router-outlet + * {
+      height: calc(100% - 40px);
+    }
+  }
+
+  &.full-content__opened {
+    .alain-default__content {
+      padding: 0;
+      margin: 10px !important;
+      height: calc(100% - 20px);
+
+      router-outlet + * {
+        height: 100%;
+      }
+    }
   }
 }
+
+// region angular-gridster2
+
+gridster .gridster-column,
+gridster .gridster-row {
+  transition: none !important;
+}
+
+gridster-item {
+  transition: none !important;
+}
+
+// endregion
