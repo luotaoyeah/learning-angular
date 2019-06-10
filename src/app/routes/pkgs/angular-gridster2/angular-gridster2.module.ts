@@ -4,9 +4,10 @@ import { AngularGridster2RoutingModule } from './angular-gridster2-routing.modul
 import { GridsterModule } from 'angular-gridster2';
 import { SharedModule } from '@app/shared';
 import { X02Component } from './02-api/x-02.component';
+import { X03Component } from './03-compact/x-03.component';
 
 @NgModule({
-  declarations: [X01Component, X02Component],
+  declarations: [X01Component, X02Component, X03Component],
   imports: [AngularGridster2RoutingModule, SharedModule, GridsterModule],
 })
 export class AngularGridster2Module {}

@@ -558,6 +558,10 @@
             {
               "i18n": "menu.pkgs.angular-gridster2.02",
               "link": "/pkgs/angular-gridster2/02"
+            },
+            {
+              "i18n": "menu.pkgs.angular-gridster2.03",
+              "link": "/pkgs/angular-gridster2/03"
             }
           ]
         }

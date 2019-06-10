@@ -125,6 +125,7 @@
   "menu.pkgs.angular-gridster2": "angular-gridster2",
   "menu.pkgs.angular-gridster2.01": "Home",
   "menu.pkgs.angular-gridster2.02": "API",
+  "menu.pkgs.angular-gridster2.03": "Compact",
   "menu.blog": "BLOG",
   "menu.blog.a-comprehensive-guide-to-angular-onpush": "A Comprehensive Guide to Angular onPush Change Detection Strategy",
   "menu.blog.never-again-be-confused-when-implementing-controlvalueaccessor": "Never Again Be Confused When Implementing Control Value Accessor In Angular Forms",
