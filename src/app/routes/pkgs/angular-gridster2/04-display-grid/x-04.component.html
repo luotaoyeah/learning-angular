@@ -7,8 +7,8 @@
       <nz-form-control [nzSm]="14" [nzXs]="24">
         <nz-select
           style="width: 300px;"
-          [ngModel]="options.displayGrid"
-          (ngModelChange)="handleDisplayGridChange($event)"
+          [(ngModel)]="options.displayGrid"
+          (ngModelChange)="handleDisplayGridChange()"
           [ngModelOptions]="{ standalone: true }"
         >
           <nz-option nzValue="always" nzLabel="always"></nz-option>

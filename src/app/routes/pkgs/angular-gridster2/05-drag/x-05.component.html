@@ -1,0 +1,24 @@
+<nz-card>
+  <form nz-form>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24">
+        <code>draggable.delayStart</code>
+      </nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24">
+        <nz-input-number
+          [(ngModel)]="options.draggable.delayStart"
+          (ngModelChange)="handleOptionsChange()"
+          [ngModelOptions]="{ standalone: true }"
+          [nzMin]="0"
+          [nzStep]="1"
+        ></nz-input-number>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+</nz-card>
+
+<nz-divider [nzDashed]="true"></nz-divider>
+
+<gridster [options]="options">
+  <gridster-item [item]="item" *ngFor="let item of items"></gridster-item>
+</gridster>

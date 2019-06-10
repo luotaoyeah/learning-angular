@@ -1,40 +1,73 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import {
-  CompactType,
+  DisplayGrid,
+  GridsterComponentInterface,
   GridsterConfig,
   GridsterItem,
+  GridsterItemComponentInterface,
   GridType,
 } from 'angular-gridster2';
 import { SettingsNotify, SettingsService } from '@delon/theme';
 
 /*
- * https://tiberiuzuld.github.io/angular-gridster2/displayGrid
+ * https://tiberiuzuld.github.io/angular-gridster2/drag
  */
 @Component({
-  selector: 'app-x-04',
-  templateUrl: './x-04.component.html',
-  styleUrls: ['./x-04.component.less'],
+  selector: 'app-x-05',
+  templateUrl: './x-05.component.html',
+  styleUrls: ['./x-05.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class X04Component implements OnInit {
+export class X05Component implements OnInit {
   public options: GridsterConfig = {};
   public items: Array<GridsterItem> = [];
 
   constructor(public settingsService: SettingsService) {}
 
+  public static handleDragStart(
+    item: GridsterItem,
+    itemComponent: GridsterItemComponentInterface,
+    event: MouseEvent,
+  ) {
+    console.log(`[${X05Component.name}] [start]\n`, item, itemComponent, event);
+  }
+
+  public static handleDragStop(
+    item: GridsterItem,
+    itemComponent: GridsterItemComponentInterface,
+    event: MouseEvent,
+  ) {
+    console.log(`[${X05Component.name}] [stop]\n`, item, itemComponent, event);
+  }
+
+  public static handleDragOverlap(
+    source: GridsterItem,
+    target: GridsterItem,
+    grid?: GridsterComponentInterface,
+  ) {
+    console.log(`[${X05Component.name}] [overlap]\n`, source, target, grid);
+  }
+
   public ngOnInit() {
     this.options = {
       gridType: GridType.Fit,
-      compactType: CompactType.None,
-      maxCols: 10,
+      displayGrid: DisplayGrid.Always,
       pushItems: true,
+      swap: false,
       draggable: {
+        delayStart: 0,
         enabled: true,
+        ignoreContentClass: 'gridster-item-content',
+        ignoreContent: false,
+        dragHandleClass: 'drag-handler',
+        stop: X05Component.handleDragStop,
+        start: X05Component.handleDragStart,
+        dropOverItems: false,
+        dropOverItemsCallback: X05Component.handleDragOverlap,
       },
       resizable: {
         enabled: true,
       },
-      displayGrid: 'always',
     };
 
     this.items = [
@@ -60,7 +93,7 @@ export class X04Component implements OnInit {
     });
   }
 
-  public handleDisplayGridChange() {
+  public handleOptionsChange() {
     if (this.options.api && this.options.api.optionsChanged) {
       this.options.api.optionsChanged();
     }
