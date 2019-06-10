@@ -144,16 +144,6 @@ import { Highlight04Directive } from './03-02-09-attribute-directives/03-02-09-0
 import { Doc03020904Component } from './03-02-09-attribute-directives/03-02-09-04-pass-values-into-the-directive-with-an-input-data-binding/doc-03-02-09-04.component';
 import { Highlight05Directive } from './03-02-09-attribute-directives/03-02-09-05-bind-to-a-second-property/directive/highlight-05.directive';
 import { Doc03020905Component } from './03-02-09-attribute-directives/03-02-09-05-bind-to-a-second-property/doc-03-02-09-05.component';
-import { Doc030210Component } from './03-02-10-structural-directives/doc-03-02-10.component';
-import { Doc03021001Component } from './03-02-10-structural-directives/03-02-10-01-what-are-structural-directives/doc-03-02-10-01.component';
-import { Doc03021002Component } from './03-02-10-structural-directives/03-02-10-02-ngif-case-study/doc-03-02-10-02.component';
-import { Doc03021003Component } from './03-02-10-structural-directives/03-02-10-03-the-asterisk-prefix/doc-03-02-10-03.component';
-import { Doc03021004Component } from './03-02-10-structural-directives/03-02-10-04-inside-ngfor/doc-03-02-10-04.component';
-import { Doc03021005Component } from './03-02-10-structural-directives/03-02-10-05-inside-ngswitch-directives/doc-03-02-10-05.component';
-import { Doc03021006Component } from './03-02-10-structural-directives/03-02-10-06-ng-template/doc-03-02-10-06.component';
-import { Doc03021007Component } from './03-02-10-structural-directives/03-02-10-07-ng-container/doc-03-02-10-07.component';
-import { Doc03021008Component } from './03-02-10-structural-directives/03-02-10-08-write-a-structural-directive/doc-03-02-10-08.component';
-import { UnlessDirective } from './03-02-10-structural-directives/03-02-10-08-write-a-structural-directive/directive/unless.directive';
 import { SharedModule } from '@app/shared';
 import { Doc0302040201Component } from './03-02-04-lifecycle-hooks/03-02-04-02-lifecycle-sequence/03-02-04-02-01-ngonchanges/doc-03-02-04-02-01.component';
 import { Doc0302040202Component } from './03-02-04-lifecycle-hooks/03-02-04-02-lifecycle-sequence/03-02-04-02-02-ngoninit/doc-03-02-04-02-02.component';
@@ -164,6 +154,7 @@ import { Doc0302090402Directive } from './03-02-09-attribute-directives/03-02-09
 import { Doc0302090403Directive } from './03-02-09-attribute-directives/03-02-09-04-pass-values-into-the-directive-with-an-input-data-binding/directive/doc-03-02-09-04-03.directive';
 import { Doc0302090404Directive } from './03-02-09-attribute-directives/03-02-09-04-pass-values-into-the-directive-with-an-input-data-binding/directive/doc-03-02-09-04-04.directive';
 import { Doc030211Module } from './03-02-11-pipes/doc-03-02-11.module';
+import { Doc030310Module } from './03-03-10-structural-directives/doc-03-03-10.module';
 
 // tslint:enable:max-line-length
 
@@ -320,23 +311,12 @@ import { Doc030211Module } from './03-02-11-pipes/doc-03-02-11.module';
     Doc03020903Component,
     Doc03020904Component,
     Doc03020905Component,
-    /* 03-02-10 */
-    Doc030210Component,
-    Doc03021001Component,
-    Doc03021002Component,
-    Doc03021003Component,
-    Doc03021004Component,
-    Doc03021005Component,
-    Doc03021006Component,
-    Doc03021007Component,
-    Doc03021008Component,
     [
       MySpyDirective,
       HighlightDirective,
       Highlight02Directive,
       Highlight04Directive,
       Highlight05Directive,
-      UnlessDirective,
       Doc0302090201Directive,
       Doc0302090301Directive,
       Doc0302090401Directive,
@@ -357,6 +337,7 @@ import { Doc030211Module } from './03-02-11-pipes/doc-03-02-11.module';
     MessagesModule,
     InputTextModule,
     SharedModule,
+    Doc030310Module,
     Doc030211Module,
   ],
   /*

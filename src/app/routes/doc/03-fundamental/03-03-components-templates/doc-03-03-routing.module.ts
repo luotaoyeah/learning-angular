@@ -9,7 +9,6 @@ import { Doc030206Component } from './03-02-06-component-style/doc-03-02-06.comp
 import { Doc030207Component } from './03-02-07-angular-elements/doc-03-02-07.component';
 import { Doc030208Component } from './03-02-08-dynamic-components/doc-03-02-08.component';
 import { Doc030209Component } from './03-02-09-attribute-directives/doc-03-02-09.component';
-import { Doc030210Component } from './03-02-10-structural-directives/doc-03-02-10.component';
 import { Doc030211Component } from './03-02-11-pipes/doc-03-02-11.component';
 
 const routes: Routes = [
@@ -48,10 +47,6 @@ const routes: Routes = [
   {
     path: '03/02/09',
     component: Doc030209Component,
-  },
-  {
-    path: '03/02/10',
-    component: Doc030210Component,
   },
   {
     path: '03/02/11',

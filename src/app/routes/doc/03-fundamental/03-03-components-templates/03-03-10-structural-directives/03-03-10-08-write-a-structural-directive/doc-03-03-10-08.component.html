@@ -1,0 +1,6 @@
+<button nz-button (click)="visible = !visible">TOGGLE</button>
+
+<nz-divider [nzDashed]="true"></nz-divider>
+
+<button nz-button *ngIf="visible">TRUE</button>
+<button nz-button *appUnless="visible">FALSE</button>

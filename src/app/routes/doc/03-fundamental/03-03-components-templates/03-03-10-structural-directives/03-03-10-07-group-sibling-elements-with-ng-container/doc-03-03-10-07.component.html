@@ -1,0 +1,14 @@
+<p>
+  ng-container 是一个特殊的 angular element，类似于 vue 中的 template 元素
+</p>
+<p>
+  它是一个虚拟的元素，可以用来作为其他元素的一个虚拟容器，但是最终在 DOM
+  中并不会存在这个 ng-container 元素
+</p>
+<p>如下，将两个 li 元素作为一个整体，放到一个 ng-container 容器里面：</p>
+<ul>
+  <ng-container *ngFor="let v of ['a', 'b', 'c']">
+    <li>{{ v }}</li>
+    <li>{{ v.toUpperCase() }}</li>
+  </ng-container>
+</ul>
