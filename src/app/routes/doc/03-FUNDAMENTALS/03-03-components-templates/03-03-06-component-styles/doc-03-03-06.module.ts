@@ -18,6 +18,7 @@ import { Doc0302060403Component } from './03-02-06-04-loading-component-styles/0
 import { Doc0302060404Component } from './03-02-06-04-loading-component-styles/03-02-06-04-04-template-link-tags/doc-03-02-06-04-04.component';
 import { Doc03030605Component } from './03-03-06-05-view-encapsulation/doc-03-03-06-05.component';
 import { AccordionModule } from 'primeng/primeng';
+import { Doc0303060501Component } from './03-03-06-05-view-encapsulation/doc-03-03-06-05-01/doc-03-03-06-05-01.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { AccordionModule } from 'primeng/primeng';
     Doc0302060403Component,
     Doc0302060404Component,
     Doc03030605Component,
+    Doc0303060501Component,
   ],
   imports: [SharedModule, AccordionModule, Doc030306RoutingModule],
 })
