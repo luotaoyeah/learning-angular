@@ -13,9 +13,7 @@ export class AdminDashboardComponent implements OnInit {
 
   public ngOnInit() {
     console.log(
-      `[${AdminDashboardComponent.name}] - [${
-        this.selectivePreloadingStrategyService.modules[0]
-      }]`,
+      `[${AdminDashboardComponent.name}] - [${this.selectivePreloadingStrategyService.modules[0]}]`,
     );
   }
 }

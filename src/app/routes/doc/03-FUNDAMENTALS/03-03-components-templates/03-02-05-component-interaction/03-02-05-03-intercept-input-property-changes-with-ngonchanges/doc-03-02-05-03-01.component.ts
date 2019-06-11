@@ -23,9 +23,7 @@ export class Doc0302050301Component implements OnInit, OnChanges {
       if (changes.hasOwnProperty(key)) {
         const prop = changes[key];
         console.log(
-          `%c[${Doc0302050301Component.name}].${key}(${prop.previousValue} -> ${
-            prop.currentValue
-          })`,
+          `%c[${Doc0302050301Component.name}].${key}(${prop.previousValue} -> ${prop.currentValue})`,
           'color:#4692FF',
         );
       }
