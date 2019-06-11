@@ -8,7 +8,7 @@
         <label
           nz-checkbox
           [ngModelOptions]="{ standalone: true }"
-          [(ngModel)]="options.draggable.enabled"
+          [(ngModel)]="options.draggable!.enabled"
           (nzCheckedChange)="handleDraggableChange()"
         ></label>
       </nz-form-control>

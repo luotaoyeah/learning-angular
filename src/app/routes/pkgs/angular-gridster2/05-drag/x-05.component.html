@@ -6,7 +6,7 @@
       </nz-form-label>
       <nz-form-control [nzSm]="14" [nzXs]="24">
         <nz-input-number
-          [(ngModel)]="options.draggable.delayStart"
+          [(ngModel)]="options.draggable!.delayStart"
           (ngModelChange)="handleOptionsChange()"
           [ngModelOptions]="{ standalone: true }"
           [nzMin]="0"
@@ -22,7 +22,7 @@
       <nz-form-control [nzSm]="14" [nzXs]="24">
         <label
           nz-checkbox
-          [(ngModel)]="options.draggable.enabled"
+          [(ngModel)]="options.draggable!.enabled"
           (ngModelChange)="handleOptionsChange()"
           [ngModelOptions]="{ standalone: true }"
         ></label>
@@ -36,7 +36,7 @@
       <nz-form-control [nzSm]="14" [nzXs]="24">
         <label
           nz-checkbox
-          [(ngModel)]="options.draggable.ignoreContent"
+          [(ngModel)]="options.draggable!.ignoreContent"
           (ngModelChange)="handleOptionsChange()"
           [ngModelOptions]="{ standalone: true }"
         ></label>
