@@ -115,22 +115,6 @@ import { Doc03020506Component } from './03-02-05-component-interaction/03-02-05-
 import { Doc0302050601Component } from './03-02-05-component-interaction/03-02-05-06-parent-calls-an-viewchild/doc-03-02-05-06-01.component';
 import { Doc03020507Component } from './03-02-05-component-interaction/03-02-05-07-parent-and-children-communicate-via-a-service/doc-03-02-05-07.component';
 import { Doc0302050701Component } from './03-02-05-component-interaction/03-02-05-07-parent-and-children-communicate-via-a-service/doc-03-02-05-07-01.component';
-import { Doc030206Component } from './03-02-06-component-style/doc-03-02-06.component';
-import { Doc03020601Component } from './03-02-06-component-style/03-02-06-01-using-component-styles/doc-03-02-06-01.component';
-import { Doc03020602Component } from './03-02-06-component-style/03-02-06-02-style-scope/doc-03-02-06-02.component';
-import { Doc0302060201Component } from './03-02-06-component-style/03-02-06-02-style-scope/doc-03-02-06-02-01.component';
-import { Doc03020603Component } from './03-02-06-component-style/03-02-06-03-special-selectors/doc-03-02-06-03.component';
-import { Doc0302060301Component } from './03-02-06-component-style/03-02-06-03-special-selectors/03-02-06-03-01-host/doc-03-02-06-03-01.component';
-import { Doc0302060302Component } from './03-02-06-component-style/03-02-06-03-special-selectors/03-02-06-03-02-host-context/doc-03-02-06-03-02.component';
-import { Doc0302060303Component } from './03-02-06-component-style/03-02-06-03-special-selectors/03-02-06-03-03-ng-deep/doc-03-02-06-03-03.component';
-import { Doc030206030301Component } from './03-02-06-component-style/03-02-06-03-special-selectors/03-02-06-03-03-ng-deep/doc-03-02-06-03-03-01.component';
-import { Doc030206030302Component } from './03-02-06-component-style/03-02-06-03-special-selectors/03-02-06-03-03-ng-deep/doc-03-02-06-03-03-02.component';
-import { Doc03020604Component } from './03-02-06-component-style/03-02-06-04-loading-component-styles/doc-03-02-06-04.component';
-import { Doc0302060401Component } from './03-02-06-component-style/03-02-06-04-loading-component-styles/03-02-06-04-01-styles-in-component-metadata/doc-03-02-06-04-01.component';
-import { Doc0302060402Component } from './03-02-06-component-style/03-02-06-04-loading-component-styles/03-02-06-04-02-style-files-in-component-metadata/doc-03-02-06-04-02.component';
-import { Doc0302060403Component } from './03-02-06-component-style/03-02-06-04-loading-component-styles/03-02-06-04-03-template-inline-styles/doc-03-02-06-04-03.component';
-import { Doc0302060404Component } from './03-02-06-component-style/03-02-06-04-loading-component-styles/03-02-06-04-04-template-link-tags/doc-03-02-06-04-04.component';
-import { Doc03020605Component } from './03-02-06-component-style/03-02-06-05-view-encapsulation/doc-03-02-06-05.component';
 import { Doc030207Component } from './03-02-07-angular-elements/doc-03-02-07.component';
 import { Doc030208Component } from './03-02-08-dynamic-components/doc-03-02-08.component';
 import { Doc03020801Component } from './03-02-08-dynamic-components/doc-03-02-08-01.component';
@@ -155,6 +139,7 @@ import { Doc0302090403Directive } from './03-02-09-attribute-directives/03-02-09
 import { Doc0302090404Directive } from './03-02-09-attribute-directives/03-02-09-04-pass-values-into-the-directive-with-an-input-data-binding/directive/doc-03-02-09-04-04.directive';
 import { Doc030211Module } from './03-02-11-pipes/doc-03-02-11.module';
 import { Doc030310Module } from './03-03-10-structural-directives/doc-03-03-10.module';
+import { Doc030306Module } from './03-03-06-component-styles/doc-03-03-06.module';
 
 // tslint:enable:max-line-length
 
@@ -282,23 +267,6 @@ import { Doc030310Module } from './03-03-10-structural-directives/doc-03-03-10.m
     Doc0302050601Component,
     Doc03020507Component,
     Doc0302050701Component,
-    /* 03-02-06 */
-    Doc030206Component,
-    Doc03020601Component,
-    Doc03020602Component,
-    Doc0302060201Component,
-    Doc03020603Component,
-    Doc0302060301Component,
-    Doc0302060302Component,
-    Doc0302060303Component,
-    Doc030206030301Component,
-    Doc030206030302Component,
-    Doc03020604Component,
-    Doc0302060401Component,
-    Doc0302060402Component,
-    Doc0302060403Component,
-    Doc0302060404Component,
-    Doc03020605Component,
     /* 03-02-07 */
     Doc030207Component,
     /* 03-02-08 */
@@ -337,6 +305,7 @@ import { Doc030310Module } from './03-03-10-structural-directives/doc-03-03-10.m
     MessagesModule,
     InputTextModule,
     SharedModule,
+    Doc030306Module,
     Doc030310Module,
     Doc030211Module,
   ],
