@@ -5,6 +5,7 @@ import { X02Component } from './02-api/x-02.component';
 import { X03Component } from './03-compact/x-03.component';
 import { X04Component } from './04-display-grid/x-04.component';
 import { X05Component } from './05-drag/x-05.component';
+import { X08Component } from './08-grid-margins/x-08.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: '05',
     component: X05Component,
+  },
+  {
+    path: '08',
+    component: X08Component,
   },
 ];
 

@@ -63,7 +63,7 @@ export class X05Component implements OnInit {
         ignoreContentClass: 'gridster-item-content',
         /*
          * 当 draggable.ignoreContent 为 true 时,
-         * 只用 draggable.dragHandleClass 里面的内容可以拖动
+         * 只有 draggable.dragHandleClass 里面的内容可以拖动
          */
         ignoreContent: false,
         dragHandleClass: 'drag-handler',

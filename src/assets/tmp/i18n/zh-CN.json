@@ -128,6 +128,7 @@
   "menu.pkgs.angular-gridster2.03": "Compact",
   "menu.pkgs.angular-gridster2.04": "Display Grid",
   "menu.pkgs.angular-gridster2.05": "Drag",
+  "menu.pkgs.angular-gridster2.08": "Grid Margins",
   "menu.blog": "BLOG",
   "menu.blog.a-comprehensive-guide-to-angular-onpush": "A Comprehensive Guide to Angular onPush Change Detection Strategy",
   "menu.blog.never-again-be-confused-when-implementing-controlvalueaccessor": "Never Again Be Confused When Implementing Control Value Accessor In Angular Forms",
