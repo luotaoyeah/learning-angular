@@ -1,8 +1,6 @@
-/*
- * 通过 :host 伪类选择器，选择组件的 host 元素
- */
 :host {
   border: 1px solid #ff0000;
   display: block;
   border-radius: 3px;
+  padding: 10px;
 }

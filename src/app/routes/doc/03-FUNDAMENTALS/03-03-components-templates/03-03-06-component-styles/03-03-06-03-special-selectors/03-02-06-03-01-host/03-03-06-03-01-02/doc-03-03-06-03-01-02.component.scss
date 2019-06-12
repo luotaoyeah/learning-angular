@@ -1,0 +1,11 @@
+:host {
+  border: 1px solid #dddddd;
+  display: block;
+  border-radius: 3px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+:host(.active) {
+  border-color: #ff0000;
+}
