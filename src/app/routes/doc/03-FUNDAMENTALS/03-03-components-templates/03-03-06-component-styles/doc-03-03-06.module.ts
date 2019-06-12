@@ -21,6 +21,7 @@ import { AccordionModule } from 'primeng/primeng';
 import { Doc0303060501Component } from './03-03-06-05-view-encapsulation/doc-03-03-06-05-01/doc-03-03-06-05-01.component';
 import { Doc0303060502Component } from './03-03-06-05-view-encapsulation/doc-03-03-06-05-02/doc-03-03-06-05-02.component';
 import { Doc0303060503Component } from './03-03-06-05-view-encapsulation/doc-03-03-06-05-03/doc-03-03-06-05-03.component';
+import { Doc03030606Component } from './03-03-06-06-inspecting-generated-css/doc-03-03-06-06.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { Doc0303060503Component } from './03-03-06-05-view-encapsulation/doc-03-
     Doc0303060501Component,
     Doc0303060502Component,
     Doc0303060503Component,
+    Doc03030606Component,
   ],
   imports: [SharedModule, AccordionModule, Doc030306RoutingModule],
 })
