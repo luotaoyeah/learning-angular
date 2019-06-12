@@ -5,12 +5,12 @@ import { Doc030306Component } from './doc-03-03-06.component';
 import { Doc03020601Component } from './03-02-06-01-using-component-styles/doc-03-02-06-01.component';
 import { Doc03020602Component } from './03-02-06-02-style-scope/doc-03-02-06-02.component';
 import { Doc0302060201Component } from './03-02-06-02-style-scope/doc-03-02-06-02-01.component';
-import { Doc03020603Component } from './03-02-06-03-special-selectors/doc-03-02-06-03.component';
-import { Doc0302060301Component } from './03-02-06-03-special-selectors/03-02-06-03-01-host/doc-03-02-06-03-01.component';
-import { Doc0302060302Component } from './03-02-06-03-special-selectors/03-02-06-03-02-host-context/doc-03-02-06-03-02.component';
-import { Doc0302060303Component } from './03-02-06-03-special-selectors/03-02-06-03-03-ng-deep/doc-03-02-06-03-03.component';
-import { Doc030206030301Component } from './03-02-06-03-special-selectors/03-02-06-03-03-ng-deep/doc-03-02-06-03-03-01.component';
-import { Doc030206030302Component } from './03-02-06-03-special-selectors/03-02-06-03-03-ng-deep/doc-03-02-06-03-03-02.component';
+import { Doc03030603Component } from './03-03-06-03-special-selectors/doc-03-03-06-03.component';
+import { Doc0302060301Component } from './03-03-06-03-special-selectors/03-02-06-03-01-host/doc-03-02-06-03-01.component';
+import { Doc0302060302Component } from './03-03-06-03-special-selectors/03-02-06-03-02-host-context/doc-03-02-06-03-02.component';
+import { Doc0302060303Component } from './03-03-06-03-special-selectors/03-02-06-03-03-ng-deep/doc-03-02-06-03-03.component';
+import { Doc030206030301Component } from './03-03-06-03-special-selectors/03-02-06-03-03-ng-deep/doc-03-02-06-03-03-01.component';
+import { Doc030206030302Component } from './03-03-06-03-special-selectors/03-02-06-03-03-ng-deep/doc-03-02-06-03-03-02.component';
 import { Doc03020604Component } from './03-02-06-04-loading-component-styles/doc-03-02-06-04.component';
 import { Doc0302060401Component } from './03-02-06-04-loading-component-styles/03-02-06-04-01-styles-in-component-metadata/doc-03-02-06-04-01.component';
 import { Doc0302060402Component } from './03-02-06-04-loading-component-styles/03-02-06-04-02-style-files-in-component-metadata/doc-03-02-06-04-02.component';
@@ -29,7 +29,7 @@ import { Doc03030606Component } from './03-03-06-06-inspecting-generated-css/doc
     Doc03020601Component,
     Doc03020602Component,
     Doc0302060201Component,
-    Doc03020603Component,
+    Doc03030603Component,
     Doc0302060301Component,
     Doc0302060302Component,
     Doc0302060303Component,
