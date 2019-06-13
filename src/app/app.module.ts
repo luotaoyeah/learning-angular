@@ -69,6 +69,7 @@ import {
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '@app/env/environment';
 import { X01CustomRouterStateSerializer } from './routes/pkgs/ngrx/router-store/02-configuration/service/x-01-custom-router-state-serializer';
+import { AppRoutingModule } from './app-routing.module';
 
 const LANG = {
   abbr: 'en',
@@ -184,6 +185,7 @@ const APPINIT_PROVIDES = [
     BrowserModule,
     NoopAnimationsModule,
     HttpClientModule,
+    AppRoutingModule,
     DelonModule.forRoot(),
     CoreModule,
     SharedModule,
