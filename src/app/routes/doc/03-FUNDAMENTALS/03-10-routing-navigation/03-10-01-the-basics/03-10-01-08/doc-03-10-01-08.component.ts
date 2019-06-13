@@ -58,20 +58,21 @@ export class Doc03100108Component implements OnInit {
 
     /*
      * ActivatedRoute.outlet 属性,
-     * 表示渲染当前路由的是哪一个 router-outlet ？
-     * 对于未命名的 router-outlet, 该属性的值为 primary
+     * 表示渲染当前路由的是哪一个 router-outlet ?
+     * 对于未命名的 router-outlet, 该属性的值为 `primary`
      */
     console.assert(this.activatedRoute.outlet === 'primary');
 
-    /*
-     * ActivatedRoute.routeConfig 属性,
-     * 表示当前路由的配置对象
-     */
-    // tslint:disable-next-line:no-non-null-assertion
-    console.assert(
-      // tslint:disable-next-line:no-non-null-assertion
-      this.activatedRoute.routeConfig!.path === 'routing-navigation/:foo',
-    );
+    if (this.activatedRoute.routeConfig) {
+      /*
+       * ActivatedRoute.routeConfig 属性,
+       * 表示当前路由的配置对象
+       */
+      console.assert(this.activatedRoute.routeConfig.path === '08/:foo');
+      if (this.activatedRoute.routeConfig.data) {
+        console.assert(this.activatedRoute.routeConfig.data.foo === 'FOO');
+      }
+    }
 
     /*
      * ActivatedRoute.parent 属性,
