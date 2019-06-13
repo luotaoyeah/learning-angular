@@ -20,11 +20,10 @@ export class Doc03100108Component implements OnInit {
     });
 
     /*
-     * ActivatedRoute.data 属性,
-     * 当前路由的 data 对象
+     * ActivatedRoute.data 属性, 当前路由的 data 对象
      */
     this.activatedRoute.data.subscribe((data: Data) => {
-      console.assert(data.someData === 'FOO');
+      console.assert(data.foo === 'FOO');
     });
 
     /*

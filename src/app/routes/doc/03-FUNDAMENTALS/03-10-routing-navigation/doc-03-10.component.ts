@@ -15,7 +15,7 @@ export class Doc0310Component implements OnInit {
     /*
      * 通过 ActivatedRoute.data 属性，可以获取到路由配置中的 data 对象
      */
-    console.assert(this.activatedRoute.snapshot.data.someData === 'FOO');
+    console.assert(this.activatedRoute.snapshot.data.foo === 'FOO');
 
     console.assert(this.activatedRoute.root === this.router.routerState.root);
   }

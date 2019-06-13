@@ -7,10 +7,10 @@ const routes: Routes = [
     path: '03/10',
     component: Doc0310Component,
     /*
-     * 可以通过 data 选项, 传递业务数据
+     * 可以通过 data 选项, 传递静态数据
      */
     data: {
-      someData: 'FOO',
+      foo: 'FOO',
     },
   },
 ];
