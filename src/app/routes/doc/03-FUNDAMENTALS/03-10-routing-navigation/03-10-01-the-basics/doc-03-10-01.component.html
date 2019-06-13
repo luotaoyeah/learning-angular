@@ -19,9 +19,17 @@
   </nz-collapse-panel>
 
   <nz-collapse-panel nzHeader="Activated Route" nzExpandedIcon="caret-right">
-    <a routerLink="/doc/03/10/08/foo">
+    <a
+      routerLink="/doc/03/10/08/foo"
+      [queryParams]="{
+        bar: 'bar',
+        baz: ['baz01', 'baz02']
+      }"
+    >
       app-doc-03-10-01-08
     </a>
+
+    <nz-divider [nzDashed]="true"></nz-divider>
 
     <router-outlet></router-outlet>
   </nz-collapse-panel>

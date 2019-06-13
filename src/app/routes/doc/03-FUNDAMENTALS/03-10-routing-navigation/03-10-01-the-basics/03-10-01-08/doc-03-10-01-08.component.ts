@@ -34,8 +34,7 @@ export class Doc03100108Component implements OnInit {
     });
 
     /*
-     * ActivatedRoute.queryParamMap 属性,
-     * 当前路由的查询参数
+     * ActivatedRoute.queryParamMap 属性, 当前路由的查询参数
      */
     this.activatedRoute.queryParamMap.subscribe((queryParamMap: ParamMap) => {
       console.assert(queryParamMap.get('bar') === 'bar');
@@ -43,7 +42,7 @@ export class Doc03100108Component implements OnInit {
       /*
        * 如果某个查询参数有多个值,
        * 则使用 get() 方法获取到的是第一个值,
-       * 而使用 getAll() 方法获取到的是所有值的数组
+       * 而使用 getAll() 方法获取到的是所有值组成的数组
        */
       console.assert(queryParamMap.get('baz') === 'baz01');
       console.assert(queryParamMap.getAll('baz').toString() === 'baz01,baz02');
