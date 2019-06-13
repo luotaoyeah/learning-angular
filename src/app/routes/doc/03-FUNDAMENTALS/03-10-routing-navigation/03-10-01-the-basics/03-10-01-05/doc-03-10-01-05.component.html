@@ -1,0 +1,16 @@
+<p>
+  <code>RouterLink</code> 是一个 directive, 用来将一个 <code>&lt;a&gt;</code>
+  标识为一个路由链接, 点击这个链接, 就会跳转到指定的地址
+</p>
+
+<p>
+  <a routerLink="/home" [queryParams]="{ foo: 'foo' }" [fragment]="'head'">
+    HOME
+  </a>
+</p>
+
+<p>
+  <a [routerLink]="['/home']" [queryParams]="{ foo: 'foo' }" fragment="head">
+    HOME
+  </a>
+</p>

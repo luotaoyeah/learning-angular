@@ -6,23 +6,11 @@
   <nz-collapse-panel nzHeader="Router Outlet" nzExpandedIcon="caret-right">
     <app-doc-03-10-01-04></app-doc-03-10-01-04>
   </nz-collapse-panel>
-</nz-collapse>
 
-<h3>Router Links</h3>
-<p>
-  RouterLink（routerLink） 是一个 directive，用来将一个 &lt;a&gt;
-  标签标识为一个路由链接，点击这个链接，就会跳转到指定的地址
-</p>
-<p>
-  <a routerLink="/doc/tutorial/heroes/13">13</a>
-  &nbsp;
-  <a
-    [routerLink]="['/doc/tutorial/heroes/', 13]"
-    [queryParams]="{ x: 'foo' }"
-    fragment="head"
-    >13</a
-  >
-</p>
+  <nz-collapse-panel nzHeader="Router Links" nzExpandedIcon="caret-right">
+    <app-doc-03-10-01-05></app-doc-03-10-01-05>
+  </nz-collapse-panel>
+</nz-collapse>
 
 <h3>Active Router Links</h3>
 <p>
