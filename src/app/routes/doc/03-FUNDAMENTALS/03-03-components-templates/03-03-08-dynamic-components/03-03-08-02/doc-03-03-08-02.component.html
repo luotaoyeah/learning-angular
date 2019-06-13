@@ -1,0 +1,13 @@
+<ng-template #tpl01></ng-template>
+
+<nz-divider [nzDashed]="true"></nz-divider>
+
+<button nz-button (click)="load()">LOAD</button>
+<button nz-button (click)="unload()">UNLOAD</button>
+
+<nz-divider [nzDashed]="true"></nz-divider>
+
+<p>
+  也可以直接使用一个 <code>&lt;ng-template&gt;</code> 作为挂载点, 通过 template
+  input variable 获取到对应的 <code>ViewContainerRef</code>
+</p>
