@@ -2,39 +2,11 @@
   <nz-collapse-panel nzHeader="<base href>" nzExpandedIcon="caret-right">
     <app-doc-03-10-01-01></app-doc-03-10-01-01>
   </nz-collapse-panel>
+
+  <nz-collapse-panel nzHeader="Router Outlet" nzExpandedIcon="caret-right">
+    <app-doc-03-10-01-04></app-doc-03-10-01-04>
+  </nz-collapse-panel>
 </nz-collapse>
-
-<h2>Overview</h2>
-<p>
-  angular 的 router 是直接借鉴了浏览器的导航模型：
-</p>
-<ul>
-  <li>通过解析 URL 地址，加载对应的视图</li>
-  <li>URL 中可以传递参数</li>
-  <li>
-    可以通过点击连接进行跳转，也可以使用命令式（imperative）的方式，手动触发跳转
-  </li>
-  <li>可以点击前进/后退按钮，在历史记录之间进行跳转</li>
-</ul>
-
-<h2>The Basics</h2>
-
-<h3>Router Imports</h3>
-<p>
-  router 相关的功能位于 @angular/router 这个模块下面，比如 RouterModule，Routes
-</p>
-
-<h3>RouterOutlet</h3>
-<p>
-  RouterOutlet 是一个 directive，用法类似于一个
-  component：&lt;router-outlet&gt;&lt;/router-outlet&gt;，用来指示要将 component
-  渲染到哪个地方？类似于 vue 中的 &lt;router-view&gt;&lt;/router-view&gt;
-</p>
-<p>
-  当某个 component 被渲染到对应的 router-outlet 处时，实际上这个 component 和
-  router-outlet 是作为兄弟元素同时存在的，这一点跟 vue 中的 router-view
-  是不一样的，在 vue 中，渲染的组件会替换掉 router-view，而不是同时存在
-</p>
 
 <h3>Router Links</h3>
 <p>
