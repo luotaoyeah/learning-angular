@@ -116,8 +116,6 @@ import { Doc0302050601Component } from './03-02-05-component-interaction/03-02-0
 import { Doc03020507Component } from './03-02-05-component-interaction/03-02-05-07-parent-and-children-communicate-via-a-service/doc-03-02-05-07.component';
 import { Doc0302050701Component } from './03-02-05-component-interaction/03-02-05-07-parent-and-children-communicate-via-a-service/doc-03-02-05-07-01.component';
 import { Doc030207Component } from './03-02-07-angular-elements/doc-03-02-07.component';
-import { Doc030208Component } from './03-02-08-dynamic-components/doc-03-02-08.component';
-import { Doc03020801Component } from './03-02-08-dynamic-components/doc-03-02-08-01.component';
 import { Doc030209Component } from './03-02-09-attribute-directives/doc-03-02-09.component';
 import { Doc03020901Component } from './03-02-09-attribute-directives/03-02-09-01-directives-overview/doc-03-02-09-01.component';
 import { Doc03020902Component } from './03-02-09-attribute-directives/03-02-09-02-build-a-simple-attribute-directive/doc-03-02-09-02.component';
@@ -140,6 +138,7 @@ import { Doc0302090404Directive } from './03-02-09-attribute-directives/03-02-09
 import { Doc030211Module } from './03-02-11-pipes/doc-03-02-11.module';
 import { Doc030310Module } from './03-03-10-structural-directives/doc-03-03-10.module';
 import { Doc030306Module } from './03-03-06-component-styles/doc-03-03-06.module';
+import { Doc030308Module } from './03-03-08-dynamic-components/doc-03-03-08.module';
 
 // tslint:enable:max-line-length
 
@@ -269,9 +268,6 @@ import { Doc030306Module } from './03-03-06-component-styles/doc-03-03-06.module
     Doc0302050701Component,
     /* 03-02-07 */
     Doc030207Component,
-    /* 03-02-08 */
-    Doc030208Component,
-    Doc03020801Component,
     /* 03-02-09 */
     Doc030209Component,
     Doc03020901Component,
@@ -306,12 +302,9 @@ import { Doc030306Module } from './03-03-06-component-styles/doc-03-03-06.module
     InputTextModule,
     SharedModule,
     Doc030306Module,
+    Doc030308Module,
     Doc030310Module,
     Doc030211Module,
   ],
-  /*
-   * 动态加载的 component 需要在 NgModule 的 entryComponents 中声明
-   */
-  entryComponents: [Doc03020801Component],
 })
 export class Doc0303Module {}
