@@ -1,5 +1,5 @@
 import { Component, ComponentFactoryResolver, ViewChild } from '@angular/core';
-import { Doc03030801Component } from './03-03-08-01/doc-03-03-08-01.component';
+import { Doc030308001Component } from './03-03-08-001/doc-03-03-08-001.component';
 import { Doc030308Directive } from './directives/doc-03-03-08.directive';
 
 /*
@@ -20,7 +20,7 @@ export class Doc030308Component {
    */
   public loadComponent(): void {
     const componentFactory = this.componentFactoryResolver.resolveComponentFactory(
-      Doc03030801Component,
+      Doc030308001Component,
     );
 
     this.doc030308Directive.viewContainerRef.clear();
