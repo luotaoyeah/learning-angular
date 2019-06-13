@@ -1,13 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SimpleGuard } from '@delon/auth';
-// layout
 import { LayoutDefaultComponent } from '../layout/default/default.component';
 import { LayoutPassportComponent } from '../layout/passport/passport.component';
-// dashboard pages
-// passport pages
 import { LoginComponent } from './passport/login/login.component';
-// single pages
 import { CallbackComponent } from './callback/callback.component';
 import { UserLockComponent } from './passport/lock/lock.component';
 import { HomeComponent } from './home/home.component';
@@ -63,7 +59,6 @@ const routes: Routes = [
   //     children: [
   //     ]
   // },
-  // passport
   {
     path: 'passport',
     component: LayoutPassportComponent,
