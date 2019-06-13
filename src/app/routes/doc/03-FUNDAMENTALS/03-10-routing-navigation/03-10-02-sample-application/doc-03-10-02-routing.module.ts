@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ComposeMessageComponent } from './compose-message/compose-message.component';
-import { Doc030902Component } from './doc-03-09-02.component';
+import { Doc031002Component } from './doc-03-10-02.component';
 import { AuthGuard } from './auth/service/auth.guard';
 
 @NgModule({
@@ -9,7 +9,7 @@ import { AuthGuard } from './auth/service/auth.guard';
     RouterModule.forChild([
       {
         path: 'doc/fundamental/routing/sample-application',
-        component: Doc030902Component,
+        component: Doc031002Component,
         children: [
           {
             path: 'crisis-center',
@@ -39,4 +39,4 @@ import { AuthGuard } from './auth/service/auth.guard';
   ],
   exports: [RouterModule],
 })
-export class Doc030902RoutingModule {}
+export class Doc031002RoutingModule {}

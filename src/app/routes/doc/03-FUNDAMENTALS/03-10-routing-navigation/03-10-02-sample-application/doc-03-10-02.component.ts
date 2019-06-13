@@ -4,11 +4,11 @@ import { Router, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-doc-03-09-02',
-  templateUrl: './doc-03-09-02.component.html',
-  styleUrls: ['./doc-03-09-02.component.scss'],
+  templateUrl: './doc-03-10-02.component.html',
+  styleUrls: ['./doc-03-10-02.component.scss'],
   animations: [routeAnimation],
 })
-export class Doc030902Component implements OnInit {
+export class Doc031002Component implements OnInit {
   constructor(private router: Router) {}
 
   public ngOnInit() {}

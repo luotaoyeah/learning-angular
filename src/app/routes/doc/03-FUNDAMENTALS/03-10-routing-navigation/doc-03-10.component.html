@@ -1,13 +1,17 @@
-<p-accordion>
-  <p-accordionTab header="The Basic" [transitionOptions]="'0ms'">
+<nz-collapse [nzAccordion]="true">
+  <nz-collapse-panel nzHeader="The Basic" nzExpandedIcon="caret-right">
     <app-routing-navigation-basic></app-routing-navigation-basic>
-  </p-accordionTab>
-  <p-accordionTab header="A Sample Application" [transitionOptions]="'0ms'">
+  </nz-collapse-panel>
+
+  <nz-collapse-panel
+    nzHeader="A Sample Application"
+    nzExpandedIcon="caret-right"
+  >
     <a
       [routerLink]="[
         '/doc/fundamental/routing/sample-application/crisis-center'
       ]"
       >GOTO SAMPLE APPLICATION</a
     >
-  </p-accordionTab>
-</p-accordion>
+  </nz-collapse-panel>
+</nz-collapse>

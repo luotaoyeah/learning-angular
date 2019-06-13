@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
+/*
+ * https://angular.io/guide/router
+ */
 @Component({
   selector: 'app-doc-03-10',
   templateUrl: './doc-03-10.component.html',
-  styleUrls: ['./doc-03-10.component.scss'],
 })
 export class Doc0310Component implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private router: Router) {}
