@@ -8,9 +8,9 @@ import { Doc0302060201Component } from './03-02-06-02-style-scope/doc-03-02-06-0
 import { Doc03030603Component } from './03-03-06-03-special-selectors/doc-03-03-06-03.component';
 import { Doc030306030101Component } from './03-03-06-03-special-selectors/03-03-06-03-01-host/03-03-06-03-01-01/doc-03-03-06-03-01-01.component';
 import { Doc0303060302Component } from './03-03-06-03-special-selectors/03-03-06-03-02-host-context/doc-03-03-06-03-02.component';
-import { Doc0302060303Component } from './03-03-06-03-special-selectors/03-02-06-03-03-ng-deep/doc-03-02-06-03-03.component';
-import { Doc030206030301Component } from './03-03-06-03-special-selectors/03-02-06-03-03-ng-deep/doc-03-02-06-03-03-01.component';
-import { Doc030206030302Component } from './03-03-06-03-special-selectors/03-02-06-03-03-ng-deep/doc-03-02-06-03-03-02.component';
+import { Doc0303060303Component } from './03-03-06-03-special-selectors/03-03-06-03-03-ng-deep/doc-03-03-06-03-03.component';
+import { Doc030306030301Component } from './03-03-06-03-special-selectors/03-03-06-03-03-ng-deep/doc-03-03-06-03-03-01.component';
+import { Doc030306030302Component } from './03-03-06-03-special-selectors/03-03-06-03-03-ng-deep/doc-03-03-06-03-03-02.component';
 import { Doc03020604Component } from './03-02-06-04-loading-component-styles/doc-03-02-06-04.component';
 import { Doc0302060401Component } from './03-02-06-04-loading-component-styles/03-02-06-04-01-styles-in-component-metadata/doc-03-02-06-04-01.component';
 import { Doc0302060402Component } from './03-02-06-04-loading-component-styles/03-02-06-04-02-style-files-in-component-metadata/doc-03-02-06-04-02.component';
@@ -38,9 +38,9 @@ import { Doc030306030201Component } from './03-03-06-03-special-selectors/03-03-
     Doc030306030102Component,
     Doc0303060302Component,
     Doc030306030201Component,
-    Doc0302060303Component,
-    Doc030206030301Component,
-    Doc030206030302Component,
+    Doc0303060303Component,
+    Doc030306030301Component,
+    Doc030306030302Component,
     Doc03020604Component,
     Doc0302060401Component,
     Doc0302060402Component,
