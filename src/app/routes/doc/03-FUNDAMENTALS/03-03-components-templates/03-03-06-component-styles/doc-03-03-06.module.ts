@@ -6,8 +6,8 @@ import { Doc03020601Component } from './03-02-06-01-using-component-styles/doc-0
 import { Doc03020602Component } from './03-02-06-02-style-scope/doc-03-02-06-02.component';
 import { Doc0302060201Component } from './03-02-06-02-style-scope/doc-03-02-06-02-01.component';
 import { Doc03030603Component } from './03-03-06-03-special-selectors/doc-03-03-06-03.component';
-import { Doc030306030101Component } from './03-03-06-03-special-selectors/03-02-06-03-01-host/03-03-06-03-01-01/doc-03-03-06-03-01-01.component';
-import { Doc0302060302Component } from './03-03-06-03-special-selectors/03-02-06-03-02-host-context/doc-03-02-06-03-02.component';
+import { Doc030306030101Component } from './03-03-06-03-special-selectors/03-03-06-03-01-host/03-03-06-03-01-01/doc-03-03-06-03-01-01.component';
+import { Doc0303060302Component } from './03-03-06-03-special-selectors/03-03-06-03-02-host-context/doc-03-03-06-03-02.component';
 import { Doc0302060303Component } from './03-03-06-03-special-selectors/03-02-06-03-03-ng-deep/doc-03-02-06-03-03.component';
 import { Doc030206030301Component } from './03-03-06-03-special-selectors/03-02-06-03-03-ng-deep/doc-03-02-06-03-03-01.component';
 import { Doc030206030302Component } from './03-03-06-03-special-selectors/03-02-06-03-03-ng-deep/doc-03-02-06-03-03-02.component';
@@ -22,8 +22,9 @@ import { Doc0303060501Component } from './03-03-06-05-view-encapsulation/doc-03-
 import { Doc0303060502Component } from './03-03-06-05-view-encapsulation/doc-03-03-06-05-02/doc-03-03-06-05-02.component';
 import { Doc0303060503Component } from './03-03-06-05-view-encapsulation/doc-03-03-06-05-03/doc-03-03-06-05-03.component';
 import { Doc03030606Component } from './03-03-06-06-inspecting-generated-css/doc-03-03-06-06.component';
-import { Doc030306030102Component } from './03-03-06-03-special-selectors/03-02-06-03-01-host/03-03-06-03-01-02/doc-03-03-06-03-01-02.component';
-import { Doc0303060301Component } from './03-03-06-03-special-selectors/03-02-06-03-01-host/doc-03-03-06-03-01.component';
+import { Doc030306030102Component } from './03-03-06-03-special-selectors/03-03-06-03-01-host/03-03-06-03-01-02/doc-03-03-06-03-01-02.component';
+import { Doc0303060301Component } from './03-03-06-03-special-selectors/03-03-06-03-01-host/doc-03-03-06-03-01.component';
+import { Doc030306030201Component } from './03-03-06-03-special-selectors/03-03-06-03-02-host-context/03-03-06-03-02-01/doc-03-03-06-03-02-01.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { Doc0303060301Component } from './03-03-06-03-special-selectors/03-02-06
     Doc0303060301Component,
     Doc030306030101Component,
     Doc030306030102Component,
-    Doc0302060302Component,
+    Doc0303060302Component,
+    Doc030306030201Component,
     Doc0302060303Component,
     Doc030206030301Component,
     Doc030206030302Component,
