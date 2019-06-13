@@ -74,21 +74,21 @@ export class Doc03100108Component implements OnInit {
       }
     }
 
+    /*
+     * ActivatedRoute.parent 属性, 表示当前路由的上级路由
+     */
     if (this.activatedRoute.parent && this.activatedRoute.parent.routeConfig) {
-      /*
-       * ActivatedRoute.parent 属性, 表示当前路由的上级路由
-       */
       console.assert(this.activatedRoute.parent.routeConfig.path === '03/10');
     }
-
-    /*
-     * ActivatedRoute.children 属性, 表示当前路由的下级路由列表
-     */
-    console.assert(this.activatedRoute.children.length === 0);
 
     /*
      * ActivatedRoute.firstChild 属性, 表示当前路由的下级路由列表中第一个路由
      */
     console.assert(this.activatedRoute.firstChild === null);
+
+    /*
+     * ActivatedRoute.children 属性, 表示当前路由的下级路由列表
+     */
+    console.assert(this.activatedRoute.children.length === 0);
   }
 }
