@@ -17,7 +17,14 @@
   >
     <app-doc-03-10-01-06></app-doc-03-10-01-06>
   </nz-collapse-panel>
+
+  <nz-collapse-panel nzHeader="Activated Route" nzExpandedIcon="caret-right">
+    <a routerLink="/doc/03/10/08/foo">
+      app-doc-03-10-01-08
+    </a>
+
+    <router-outlet></router-outlet>
+  </nz-collapse-panel>
 </nz-collapse>
 
-<app-doc-03-10-01-08></app-doc-03-10-01-08>
-<app-routing-navigation-basic-router-events></app-routing-navigation-basic-router-events>
+<app-doc-03-10-01-router-events></app-doc-03-10-01-router-events>

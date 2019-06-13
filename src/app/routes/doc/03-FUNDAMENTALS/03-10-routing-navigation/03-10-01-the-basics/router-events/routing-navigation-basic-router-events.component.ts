@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-routing-navigation-basic-router-events',
+  selector: 'app-doc-03-10-01-router-events',
   templateUrl: './routing-navigation-basic-router-events.component.html',
 })
 export class RoutingNavigationBasicRouterEventsComponent implements OnInit {
