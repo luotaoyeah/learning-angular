@@ -9,6 +9,7 @@ import { RoutingNavigationBasicRouterEventsComponent } from './03-10-01-the-basi
 import { Doc03100101Component } from './03-10-01-the-basics/03-10-01-01/doc-03-10-01-01.component';
 import { Doc03100104Component } from './03-10-01-the-basics/03-10-01-04/doc-03-10-01-04.component';
 import { Doc03100105Component } from './03-10-01-the-basics/03-10-01-05/doc-03-10-01-05.component';
+import { Doc03100106Component } from './03-10-01-the-basics/03-10-01-06/doc-03-10-01-06.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { Doc03100105Component } from './03-10-01-the-basics/03-10-01-05/doc-03-1
     Doc03100101Component,
     Doc03100104Component,
     Doc03100105Component,
+    Doc03100106Component,
     Doc031001NotFoundComponent,
     Doc031001Component,
     RoutingNavigationBasicActivatedRouteComponent,

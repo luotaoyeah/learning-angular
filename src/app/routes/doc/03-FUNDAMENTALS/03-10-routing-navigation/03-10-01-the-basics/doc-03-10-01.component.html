@@ -10,33 +10,14 @@
   <nz-collapse-panel nzHeader="Router Links" nzExpandedIcon="caret-right">
     <app-doc-03-10-01-05></app-doc-03-10-01-05>
   </nz-collapse-panel>
-</nz-collapse>
 
-<h3>Active Router Links</h3>
-<p>
-  RouterLinkActive（routerLinkActive） 是一个 directive，用来配置一组 CSS 类，
-  如果当前页面的地址跟 routerLinkActive 所在的 &lt;a&gt; 标签的地址相匹配，
-  则这些 CSS 类会被添加到标签上，反之会被移除
-</p>
-<p>
-  <a
-    routerLink="/doc/fundamental/routing-navigation"
-    routerLinkActive="active foo"
-    >ACTIVE</a
+  <nz-collapse-panel
+    nzHeader="Active Router Links"
+    nzExpandedIcon="caret-right"
   >
-  &nbsp;
-  <a
-    routerLink="/doc/fundamental/routing-navigation"
-    [routerLinkActive]="['active', 'foo']"
-    >ACTIVE</a
-  >
-  &nbsp;
-  <a
-    routerLink="/doc/fundamental/routing-navigation-2"
-    routerLinkActive="active foo"
-    >INACTIVE</a
-  >
-</p>
+    <app-doc-03-10-01-06></app-doc-03-10-01-06>
+  </nz-collapse-panel>
+</nz-collapse>
 
 <h3>Router State</h3>
 <p>
