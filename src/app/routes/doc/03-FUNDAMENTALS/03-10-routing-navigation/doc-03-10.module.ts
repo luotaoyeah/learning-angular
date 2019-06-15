@@ -9,6 +9,7 @@ import { Doc03100105Component } from './03-10-01-the-basics/03-10-01-05/doc-03-1
 import { Doc03100106Component } from './03-10-01-the-basics/03-10-01-06/doc-03-10-01-06.component';
 import { Doc03100108Component } from './03-10-01-the-basics/03-10-01-08/doc-03-10-01-08.component';
 import { Doc03100109Component } from './03-10-01-the-basics/03-10-01-09/doc-03-10-01-09.component';
+import { Doc031002Module } from './03-10-02-the-sample-application/doc-03-10-02.module';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,6 @@ import { Doc03100109Component } from './03-10-01-the-basics/03-10-01-09/doc-03-1
     Doc03100108Component,
     Doc03100109Component,
   ],
-  imports: [SharedModule, Doc0310RoutingModule],
+  imports: [SharedModule, Doc0310RoutingModule, Doc031002Module],
 })
 export class Doc0310Module {}

@@ -1,0 +1,17 @@
+<nz-collapse [nzAccordion]="true">
+  <nz-collapse-panel
+    nzHeader="CRISES LIST"
+    nzExpandedIcon="caret-right"
+    [nzActive]="true"
+  >
+    <ul>
+      <li *ngFor="let crisis of crises">
+        <button nz-button (click)="gotoCrisisDetailPage(crisis)">
+          {{ crisis.id }} - {{ crisis.name }}
+        </button>
+      </li>
+    </ul>
+  </nz-collapse-panel>
+</nz-collapse>
+
+<router-outlet></router-outlet>

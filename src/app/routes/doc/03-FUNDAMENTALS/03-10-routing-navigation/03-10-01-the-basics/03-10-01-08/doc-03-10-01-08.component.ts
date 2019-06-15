@@ -16,7 +16,7 @@ export class Doc03100108Component implements OnInit {
      * ActivatedRoute.url 属性, 当前路由的 URL 片段
      */
     this.activatedRoute.url.subscribe((urlSegments: Array<UrlSegment>) => {
-      console.assert(urlSegments.map(i => i.path).join('/') === '08/foo');
+      console.assert(urlSegments.map(i => i.path).join('/') === '01/08/foo');
     });
 
     /*
@@ -68,7 +68,7 @@ export class Doc03100108Component implements OnInit {
        * ActivatedRoute.routeConfig 属性,
        * 表示当前路由的配置对象
        */
-      console.assert(this.activatedRoute.routeConfig.path === '08/:foo');
+      console.assert(this.activatedRoute.routeConfig.path === '01/08/:foo');
       if (this.activatedRoute.routeConfig.data) {
         console.assert(this.activatedRoute.routeConfig.data.foo === 'FOO');
       }

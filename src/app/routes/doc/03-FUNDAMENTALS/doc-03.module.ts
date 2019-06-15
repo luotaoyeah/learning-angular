@@ -10,7 +10,6 @@ import { Doc0311Module } from './03-11-animations/doc-03-11.module';
 import { Doc0301Module } from './03-01-tour-of-heroes-app/doc-03-01.module';
 import { Doc0302Module } from './03-02-architecture/doc-03-02.module';
 import { Doc0310Module } from './03-10-routing-navigation/doc-03-10.module';
-import { Doc031002Module } from './03-10-routing-navigation/03-10-02-sample-application/doc-03-10-02.module';
 
 @NgModule({
   imports: [
@@ -24,7 +23,6 @@ import { Doc031002Module } from './03-10-routing-navigation/03-10-02-sample-appl
     Doc0308Module,
     Doc0309Module,
     Doc0310Module,
-    Doc031002Module,
     Doc0311Module,
   ],
 })

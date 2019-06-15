@@ -9,7 +9,7 @@ const routes: Routes = [
     component: Doc0310Component,
     children: [
       {
-        path: '08/:foo',
+        path: '01/08/:foo',
         component: Doc03100108Component,
         /*
          * 可以通过 data 选项, 传递静态数据

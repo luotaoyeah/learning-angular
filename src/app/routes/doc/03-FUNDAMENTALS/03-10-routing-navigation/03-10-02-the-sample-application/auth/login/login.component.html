@@ -1,0 +1,18 @@
+<p-panel header="LOGIN">
+  <button
+    *ngIf="!authService.isLogin"
+    nz-button
+    nzType="primary"
+    (click)="login()"
+  >
+    LOGIN
+  </button>
+  <button
+    *ngIf="authService.isLogin"
+    nz-button
+    nzType="danger"
+    (click)="logout()"
+  >
+    LOGOUT
+  </button>
+</p-panel>

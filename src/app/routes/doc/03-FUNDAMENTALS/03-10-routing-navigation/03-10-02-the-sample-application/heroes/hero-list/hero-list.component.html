@@ -1,0 +1,9 @@
+<p-panel header="HEROES">
+  <ul>
+    <li *ngFor="let hero of heroes">
+      <button nz-button (click)="gotoHeroDetailPage(hero)">
+        {{ hero.id }} - {{ hero.name }}
+      </button>
+    </li>
+  </ul>
+</p-panel>
