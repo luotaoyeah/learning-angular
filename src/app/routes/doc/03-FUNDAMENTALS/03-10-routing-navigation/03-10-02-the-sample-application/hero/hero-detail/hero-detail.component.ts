@@ -9,9 +9,11 @@ import { ReuseTabService } from '@delon/abc';
 @Component({
   selector: 'app-hero-detail',
   templateUrl: './hero-detail.component.html',
+  styleUrls: ['./hero-detail.component.less'],
 })
 export class HeroDetailComponent implements OnInit {
   public hero: Hero | null = null;
+  public loading: boolean = false;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -23,13 +25,16 @@ export class HeroDetailComponent implements OnInit {
 
   public ngOnInit() {
     /*
-     * ActivatedRoute 中的属性默认都是 observable 对象，
-     * 相对应的，ActivatedRoute.snapshot 对象中的属性，都是非 observable 对象，
-     * 当某个组件会被重用时，比如根据不同的 ID 访问不同英雄的详情页，
-     * 此时该详情页是被重用的，只是每次的 ID 参数不一样，
-     * 在这种情况下，需要使用 observable 版本的属性，因为它们可以检测到 ID 的变化，
-     * 而 snapshot 版本中的属性，不能检测到 ID 的变化，只能获取到组件初次加载时的值
+     * ActivatedRoute 中的属性默认都是 observable 对象,
+     * 相对应的, ActivatedRoute.snapshot 对象中的属性, 都是 non-observable 对象,
+     *
+     * 当某个组件会被**重用**, 只是每次的路径参数不一样时,
+     * 需要使用 observable 版本的对象, 因为它们可以检测到参数的变化,
+     *
+     * 当某个组件**不会**被重用时, 就可以使用 non-observable 版本的对象,
+     * 因为 snapshot 版本的对象, 不会检测参数的变化, 只能获取到组件初次加载时的参数值
      */
+
     // this.getHero();
     this.getHero$();
   }
@@ -47,9 +52,12 @@ export class HeroDetailComponent implements OnInit {
   }
 
   /**
-   * 使用 observable 版本的 paramMap
+   * 使用 observable 版本的 paramMap,
+   * 通常情况下, 我们需要在 ngOnDestroy() 中对所有的 observable 进行取消订阅,
+   * 但是对于 ActivatedRoute 来说是个例外, 它里面的 observable 会自动取消订阅
    */
   public getHero$(): void {
+    this.loading = true;
     this.activatedRoute.paramMap
       .pipe(
         switchMap((paramMap: ParamMap) => {
@@ -63,6 +71,7 @@ export class HeroDetailComponent implements OnInit {
       )
       .subscribe((hero: Hero | null) => {
         this.hero = hero;
+        this.loading = false;
       });
   }
 }

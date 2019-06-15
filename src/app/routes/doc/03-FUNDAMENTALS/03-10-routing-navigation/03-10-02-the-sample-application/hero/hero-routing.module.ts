@@ -4,9 +4,8 @@ import { HeroListComponent } from './hero-list/hero-list.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'superhero' },
   {
-    path: 'superhero',
+    path: '',
     component: HeroListComponent,
     data: {
       animation: 'heroes',

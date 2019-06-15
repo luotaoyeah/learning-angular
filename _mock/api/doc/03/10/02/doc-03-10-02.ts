@@ -15,11 +15,15 @@ const HEROES = [
 
 function init(app: Application) {
   app.get('/doc/03/10/02/heroes', (req: Request, res: Response) => {
-    res.jsonp(HEROES);
+    setTimeout(() => {
+      res.jsonp(HEROES);
+    }, 1000);
   });
 
   app.get('/doc/03/10/02/heroes/:id', (req: Request, res: Response) => {
-    res.jsonp(HEROES.find(hero => hero.id === Number(req.params.id)));
+    setTimeout(() => {
+      res.jsonp(HEROES.find(hero => hero.id === Number(req.params.id)));
+    }, 1000);
   });
 }
 
