@@ -42,8 +42,8 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class CrisisCenterRoutingModule {
+export class CrisisRoutingModule {
   constructor() {
-    console.log(`[${CrisisCenterRoutingModule.name}] - [模块延迟加载成功]`);
+    console.log(`[${CrisisRoutingModule.name}] - [模块延迟加载成功]`);
   }
 }

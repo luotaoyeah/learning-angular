@@ -11,14 +11,14 @@ const routes: Routes = [
     children: [
       {
         path: 'crisis-center',
-        loadChildren: './crisis-center/crisis-center.module#CrisisCenterModule',
+        loadChildren: './crisis/crisis.module#CrisisModule',
         data: {
           preload: true,
         },
       },
       {
-        path: 'heroes',
-        loadChildren: './heroes/heroes.module#HeroesModule',
+        path: 'hero',
+        loadChildren: './hero/hero.module#HeroModule',
       },
       {
         path: 'admin',

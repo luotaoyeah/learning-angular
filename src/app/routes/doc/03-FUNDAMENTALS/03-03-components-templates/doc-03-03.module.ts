@@ -1,13 +1,11 @@
 // tslint:disable:max-line-length
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { Doc0303RoutingModule } from './doc-03-03-routing.module';
 import { Doc030201Component } from './03-02-01-displaying-data/doc-03-02-01.component';
 import { PanelModule } from 'primeng/panel';
 import {
   AccordionModule,
   ButtonModule,
-  InputTextModule,
   MessagesModule,
   SelectButtonModule,
 } from 'primeng/primeng';
@@ -47,7 +45,6 @@ import { Doc030202070301Component } from './03-02-02-template-syntax/03-02-02-07
 import { Doc0302020703Component } from './03-02-02-template-syntax/03-02-02-07-event-binding/03-02-02-07-03-custom-events-with-eventemitter/doc-03-02-02-07-03.component';
 import { Doc03020208Component } from './03-02-02-template-syntax/03-02-02-08-two-way-binding/doc-03-02-02-08.component';
 import { Doc0302020801Component } from './03-02-02-template-syntax/03-02-02-08-two-way-binding/doc-03-02-02-08-01.component';
-import { FormsModule } from '@angular/forms';
 import { Doc03020209Component } from './03-02-02-template-syntax/03-02-02-09-built-in-attribute-directives/doc-03-02-02-09.component';
 import { Doc0302020901Component } from './03-02-02-template-syntax/03-02-02-09-built-in-attribute-directives/03-02-02-09-01-ngclass/doc-03-02-02-09-01.component';
 import { Doc0302020902Component } from './03-02-02-template-syntax/03-02-02-09-built-in-attribute-directives/03-02-02-09-02-ngstyle/doc-03-02-02-09-02.component';
@@ -290,16 +287,13 @@ import { Doc030308Module } from './03-03-08-dynamic-components/doc-03-03-08.modu
     ],
   ],
   imports: [
-    CommonModule,
     Doc0303RoutingModule,
     PanelModule,
     AccordionModule,
     ButtonModule,
     ToastModule,
-    FormsModule,
     SelectButtonModule,
     MessagesModule,
-    InputTextModule,
     SharedModule,
     Doc030306Module,
     Doc030308Module,
