@@ -17,6 +17,10 @@ const routes: Routes = [
         },
       },
       {
+        path: 'heroes',
+        loadChildren: './heroes/heroes.module#HeroesModule',
+      },
+      {
         path: 'admin',
         loadChildren: './admin/admin.module#AdminModule',
         canLoad: [AuthGuard],

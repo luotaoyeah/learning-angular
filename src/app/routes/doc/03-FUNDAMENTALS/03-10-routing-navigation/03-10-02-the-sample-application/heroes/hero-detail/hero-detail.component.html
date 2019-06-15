@@ -1,15 +1,21 @@
-<p-panel *ngIf="!!hero" [header]="hero.name">
-  <div class="ui-inputgroup">
-    <span class="ui-inputgroup-addon" style="width: 80px;text-align: right;"
-      >ID：</span
-    >
-    <input type="text" pInputText [value]="hero.id" disabled />
-  </div>
-  <br />
-  <div class="ui-inputgroup">
-    <span class="ui-inputgroup-addon" style="width: 80px;text-align: right;"
-      >名称：</span
-    >
-    <input type="text" pInputText placeholder="名称" [(ngModel)]="hero.name" />
-  </div>
-</p-panel>
+<nz-collapse *ngIf="!!hero" [nzAccordion]="true">
+  <nz-collapse-panel
+    [nzHeader]="hero.name"
+    nzExpandedIcon="caret-right"
+    [nzActive]="true"
+  >
+    <div class="ui-inputgroup">
+      <span class="ui-inputgroup-addon" style="width: 80px;text-align: right;">
+        ID：
+      </span>
+      <input type="text" nz-input [value]="hero.id" disabled />
+    </div>
+    <br />
+    <div class="ui-inputgroup">
+      <span class="ui-inputgroup-addon" style="width: 80px;text-align: right;">
+        名称：
+      </span>
+      <input type="text" nz-input placeholder="名称" [(ngModel)]="hero.name" />
+    </div>
+  </nz-collapse-panel>
+</nz-collapse>
