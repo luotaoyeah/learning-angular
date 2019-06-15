@@ -5,7 +5,6 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'superhero' },
-  { path: ':id', redirectTo: 'superhero/:id' },
   {
     path: 'superhero',
     component: HeroListComponent,
@@ -14,7 +13,7 @@ const routes: Routes = [
     },
   },
   {
-    path: 'superhero/:id',
+    path: ':id',
     component: HeroDetailComponent,
     data: {
       animation: 'hero',

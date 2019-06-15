@@ -1,21 +1,36 @@
 <nz-collapse *ngIf="!!hero" [nzAccordion]="true">
   <nz-collapse-panel
-    [nzHeader]="hero.name"
+    [nzHeader]="'HERO'"
     nzExpandedIcon="caret-right"
     [nzActive]="true"
   >
-    <div class="ui-inputgroup">
-      <span class="ui-inputgroup-addon" style="width: 80px;text-align: right;">
-        ID：
-      </span>
-      <input type="text" nz-input [value]="hero.id" disabled />
-    </div>
-    <br />
-    <div class="ui-inputgroup">
-      <span class="ui-inputgroup-addon" style="width: 80px;text-align: right;">
-        名称：
-      </span>
-      <input type="text" nz-input placeholder="名称" [(ngModel)]="hero.name" />
-    </div>
+    <form nz-form>
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24">
+          ID:
+        </nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+          <input
+            nz-input
+            [(ngModel)]="hero.id"
+            [ngModelOptions]="{ standalone: true }"
+            [disabled]="true"
+          />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24">
+          NAME:
+        </nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+          <input
+            nz-input
+            [(ngModel)]="hero.name"
+            [ngModelOptions]="{ standalone: true }"
+          />
+        </nz-form-control>
+      </nz-form-item>
+    </form>
   </nz-collapse-panel>
 </nz-collapse>

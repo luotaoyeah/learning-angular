@@ -4,12 +4,32 @@
     nzExpandedIcon="caret-right"
     [nzActive]="true"
   >
-    <ul>
-      <li *ngFor="let hero of heroes">
-        <button nz-button (click)="gotoHeroDetailPage(hero)">
-          {{ hero.id }} - {{ hero.name }}
-        </button>
-      </li>
-    </ul>
+    <nz-table
+      #heroesTable
+      [nzData]="heroes"
+      [nzBordered]="true"
+      [nzShowPagination]="false"
+      nzSize="middle"
+      [nzLoading]="heroTableLoading"
+    >
+      <thead>
+        <tr>
+          <th nzWidth="50px" nzAlign="center">ID</th>
+          <th>NAME</th>
+          <th nzWidth="80px" nzAlign="center">ACTION</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let hero of heroesTable.data">
+          <td nzAlign="center">{{ hero.id }}</td>
+          <td>{{ hero.name }}</td>
+          <td nzAlign="center">
+            <button nz-button (click)="gotoHeroDetailPage(hero)">
+              <i nz-icon nzType="form" nzTheme="outline"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </nz-table>
   </nz-collapse-panel>
 </nz-collapse>

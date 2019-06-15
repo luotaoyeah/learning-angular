@@ -24,17 +24,13 @@ export class CrisisDetailResolverService implements Resolve<Crisis> {
             return of(crisis);
           } else {
             console.warn(`[加载危机] - [ id = ${id} ] - [ NOT FOUND ]`);
-            this.router.navigate([
-              '/doc/fundamental/routing/sample-application/crisis-center',
-            ]);
+            this.router.navigate(['/doc/03/10/02/crisis']);
             return EMPTY;
           }
         }),
       );
     } else {
-      this.router.navigate([
-        '/doc/fundamental/routing/sample-application/crisis-center',
-      ]);
+      this.router.navigate(['/doc/03/10/02/crisis']);
       return EMPTY;
     }
   }

@@ -10,7 +10,7 @@ const routes: Routes = [
     component: Doc031002Component,
     children: [
       {
-        path: 'crisis-center',
+        path: 'crisis',
         loadChildren: './crisis/crisis.module#CrisisModule',
         data: {
           preload: true,

@@ -11,6 +11,7 @@ import { ReuseTabService } from '@delon/abc';
 })
 export class HeroListComponent implements OnInit {
   public heroes: Array<Hero> = [];
+  public heroTableLoading: boolean = false;
 
   constructor(
     private router: Router,
@@ -21,9 +22,11 @@ export class HeroListComponent implements OnInit {
     this.reuseTabService.title = 'HEROES';
   }
 
-  public ngOnInit() {
+  public ngOnInit(): void {
+    this.heroTableLoading = true;
     this.heroService.getHeroes().subscribe((heroes: Array<Hero>) => {
       this.heroes = heroes;
+      this.heroTableLoading = false;
     });
   }
 
@@ -31,12 +34,12 @@ export class HeroListComponent implements OnInit {
    * 跳转到英雄详情页
    * @param hero 英雄
    */
-  public gotoHeroDetailPage(hero: Hero) {
+  public gotoHeroDetailPage(hero: Hero): void {
     this.router.navigate([hero.id], {
       /*
        * 通过 relativeTo 指定要相对于哪个路由进行导航
        */
-      relativeTo: this.activatedRoute,
+      relativeTo: this.activatedRoute.parent,
     });
   }
 }

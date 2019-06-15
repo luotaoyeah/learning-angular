@@ -52,9 +52,7 @@ export class CrisisDetailComponent implements OnInit, CanDeactivateComponent {
   }
 
   private gotoCrisesPage() {
-    this.router.navigate([
-      '/doc/fundamental/routing/sample-application/crisis-center',
-    ]);
+    this.router.navigate(['/doc/03/10/02/crisis']);
   }
 
   public canDeactivate(): Observable<boolean> | Promise<boolean> | boolean {

@@ -16,6 +16,7 @@ app.use(
 // region 自定义的接口
 
 require('./api/pkgs-ngrx/pkgs-ngrx').init(app);
+require('./api/doc/03/10/02/doc-03-10-02').init(app);
 
 // endregion
 
