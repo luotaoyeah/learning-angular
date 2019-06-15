@@ -6,7 +6,7 @@ import { Doc031002Component } from '../doc-03-10-02.component';
 
 const routes: Routes = [
   {
-    path: 'doc/fundamental/routing/sample-application',
+    path: '03/10/02',
     component: Doc031002Component,
     children: [
       { path: 'heroes', redirectTo: 'superheroes' },

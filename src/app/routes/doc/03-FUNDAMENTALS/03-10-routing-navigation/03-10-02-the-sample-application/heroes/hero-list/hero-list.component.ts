@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { HeroService } from '../service/hero.service';
-import { Hero } from '../model/hero';
+import { HeroService } from '../services/hero.service';
+import { Hero } from '../models/hero';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ReuseTabService } from '@delon/abc';
 
 @Component({
   selector: 'app-hero-list',
@@ -15,7 +16,10 @@ export class HeroListComponent implements OnInit {
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private heroService: HeroService,
-  ) {}
+    private reuseTabService: ReuseTabService,
+  ) {
+    this.reuseTabService.title = 'HEROES';
+  }
 
   public ngOnInit() {
     this.heroService.getHeroes().subscribe((heroes: Array<Hero>) => {

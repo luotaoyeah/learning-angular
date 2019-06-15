@@ -10,13 +10,13 @@ import { catchError, tap } from 'rxjs/operators';
 export class CrisisService {
   private url = 'api/crises';
 
-  constructor(private http: HttpClient) {}
+  constructor(private httpClient: HttpClient) {}
 
   /**
    * 获取危机列表
    */
   public getCrises(): Observable<Array<Crisis>> {
-    return this.http.get<Array<Crisis>>(this.url).pipe(
+    return this.httpClient.get<Array<Crisis>>(this.url).pipe(
       tap(() => {
         console.log('[加载危机列表]');
       }),
@@ -29,7 +29,7 @@ export class CrisisService {
    * @param id 危机ID
    */
   public getCrisis(id: number): Observable<Crisis> {
-    return this.http.get<Crisis>(`${this.url}/${id}`).pipe(
+    return this.httpClient.get<Crisis>(`${this.url}/${id}`).pipe(
       tap(() => {
         console.log(`[查询危机]: [ id = ${id} ]`);
       }),
@@ -43,7 +43,7 @@ export class CrisisService {
    */
   // tslint:disable-next-line:no-any
   public updateCrisis(crisis: Crisis): Observable<any> {
-    return this.http
+    return this.httpClient
       .put<Crisis>(this.url, crisis, {
         headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
       })

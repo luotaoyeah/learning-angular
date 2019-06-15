@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ComposeMessageComponent } from './compose-message/compose-message.component';
 import { Doc031002Component } from './doc-03-10-02.component';
-import { AuthGuard } from './auth/service/auth.guard';
+import { AuthGuard } from './auth/services/auth.guard';
 
 const routes: Routes = [
   {

@@ -4,7 +4,7 @@ import { CrisisListComponent } from './crisis-list/crisis-list.component';
 import { CrisisDetailComponent } from './crisis-detail/crisis-detail.component';
 import { CrisisCenterComponent } from './crisis-center/crisis-center.component';
 import { CrisisHomeComponent } from './crisis-home/crisis-home.component';
-import { CanDeactivateGuard } from '../auth/service/can-deactivate.guard';
+import { CanDeactivateGuard } from '../auth/services/can-deactivate.guard';
 import { CrisisDetailResolverService } from './services/crisis-detail-resolver.service';
 
 const routes: Routes = [

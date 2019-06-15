@@ -1,24 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { routeAnimation } from './animations';
 import { Router, RouterOutlet } from '@angular/router';
 
+/*
+ * https://angular.io/guide/router#the-sample-application
+ */
 @Component({
   selector: 'app-doc-03-09-02',
   templateUrl: './doc-03-10-02.component.html',
   styleUrls: ['./doc-03-10-02.component.scss'],
   animations: [routeAnimation],
 })
-export class Doc031002Component implements OnInit {
+export class Doc031002Component {
   constructor(private router: Router) {}
 
-  public ngOnInit() {}
-
   public getAnimationData(routerOutlet: RouterOutlet) {
-    // tslint:disable-next-line:no-string-literal
     return (
       routerOutlet &&
       routerOutlet.activatedRouteData &&
-      routerOutlet.activatedRouteData['animation']
+      routerOutlet.activatedRouteData.animation
     );
   }
 

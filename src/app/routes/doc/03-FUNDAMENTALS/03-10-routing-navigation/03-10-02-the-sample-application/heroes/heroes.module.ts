@@ -4,7 +4,6 @@ import { PanelModule } from 'primeng/panel';
 import { HeroesRoutingModule } from './heroes-routing.module';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroListComponent } from './hero-list/hero-list.component';
-import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/primeng';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from '@app/shared';
@@ -15,7 +14,7 @@ import { SharedModule } from '@app/shared';
     CommonModule,
     FormsModule,
     HeroesRoutingModule,
-    ...[PanelModule, ButtonModule, InputTextModule],
+    ...[PanelModule, InputTextModule],
     SharedModule,
   ],
 })

@@ -3,7 +3,7 @@ import { Crisis } from '../models/crisis';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CrisisService } from '../services/crisis.service';
 import { Observable } from 'rxjs';
-import { CanDeactivateComponent } from '../../auth/service/can-deactivate.guard';
+import { CanDeactivateComponent } from '../../auth/services/can-deactivate.guard';
 import { DialogService } from '../../services/dialog.service';
 
 @Component({

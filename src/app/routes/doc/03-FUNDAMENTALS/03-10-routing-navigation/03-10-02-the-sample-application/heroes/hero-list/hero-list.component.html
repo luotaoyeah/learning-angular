@@ -1,9 +1,15 @@
-<p-panel header="HEROES">
-  <ul>
-    <li *ngFor="let hero of heroes">
-      <button nz-button (click)="gotoHeroDetailPage(hero)">
-        {{ hero.id }} - {{ hero.name }}
-      </button>
-    </li>
-  </ul>
-</p-panel>
+<nz-collapse [nzAccordion]="true">
+  <nz-collapse-panel
+    nzHeader="HEROES"
+    nzExpandedIcon="caret-right"
+    [nzActive]="true"
+  >
+    <ul>
+      <li *ngFor="let hero of heroes">
+        <button nz-button (click)="gotoHeroDetailPage(hero)">
+          {{ hero.id }} - {{ hero.name }}
+        </button>
+      </li>
+    </ul>
+  </nz-collapse-panel>
+</nz-collapse>
