@@ -4,6 +4,9 @@
     nzExpandedIcon="caret-right"
     [nzActive]="true"
   >
+    <ng-template #nzSpinTpl>
+      <i nz-icon type="loading" style="font-size: 24px;"></i>
+    </ng-template>
     <nz-table
       #heroesTable
       [nzData]="heroes"
@@ -11,6 +14,7 @@
       [nzShowPagination]="false"
       nzSize="middle"
       [nzLoading]="heroTableLoading"
+      [nzLoadingIndicator]="nzSpinTpl"
     >
       <thead>
         <tr>

@@ -8,6 +8,9 @@
 
     <nz-divider [nzDashed]="true"></nz-divider>
 
+    <ng-template #nzSpinTpl>
+      <i nz-icon type="loading" style="font-size: 24px;"></i>
+    </ng-template>
     <nz-table
       #userTable
       [nzData]="users$ | async"
@@ -15,6 +18,7 @@
       nzSize="middle"
       [nzShowPagination]="false"
       [nzLoading]="userTableLoading"
+      [nzLoadingIndicator]="nzSpinTpl"
     >
       <thead>
         <tr>
