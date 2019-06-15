@@ -19,7 +19,8 @@
   </nz-collapse-panel>
 
   <nz-collapse-panel nzHeader="Activated Route" nzExpandedIcon="caret-right">
-    <a
+    <button
+      nz-button
       routerLink="/doc/03/10/08/foo"
       [queryParams]="{
         bar: 'bar',
@@ -28,7 +29,7 @@
       [fragment]="'top'"
     >
       app-doc-03-10-01-08
-    </a>
+    </button>
 
     <nz-divider [nzDashed]="true"></nz-divider>
 

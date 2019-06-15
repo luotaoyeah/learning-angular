@@ -4,13 +4,23 @@
 </p>
 
 <p>
-  <a routerLink="/home" [queryParams]="{ foo: 'foo' }" [fragment]="'head'">
+  <button
+    nz-button
+    routerLink="/home"
+    [queryParams]="{ foo: 'foo' }"
+    [fragment]="'head'"
+  >
     HOME
-  </a>
+  </button>
 </p>
 
 <p>
-  <a [routerLink]="['/home']" [queryParams]="{ foo: 'foo' }" fragment="head">
+  <button
+    nz-button
+    [routerLink]="['/home']"
+    [queryParams]="{ foo: 'foo' }"
+    fragment="head"
+  >
     HOME
-  </a>
+  </button>
 </p>

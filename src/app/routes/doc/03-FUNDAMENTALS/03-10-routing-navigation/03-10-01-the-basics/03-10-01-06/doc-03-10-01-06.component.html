@@ -6,15 +6,13 @@
 </p>
 
 <p>
-  <a routerLink="/doc/03/10" routerLinkActive="active foo">
+  <button
+    nz-button
+    [routerLink]="['/doc', '03']"
+    [routerLinkActive]="['active']"
+  >
     ACTIVE
-  </a>
-</p>
-
-<p>
-  <a [routerLink]="['/doc', '03']" [routerLinkActive]="['active']">
-    ACTIVE
-  </a>
+  </button>
 </p>
 
 <p>
@@ -24,19 +22,14 @@
 </p>
 
 <p>
-  <a
+  <button
+    nz-button
     [routerLink]="['/doc', '03']"
     [routerLinkActive]="['active']"
     [routerLinkActiveOptions]="{
       exact: true
     }"
   >
-    ACTIVE
-  </a>
-</p>
-
-<p>
-  <a routerLink="/home" routerLinkActive="active">
     INACTIVE
-  </a>
+  </button>
 </p>
