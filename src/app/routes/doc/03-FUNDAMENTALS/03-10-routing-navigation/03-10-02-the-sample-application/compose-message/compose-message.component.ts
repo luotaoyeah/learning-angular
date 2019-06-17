@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -6,13 +6,11 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './compose-message.component.html',
   styleUrls: ['./compose-message.component.scss'],
 })
-export class ComposeMessageComponent implements OnInit {
+export class ComposeMessageComponent {
   public message: string = '';
   public sending: boolean = false;
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
-
-  public ngOnInit() {}
 
   public send() {
     this.sending = true;
@@ -24,8 +22,11 @@ export class ComposeMessageComponent implements OnInit {
   }
 
   public cancel() {
-    this.router.navigate(['./', { outlets: { popup: null } }], {
-      relativeTo: this.activatedRoute,
+    /*
+     * https://github.com/angular/angular/issues/5122#issuecomment-307521772
+     */
+    this.router.navigate(['.', { outlets: { popup: null } }], {
+      relativeTo: this.activatedRoute.parent,
     });
   }
 }
