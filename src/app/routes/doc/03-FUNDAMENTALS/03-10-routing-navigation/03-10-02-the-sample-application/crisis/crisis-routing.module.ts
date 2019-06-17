@@ -16,7 +16,13 @@ const routes: Routes = [
         path: '',
         component: CrisisListComponent,
         children: [
-          { path: '', component: CrisisHomeComponent },
+          {
+            path: '',
+            component: CrisisHomeComponent,
+            data: {
+              title: 'CRISIS CENTER',
+            },
+          },
           {
             path: ':id',
             component: CrisisDetailComponent,

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../models/hero';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { HeroService } from '../services/hero.service';
 import { switchMap } from 'rxjs/operators';
 import { of } from 'rxjs';
@@ -16,6 +16,7 @@ export class HeroDetailComponent implements OnInit {
   public loading: boolean = false;
 
   constructor(
+    private router: Router,
     private activatedRoute: ActivatedRoute,
     private heroService: HeroService,
     reuseTabService: ReuseTabService,
@@ -73,5 +74,30 @@ export class HeroDetailComponent implements OnInit {
         this.hero = hero;
         this.loading = false;
       });
+  }
+
+  public gotoHeroListPage01(): void {
+    /*
+     * 使用下面这种方式生成的 URL 类似于: /hero;id=15;foo=foo,
+     * 跟传统的 query string 不一样: /hero?id=15&foo=foo,
+     * 这种方式称之为 matrix URL nodation
+     */
+    this.router.navigate([
+      '/doc',
+      '03',
+      '10',
+      '02',
+      'hero',
+      { id: this.hero ? this.hero.id : '', foo: 'foo' },
+    ]);
+  }
+
+  public gotoHeroListPage02(): void {
+    this.router.navigate(['/doc', '03', '10', '02', 'hero'], {
+      queryParams: {
+        id: this.hero ? this.hero.id : '',
+        foo: 'foo',
+      },
+    });
   }
 }

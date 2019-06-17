@@ -3,6 +3,7 @@
     [nzHeader]="'HERO'"
     nzExpandedIcon="caret-right"
     [nzActive]="true"
+    [nzExtra]="nzExtraTpl"
   >
     <ng-template #nzSpinTpl>
       <i nz-icon type="loading" style="font-size: 24px;"></i>
@@ -39,3 +40,10 @@
     </nz-spin>
   </nz-collapse-panel>
 </nz-collapse>
+
+<ng-template #nzExtraTpl>
+  <button nz-button nzSize="small" (click)="gotoHeroListPage01()">
+    <i nz-icon nzType="arrow-left" nzTheme="outline"></i>
+    BACK
+  </button>
+</ng-template>

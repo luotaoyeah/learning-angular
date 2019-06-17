@@ -1,8 +1,3 @@
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-li {
-  margin-bottom: 3px;
+.ant-table-tbody > tr.selected > td {
+  background: #e6f7ff;
 }

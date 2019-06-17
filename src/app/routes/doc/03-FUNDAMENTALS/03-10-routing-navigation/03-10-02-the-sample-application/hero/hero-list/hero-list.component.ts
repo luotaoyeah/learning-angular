@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HeroService } from '../services/hero.service';
 import { Hero } from '../models/hero';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { ReuseTabService } from '@delon/abc';
 
 @Component({
@@ -12,6 +12,7 @@ import { ReuseTabService } from '@delon/abc';
 export class HeroListComponent implements OnInit {
   public heroes: Array<Hero> = [];
   public heroTableLoading: boolean = false;
+  public selectedHeroId: number = 0;
 
   constructor(
     private router: Router,
@@ -23,10 +24,14 @@ export class HeroListComponent implements OnInit {
   }
 
   public ngOnInit(): void {
-    this.heroTableLoading = true;
-    this.heroService.getHeroes().subscribe((heroes: Array<Hero>) => {
-      this.heroes = heroes;
-      this.heroTableLoading = false;
+    this.activatedRoute.paramMap.subscribe((params: ParamMap) => {
+      this.selectedHeroId = Number(params.get('id'));
+
+      this.heroTableLoading = true;
+      this.heroService.getHeroes().subscribe((heroes: Array<Hero>) => {
+        this.heroes = heroes;
+        this.heroTableLoading = false;
+      });
     });
   }
 

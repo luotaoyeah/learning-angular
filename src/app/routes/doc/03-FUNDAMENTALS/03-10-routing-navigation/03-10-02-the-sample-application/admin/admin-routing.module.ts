@@ -19,6 +19,9 @@ const routes: Routes = [
           {
             path: '',
             component: AdminDashboardComponent,
+            data: {
+              title: 'ADMIN',
+            },
           },
           {
             path: 'heroes',
