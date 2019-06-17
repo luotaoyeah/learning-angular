@@ -12,7 +12,7 @@ import { of } from 'rxjs/internal/observable/of';
 export class CrisisDetailResolverService implements Resolve<Crisis> {
   public loading: boolean = false;
 
-  constructor(private crisisService: CrisisService, private router: Router) {}
+  constructor(private router: Router, private crisisService: CrisisService) {}
 
   public resolve(
     route: ActivatedRouteSnapshot,

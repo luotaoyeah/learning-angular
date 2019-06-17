@@ -5,10 +5,9 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class CanDeactivateGuard
-  implements CanDeactivate<CanDeactivateComponent> {
+class CanDeactivateGuard implements CanDeactivate<ICanDeactivateComponent> {
   public canDeactivate(
-    component: CanDeactivateComponent,
+    component: ICanDeactivateComponent,
   ):
     | Observable<boolean | UrlTree>
     | Promise<boolean | UrlTree>
@@ -18,6 +17,8 @@ export class CanDeactivateGuard
   }
 }
 
-export interface CanDeactivateComponent {
+interface ICanDeactivateComponent {
   canDeactivate?: () => Observable<boolean> | Promise<boolean> | boolean;
 }
+
+export { CanDeactivateGuard, ICanDeactivateComponent };

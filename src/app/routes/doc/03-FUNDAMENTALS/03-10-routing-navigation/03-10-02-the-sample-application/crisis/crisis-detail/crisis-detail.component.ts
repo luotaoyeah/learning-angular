@@ -3,16 +3,16 @@ import { Crisis } from '../models/crisis';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CrisisService } from '../services/crisis.service';
 import { Observable } from 'rxjs';
-import { CanDeactivateComponent } from '../../auth/services/can-deactivate.guard';
-import { DialogService } from '../../services/dialog.service';
+import { ICanDeactivateComponent } from '../../auth/services/can-deactivate.guard';
 import { CrisisDetailResolverService } from '../services/crisis-detail-resolver.service';
+import { NzModalService } from 'ng-zorro-antd';
 
 @Component({
   selector: 'app-hero-detail',
   templateUrl: './crisis-detail.component.html',
   styleUrls: ['./crisis-detail.component.scss'],
 })
-export class CrisisDetailComponent implements OnInit, CanDeactivateComponent {
+export class CrisisDetailComponent implements OnInit, ICanDeactivateComponent {
   public crisis: Crisis | null = null;
 
   public crisisModel: Pick<Crisis, 'name'> = {
@@ -23,8 +23,8 @@ export class CrisisDetailComponent implements OnInit, CanDeactivateComponent {
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private crisisService: CrisisService,
-    private dialogService: DialogService,
     public crisisDetailResolverService: CrisisDetailResolverService,
+    private nzModalService: NzModalService,
   ) {}
 
   public ngOnInit() {
@@ -66,6 +66,17 @@ export class CrisisDetailComponent implements OnInit, CanDeactivateComponent {
       return true;
     }
 
-    return this.dialogService.confirm('确认离开?');
+    return new Promise((resolve: (result: boolean) => void) => {
+      this.nzModalService.confirm({
+        nzTitle: '确认',
+        nzContent: '确认离开?',
+        nzOnOk() {
+          resolve(true);
+        },
+        nzOnCancel() {
+          resolve(false);
+        },
+      });
+    });
   }
 }
