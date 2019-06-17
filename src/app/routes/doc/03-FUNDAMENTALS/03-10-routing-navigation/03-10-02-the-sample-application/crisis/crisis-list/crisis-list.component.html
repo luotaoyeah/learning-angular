@@ -25,7 +25,7 @@
       </thead>
       <tbody>
         <ng-container *ngFor="let crisis of crisesTable.data">
-          <tr>
+          <tr [class.selected]="selectedCrisisId === crisis.id">
             <td nzAlign="center">{{ crisis.id }}</td>
             <td>{{ crisis.name }}</td>
             <td nzAlign="center">

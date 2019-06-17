@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Crisis } from '../models/crisis';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { CrisisService } from '../services/crisis.service';
 
 @Component({
@@ -11,6 +11,7 @@ import { CrisisService } from '../services/crisis.service';
 export class CrisisListComponent implements OnInit {
   public crises: Array<Crisis> = [];
   public crisisTableLoading: boolean = false;
+  public selectedCrisisId: number = 0;
 
   constructor(
     private router: Router,
@@ -24,9 +25,14 @@ export class CrisisListComponent implements OnInit {
       this.crises = crises;
       this.crisisTableLoading = false;
     });
+
+    this.activatedRoute.paramMap.subscribe((params: ParamMap) => {
+      this.selectedCrisisId = Number(params.get('id'));
+    });
   }
 
   public gotoCrisisDetailPage(crisis: Crisis) {
+    this.selectedCrisisId = crisis.id;
     this.router.navigate([crisis.id], {
       relativeTo: this.activatedRoute,
     });

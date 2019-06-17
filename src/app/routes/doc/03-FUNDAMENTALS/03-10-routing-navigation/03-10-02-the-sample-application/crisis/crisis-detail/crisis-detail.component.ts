@@ -53,7 +53,12 @@ export class CrisisDetailComponent implements OnInit, CanDeactivateComponent {
   }
 
   private gotoCrisesPage() {
-    this.router.navigate(['/doc/03/10/02/crisis']);
+    this.router.navigate(
+      ['../', { id: this.crisis ? this.crisis.id : '', foo: 'foo' }],
+      {
+        relativeTo: this.activatedRoute,
+      },
+    );
   }
 
   public canDeactivate(): Observable<boolean> | Promise<boolean> | boolean {
@@ -61,6 +66,6 @@ export class CrisisDetailComponent implements OnInit, CanDeactivateComponent {
       return true;
     }
 
-    return this.dialogService.confirm('确认离开？');
+    return this.dialogService.confirm('确认离开?');
   }
 }
