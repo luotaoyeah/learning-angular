@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CrisisListComponent } from './crisis-list/crisis-list.component';
 import { CrisisDetailComponent } from './crisis-detail/crisis-detail.component';
-import { CrisisCenterComponent } from './crisis-center/crisis-center.component';
+import { CrisisComponent } from './crisis.component';
 import { CrisisHomeComponent } from './crisis-home/crisis-home.component';
 import { CanDeactivateGuard } from '../auth/services/can-deactivate.guard';
 import { CrisisDetailResolverService } from './services/crisis-detail-resolver.service';
@@ -10,7 +10,7 @@ import { CrisisDetailResolverService } from './services/crisis-detail-resolver.s
 const routes: Routes = [
   {
     path: '',
-    component: CrisisCenterComponent,
+    component: CrisisComponent,
     children: [
       {
         path: '',
@@ -27,6 +27,9 @@ const routes: Routes = [
             path: ':id',
             component: CrisisDetailComponent,
             canDeactivate: [CanDeactivateGuard],
+            data: {
+              title: 'CRISIS',
+            },
             /*
              * 在激活 (activate) 该路由之前, 需要先加载某些数据, 数据加载成功之后, 再激活路由, 类似于一个拦截器,
              * 这就是 resolve 的作用,

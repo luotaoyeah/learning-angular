@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { ReuseTabService } from '@delon/abc';
 
 @Component({
-  selector: 'app-crisis-center',
-  templateUrl: './crisis-center.component.html',
+  selector: 'app-crisis',
+  templateUrl: './crisis.component.html',
 })
-export class CrisisCenterComponent {
+export class CrisisComponent {
   constructor(reuseTabService: ReuseTabService) {
     reuseTabService.title = 'CRISIS CENTER';
   }
