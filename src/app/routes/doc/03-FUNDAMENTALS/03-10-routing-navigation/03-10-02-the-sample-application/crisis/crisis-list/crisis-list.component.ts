@@ -10,6 +10,7 @@ import { CrisisService } from '../services/crisis.service';
 })
 export class CrisisListComponent implements OnInit {
   public crises: Array<Crisis> = [];
+  public crisisTableLoading: boolean = false;
 
   constructor(
     private router: Router,
@@ -18,8 +19,10 @@ export class CrisisListComponent implements OnInit {
   ) {}
 
   public ngOnInit() {
+    this.crisisTableLoading = true;
     this.crisisService.getCrises().subscribe((crises: Array<Crisis>) => {
       this.crises = crises;
+      this.crisisTableLoading = false;
     });
   }
 

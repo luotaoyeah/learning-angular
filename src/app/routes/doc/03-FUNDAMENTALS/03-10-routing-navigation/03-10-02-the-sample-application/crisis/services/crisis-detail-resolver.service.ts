@@ -10,6 +10,8 @@ import { of } from 'rxjs/internal/observable/of';
   providedIn: 'root',
 })
 export class CrisisDetailResolverService implements Resolve<Crisis> {
+  public loading: boolean = false;
+
   constructor(private crisisService: CrisisService, private router: Router) {}
 
   public resolve(
@@ -17,9 +19,11 @@ export class CrisisDetailResolverService implements Resolve<Crisis> {
   ): Observable<Crisis> | Promise<Crisis> | Crisis {
     const id: number = Number(route.paramMap.get('id'));
     if (!Number.isNaN(id)) {
+      this.loading = true;
       return this.crisisService.getCrisis(id).pipe(
         take(1),
         mergeMap((crisis: Crisis | null) => {
+          this.loading = false;
           if (crisis) {
             return of(crisis);
           } else {
@@ -30,6 +34,7 @@ export class CrisisDetailResolverService implements Resolve<Crisis> {
         }),
       );
     } else {
+      this.loading = false;
       this.router.navigate(['/doc/03/10/02/crisis']);
       return EMPTY;
     }

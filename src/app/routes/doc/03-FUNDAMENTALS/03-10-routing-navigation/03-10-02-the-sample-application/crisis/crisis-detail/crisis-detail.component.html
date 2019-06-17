@@ -1,32 +1,47 @@
-<p-panel *ngIf="!!crisis" [header]="crisis.name">
-  <div class="ui-inputgroup">
-    <span class="ui-inputgroup-addon" style="width: 80px;text-align: right;"
-      >ID：</span
+<nz-collapse [nzAccordion]="true">
+  <nz-collapse-panel
+    [nzHeader]="'CRISIS'"
+    nzExpandedIcon="caret-right"
+    [nzActive]="true"
+  >
+    <ng-template #nzSpinTpl>
+      <i nz-icon type="loading" style="font-size: 24px;"></i>
+    </ng-template>
+    <nz-spin
+      [nzSpinning]="crisisDetailResolverService.loading"
+      [nzIndicator]="nzSpinTpl"
     >
-    <input
-      type="text"
-      nz-input
-      [value]="crisis.id"
-      disabled
-      style="width: 400px;"
-    />
-  </div>
-  <br />
-  <div class="ui-inputgroup">
-    <span class="ui-inputgroup-addon" style="width: 80px;text-align: right;"
-      >名称：</span
-    >
-    <input
-      type="text"
-      nz-input
-      placeholder="名称"
-      [(ngModel)]="crisisModel.name"
-      style="width: 400px;"
-    />
-  </div>
-  <p style="margin-top: 10px;">
-    <button nz-button (click)="save()">SAVE</button>
-    &nbsp;
-    <button nz-button (click)="cancel()">CANCEL</button>
-  </p>
-</p-panel>
+      <form *ngIf="!!crisis" nz-form>
+        <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24">
+            ID:
+          </nz-form-label>
+          <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input
+              nz-input
+              [(ngModel)]="crisis.id"
+              [ngModelOptions]="{ standalone: true }"
+              [disabled]="true"
+            />
+          </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24">
+            NAME:
+          </nz-form-label>
+          <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input
+              nz-input
+              [(ngModel)]="crisisModel.name"
+              [ngModelOptions]="{ standalone: true }"
+            />
+          </nz-form-control>
+        </nz-form-item>
+      </form>
+
+      <button nz-button nzType="primary" (click)="save()">SAVE</button>
+      <button nz-button (click)="cancel()">CANCEL</button>
+    </nz-spin>
+  </nz-collapse-panel>
+</nz-collapse>

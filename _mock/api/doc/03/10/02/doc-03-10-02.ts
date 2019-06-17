@@ -13,6 +13,13 @@ const HEROES = [
   { id: 20, name: 'TORNADO' },
 ];
 
+const CRISES = [
+  { id: 1, name: 'DRAGON BURNING CITIES' },
+  { id: 2, name: 'SKY RAINS GREAT WHITE SHARKS' },
+  { id: 3, name: 'GIANT ASTEROID HEADING FOR EARTH' },
+  { id: 4, name: 'PROCRASTINATORS MEETING DELAYED AGAIN' },
+];
+
 function init(app: Application) {
   app.get('/doc/03/10/02/heroes', (req: Request, res: Response) => {
     setTimeout(() => {
@@ -22,7 +29,25 @@ function init(app: Application) {
 
   app.get('/doc/03/10/02/heroes/:id', (req: Request, res: Response) => {
     setTimeout(() => {
-      res.jsonp(HEROES.find(hero => hero.id === Number(req.params.id)));
+      res.jsonp(HEROES.find(i => i.id === Number(req.params.id)));
+    }, 1000);
+  });
+
+  app.get('/doc/03/10/02/crises', (req: Request, res: Response) => {
+    setTimeout(() => {
+      res.jsonp(CRISES);
+    }, 1000);
+  });
+
+  app.get('/doc/03/10/02/crises/:id', (req: Request, res: Response) => {
+    setTimeout(() => {
+      res.jsonp(CRISES.find(i => i.id === Number(req.params.id)));
+    }, 1000);
+  });
+
+  app.put('/doc/03/10/02/crises/:id', (req: Request, res: Response) => {
+    setTimeout(() => {
+      res.jsonp(CRISES.find(i => i.id === Number(req.params.id)));
     }, 1000);
   });
 }

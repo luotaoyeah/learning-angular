@@ -5,6 +5,7 @@ import { CrisisService } from '../services/crisis.service';
 import { Observable } from 'rxjs';
 import { CanDeactivateComponent } from '../../auth/services/can-deactivate.guard';
 import { DialogService } from '../../services/dialog.service';
+import { CrisisDetailResolverService } from '../services/crisis-detail-resolver.service';
 
 @Component({
   selector: 'app-hero-detail',
@@ -23,10 +24,10 @@ export class CrisisDetailComponent implements OnInit, CanDeactivateComponent {
     private activatedRoute: ActivatedRoute,
     private crisisService: CrisisService,
     private dialogService: DialogService,
+    public crisisDetailResolverService: CrisisDetailResolverService,
   ) {}
 
   public ngOnInit() {
-    console.log(`[${CrisisDetailComponent.name}] 加载完成`);
     this.activatedRoute.data.subscribe(({ crisis }) => {
       this.crisis = crisis as Crisis;
       this.crisisModel.name = this.crisis.name;
