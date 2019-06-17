@@ -13,7 +13,6 @@ import {
   HttpClient,
   HttpClientModule,
 } from '@angular/common/http';
-import { BrowserModule } from '@angular/platform-browser';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 // #region default language
 // 参考：https://ng-alain.com/docs/i18n
@@ -182,7 +181,6 @@ const APPINIT_PROVIDES = [
 @NgModule({
   declarations: [AppComponent, PageNotFoundComponent],
   imports: [
-    BrowserModule,
     NoopAnimationsModule,
     HttpClientModule,
     AppRoutingModule,

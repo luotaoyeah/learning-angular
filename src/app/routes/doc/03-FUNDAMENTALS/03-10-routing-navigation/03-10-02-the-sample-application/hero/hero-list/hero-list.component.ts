@@ -35,10 +35,6 @@ export class HeroListComponent implements OnInit {
     });
   }
 
-  /**
-   * 跳转到英雄详情页
-   * @param hero 英雄
-   */
   public gotoHeroDetailPage(hero: Hero): void {
     this.router.navigate([hero.id], {
       /*

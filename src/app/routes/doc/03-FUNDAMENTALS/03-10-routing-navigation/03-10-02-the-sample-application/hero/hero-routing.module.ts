@@ -8,7 +8,6 @@ const routes: Routes = [
     path: '',
     component: HeroListComponent,
     data: {
-      animation: 'heroes',
       title: 'HEROES',
     },
   },
@@ -16,7 +15,6 @@ const routes: Routes = [
     path: ':id',
     component: HeroDetailComponent,
     data: {
-      animation: 'hero',
       title: 'HERO',
     },
   },

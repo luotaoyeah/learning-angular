@@ -22,8 +22,6 @@
   <button nz-button (click)="openContact()">CONTACT</button>
 </p>
 
-<div [@routeAnimation]="getAnimationData(routerOutlet)">
-  <router-outlet #routerOutlet="outlet"></router-outlet>
-</div>
+<router-outlet></router-outlet>
 
 <router-outlet name="popup"></router-outlet>
