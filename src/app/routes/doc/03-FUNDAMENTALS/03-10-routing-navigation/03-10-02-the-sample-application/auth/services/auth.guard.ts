@@ -7,6 +7,7 @@ import {
   Route,
   Router,
   RouterStateSnapshot,
+  UrlSegment,
   UrlTree,
 } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -24,7 +25,6 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
    * @param state 当前路由状态
    */
   public canActivate(
-    // @ts-ignore: TS6133
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot,
   ):
@@ -32,7 +32,7 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    return this.checkLogin(state.url);
+    return this.isLogin(state.url);
   }
 
   /**
@@ -42,7 +42,6 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
    */
   public canActivateChild(
     childRoute: ActivatedRouteSnapshot,
-    // @ts-ignore: TS6133
     state: RouterStateSnapshot,
   ):
     | Observable<boolean | UrlTree>
@@ -51,6 +50,7 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
     | UrlTree {
     const result =
       !!childRoute.routeConfig && childRoute.routeConfig.path !== 'hero';
+
     if (!result) {
       console.warn('没有权限进入');
     }
@@ -59,10 +59,22 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
   }
 
   /**
+   * canLoad() 用来守护是否可以加载某个路由对应的 NgModule
+   * @param route 路由配置
+   * @param segments UrlSegments
+   */
+  public canLoad(
+    route: Route,
+    segments: Array<UrlSegment>,
+  ): Observable<boolean> | Promise<boolean> | boolean {
+    return this.isLogin(`/doc/03/10/02/${segments.map(i => i.path).join('/')}`);
+  }
+
+  /**
    * 检查是否登录
    * @param url 要跳转的地址
    */
-  private checkLogin(url: string): boolean {
+  private isLogin(url: string): boolean {
     if (this.authService.isLogin) {
       return true;
     }
@@ -70,20 +82,11 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
     this.authService.redirectUrl = url;
     this.router.navigate(['/doc/03/10/02/login'], {
       queryParams: {
-        session_id: 123456789,
+        session_id: 0,
       },
       fragment: 'anchor',
     });
-    return false;
-  }
 
-  /**
-   * canLoad() 用来守护是否可以加载某个路由对应的 NgModule
-   * @param route 路由配置
-   */
-  public canLoad(
-    route: Route,
-  ): Observable<boolean> | Promise<boolean> | boolean {
-    return this.checkLogin(`/doc/03/10/02/${route.path}`);
+    return false;
   }
 }

@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
     public authService: AuthService,
   ) {}
 
-  public ngOnInit() {
+  public ngOnInit(): void {
     this.activatedRoute.queryParamMap.subscribe((queryMap: ParamMap) => {
       console.log(`session_id: ${queryMap.get('session_id')}`);
     });
@@ -23,13 +23,13 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  public login() {
+  public login(): void {
     this.authService.login().subscribe(() => {
       if (this.authService.isLogin) {
         this.router.navigateByUrl(
           this.authService.redirectUrl
             ? this.router.parseUrl(this.authService.redirectUrl)
-            : '/doc/fundamental/routing/sample-application/admin',
+            : '/doc/03/10/02/admin',
           {
             queryParamsHandling: 'preserve',
             preserveFragment: true,
@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  public logout() {
+  public logout(): void {
     this.authService.logout();
   }
 }

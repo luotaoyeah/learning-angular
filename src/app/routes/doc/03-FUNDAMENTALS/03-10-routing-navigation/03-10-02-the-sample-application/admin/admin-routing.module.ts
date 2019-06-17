@@ -12,6 +12,10 @@ const routes: Routes = [
     component: AdminComponent,
     canActivate: [AuthGuard],
     children: [
+      /*
+       * route configuration 中可以不指定 component, 称之为 component-less route,
+       * 主要的作用是, 将多个 child routes 放到一个分组里面, 方便统一地进行 guard 控制
+       */
       {
         path: '',
         canActivateChild: [AuthGuard],
