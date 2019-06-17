@@ -1,5 +1,5 @@
 <p>
-  <button nz-button [routerLink]="['/doc/03/10']">
+  <button nz-button [routerLink]="['../']">
     <i nz-icon nzType="arrow-left" nzTheme="outline"></i>
     BACK
   </button>
@@ -7,11 +7,7 @@
     通过 routerLink 指定相对导航路径时，不需要通过 relativeTo 指定要相对于哪个路由进行导航，
     默认就是相对于当前路由进行相对导航
   -->
-  <button
-    nz-button
-    [routerLink]="['./', 'crisis']"
-    [routerLinkActive]="'active'"
-  >
+  <button nz-button routerLink="./crisis" [routerLinkActive]="'active'">
     CRISIS CENTER
   </button>
   <button nz-button routerLink="./hero" [routerLinkActive]="'active'">
@@ -20,10 +16,9 @@
   <button nz-button routerLink="./admin" [routerLinkActive]="'active'">
     ADMIN
   </button>
-  <!--
-    <a [routerLink]="[{ outlets: { popup: ['compose'] } }]">CONTACT</a>
-  -->
-  <button nz-button (click)="openContact()">CONTACT</button>
+  <button nz-button [routerLink]="[{ outlets: { popup: ['compose'] } }]">
+    CONTACT
+  </button>
 </p>
 
 <router-outlet></router-outlet>

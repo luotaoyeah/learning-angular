@@ -7,7 +7,6 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-doc-03-09-02',
   templateUrl: './doc-03-10-02.component.html',
-  styleUrls: ['./doc-03-10-02.component.scss'],
 })
 export class Doc031002Component {
   constructor(private router: Router) {}

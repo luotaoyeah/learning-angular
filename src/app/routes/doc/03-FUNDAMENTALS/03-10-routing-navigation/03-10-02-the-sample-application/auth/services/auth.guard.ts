@@ -50,7 +50,7 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
     | boolean
     | UrlTree {
     const result =
-      !!childRoute.routeConfig && childRoute.routeConfig.path !== 'heroes';
+      !!childRoute.routeConfig && childRoute.routeConfig.path !== 'hero';
     if (!result) {
       console.warn('没有权限进入');
     }
@@ -68,15 +68,12 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
     }
 
     this.authService.redirectUrl = url;
-    this.router.navigate(
-      ['/doc/fundamental/routing/sample-application/login'],
-      {
-        queryParams: {
-          session_id: 123456789,
-        },
-        fragment: 'viewContainerRef',
+    this.router.navigate(['/doc/03/10/02/login'], {
+      queryParams: {
+        session_id: 123456789,
       },
-    );
+      fragment: 'anchor',
+    });
     return false;
   }
 
@@ -87,8 +84,6 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
   public canLoad(
     route: Route,
   ): Observable<boolean> | Promise<boolean> | boolean {
-    return this.checkLogin(
-      `/doc/fundamental/routing/sample-application/${route.path}`,
-    );
+    return this.checkLogin(`/doc/03/10/02/${route.path}`);
   }
 }

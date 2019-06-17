@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-compose-message',
@@ -7,10 +7,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./compose-message.component.scss'],
 })
 export class ComposeMessageComponent implements OnInit {
-  public message = '';
-  public sending = false;
+  public message: string = '';
+  public sending: boolean = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
 
   public ngOnInit() {}
 
@@ -24,6 +24,8 @@ export class ComposeMessageComponent implements OnInit {
   }
 
   public cancel() {
-    this.router.navigate([{ outlets: { popup: null } }]);
+    this.router.navigate(['./', { outlets: { popup: null } }], {
+      relativeTo: this.activatedRoute,
+    });
   }
 }

@@ -29,12 +29,12 @@ const routes: Routes = [
         path: 'login',
         loadChildren: './auth/auth.module#AuthModule',
       },
+      {
+        path: 'compose',
+        component: ComposeMessageComponent,
+        outlet: 'popup',
+      },
     ],
-  },
-  {
-    path: 'compose',
-    component: ComposeMessageComponent,
-    outlet: 'popup',
   },
 ];
 
