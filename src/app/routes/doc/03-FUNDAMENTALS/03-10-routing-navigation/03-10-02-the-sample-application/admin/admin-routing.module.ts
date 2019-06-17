@@ -30,10 +30,16 @@ const routes: Routes = [
           {
             path: 'heroes',
             component: ManageHeroesComponent,
+            data: {
+              title: 'MANAGE HEROES',
+            },
           },
           {
             path: 'crises',
             component: ManageCrisesComponent,
+            data: {
+              title: 'MANAGE CRISES',
+            },
           },
         ],
       },

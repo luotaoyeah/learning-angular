@@ -10,14 +10,20 @@ import {
   UrlSegment,
   UrlTree,
 } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { AuthService } from './auth.service';
+import { NzMessageService } from 'ng-zorro-antd';
+import { delay, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
-  constructor(private router: Router, private authService: AuthService) {}
+  constructor(
+    private router: Router,
+    private authService: AuthService,
+    private nzMessageService: NzMessageService,
+  ) {}
 
   /**
    * canActivate() 用来守护某个路由
@@ -48,18 +54,21 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    const result =
-      !!childRoute.routeConfig && childRoute.routeConfig.path !== 'hero';
+    const result: boolean =
+      !!childRoute.routeConfig && childRoute.routeConfig.path !== 'heroes';
 
-    if (!result) {
-      console.warn('没有权限进入');
-    }
-
-    return result;
+    return of(result).pipe(
+      delay(1000),
+      tap(() => {
+        if (!result) {
+          this.nzMessageService.error('没有权限进入');
+        }
+      }),
+    );
   }
 
   /**
-   * canLoad() 用来守护是否可以加载某个路由对应的 NgModule
+   * canLoad() 用来守护是否可以加载某个异步的路由对应的 NgModule
    * @param route 路由配置
    * @param segments UrlSegments
    */
