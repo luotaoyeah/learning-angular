@@ -1,15 +1,25 @@
-<p-panel header="ADMINA">
-  <nav style="margin-bottom: 20px;">
-    <a
-      routerLink="./"
-      routerLinkActive="active"
-      [routerLinkActiveOptions]="{ exact: true }"
-      >DASHBOARD</a
-    >
-    &nbsp;
-    <a routerLink="./heroes" routerLinkActive="active">MANAGE HEROES</a>
-    &nbsp;
-    <a routerLink="./crises" routerLinkActive="active">MANAGE CISES</a>
-  </nav>
-  <router-outlet></router-outlet>
-</p-panel>
+<nz-collapse [nzAccordion]="true">
+  <nz-collapse-panel
+    nzHeader="ADMIN"
+    nzExpandedIcon="caret-right"
+    [nzActive]="true"
+  >
+    <nav style="margin-bottom: 20px;">
+      <button
+        nz-button
+        routerLink="./"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        DASHBOARD
+      </button>
+      <button nz-button routerLink="./crises" routerLinkActive="active">
+        MANAGE CISES
+      </button>
+      <button nz-button routerLink="./heroes" routerLinkActive="active">
+        MANAGE HEROES
+      </button>
+    </nav>
+    <router-outlet></router-outlet>
+  </nz-collapse-panel>
+</nz-collapse>
