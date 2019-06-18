@@ -18,6 +18,7 @@ export class CrisisDetailResolverService implements Resolve<Crisis> {
     route: ActivatedRouteSnapshot,
   ): Observable<Crisis> | Promise<Crisis> | Crisis {
     const id: number = Number(route.paramMap.get('id'));
+
     if (!Number.isNaN(id)) {
       this.loading = true;
       return this.crisisService.getCrisis(id).pipe(
@@ -27,7 +28,6 @@ export class CrisisDetailResolverService implements Resolve<Crisis> {
           if (crisis) {
             return of(crisis);
           } else {
-            console.warn(`[加载危机] - [ id = ${id} ] - [ NOT FOUND ]`);
             this.router.navigate(['/doc/03/10/02/crisis']);
             return EMPTY;
           }

@@ -1,15 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Crisis } from '../models/crisis';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpHeaders } from '@angular/common/http';
+import { _HttpClient } from '@delon/theme';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CrisisService {
-  private url = 'api/crises';
-
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: _HttpClient) {}
 
   /**
    * 获取危机列表
@@ -31,8 +30,12 @@ export class CrisisService {
    * @param crisis 危机
    */
   public updateCrisis(crisis: Crisis): Observable<Crisis> {
-    return this.httpClient.put<Crisis>(this.url, crisis, {
-      headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
-    });
+    return this.httpClient.put<Crisis>(
+      `api/doc/03/10/02/crises/${crisis.id}`,
+      crisis,
+      {
+        headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+      },
+    );
   }
 }

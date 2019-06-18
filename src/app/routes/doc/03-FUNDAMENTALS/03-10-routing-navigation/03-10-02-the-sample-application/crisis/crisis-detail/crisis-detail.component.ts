@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Crisis } from '../models/crisis';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Data, Router } from '@angular/router';
 import { CrisisService } from '../services/crisis.service';
 import { Observable } from 'rxjs';
 import { ICanDeactivateComponent } from '../../auth/services/can-deactivate.guard';
@@ -28,7 +28,10 @@ export class CrisisDetailComponent implements OnInit, ICanDeactivateComponent {
   ) {}
 
   public ngOnInit() {
-    this.activatedRoute.data.subscribe(({ crisis }) => {
+    /*
+     * 通过 resolve 预加载的数据, 可以从 ActivatedRoute.data 中进行获取
+     */
+    this.activatedRoute.data.subscribe(({ crisis }: Data) => {
       this.crisis = crisis as Crisis;
       this.crisisModel.name = this.crisis.name;
     });

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Crisis } from '../models/crisis';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { CrisisService } from '../services/crisis.service';
+import { CrisisDetailResolverService } from '../services/crisis-detail-resolver.service';
 
 @Component({
   selector: 'app-crisis-list',
@@ -17,6 +18,7 @@ export class CrisisListComponent implements OnInit {
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private crisisService: CrisisService,
+    public crisisDetailResolverService: CrisisDetailResolverService,
   ) {}
 
   public ngOnInit() {

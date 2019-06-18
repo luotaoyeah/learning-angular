@@ -29,7 +29,14 @@
             <td nzAlign="center">{{ crisis.id }}</td>
             <td>{{ crisis.name }}</td>
             <td nzAlign="center">
-              <button nz-button (click)="gotoCrisisDetailPage(crisis)">
+              <button
+                nz-button
+                (click)="gotoCrisisDetailPage(crisis)"
+                [nzLoading]="
+                  selectedCrisisId === crisis.id &&
+                  crisisDetailResolverService.loading
+                "
+              >
                 <i nz-icon nzType="form" nzTheme="outline"></i>
               </button>
             </td>
