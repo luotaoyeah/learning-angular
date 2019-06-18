@@ -15,6 +15,9 @@ import { AuthService } from './auth.service';
 import { NzMessageService } from 'ng-zorro-antd';
 import { delay, tap } from 'rxjs/operators';
 
+/*
+ * https://angular.io/guide/router#guard-the-admin-feature
+ */
 @Injectable({
   providedIn: 'root',
 })

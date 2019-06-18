@@ -14,6 +14,10 @@ const routes: Routes = [
     component: LayoutDefaultComponent,
     canActivate: [SimpleGuard],
     children: [
+      /*
+       * redirectTo 后面的路径可以是相对路径, 也可以是绝对路径(以 / 开头),
+       * 当使用绝对路径时, 可以直接在路径后面添加 query parameters 和 fragment
+       */
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', component: HomeComponent },
       {

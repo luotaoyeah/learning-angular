@@ -3,6 +3,9 @@ import { PreloadingStrategy, Route } from '@angular/router';
 import { Observable } from 'rxjs';
 import { of } from 'rxjs/internal/observable/of';
 
+/*
+ * https://angular.io/guide/router#preloading-background-loading-of-feature-areas
+ */
 @Injectable({
   providedIn: 'root',
 })
