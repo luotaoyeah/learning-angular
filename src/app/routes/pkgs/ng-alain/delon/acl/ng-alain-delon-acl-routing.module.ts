@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DelonAbcComponent } from './abc/delon-abc.component';
+import { DelonAclComponent } from './delon-acl.component';
 
 const routes: Routes = [
   {
-    path: 'delon/abc',
-    component: DelonAbcComponent,
+    path: 'delon/acl',
+    component: DelonAclComponent,
   },
 ];
 
@@ -13,4 +13,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class NgAlainDelonRoutingModule {}
+export class NgAlainDelonAclRoutingModule {}

@@ -99,6 +99,7 @@
   "menu.pkgs.ng-alain": "ng-alain",
   "menu.pkgs.ng-alain.delon": "delon",
   "menu.pkgs.ng-alain.delon.abc": "abc",
+  "menu.pkgs.ng-alain.delon.acl": "acl",
   "menu.pkgs.jasmine": "jasmine",
   "menu.pkgs.jasmine.global": "global",
   "menu.pkgs.jasmine.namespace": "namespace",

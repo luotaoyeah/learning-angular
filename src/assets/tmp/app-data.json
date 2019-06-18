@@ -440,6 +440,10 @@
                 {
                   "i18n": "menu.pkgs.ng-alain.delon.abc",
                   "link": "/pkgs/ng-alain/delon/abc"
+                },
+                {
+                  "i18n": "menu.pkgs.ng-alain.delon.acl",
+                  "link": "/pkgs/ng-alain/delon/acl"
                 }
               ]
             }

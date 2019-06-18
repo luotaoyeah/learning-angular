@@ -9,6 +9,7 @@ import { DelonFormModule } from '@delon/form';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { CountdownModule } from 'ngx-countdown';
+import { NtJsonPipe } from './pipes/nt-json.pipe';
 
 // tslint:disable-next-line:no-any
 const THIRDMODULES: Array<any> = [NgZorroAntdModule, CountdownModule];
@@ -19,11 +20,13 @@ const THIRDMODULES: Array<any> = [NgZorroAntdModule, CountdownModule];
 const COMPONENTS: Array<any> = [];
 // tslint:disable-next-line:no-any
 const DIRECTIVES: Array<Type<any> | any[]> = [];
+// tslint:disable-next-line:no-any
+const PIPES: Array<Type<any> | any[]> = [NtJsonPipe];
 
 // endregion
 
 @NgModule({
-  declarations: [...COMPONENTS, ...DIRECTIVES],
+  declarations: [...COMPONENTS, ...DIRECTIVES, ...PIPES],
   imports: [
     CommonModule,
     FormsModule,
@@ -51,6 +54,7 @@ const DIRECTIVES: Array<Type<any> | any[]> = [];
     ...THIRDMODULES,
     ...COMPONENTS,
     ...DIRECTIVES,
+    ...PIPES,
   ],
 })
 export class SharedModule {}

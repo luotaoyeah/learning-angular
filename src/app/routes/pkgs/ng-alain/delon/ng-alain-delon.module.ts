@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
-import { FullContentComponent } from './abc/full-content/full-content.component';
-import { NgAlainDelonRoutingModule } from './ng-alain-delon-routing.module';
-import { DelonAbcComponent } from './abc/delon-abc.component';
 import { SharedModule } from '@app/shared';
+import { NgAlainDelonAbcModule } from './abc/ng-alain-delon-abc.module';
+import { NgAlainDelonAclModule } from './acl/ng-alain-delon-acl.module';
 
 @NgModule({
-  declarations: [DelonAbcComponent, FullContentComponent],
-  imports: [NgAlainDelonRoutingModule, SharedModule],
+  imports: [SharedModule, NgAlainDelonAbcModule, NgAlainDelonAclModule],
 })
 export class NgAlainDelonModule {}
