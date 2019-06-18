@@ -1,0 +1,17 @@
+<button nz-button (click)="reset()">RESET</button>
+
+<nz-divider [nzDashed]="true"></nz-divider>
+
+<button nz-button (click)="attachRole()">add role 'r01'</button>
+<button nz-button (click)="removeRole()">remove role 'r01'</button>
+<button nz-button (click)="attachAbility()">add ability 'a01'</button>
+<button nz-button (click)="removeAbility()">remove ability 'a01'</button>
+
+<nz-divider [nzDashed]="true"></nz-divider>
+
+<button nz-button nzType="primary" [acl]="{ role: ['r01'] }">r01</button>
+<button nz-button nzType="primary" [acl]="{ ability: ['a01'] }">a01</button>
+
+<nz-divider [nzDashed]="true"></nz-divider>
+
+<pre>{{ aclService.data | ntJson }}</pre>

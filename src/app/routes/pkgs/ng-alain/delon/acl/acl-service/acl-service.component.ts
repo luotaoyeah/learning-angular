@@ -8,6 +8,11 @@ import { ACLService } from '@delon/acl';
 export class AclServiceComponent {
   constructor(public aclService: ACLService) {}
 
+  public reset() {
+    this.aclService.setFull(false);
+    this.aclService.set({});
+  }
+
   public setFull() {
     this.aclService.setFull(!this.aclService.data.full);
   }
