@@ -19,6 +19,7 @@ import {
 } from '@delon/abc';
 import { DelonAuthConfig } from '@delon/auth';
 import { RouteReuseStrategy } from '@angular/router';
+import { DelonACLConfig } from '@delon/acl';
 
 // tslint:disable-next-line:no-any
 const REUSETAB_PROVIDES: Array<any> = [
@@ -51,10 +52,18 @@ export function fnSTConfig(): STConfig {
   };
 }
 
+export function fnACLConfig(): DelonACLConfig {
+  return {
+    ...new DelonACLConfig(),
+    guard_url: '/exception/403',
+  };
+}
+
 const GLOBAL_CONFIG_PROVIDES = [
   { provide: STConfig, useFactory: fnSTConfig },
   { provide: PageHeaderConfig, useFactory: fnPageHeaderConfig },
   { provide: DelonAuthConfig, useFactory: fnDelonAuthConfig },
+  { provide: DelonACLConfig, useFactory: fnACLConfig },
 ];
 
 // endregion
@@ -63,7 +72,11 @@ const GLOBAL_CONFIG_PROVIDES = [
   imports: [AlainThemeModule.forRoot()],
 })
 export class DelonModule {
-  constructor(@Optional() @SkipSelf() parentModule: DelonModule) {
+  constructor(
+    @Optional()
+    @SkipSelf()
+    parentModule: DelonModule,
+  ) {
     throwIfAlreadyLoaded(parentModule, 'DelonModule');
   }
 

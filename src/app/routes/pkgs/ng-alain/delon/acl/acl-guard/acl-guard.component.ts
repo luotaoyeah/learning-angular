@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import { ACLService } from '@delon/acl';
 
 /*
- * https://netlify.ng-alain.com/acl/control/en#*aclIf
+ * https://netlify.ng-alain.com/acl/guard/en
  */
 @Component({
-  selector: 'app-acl-if-directive',
-  templateUrl: './acl-if-directive.component.html',
+  selector: 'app-acl-guard',
+  templateUrl: './acl-guard.component.html',
 })
-export class AclIfDirectiveComponent {
+export class AclGuardComponent {
   constructor(public aclService: ACLService) {}
 
   public reset() {
@@ -22,13 +22,5 @@ export class AclIfDirectiveComponent {
 
   public removeRole() {
     this.aclService.removeRole(['r01']);
-  }
-
-  public attachAbility() {
-    this.aclService.attachAbility(['a01']);
-  }
-
-  public removeAbility() {
-    this.aclService.removeAbility(['a01']);
   }
 }

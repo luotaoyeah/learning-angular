@@ -1,0 +1,20 @@
+<button nz-button (click)="reset()">RESET</button>
+
+<nz-divider [nzDashed]="true"></nz-divider>
+
+<a nz-button [routerLink]="[{ outlets: { outlet01: ['guard01'] } }]">
+  ENTER 01
+</a>
+<a nz-button [routerLink]="[{ outlets: { outlet01: null } }]">
+  LEAVE 01
+</a>
+<button nz-button (click)="attachRole()">attachRole</button>
+<button nz-button (click)="removeRole()">removeRole</button>
+
+<nz-divider [nzDashed]="true"></nz-divider>
+
+<router-outlet name="outlet01"></router-outlet>
+
+<nz-divider [nzDashed]="true"></nz-divider>
+
+<pre>{{ aclService.data | ntJson }}</pre>

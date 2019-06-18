@@ -5,6 +5,8 @@ import { DelonAclComponent } from './delon-acl.component';
 import { AclServiceComponent } from './acl-service/acl-service.component';
 import { AclDirectiveComponent } from './acl-directive/acl-directive.component';
 import { AclIfDirectiveComponent } from './acl-if-directive/acl-if-directive.component';
+import { AclGuardComponent } from './acl-guard/acl-guard.component';
+import { AclGuard01Component } from './acl-guard/01/acl-guard-01.component';
 
 @NgModule({
   declarations: [
@@ -12,7 +14,9 @@ import { AclIfDirectiveComponent } from './acl-if-directive/acl-if-directive.com
     AclServiceComponent,
     AclDirectiveComponent,
     AclIfDirectiveComponent,
+    AclGuardComponent,
+    AclGuard01Component,
   ],
-  imports: [NgAlainDelonAclRoutingModule, SharedModule],
+  imports: [SharedModule, NgAlainDelonAclRoutingModule],
 })
 export class NgAlainDelonAclModule {}
