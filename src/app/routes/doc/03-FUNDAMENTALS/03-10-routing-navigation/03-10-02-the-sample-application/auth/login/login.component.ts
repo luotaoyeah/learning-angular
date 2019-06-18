@@ -15,15 +15,22 @@ export class LoginComponent implements OnInit {
 
   public ngOnInit(): void {
     this.activatedRoute.queryParamMap.subscribe((queryMap: ParamMap) => {
-      console.log(`session_id: ${queryMap.get('session_id')}`);
+      console.log(
+        `[${LoginComponent.name}]\n`,
+        `[session_id] ${queryMap.get('session_id')}`,
+      );
     });
 
     this.activatedRoute.fragment.subscribe((fragment: string) => {
-      console.log('fragment: #' + fragment);
+      console.log(`[${LoginComponent.name}]\n`, `[fragment] ${fragment}`);
     });
   }
 
   public login(): void {
+    /*
+     * queryParamsHandling 用来配置如何处理 query params,
+     * preserveFragment 用来配置是否保留 fragment
+     */
     this.authService.login().subscribe(() => {
       if (this.authService.isLogin) {
         this.router.navigateByUrl(
