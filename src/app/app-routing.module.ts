@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 // tslint:disable-next-line:max-line-length
-import { SelectivePreloadingStrategyService } from './routes/doc/03-FUNDAMENTALS/03-10-routing-navigation/03-10-02-the-sample-application/services/selective-preloading-strategy.service';
+import { Doc031002PreloadingStrategyService } from './routes/doc/03-FUNDAMENTALS/03-10-routing-navigation/03-10-02-the-sample-application/services/doc-03-10-02-preloading-strategy.service';
 import { environment } from '@app/env/environment';
 
 @NgModule({
@@ -17,15 +17,19 @@ import { environment } from '@app/env/environment';
        */
       enableTracing: false,
       /*
-       * 预加载的策略,
-       * angular 默认提供两种策略:
-       *     PreloadAllModules (所有延迟加载的模块都要预加载)
-       *     NoPreloading (所有延迟加载的模块都不要预加载)
+       * 预加载的策略, angular 默认提供两种策略:
+       *     PreloadAllModules:
+       *         所有延迟加载的模块都要预加载,
+       *         但是对于应用了 canLoad() 守护的异步路由, 不会进行预加载
+       *     NoPreloading:
+       *         所有延迟加载的模块都不要预加载
+       *
+       * 我们也可以定义自己的预加载策略
        */
-      preloadingStrategy: SelectivePreloadingStrategyService,
+      preloadingStrategy: Doc031002PreloadingStrategyService,
       /*
        * 路由默认的 URL 风格是 HTML5  风格,
-       * 这种风格更加直观, 且可以跟 SSR (Server Side Rendering)  进行结合,
+       * 这种风格更加直观, 且可以跟 SSR (Server Side Rendering) 进行结合,
        * 可以通过 useHash 选项来启用 # 风格
        */
       useHash: environment.useHash,

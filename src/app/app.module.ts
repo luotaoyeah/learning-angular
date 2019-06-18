@@ -7,15 +7,12 @@ import {
   Provider,
   Type,
 } from '@angular/core';
-// #region Http Interceptors
 import {
   HTTP_INTERCEPTORS,
   HttpClient,
   HttpClientModule,
 } from '@angular/common/http';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-// #region default language
-// 参考：https://ng-alain.com/docs/i18n
 import { default as ngLang } from '@angular/common/locales/en';
 import { en_US as zorroLang, NZ_I18N } from 'ng-zorro-antd';
 import {
@@ -23,18 +20,13 @@ import {
   DELON_LOCALE,
   en_US as delonLang,
 } from '@delon/theme';
-// register angular
 import { registerLocaleData } from '@angular/common';
-// #endregion
-// #region i18n services
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { I18NService } from '@app/core/i18n/i18n.service';
-// #region JSON Schema form (using @delon/form)
 import { JsonSchemaModule } from '@app/shared/json-schema/json-schema.module';
 import { SimpleInterceptor } from '@delon/auth';
 import { DefaultInterceptor } from '@app/core/net/default.interceptor';
-// #region Startup Service
 import { StartupService } from '@app/core/startup/startup.service';
 import { DelonModule } from './delon.module';
 import { CoreModule } from '@app/core/core.module';
@@ -78,6 +70,7 @@ const LANG = {
 };
 
 registerLocaleData(LANG.ng, LANG.abbr);
+
 const LANG_PROVIDES = [
   { provide: LOCALE_ID, useValue: LANG.abbr },
   { provide: NZ_I18N, useValue: LANG.zorro },
@@ -85,7 +78,7 @@ const LANG_PROVIDES = [
 ];
 
 /**
- * load i18n language files
+ * Load i18n language files
  * @param httpClient HttpClient
  */
 export function I18nHttpLoaderFactory(httpClient: HttpClient) {
@@ -109,9 +102,9 @@ const I18NSERVICE_PROVIDES = [
 const FORM_MODULES = [JsonSchemaModule];
 
 /*
- * 因为 HttpClientModule 可能需要依赖 interceptors，因此 interceptors 需要和 HttpClientModule 注册到同一个 injector 中，
- * 注册 interceptor 时使用的 injection-token 是 angular 内置的 HTTP_INTERCEPTORS，并且使用 multi: true，
- * 多个 interceptors 的注册顺序，决定了它们的执行顺序
+ * 因为 HttpClientModule 可能需要依赖 interceptors, 因此 interceptors 需要和 HttpClientModule 注册到同一个 injector 中,
+ * 注册 interceptor 时使用的 injection-token 是 angular 内置的 HTTP_INTERCEPTORS, 并且使用 multi: true,
+ * 多个 interceptors 的注册顺序, 决定了它们的执行顺序
  */
 const INTERCEPTOR_PROVIDES: Array<Provider> = [
   {
@@ -212,17 +205,17 @@ const APPINIT_PROVIDES = [
     ...I18NSERVICE_PROVIDES,
     ...APPINIT_PROVIDES,
     /*
-     * 显式地将某个 service 声明在 root NgModule 的 providers 中，
+     * 显式地将某个 service 声明在 root NgModule 的 providers 中,
      * 等价于在该 service 的 @Injectable 中使用 providedIn: 'root'
      */
     Doc0306070102Service,
     Doc03060802Service,
 
     /*
-     * NgModule A 在引入（import） NgModule B 的时候，
-     * 会自动将 NgModule B 的 providers 中的数据添加到 NgModule A 的 providers 中去，
-     * 并且是添加到 NgModule A 自己的 providers 的前面，
-     * 也就是说，如果 NgModule A 和 NgModule B 同时定义了同一个 provider，
+     * NgModule A 在引入（import） NgModule B 的时候,
+     * 会自动将 NgModule B 的 providers 中的数据添加到 NgModule A 的 providers 中去,
+     * 并且是添加到 NgModule A 自己的 providers 的前面,
+     * 也就是说, 如果 NgModule A 和 NgModule B 同时定义了同一个 provider,
      * 则 NgModule A 中的 provider 会覆盖 NgModule B 中的 provider
      */
     {

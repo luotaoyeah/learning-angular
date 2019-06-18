@@ -6,23 +6,23 @@ import { of } from 'rxjs/internal/observable/of';
 @Injectable({
   providedIn: 'root',
 })
-export class SelectivePreloadingStrategyService implements PreloadingStrategy {
-  public modules: Array<string> = [];
-
+export class Doc031002PreloadingStrategyService implements PreloadingStrategy {
   // tslint:disable-next-line:no-any
   public preload(route: Route, fn: () => Observable<any>): Observable<any> {
     if (route.data && route.data.preload) {
-      if (route.path) {
-        this.modules.push(route.path);
-      }
-
       console.log(
-        `[${SelectivePreloadingStrategyService.name}] - [${route.path}]`,
+        `[${Doc031002PreloadingStrategyService.name}]\n${route.path}`,
       );
 
+      /*
+       * 允许预加载, 则返回 fn() 的返回结果
+       */
       return fn();
     }
 
+    /*
+     * 不允许预加载, 则返回 of(null)
+     */
     return of(null);
   }
 }
