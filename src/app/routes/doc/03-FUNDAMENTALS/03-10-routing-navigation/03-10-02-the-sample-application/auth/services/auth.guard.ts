@@ -27,6 +27,7 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
 
   /**
    * canActivate() 用来守护某个路由
+   *
    * @param next 要跳转的路由
    * @param state 当前路由状态
    */
@@ -43,6 +44,7 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
 
   /**
    * canActivateChild() 用来守护下级路由
+   *
    * @param childRoute 下级路由
    * @param state 当前路由状态
    */
@@ -69,6 +71,7 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
 
   /**
    * canLoad() 用来守护是否可以加载某个异步的路由对应的 NgModule
+   *
    * @param route 路由配置
    * @param segments UrlSegments
    */
