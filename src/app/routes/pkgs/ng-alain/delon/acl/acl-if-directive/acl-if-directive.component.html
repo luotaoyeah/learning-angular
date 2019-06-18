@@ -1,0 +1,29 @@
+<button nz-button (click)="reset()">RESET</button>
+
+<nz-divider [nzDashed]="true"></nz-divider>
+
+<button nz-button (click)="attachRole()">add role 'r01'</button>
+<button nz-button (click)="removeRole()">remove role 'r01'</button>
+<button nz-button (click)="attachAbility()">add ability 'a01'</button>
+<button nz-button (click)="removeAbility()">remove ability 'a01'</button>
+
+<nz-divider [nzDashed]="true"></nz-divider>
+
+<ng-template
+  [aclIf]="{ role: ['r01'] }"
+  [aclIfThen]="tpl01"
+  [aclIfElse]="tpl02"
+>
+</ng-template>
+<ng-template #tpl01>
+  <button nz-button nzType="primary">已被授权 r01</button>
+</ng-template>
+<ng-template #tpl02>
+  <button nz-button nzType="danger">未被授权 r01</button>
+</ng-template>
+
+<button nz-button nzType="primary" *aclIf="{ ability: ['a01'] }">a01</button>
+
+<nz-divider [nzDashed]="true"></nz-divider>
+
+<pre>{{ aclService.data | ntJson }}</pre>
