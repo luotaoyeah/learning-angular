@@ -5,6 +5,7 @@ import { DelonAbcComponent } from './delon-abc.component';
 import { FullContentComponent } from './full-content/full-content.component';
 import { St01Component } from './st/01/st-01.component';
 import { StComponent } from './st/st.component';
+import { St02Component } from './st/02/st-02.component';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { StComponent } from './st/st.component';
     FullContentComponent,
     StComponent,
     St01Component,
+    St02Component,
   ],
   imports: [NgAlainDelonAbcRoutingModule, SharedModule],
 })

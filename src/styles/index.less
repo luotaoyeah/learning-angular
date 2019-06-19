@@ -4,13 +4,22 @@
   outline: none !important;
 }
 
+//region ng-alain
+
 .alain-default {
   height: 100%;
+  overflow: hidden;
 }
 
 .alain-default__content {
-  padding-top: 8px;
-  height: calc(100% - 58px);
+  margin: 0 0 0 300px;
+  padding: 8px;
+  height: calc(100% - 86.5px);
+  overflow: auto;
+}
+
+.alain-default__fixed .alain-default__content {
+  margin-top: 86.5px;
 }
 
 @media (max-width: 767px) {
@@ -63,8 +72,12 @@
 }
 
 @media (min-width: 768px) {
+  .alain-default__collapsed .alain-default__content {
+    margin-left: 64px;
+  }
+
   .alain-default__fixed .reuse-tab + router-outlet {
-    height: 38px;
+    height: 0px;
   }
 
   .full-content__opened {
@@ -145,8 +158,8 @@
   &.full-content__opened {
     .alain-default__content {
       padding: 0;
-      margin: 10px !important;
-      height: calc(100% - 20px);
+      margin: 8px !important;
+      height: calc(100% - 16px);
 
       router-outlet + * {
         height: 100%;
@@ -154,6 +167,8 @@
     }
   }
 }
+
+//endregion
 
 // region angular-gridster2
 
