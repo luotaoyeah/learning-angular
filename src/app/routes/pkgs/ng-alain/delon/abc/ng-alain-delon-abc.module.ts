@@ -21,6 +21,7 @@ import { St12Component } from './st/12-fixed/st-12.component';
 import { St13Component } from './st/13-responsive/st-13.component';
 import { St14Component } from './st/14-statistical/st-14.component';
 import { St15Component } from './st/15-virtual-scroll/st-15.component';
+import { St16Component } from './st/16-export/st-16.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { St15Component } from './st/15-virtual-scroll/st-15.component';
     St13Component,
     St14Component,
     St15Component,
+    St16Component,
   ],
   imports: [NgAlainDelonAbcRoutingModule, SharedModule],
   entryComponents: [St1101ModalComponent, St1101DrawerComponent],

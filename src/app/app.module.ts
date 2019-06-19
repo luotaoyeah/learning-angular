@@ -147,7 +147,7 @@ const INTERCEPTOR_PROVIDES: Array<Provider> = [
 // region global third module
 const GLOBAL_THIRD_MODULES: Array<
   // tslint:disable-next-line:no-any
-  Type<any> | ModuleWithProviders<{}> | any[]
+  Type<any> | ModuleWithProviders<{}> | Array<any>
 > = [];
 
 // endregion

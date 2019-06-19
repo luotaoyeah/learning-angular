@@ -19,9 +19,9 @@ const THIRDMODULES: Array<any> = [NgZorroAntdModule, CountdownModule];
 // tslint:disable-next-line:no-any
 const COMPONENTS: Array<any> = [];
 // tslint:disable-next-line:no-any
-const DIRECTIVES: Array<Type<any> | any[]> = [];
+const DIRECTIVES: Array<Type<any> | Array<any>> = [];
 // tslint:disable-next-line:no-any
-const PIPES: Array<Type<any> | any[]> = [NtJsonPipe];
+const PIPES: Array<Type<any> | Array<any>> = [NtJsonPipe];
 
 // endregion
 
