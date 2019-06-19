@@ -5,11 +5,12 @@ import { DelonAbcComponent } from './delon-abc.component';
 import { FullContentComponent } from './full-content/full-content.component';
 import { St01Component } from './st/01/st-01.component';
 import { StComponent } from './st/st.component';
-import { St02Component } from './st/02/st-02.component';
-import { St03Component } from './st/03/st-03.component';
-import { St04Component } from './st/04/st-04.component';
-import { St05Component } from './st/05/st-05.component';
-import { St06Component } from './st/06/st-06.component';
+import { St02Component } from './st/02-data/st-02.component';
+import { St03Component } from './st/03-type/st-03.component';
+import { St04Component } from './st/04-checkbox/st-04.component';
+import { St05Component } from './st/05-click/st-05.component';
+import { St06Component } from './st/06-reset/st-06.component';
+import { St07Component } from './st/07-radio/st-07.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { St06Component } from './st/06/st-06.component';
     St04Component,
     St05Component,
     St06Component,
+    St07Component,
   ],
   imports: [NgAlainDelonAbcRoutingModule, SharedModule],
 })
