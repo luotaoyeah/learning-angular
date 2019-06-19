@@ -5,10 +5,16 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root',
 })
 export class Doc05040201Service {
+  /**
+   *
+   */
   public getValue(): string {
     return 'FOO';
   }
 
+  /**
+   *
+   */
   public async getPromiseValue(): Promise<string> {
     return new Promise<string>((resolve: (value: string) => void) => {
       setTimeout(() => {
@@ -17,6 +23,9 @@ export class Doc05040201Service {
     });
   }
 
+  /**
+   *
+   */
   public getObservableValue(): Observable<string> {
     return of('FOO');
   }
