@@ -1,0 +1,14 @@
+<div class="modal-header">
+  <div class="modal-title">CUSTOM MODAL</div>
+</div>
+
+<p>参数：{{ record | json }}</p>
+
+<div class="modal-footer">
+  <button nz-button [nzType]="'default'" [nzSize]="'large'" (click)="cancel()">
+    CANCEL
+  </button>
+  <button nz-button [nzType]="'primary'" [nzSize]="'large'" (click)="ok()">
+    OK
+  </button>
+</div>
