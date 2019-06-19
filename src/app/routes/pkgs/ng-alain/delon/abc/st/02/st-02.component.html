@@ -1,0 +1,16 @@
+<div class="mb-sm">
+  <button (click)="st.clear()" nz-button>Clear Data</button>
+  <button (click)="st.reload()" nz-button>Reload Data</button>
+  <button (click)="st.clearStatus(); st.reload()" nz-button>
+    Clear Status
+  </button>
+</div>
+
+<st
+  #st
+  [data]="users"
+  [columns]="columns"
+  [bordered]="true"
+  size="default"
+  (change)="change($event)"
+></st>

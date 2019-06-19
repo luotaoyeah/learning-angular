@@ -171,15 +171,19 @@
 
   &.full-content__opened {
     .alain-default__content {
-      padding: 0;
-      margin: 8px !important;
-      height: calc(100% - 16px);
+      margin: 0 !important;
+      padding: 8px !important;
+      height: 100%;
 
       router-outlet + * {
         height: 100%;
       }
     }
   }
+}
+
+.ant-table-small > .ant-table-content > .ant-table-body {
+  margin: 0px;
 }
 
 //endregion

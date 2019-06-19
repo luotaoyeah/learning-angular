@@ -1,3 +1,9 @@
+<nz-collapse [nzAccordion]="true" [ngStyle]="{ marginBottom: '10px' }">
+  <nz-collapse-panel nzExpandedIcon="caret-right" nzHeader="st">
+    <app-st></app-st>
+  </nz-collapse-panel>
+</nz-collapse>
+
 <full-content
   [padding]="10"
   (fullscreenChange)="handleFullScreenChange($event)"
@@ -14,10 +20,6 @@
           {{ isFullScreen ? '退出全屏' : '全屏' }}
         </button>
       </app-full-content>
-    </nz-collapse-panel>
-
-    <nz-collapse-panel nzExpandedIcon="caret-right" nzHeader="st">
-      <app-st></app-st>
     </nz-collapse-panel>
   </nz-collapse>
 </full-content>
