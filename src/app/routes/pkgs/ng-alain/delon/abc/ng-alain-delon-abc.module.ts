@@ -18,6 +18,7 @@ import { St11Component } from './st/11-buttons/st-11.component';
 import { St1101ModalComponent } from './st/11-buttons/01/st-11-01.modal.component';
 import { St1101DrawerComponent } from './st/11-buttons/01/st-11-01.drawer.component';
 import { St12Component } from './st/12-fixed/st-12.component';
+import { St13Component } from './st/13-statistical/st-13.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { St12Component } from './st/12-fixed/st-12.component';
     St1101ModalComponent,
     St1101DrawerComponent,
     St12Component,
+    St13Component,
   ],
   imports: [NgAlainDelonAbcRoutingModule, SharedModule],
   entryComponents: [St1101ModalComponent, St1101DrawerComponent],
