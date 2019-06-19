@@ -1,10 +1,10 @@
-import { Doc050405Service, Hero } from './doc-05-04-05.service';
+import { Doc05040204Service, Hero } from './doc-05-04-02.04.service';
 import { TestBed } from '@angular/core/testing';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { defer } from 'rxjs';
 
-describe('Doc050405Service', () => {
-  let service: Doc050405Service;
+describe('Doc05040204Service', () => {
+  let service: Doc05040204Service;
   let httpClientSpy: {
     get: jasmine.Spy;
   };
@@ -17,7 +17,7 @@ describe('Doc050405Service', () => {
 
     TestBed.configureTestingModule({
       providers: [
-        Doc050405Service,
+        Doc05040204Service,
         {
           provide: HttpClient,
           useValue: httpClientSpy,
@@ -35,7 +35,7 @@ describe('Doc050405Service', () => {
       }),
     );
 
-    service = TestBed.get(Doc050405Service);
+    service = TestBed.get(Doc05040204Service);
 
     service.getHeroes().subscribe((heroes: Array<Hero>) => {
       expect(heroes).toEqual(expectedHeroes);
@@ -56,7 +56,7 @@ describe('Doc050405Service', () => {
       ),
     );
 
-    service = TestBed.get(Doc050405Service);
+    service = TestBed.get(Doc05040204Service);
     service.getHeroes().subscribe(
       () => {},
       (e: HttpErrorResponse) => {

@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root',
 })
-export class Doc050405Service {
+export class Doc05040204Service {
   constructor(private httpClient: HttpClient) {}
 
   public getHeroes(): Observable<Array<Hero>> {
