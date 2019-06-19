@@ -18,6 +18,7 @@ app.use(
 require('./api/pkgs/ngrx/01').init(app);
 require('./api/doc/03/10/02/doc-03-10-02').init(app);
 require('./api/pkgs/ng-alain/delon/abc/st/01/01').init(app);
+require('./api/pkgs/ng-alain/delon/abc/st/08/01').init(app);
 
 // endregion
 
