@@ -3,9 +3,16 @@ import { NgAlainDelonAbcRoutingModule } from './ng-alain-delon-abc-routing.modul
 import { SharedModule } from '@app/shared';
 import { DelonAbcComponent } from './delon-abc.component';
 import { FullContentComponent } from './full-content/full-content.component';
+import { St01Component } from './st/01/st-01.component';
+import { StComponent } from './st/st.component';
 
 @NgModule({
-  declarations: [DelonAbcComponent, FullContentComponent],
+  declarations: [
+    DelonAbcComponent,
+    FullContentComponent,
+    StComponent,
+    St01Component,
+  ],
   imports: [NgAlainDelonAbcRoutingModule, SharedModule],
 })
 export class NgAlainDelonAbcModule {}
