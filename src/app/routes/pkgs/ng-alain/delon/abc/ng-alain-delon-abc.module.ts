@@ -12,6 +12,7 @@ import { St05Component } from './st/05-click/st-05.component';
 import { St06Component } from './st/06-reset/st-06.component';
 import { St08Component } from './st/08-sort/st-08.component';
 import { St07Component } from './st/07-radio/st-07.component';
+import { St09Component } from './st/09-custom-column/st-09.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { St07Component } from './st/07-radio/st-07.component';
     St06Component,
     St07Component,
     St08Component,
+    St09Component,
   ],
   imports: [NgAlainDelonAbcRoutingModule, SharedModule],
 })
