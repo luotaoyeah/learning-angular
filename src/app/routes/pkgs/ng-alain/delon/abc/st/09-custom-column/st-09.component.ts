@@ -20,7 +20,7 @@ export class St09Component {
         age: Math.ceil(Math.random() * 10) + 20,
       };
     });
-  public columns: STColumn[] = [
+  public columns: Array<STColumn> = [
     { title: '编号', index: 'id' },
     { title: '姓名', index: 'name', iif: () => this.showColumn('name') },
     { title: '年龄', index: 'age', iif: () => this.showColumn('age') },

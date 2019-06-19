@@ -20,7 +20,7 @@ export class St06Component implements OnInit {
     }
   > = [];
 
-  public columns: STColumn[] = [
+  public columns: Array<STColumn> = [
     {
       title: '编号',
       index: 'id',

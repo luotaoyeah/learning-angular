@@ -1,0 +1,12 @@
+<st
+  [data]="users"
+  [columns]="columns"
+  [expand]="expand"
+  [expandRowByClick]="true"
+  [expandAccordion]="true"
+  [bordered]="true"
+>
+  <ng-template #expand let-item let-index="index" let-column="column">
+    {{ item.description }}
+  </ng-template>
+</st>

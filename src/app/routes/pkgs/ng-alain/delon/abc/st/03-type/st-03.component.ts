@@ -18,7 +18,7 @@ export class St03Component {
       yn: boolean;
     } & STData
   > = [];
-  public columns: STColumn[] = [
+  public columns: Array<STColumn> = [
     { title: '行号', type: 'no' },
     { title: '年龄', index: 'age', type: 'number' },
     {
