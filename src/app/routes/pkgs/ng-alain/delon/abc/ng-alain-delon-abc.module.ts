@@ -9,6 +9,7 @@ import { St02Component } from './st/02/st-02.component';
 import { St03Component } from './st/03/st-03.component';
 import { St04Component } from './st/04/st-04.component';
 import { St05Component } from './st/05/st-05.component';
+import { St06Component } from './st/06/st-06.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { St05Component } from './st/05/st-05.component';
     St03Component,
     St04Component,
     St05Component,
+    St06Component,
   ],
   imports: [NgAlainDelonAbcRoutingModule, SharedModule],
 })
