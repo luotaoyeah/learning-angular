@@ -32,4 +32,12 @@ describe('Doc0504030202Component', () => {
     const element: HTMLElement = fixture.nativeElement;
     expect(element.textContent).toContain('FOO');
   });
+
+  it('should contain "FOO" in a span', () => {
+    const element: HTMLElement = fixture.nativeElement;
+    const spanEl: HTMLSpanElement | null = element.querySelector('span');
+    if (spanEl) {
+      expect(spanEl.textContent).toEqual('FOO');
+    }
+  });
 });
