@@ -35,6 +35,7 @@ import { Doc0504041502Component } from './05-04-04-component-test-scenarios/05-0
 import { Doc050405Component } from './05-04-05-attribute-directive-testing/doc-05-04-05.component';
 import { Doc05040501Directive } from './05-04-05-attribute-directive-testing/directive/doc-05-04-05-01.directive';
 import { Doc0504RoutingModule } from './doc-05-04-routing.module';
+import { Doc0504030202Component } from './05-04-03-component-test-basics/05-04-03-02-component-dom-testing/05-04-03-02-02/doc-05-04-03-02-02.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { Doc0504RoutingModule } from './doc-05-04-routing.module';
     Doc0504030102Component,
     Doc0504030103Component,
     Doc0504030201Component,
+    Doc0504030202Component,
     /* 05-04-04 */
     Doc050404Component,
     Doc0504040101Component,
