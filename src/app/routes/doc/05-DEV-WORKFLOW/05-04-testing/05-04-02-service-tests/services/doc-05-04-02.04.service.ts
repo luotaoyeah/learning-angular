@@ -1,19 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { _HttpClient } from '@delon/theme';
 
 @Injectable({
   providedIn: 'root',
 })
-export class Doc05040204Service {
-  constructor(private httpClient: HttpClient) {}
+class Doc05040204Service {
+  constructor(private httpClient: _HttpClient) {}
 
   public getHeroes(): Observable<Array<Hero>> {
-    return this.httpClient.get<Array<Hero>>('/api/heroes');
+    return this.httpClient.get<Array<Hero>>('api/heroes');
   }
 }
 
-export class Hero {
+class Hero {
   public id: number = 0;
   public name: string = '';
 
@@ -22,3 +22,5 @@ export class Hero {
     this.name = name;
   }
 }
+
+export { Hero, Doc05040204Service };

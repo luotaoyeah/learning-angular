@@ -1,66 +1,68 @@
+/*
+ * https://angular.io/guide/testing#testing-http-services
+ */
+
 import { Doc05040204Service, Hero } from './doc-05-04-02.04.service';
 import { TestBed } from '@angular/core/testing';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { defer } from 'rxjs';
+import { _HttpClient } from '@delon/theme';
+import { HttpErrorResponse } from '@angular/common/http';
 
 describe('Doc05040204Service', () => {
   let service: Doc05040204Service;
-  let httpClientSpy: {
-    get: jasmine.Spy;
-  };
+  let httpClientSpyObj: jasmine.SpyObj<_HttpClient>;
 
   beforeEach(() => {
     /*
-     * 测试 HttpClient 跟测试普通的 service 类似，可以使用 SpyObj 构造模拟数据
+     * 测试 HttpClient 跟测试普通的 service 类似, 可以使用 SpyObj 构造模拟数据
      */
-    httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
+    httpClientSpyObj = jasmine.createSpyObj<_HttpClient>('HttpClient', ['get']);
 
     TestBed.configureTestingModule({
       providers: [
         Doc05040204Service,
         {
-          provide: HttpClient,
-          useValue: httpClientSpy,
+          provide: _HttpClient,
+          useValue: httpClientSpyObj,
         },
       ],
     });
+
+    service = TestBed.get(Doc05040204Service);
   });
 
-  it('should return heroes', () => {
-    const expectedHeroes: Array<Hero> = [new Hero(1, 'A'), new Hero(2, 'B')];
+  it('should return heroes by #getHeroes()', () => {
+    const heroes: Array<Hero> = [new Hero(1, 'A'), new Hero(2, 'B')];
 
-    httpClientSpy.get.and.returnValue(
+    httpClientSpyObj.get.and.returnValue(
       defer(() => {
-        Promise.resolve(expectedHeroes);
+        Promise.resolve(heroes);
       }),
     );
 
-    service = TestBed.get(Doc05040204Service);
-
-    service.getHeroes().subscribe((heroes: Array<Hero>) => {
-      expect(heroes).toEqual(expectedHeroes);
+    service.getHeroes().subscribe((value: Array<Hero>) => {
+      expect(value).toEqual(heroes);
     });
 
-    expect(httpClientSpy.get.calls.count()).toBe(1);
+    expect(httpClientSpyObj.get).toHaveBeenCalledTimes(1);
   });
 
-  it('should throw an error', () => {
-    httpClientSpy.get.and.returnValue(
+  it('should return an error when the server returns a 404', () => {
+    httpClientSpyObj.get.and.returnValue(
       defer(() =>
         Promise.reject(
           new HttpErrorResponse({
             status: 404,
-            error: '404',
+            error: 'NOT FOUND',
           }),
         ),
       ),
     );
 
-    service = TestBed.get(Doc05040204Service);
     service.getHeroes().subscribe(
       () => {},
       (e: HttpErrorResponse) => {
-        expect(e.error).toContain('404');
+        expect(e.error).toContain('NOT FOUND');
       },
     );
   });
