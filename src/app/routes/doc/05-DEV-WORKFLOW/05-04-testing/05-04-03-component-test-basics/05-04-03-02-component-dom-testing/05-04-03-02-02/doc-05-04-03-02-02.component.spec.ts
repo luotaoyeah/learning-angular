@@ -33,9 +33,9 @@ describe('Doc0504030202Component', () => {
     expect(element.textContent).toContain('FOO');
   });
 
-  it('should contain "FOO" in a span', () => {
+  it('should contain "FOO" in a <button>', () => {
     const element: HTMLElement = fixture.nativeElement;
-    const spanEl: HTMLSpanElement | null = element.querySelector('span');
+    const spanEl: HTMLSpanElement | null = element.querySelector('button');
     if (spanEl) {
       expect(spanEl.textContent).toEqual('FOO');
     }
