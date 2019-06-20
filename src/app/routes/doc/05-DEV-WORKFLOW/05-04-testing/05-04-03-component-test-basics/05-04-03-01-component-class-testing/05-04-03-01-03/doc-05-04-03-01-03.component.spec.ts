@@ -1,53 +1,51 @@
 import { Doc0504030103Component } from './doc-05-04-03-01-03.component';
-import { TranslateService } from '@ngx-translate/core';
 import { TestBed } from '@angular/core/testing';
+import { Doc0504030103Service } from './services/doc-05-04-03-01-03.service';
 
-class MockTranslateService {
-  public defaultLang: string = '';
-
-  public getDefaultLang(): string {
-    return this.defaultLang;
-  }
-
-  public setDefaultLang(lang: string): void {
-    this.defaultLang = lang;
-  }
+class MockDoc0504030103Service {
+  public isLoggedIn: boolean = true;
+  public user: { name: string } = { name: 'ADMIN' };
 }
 
 describe('Doc0504030103Component', () => {
   let component: Doc0504030103Component;
-  let translateService: TranslateService;
+  let doc0504030103Service: Doc0504030103Service;
 
   /*
-   * 如果 component 依赖了其他的 service，也可以使用 mock service 进行测试
+   * 如果 component 依赖了其他的 service, 也可以对这些 service 进行模拟,
+   * 即, 使用 mock service 来进行测试
    */
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
         Doc0504030103Component,
         {
-          provide: TranslateService,
-          useClass: MockTranslateService,
+          provide: Doc0504030103Service,
+          useClass: MockDoc0504030103Service,
         },
       ],
     });
 
     component = TestBed.get(Doc0504030103Component);
-    translateService = TestBed.get(TranslateService);
+    doc0504030103Service = TestBed.get(Doc0504030103Service);
   });
 
-  it('#currentLang should contain "中文"', () => {
+  it('should have the default value of "" for #welcome', () => {
+    expect(component.welcome).toEqual('');
+  });
+
+  it('should set #message when execute #ngOnInit()', () => {
     /*
-     * 需要手动调用 lifecycle hooks
+     * 需要手动调用生命周期函数
      */
     component.ngOnInit();
-    expect(component.currentLang).toContain('其他');
+    expect(component.welcome).toContain('WELCOME');
   });
 
-  it('#currentLang should contain "其他" ', () => {
-    translateService.setDefaultLang('zh-CN');
+  it('should set #messasge to "PLEASE LOGIN" when #isLoggedIn is false', () => {
+    doc0504030103Service.isLoggedIn = false;
     component.ngOnInit();
-    expect(component.currentLang).not.toContain('其他');
-    expect(component.currentLang).toContain('中文');
+    expect(component.welcome).not.toContain('WELCOME');
+    expect(component.welcome).toEqual('PLEASE LOGIN');
   });
 });
