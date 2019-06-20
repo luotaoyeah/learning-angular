@@ -19,7 +19,7 @@ describe('Doc0504030201Component', () => {
   beforeEach(() => {
     /*
      * TestBed.createComponent() 方法, 用来创建一个组件实例,
-     * 并将对应的组件元素（component element）添加到 test-runner DOM 中去,
+     * 并将对应的组件元素（component element）添加到用于测试的 DOM 中去,
      * 所有对 TestBed 进行的配置都应该在调用 createComponent() 方法之前进行
      */
     fixture = TestBed.createComponent(Doc0504030201Component);
