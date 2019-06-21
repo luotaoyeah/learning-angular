@@ -16,34 +16,39 @@ describe('Doc0504040101Component', () => {
     fixture = TestBed.createComponent(Doc0504040101Component);
     component = fixture.componentInstance;
     h1El = (fixture.nativeElement as HTMLElement).querySelector('h1');
-
-    fixture.detectChanges();
   });
 
-  it('fixture.nativeElement should strictly equals to fixture.debugElement.nativeElement', () => {
-    expect(fixture.nativeElement).toBe(fixture.debugElement.nativeElement);
-  });
-
-  it('<h1> should exists', () => {
+  it('should have a <h1> ', () => {
     expect(h1El).toBeTruthy();
   });
 
-  it('should display original title', () => {
+  /*
+   * 使用 TestBed.createComponent() 方法创建组件之后, 并不会触发 change detection,
+   * 因此不会更新 template 中的 data binding
+   */
+  it("should be empty for <h1>'s content", () => {
     if (h1El) {
-      expect(h1El.textContent).toBe('FOO');
+      expect(h1El.textContent).toBe('');
     }
   });
 
-  it('should display a changed title', () => {
+  it("should update <h1>'s content after #detectChanges() ", () => {
+    fixture.detectChanges();
+    if (h1El) {
+      expect(h1El.textContent).toEqual(component.title);
+    }
+  });
+
+  it("should update <h1>'s content", () => {
     /*
-     * 修改了组件的属性之后，需要手动调用 ComponentFixture.detectChanges() 方法，
-     * 来触发一次 change detection cycle，否则 data binding 不会更新
+     * 修改了组件的属性之后, 需要手动调用 ComponentFixture.detectChanges() 方法,
+     * 来触发一次 change detection cycle, 才会更新 template 中的 data binding
      */
     component.title = 'BAR';
     fixture.detectChanges();
 
     if (h1El) {
-      expect(h1El.textContent).toBe('BAR');
+      expect(h1El.textContent).toEqual('BAR');
     }
   });
 });
