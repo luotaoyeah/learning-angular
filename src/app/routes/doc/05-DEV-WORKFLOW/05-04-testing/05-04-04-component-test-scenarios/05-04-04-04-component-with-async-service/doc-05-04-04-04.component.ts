@@ -21,7 +21,6 @@ export class Doc05040404Component implements OnInit {
   }
 
   public getNextNum(): void {
-    this.errorMessage = '';
     this.num = this.doc05070404Service.getNextNum().pipe(
       catchError((e: Error) => {
         setTimeout(() => {

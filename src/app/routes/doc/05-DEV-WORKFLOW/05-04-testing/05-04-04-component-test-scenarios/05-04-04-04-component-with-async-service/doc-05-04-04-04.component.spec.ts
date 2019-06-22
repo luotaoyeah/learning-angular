@@ -11,6 +11,7 @@ import { Doc05040404Service } from './services/doc-05-04-04-04.service';
 import { defer, interval, Observable, of, throwError } from 'rxjs';
 import { SharedModule } from '@app/shared';
 import { delay, take } from 'rxjs/operators';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('Doc05040404Component', () => {
   let fixture: ComponentFixture<Doc05040404Component>;
@@ -21,7 +22,7 @@ describe('Doc05040404Component', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [Doc05040404Component],
-      imports: [SharedModule],
+      imports: [SharedModule, NoopAnimationsModule],
       providers: [
         {
           provide: Doc05040404Service,
@@ -45,12 +46,13 @@ describe('Doc05040404Component', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should display message on init', () => {
+  /*
+   * https://angular.io/guide/testing#synchronous-tests
+   */
+  it('should display num on init', () => {
     MockDoc05040404Service.getNextNum.and.returnValue(of(1));
 
     fixture.detectChanges();
-
-    expect(messageEl).toBeTruthy();
 
     if (messageEl) {
       expect(messageEl.textContent).toEqual('1');
@@ -59,30 +61,33 @@ describe('Doc05040404Component', () => {
   });
 
   /*
+   * https://angular.io/guide/testing#async-test-with-fakeasync
+   *
    * fakeAsync() 函数用来包装一个 function, 使之在 fakeAsync zone 里面执行
    */
   it('should display error message when service throw error', fakeAsync(() => {
-    MockDoc05040404Service.getNextNum.and.returnValue(throwError('SOME ERR'));
+    MockDoc05040404Service.getNextNum.and.returnValue(
+      throwError(new Error('ERR01')),
+    );
 
     fixture.detectChanges();
 
     /*
-     * tick() 函数, 用在 fakeAsync zone 里面,
-     * 用来模拟计时器（timers）的时间流逝
+     * tick() 函数, 用在 fakeAsync zone 里面, 用来模拟计时器的时间流逝
      */
     tick();
     fixture.detectChanges();
 
+    if (messageEl) {
+      expect(messageEl.textContent).toEqual('0');
+    }
+
     const errorMessageEl: HTMLDivElement | null = (fixture.nativeElement as HTMLElement).querySelector(
       '.ant-alert',
     );
-
-    expect(errorMessageEl).toBeDefined();
+    expect(errorMessageEl).toBeTruthy();
     if (errorMessageEl) {
-      expect(errorMessageEl.textContent).toEqual('SOME ERR');
-    }
-    if (messageEl) {
-      expect(messageEl.textContent).toEqual('0');
+      expect(errorMessageEl.textContent).toEqual('ERR01');
     }
   }));
 
