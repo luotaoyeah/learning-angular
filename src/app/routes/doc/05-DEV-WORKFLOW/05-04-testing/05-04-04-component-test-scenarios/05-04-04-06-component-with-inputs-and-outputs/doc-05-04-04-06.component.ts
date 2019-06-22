@@ -1,19 +1,20 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
+/*
+ * https://angular.io/guide/testing#component-with-inputs-and-outputs
+ */
 @Component({
   selector: 'app-doc-05-04-04-06',
   templateUrl: './doc-05-04-04-06.component.html',
 })
-export class Doc05040406Component implements OnInit {
+export class Doc05040406Component {
   @Input()
   public foo: string = '';
 
   @Output()
-  public ntClick: EventEmitter<number> = new EventEmitter();
-
-  public ngOnInit() {}
+  public click01: EventEmitter<number> = new EventEmitter();
 
   public handleClick() {
-    this.ntClick.emit(99);
+    this.click01.emit(99);
   }
 }

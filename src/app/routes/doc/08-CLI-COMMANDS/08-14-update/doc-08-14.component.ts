@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 /*
- * https://angular.io/cli/update
- * TODO
+ * TODO https://angular.io/cli/update
  */
 @Component({
   selector: 'app-doc-08-14',
