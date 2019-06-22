@@ -95,10 +95,10 @@ describe('Doc05040404Component', () => {
    * https://angular.io/guide/testing#the-tick-function
    */
   it('should run timeout callback with delay after call #tick() with milliseconds', fakeAsync(() => {
-    let called01: boolean = false;
+    let called: boolean = false;
 
     setTimeout(() => {
-      called01 = true;
+      called = true;
     }, 100);
 
     /*
@@ -108,24 +108,27 @@ describe('Doc05040404Component', () => {
      */
 
     tick(50);
-    expect(called01).toBe(false);
+    expect(called).toBe(false);
 
     tick(100);
-    expect(called01).toBe(true);
+    expect(called).toBe(true);
   }));
 
-  it('should get date difference correctly', fakeAsync(() => {
+  /*
+   * https://angular.io/guide/testing#comparing-dates-inside-fakeasync
+   */
+  it('should get date difference in #fakeAsync()', fakeAsync(() => {
     /*
      * 在 fakeAsync() 中模拟时间的流逝
      */
-    const start = Date.now();
+    const start: number = Date.now();
     tick(99);
-    const end = Date.now();
+    const end: number = Date.now();
 
     expect(end - start).toEqual(99);
   }));
 
-  it('should execute microtask correctly', fakeAsync(() => {
+  it('should resolve all microtasks', fakeAsync(() => {
     let foo = false;
     let bar = false;
 
@@ -142,7 +145,8 @@ describe('Doc05040404Component', () => {
     expect(bar).toBe(false);
 
     /*
-     * 调用 flushMicrotasks() 方法, 用来执行所有的 microtasks
+     * 我们可以认为 tick() 是用来执行 macrotasks 的, 它同时也会执行所有的 microtasks,
+     * 如果我们只需要执行所有的 microtasks, 可以调用 flushMicrotasks() 方法
      */
     flushMicrotasks();
 
