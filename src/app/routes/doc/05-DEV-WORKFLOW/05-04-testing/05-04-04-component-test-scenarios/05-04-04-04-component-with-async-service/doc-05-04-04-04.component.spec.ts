@@ -262,13 +262,15 @@ describe('Doc05040404Component', () => {
       }
     }));
 
+    /*
+     * https://angular.io/guide/testing#jasmine-done
+     *
+     * fakeAsync() 和 async() 简化了 async testing 的流程,
+     * 但是我们依然可以使用传统的 jasmine 提供的 done() 方法, 自行处理异步测试流程
+     */
     it('should display num after #getNextNum() with #done()', (done: DoneFn) => {
-      /*
-       * fakeAsync() 和 async() 简化了 async testing 的流程,
-       * 但是我们依然可以使用 jasmine 提供的 done() 方法, 自行处理异步测试流程
-       */
-
       fixture.detectChanges();
+
       if (messageEl) {
         expect(messageEl.textContent).toEqual('');
 
