@@ -43,20 +43,20 @@ describe('Doc05040406Component', () => {
     expect(buttonEl.textContent).toEqual(component.foo.toUpperCase());
   });
 
+  /*
+   * https://angular.io/guide/testing#triggereventhandler
+   */
   it('should raise #click01 event when clicked using `triggerEventHandler()`', () => {
     let $event: number = 0;
 
-    /*
-     * 通过 EventEmitter.subscribe() 方法, 注册事件监听函数
-     */
     component.click01.subscribe((value: number) => {
       $event = value;
     });
 
     /*
-     * 通过 DebugElement.triggerEventHandler() 方法, 触发一个事件
+     * 通过 DebugElement.triggerEventHandler() 方法, 派发一个事件
      */
-    buttonDebugEl.triggerEventHandler('click', 0);
+    buttonDebugEl.triggerEventHandler('click', null);
 
     expect($event).toEqual(99);
   });
