@@ -61,6 +61,9 @@ describe('Doc05040406Component', () => {
     expect($event).toEqual(99);
   });
 
+  /*
+   * https://angular.io/guide/testing#click-the-element
+   */
   it('should raise #click01 event when clicked using `HTMLButtonElement.click()`', () => {
     let $event: number = 0;
 
@@ -69,7 +72,7 @@ describe('Doc05040406Component', () => {
     });
 
     /*
-     * 可以直接调用 HTMLElement.click() 方法, 来触发一个事件
+     * 可以直接调用 HTMLElement.click() 方法, 来派发一个事件
      */
     buttonEl.click();
     expect($event).toEqual(99);
