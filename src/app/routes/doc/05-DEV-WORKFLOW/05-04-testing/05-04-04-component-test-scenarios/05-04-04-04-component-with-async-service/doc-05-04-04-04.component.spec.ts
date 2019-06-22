@@ -154,8 +154,14 @@ describe('Doc05040404Component', () => {
     expect(bar).toBe(true);
   }));
 
-  it('should get date difference correctly in fakeAsync with rxjs scheduler', fakeAsync(() => {
-    let result01 = false;
+  /*
+   * https://angular.io/guide/testing#using-the-rxjs-scheduler-inside-fakeasync
+   *
+   * 在 fakeAsync() 中不仅可以模拟 setTimeout(), setInterval() 等异步操作,
+   * 也可以对 rsjx 中的 scheduler 所表示的异步操作进行模拟
+   */
+  it('should work with rxjs scheduler in fakeAsync', fakeAsync(() => {
+    let result01: boolean = false;
 
     /*
      * delay() 的底层使用的是 setTimeout()
@@ -170,15 +176,15 @@ describe('Doc05040404Component', () => {
     tick(1000);
     expect(result01).toBe(true);
 
-    const start = Date.now();
-    let elapsed = 0;
+    const start: number = Date.now();
+    let elapsed: number = 0;
 
     /*
      * interval() 的底层使用的是 setInterval()
      */
     interval(1000)
       .pipe(take(2))
-      .subscribe((value: number) => {
+      .subscribe(() => {
         elapsed = Date.now() - start;
       });
 
