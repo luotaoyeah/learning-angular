@@ -38,6 +38,7 @@ import { Doc0504RoutingModule } from './doc-05-04-routing.module';
 import { Doc0504030202Component } from './05-04-03-component-test-basics/05-04-03-02-component-dom-testing/05-04-03-02-02/doc-05-04-03-02-02.component';
 import { Doc0504030203Component } from './05-04-03-component-test-basics/05-04-03-02-component-dom-testing/05-04-03-02-03/doc-05-04-03-02-03.component';
 import { Doc0504030204Component } from './05-04-03-component-test-basics/05-04-03-02-component-dom-testing/05-04-03-02-04/doc-05-04-03-02-04.component';
+import { Doc0504040401Component } from './05-04-04-component-test-scenarios/05-04-04-04-component-with-async-service/05-04-04-04-01/doc-05-04-04-04-01.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { Doc0504030204Component } from './05-04-03-component-test-basics/05-04-0
     Doc05040402Component,
     Doc05040403Component,
     Doc05040404Component,
+    Doc0504040401Component,
     Doc05040405Component,
     Doc05040406Component,
     Doc05040407Component,
