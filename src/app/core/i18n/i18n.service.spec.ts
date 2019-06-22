@@ -46,7 +46,7 @@ describe('I18NService', () => {
     i18NService = injector.get(I18NService);
   }
 
-  it('should working', () => {
+  it('should created', () => {
     genModule();
     expect(i18NService).toBeTruthy();
     expect(i18NService.defaultLang).toBe('zh-CN');
