@@ -7,8 +7,8 @@ describe('Doc05040402Component', () => {
 
   beforeEach(async(() => {
     /*
-     * 如果 component 通过 templateUrl 和 styleUrls 引入了外部的文件，
-     * 则在测试之前，需要调用 TestBedStatic.compileComponents() 方法编译 component
+     * 如果 component 通过 templateUrl 和 styleUrls 引入了外部的文件,
+     * 则在测试之前, 需要调用 TestBed.compileComponents() 方法编译 component
      */
     TestBed.configureTestingModule({
       declarations: [Doc05040402Component],
@@ -20,7 +20,7 @@ describe('Doc05040402Component', () => {
     component = fixture.componentInstance;
   });
 
-  it('should working', () => {
+  it('should created', () => {
     expect(component).toBeTruthy();
   });
 });
