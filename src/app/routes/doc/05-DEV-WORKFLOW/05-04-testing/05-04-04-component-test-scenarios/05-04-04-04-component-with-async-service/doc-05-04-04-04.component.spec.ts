@@ -91,28 +91,27 @@ describe('Doc05040404Component', () => {
     }
   }));
 
-  it('should run timeout callback with delay after call tick() with milliseconds', fakeAsync(() => {
-    let called01 = false;
-    let called02 = false;
+  /*
+   * https://angular.io/guide/testing#the-tick-function
+   */
+  it('should run timeout callback with delay after call #tick() with milliseconds', fakeAsync(() => {
+    let called01: boolean = false;
 
     setTimeout(() => {
       called01 = true;
     }, 100);
 
     /*
-     * tick() 函数, 用来模拟针对于 timer 的异步的时间流逝,
+     * tick() 函数, 用来模拟时间流逝,
      * 它只能用在 fakeAsync() zone 里面,
      * 它接收一个参数, 表示流逝的毫秒数, 默认为 0
      */
+
+    tick(50);
+    expect(called01).toBe(false);
+
     tick(100);
-    expect(called01).toBe(true, 'called01 be true');
-
-    setTimeout(() => {
-      called02 = true;
-    }, 1000);
-
-    tick(1000);
-    expect(called02).toBe(true, 'called02 be true');
+    expect(called01).toBe(true);
   }));
 
   it('should get date difference correctly', fakeAsync(() => {
