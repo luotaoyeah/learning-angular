@@ -1,5 +1,7 @@
-::ng-deep {
-  span {
-    color: #f00;
+:host {
+  ::ng-deep {
+    span {
+      color: #f00;
+    }
   }
 }

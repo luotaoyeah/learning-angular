@@ -7,7 +7,7 @@ import {
   tick,
 } from '@angular/core/testing';
 import { Doc05040404Component } from './doc-05-04-04-04.component';
-import { Doc05040404Service } from './service/doc-05-04-04-04.service';
+import { Doc05040404Service } from './services/doc-05-04-04-04.service';
 import { defer, interval, Observable, of, throwError } from 'rxjs';
 import { SharedModule } from '@app/shared';
 import { delay, take } from 'rxjs/operators';
@@ -15,32 +15,30 @@ import { delay, take } from 'rxjs/operators';
 describe('Doc05040404Component', () => {
   let fixture: ComponentFixture<Doc05040404Component>;
   let component: Doc05040404Component;
-  let getNextSpy: jasmine.Spy;
   let messageEl: HTMLButtonElement | null;
+  let MockDoc05040404Service: jasmine.SpyObj<Doc05040404Service>;
 
   beforeEach(async(() => {
-    const MockDoc05040404Service = jasmine.createSpyObj('Doc05040404Service', [
-      'getNext',
-    ]);
-
-    getNextSpy = MockDoc05040404Service.getNext.and.returnValue(of(1));
-
     TestBed.configureTestingModule({
       declarations: [Doc05040404Component],
       imports: [SharedModule],
       providers: [
         {
           provide: Doc05040404Service,
-          useValue: MockDoc05040404Service,
+          useValue: jasmine.createSpyObj<Doc05040404Service>([
+            'Doc05040404Service',
+            'getNextNum',
+          ]),
         },
       ],
     }).compileComponents();
   }));
 
   beforeEach(() => {
+    MockDoc05040404Service = TestBed.get(Doc05040404Service);
     fixture = TestBed.createComponent(Doc05040404Component);
     component = fixture.componentInstance;
-    messageEl = (fixture.nativeElement as HTMLElement).querySelector('button');
+    messageEl = (fixture.nativeElement as HTMLElement).querySelector('.num');
   });
 
   it('should create', () => {
@@ -48,25 +46,28 @@ describe('Doc05040404Component', () => {
   });
 
   it('should display message on init', () => {
+    MockDoc05040404Service.getNextNum.and.returnValue(of(1));
+
     fixture.detectChanges();
 
-    expect(messageEl).toBeDefined();
+    expect(messageEl).toBeTruthy();
 
     if (messageEl) {
       expect(messageEl.textContent).toEqual('1');
-      expect(getNextSpy.calls.any()).toBe(true, 'getNext() called');
+      expect(MockDoc05040404Service.getNextNum.calls.any()).toBe(true);
     }
   });
 
   /*
-   * fakeAsync() 函数用来包装（wrap）一个 function，使之在 fakeAsync zone 里面执行
+   * fakeAsync() 函数用来包装一个 function, 使之在 fakeAsync zone 里面执行
    */
   it('should display error message when service throw error', fakeAsync(() => {
-    getNextSpy.and.returnValue(throwError('SOME ERR'));
+    MockDoc05040404Service.getNextNum.and.returnValue(throwError('SOME ERR'));
+
     fixture.detectChanges();
 
     /*
-     * tick() 函数，用在 fakeAsync zone 里面，
+     * tick() 函数, 用在 fakeAsync zone 里面,
      * 用来模拟计时器（timers）的时间流逝
      */
     tick();
@@ -94,9 +95,9 @@ describe('Doc05040404Component', () => {
     }, 100);
 
     /*
-     * tick() 函数，用来模拟针对于 timer 的异步的时间流逝，
-     * 它只能用在 fakeAsync() zone 里面，
-     * 它接收一个参数，表示流逝的毫秒数，默认为 0
+     * tick() 函数, 用来模拟针对于 timer 的异步的时间流逝,
+     * 它只能用在 fakeAsync() zone 里面,
+     * 它接收一个参数, 表示流逝的毫秒数, 默认为 0
      */
     tick(100);
     expect(called01).toBe(true, 'called01 be true');
@@ -137,7 +138,7 @@ describe('Doc05040404Component', () => {
     expect(bar).toBe(false);
 
     /*
-     * 调用 flushMicrotasks() 方法，用来执行所有的 microtasks
+     * 调用 flushMicrotasks() 方法, 用来执行所有的 microtasks
      */
     flushMicrotasks();
 
@@ -185,7 +186,9 @@ describe('Doc05040404Component', () => {
       /*
        * 使用 defer() 创建一个 asynchronous observable
        */
-      getNextSpy.and.returnValue(defer(() => Promise.resolve(9)));
+      MockDoc05040404Service.getNextNum.and.returnValue(
+        defer(() => Promise.resolve(9)),
+      );
     });
 
     it('should not display message after init', () => {
@@ -193,11 +196,14 @@ describe('Doc05040404Component', () => {
 
       if (messageEl) {
         expect(messageEl.textContent).toEqual('');
-        expect(getNextSpy.calls.any()).toBe(true, 'getNext() called');
+        expect(MockDoc05040404Service.getNextNum.calls.any()).toBe(
+          true,
+          'getNextNum() called',
+        );
       }
     });
 
-    it('should display message afetr getNext(): fakeAsync', fakeAsync(() => {
+    it('should display message afetr getNextNum(): fakeAsync', fakeAsync(() => {
       fixture.detectChanges();
       if (messageEl) {
         expect(messageEl.textContent).toEqual('');
@@ -206,14 +212,14 @@ describe('Doc05040404Component', () => {
         fixture.detectChanges();
 
         expect(messageEl.textContent).toEqual('9');
-        expect(getNextSpy).toHaveBeenCalledTimes(1);
+        expect(MockDoc05040404Service.getNextNum).toHaveBeenCalledTimes(1);
       }
     }));
 
-    it('should display message after getNext(): async', async(() => {
+    it('should display message after getNextNum(): async', async(() => {
       /*
-       * fakeAsync() 有一个缺点，就是在它里面不能执行 XHR 请求，
-       * 如果需要执行 XHR 请求，需要使用 async() 方法
+       * fakeAsync() 有一个缺点, 就是在它里面不能执行 XHR 请求,
+       * 如果需要执行 XHR 请求, 需要使用 async() 方法
        */
 
       fixture.detectChanges();
@@ -221,12 +227,12 @@ describe('Doc05040404Component', () => {
         expect(messageEl.textContent).toEqual('');
 
         /*
-         * 在 fakeAsync() 中使用的是 tick()，
-         * 在 async() 中使用的是 ComponentFixture.whenStable()，
-         * ComponentFixture.whenStable() 方法在本次 event loop 的 task queue 清空之后返回，
+         * 在 fakeAsync() 中使用的是 tick(),
+         * 在 async() 中使用的是 ComponentFixture.whenStable(),
+         * ComponentFixture.whenStable() 方法在本次 event loop 的 task queue 清空之后返回,
          * 也就是所有的 async task 执行完毕之后
          *
-         * ComponentFixture.isStable() 方法，可以用来判断 whether the fixture is stable or not
+         * ComponentFixture.isStable() 方法, 可以用来判断 whether the fixture is stable or not
          */
         expect(fixture.isStable()).toBe(false);
         fixture.whenStable().then(() => {
@@ -236,32 +242,31 @@ describe('Doc05040404Component', () => {
 
           if (messageEl) {
             expect(messageEl.textContent).toEqual('9');
-            expect(getNextSpy.calls.count()).toEqual(1);
+            expect(MockDoc05040404Service.getNextNum.calls.count()).toEqual(1);
           }
         });
       }
     }));
 
-    it('should display message after getNext(): spy done', (done: DoneFn) => {
+    it('should display message after getNextNum(): spy done', (done: DoneFn) => {
       /*
-       * fakeAsync() 和 async() 简化了 async testing 的流程，
-       * 但是我们依然可以使用 jasmine 提供的 done() 方法，自行处理异步测试流程
+       * fakeAsync() 和 async() 简化了 async testing 的流程,
+       * 但是我们依然可以使用 jasmine 提供的 done() 方法, 自行处理异步测试流程
        */
 
       fixture.detectChanges();
       if (messageEl) {
         expect(messageEl.textContent).toEqual('');
 
-        (getNextSpy.calls.mostRecent().returnValue as Observable<
-          number
-        >).subscribe(() => {
+        (MockDoc05040404Service.getNextNum.calls.mostRecent()
+          .returnValue as Observable<number>).subscribe(() => {
           fixture.detectChanges();
 
           if (messageEl) {
             expect(messageEl.textContent).toEqual('9');
             /*
-             * 调用 done() 方法，表示本次异步测试结束，
-             * 如果不调用 done() 方法，则本次测试会一直进行中，直到超时（jasmine.DEFAULT_TIMEOUT_INTERVAL）
+             * 调用 done() 方法, 表示本次异步测试结束,
+             * 如果不调用 done() 方法, 则本次测试会一直进行中, 直到超时（jasmine.DEFAULT_TIMEOUT_INTERVAL）
              */
             done();
           }

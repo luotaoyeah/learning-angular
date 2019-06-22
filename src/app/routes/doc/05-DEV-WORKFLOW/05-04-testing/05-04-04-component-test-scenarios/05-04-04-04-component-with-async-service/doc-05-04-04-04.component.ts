@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Doc05040404Service } from './service/doc-05-04-04-04.service';
+import { Doc05040404Service } from './services/doc-05-04-04-04.service';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
+/*
+ * https://angular.io/guide/testing#component-with-async-service
+ */
 @Component({
   selector: 'app-doc-05-04-04-04',
   templateUrl: './doc-05-04-04-04.component.html',
@@ -13,13 +16,13 @@ export class Doc05040404Component implements OnInit {
 
   constructor(private doc05070404Service: Doc05040404Service) {}
 
-  public ngOnInit() {
-    this.getNext();
+  public ngOnInit(): void {
+    this.getNextNum();
   }
 
-  public getNext = (): void => {
+  public getNextNum(): void {
     this.errorMessage = '';
-    this.num = this.doc05070404Service.getNext().pipe(
+    this.num = this.doc05070404Service.getNextNum().pipe(
       catchError((e: Error) => {
         setTimeout(() => {
           this.errorMessage = e.message;
@@ -27,5 +30,5 @@ export class Doc05040404Component implements OnInit {
         return of(0);
       }),
     );
-  };
+  }
 }
