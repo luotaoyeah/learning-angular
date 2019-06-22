@@ -8,17 +8,21 @@ import { By } from '@angular/platform-browser';
  */
 @Component({
   template:
-    '<app-doc-05-04-04-07 [foo]="foo" (ntClick)="handleNtClick($event)"></app-doc-05-04-04-07>',
+    '<app-doc-05-04-04-07 [foo]="foo" (click01)="handleClick($event)"></app-doc-05-04-04-07>',
 })
 class TestHostComponent {
   public foo: string = 'foo';
   public bar: number = 0;
 
-  public handleNtClick($event: number) {
+  public handleClick($event: number) {
     this.bar = $event;
   }
 }
 
+/*
+ * 这种测试方式的特点在于, 是从 host component 的角度来对我们的 component 来进行测试,
+ * 而不是直接对我们的 component 进行测试
+ */
 describe('Doc05040407Component', () => {
   let fixture: ComponentFixture<TestHostComponent>;
   let component: TestHostComponent;
@@ -27,7 +31,7 @@ describe('Doc05040407Component', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [TestHostComponent, Doc05040407Component],
-    });
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -49,7 +53,7 @@ describe('Doc05040407Component', () => {
     ).toEqual('FOO');
   });
 
-  it('should raise ntClick event', () => {
+  it('should raise #click01 event', () => {
     buttonDebugEl.triggerEventHandler('click', null);
     expect(component.bar).toEqual(99);
   });
