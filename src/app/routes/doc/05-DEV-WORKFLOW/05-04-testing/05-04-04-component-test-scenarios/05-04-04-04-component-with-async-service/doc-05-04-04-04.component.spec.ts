@@ -195,6 +195,9 @@ describe('Doc05040404Component', () => {
     expect(elapsed).toBe(2000);
   }));
 
+  /*
+   * https://angular.io/guide/testing#async-observables
+   */
   describe('when test with asynchronous observables', () => {
     beforeEach(() => {
       /*
@@ -205,38 +208,35 @@ describe('Doc05040404Component', () => {
       );
     });
 
-    it('should not display message after init', () => {
+    it('should not display num after #ngOnInit()', () => {
       fixture.detectChanges();
 
       if (messageEl) {
         expect(messageEl.textContent).toEqual('');
-        expect(MockDoc05040404Service.getNextNum.calls.any()).toBe(
-          true,
-          'getNextNum() called',
-        );
+        expect(MockDoc05040404Service.getNextNum).toHaveBeenCalledTimes(1);
       }
     });
 
-    it('should display message afetr getNextNum(): fakeAsync', fakeAsync(() => {
+    it('should display num afetr #getNextNum() in #fakeAsync()', fakeAsync(() => {
       fixture.detectChanges();
+      tick();
+      fixture.detectChanges();
+
       if (messageEl) {
-        expect(messageEl.textContent).toEqual('');
-
-        tick();
-        fixture.detectChanges();
-
         expect(messageEl.textContent).toEqual('9');
         expect(MockDoc05040404Service.getNextNum).toHaveBeenCalledTimes(1);
       }
     }));
 
-    it('should display message after getNextNum(): async', async(() => {
-      /*
-       * fakeAsync() 有一个缺点, 就是在它里面不能执行 XHR 请求,
-       * 如果需要执行 XHR 请求, 需要使用 async() 方法
-       */
-
+    /*
+     * https://angular.io/guide/testing#async-test-with-async
+     *
+     * fakeAsync() 有一个缺点, 就是在它里面不能执行 XHR 请求,
+     * 如果需要执行 XHR 请求, 需要使用 async() 方法
+     */
+    it('should display num after #getNextNum() in #async()', async(() => {
       fixture.detectChanges();
+
       if (messageEl) {
         expect(messageEl.textContent).toEqual('');
 
@@ -262,7 +262,7 @@ describe('Doc05040404Component', () => {
       }
     }));
 
-    it('should display message after getNextNum(): spy done', (done: DoneFn) => {
+    it('should display num after #getNextNum() with #done()', (done: DoneFn) => {
       /*
        * fakeAsync() 和 async() 简化了 async testing 的流程,
        * 但是我们依然可以使用 jasmine 提供的 done() 方法, 自行处理异步测试流程
