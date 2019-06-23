@@ -10,9 +10,9 @@ describe('Doc05040414Component', () => {
     TestBed.configureTestingModule({
       declarations: [Doc05040414Component],
       /*
-       * 如果当前 component 依赖了其他 NgModule 提供的功能，
-       * 比如这个组件中使用了 NgZorroAntdModule 提供的 NzAlertComponent 组件，
-       * 那么我们需要通过 imports 选项，引入这个依赖的 NgModule
+       * 如果当前 component 依赖了其他 NgModule 提供的功能,
+       * 比如这个组件中使用了 NgZorroAntdModule 提供的 NzAlertComponent 组件,
+       * 那么我们需要通过 imports 选项, 引入这个依赖的 NgModule
        */
       imports: [SharedModule],
     }).compileComponents();
