@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Doc05040415Service } from '../service/doc-05-04-04-15.service';
+import { Doc05040415Service } from '../services/doc-05-04-04-15.service';
 
+/*
+ * https://angular.io/guide/testing#the-overridecomponent-method
+ */
 @Component({
   selector: 'app-doc-05-04-04-15-02',
   templateUrl: './doc-05-04-04-15-02.component.html',
