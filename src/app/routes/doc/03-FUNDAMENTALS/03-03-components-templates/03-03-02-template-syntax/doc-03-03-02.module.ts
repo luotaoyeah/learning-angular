@@ -66,6 +66,7 @@ import {
 import { ToastModule } from 'primeng/toast';
 import { SharedModule } from '@app/shared';
 import { Doc03030205Component } from './03-03-02-05-data-binding-and-html/doc-03-03-02-05.component';
+import { Doc03030206Component } from './03-03-02-06-html-attribute-vs-dom-property/doc-03-03-02-06.component';
 
 @NgModule({
   declarations: [
@@ -85,6 +86,7 @@ import { Doc03030205Component } from './03-03-02-05-data-binding-and-html/doc-03
     Doc03030204Component,
     /* 03-02-02-05 */
     Doc03030205Component,
+    Doc03030206Component,
     Doc03020205Component,
     Doc0302020501Component,
     Doc0302020502Component,
