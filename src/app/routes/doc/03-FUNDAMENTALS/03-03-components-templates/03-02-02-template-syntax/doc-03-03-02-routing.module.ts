@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { Doc030202Component } from './doc-03-02-02.component';
+import { Doc030302Component } from './doc-03-03-02.component';
 
 const routes: Routes = [
   {
     path: '03/03/02',
-    component: Doc030202Component,
+    component: Doc030302Component,
   },
 ];
 
