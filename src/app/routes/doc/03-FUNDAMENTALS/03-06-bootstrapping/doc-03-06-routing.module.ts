@@ -4,7 +4,7 @@ import { Doc0306Component } from './doc-03-06.component';
 
 const routes: Routes = [
   {
-    path: '03/05',
+    path: '03/06',
     component: Doc0306Component,
   },
 ];

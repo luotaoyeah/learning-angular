@@ -57,7 +57,7 @@ describe('Doc0504040103Component', () => {
        * 3. 触发一个 change detection
        */
       fixture.detectChanges();
-      expect(spanEl.textContent).toEqual('FOO');
+      expect(spanEl.textContent).toContain('FOO');
     }
   });
 });

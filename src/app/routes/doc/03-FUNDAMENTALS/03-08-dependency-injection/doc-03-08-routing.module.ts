@@ -8,23 +8,23 @@ import { Doc030705Component } from './03-07-05-navigate-the-component-tree/doc-0
 
 const routes: Routes = [
   {
-    path: '03/07/01',
+    path: '03/08/01',
     component: Doc030701Component,
   },
   {
-    path: '03/07/02',
+    path: '03/08/02',
     component: Doc030702Component,
   },
   {
-    path: '03/07/03',
+    path: '03/08/03',
     component: Doc030703Component,
   },
   {
-    path: '03/07/04',
+    path: '03/08/04',
     component: Doc030704Component,
   },
   {
-    path: '03/07/05',
+    path: '03/08/05',
     component: Doc030705Component,
   },
 ];

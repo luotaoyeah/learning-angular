@@ -1,6 +1,7 @@
 import { Doc05040415Component } from './doc-05-04-04-15.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Component } from '@angular/core';
+import { SharedModule } from '@app/shared';
 
 @Component({
   selector: 'app-doc-05-04-04-15-01',
@@ -25,6 +26,7 @@ describe('Doc05040415Component', () => {
         Doc0504041501StubComponent,
         Doc0504041502StubComponent,
       ],
+      imports: [SharedModule],
     }).compileComponents();
   }));
 

@@ -1,6 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { SharedModule } from '@app/shared';
 import { Doc0304RoutingModule } from './doc-03-04-routing.module';
 import { Doc030301Module } from './03-03-01-introduction/doc-03-03-01.module';
@@ -11,8 +9,6 @@ import { Doc030305Module } from './03-03-05-dynamic-forms/doc-03-03-05.module';
 
 @NgModule({
   imports: [
-    CommonModule,
-    FormsModule,
     SharedModule,
     Doc0304RoutingModule,
     Doc030301Module,

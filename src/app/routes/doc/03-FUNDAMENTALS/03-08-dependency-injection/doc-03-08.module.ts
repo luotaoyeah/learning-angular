@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { Doc0308RoutingModule } from './doc-03-08-routing.module';
-import { FormsModule } from '@angular/forms';
 import { SharedModule } from '@app/shared';
 import { Doc030701Component } from './03-07-01-angular-dependency-injection/doc-03-07-01.component';
 import { Doc030702Component } from './03-07-02-hierarchical-dependency-injection/doc-03-07-02.component';
@@ -105,8 +103,6 @@ import { Doc0307050302Component } from './03-07-05-navigate-the-component-tree/0
   ],
   imports: [
     Doc0308RoutingModule,
-    CommonModule,
-    FormsModule,
     SharedModule,
     Doc0307020101Module,
     Doc03070306Module,

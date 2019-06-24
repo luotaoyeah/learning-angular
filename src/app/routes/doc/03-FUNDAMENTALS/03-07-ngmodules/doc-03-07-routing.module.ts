@@ -14,47 +14,47 @@ import { Doc030612Component } from './03-06-12-ngmodule-faq/doc-03-06-12.compone
 
 const routes: Routes = [
   {
-    path: '03/06/01',
+    path: '03/07/01',
     component: Doc030601Component,
   },
   {
-    path: '03/06/02',
+    path: '03/07/02',
     component: Doc030602Component,
   },
   {
-    path: '03/06/03',
+    path: '03/07/03',
     component: Doc030603Component,
   },
   {
-    path: '03/06/04',
+    path: '03/07/04',
     component: Doc030604Component,
   },
   {
-    path: '03/06/05',
+    path: '03/07/05',
     component: Doc030605Component,
   },
   {
-    path: '03/06/06',
+    path: '03/07/06',
     component: Doc030606Component,
   },
   {
-    path: '03/06/07',
+    path: '03/07/07',
     component: Doc030607Component,
   },
   {
-    path: '03/06/08',
+    path: '03/07/08',
     component: Doc030608Component,
   },
   {
-    path: '03/06/10',
+    path: '03/07/10',
     component: Doc030610Component,
   },
   {
-    path: '03/06/11',
+    path: '03/07/11',
     component: Doc030611Component,
   },
   {
-    path: '03/06/12',
+    path: '03/07/12',
     component: Doc030612Component,
   },
 ];

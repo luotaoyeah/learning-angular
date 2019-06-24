@@ -8,23 +8,23 @@ import { Doc030305Component } from './03-03-05-dynamic-forms/doc-03-03-05.compon
 
 const routes: Routes = [
   {
-    path: '03/03/01',
+    path: '03/04/01',
     component: Doc030301Component,
   },
   {
-    path: '03/03/02',
+    path: '03/04/02',
     component: Doc030302Component,
   },
   {
-    path: '03/03/03',
+    path: '03/04/03',
     component: Doc030303Component,
   },
   {
-    path: '03/03/04',
+    path: '03/04/04',
     component: Doc030304Component,
   },
   {
-    path: '03/03/05',
+    path: '03/04/05',
     component: Doc030305Component,
   },
 ];

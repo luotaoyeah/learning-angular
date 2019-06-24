@@ -8,23 +8,23 @@ import { Doc030405Component } from './03-04-05-compare-to-other-techniques/doc-0
 
 const routes: Routes = [
   {
-    path: '03/04/01',
+    path: '03/05/01',
     component: Doc030401Component,
   },
   {
-    path: '03/04/02',
+    path: '03/05/02',
     component: Doc030402Component,
   },
   {
-    path: '03/04/03',
+    path: '03/05/03',
     component: Doc030403Component,
   },
   {
-    path: '03/04/04',
+    path: '03/05/04',
     component: Doc030404Component,
   },
   {
-    path: '03/04/05',
+    path: '03/05/05',
     component: Doc030405Component,
   },
 ];

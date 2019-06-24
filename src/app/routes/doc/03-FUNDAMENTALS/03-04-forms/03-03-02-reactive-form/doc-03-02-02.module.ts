@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { SharedModule } from '@app/shared';
 import { Doc030302Component } from './doc-03-03-02.component';
 import { Doc03030201Component } from './03-03-02-01-introduction-to-reactive-forms/doc-03-03-02-01.component';
 import { Doc03030202Component } from './03-03-02-02-getting-started/doc-03-03-02-02.component';
@@ -12,7 +12,6 @@ import { Doc03030206Component } from './03-03-02-06-partial-model-updates/doc-03
 import { Doc03030207Component } from './03-03-02-07-generating-form-controls-with-formbuilder/doc-03-03-02-07.component';
 import { Doc03030208Component } from './03-03-02-08-simple-form-validation/doc-03-03-02-08.component';
 import { Doc03030209Component } from './03-03-02-09-dynamic-controls-using-form-arrays/doc-03-03-02-09.component';
-import { SharedModule } from '@app/shared';
 
 @NgModule({
   declarations: [
@@ -29,7 +28,7 @@ import { SharedModule } from '@app/shared';
     Doc03030208Component,
     Doc03030209Component,
   ],
-  imports: [CommonModule, SharedModule],
+  imports: [SharedModule],
   exports: [Doc030302Component],
 })
 export class Doc030202Module {}

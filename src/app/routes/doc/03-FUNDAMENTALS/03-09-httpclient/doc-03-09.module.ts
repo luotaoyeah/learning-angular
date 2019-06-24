@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { Doc0309RoutingModule } from './doc-03-09-routing.module';
-import { FormsModule } from '@angular/forms';
 import { SharedModule } from '@app/shared';
 import { Doc0309Component } from './doc-03-09.component';
 import { Doc030801Component } from './03-08-01-getting-json-data/doc-03-08-01.component';
@@ -27,6 +25,6 @@ import { Doc030806Component } from './03-08-06-testing-http-requests/doc-03-08-0
     Doc03080503Component,
     Doc030806Component,
   ],
-  imports: [Doc0309RoutingModule, CommonModule, FormsModule, SharedModule],
+  imports: [SharedModule, Doc0309RoutingModule],
 })
 export class Doc0309Module {}

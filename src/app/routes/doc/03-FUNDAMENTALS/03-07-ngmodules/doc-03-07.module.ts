@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { Doc0307RoutingModule } from './doc-03-07-routing.module';
-import { FormsModule } from '@angular/forms';
 import { SharedModule } from '@app/shared';
 import { Doc030601Component } from './03-06-01-ngmodules-introduction/doc-03-06-01.component';
 import { Doc030602Component } from './03-06-02-ngmodule-vs-jsmodule/doc-03-06-02.component';
@@ -52,8 +50,6 @@ import { Doc0306120101Module } from './03-06-12-ngmodule-faq/03-06-12-01/doc-03-
   ],
   imports: [
     Doc0307RoutingModule,
-    CommonModule,
-    FormsModule,
     SharedModule,
     Doc03060601Module,
     Doc0306080202Module,
@@ -62,7 +58,6 @@ import { Doc0306120101Module } from './03-06-12-ngmodule-faq/03-06-12-01/doc-03-
     Doc030609Module,
     Doc0306120101Module,
   ],
-  entryComponents: [],
   /*
    * servide 可以通过 providedIn 主动注册到 root，或者某个 NgModule，
    * 也可以在 NgModlue 的 providers 中被动的注册到该 NgModule 的 injector 中
