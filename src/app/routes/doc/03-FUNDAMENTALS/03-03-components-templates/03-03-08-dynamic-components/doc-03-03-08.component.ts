@@ -10,7 +10,7 @@ import { Doc030308Directive } from './directives/doc-03-03-08.directive';
   templateUrl: './doc-03-03-08.component.html',
 })
 export class Doc030308Component {
-  @ViewChild(Doc030308Directive)
+  @ViewChild(Doc030308Directive, { static: false })
   public doc030308Directive!: Doc030308Directive;
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver) {}

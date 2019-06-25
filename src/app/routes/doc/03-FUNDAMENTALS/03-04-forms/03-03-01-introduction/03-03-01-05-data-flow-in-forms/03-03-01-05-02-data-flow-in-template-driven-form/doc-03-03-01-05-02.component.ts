@@ -9,7 +9,7 @@ import { NgModel } from '@angular/forms';
   templateUrl: './doc-03-03-01-05-02.component.html',
 })
 export class Doc0303010502Component implements OnInit {
-  @ViewChild('ngModel')
+  @ViewChild('ngModel', { static: true })
   public ngModel!: NgModel;
 
   public color: string = 'RED';

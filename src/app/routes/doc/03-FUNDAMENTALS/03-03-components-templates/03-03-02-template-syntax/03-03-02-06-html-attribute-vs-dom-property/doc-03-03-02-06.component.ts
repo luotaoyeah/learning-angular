@@ -8,7 +8,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
   templateUrl: './doc-03-03-02-06.component.html',
 })
 export class Doc03030206Component {
-  @ViewChild('input01')
+  @ViewChild('input01', { static: true })
   public inputElementRef!: ElementRef<HTMLInputElement>;
 
   public changeProperty() {

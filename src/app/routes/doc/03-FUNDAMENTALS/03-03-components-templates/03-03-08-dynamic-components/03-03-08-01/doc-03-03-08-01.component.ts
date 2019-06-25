@@ -10,7 +10,7 @@ import { Doc030308001Component } from '../03-03-08-001/doc-03-03-08-001.componen
   templateUrl: './doc-03-03-08-01.component.html',
 })
 export class Doc03030801Component {
-  @ViewChild(Doc030308Directive)
+  @ViewChild(Doc030308Directive, { static: true })
   public doc030308Directive!: Doc030308Directive;
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver) {}

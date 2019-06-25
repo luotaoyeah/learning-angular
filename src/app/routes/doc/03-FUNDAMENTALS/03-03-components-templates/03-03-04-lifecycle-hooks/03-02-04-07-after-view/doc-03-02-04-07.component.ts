@@ -15,12 +15,12 @@ export class Doc03020407Component implements AfterViewInit, AfterViewChecked {
    * @ViewChild 装饰器，用来获取对 view child 的引用，
    * 查询参数可以是下级组件的类型
    */
-  @ViewChild(Doc0302040701Component)
+  @ViewChild(Doc0302040701Component, { static: true })
   public doc0302040701Component01!: Doc0302040701Component;
   /*
    * 查询参数也可以是一个 template reference variable
    */
-  @ViewChild('comp01')
+  @ViewChild('comp01', { static: true })
   public doc0302040701Component02!: Doc0302040701Component;
 
   public foo: string = 'FOO';

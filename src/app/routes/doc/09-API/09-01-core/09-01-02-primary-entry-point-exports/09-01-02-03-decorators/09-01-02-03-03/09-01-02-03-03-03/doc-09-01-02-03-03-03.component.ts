@@ -10,10 +10,10 @@ export class Doc090102030303Component implements AfterContentInit {
    * @ContentChild 装饰器, 用来获取对 content child 的引用,
    * 通过参数进行查询, 返回第一个满足查询条件的 content child
    */
-  @ContentChild(NzButtonComponent)
+  @ContentChild(NzButtonComponent, { static: false })
   private button!: HTMLButtonElement;
 
-  @ContentChild(NzTagComponent)
+  @ContentChild(NzTagComponent, { static: false })
   private nzTagComponent!: NzTagComponent;
 
   public ngAfterContentInit(): void {

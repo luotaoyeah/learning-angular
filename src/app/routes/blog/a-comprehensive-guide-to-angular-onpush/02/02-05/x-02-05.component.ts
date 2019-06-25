@@ -7,7 +7,7 @@ import { X020501Component } from './02-05-01/x-02-05-01.component';
   styles: [],
 })
 export class X0205Component implements OnInit {
-  @ContentChild(X020501Component)
+  @ContentChild(X020501Component, { static: false })
   private x020501Component!: X020501Component;
 
   public ngOnInit(): void {

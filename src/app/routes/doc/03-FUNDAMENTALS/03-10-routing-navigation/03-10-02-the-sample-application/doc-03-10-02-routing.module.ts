@@ -11,23 +11,27 @@ const routes: Routes = [
     children: [
       {
         path: 'crisis',
-        loadChildren: './crisis/crisis.module#CrisisModule',
+        loadChildren: () =>
+          import('./crisis/crisis.module').then(m => m.CrisisModule),
         data: {
           preload: true,
         },
       },
       {
         path: 'hero',
-        loadChildren: './hero/hero.module#HeroModule',
+        loadChildren: () =>
+          import('./hero/hero.module').then(m => m.HeroModule),
       },
       {
         path: 'admin',
-        loadChildren: './admin/admin.module#AdminModule',
+        loadChildren: () =>
+          import('./admin/admin.module').then(m => m.AdminModule),
         canLoad: [AuthGuard],
       },
       {
         path: 'login',
-        loadChildren: './auth/auth.module#AuthModule',
+        loadChildren: () =>
+          import('./auth/auth.module').then(m => m.AuthModule),
       },
       {
         path: 'compose',

@@ -22,37 +22,46 @@ const routes: Routes = [
       { path: 'home', component: HomeComponent },
       {
         path: 'exception',
-        loadChildren: './exception/exception.module#ExceptionModule',
+        loadChildren: () =>
+          import('./exception/exception.module').then(m => m.ExceptionModule),
       },
       {
         path: 'doc',
-        loadChildren: './doc/doc.module#DocModule',
+        loadChildren: () => import('./doc/doc.module').then(m => m.DocModule),
       },
       {
         path: 'blog',
-        loadChildren: './blog/blog.module#BlogModule',
+        loadChildren: () =>
+          import('./blog/blog.module').then(m => m.BlogModule),
       },
       {
         path: 'pkgs/ng-alain',
-        loadChildren: './pkgs/ng-alain/ng-alain.module#NgAlainModule',
+        loadChildren: () =>
+          import('./pkgs/ng-alain/ng-alain.module').then(m => m.NgAlainModule),
       },
       {
         path: 'pkgs/jasmine',
-        loadChildren: './pkgs/jasmine/jasmine.module#JasmineModule',
+        loadChildren: () =>
+          import('./pkgs/jasmine/jasmine.module').then(m => m.JasmineModule),
       },
       {
         path: 'pkgs/ngx-translate',
-        loadChildren:
-          './pkgs/ngx-translate/ngx-translate.module#NgxTranslateModule',
+        loadChildren: () =>
+          import('./pkgs/ngx-translate/ngx-translate.module').then(
+            m => m.NgxTranslateModule,
+          ),
       },
       {
         path: 'pkgs/ngrx',
-        loadChildren: './pkgs/ngrx/ngrx.module#NgrxModule',
+        loadChildren: () =>
+          import('./pkgs/ngrx/ngrx.module').then(m => m.NgrxModule),
       },
       {
         path: 'pkgs/angular-gridster2',
-        loadChildren:
-          './pkgs/angular-gridster2/angular-gridster2.module#AngularGridster2Module',
+        loadChildren: () =>
+          import('./pkgs/angular-gridster2/angular-gridster2.module').then(
+            m => m.AngularGridster2Module,
+          ),
       },
     ],
   },

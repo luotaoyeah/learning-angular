@@ -9,7 +9,7 @@ import { STColumn, STComponent, STData } from '@delon/abc';
   templateUrl: './st-16.component.html',
 })
 export class St16Component {
-  @ViewChild('st')
+  @ViewChild('st', { static: true })
   public st!: STComponent;
 
   // tslint:disable-next-line:no-any

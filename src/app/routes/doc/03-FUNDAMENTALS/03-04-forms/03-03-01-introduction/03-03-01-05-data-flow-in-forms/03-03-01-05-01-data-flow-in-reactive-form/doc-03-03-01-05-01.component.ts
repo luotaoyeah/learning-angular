@@ -9,7 +9,7 @@ import { FormControl } from '@angular/forms';
   templateUrl: './doc-03-03-01-05-01.component.html',
 })
 export class Doc0303010501Component implements OnInit {
-  @ViewChild('colorInputEl')
+  @ViewChild('colorInputEl', { static: true })
   public colorInputEl!: ElementRef<HTMLInputElement>;
 
   public colorFormControl: FormControl = new FormControl('red');

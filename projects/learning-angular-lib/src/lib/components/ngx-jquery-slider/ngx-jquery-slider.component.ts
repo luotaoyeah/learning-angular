@@ -17,7 +17,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   ],
 })
 export class NgxJquerySliderComponent implements OnInit, ControlValueAccessor {
-  @ViewChild('location')
+  @ViewChild('location', { static: true })
   public location!: ElementRef<HTMLDivElement>;
 
   public widget: any;

@@ -11,7 +11,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./doc-03-03-03-01.component.scss'],
 })
 export class Doc03030301Component {
-  @ViewChild('heroForm')
+  @ViewChild('heroForm', { static: true })
   public heroForm!: NgForm;
 
   public powers: Array<string> = [

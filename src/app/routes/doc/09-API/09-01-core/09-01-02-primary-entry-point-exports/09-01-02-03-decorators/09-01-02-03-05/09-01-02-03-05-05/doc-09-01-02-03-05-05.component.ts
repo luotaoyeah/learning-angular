@@ -10,10 +10,10 @@ import { Doc09010203050502Directive } from './directive/doc-09-01-02-03-05-05-02
   templateUrl: './doc-09-01-02-03-05-05.component.html',
 })
 export class Doc090102030505Component implements OnInit {
-  @ViewChild('tpl01')
+  @ViewChild('tpl01', { static: true })
   public appDoc09010203050501!: Doc09010203050501Directive;
 
-  @ViewChild('tpl02')
+  @ViewChild('tpl02', { static: true })
   public appDoc09010203050502!: Doc09010203050502Directive;
 
   public ngOnInit() {

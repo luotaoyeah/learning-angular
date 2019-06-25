@@ -37,7 +37,7 @@ const PIPES: Array<Type<any> | Array<any>> = [NtJsonPipe];
     ReactiveFormsModule,
     AlainThemeModule.forChild(),
     DelonABCModule,
-    DelonACLModule,
+    DelonACLModule.forRoot(),
     DelonFormModule,
     ...THIRDMODULES,
   ],

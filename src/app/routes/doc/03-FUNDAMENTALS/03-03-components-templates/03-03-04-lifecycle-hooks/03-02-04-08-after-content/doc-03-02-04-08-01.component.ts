@@ -17,7 +17,7 @@ export class Doc0302040801Component
   /*
    * 通过 @ContentChild() 装饰器获取到对 content child 对象实例的引用
    */
-  @ContentChild(Doc0302040802Component)
+  @ContentChild(Doc0302040802Component, { static: false })
   public contentChild!: Doc0302040802Component;
 
   public ngOnInit(): void {}

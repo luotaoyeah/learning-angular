@@ -9,11 +9,17 @@ const routes: Routes = [
     children: [
       {
         path: '01',
-        loadChildren: './03-06-09-01/doc-03-06-09-01.module#Doc03060901Module',
+        loadChildren: () =>
+          import('./03-06-09-01/doc-03-06-09-01.module').then(
+            m => m.Doc03060901Module,
+          ),
       },
       {
         path: '02',
-        loadChildren: './03-06-09-02/doc-03-06-09-02.module#Doc03060902Module',
+        loadChildren: () =>
+          import('./03-06-09-02/doc-03-06-09-02.module').then(
+            m => m.Doc03060902Module,
+          ),
       },
     ],
   },

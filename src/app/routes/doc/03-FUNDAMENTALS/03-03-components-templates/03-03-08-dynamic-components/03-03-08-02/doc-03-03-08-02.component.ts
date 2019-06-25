@@ -14,7 +14,7 @@ import { Doc030308001Component } from '../03-03-08-001/doc-03-03-08-001.componen
   templateUrl: './doc-03-03-08-02.component.html',
 })
 export class Doc03030802Component {
-  @ViewChild('tpl01', { read: ViewContainerRef })
+  @ViewChild('tpl01', { read: ViewContainerRef, static: true })
   public viewContainerRef!: ViewContainerRef;
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver) {}
