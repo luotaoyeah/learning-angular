@@ -69,6 +69,7 @@ import { Doc03030206Component } from './03-03-02-06-html-attribute-vs-dom-proper
 import { Doc0303020703Directive } from './03-03-02-07-property-binding/03-03-02-07-03-binding-target/directives/doc-03-03-02-07-03.directive';
 import { Doc0303020705Component } from './03-03-02-07-property-binding/03-03-02-07-05-return-the-proper-type/doc-03-03-02-07-05.component';
 import { Doc0303020706Component } from './03-03-02-07-property-binding/03-03-02-07-06-remember-the-brackets/doc-03-03-02-07-06.component';
+import { Doc0303020709Component } from './03-03-02-07-property-binding/03-03-02-07-09-content-security/doc-03-03-02-07-09.component';
 
 @NgModule({
   declarations: [
@@ -97,6 +98,7 @@ import { Doc0303020706Component } from './03-03-02-07-property-binding/03-03-02-
     Doc0303020706Component,
     Doc0303020707Component,
     Doc0303020708Component,
+    Doc0303020709Component,
     /* 03-02-02-06 */
     Doc03020206Component,
     Doc0302020601Component,
