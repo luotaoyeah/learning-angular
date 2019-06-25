@@ -15,9 +15,26 @@
 </p>
 
 <p>
-  如下, 第一个绑定的是 <code>HTMLParagraphElement.textContent</code> 属性,
-  第二个绑定的是 <code>Doc0303020702Directive.textContent</code> 属性
+  如下, 第一个绑定的是 <code>HTMLParagraphElement.textContent</code> 这个
+  <code>property</code>, 第二个绑定的是
+  <code>Doc0303020702Directive.textContent</code> 这个指令属性
 </p>
 
 <p [textContent]="'FOO'"></p>
 <p app0303020702 [textContent]="'FOO'"></p>
+
+<nz-divider [nzDashed]="true"></nz-divider>
+
+<p>
+  如果 propery binding 外面没有使用 <code>[]</code> 包裹,
+  则首先会检查是否存在对应的 directive input property, 再检查是否存在对应的
+  element attribute
+</p>
+
+<p>
+  如下, 第一个绑定的是 <code>textContent</code> 这个 <code>attribute</code>,
+  第二个绑定的是 <code>Doc0303020702Directive.textContent</code> 这个指令属性
+</p>
+
+<p textContent="FOO"></p>
+<p app0303020702 textContent="FOO"></p>

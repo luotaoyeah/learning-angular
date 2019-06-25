@@ -12,7 +12,7 @@ import { Doc03030204Component } from './03-03-02-04-binding-syntax-an-overview/d
 import { Doc03030207Component } from './03-03-02-07-property-binding/doc-03-03-02-07.component';
 import { Doc0303020701Component } from './03-03-02-07-property-binding/03-03-02-07-01-one-way-in/doc-03-03-02-07-01.component';
 import { Doc0303020702Component } from './03-03-02-07-property-binding/03-03-02-07-02-binding-target/doc-03-03-02-07-02.component';
-import { Doc0302020503Component } from './03-03-02-07-property-binding/03-02-02-05-03-avoid-side-effects/doc-03-02-02-05-03.component';
+import { Doc0303020703Component } from './03-03-02-07-property-binding/03-03-02-07-03-avoid-side-effects/doc-03-03-02-07-03.component';
 import { Doc0302020504Component } from './03-03-02-07-property-binding/03-02-02-05-04-one-time-string-initialization/doc-03-02-02-05-04.component';
 import { Doc030202050401Component } from './03-03-02-07-property-binding/03-02-02-05-04-one-time-string-initialization/doc-03-02-02-05-04-01.component';
 import { Doc0302020505Component } from './03-03-02-07-property-binding/03-02-02-05-05-property-binding-or-interpolation/doc-03-02-02-05-05.component';
@@ -91,7 +91,7 @@ import { Doc0303020702Directive } from './03-03-02-07-property-binding/03-03-02-
     Doc03030207Component,
     Doc0303020701Component,
     Doc0303020702Component,
-    Doc0302020503Component,
+    Doc0303020703Component,
     Doc0302020504Component,
     Doc030202050401Component,
     Doc0302020505Component,
