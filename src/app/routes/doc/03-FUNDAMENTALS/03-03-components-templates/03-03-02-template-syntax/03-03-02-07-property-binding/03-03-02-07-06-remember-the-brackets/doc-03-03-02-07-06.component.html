@@ -1,0 +1,27 @@
+<p>
+  property binding 可以使用 <code>[someProperty]="someExpression"</code> 的形式,
+  也可以使用 <code>someProperty="someValue"</code>, 它们的效果是不一样的
+</p>
+
+<p>
+  当使用 <code>[someProperty]="someExpression"</code> 的形式时,
+  <code>someExpression</code> 表示的是一个表达式, angular 会对它进行解析
+</p>
+
+<p>
+  并且, 当 <code>[someProperty]</code> 不能被识别为一个 directive input property
+  时, 它会被尝试识别为一个 element property
+</p>
+
+<p>
+  当使用 <code>someProperty="someValue"</code> 的形式时,
+  <code>someValue</code> 是一个字符串, angular 不会对它进行解析
+</p>
+
+<p>
+  并且, 当 <code>someProperty</code> 不能被识别为一个 directive input property
+  时, 它会被尝试识别为一个 element attribute
+</p>
+
+<nz-alert [nzMessage]="someValue"></nz-alert>
+<nz-alert nzMessage="someValue"></nz-alert>
