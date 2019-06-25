@@ -1,0 +1,9 @@
+<p>
+  默认情况下，property binding 绑定的都是 DOM property，如何才能绑定 HTML
+  attribute 呢？需要使用一种特殊的语法形式：[attr.some-attribute]="expression"
+</p>
+<p-button
+  [attr.my-attr-01]="foo"
+  [label]="foo"
+  (onClick)="foo = 'BAR'"
+></p-button>

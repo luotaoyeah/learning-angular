@@ -15,10 +15,10 @@ import { Doc0303020703Component } from './03-03-02-07-property-binding/03-03-02-
 import { Doc0303020704Component } from './03-03-02-07-property-binding/03-03-02-07-04-avoid-side-effects/doc-03-03-02-07-04.component';
 import { Doc0303020707Component } from './03-03-02-07-property-binding/03-03-02-07-07-one-time-string-initialization/doc-03-03-02-07-07.component';
 import { Doc0303020708Component } from './03-03-02-07-property-binding/03-03-02-07-08-property-binding-vs-interpolation/doc-03-03-02-07-08.component';
-import { Doc03020206Component } from './03-02-02-06-attribute-class-and-style-bindings/doc-03-02-02-06.component';
-import { Doc0302020601Component } from './03-02-02-06-attribute-class-and-style-bindings/03-02-02-06-01-attribute-binding/doc-03-02-02-06-01.component';
-import { Doc0302020602Component } from './03-02-02-06-attribute-class-and-style-bindings/03-02-02-06-02-class-binding/doc-03-02-02-06-02.component';
-import { Doc0302020603Component } from './03-02-02-06-attribute-class-and-style-bindings/03-02-02-06-03-style-binding/doc-03-02-02-06-03.component';
+import { Doc03030208Component } from './03-03-02-08-attribute-class-and-style-bindings/doc-03-03-02-08.component';
+import { Doc0303020801Component } from './03-03-02-08-attribute-class-and-style-bindings/03-03-02-08-01-attribute-binding/doc-03-03-02-08-01.component';
+import { Doc0303020802Component } from './03-03-02-08-attribute-class-and-style-bindings/03-03-02-08-02-class-binding/doc-03-03-02-08-02.component';
+import { Doc0303020803Component } from './03-03-02-08-attribute-class-and-style-bindings/03-03-02-08-03-style-binding/doc-03-03-02-08-03.component';
 import { Doc03020207Component } from './03-02-02-07-event-binding/doc-03-02-02-07.component';
 import { Doc0302020701Component } from './03-02-02-07-event-binding/03-02-02-07-01-target-event/doc-03-02-02-07-01.component';
 import { Doc030202070101Component } from './03-02-02-07-event-binding/03-02-02-07-01-target-event/doc-03-02-02-07-01-01.component';
@@ -73,21 +73,16 @@ import { Doc0303020709Component } from './03-03-02-07-property-binding/03-03-02-
 
 @NgModule({
   declarations: [
-    /* 03-02-02 */
     Doc030302Component,
     Doc03020201Component,
-    /* 03-02-02-02 */
     Doc03020202Component,
     Doc0302020201Component,
     Doc0302020202Component,
     Doc0302020203Component,
     Doc0302020204Component,
-    /* 03-02-02-03 */
     Doc03020203Component,
     Doc0302020301Component,
-    /* 03-02-02-04 */
     Doc03030204Component,
-    /* 03-02-02-05 */
     Doc03030205Component,
     Doc03030206Component,
     Doc03030207Component,
@@ -99,12 +94,10 @@ import { Doc0303020709Component } from './03-03-02-07-property-binding/03-03-02-
     Doc0303020707Component,
     Doc0303020708Component,
     Doc0303020709Component,
-    /* 03-02-02-06 */
-    Doc03020206Component,
-    Doc0302020601Component,
-    Doc0302020602Component,
-    Doc0302020603Component,
-    /* 03-02-02-07 */
+    Doc03030208Component,
+    Doc0303020801Component,
+    Doc0303020802Component,
+    Doc0303020803Component,
     Doc03020207Component,
     Doc0302020701Component,
     Doc030202070101Component,
@@ -112,15 +105,12 @@ import { Doc0303020709Component } from './03-03-02-07-property-binding/03-03-02-
     Doc030202070201Component,
     Doc0302020703Component,
     Doc030202070301Component,
-    /* 03-02-02-08 */
     Doc03020208Component,
     Doc0302020801Component,
-    /* 03-02-02-09 */
     Doc03020209Component,
     Doc0302020901Component,
     Doc0302020902Component,
     Doc0302020903Component,
-    /* 03-02-02-10 */
     Doc03020210Component,
     Doc0302021001Component,
     Doc030202100101Component,
@@ -128,10 +118,8 @@ import { Doc0303020709Component } from './03-03-02-07-property-binding/03-03-02-
     Doc030202100201Component,
     Doc0302021003Component,
     Doc0302021004Component,
-    /* 03-02-02-11 */
     Doc03020211Component,
     Doc0302021101Component,
-    /* 03-02-02-12 */
     Doc03020212Component,
     Doc0302021201Component,
     Doc0302021202Component,
@@ -139,12 +127,10 @@ import { Doc0303020709Component } from './03-03-02-07-property-binding/03-03-02-
     Doc030202120202Component,
     Doc0302021203Component,
     Doc030202120301Component,
-    /* 03-02-02-13 */
     Doc03020213Component,
     Doc0302021301Component,
     Doc0302021302Component,
     Doc0302021303Component,
-    /* 03-02-02-14 */
     Doc03020214Component,
     Doc0302021401Component,
     [Doc0303020703Directive],
