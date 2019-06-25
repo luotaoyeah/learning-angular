@@ -38,11 +38,18 @@ describe('Doc05040404Component', () => {
     component = fixture.componentInstance;
   });
 
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
   it('should set #blobSize', fakeAsync(() => {
     fixture.detectChanges();
 
     tick();
 
+    /*
+     * FIXME https://github.com/angular/zone.js/issues/1240#issuecomment-500614954
+     */
     expect(component.blobSize).toBeGreaterThan(0);
   }));
 });

@@ -8,7 +8,7 @@ import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
   templateUrl: './doc-05-04-04-04-01.component.html',
 })
 export class Doc0504040401Component implements AfterViewInit {
-  @ViewChild('canvas01', { static: true })
+  @ViewChild('canvas01', { static: false })
   public canvasElementRef!: ElementRef<HTMLCanvasElement>;
 
   public blobSize: number = 0;
