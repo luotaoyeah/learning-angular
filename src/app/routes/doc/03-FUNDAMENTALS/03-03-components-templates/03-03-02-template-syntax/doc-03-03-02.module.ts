@@ -11,8 +11,8 @@ import { Doc0302020301Component } from './03-02-02-03-template-statement/03-02-0
 import { Doc03030204Component } from './03-03-02-04-binding-syntax-an-overview/doc-03-03-02-04.component';
 import { Doc03030207Component } from './03-03-02-07-property-binding/doc-03-03-02-07.component';
 import { Doc0303020701Component } from './03-03-02-07-property-binding/03-03-02-07-01-one-way-in/doc-03-03-02-07-01.component';
-import { Doc0303020702Component } from './03-03-02-07-property-binding/03-03-02-07-02-binding-target/doc-03-03-02-07-02.component';
-import { Doc0303020703Component } from './03-03-02-07-property-binding/03-03-02-07-03-avoid-side-effects/doc-03-03-02-07-03.component';
+import { Doc0303020703Component } from './03-03-02-07-property-binding/03-03-02-07-03-binding-target/doc-03-03-02-07-03.component';
+import { Doc0303020704Component } from './03-03-02-07-property-binding/03-03-02-07-04-avoid-side-effects/doc-03-03-02-07-04.component';
 import { Doc0302020504Component } from './03-03-02-07-property-binding/03-02-02-05-04-one-time-string-initialization/doc-03-02-02-05-04.component';
 import { Doc030202050401Component } from './03-03-02-07-property-binding/03-02-02-05-04-one-time-string-initialization/doc-03-02-02-05-04-01.component';
 import { Doc0302020505Component } from './03-03-02-07-property-binding/03-02-02-05-05-property-binding-or-interpolation/doc-03-02-02-05-05.component';
@@ -67,7 +67,8 @@ import { ToastModule } from 'primeng/toast';
 import { SharedModule } from '@app/shared';
 import { Doc03030205Component } from './03-03-02-05-data-binding-and-html/doc-03-03-02-05.component';
 import { Doc03030206Component } from './03-03-02-06-html-attribute-vs-dom-property/doc-03-03-02-06.component';
-import { Doc0303020702Directive } from './03-03-02-07-property-binding/03-03-02-07-02-binding-target/directives/doc-03-03-02-07-02.directive';
+import { Doc0303020703Directive } from './03-03-02-07-property-binding/03-03-02-07-03-binding-target/directives/doc-03-03-02-07-03.directive';
+import { Doc0303020705Component } from './03-03-02-07-property-binding/03-03-02-07-05-return-the-proper-type/doc-03-03-02-07-05.component';
 
 @NgModule({
   declarations: [
@@ -90,8 +91,9 @@ import { Doc0303020702Directive } from './03-03-02-07-property-binding/03-03-02-
     Doc03030206Component,
     Doc03030207Component,
     Doc0303020701Component,
-    Doc0303020702Component,
     Doc0303020703Component,
+    Doc0303020704Component,
+    Doc0303020705Component,
     Doc0302020504Component,
     Doc030202050401Component,
     Doc0302020505Component,
@@ -143,7 +145,7 @@ import { Doc0303020702Directive } from './03-03-02-07-property-binding/03-03-02-
     /* 03-02-02-14 */
     Doc03020214Component,
     Doc0302021401Component,
-    [Doc0303020702Directive],
+    [Doc0303020703Directive],
   ],
   imports: [
     [
