@@ -1,9 +1,30 @@
 <p>
-  默认情况下，property binding 绑定的都是 DOM property，如何才能绑定 HTML
-  attribute 呢？需要使用一种特殊的语法形式：[attr.some-attribute]="expression"
+  根据前面的经验, 当使用 <code>[someProperty]="someExpression"</code> 的形式时,
+  会首先去匹配 directive input property, 然后去匹配 element property,
+  当都匹配不到时, 就会报错
 </p>
-<p-button
-  [attr.my-attr-01]="foo"
-  [label]="foo"
-  (onClick)="foo = 'BAR'"
-></p-button>
+
+<p>
+  当使用 <code>someProperty="someValue"</code> 的形式时, 会首先去匹配 directive
+  input property, 然后去匹配 element attribute, 这时候, 有两种情况:
+</p>
+<ul>
+  <li>
+    如果匹配不到一个名为 <code>someProperty</code> 的 <code>attribute</code>, 则
+    <code>someProperty</code> 会成为一个自定义的 <code>attribute</code>
+  </li>
+  <li>
+    如果真的存在一个名为 <code>someProperty</code> 的 <code>attribute</code>,
+    <b>则会报错</b>, 提示不能使用 property binding 的语法来绑定
+    <code>attribute</code>
+  </li>
+</ul>
+
+<p>
+  如何才能正确地绑定 HTML attribute 呢? 需要使用一种特殊的语法形式
+  <code>[attr.some-attribute]="expression"</code>
+</p>
+
+<button nz-button [attr.my-attr-01]="foo" (click)="foo = 'BAR'">
+  {{ foo }}
+</button>
