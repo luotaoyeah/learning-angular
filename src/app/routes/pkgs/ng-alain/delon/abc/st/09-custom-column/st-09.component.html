@@ -8,15 +8,17 @@
 <st #st [data]="users" [columns]="columns" [bordered]="true">
   <ng-template st-row="customTitle01" type="title" let-item>
     {{ item.title }}
-    <nz-dropdown
+    <span
+      nz-dropdown
       nzTrigger="click"
       [nzClickHide]="false"
       nzPlacement="bottomRight"
       class="position-relative"
+      [nzDropdownMenu]="menuTpl"
     >
-      <div nz-dropdown class="d-inline-block pl-lg">
-        <i nz-icon nzType="caret-down" nzTheme="outline"></i>
-      </div>
+      <i nz-icon nzType="caret-down" nzTheme="outline"></i>
+    </span>
+    <nz-dropdown-menu #menuTpl="nzDropdownMenu">
       <div class="ant-table-filter-dropdown p-sm">
         <input
           type="text"
@@ -28,7 +30,7 @@
           SEARCH
         </button>
       </div>
-    </nz-dropdown>
+    </nz-dropdown-menu>
   </ng-template>
 
   <ng-template st-row="custom" let-item let-index="index">

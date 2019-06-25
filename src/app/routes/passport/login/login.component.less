@@ -1,32 +1,11 @@
-.login {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  position: relative;
+@import '~@delon/theme/styles/default';
 
-  &-con {
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    width: 400px;
+:host {
+  display: block;
+  width: 360px;
+  margin: 80px auto;
 
-    &-header {
-      font-size: 16px;
-      font-weight: 300;
-      text-align: center;
-      padding: 30px 0;
-    }
-
-    .form-con {
-      padding: 10px 0 0;
-    }
-
-    .login-tip {
-      font-size: 10px;
-      text-align: center;
-      color: #c3c3c3;
-    }
+  .ant-form-item-with-help {
+    margin-bottom: 7px;
   }
 }

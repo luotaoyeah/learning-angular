@@ -1,67 +1,42 @@
-<div class="login">
-  <div class="login-con">
-    <nz-card nzTitle="{{ 'app.login.title' | translate }}">
-      <div class="form-con">
-        <form nz-form [formGroup]="formGroup" (ngSubmit)="login()" role="form">
-          <nz-form-item>
-            <nz-form-control>
-              <nz-input-group
-                nzSize="large"
-                nzPrefixIcon="anticon anticon-user"
-              >
-                <input
-                  nz-input
-                  formControlName="userName"
-                  placeholder="{{
-                    'app.login.username.placeholder' | translate
-                  }}"
-                />
-              </nz-input-group>
-              <nz-form-explain
-                *ngIf="userName.dirty && userName.errors?.required"
-              >
-                {{ 'app.login.username.required' | translate }}
-              </nz-form-explain>
-            </nz-form-control>
-          </nz-form-item>
+<form nz-form [formGroup]="formGroup" (ngSubmit)="login()">
+  <nz-form-item>
+    <nz-form-control nzErrorTip="{{ 'app.login.username.required' | i18n }}">
+      <nz-input-group nzSize="large" [nzPrefix]="prefixUserName">
+        <input
+          nz-input
+          formControlName="username"
+          placeholder="{{ 'app.login.username.placeholder' | i18n }}"
+        />
+      </nz-input-group>
+    </nz-form-control>
+  </nz-form-item>
 
-          <nz-form-item>
-            <nz-form-control>
-              <nz-input-group
-                nzSize="large"
-                nzPrefixIcon="anticon anticon-lock"
-              >
-                <input
-                  nz-input
-                  type="password"
-                  formControlName="password"
-                  placeholder="{{
-                    'app.login.password.placeholder' | translate
-                  }}"
-                />
-              </nz-input-group>
-              <nz-form-explain
-                *ngIf="password.dirty && password.errors?.required"
-              >
-                {{ 'app.login.password.required' | translate }}
-              </nz-form-explain>
-            </nz-form-control>
-          </nz-form-item>
+  <nz-form-item>
+    <nz-form-control nzErrorTip="{{ 'app.login.password.required' | i18n }}">
+      <nz-input-group nzSize="large" [nzPrefix]="prefixPassword">
+        <input
+          nz-input
+          type="password"
+          formControlName="password"
+          placeholder="{{ 'app.login.password.placeholder' | i18n }}"
+        />
+      </nz-input-group>
+    </nz-form-control>
+  </nz-form-item>
 
-          <nz-form-item>
-            <button
-              nz-button
-              type="submit"
-              nzType="primary"
-              nzSize="large"
-              [nzLoading]="httpClient.loading"
-              nzBlock
-            >
-              {{ 'app.login.login' | translate }}
-            </button>
-          </nz-form-item>
-        </form>
-      </div>
-    </nz-card>
-  </div>
-</div>
+  <nz-form-item>
+    <button
+      nz-button
+      type="submit"
+      nzType="primary"
+      nzSize="large"
+      [nzLoading]="httpClient.loading"
+      nzBlock
+    >
+      {{ 'app.login.login' | i18n }}
+    </button>
+  </nz-form-item>
+</form>
+
+<ng-template #prefixUserName><i nz-icon type="user"></i></ng-template>
+<ng-template #prefixPassword><i nz-icon type="lock"></i></ng-template>
