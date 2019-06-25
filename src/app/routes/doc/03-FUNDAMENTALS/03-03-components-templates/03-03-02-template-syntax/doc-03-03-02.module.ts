@@ -13,8 +13,7 @@ import { Doc03030207Component } from './03-03-02-07-property-binding/doc-03-03-0
 import { Doc0303020701Component } from './03-03-02-07-property-binding/03-03-02-07-01-one-way-in/doc-03-03-02-07-01.component';
 import { Doc0303020703Component } from './03-03-02-07-property-binding/03-03-02-07-03-binding-target/doc-03-03-02-07-03.component';
 import { Doc0303020704Component } from './03-03-02-07-property-binding/03-03-02-07-04-avoid-side-effects/doc-03-03-02-07-04.component';
-import { Doc0302020504Component } from './03-03-02-07-property-binding/03-02-02-05-04-one-time-string-initialization/doc-03-02-02-05-04.component';
-import { Doc030202050401Component } from './03-03-02-07-property-binding/03-02-02-05-04-one-time-string-initialization/doc-03-02-02-05-04-01.component';
+import { Doc0303020707Component } from './03-03-02-07-property-binding/03-03-02-07-07-one-time-string-initialization/doc-03-03-02-07-07.component';
 import { Doc0302020505Component } from './03-03-02-07-property-binding/03-02-02-05-05-property-binding-or-interpolation/doc-03-02-02-05-05.component';
 import { Doc03020206Component } from './03-02-02-06-attribute-class-and-style-bindings/doc-03-02-02-06.component';
 import { Doc0302020601Component } from './03-02-02-06-attribute-class-and-style-bindings/03-02-02-06-01-attribute-binding/doc-03-02-02-06-01.component';
@@ -89,8 +88,6 @@ import { Doc0303020706Component } from './03-03-02-07-property-binding/03-03-02-
     Doc03030204Component,
     /* 03-02-02-05 */
     Doc03030205Component,
-    Doc0302020504Component,
-    Doc030202050401Component,
     Doc03030206Component,
     Doc03030207Component,
     Doc0303020701Component,
@@ -98,6 +95,7 @@ import { Doc0303020706Component } from './03-03-02-07-property-binding/03-03-02-
     Doc0303020704Component,
     Doc0303020705Component,
     Doc0303020706Component,
+    Doc0303020707Component,
     Doc0302020505Component,
     /* 03-02-02-06 */
     Doc03020206Component,
