@@ -48,7 +48,7 @@ import { Doc0308050302Interceptor } from './routes/doc/03-FUNDAMENTALS/03-09-htt
 import { Doc0308050303Interceptor } from './routes/doc/03-FUNDAMENTALS/03-09-httpclient/03-08-05-advanced-usage/03-08-05-03-intercepting-requests-and-responses/service/doc-03-08-05-03-03.interceptor';
 import { Doc03080502Interceptor } from './routes/doc/03-FUNDAMENTALS/03-09-httpclient/03-08-05-advanced-usage/03-08-05-02-debouncing-requests/service/doc-03-08-05-02.interceptor';
 import { Doc0308050304Interceptor } from './routes/doc/03-FUNDAMENTALS/03-09-httpclient/03-08-05-advanced-usage/03-08-05-03-intercepting-requests-and-responses/service/doc-03-08-05-03-04.interceptor';
-import { META_REDUCERS, StoreModule } from '@ngrx/store';
+import { USER_PROVIDED_META_REDUCERS, StoreModule } from '@ngrx/store';
 import { metaReducers, reducers } from './reducers';
 import { MetaReducer02 } from './routes/pkgs/ngrx/store/04-recipes/04-01-inject-reducers/store/reducers/04-01.reducer';
 import { EffectsModule } from '@ngrx/effects';
@@ -258,10 +258,10 @@ const APPINIT_PROVIDES = [
       },
     },
     /*
-     * 使用 META_REDUCERS 来注入 NGRX 的 meta-reducer
+     * 使用 USER_PROVIDED_META_REDUCERS 来注入 NGRX 的 meta-reducer
      */
     {
-      provide: META_REDUCERS,
+      provide: USER_PROVIDED_META_REDUCERS,
       useFactory: (metaReducer02: MetaReducer02) => {
         return [metaReducer02.createMetaReducer()];
       },
