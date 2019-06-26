@@ -4,12 +4,14 @@ import { AGentleIntroductionIntoChangeDetectionInAngularRoutingModule } from './
 import { AGentleIntroductionIntoChangeDetectionInAngularComponent } from './a-gentle-introduction-into-change-detection-in-angular.component';
 import { X01Component } from './01/x-01.component';
 import { X02Component } from './02/x-02.component';
+import { X03Component } from './03/x-03.component';
 
 @NgModule({
   declarations: [
     AGentleIntroductionIntoChangeDetectionInAngularComponent,
     X01Component,
     X02Component,
+    X03Component,
   ],
   imports: [
     SharedModule,
