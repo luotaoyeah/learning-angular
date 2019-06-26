@@ -597,6 +597,11 @@
           "i18n": "menu.blog.never-again-be-confused-when-implementing-controlvalueaccessor",
           "icon": "anticon anticon-info-circle",
           "link": "/blog/never-again-be-confused-when-implementing-controlvalueaccessor"
+        },
+        {
+          "i18n": "menu.blog.a-gentle-introduction-into-change-detection-in-angular",
+          "icon": "anticon anticon-info-circle",
+          "link": "/blog/a-gentle-introduction-into-change-detection-in-angular"
         }
       ]
     }
