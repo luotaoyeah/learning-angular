@@ -602,6 +602,11 @@
           "i18n": "menu.blog.a-gentle-introduction-into-change-detection-in-angular",
           "icon": "anticon anticon-info-circle",
           "link": "/blog/a-gentle-introduction-into-change-detection-in-angular"
+        },
+        {
+          "i18n": "menu.blog.working-with-dom-in-angular",
+          "icon": "anticon anticon-info-circle",
+          "link": "/blog/working-with-dom-in-angular-unexpected-consequences-and-optimization-techniques"
         }
       ]
     }
