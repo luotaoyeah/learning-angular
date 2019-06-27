@@ -36,6 +36,7 @@ import { Doc0901020506Component } from './09-01-02-primary-entry-point-exports/0
 import { Doc090102050601Component } from './09-01-02-primary-entry-point-exports/09-01-02-05-structures/09-01-02-05-06/09-01-02-05-06-01/doc-09-01-02-05-06-01.component';
 import { Doc090102050602Component } from './09-01-02-primary-entry-point-exports/09-01-02-05-structures/09-01-02-05-06/09-01-02-05-06-02/doc-09-01-02-05-06-02.component';
 import { Doc0901020308Component } from './09-01-02-primary-entry-point-exports/09-01-02-03-decorators/09-01-02-03-08-host-listener/doc-09-01-02-03-08.component';
+import { Doc0901020308Directive } from './09-01-02-primary-entry-point-exports/09-01-02-03-decorators/09-01-02-03-08-host-listener/directives/doc-09-01-02-03-08.directive';
 
 @NgModule({
   declarations: [
@@ -73,6 +74,7 @@ import { Doc0901020308Component } from './09-01-02-primary-entry-point-exports/0
       Doc09010203050401Directive,
       Doc09010203050501Directive,
       Doc09010203050502Directive,
+      Doc0901020308Directive,
     ],
   ],
   imports: [CommonModule, FormsModule, SharedModule, Doc0901RoutingModule],
