@@ -11,7 +11,7 @@ import { Directive, ElementRef, OnInit } from '@angular/core';
    * : 前面的表示 directive input property name
    * : 后面的表示 binding property name
    */
-  // tslint:disable-next-line:use-input-property-decorator
+  // tslint:disable-next-line:no-inputs-metadata-property
   inputs: ['color: appDoc090102030502'],
 })
 export class Doc090102030502Directive implements OnInit {

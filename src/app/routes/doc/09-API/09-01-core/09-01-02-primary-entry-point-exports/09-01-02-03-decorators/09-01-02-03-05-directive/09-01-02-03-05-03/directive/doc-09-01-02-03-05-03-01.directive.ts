@@ -11,7 +11,7 @@ import { Directive, EventEmitter, OnInit } from '@angular/core';
    * : 前面的部分表示 directive output property name，
    * : 后面的部分表示 binding property name
    */
-  // tslint:disable-next-line:use-output-property-decorator
+  // tslint:disable-next-line:no-outputs-metadata-property
   outputs: ['changeColor: appDoc09010203050301ChangeColor'],
 })
 export class Doc09010203050301Directive implements OnInit {
