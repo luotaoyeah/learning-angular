@@ -5,6 +5,7 @@ import { WorkingWithDomInAngularComponent } from './working-with-dom-in-angular.
 import { X01Component } from './01/x-01.component';
 import { X0101Component } from './01/x-01-01.component';
 import { X02Component } from './02/x-02.component';
+import { X03Component } from './03/x-03.component';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { X02Component } from './02/x-02.component';
     X01Component,
     X0101Component,
     X02Component,
+    X03Component,
   ],
   imports: [WorkingWithDomInAngularRoutingModule, SharedModule],
 })
