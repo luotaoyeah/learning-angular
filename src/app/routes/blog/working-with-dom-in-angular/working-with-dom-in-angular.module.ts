@@ -4,12 +4,14 @@ import { WorkingWithDomInAngularRoutingModule } from './working-with-dom-in-angu
 import { WorkingWithDomInAngularComponent } from './working-with-dom-in-angular.component';
 import { X01Component } from './01/x-01.component';
 import { X0101Component } from './01/x-01-01.component';
+import { X02Component } from './02/x-02.component';
 
 @NgModule({
   declarations: [
     WorkingWithDomInAngularComponent,
     X01Component,
     X0101Component,
+    X02Component,
   ],
   imports: [WorkingWithDomInAngularRoutingModule, SharedModule],
 })

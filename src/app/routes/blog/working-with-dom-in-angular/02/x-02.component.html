@@ -1,0 +1,22 @@
+<p>
+  view 分成两种: static view 和 dynamic view, 所谓的 static view 就是 angular
+  在编译组件树的 template 时, 生成的一个 view 树, 而所谓的 dynamic view
+  就是我们通过 API 动态地生成的 view
+</p>
+
+<p>
+  要创建 dynamic view 就要用到 view container, 所谓的 view container
+  就是我们要创建的 dynamic view 的容器, 也就是说 dynamic view 创建之后要放到一个
+  view container 中去
+</p>
+
+<p>
+  对于 dynamic view 来说, 我们就可以安全的对它进行添加/删除/修改,
+  而不会出现前面的那个问题: 只删除了 DOM 节点, 而没有删除 view 节点
+</p>
+
+<p>
+  dynamic view 又分成两种: embedded view 和 host view, embedded view 是通过
+  template 然后使用 <code>TemplateRef</code> 来创建的, 而 host view 是使用
+  <code>ComponentFactory</code> 来创建的
+</p>
