@@ -5,12 +5,16 @@ import { HereIsWhatYouNeedToKnowAboutDynamicComponentsRoutingModule } from './he
 import { HereIsWhatYouNeedToKnowAboutDynamicComponentsComponent } from './here-is-what-you-need-to-know-about-dynamic-components.component';
 import { X01Component } from './01/x-01.component';
 import { X02Component } from './02/x-02.component';
+import { X03Component } from './03/x-03.component';
+import { X0301Component } from './03/01/x-03-01.component';
 
 @NgModule({
   declarations: [
     HereIsWhatYouNeedToKnowAboutDynamicComponentsComponent,
     X01Component,
     X02Component,
+    X03Component,
+    X0301Component,
   ],
   imports: [
     HereIsWhatYouNeedToKnowAboutDynamicComponentsRoutingModule,
