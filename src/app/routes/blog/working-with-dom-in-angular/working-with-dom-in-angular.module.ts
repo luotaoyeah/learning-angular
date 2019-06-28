@@ -9,6 +9,8 @@ import { X02Component } from './02/x-02.component';
 import { X03Component } from './03/x-03.component';
 import { X04Component } from './04/x-04.component';
 import { X05Component } from './05/x-05.component';
+import { X06Component } from './06/x-06.component';
+import { X0601Component } from './06/x-06-01.component';
 
 @NgModule({
   declarations: [
@@ -19,8 +21,10 @@ import { X05Component } from './05/x-05.component';
     X03Component,
     X04Component,
     X05Component,
+    X06Component,
+    X0601Component,
   ],
   imports: [WorkingWithDomInAngularRoutingModule, SharedModule],
-  entryComponents: [NzAlertComponent],
+  entryComponents: [NzAlertComponent, X0601Component],
 })
 export class WorkingWithDomInAngularModule {}
