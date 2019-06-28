@@ -607,6 +607,11 @@
           "i18n": "menu.blog.working-with-dom-in-angular",
           "icon": "anticon anticon-info-circle",
           "link": "/blog/working-with-dom-in-angular-unexpected-consequences-and-optimization-techniques"
+        },
+        {
+          "i18n": "menu.blog.here-is-what-you-need-to-know-about-dynamic-components-in-angular",
+          "icon": "anticon anticon-info-circle",
+          "link": "/blog/here-is-what-you-need-to-know-about-dynamic-components-in-angular"
         }
       ]
     }
