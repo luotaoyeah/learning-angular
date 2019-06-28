@@ -13,6 +13,7 @@ import { X06Component } from './06/x-06.component';
 import { X0601Component } from './06/x-06-01.component';
 import { X07Component } from './07/x-07.component';
 import { X0701Component } from './07/x-07-01.component';
+import { X08Component } from './08/x-08.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { X0701Component } from './07/x-07-01.component';
     X0601Component,
     X07Component,
     X0701Component,
+    X08Component,
   ],
   imports: [WorkingWithDomInAngularRoutingModule, SharedModule],
   entryComponents: [NzAlertComponent, X0601Component, X0701Component],
