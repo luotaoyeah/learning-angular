@@ -1,11 +1,10 @@
 import {
   Component,
   ComponentFactoryResolver,
-  Renderer2,
   ViewChild,
   ViewContainerRef,
 } from '@angular/core';
-import { NzButtonComponent } from 'ng-zorro-antd';
+import { NzAlertComponent } from 'ng-zorro-antd';
 
 /*
  * https://blog.angularindepth.com/working-with-dom-in-angular-unexpected-consequences-and-optimization-techniques-682ac09f6866#a2b5
@@ -21,10 +20,7 @@ export class X05Component {
   })
   public vc!: ViewContainerRef;
 
-  constructor(
-    private componentFactoryResolver: ComponentFactoryResolver,
-    private renderer2: Renderer2,
-  ) {}
+  constructor(private componentFactoryResolver: ComponentFactoryResolver) {}
 
   public createView() {
     /*
@@ -32,10 +28,15 @@ export class X05Component {
      * 创建 host view 的时候, 是根据某个组件的 ComponentFactory 来创建的,
      * 所以我们首先需要通过 ComponentFactoryResolver.resolveComponentFactory() 方法获取到该组件的 ComponentFactory
      */
-    const text = this.renderer2.createText('FOO');
     const factory = this.componentFactoryResolver.resolveComponentFactory(
-      NzButtonComponent,
+      NzAlertComponent,
     );
-    this.vc.createComponent(factory, 0, undefined, [[text]]);
+
+    /*
+     * ViewContainerRef.createComponent() 方法返回的是一个 ComponentRef 实例,
+     * 我们可以通过它来修改组件的属性
+     */
+    const component = this.vc.createComponent(factory, 0, undefined, []);
+    component.instance.nzMessage = 'FOO';
   }
 }
