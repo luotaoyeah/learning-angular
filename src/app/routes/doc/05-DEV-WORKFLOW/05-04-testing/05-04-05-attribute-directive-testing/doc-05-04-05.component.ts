@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 /*
  * https://angular.io/guide/testing#attribute-directive-testing
@@ -7,6 +7,4 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-doc-05-04-05',
   templateUrl: './doc-05-04-05.component.html',
 })
-export class Doc050405Component implements OnInit {
-  public ngOnInit() {}
-}
+export class Doc050405Component {}

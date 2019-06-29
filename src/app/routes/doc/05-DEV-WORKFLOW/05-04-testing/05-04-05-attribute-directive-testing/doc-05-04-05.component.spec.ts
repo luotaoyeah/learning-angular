@@ -4,7 +4,7 @@ import { Doc05040501Directive } from './directive/doc-05-04-05-01.directive';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-describe('Doc050405Component', () => {
+describe('src/app/routes/doc/05-DEV-WORKFLOW/05-04-testing/05-04-05-attribute-directive-testing/doc-05-04-05.component.ts', () => {
   let fixture: ComponentFixture<Doc050405Component>;
   let component: Doc050405Component;
 
@@ -24,7 +24,7 @@ describe('Doc050405Component', () => {
   });
 
   /*
-   * 可以在某个 component 的测试文件中，对某个 directive 进行测试
+   * 可以在某个 component 的测试文件中, 对某个 attribute directive 进行测试
    */
   it('should set color to skyblue', () => {
     fixture.detectChanges();
