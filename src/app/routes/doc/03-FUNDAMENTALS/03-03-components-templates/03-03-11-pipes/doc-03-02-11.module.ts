@@ -9,7 +9,7 @@ import { Doc03021103Component } from './03-02-11-03-chaining-pipes/doc-03-02-11-
 import { Doc03021101Component } from './03-02-11-01-using-pipes/doc-03-02-11-01.component';
 import { Doc03021104Component } from './03-02-11-04-custom-pipes/doc-03-02-11-04.component';
 import { Pipe03021105Pipe } from './03-02-11-05-pipes-and-change-detection/pipe/pipe-03-02-11-05.pipe';
-import { Pipe03021106Pipe } from './03-02-11-06-pure-and-impure-pipes/pipe/pipe-03-02-11-06.pipe';
+import { Doc03021106Pipe } from './03-02-11-06-pure-and-impure-pipes/pipes/doc-03-02-11-06.pipe';
 import { Pipe03021102Pipe } from './03-02-11-02-parameterizing-a-pipe/pipe/pipe-03-02-11-02.pipe';
 import { Doc03021105Component } from './03-02-11-05-pipes-and-change-detection/doc-03-02-11-05.component';
 import { Doc03021102Component } from './03-02-11-02-parameterizing-a-pipe/doc-03-02-11-02.component';
@@ -30,7 +30,7 @@ import { Doc0302110601Component } from './03-02-11-06-pure-and-impure-pipes/03-0
     Doc03021105Component,
     Pipe03021105Pipe,
     Doc03021106Component,
-    Pipe03021106Pipe,
+    Doc03021106Pipe,
     Doc0302110601Component,
   ],
   imports: [CommonModule, Doc030211RoutingModule, FormsModule, SharedModule],

@@ -25,8 +25,7 @@ describe('Doc0504030202Component', () => {
   it('should contain "FOO"', () => {
     /*
      * ComponentFixture.nativeElement 表示组件元素, 它的类型是 any,
-     * 因为一个 angular 应用不一定是在浏览器中运行的,
-     * 所以 ComponentFixture.nativeElement 不一定是一个 DOM 元素,
+     * 因为一个 angular 应用不一定是在浏览器中运行的, 所以 ComponentFixture.nativeElement 不一定是一个 DOM 元素,
      * 但是在这里, 我们知道它肯定是一个 DOM 元素
      */
     const element: HTMLElement = fixture.nativeElement;
