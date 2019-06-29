@@ -35,34 +35,15 @@ class DtoUtil {
   }
 
   /**
-   * Convert a date string to a {@link Date} object,
-   * if the result is an invalid date,
-   * then return a default date(1970-01-01T00:00:00.000)
-   *
-   * @param dateString The date string.
-   *        See {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#Timestamp_string MDN} for more details
-   */
-  public static parseDate(dateString: string): Date {
-    let _dateString = dateString;
-    if (_dateString.length >= 23) {
-      _dateString = `${dateString.substr(0, 23)}Z`;
-    }
-
-    let date: Date = new Date(_dateString);
-
-    if (Number.isNaN(date.getTime())) {
-      date = new Date(0);
-    }
-
-    return date;
-  }
-
-  /**
    * Get the array of keys of a DTO object with type safety
    *
    * @param dto The DTO object
    */
   public static keys<C extends object>(dto: C): Array<keyof C> {
+    if (!dto) {
+      return [];
+    }
+
     return Reflect.ownKeys(dto) as (Array<keyof C>);
   }
 }

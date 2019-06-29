@@ -156,11 +156,7 @@ export class DefaultInterceptor implements HttpInterceptor {
     let url = httpRequest.url;
 
     if (!url.startsWith('https://') && !url.startsWith('http://')) {
-      if (environment.production) {
-        url = `${environment.SERVER_URL}${url}`;
-      } else {
-        url = `${environment.SERVER_URL}${url}`;
-      }
+      url = `${environment.SERVER_URL}${url}`;
     }
     //endregion
 

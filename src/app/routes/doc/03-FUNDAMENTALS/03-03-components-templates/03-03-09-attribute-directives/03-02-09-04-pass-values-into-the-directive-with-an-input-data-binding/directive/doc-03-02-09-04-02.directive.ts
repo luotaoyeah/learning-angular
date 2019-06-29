@@ -1,5 +1,4 @@
 import { Directive, HostListener, Input } from '@angular/core';
-import { ComnService } from '@app/core';
 
 @Directive({
   selector: '[appDoc0302090402]',
@@ -12,8 +11,6 @@ export class Doc0302090402Directive {
   @Input()
   public borderColor: string = '';
 
-  constructor(private comnService: ComnService) {}
-
   @HostListener('mouseenter')
   protected onMouseEnter(): void {
     this.log();
@@ -21,7 +18,7 @@ export class Doc0302090402Directive {
 
   private log() {
     console.log(
-      `%c${this.comnService.getComponentLabel(Doc0302090402Directive)}`,
+      `%c[${Doc0302090402Directive.name}]\n`,
       `color:${this.borderColor}`,
     );
   }

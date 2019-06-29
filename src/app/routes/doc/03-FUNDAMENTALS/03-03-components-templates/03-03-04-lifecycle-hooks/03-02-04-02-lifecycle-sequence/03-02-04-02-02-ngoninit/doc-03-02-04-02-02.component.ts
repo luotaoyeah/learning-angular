@@ -5,7 +5,6 @@ import {
   OnInit,
   SimpleChanges,
 } from '@angular/core';
-import { ComnService } from '@app/core';
 
 @Component({
   selector: 'app-doc-03-02-04-02-02',
@@ -17,13 +16,8 @@ export class Doc0302040202Component implements OnInit, OnChanges {
   @Input()
   public bar: string = '';
 
-  constructor(private comnService: ComnService) {}
-
   public ngOnChanges(simpleChanges: SimpleChanges): void {
-    console.log(
-      `${this.comnService.getComponentLabel(Doc0302040202Component)}`,
-      'ngOnChanges()',
-    );
+    console.log(`[${Doc0302040202Component.name}]\n`, 'ngOnChanges()');
   }
 
   /*
@@ -33,9 +27,6 @@ export class Doc0302040202Component implements OnInit, OnChanges {
    *     但是 template 中的 data-binding 尚未进行渲染
    */
   public ngOnInit(): void {
-    console.log(
-      `${this.comnService.getComponentLabel(Doc0302040202Component)}`,
-      'ngOnInit()',
-    );
+    console.log(`[${Doc0302040202Component.name}]\n`, 'ngOnInit()');
   }
 }

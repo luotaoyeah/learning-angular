@@ -6,7 +6,6 @@ import {
   SimpleChange,
   SimpleChanges,
 } from '@angular/core';
-import { ComnService } from '@app/core';
 
 @Component({
   selector: 'app-doc-03-02-04-06-01',
@@ -18,8 +17,6 @@ export class Doc0302040601Component implements OnChanges, DoCheck {
 
   public barName = this.bar.name;
 
-  constructor(private comnService: ComnService) {}
-
   /*
    * angular 默认的 change detector 比较的是 input property 对象的引用，
    * 因此如果是 input property 对象的内部属性发生变更，angular 无法检测到 ，
@@ -28,10 +25,7 @@ export class Doc0302040601Component implements OnChanges, DoCheck {
   public ngOnChanges(simpleChanges: SimpleChanges): void {
     const barSimpleChange: SimpleChange = simpleChanges['bar'];
     if (barSimpleChange && !barSimpleChange.firstChange) {
-      console.log(
-        this.comnService.getComponentLabel(Doc0302040601Component),
-        'ngOnChanges()',
-      );
+      console.log(`[${Doc0302040601Component.name}]\n`, 'ngOnChanges()');
     }
   }
 
@@ -48,10 +42,7 @@ export class Doc0302040601Component implements OnChanges, DoCheck {
      */
     if (this.barName !== this.bar.name) {
       this.barName = this.bar.name;
-      console.log(
-        this.comnService.getComponentLabel(Doc0302040601Component),
-        'ngDoCheck()',
-      );
+      console.log(`[${Doc0302040601Component.name}]\n`, 'ngDoCheck()');
     }
   }
 }

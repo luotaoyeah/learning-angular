@@ -5,7 +5,6 @@ import {
   OnInit,
   SimpleChanges,
 } from '@angular/core';
-import { ComnService } from '@app/core';
 
 @Component({
   selector: 'app-doc-03-02-04-02-01',
@@ -17,8 +16,6 @@ export class Doc0302040201Component implements OnInit, OnChanges {
 
   @Input()
   public bar: string = '';
-
-  constructor(private comnService: ComnService) {}
 
   /*
    * ngOnChanges() 在 input property 发生变更时执行，包括首次对 input property 进行初始化的时候
@@ -42,16 +39,10 @@ export class Doc0302040201Component implements OnInit, OnChanges {
      *     2. currentValue：新值
      *     3. firstChange：是否是第一次发生变更（初始化）
      */
-    console.log(
-      `${this.comnService.getComponentLabel(Doc0302040201Component)}`,
-      simpleChanges,
-    );
+    console.log(`[${Doc0302040201Component.name}]\n`, simpleChanges);
   }
 
   public ngOnInit(): void {
-    console.log(
-      `${this.comnService.getComponentLabel(Doc0302040201Component)}`,
-      'ngOnInit()',
-    );
+    console.log(Doc0302040201Component, 'ngOnInit()');
   }
 }
