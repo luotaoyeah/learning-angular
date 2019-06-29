@@ -15,7 +15,7 @@ export class X0302Component implements AfterViewInit {
 
   /*
    * 默认情况下, angular 只会为两种组件生成 factory,
-   * 即, 可以在 template 中找到的组件, 和在 entryComponents 中声明的组件,
+   * 一种是可以在 template 中找到的组件, 一种是在 entryComponents 中声明的组件,
    * 为什么呢? 这是因为在编译模块时调用的是 Compiler.compileModuleAsync() 方法
    *
    * 如果我们想给这两种组件之外的组件也生成 factory 该怎么办呢?

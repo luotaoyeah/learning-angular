@@ -6,7 +6,7 @@
   "scripts": {
     "ng": "ng",
     "start": "npm run color-less && ng serve learning-angular",
-    "build": "npm run color-less && ng build learning-angular --prod",
+    "build": "npm run color-less && node --max-old-space-size=8048 ./node_modules/@angular/cli/bin/ng build learning-angular --prod",
     "test": "ng test learning-angular",
     "e2e": "ng e2e learning-angular-e2e",
     "analyze": "npm run color-less && ng build learning-angular --prod --stats-json",
