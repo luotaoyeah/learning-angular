@@ -162,5 +162,6 @@
   "app.login.password.required": "please enter password",
   "app.login.password.placeholder": "password",
   "app.login.login-failed": "Login Failed",
-  "validation.password.required": "Please enter your password"
+  "validation.password.required": "Please enter your password",
+  "interceptors.default.request-error": "REQUEST ERROR"
 }

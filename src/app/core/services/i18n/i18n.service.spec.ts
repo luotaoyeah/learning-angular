@@ -3,10 +3,9 @@ import { TranslateService } from '@ngx-translate/core';
 import { DelonLocaleService, SettingsService } from '@delon/theme';
 import { NzI18nService } from 'ng-zorro-antd';
 import { of } from 'rxjs';
+import { I18NService } from '@app/core';
 
-import { I18NService } from '@app/core/i18n/i18n.service';
-
-describe('I18NService', () => {
+describe('src/app/core/services/i18n/i18n.service.ts', () => {
   let injector: TestBedStatic;
   let i18NService: I18NService;
   const MockSettingsService: {

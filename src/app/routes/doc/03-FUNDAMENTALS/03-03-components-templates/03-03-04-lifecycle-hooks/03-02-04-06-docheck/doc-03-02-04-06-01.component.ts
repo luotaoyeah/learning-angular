@@ -6,7 +6,7 @@ import {
   SimpleChange,
   SimpleChanges,
 } from '@angular/core';
-import { ComnService } from '@app/core/comn/comn.service';
+import { ComnService } from '@app/core';
 
 @Component({
   selector: 'app-doc-03-02-04-06-01',

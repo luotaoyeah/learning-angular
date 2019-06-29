@@ -1,5 +1,5 @@
 import { Directive, HostListener, Input } from '@angular/core';
-import { ComnService } from '@app/core/comn/comn.service';
+import { ComnService } from '@app/core';
 
 @Directive({
   selector: '[appDoc0302090402]',

@@ -162,5 +162,6 @@
   "app.login.password.required": "请输入密码",
   "app.login.password.placeholder": "密码",
   "app.login.login-failed": "登录失败",
-  "validation.password.required": "请输入密码"
+  "validation.password.required": "请输入密码",
+  "interceptors.default.request-error": "请求失败"
 }

@@ -6,7 +6,7 @@ import { Application } from 'express';
 import { Request, Response } from 'express-serve-static-core';
 
 function init(app: Application) {
-  app.post('/login/account', (req: Request, res: Response) => {
+  app.post('/login', (req: Request, res: Response) => {
     const data = req.body;
     if (
       !['admin'].includes(data.username) ||
@@ -17,12 +17,16 @@ function init(app: Application) {
     }
 
     res.jsonp({
-      user: {
-        token: '123456789',
-        name: data.username,
-        email: `${data.username}@qq.com`,
-        id: 10000,
-        time: +new Date(),
+      state: true,
+      message: '',
+      data: {
+        token:
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwMDAwIiwiZW1haWwiOiJhZG1pbkBxcS5jb20iLCJuYW1lIjoiYWRtaW4iLCJpYXQiOjE1MTYyMzkwMjJ9.aCVq3AaIehw-5x0MQJKJkxSBxISE7mINygvKll5kW-g',
+        user: {
+          id: '001',
+          name: 'admin',
+        },
+        menus: [],
       },
     });
   });

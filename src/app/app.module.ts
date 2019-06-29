@@ -23,11 +23,8 @@ import {
 import { registerLocaleData } from '@angular/common';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { I18NService } from '@app/core/i18n/i18n.service';
 import { JsonSchemaModule } from '@app/shared/json-schema/json-schema.module';
-import { SimpleInterceptor } from '@delon/auth';
-import { DefaultInterceptor } from '@app/core/net/default.interceptor';
-import { StartupService } from '@app/core/startup/startup.service';
+import { JWTInterceptor } from '@delon/auth';
 import { DelonModule } from './delon.module';
 import { CoreModule } from '@app/core/core.module';
 import { SharedModule } from '@app/shared';
@@ -48,7 +45,7 @@ import { Doc0308050302Interceptor } from './routes/doc/03-FUNDAMENTALS/03-09-htt
 import { Doc0308050303Interceptor } from './routes/doc/03-FUNDAMENTALS/03-09-httpclient/03-08-05-advanced-usage/03-08-05-03-intercepting-requests-and-responses/service/doc-03-08-05-03-03.interceptor';
 import { Doc03080502Interceptor } from './routes/doc/03-FUNDAMENTALS/03-09-httpclient/03-08-05-advanced-usage/03-08-05-02-debouncing-requests/service/doc-03-08-05-02.interceptor';
 import { Doc0308050304Interceptor } from './routes/doc/03-FUNDAMENTALS/03-09-httpclient/03-08-05-advanced-usage/03-08-05-03-intercepting-requests-and-responses/service/doc-03-08-05-03-04.interceptor';
-import { USER_PROVIDED_META_REDUCERS, StoreModule } from '@ngrx/store';
+import { StoreModule, USER_PROVIDED_META_REDUCERS } from '@ngrx/store';
 import { metaReducers, reducers } from './reducers';
 import { MetaReducer02 } from './routes/pkgs/ngrx/store/04-recipes/04-01-inject-reducers/store/reducers/04-01.reducer';
 import { EffectsModule } from '@ngrx/effects';
@@ -61,6 +58,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '@app/env/environment';
 import { X01CustomRouterStateSerializer } from './routes/pkgs/ngrx/router-store/02-configuration/service/x-01-custom-router-state-serializer';
 import { AppRoutingModule } from './app-routing.module';
+import { DefaultInterceptor, I18NService, StartupService } from '@app/core';
 
 const LANG = {
   abbr: 'en',
@@ -109,7 +107,7 @@ const FORM_MODULES = [JsonSchemaModule];
 const INTERCEPTOR_PROVIDES: Array<Provider> = [
   {
     provide: HTTP_INTERCEPTORS,
-    useClass: SimpleInterceptor,
+    useClass: JWTInterceptor,
     multi: true,
   },
   {
