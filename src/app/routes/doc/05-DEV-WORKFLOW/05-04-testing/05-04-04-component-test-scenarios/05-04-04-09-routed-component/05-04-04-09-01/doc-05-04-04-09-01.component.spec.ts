@@ -13,7 +13,7 @@ describe('Doc0504040901Component', () => {
   let buttonDebugEl: DebugElement;
 
   beforeEach(async(() => {
-    activatedRouteStub = new ActivatedRouteStub();
+    activatedRouteStub = new ActivatedRouteStub({});
 
     TestBed.configureTestingModule({
       declarations: [Doc0504040901Component],
