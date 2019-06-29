@@ -23,6 +23,28 @@ jobs:
           name: build
           command: npm run build:learning-angular-lib
 
+  test-learning-angular-lib:
+    working_directory: ~/learning-angular
+    docker:
+      - image: circleci/node:12-browsers
+    steps:
+      - checkout
+      - restore_cache:
+          key: learning-angular-{{ .Branch }}-{{ checksum "package-lock.json" }}
+      - run:
+          name: install learning-angular-lib
+          command: cd projects/learning-angular-lib && npm install
+      - run:
+          name: install
+          command: npm install
+      - save_cache:
+          key: learning-angular-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          paths:
+            - 'node_modules'
+      - run:
+          name: unit test
+          command: npm run test:learning-angular-lib
+
   build-learning-angular:
     working_directory: ~/learning-angular
     docker:
@@ -46,7 +68,7 @@ jobs:
       #          command: npm run build:learning-angular-lib
       - run:
           name: build
-          command: npm run build
+          command: npm run build:ci
 
   test-learning-angular:
     working_directory: ~/learning-angular
@@ -56,9 +78,9 @@ jobs:
       - checkout
       - restore_cache:
           key: learning-angular-{{ .Branch }}-{{ checksum "package-lock.json" }}
-      - run:
-          name: install learning-angular-lib
-          command: cd projects/learning-angular-lib && npm install
+      #      - run:
+      #          name: install learning-angular-lib
+      #          command: cd projects/learning-angular-lib && npm install
       - run:
           name: install
           command: npm install
@@ -66,9 +88,9 @@ jobs:
           key: learning-angular-{{ .Branch }}-{{ checksum "package-lock.json" }}
           paths:
             - 'node_modules'
-      - run:
-          name: build learning-angular-lib
-          command: npm run build:learning-angular-lib
+      #      - run:
+      #          name: build learning-angular-lib
+      #          command: npm run build:learning-angular-lib
       - run:
           name: unit test
           command: npm run test
@@ -79,37 +101,15 @@ jobs:
           name: codecov
           command: npm run codecov
 
-  test-learning-angular-lib:
-    working_directory: ~/learning-angular
-    docker:
-      - image: circleci/node:12-browsers
-    steps:
-      - checkout
-      - restore_cache:
-          key: learning-angular-{{ .Branch }}-{{ checksum "package-lock.json" }}
-      - run:
-          name: install learning-angular-lib
-          command: cd projects/learning-angular-lib && npm install
-      - run:
-          name: install
-          command: npm install
-      - save_cache:
-          key: learning-angular-{{ .Branch }}-{{ checksum "package-lock.json" }}
-          paths:
-            - 'node_modules'
-      - run:
-          name: unit test
-          command: npm run test:learning-angular-lib
-
 workflows:
   version: 2
   learning-angular-workflow:
     jobs:
       - build-learning-angular-lib
-      - build-learning-angular
       - test-learning-angular-lib:
           requires:
             - build-learning-angular-lib
+      - build-learning-angular
       - test-learning-angular:
           requires:
             - build-learning-angular
