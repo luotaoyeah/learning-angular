@@ -6,7 +6,7 @@
   "scripts": {
     "ng": "ng",
     "start": "npm run color-less && ng serve learning-angular",
-    "build": "npm run color-less && node --max-old-space-size=4096 ./node_modules/@angular/cli/bin/ng build learning-angular --prod",
+    "build": "npm run color-less && node --max-old-space-size=3072 ./node_modules/@angular/cli/bin/ng build learning-angular --prod",
     "test": "ng test learning-angular",
     "e2e": "ng e2e learning-angular-e2e",
     "analyze": "npm run color-less && ng build learning-angular --prod --stats-json",
@@ -109,6 +109,6 @@
     "ts-node": "^7.0.0",
     "tsickle": ">=0.34.0",
     "tslint": "^5.18.0",
-    "typescript": "^3.4.5"
+    "typescript": "^3.5.2"
   }
 }
