@@ -1,0 +1,11 @@
+{
+  "origins": [
+    {
+      "name": "SortingPd",
+      "originUrl": "http://localhost:42002/SortingPd/swagger.json"
+    }
+  ],
+  "outDir": "../src/app/core/api",
+  "templatePath": "./service.template",
+  "transformPath": "./transform.template"
+}

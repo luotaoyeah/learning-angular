@@ -1,0 +1,196 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "v1",
+    "title": "AIFactoryPlatform - Kengic Core HTTP API",
+    "description": "The Core Microservice HTTP API. This is a Data-Driven/CRUD microservice sample",
+    "termsOfService": "Terms Of Service"
+  },
+  "paths": {
+    "/api/v1/OperatedTracing/GetAllValues": {
+      "get": {
+        "tags": ["OperatedTracing"],
+        "summary": "GetAllValues.",
+        "operationId": "GetAllValues",
+        "consumes": [],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "pageIndex",
+            "in": "query",
+            "description": "pageIndex.",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": { "$ref": "#/definitions/ResponseResult[Page[Foo]]" }
+          }
+        }
+      }
+    },
+    "/api/v1/OperatedTracing/GetValues": {
+      "get": {
+        "tags": ["OperatedTracing"],
+        "operationId": "GetValues",
+        "consumes": [],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "pageIndex",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "queryCondition",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": { "200": { "description": "Success" } }
+      }
+    },
+    "/api/v1/OperatedTracing/Deletes": {
+      "put": {
+        "tags": ["OperatedTracing"],
+        "operationId": "Deletes",
+        "consumes": [],
+        "produces": ["application/json"],
+        "parameters": [
+          { "name": "ids", "in": "query", "required": false, "type": "string" }
+        ],
+        "responses": { "200": { "description": "Success" } }
+      }
+    },
+    "/api/v1/SortingParameter/GetAllValues": {
+      "get": {
+        "tags": ["SortingParameter"],
+        "summary": "GetAllValues.",
+        "operationId": "GetAllValues",
+        "consumes": [],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "pageIndex",
+            "in": "query",
+            "description": "pageIndex.",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": { "$ref": "#/definitions/ResponseResult[Page[Foo]]" }
+          }
+        }
+      }
+    },
+    "/api/v1/SortingParameter/Update": {
+      "put": {
+        "tags": ["SortingParameter"],
+        "operationId": "Update",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "valueModel",
+            "in": "body",
+            "required": false,
+            "schema": { "type": "object" }
+          }
+        ],
+        "responses": { "200": { "description": "Success" } }
+      }
+    },
+    "/api/v1/SortingPdWorkTask/GetValues": {
+      "get": {
+        "tags": ["SortingPdWorkTask"],
+        "operationId": "GetValues",
+        "consumes": [],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "pageIndex",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "queryCondition",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": { "200": { "description": "Success" } }
+      }
+    }
+  },
+  "definitions": {
+    "ResponseResult[Page[Foo]]": {
+      "description": "ResponseResult.",
+      "type": "object",
+      "properties": {
+        "data": { "$ref": "#/definitions/Page[Foo]", "description": "Data." },
+        "state": { "description": "State.", "type": "boolean" },
+        "message": { "description": "Message.", "type": "string" }
+      }
+    },
+    "Page[Foo]": {
+      "description": "Page.",
+      "type": "object",
+      "properties": {
+        "total": {
+          "format": "int32",
+          "description": "The total count.",
+          "type": "integer"
+        },
+        "items": {
+          "description": "Page datas.",
+          "uniqueItems": false,
+          "type": "array",
+          "items": { "$ref": "#/definitions/Foo" }
+        }
+      }
+    },
+    "Foo": { "type": "object", "properties": { "name": { "type": "string" } } }
+  },
+  "securityDefinitions": {
+    "oauth2": {
+      "flow": "implicit",
+      "authorizationUrl": "/connect/authorize",
+      "tokenUrl": "/connect/token",
+      "scopes": { "Sorter": "Sorters API" },
+      "type": "oauth2"
+    }
+  },
+  "tags": [{ "name": "SortingParameter", "description": "SortingParameter." }]
+}
