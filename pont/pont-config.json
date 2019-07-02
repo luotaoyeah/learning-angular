@@ -3,6 +3,10 @@
     {
       "name": "SortingPd",
       "originUrl": "http://localhost:42002/SortingPd/swagger.json"
+    },
+    {
+      "name": "SortingDr",
+      "originUrl": "http://localhost:42002/SortingDr/swagger.json"
     }
   ],
   "outDir": "../src/app/core/api",
