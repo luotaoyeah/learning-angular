@@ -216,7 +216,7 @@ export default class MyGenerator extends CodeGenerator {
 
   /** 获取接口内容的类型定义代码 */
   public getInterfaceContentInDeclaration(inter: Interface) {
-    const bodyParmas = inter.getBodyParamsCode();
+    const bodyParmas = inter.getBodyParamsCode().replace(/defs/g, 'DEFS');
     const requestParams = bodyParmas
       ? `params: Params, bodyParams: ${bodyParmas}`
       : `params: Params`;
@@ -346,7 +346,9 @@ export default class MyGenerator extends CodeGenerator {
     return clsCodes.map(cls => `export ${cls}`).join('\n');
   }
 
-  /** 获取接口实现内容的代码 */
+  /**
+   * 获取接口实现内容的代码
+   */
   public getInterfaceContent(inter: Interface) {
     const bodyParmas = inter.getBodyParamsCode();
     const requestParams = bodyParmas ? `params, bodyParams` : `params`;
@@ -360,7 +362,9 @@ export default class MyGenerator extends CodeGenerator {
     import pontFetch from 'src/utils/pontFetch';
 
     export ${inter.getParamsCode()}
-    export const init = ${inter.response.getInitialValue()};
+    export const init = ${inter.response
+      .getInitialValue()
+      .replace(/defs\./, 'DEFS.')};
 
     export async function request(${requestParams}) {
       return pontFetch({
