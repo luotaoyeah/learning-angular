@@ -3,11 +3,11 @@ import { Request, Response } from 'express-serve-static-core';
 
 function init(app: Application) {
   app.get('/SortingPd/swagger.json', (req: Request, res: Response) => {
-    res.jsonp(require('./sorting-pd.swagger.json'));
+    res.jsonp(require('./json/sorting-pd.swagger.json'));
   });
 
   app.get('/SortingDr/swagger.json', (req: Request, res: Response) => {
-    res.jsonp(require('./sorting-dr.swagger.json'));
+    res.jsonp(require('./json/sorting-dr.swagger.json'));
   });
 }
 
