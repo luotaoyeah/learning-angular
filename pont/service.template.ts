@@ -130,11 +130,11 @@ export class FileStructures extends Pont.FileStructures {
         })
         .join('\n')}
 
-      (window as any).DEFS = {
+      export const DEFS = {
         ${dataSources.map(name => `${name}: ${name}Defs,`).join('\n')}
       };
       
-      (window as any).API = {
+      export const API = {
         ${dataSources.join(',\n')}
       };
     `;
@@ -226,7 +226,7 @@ export default class MyGenerator extends CodeGenerator {
       
       export type Response = ${inter.responseType.replace(/defs/g, 'DEFS')};
       export const init: Response;
-      export function request(${requestParams}): Promise<${inter.responseType.replace(
+      export function request(${requestParams}): Observable<${inter.responseType.replace(
       /defs/g,
       'DEFS',
     )}>;
@@ -280,10 +280,15 @@ export default class MyGenerator extends CodeGenerator {
     return '';
   }
 
-  /** 获取总的类型定义代码 */
+  /**
+   * src/app/core/api/SortingPd/api.d.ts
+   */
   public getDeclaration() {
     return `
       /* tslint:disable:no-any */
+      import { Observable } from 'rxjs';
+      
+      // @ts-ignore
       type ObjectMap<Key extends string | number | symbol = any, Value = any> = {
         [key in Key]: Value;
       }
@@ -296,13 +301,15 @@ export default class MyGenerator extends CodeGenerator {
     `;
   }
 
-  /** 获取接口类和基类的总的 index 入口文件代码 */
+  /**
+   * src/app/core/api/SortingPd/index.ts
+   */
   public getIndex() {
     let conclusion = `
       import * as DEFS from './BaseClass';
       import './mods/';
 
-      (window as any).DEFS = DEFS;
+      export const DEFS = DEFS;
     `;
 
     // dataSource name means multiple dataSource
@@ -317,7 +324,9 @@ export default class MyGenerator extends CodeGenerator {
     return conclusion;
   }
 
-  /** 获取所有基类文件代码 */
+  /**
+   * src/app/core/api/SortingPd/BaseClass.ts
+   */
   public getBaseClassesIndex() {
     const clsCodes = this.dataSource.baseClasses.map(
       base => `
@@ -347,7 +356,7 @@ export default class MyGenerator extends CodeGenerator {
   }
 
   /**
-   * 获取接口实现内容的代码
+   * src/app/core/api/SortingPd/mods/sortingParameter/GetAllValues.ts
    */
   public getInterfaceContent(inter: Interface) {
     const bodyParmas = inter.getBodyParamsCode();
@@ -376,7 +385,9 @@ export default class MyGenerator extends CodeGenerator {
    `;
   }
 
-  /** 获取单个模块的 index 入口文件 */
+  /**
+   * src/app/core/api/SortingPd/mods/sortingParameter/index.ts
+   */
   public getModIndex(mod: Mod) {
     return `
       /**
@@ -394,10 +405,12 @@ export default class MyGenerator extends CodeGenerator {
     `;
   }
 
-  /** 获取所有模块的 index 入口文件 */
+  /**
+   * src/app/core/api/SortingPd/mods/index.ts
+   */
   public getModsIndex() {
     let conclusion = `
-      (window as any).API = {
+      export const API = {
         ${this.dataSource.mods.map(mod => mod.name).join(', \n')}
       };
     `;
