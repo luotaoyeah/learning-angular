@@ -7,31 +7,6 @@
     "termsOfService": "Terms Of Service"
   },
   "paths": {
-    "/api/v1/OperatedTracing/GetAllValues": {
-      "get": {
-        "tags": ["OperatedTracing"],
-        "summary": "GetAllValues.",
-        "operationId": "GetAllValues",
-        "consumes": [],
-        "produces": ["application/json"],
-        "parameters": [
-          {
-            "name": "pageIndex",
-            "in": "query",
-            "description": "pageIndex.",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "schema": { "$ref": "#/definitions/ResponseResult[Page[Foo]]" }
-          }
-        }
-      }
-    },
     "/api/v1/OperatedTracing/GetValues": {
       "get": {
         "tags": ["OperatedTracing"],
@@ -78,24 +53,17 @@
     "/api/v1/SortingParameter/GetAllValues": {
       "get": {
         "tags": ["SortingParameter"],
-        "summary": "GetAllValues.",
+        "summary": "Get All Sorting Parameters.",
         "operationId": "GetAllValues",
         "consumes": [],
         "produces": ["application/json"],
-        "parameters": [
-          {
-            "name": "pageIndex",
-            "in": "query",
-            "description": "pageIndex.",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          }
-        ],
+        "parameters": [],
         "responses": {
           "200": {
             "description": "Success",
-            "schema": { "$ref": "#/definitions/ResponseResult[Page[Foo]]" }
+            "schema": {
+              "$ref": "#/definitions/ResponseResult[Page[SortingParameter]]"
+            }
           }
         }
       }
@@ -103,6 +71,7 @@
     "/api/v1/SortingParameter/Update": {
       "put": {
         "tags": ["SortingParameter"],
+        "summary": "Update SortingParameter.",
         "operationId": "Update",
         "consumes": [
           "application/json-patch+json",
@@ -115,16 +84,23 @@
           {
             "name": "valueModel",
             "in": "body",
+            "description": "UpdateParam.",
             "required": false,
-            "schema": { "type": "object" }
+            "schema": { "$ref": "#/definitions/UpdateParam" }
           }
         ],
-        "responses": { "200": { "description": "Success" } }
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": { "$ref": "#/definitions/ResponseResult[String]" }
+          }
+        }
       }
     },
     "/api/v1/SortingPdWorkTask/GetValues": {
       "get": {
         "tags": ["SortingPdWorkTask"],
+        "summary": "GetValues.",
         "operationId": "GetValues",
         "consumes": [],
         "produces": ["application/json"],
@@ -132,6 +108,7 @@
           {
             "name": "pageSize",
             "in": "query",
+            "description": "pageSize.",
             "required": false,
             "type": "integer",
             "format": "int32"
@@ -139,49 +116,258 @@
           {
             "name": "pageIndex",
             "in": "query",
+            "description": "pageIndex.",
             "required": false,
             "type": "integer",
             "format": "int32"
           },
+          { "name": "Id", "in": "query", "required": false, "type": "string" },
           {
-            "name": "queryCondition",
+            "name": "MessageType",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "Default",
+              "InductSuccess",
+              "InductFailure",
+              "RequestWithoutDestination",
+              "RequestWithDestination"
+            ]
+          },
+          {
+            "name": "TracingId",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "NodeId",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "Barcode",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "Induct",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "InductMode",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "InductTime",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "Destination",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "Weight",
+            "in": "query",
+            "required": false,
+            "type": "number",
+            "format": "double"
+          },
+          {
+            "name": "Status",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "Default",
+              "Create",
+              "Ready",
+              "Release",
+              "Active",
+              "Running",
+              "Suspended",
+              "Completed",
+              "Cancelled",
+              "Terminated",
+              "Faulted",
+              "Timeout",
+              "Resume"
+            ]
+          },
+          {
+            "name": "CreateBy",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "CreateTime",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "UpdateBy",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "UpdateTime",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "Comments",
             "in": "query",
             "required": false,
             "type": "string"
           }
         ],
-        "responses": { "200": { "description": "Success" } }
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ResponseResult[Page[SortingPdWorkTask]]"
+            }
+          }
+        }
       }
     }
   },
   "definitions": {
-    "ResponseResult[Page[Foo]]": {
-      "description": "ResponseResult.",
+    "ResponseResult[Page[SortingParameter]]": {
       "type": "object",
       "properties": {
-        "data": { "$ref": "#/definitions/Page[Foo]", "description": "Data." },
-        "state": { "description": "State.", "type": "boolean" },
-        "message": { "description": "Message.", "type": "string" }
+        "data": { "$ref": "#/definitions/Page[SortingParameter]" },
+        "state": { "type": "boolean" },
+        "message": { "type": "string" }
       }
     },
-    "Page[Foo]": {
-      "description": "Page.",
+    "Page[SortingParameter]": {
       "type": "object",
       "properties": {
-        "total": {
-          "format": "int32",
-          "description": "The total count.",
-          "type": "integer"
-        },
+        "total": { "format": "int32", "type": "integer" },
         "items": {
-          "description": "Page datas.",
           "uniqueItems": false,
           "type": "array",
-          "items": { "$ref": "#/definitions/Foo" }
+          "items": { "$ref": "#/definitions/SortingParameter" }
         }
       }
     },
-    "Foo": { "type": "object", "properties": { "name": { "type": "string" } } }
+    "SortingParameter": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "code": { "type": "string" },
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "value": { "type": "string" },
+        "createBy": { "type": "string" },
+        "createTime": { "format": "date-time", "type": "string" },
+        "updateBy": { "type": "string" },
+        "updateTime": { "format": "date-time", "type": "string" },
+        "comments": { "type": "string" }
+      }
+    },
+    "UpdateParam": {
+      "description": "SortingParameter UpdateParam.",
+      "type": "object",
+      "properties": {
+        "code": { "description": "Code.", "type": "string" },
+        "value": { "description": "Value.", "type": "string" },
+        "comments": { "description": "Comments.", "type": "string" }
+      }
+    },
+    "ResponseResult[String]": {
+      "type": "object",
+      "properties": {
+        "data": { "type": "string" },
+        "state": { "type": "boolean" },
+        "message": { "type": "string" }
+      }
+    },
+    "ResponseResult[Page[SortingPdWorkTask]]": {
+      "type": "object",
+      "properties": {
+        "data": { "$ref": "#/definitions/Page[SortingPdWorkTask]" },
+        "state": { "type": "boolean" },
+        "message": { "type": "string" }
+      }
+    },
+    "Page[SortingPdWorkTask]": {
+      "type": "object",
+      "properties": {
+        "total": { "format": "int32", "type": "integer" },
+        "items": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": { "$ref": "#/definitions/SortingPdWorkTask" }
+        }
+      }
+    },
+    "SortingPdWorkTask": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "messageType": {
+          "enum": [
+            "Default",
+            "InductSuccess",
+            "InductFailure",
+            "RequestWithoutDestination",
+            "RequestWithDestination"
+          ],
+          "type": "string"
+        },
+        "tracingId": { "type": "string" },
+        "nodeId": { "type": "string" },
+        "barcode": { "type": "string" },
+        "induct": { "type": "string" },
+        "inductMode": { "type": "string" },
+        "inductTime": { "format": "date-time", "type": "string" },
+        "destination": { "type": "string" },
+        "weight": { "format": "double", "type": "number" },
+        "status": {
+          "enum": [
+            "Default",
+            "Create",
+            "Ready",
+            "Release",
+            "Active",
+            "Running",
+            "Suspended",
+            "Completed",
+            "Cancelled",
+            "Terminated",
+            "Faulted",
+            "Timeout",
+            "Resume"
+          ],
+          "type": "string"
+        },
+        "createBy": { "type": "string" },
+        "createTime": { "format": "date-time", "type": "string" },
+        "updateBy": { "type": "string" },
+        "updateTime": { "format": "date-time", "type": "string" },
+        "comments": { "type": "string" }
+      }
+    }
   },
   "securityDefinitions": {
     "oauth2": {
@@ -192,5 +378,8 @@
       "type": "oauth2"
     }
   },
-  "tags": [{ "name": "SortingParameter", "description": "SortingParameter." }]
+  "tags": [
+    { "name": "SortingParameter", "description": "SortingParameter." },
+    { "name": "SortingPdWorkTask", "description": "SortingPdWorkTask." }
+  ]
 }
