@@ -69,6 +69,13 @@ export class FileStructures extends Pont.FileStructures {
       const currentMod: any = {};
 
       mod.interfaces.forEach(inter => {
+        /*
+         * api gateway prefix
+         */
+        if (inter.path.startsWith('/api')) {
+          inter.path = `${dataSource.name.toLowerCase()}${inter.path}`;
+        }
+
         currentMod[`${inter.name}.ts`] = generator.getInterfaceContent.bind(
           generator,
           inter,
