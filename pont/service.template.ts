@@ -101,7 +101,7 @@ export class FileStructures extends Pont.FileStructures {
     // tslint:disable-next-line:no-any
     const result: any = {
       'BaseClass.ts': generator.getBaseClassesIndex.bind(generator),
-      mods: mods,
+      Controllers: mods,
       'index.ts': generator.getIndex.bind(generator),
       'api.d.ts': generator.getDeclaration.bind(generator),
     };
@@ -223,7 +223,7 @@ export default class MyGenerator extends CodeGenerator {
 
   /** 获取接口内容的类型定义代码 */
   public getInterfaceContentInDeclaration(inter: Interface) {
-    const bodyParmas = inter.getBodyParamsCode().replace(/defs/g, 'DEFS');
+    const bodyParmas = inter.getBodyParamsCode();
     const requestParams = bodyParmas
       ? `params: Params, bodyParams: ${bodyParmas}`
       : `params: Params`;
@@ -231,12 +231,9 @@ export default class MyGenerator extends CodeGenerator {
     return `
       export ${inter.getParamsCode()}
       
-      export type Response = ${inter.responseType.replace(/defs/g, 'DEFS')};
-      export const init: Response;
-      export function request(${requestParams}): Observable<${inter.responseType.replace(
-      /defs/g,
-      'DEFS',
-    )}>;
+      export function request(${requestParams}): Observable<${
+      inter.responseType
+    }>;
     `;
   }
 
@@ -314,7 +311,7 @@ export default class MyGenerator extends CodeGenerator {
   public getIndex() {
     let conclusion = `
       import * as DEFS from './BaseClass';
-      import './mods/';
+      import './Controllers/';
 
       export const DEFS = DEFS;
     `;
@@ -322,7 +319,7 @@ export default class MyGenerator extends CodeGenerator {
     if (this.dataSource.name) {
       conclusion = `
         import { ${this.dataSource.name} as DEFS } from './BaseClass';
-        export { ${this.dataSource.name} } from './mods/';
+        export { ${this.dataSource.name} } from './Controllers/';
         export { DEFS };
       `;
     }
@@ -362,7 +359,7 @@ export default class MyGenerator extends CodeGenerator {
   }
 
   /**
-   * src/app/core/api/SortingPd/mods/sortingParameter/GetAllValues.ts
+   * src/app/core/api/SortingPd/Controllers/sortingParameter/GetAllValues.ts
    */
   public getInterfaceContent(inter: Interface) {
     const bodyParmas = inter.getBodyParamsCode();
@@ -373,15 +370,15 @@ export default class MyGenerator extends CodeGenerator {
      * @desc ${inter.description}
      */
 
-    import * as DEFS from '../../BaseClass';
+    import { Observable } from 'rxjs';
+    import { DEFS } from '../../api';
     import pontFetch from 'src/utils/pontFetch';
 
     export ${inter.getParamsCode()}
-    export const init = ${inter.response
-      .getInitialValue()
-      .replace(/defs\./, 'DEFS.')};
 
-    export async function request(${requestParams}) {
+    export function request(${requestParams}): Observable<${
+      inter.responseType
+    }> {
       return pontFetch({
         url: '${inter.path}',
         ${bodyParmas ? 'params: bodyParams' : 'params'},
@@ -392,7 +389,7 @@ export default class MyGenerator extends CodeGenerator {
   }
 
   /**
-   * src/app/core/api/SortingPd/mods/sortingParameter/index.ts
+   * src/app/core/api/SortingPd/Controllers/sortingParameter/index.ts
    */
   public getModIndex(mod: Mod) {
     return `
@@ -412,7 +409,7 @@ export default class MyGenerator extends CodeGenerator {
   }
 
   /**
-   * src/app/core/api/SortingPd/mods/index.ts
+   * src/app/core/api/SortingPd/Controllers/index.ts
    */
   public getModsIndex() {
     let conclusion = `

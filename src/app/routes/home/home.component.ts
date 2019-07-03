@@ -7,8 +7,6 @@ import { API } from '@app/core/api';
 })
 export class HomeComponent {
   public test() {
-    API.SortingDr.SortingParameter.GetAllValues.request({
-      pageIndex: 1,
-    });
+    API.SortingPd.SortingParameterController.GetAllValues.request({});
   }
 }

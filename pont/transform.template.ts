@@ -15,6 +15,8 @@ export default function(dataSource: StandardDataSource): StandardDataSource {
       chars.splice(0, 1, mod.name[0].toUpperCase());
       mod.name = chars.join('');
     }
+
+    mod.name = `${mod.name}Controller`;
   });
 
   return dataSource;
