@@ -223,17 +223,15 @@ export default class MyGenerator extends CodeGenerator {
 
   /** 获取接口内容的类型定义代码 */
   public getInterfaceContentInDeclaration(inter: Interface) {
-    const bodyParmas = inter.getBodyParamsCode();
-    const requestParams = bodyParmas
-      ? `params: Params, bodyParams: ${bodyParmas}`
-      : `params: Params`;
+    const bodyParams = inter.getBodyParamsCode();
+    const params = bodyParams
+      ? `params: Params, body: ${bodyParams}`
+      : `params: Params, body?: {}`;
 
     return `
       export ${inter.getParamsCode()}
       
-      export function request(${requestParams}): Observable<${
-      inter.responseType
-    }>;
+      export function request(${params}): Observable<${inter.responseType}>;
     `;
   }
 
@@ -363,7 +361,9 @@ export default class MyGenerator extends CodeGenerator {
    */
   public getInterfaceContent(inter: Interface) {
     const bodyParmas = inter.getBodyParamsCode();
-    const requestParams = bodyParmas ? `params, bodyParams` : `params`;
+    const requestParams = bodyParmas
+      ? `params: Params, body: ${inter.getBodyParamsCode()}`
+      : `params: Params, body?: {}`;
 
     return `
     /**
@@ -381,7 +381,8 @@ export default class MyGenerator extends CodeGenerator {
     }> {
       return pontFetch({
         url: '${inter.path}',
-        ${bodyParmas ? 'params: bodyParams' : 'params'},
+        params,
+        body,
         method: '${inter.method}',
       });
     }
