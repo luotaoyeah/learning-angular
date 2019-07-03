@@ -196,19 +196,17 @@ export default class MyGenerator extends CodeGenerator {
   public getBaseClassInDeclaration(base: BaseClass) {
     if (base.templateArgs && base.templateArgs.length) {
       return `class ${base.name}<${base.templateArgs
-        .map((ignored, index) => `T${index} = any`)
+        .map((ignored, index) => `T${index}`)
         .join(', ')}> {
         ${base.properties
-          .map(prop =>
-            prop.toPropertyCode(true).replace(/\*\/\n/, '*/\npublic '),
-          )
+          .map(prop => prop.toPropertyCode().replace(/\*\/\n/, '*/\npublic '))
           .join('\n')}
       }
       `;
     }
     return `class ${base.name} {
       ${base.properties
-        .map(prop => prop.toPropertyCode(true).replace(/\*\/\n/, '*/\npublic '))
+        .map(prop => prop.toPropertyCode().replace(/\*\/\n/, '*/\npublic '))
         .join('\n')}
     }
     `;
@@ -269,7 +267,7 @@ export default class MyGenerator extends CodeGenerator {
           .map(
             mod => `
           /**
-           * ${mod.description}
+           * ${mod.description || ''}
            */
           export namespace ${mod.name} {
             ${mod.interfaces
@@ -289,7 +287,7 @@ export default class MyGenerator extends CodeGenerator {
   public getInterfaceInDeclaration(inter: Interface) {
     return `
       /**
-        * ${inter.description}
+        * ${inter.description || ''}
         * ${inter.path}
         */
       export namespace ${inter.name} {
@@ -361,9 +359,16 @@ export default class MyGenerator extends CodeGenerator {
    * src/app/core/api/SortingPd/BaseClass.ts
    */
   public getBaseClassesIndex() {
-    const clsCodes = this.dataSource.baseClasses.map(
-      base => `
-        class ${base.name} {
+    const clsCodes = this.dataSource.baseClasses.map(base => {
+      const T =
+        base.templateArgs && base.templateArgs.length > 0
+          ? `<${base.templateArgs
+              .map((ignored, index) => `T${index}`)
+              .join(', ')}>`
+          : '';
+
+      return `
+        class ${base.name}${T} {
           ${base.properties
             .map(prop => {
               return prop
@@ -373,8 +378,8 @@ export default class MyGenerator extends CodeGenerator {
             .filter(id => id)
             .join('\n')}
         }
-      `,
-    );
+      `;
+    });
 
     if (this.dataSource.name) {
       return `
@@ -400,14 +405,17 @@ export default class MyGenerator extends CodeGenerator {
 
     return `
     /**
-     * @desc ${inter.description}
+     * @description ${inter.description || ''}
      */
 
     import { Observable } from 'rxjs';
+    // @ts-ignore: TS6133
     import { DEFS, IRequestOptions } from '../../api';
     import { httpClient } from '../../../http-client';
 
     export ${inter.getParamsCode()}
+    
+    export const init = ${inter.response.getInitialValue()};
 
     export function request(${requestParams}): Observable<${
       inter.responseType
@@ -431,7 +439,7 @@ export default class MyGenerator extends CodeGenerator {
   public getModIndex(mod: Mod) {
     return `
       /**
-       * @description ${mod.description}
+       * @description ${mod.description || ''}
        */
       ${mod.interfaces
         .map(inter => {
