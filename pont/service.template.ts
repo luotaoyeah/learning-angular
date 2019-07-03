@@ -1,5 +1,5 @@
 import * as Pont from '@luotao/pont-engine';
-import { CodeGenerator, Interface, Mod, BaseClass } from '@luotao/pont-engine';
+import { BaseClass, CodeGenerator, Interface, Mod } from '@luotao/pont-engine';
 
 /**
  * 目录结构
@@ -312,7 +312,6 @@ export default class MyGenerator extends CodeGenerator {
       export const DEFS = DEFS;
     `;
 
-    // dataSource name means multiple dataSource
     if (this.dataSource.name) {
       conclusion = `
         import { ${this.dataSource.name} as DEFS } from './BaseClass';
@@ -415,7 +414,6 @@ export default class MyGenerator extends CodeGenerator {
       };
     `;
 
-    // dataSource name means multiple dataSource
     if (this.dataSource.name) {
       conclusion = `
         export const ${this.dataSource.name} = {

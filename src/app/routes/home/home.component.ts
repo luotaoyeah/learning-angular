@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import '@app/core/api';
+import { API } from '@app/core/api';
 
 @Component({
   selector: 'app-home',
@@ -7,8 +7,8 @@ import '@app/core/api';
 })
 export class HomeComponent {
   public test() {
-    API.SortingDr.sortingParameter.GetAllValues.request({
+    API.SortingDr.SortingParameter.GetAllValues.request({
       pageIndex: 1,
-    }).then(() => {});
+    });
   }
 }
