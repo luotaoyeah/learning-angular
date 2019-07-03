@@ -165,7 +165,8 @@
             "codeCoverage": true,
             "watch": false,
             "progress": false,
-            "browsers": "ChromeHeadlessNoSandbox"
+            "browsers": "ChromeHeadlessNoSandbox",
+            "codeCoverageExclude": ["src/app/core/api/**/*"]
           }
         },
         "lint": {
