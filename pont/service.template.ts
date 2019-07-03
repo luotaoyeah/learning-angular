@@ -22,6 +22,7 @@ export class FileStructures extends Pont.FileStructures {
       'index.ts': this.getDataSourcesTs.bind(this),
       'api.d.ts': this.getDataSourcesDeclarationTs.bind(this),
       'api-lock.json': this.getLockContent.bind(this),
+      'http-client.ts': this.getHttpClientContent.bind(this),
     };
   }
 
@@ -161,6 +162,29 @@ export class FileStructures extends Pont.FileStructures {
       .join('\n')}
     `;
   }
+
+  /**
+   * src/app/core/api/http-client.ts
+   */
+  public getHttpClientContent(): string {
+    return `
+      import { _HttpClient } from '@delon/theme';
+  
+      let client: _HttpClient | null = null;
+      
+      export function setHttpClient(_httpClient: _HttpClient): void {
+        client = _httpClient;
+      }
+      
+      export function httpClient(): _HttpClient {
+        if (client === null) {
+          throw new Error('HTTP CLIENT IS NULL');
+        }
+      
+        return client;
+      }
+    `;
+  }
 }
 
 /**
@@ -224,9 +248,10 @@ export default class MyGenerator extends CodeGenerator {
   /** 获取接口内容的类型定义代码 */
   public getInterfaceContentInDeclaration(inter: Interface) {
     const bodyParams = inter.getBodyParamsCode();
-    const params = bodyParams
-      ? `params: Params, body: ${bodyParams}`
-      : `params: Params, body?: {}`;
+    const params =
+      (bodyParams
+        ? `params: Params, body: ${bodyParams}`
+        : `params: Params, body?: {}`) + ', options?: IRequestOptions,';
 
     return `
       export ${inter.getParamsCode()}
@@ -279,7 +304,13 @@ export default class MyGenerator extends CodeGenerator {
 
   /** 获取公共的类型定义代码 */
   public getCommonDeclaration() {
-    return '';
+    return `export interface IRequestOptions {
+              headers?: _HttpHeaders;
+              observe?: HttpObserve;
+              responseType?: 'arraybuffer' | 'blob' | 'json' | 'text';
+              reportProgress?: boolean;
+              withCredentials?: boolean;
+    }`;
   }
 
   /**
@@ -288,6 +319,7 @@ export default class MyGenerator extends CodeGenerator {
   public getDeclaration() {
     return `
       /* tslint:disable:no-any */
+      import { _HttpHeaders, HttpObserve } from '@delon/theme/src/services/http/http.client';
       import { Observable } from 'rxjs';
       
       // @ts-ignore
@@ -357,13 +389,14 @@ export default class MyGenerator extends CodeGenerator {
   }
 
   /**
-   * src/app/core/api/SortingPd/Controllers/sortingParameter/GetAllValues.ts
+   * src/app/core/api/SortingPd/Controllers/SortingParameterController/GetAllValues.ts
    */
   public getInterfaceContent(inter: Interface) {
     const bodyParmas = inter.getBodyParamsCode();
-    const requestParams = bodyParmas
-      ? `params: Params, body: ${inter.getBodyParamsCode()}`
-      : `params: Params, body?: {}`;
+    const requestParams =
+      (bodyParmas
+        ? `params: Params, body: ${inter.getBodyParamsCode()}`
+        : `params: Params, body: {} = {}`) + ', options: IRequestOptions = {},';
 
     return `
     /**
@@ -371,26 +404,29 @@ export default class MyGenerator extends CodeGenerator {
      */
 
     import { Observable } from 'rxjs';
-    import { DEFS } from '../../api';
-    import pontFetch from 'src/utils/pontFetch';
+    import { DEFS, IRequestOptions } from '../../api';
+    import { httpClient } from '../../../http-client';
 
     export ${inter.getParamsCode()}
 
     export function request(${requestParams}): Observable<${
       inter.responseType
     }> {
-      return pontFetch({
-        url: '${inter.path}',
-        params,
-        body,
-        method: '${inter.method}',
-      });
+      return httpClient().request(
+        '${inter.method}',
+        '${inter.path}',
+        {
+          params,
+          body,
+          ...options,
+        },
+      );
     }
    `;
   }
 
   /**
-   * src/app/core/api/SortingPd/Controllers/sortingParameter/index.ts
+   * src/app/core/api/SortingPd/Controllers/SortingParameterController/index.ts
    */
   public getModIndex(mod: Mod) {
     return `
