@@ -218,7 +218,9 @@ export default class MyGenerator extends CodeGenerator {
     `;
   }
 
-  /** 获取所有基类的类型定义代码，一个 namespace */
+  /**
+   * src/app/core/api/SortingPd/api.d.ts
+   */
   public getBaseClassesInDeclaration() {
     const content = `namespace ${this.dataSource.name || 'DEFS'} {
       ${this.dataSource.baseClasses
@@ -234,6 +236,9 @@ export default class MyGenerator extends CodeGenerator {
     return content;
   }
 
+  /**
+   * src/app/core/api/SortingPd/api.d.ts
+   */
   public getBaseClassesInDeclarationWithMultipleOrigins() {
     return `
       /* tslint:disable:no-any */
@@ -249,13 +254,15 @@ export default class MyGenerator extends CodeGenerator {
     `;
   }
 
-  /** 获取接口内容的类型定义代码 */
+  /**
+   * src/app/core/api/SortingPd/api.d.ts
+   */
   public getInterfaceContentInDeclaration(inter: Interface) {
     const bodyParams = inter.getBodyParamsCode();
     const params =
       (bodyParams
-        ? `params: Params, body: ${bodyParams}`
-        : `params: Params, body?: {}`) + ', options?: IRequestOptions,';
+        ? `params?: Params, body?: ${bodyParams}`
+        : `params?: Params, body?: {}`) + ', options?: IRequestOptions,';
 
     return `
       export ${inter.getParamsCode()}
@@ -266,7 +273,9 @@ export default class MyGenerator extends CodeGenerator {
     `;
   }
 
-  /** 获取模块的类型定义代码，一个 namespace ，一般不需要覆盖 */
+  /**
+   * src/app/core/api/SortingPd/api.d.ts
+   */
   public getModsDeclaration() {
     const mods = this.dataSource.mods;
 
@@ -292,6 +301,9 @@ export default class MyGenerator extends CodeGenerator {
     return content;
   }
 
+  /**
+   * src/app/core/api/SortingPd/api.d.ts
+   */
   public getInterfaceInDeclaration(inter: Interface) {
     return `
       /**
@@ -461,8 +473,9 @@ export default class MyGenerator extends CodeGenerator {
     const bodyParmas = inter.getBodyParamsCode();
     const requestParams =
       (bodyParmas
-        ? `params: Params, body: ${inter.getBodyParamsCode()}`
-        : `params: Params, body: {} = {}`) + ', options: IRequestOptions = {},';
+        ? `params: Params = {}, body: ${inter.getBodyParamsCode()} = {}`
+        : `params: Params = {}, body: {} = {}`) +
+      ', options: IRequestOptions = {},';
 
     return `
     /**
