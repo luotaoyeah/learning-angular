@@ -138,10 +138,16 @@ export class FileStructures extends Pont.FileStructures {
         })
         .join('\n')}
 
-      export const DEFS = {
-        ${dataSources.map(name => `${name}: ${name}Defs,`).join('\n')}
-      };
-      
+      export namespace DEFS {
+        ${dataSources
+          .map(
+            name =>
+              `// tslint:disable-next-line:no-shadowed-variable
+               export import ${name} = ${name}Defs;`,
+          )
+          .join('\n')}
+      }
+
       export const API = {
         ${dataSources.join(',\n')}
       };
@@ -370,7 +376,7 @@ export default class MyGenerator extends CodeGenerator {
           : '';
 
       return `
-        class ${base.name}${T} {
+        export class ${base.name}${T} {
           ${base.properties
             .map(p =>
               p
@@ -439,9 +445,8 @@ export default class MyGenerator extends CodeGenerator {
         import { isNil } from 'lodash-es';
         import { DtoUtil } from '@app/core/utils';
 
-        ${clsCodes.join('\n')}
-        export const ${this.dataSource.name} = {
-          ${this.dataSource.baseClasses.map(bs => bs.name).join(',\n')}
+        export namespace ${this.dataSource.name} {
+          ${clsCodes.join('\n')}
         }
       `;
     }

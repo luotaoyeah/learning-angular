@@ -15,7 +15,8 @@ export class HomeComponent implements OnInit {
       },
     );
 
-    new DEFS.SortingPd.SortingPdWorkTask().messageType =
-      'RequestWithDestination';
+    const sort: DEFS.SortingPd.SortingParameter = new DEFS.SortingPd.SortingParameter();
+
+    console.log(sort);
   }
 }
