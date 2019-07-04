@@ -2,39 +2,15 @@
   "swagger": "2.0",
   "info": {
     "version": "v1",
-    "title": "AIFactoryPlatform - Kengic Core HTTP API",
+    "title": "SDS - Kengic Soring Dr HTTP API",
     "description": "The Core Microservice HTTP API. This is a Data-Driven/CRUD microservice sample",
     "termsOfService": "Terms Of Service"
   },
   "paths": {
-    "/api/v1/OperatedTracing/GetAllValues": {
+    "/api/v1/ExceptionShute/GetValues": {
       "get": {
-        "tags": ["OperatedTracing"],
-        "summary": "GetAllValues.",
-        "operationId": "GetAllValues",
-        "consumes": [],
-        "produces": ["application/json"],
-        "parameters": [
-          {
-            "name": "pageIndex",
-            "in": "query",
-            "description": "pageIndex.",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "schema": { "$ref": "#/definitions/ResponseResult[Page[Foo]]" }
-          }
-        }
-      }
-    },
-    "/api/v1/OperatedTracing/GetValues": {
-      "get": {
-        "tags": ["OperatedTracing"],
+        "tags": ["ExceptionShute"],
+        "summary": "GetValues.",
         "operationId": "GetValues",
         "consumes": [],
         "produces": ["application/json"],
@@ -42,47 +18,11 @@
           {
             "name": "pageSize",
             "in": "query",
+            "description": "pageSize.",
             "required": false,
             "type": "integer",
             "format": "int32"
           },
-          {
-            "name": "pageIndex",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          },
-          {
-            "name": "queryCondition",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          }
-        ],
-        "responses": { "200": { "description": "Success" } }
-      }
-    },
-    "/api/v1/OperatedTracing/Deletes": {
-      "put": {
-        "tags": ["OperatedTracing"],
-        "operationId": "Deletes",
-        "consumes": [],
-        "produces": ["application/json"],
-        "parameters": [
-          { "name": "ids", "in": "query", "required": false, "type": "string" }
-        ],
-        "responses": { "200": { "description": "Success" } }
-      }
-    },
-    "/api/v1/SortingParameter/GetAllValues": {
-      "get": {
-        "tags": ["SortingParameter"],
-        "summary": "GetAllValues.",
-        "operationId": "GetAllValues",
-        "consumes": [],
-        "produces": ["application/json"],
-        "parameters": [
           {
             "name": "pageIndex",
             "in": "query",
@@ -90,19 +30,58 @@
             "required": false,
             "type": "integer",
             "format": "int32"
+          },
+          {
+            "name": "queryCondition",
+            "in": "query",
+            "description": "queryCondition.",
+            "required": false,
+            "type": "string"
           }
         ],
         "responses": {
           "200": {
             "description": "Success",
-            "schema": { "$ref": "#/definitions/ResponseResult[Page[Foo]]" }
+            "schema": {
+              "$ref": "#/definitions/ResponseResult[Page[ExceptionShute]]"
+            }
           }
         }
       }
     },
-    "/api/v1/SortingParameter/Update": {
+    "/api/v1/ExceptionShute/Create": {
+      "post": {
+        "tags": ["ExceptionShute"],
+        "summary": "Create.",
+        "operationId": "Create",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "valueModel",
+            "in": "body",
+            "description": "valueModel.",
+            "required": false,
+            "schema": { "type": "object" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": { "$ref": "#/definitions/ResponseResult[String]" }
+          }
+        }
+      }
+    },
+    "/api/v1/ExceptionShute/Update": {
       "put": {
-        "tags": ["SortingParameter"],
+        "tags": ["ExceptionShute"],
+        "summary": "Update.",
         "operationId": "Update",
         "consumes": [
           "application/json-patch+json",
@@ -115,16 +94,85 @@
           {
             "name": "valueModel",
             "in": "body",
+            "description": "valueModel.",
             "required": false,
             "schema": { "type": "object" }
           }
         ],
-        "responses": { "200": { "description": "Success" } }
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": { "$ref": "#/definitions/ResponseResult[String]" }
+          }
+        }
       }
     },
-    "/api/v1/SortingPdWorkTask/GetValues": {
+    "/api/v1/ExceptionShute/Delete": {
+      "put": {
+        "tags": ["ExceptionShute"],
+        "summary": "Delete.",
+        "operationId": "Delete",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "valueModel",
+            "in": "body",
+            "description": "valueModel.",
+            "required": false,
+            "schema": { "type": "object" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": { "$ref": "#/definitions/ResponseResult[String]" }
+          }
+        }
+      }
+    },
+    "/api/v1/ExceptionShute/Import": {
+      "post": {
+        "tags": ["ExceptionShute"],
+        "summary": "Import.",
+        "operationId": "Import",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "valueModels",
+            "in": "body",
+            "description": "valueModels.",
+            "required": false,
+            "schema": {
+              "uniqueItems": false,
+              "type": "array",
+              "items": { "type": "object" }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": { "$ref": "#/definitions/ResponseResult[Int32]" }
+          }
+        }
+      }
+    },
+    "/api/v1/Induct/GetValues": {
       "get": {
-        "tags": ["SortingPdWorkTask"],
+        "tags": ["Induct"],
+        "summary": "GetValues.",
         "operationId": "GetValues",
         "consumes": [],
         "produces": ["application/json"],
@@ -132,6 +180,7 @@
           {
             "name": "pageSize",
             "in": "query",
+            "description": "pageSize.",
             "required": false,
             "type": "integer",
             "format": "int32"
@@ -139,6 +188,7 @@
           {
             "name": "pageIndex",
             "in": "query",
+            "description": "pageIndex.",
             "required": false,
             "type": "integer",
             "format": "int32"
@@ -146,42 +196,995 @@
           {
             "name": "queryCondition",
             "in": "query",
+            "description": "queryCondition.",
             "required": false,
             "type": "string"
           }
         ],
-        "responses": { "200": { "description": "Success" } }
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": { "$ref": "#/definitions/ResponseResult[Page[Induct]]" }
+          }
+        }
+      }
+    },
+    "/api/v1/Induct/Create": {
+      "post": {
+        "tags": ["Induct"],
+        "summary": "Create.",
+        "operationId": "Create",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "valueModel",
+            "in": "body",
+            "description": "valueModel.",
+            "required": false,
+            "schema": { "type": "object" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": { "$ref": "#/definitions/ResponseResult[String]" }
+          }
+        }
+      }
+    },
+    "/api/v1/Induct/Update": {
+      "put": {
+        "tags": ["Induct"],
+        "summary": "Update.",
+        "operationId": "Update",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "valueModel",
+            "in": "body",
+            "description": "valueModel.",
+            "required": false,
+            "schema": { "type": "object" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": { "$ref": "#/definitions/ResponseResult[String]" }
+          }
+        }
+      }
+    },
+    "/api/v1/Induct/Delete": {
+      "put": {
+        "tags": ["Induct"],
+        "summary": "Delete.",
+        "operationId": "Delete",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "valueModel",
+            "in": "body",
+            "description": "valueModel.",
+            "required": false,
+            "schema": { "type": "object" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": { "$ref": "#/definitions/ResponseResult[String]" }
+          }
+        }
+      }
+    },
+    "/api/v1/Induct/Import": {
+      "post": {
+        "tags": ["Induct"],
+        "summary": "Import.",
+        "operationId": "Import",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "valueModels",
+            "in": "body",
+            "description": "valueModels.",
+            "required": false,
+            "schema": {
+              "uniqueItems": false,
+              "type": "array",
+              "items": { "type": "object" }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": { "$ref": "#/definitions/ResponseResult[Int32]" }
+          }
+        }
+      }
+    },
+    "/api/v1/LogicalDestination/GetValues": {
+      "get": {
+        "tags": ["LogicalDestination"],
+        "summary": "GetValues.",
+        "operationId": "GetValues",
+        "consumes": [],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "pageSize",
+            "in": "query",
+            "description": "pageSize.",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "pageIndex",
+            "in": "query",
+            "description": "pageIndex.",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "queryCondition",
+            "in": "query",
+            "description": "queryCondition.",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ResponseResult[Page[LogicalDestination]]"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/LogicalDestination/Create": {
+      "post": {
+        "tags": ["LogicalDestination"],
+        "summary": "Create.",
+        "operationId": "Create",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "valueModel",
+            "in": "body",
+            "description": "valueModel.",
+            "required": false,
+            "schema": { "type": "object" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": { "$ref": "#/definitions/ResponseResult[String]" }
+          }
+        }
+      }
+    },
+    "/api/v1/LogicalDestination/Update": {
+      "put": {
+        "tags": ["LogicalDestination"],
+        "summary": "Update.",
+        "operationId": "Update",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "valueModel",
+            "in": "body",
+            "description": "valueModel.",
+            "required": false,
+            "schema": { "type": "object" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": { "$ref": "#/definitions/ResponseResult[String]" }
+          }
+        }
+      }
+    },
+    "/api/v1/LogicalDestination/Delete": {
+      "put": {
+        "tags": ["LogicalDestination"],
+        "summary": "Delete.",
+        "operationId": "Delete",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "valueModel",
+            "in": "body",
+            "description": "valueModel.",
+            "required": false,
+            "schema": { "type": "object" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": { "$ref": "#/definitions/ResponseResult[String]" }
+          }
+        }
+      }
+    },
+    "/api/v1/LogicalDestination/Import": {
+      "post": {
+        "tags": ["LogicalDestination"],
+        "summary": "Import.",
+        "operationId": "Import",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "valueModels",
+            "in": "body",
+            "description": "valueModels.",
+            "required": false,
+            "schema": {
+              "uniqueItems": false,
+              "type": "array",
+              "items": { "type": "object" }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": { "$ref": "#/definitions/ResponseResult[Int32]" }
+          }
+        }
+      }
+    },
+    "/api/v1/LogicalSorter/GetValues": {
+      "get": {
+        "tags": ["LogicalSorter"],
+        "summary": "GetValues.",
+        "operationId": "GetValues",
+        "consumes": [],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "pageSize",
+            "in": "query",
+            "description": "pageSize.",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "pageIndex",
+            "in": "query",
+            "description": "pageIndex.",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "queryCondition",
+            "in": "query",
+            "description": "queryCondition.",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ResponseResult[Page[LogicalSorter]]"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/LogicalSorter/Create": {
+      "post": {
+        "tags": ["LogicalSorter"],
+        "summary": "Create.",
+        "operationId": "Create",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "valueModel",
+            "in": "body",
+            "description": "valueModel.",
+            "required": false,
+            "schema": { "type": "object" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": { "$ref": "#/definitions/ResponseResult[String]" }
+          }
+        }
+      }
+    },
+    "/api/v1/LogicalSorter/Update": {
+      "put": {
+        "tags": ["LogicalSorter"],
+        "summary": "Update.",
+        "operationId": "Update",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "valueModel",
+            "in": "body",
+            "description": "valueModel.",
+            "required": false,
+            "schema": { "type": "object" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": { "$ref": "#/definitions/ResponseResult[String]" }
+          }
+        }
+      }
+    },
+    "/api/v1/LogicalSorter/Delete": {
+      "put": {
+        "tags": ["LogicalSorter"],
+        "summary": "Delete.",
+        "operationId": "Delete",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "valueModel",
+            "in": "body",
+            "description": "valueModel.",
+            "required": false,
+            "schema": { "type": "object" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": { "$ref": "#/definitions/ResponseResult[String]" }
+          }
+        }
+      }
+    },
+    "/api/v1/LogicalSorter/Import": {
+      "post": {
+        "tags": ["LogicalSorter"],
+        "summary": "Import.",
+        "operationId": "Import",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "valueModels",
+            "in": "body",
+            "description": "valueModels.",
+            "required": false,
+            "schema": {
+              "uniqueItems": false,
+              "type": "array",
+              "items": { "type": "object" }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": { "$ref": "#/definitions/ResponseResult[Int32]" }
+          }
+        }
+      }
+    },
+    "/api/v1/OperatedTracing/GetValues": {
+      "get": {
+        "tags": ["OperatedTracing"],
+        "summary": "GetValues.",
+        "operationId": "GetValues",
+        "consumes": [],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "pageSize",
+            "in": "query",
+            "description": "pageSize.",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "pageIndex",
+            "in": "query",
+            "description": "pageIndex.",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "queryCondition",
+            "in": "query",
+            "description": "queryCondition.",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ResponseResult[Page[OperatedTracing]]"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/OperatedTracing/Deletes": {
+      "put": {
+        "tags": ["OperatedTracing"],
+        "summary": "Deletes.",
+        "operationId": "Deletes",
+        "consumes": [],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "description": "ids.",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": { "$ref": "#/definitions/ResponseResult[Int32]" }
+          }
+        }
+      }
+    },
+    "/api/v1/Routing/GetValues": {
+      "get": {
+        "tags": ["Routing"],
+        "summary": "GetValues.",
+        "operationId": "GetValues",
+        "consumes": [],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "pageSize",
+            "in": "query",
+            "description": "pageSize.",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "pageIndex",
+            "in": "query",
+            "description": "pageIndex.",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "queryCondition",
+            "in": "query",
+            "description": "queryCondition.",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": { "$ref": "#/definitions/ResponseResult[Page[Routing]]" }
+          }
+        }
+      }
+    },
+    "/api/v1/Routing/Create": {
+      "post": {
+        "tags": ["Routing"],
+        "summary": "Create.",
+        "operationId": "Create",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "valueModel",
+            "in": "body",
+            "description": "valueModel.",
+            "required": false,
+            "schema": { "type": "object" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": { "$ref": "#/definitions/ResponseResult[String]" }
+          }
+        }
+      }
+    },
+    "/api/v1/Routing/Update": {
+      "put": {
+        "tags": ["Routing"],
+        "summary": "Update.",
+        "operationId": "Update",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "valueModel",
+            "in": "body",
+            "description": "valueModel.",
+            "required": false,
+            "schema": { "type": "object" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": { "$ref": "#/definitions/ResponseResult[String]" }
+          }
+        }
+      }
+    },
+    "/api/v1/Routing/Delete": {
+      "put": {
+        "tags": ["Routing"],
+        "summary": "Delete.",
+        "operationId": "Delete",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "valueModel",
+            "in": "body",
+            "description": "valueModel.",
+            "required": false,
+            "schema": { "type": "object" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": { "$ref": "#/definitions/ResponseResult[String]" }
+          }
+        }
+      }
+    },
+    "/api/v1/Routing/Import": {
+      "post": {
+        "tags": ["Routing"],
+        "summary": "Import.",
+        "operationId": "Import",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "valueModels",
+            "in": "body",
+            "description": "valueModels.",
+            "required": false,
+            "schema": {
+              "uniqueItems": false,
+              "type": "array",
+              "items": { "type": "object" }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": { "$ref": "#/definitions/ResponseResult[Int32]" }
+          }
+        }
+      }
+    },
+    "/api/v1/SortingParameter/GetAllValues": {
+      "get": {
+        "tags": ["SortingParameter"],
+        "summary": "GetAllValues.",
+        "operationId": "GetAllValues",
+        "consumes": [],
+        "produces": ["application/json"],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ResponseResult[Page[SortingParameter]]"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/SortingParameter/Update": {
+      "put": {
+        "tags": ["SortingParameter"],
+        "summary": "Update.",
+        "operationId": "Update",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "valueModel",
+            "in": "body",
+            "description": "valueModel.",
+            "required": false,
+            "schema": { "type": "object" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": { "$ref": "#/definitions/ResponseResult[String]" }
+          }
+        }
       }
     }
   },
   "definitions": {
-    "ResponseResult[Page[Foo]]": {
-      "description": "ResponseResult.",
+    "ResponseResult[Page[ExceptionShute]]": {
       "type": "object",
       "properties": {
-        "data": { "$ref": "#/definitions/Page[Foo]", "description": "Data." },
-        "state": { "description": "State.", "type": "boolean" },
-        "message": { "description": "Message.", "type": "string" }
+        "data": { "$ref": "#/definitions/Page[ExceptionShute]" },
+        "state": { "type": "boolean" },
+        "message": { "type": "string" }
       }
     },
-    "Page[Foo]": {
-      "description": "Page.",
+    "Page[ExceptionShute]": {
       "type": "object",
       "properties": {
-        "total": {
-          "format": "int32",
-          "description": "The total count.",
-          "type": "integer"
-        },
+        "total": { "format": "int32", "type": "integer" },
         "items": {
-          "description": "Page datas.",
           "uniqueItems": false,
           "type": "array",
-          "items": { "$ref": "#/definitions/Foo" }
+          "items": { "$ref": "#/definitions/ExceptionShute" }
         }
       }
     },
-    "Foo": { "type": "object", "properties": { "name": { "type": "string" } } }
+    "ExceptionShute": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "exceptionCode": { "type": "string" },
+        "shute": { "type": "string" },
+        "description": { "type": "string" },
+        "logicalSorter": { "type": "string" },
+        "createBy": { "type": "string" },
+        "createTime": { "format": "date-time", "type": "string" },
+        "updateBy": { "type": "string" },
+        "updateTime": { "format": "date-time", "type": "string" },
+        "comments": { "type": "string" }
+      }
+    },
+    "ResponseResult[String]": {
+      "type": "object",
+      "properties": {
+        "data": { "type": "string" },
+        "state": { "type": "boolean" },
+        "message": { "type": "string" }
+      }
+    },
+    "ResponseResult[Int32]": {
+      "type": "object",
+      "properties": {
+        "data": { "format": "int32", "type": "integer" },
+        "state": { "type": "boolean" },
+        "message": { "type": "string" }
+      }
+    },
+    "ResponseResult[Page[Induct]]": {
+      "type": "object",
+      "properties": {
+        "data": { "$ref": "#/definitions/Page[Induct]" },
+        "state": { "type": "boolean" },
+        "message": { "type": "string" }
+      }
+    },
+    "Page[Induct]": {
+      "type": "object",
+      "properties": {
+        "total": { "format": "int32", "type": "integer" },
+        "items": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": { "$ref": "#/definitions/Induct" }
+        }
+      }
+    },
+    "Induct": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "code": { "type": "string" },
+        "description": { "type": "string" },
+        "logicalSorter": { "type": "string" },
+        "createBy": { "type": "string" },
+        "createTime": { "format": "date-time", "type": "string" },
+        "updateBy": { "type": "string" },
+        "updateTime": { "format": "date-time", "type": "string" },
+        "comments": { "type": "string" }
+      }
+    },
+    "ResponseResult[Page[LogicalDestination]]": {
+      "type": "object",
+      "properties": {
+        "data": { "$ref": "#/definitions/Page[LogicalDestination]" },
+        "state": { "type": "boolean" },
+        "message": { "type": "string" }
+      }
+    },
+    "Page[LogicalDestination]": {
+      "type": "object",
+      "properties": {
+        "total": { "format": "int32", "type": "integer" },
+        "items": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": { "$ref": "#/definitions/LogicalDestination" }
+        }
+      }
+    },
+    "LogicalDestination": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "code": { "type": "string" },
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "parentId": { "type": "string" },
+        "createBy": { "type": "string" },
+        "createTime": { "format": "date-time", "type": "string" },
+        "updateBy": { "type": "string" },
+        "updateTime": { "format": "date-time", "type": "string" },
+        "comments": { "type": "string" }
+      }
+    },
+    "ResponseResult[Page[LogicalSorter]]": {
+      "type": "object",
+      "properties": {
+        "data": { "$ref": "#/definitions/Page[LogicalSorter]" },
+        "state": { "type": "boolean" },
+        "message": { "type": "string" }
+      }
+    },
+    "Page[LogicalSorter]": {
+      "type": "object",
+      "properties": {
+        "total": { "format": "int32", "type": "integer" },
+        "items": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": { "$ref": "#/definitions/LogicalSorter" }
+        }
+      }
+    },
+    "LogicalSorter": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "code": { "type": "string" },
+        "description": { "type": "string" },
+        "phycialSorter": { "type": "string" },
+        "sortingPlan": { "type": "string" },
+        "nodeId": { "type": "string" },
+        "createBy": { "type": "string" },
+        "createTime": { "format": "date-time", "type": "string" },
+        "updateBy": { "type": "string" },
+        "updateTime": { "format": "date-time", "type": "string" },
+        "comments": { "type": "string" }
+      }
+    },
+    "ResponseResult[Page[OperatedTracing]]": {
+      "type": "object",
+      "properties": {
+        "data": { "$ref": "#/definitions/Page[OperatedTracing]" },
+        "state": { "type": "boolean" },
+        "message": { "type": "string" }
+      }
+    },
+    "Page[OperatedTracing]": {
+      "type": "object",
+      "properties": {
+        "total": { "format": "int32", "type": "integer" },
+        "items": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": { "$ref": "#/definitions/OperatedTracing" }
+        }
+      }
+    },
+    "OperatedTracing": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "action": { "type": "string" },
+        "content": { "type": "string" },
+        "operator": { "type": "string" },
+        "operatoedTime": { "format": "date-time", "type": "string" },
+        "comments": { "type": "string" }
+      }
+    },
+    "ResponseResult[Page[Routing]]": {
+      "type": "object",
+      "properties": {
+        "data": { "$ref": "#/definitions/Page[Routing]" },
+        "state": { "type": "boolean" },
+        "message": { "type": "string" }
+      }
+    },
+    "Page[Routing]": {
+      "type": "object",
+      "properties": {
+        "total": { "format": "int32", "type": "integer" },
+        "items": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": { "$ref": "#/definitions/Routing" }
+        }
+      }
+    },
+    "Routing": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "description": { "type": "string" },
+        "sortingPlan": { "type": "string" },
+        "shute": { "type": "string" },
+        "logicalDestination": { "type": "string" },
+        "priority": { "format": "int32", "type": "integer" },
+        "routingStrategy": {
+          "enum": ["WaterFall", "Average"],
+          "type": "string"
+        },
+        "createBy": { "type": "string" },
+        "createTime": { "format": "date-time", "type": "string" },
+        "updateBy": { "type": "string" },
+        "updateTime": { "format": "date-time", "type": "string" },
+        "comments": { "type": "string" }
+      }
+    },
+    "ResponseResult[Page[SortingParameter]]": {
+      "type": "object",
+      "properties": {
+        "data": { "$ref": "#/definitions/Page[SortingParameter]" },
+        "state": { "type": "boolean" },
+        "message": { "type": "string" }
+      }
+    },
+    "Page[SortingParameter]": {
+      "type": "object",
+      "properties": {
+        "total": { "format": "int32", "type": "integer" },
+        "items": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": { "$ref": "#/definitions/SortingParameter" }
+        }
+      }
+    },
+    "SortingParameter": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "code": { "type": "string" },
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "value": { "type": "string" },
+        "createBy": { "type": "string" },
+        "createTime": { "format": "date-time", "type": "string" },
+        "updateBy": { "type": "string" },
+        "updateTime": { "format": "date-time", "type": "string" },
+        "comments": { "type": "string" }
+      }
+    }
   },
   "securityDefinitions": {
     "oauth2": {
@@ -192,5 +1195,13 @@
       "type": "oauth2"
     }
   },
-  "tags": [{ "name": "SortingParameter", "description": "SortingParameter." }]
+  "tags": [
+    { "name": "ExceptionShute", "description": "ExceptionShute." },
+    { "name": "Induct", "description": "Induct." },
+    { "name": "LogicalDestination", "description": "LogicalDestination." },
+    { "name": "LogicalSorter", "description": "LogicalSorter." },
+    { "name": "OperatedTracing", "description": "OperatedTracing." },
+    { "name": "Routing", "description": "Routing." },
+    { "name": "SortingParameter", "description": "SortingParameter." }
+  ]
 }

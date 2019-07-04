@@ -22,7 +22,8 @@
     "codecov": "codecov --token=7f372a79-168a-42b9-be13-b752aef85ecf",
     "build:learning-angular-lib": "ng build learning-angular-lib",
     "test:learning-angular-lib": "ng test learning-angular-lib",
-    "json-server": "ts-node _mock"
+    "json-server": "ts-node _mock",
+    "pont:generate": "pont generate"
   },
   "dependencies": {
     "@angular/animations": "^8.0.3",
@@ -79,7 +80,7 @@
     "@angular/language-service": "^8.0.3",
     "@angularclass/hmr": "^2.1.3",
     "@delon/testing": "^8.0.0-rc.1",
-    "@luotao/pont-engine": "^0.2.10",
+    "@luotao/pont-engine": "^0.2.11",
     "@ngrx/schematics": "^8.0.1",
     "@types/jasmine": "^2.8.16",
     "@types/jasminewd2": "^2.0.6",

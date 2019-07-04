@@ -10,6 +10,7 @@
     "/api/v1/OperatedTracing/GetValues": {
       "get": {
         "tags": ["OperatedTracing"],
+        "summary": "GetValues.",
         "operationId": "GetValues",
         "consumes": [],
         "produces": ["application/json"],
@@ -17,6 +18,7 @@
           {
             "name": "pageSize",
             "in": "query",
+            "description": "pageSize.",
             "required": false,
             "type": "integer",
             "format": "int32"
@@ -24,6 +26,7 @@
           {
             "name": "pageIndex",
             "in": "query",
+            "description": "pageIndex.",
             "required": false,
             "type": "integer",
             "format": "int32"
@@ -31,29 +34,49 @@
           {
             "name": "queryCondition",
             "in": "query",
+            "description": "queryCondition.",
             "required": false,
             "type": "string"
           }
         ],
-        "responses": { "200": { "description": "Success" } }
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ResponseResult[Page[OperatedTracing]]"
+            }
+          }
+        }
       }
     },
     "/api/v1/OperatedTracing/Deletes": {
       "put": {
         "tags": ["OperatedTracing"],
+        "summary": "Deletes.",
         "operationId": "Deletes",
         "consumes": [],
         "produces": ["application/json"],
         "parameters": [
-          { "name": "ids", "in": "query", "required": false, "type": "string" }
+          {
+            "name": "ids",
+            "in": "query",
+            "description": "ids.",
+            "required": false,
+            "type": "string"
+          }
         ],
-        "responses": { "200": { "description": "Success" } }
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": { "$ref": "#/definitions/ResponseResult[Int32]" }
+          }
+        }
       }
     },
     "/api/v1/SortingParameter/GetAllValues": {
       "get": {
         "tags": ["SortingParameter"],
-        "summary": "Get All Sorting Parameters.",
+        "summary": "GetAllValues.",
         "operationId": "GetAllValues",
         "consumes": [],
         "produces": ["application/json"],
@@ -71,7 +94,7 @@
     "/api/v1/SortingParameter/Update": {
       "put": {
         "tags": ["SortingParameter"],
-        "summary": "Update SortingParameter.",
+        "summary": "Update.",
         "operationId": "Update",
         "consumes": [
           "application/json-patch+json",
@@ -84,7 +107,7 @@
           {
             "name": "valueModel",
             "in": "body",
-            "description": "UpdateParam.",
+            "description": "valueModel.",
             "required": false,
             "schema": { "$ref": "#/definitions/UpdateParam" }
           }
@@ -251,6 +274,44 @@
     }
   },
   "definitions": {
+    "ResponseResult[Page[OperatedTracing]]": {
+      "type": "object",
+      "properties": {
+        "data": { "$ref": "#/definitions/Page[OperatedTracing]" },
+        "state": { "type": "boolean" },
+        "message": { "type": "string" }
+      }
+    },
+    "Page[OperatedTracing]": {
+      "type": "object",
+      "properties": {
+        "total": { "format": "int32", "type": "integer" },
+        "items": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": { "$ref": "#/definitions/OperatedTracing" }
+        }
+      }
+    },
+    "OperatedTracing": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "action": { "type": "string" },
+        "content": { "type": "string" },
+        "operator": { "type": "string" },
+        "operatoedTime": { "format": "date-time", "type": "string" },
+        "comments": { "type": "string" }
+      }
+    },
+    "ResponseResult[Int32]": {
+      "type": "object",
+      "properties": {
+        "data": { "format": "int32", "type": "integer" },
+        "state": { "type": "boolean" },
+        "message": { "type": "string" }
+      }
+    },
     "ResponseResult[Page[SortingParameter]]": {
       "type": "object",
       "properties": {
@@ -282,7 +343,16 @@
         "createTime": { "format": "date-time", "type": "string" },
         "updateBy": { "type": "string" },
         "updateTime": { "format": "date-time", "type": "string" },
-        "comments": { "type": "string" }
+        "comments": { "type": "string" },
+        "foo": { "$ref": "#/definitions/Foo" }
+      }
+    },
+    "Foo": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "code": { "type": "string" },
+        "name": { "type": "string" }
       }
     },
     "UpdateParam": {
@@ -379,6 +449,7 @@
     }
   },
   "tags": [
+    { "name": "OperatedTracing", "description": "OperatedTracing." },
     { "name": "SortingParameter", "description": "SortingParameter." },
     { "name": "SortingPdWorkTask", "description": "SortingPdWorkTask." }
   ]

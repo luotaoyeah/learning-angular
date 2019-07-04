@@ -101,7 +101,7 @@ export class FileStructures extends Pont.FileStructures {
 
     // tslint:disable-next-line:no-any
     const result: any = {
-      'BaseClass.ts': generator.getBaseClassesIndex.bind(generator),
+      'models.ts': generator.getBaseClassesIndex.bind(generator),
       Controllers: mods,
       'index.ts': generator.getIndex.bind(generator),
       'api.d.ts': generator.getDeclaration.bind(generator),
@@ -338,7 +338,7 @@ export default class MyGenerator extends CodeGenerator {
    */
   public getIndex() {
     let conclusion = `
-      import * as DEFS from './BaseClass';
+      import * as DEFS from './models';
       import './Controllers/';
 
       export const DEFS = DEFS;
@@ -346,7 +346,7 @@ export default class MyGenerator extends CodeGenerator {
 
     if (this.dataSource.name) {
       conclusion = `
-        import { ${this.dataSource.name} as DEFS } from './BaseClass';
+        import { ${this.dataSource.name} as DEFS } from './models';
         export { ${this.dataSource.name} } from './Controllers/';
         export { DEFS };
       `;
@@ -356,7 +356,7 @@ export default class MyGenerator extends CodeGenerator {
   }
 
   /**
-   * src/app/core/api/SortingPd/BaseClass.ts
+   * src/app/core/api/SortingPd/models.ts
    */
   public getBaseClassesIndex() {
     const clsCodes = this.dataSource.baseClasses.map(base => {
@@ -370,19 +370,44 @@ export default class MyGenerator extends CodeGenerator {
       return `
         class ${base.name}${T} {
           ${base.properties
-            .map(prop => {
-              return prop
-                .toPropertyCodeWithInitValue(base.name)
-                .replace(/\*\/\n/, '*/\npublic ');
-            })
+            .map(p =>
+              p
+                .toPropertyCodeWithInitValue(base.name + T)
+                .replace(/\*\/\n/, '*/\npublic '),
+            )
             .filter(id => id)
             .join('\n')}
+            
+            constructor(t: Partial<${base.name}${T}> = {}) {
+              DtoUtil.keys(t).forEach(key => {
+                const value = Reflect.get(t, key);
+                if (!isNil(value)) {
+                  switch (key) {
+                  ${base.properties
+                    .map(p => {
+                      return (
+                        "case '" +
+                        p.name +
+                        "':Reflect.set(this, key, value);break;"
+                      );
+                    })
+                    .join('\n')}
+                    default:
+                      Reflect.set(this, key, value);
+                      break;
+                  }
+                }
+              });
+            }
         }
       `;
     });
 
     if (this.dataSource.name) {
       return `
+        import { isNil } from 'lodash-es';
+        import { DtoUtil } from '@app/core/utils';
+
         ${clsCodes.join('\n')}
         export const ${this.dataSource.name} = {
           ${this.dataSource.baseClasses.map(bs => bs.name).join(',\n')}
