@@ -470,10 +470,23 @@ export default class MyGenerator extends CodeGenerator {
    * src/app/core/api/SortingPd/Controllers/SortingParameterController/GetAllValues.ts
    */
   public getInterfaceContent(inter: Interface) {
-    const bodyParmas = inter.getBodyParamsCode();
+    const bodyParmas: string = inter.getBodyParamsCode();
+
+    let bodyInitValue: string = '{}';
+
+    if (bodyParmas) {
+      if (bodyParmas === 'object') {
+        bodyInitValue = '{}';
+      } else if (bodyParmas.startsWith('Array')) {
+        bodyInitValue = '[]';
+      } else if (bodyParmas) {
+        bodyInitValue = `new ${bodyParmas}()`;
+      }
+    }
+
     const requestParams =
       (bodyParmas
-        ? `params: Params = {}, body: ${inter.getBodyParamsCode()} = {}`
+        ? `params: Params = {}, body: ${bodyParmas} = ${bodyInitValue}`
         : `params: Params = {}, body: {} = {}`) +
       ', options: IRequestOptions = {},';
 
