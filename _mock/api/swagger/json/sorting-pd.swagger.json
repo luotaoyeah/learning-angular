@@ -344,7 +344,12 @@
         "updateBy": { "type": "string" },
         "updateTime": { "format": "date-time", "type": "string" },
         "comments": { "type": "string" },
-        "foo": { "$ref": "#/definitions/Foo" }
+        "foo": { "$ref": "#/definitions/Foo" },
+        "foos": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": { "$ref": "#/definitions/Foo" }
+        }
       }
     },
     "Foo": {

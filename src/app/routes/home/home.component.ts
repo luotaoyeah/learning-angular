@@ -9,7 +9,7 @@ export class HomeComponent implements OnInit {
   public ngOnInit(): void {
     API.SortingPd.SortingParameterController.GetAllValues.request({}).subscribe(
       value => {
-        value.data.items.forEach(item => {
+        value.items.forEach(item => {
           console.log(item.updateBy);
         });
       },

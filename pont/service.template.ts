@@ -254,7 +254,9 @@ export default class MyGenerator extends CodeGenerator {
     return `
       export ${inter.getParamsCode()}
       
-      export function request(${params}): Observable<${inter.responseType}>;
+      export function request(${params}): Observable<${inter.responseType
+      .replace(/.*?ResponseResult</, '')
+      .slice(0, -1)}>;
     `;
   }
 
@@ -385,6 +387,35 @@ export default class MyGenerator extends CodeGenerator {
                   switch (key) {
                   ${base.properties
                     .map(p => {
+                      if (
+                        !['', 'number', 'string', 'boolean', 'Array'].includes(
+                          p.dataType.typeName,
+                        )
+                      ) {
+                        return (
+                          "case '" +
+                          p.name +
+                          "':Reflect.set(this, key, DtoUtil.from(" +
+                          p.dataType.typeName +
+                          ', value));break;'
+                        );
+                      }
+
+                      if (p.dataType.typeName === 'Array') {
+                        if (p.dataType.typeArgs.length === 1) {
+                          const typeArg = p.dataType.typeArgs[0];
+                          if (typeArg.templateIndex === -1) {
+                            return (
+                              "case '" +
+                              p.name +
+                              "':Reflect.set(this, key, DtoUtil.fromArray(" +
+                              typeArg.typeName +
+                              ', value));break;'
+                            );
+                          }
+                        }
+                      }
+
                       return (
                         "case '" +
                         p.name +
@@ -440,11 +471,9 @@ export default class MyGenerator extends CodeGenerator {
 
     export ${inter.getParamsCode()}
     
-    export const init = ${inter.response.getInitialValue()};
-
-    export function request(${requestParams}): Observable<${
-      inter.responseType
-    }> {
+    export function request(${requestParams}): Observable<${inter.responseType
+      .replace(/.*?ResponseResult</, '')
+      .slice(0, -1)}> {
       return httpClient().request(
         '${inter.method}',
         '${inter.path}',
