@@ -255,7 +255,7 @@ export default class MyGenerator extends CodeGenerator {
     if (this.dataSource.name) {
       conclusion = `
         import { ${this.dataSource.name} as DEFS } from './models';
-        export { ${this.dataSource.name} } from './Controllers/';
+        export { ${this.dataSource.name} } from './Controllers';
         export { DEFS };
       `;
     }
@@ -267,7 +267,7 @@ export default class MyGenerator extends CodeGenerator {
    * src/app/core/api/SortingPd/models.ts
    */
   public getBaseClassesIndex() {
-    const clsCodes = this.dataSource.baseClasses.map(base => {
+    const classes = this.dataSource.baseClasses.map(base => {
       const T =
         base.templateArgs && base.templateArgs.length > 0
           ? `<${base.templateArgs
@@ -346,12 +346,12 @@ export default class MyGenerator extends CodeGenerator {
         import { DtoUtil } from '@app/core/utils';
 
         export namespace ${this.dataSource.name} {
-          ${clsCodes.join('\n')}
+          ${classes.join('\n')}
         }
       `;
     }
 
-    return clsCodes.map(cls => `export ${cls}`).join('\n');
+    return classes.map(cls => `export ${cls}`).join('\n');
   }
 
   /**
@@ -380,7 +380,7 @@ export default class MyGenerator extends CodeGenerator {
 
     return `
     /**
-     * @description ${inter.description || ''}
+     * ${inter.description || ''}
      */
 
     import { Observable } from 'rxjs';
@@ -412,7 +412,7 @@ export default class MyGenerator extends CodeGenerator {
   public getModIndex(mod: Mod) {
     return `
       /**
-       * @description ${mod.description || ''}
+       * ${mod.description || ''}
        */
       ${mod.interfaces
         .map(inter => {
