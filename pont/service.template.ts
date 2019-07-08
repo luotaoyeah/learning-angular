@@ -112,7 +112,7 @@ export class FileStructures extends Pont.FileStructures {
       /* tslint:disable:no-any */
       ${dataSources
         .map(name => {
-          return `import { DEFS as ${name}Defs, ${name} } from './${name}';`;
+          return `import { DEFS as ${name}Defs, ${name} as ${name}Api } from './${name}';`;
         })
         .join('\n')}
 
@@ -126,8 +126,14 @@ export class FileStructures extends Pont.FileStructures {
           .join('\n')}
       }
 
-      export const API = {
-        ${dataSources.join(',\n')}
+      export namespace API {
+        ${dataSources
+          .map(
+            name =>
+              `// tslint:disable-next-line:no-shadowed-variable
+               export import ${name} = ${name}Api;`,
+          )
+          .join('\n')}
       };
     `;
   }
@@ -255,8 +261,8 @@ export default class MyGenerator extends CodeGenerator {
     if (this.dataSource.name) {
       conclusion = `
         import { ${this.dataSource.name} as DEFS } from './models';
-        export { ${this.dataSource.name} } from './Controllers';
-        export { DEFS };
+        import * as ${this.dataSource.name} from './Controllers';
+        export { DEFS, ${this.dataSource.name} };
       `;
     }
 
@@ -430,20 +436,6 @@ export default class MyGenerator extends CodeGenerator {
    * src/app/core/api/SortingPd/Controllers/index.ts
    */
   public getModsIndex() {
-    let conclusion = `
-      export const API = {
-        ${this.dataSource.mods.map(mod => mod.name).join(', \n')}
-      };
-    `;
-
-    if (this.dataSource.name) {
-      conclusion = `
-        export const ${this.dataSource.name} = {
-          ${this.dataSource.mods.map(mod => mod.name).join(', \n')}
-        };
-      `;
-    }
-
     return `
       ${this.dataSource.mods
         .map(mod => {
@@ -451,7 +443,9 @@ export default class MyGenerator extends CodeGenerator {
         })
         .join('\n')}
 
-      ${conclusion}
+        export {
+          ${this.dataSource.mods.map(mod => mod.name).join(',\n')}
+        };
     `;
   }
 }
