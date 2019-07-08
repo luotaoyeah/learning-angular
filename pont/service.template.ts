@@ -25,6 +25,10 @@ export class FileStructures extends Pont.FileStructures {
     };
   }
 
+  public getDataSourcesDeclarationTs() {
+    return '';
+  }
+
   public getBaseClassesInDeclaration(
     originCode: string,
     usingMultipleOrigins: boolean,
@@ -109,7 +113,6 @@ export class FileStructures extends Pont.FileStructures {
     );
 
     return `
-      /* tslint:disable:no-any */
       ${dataSources
         .map(name => {
           return `import { DEFS as ${name}Defs, ${name} as ${name}Api } from './${name}';`;
@@ -118,28 +121,16 @@ export class FileStructures extends Pont.FileStructures {
 
       export namespace DEFS {
         ${dataSources
-          .map(
-            name =>
-              `// tslint:disable-next-line:no-shadowed-variable
-               export import ${name} = ${name}Defs;`,
-          )
+          .map(name => `export import ${name} = ${name}Defs;`)
           .join('\n')}
       }
 
       export namespace API {
         ${dataSources
-          .map(
-            name =>
-              `// tslint:disable-next-line:no-shadowed-variable
-               export import ${name} = ${name}Api;`,
-          )
+          .map(name => `export import ${name} = ${name}Api;`)
           .join('\n')}
       };
     `;
-  }
-
-  public getDataSourcesDeclarationTs() {
-    return '';
   }
 
   /**
@@ -238,7 +229,6 @@ export default class MyGenerator extends CodeGenerator {
 
   public getModsDeclarationWithSingleOrigin() {}
 
-  /** 获取公共的类型定义代码 */
   public getCommonDeclaration() {
     return '';
   }
@@ -251,22 +241,12 @@ export default class MyGenerator extends CodeGenerator {
    * src/app/core/api/SortingPd/index.ts
    */
   public getIndex() {
-    let conclusion = `
-      import * as DEFS from './models';
-      import './Controllers/';
-
-      export const DEFS = DEFS;
-    `;
-
-    if (this.dataSource.name) {
-      conclusion = `
+    return `
         import { ${this.dataSource.name} as DEFS } from './models';
         import * as ${this.dataSource.name} from './Controllers';
+
         export { DEFS, ${this.dataSource.name} };
       `;
-    }
-
-    return conclusion;
   }
 
   /**
@@ -427,7 +407,7 @@ export default class MyGenerator extends CodeGenerator {
         .join('\n')}
 
       export {
-        ${mod.interfaces.map(inter => inter.name).join(', \n')}
+        ${mod.interfaces.map(inter => inter.name).join(',\n')}
       }
     `;
   }
