@@ -20,7 +20,6 @@ export class FileStructures extends Pont.FileStructures {
     return {
       ...files,
       'index.ts': this.getDataSourcesTs.bind(this),
-      'api.d.ts': this.getDataSourcesDeclarationTs.bind(this),
       'api-lock.json': this.getLockContent.bind(this),
       'http-client.ts': this.getHttpClientContent.bind(this),
     };
@@ -30,31 +29,11 @@ export class FileStructures extends Pont.FileStructures {
     originCode: string,
     usingMultipleOrigins: boolean,
   ) {
-    if (usingMultipleOrigins) {
-      return `
-      declare namespace DEFS {
-        export ${originCode}
-      };
-      `;
-    }
-
-    return `
-      declare ${originCode}
-    `;
+    return '';
   }
 
   public getModsDeclaration(originCode: string, usingMultipleOrigins: boolean) {
-    if (usingMultipleOrigins) {
-      return `
-      declare namespace API {
-        export ${originCode}
-      };
-      `;
-    }
-
-    return `
-      declare ${originCode}
-    `;
+    return '';
   }
 
   public getOriginFileStructures(
@@ -104,7 +83,6 @@ export class FileStructures extends Pont.FileStructures {
       'models.ts': generator.getBaseClassesIndex.bind(generator),
       Controllers: mods,
       'index.ts': generator.getIndex.bind(generator),
-      'api.d.ts': generator.getDeclaration.bind(generator),
     };
 
     if (!usingMultipleOrigins) {
@@ -155,18 +133,7 @@ export class FileStructures extends Pont.FileStructures {
   }
 
   public getDataSourcesDeclarationTs() {
-    // @ts-ignore
-    const dataSources: Array<string> = this.generators.map(
-      (generator: CodeGenerator) => generator.dataSource.name,
-    );
-
-    return `
-    ${dataSources
-      .map(name => {
-        return `/// <reference path="./${name}/api.d.ts" />`;
-      })
-      .join('\n')}
-    `;
+    return '';
   }
 
   /**
@@ -175,19 +142,38 @@ export class FileStructures extends Pont.FileStructures {
   public getHttpClientContent(): string {
     return `
       import { _HttpClient } from '@delon/theme';
+      import { _HttpHeaders, HttpObserve } from '@delon/theme/src/services/http/http.client';
   
       let client: _HttpClient | null = null;
       
+      /**
+       * Set the HttpClient instance
+       * @param _httpClient The HttpClient instance
+       */
       export function setHttpClient(_httpClient: _HttpClient): void {
         client = _httpClient;
       }
       
+      /**
+       * Get the HttpClient instance
+       */
       export function httpClient(): _HttpClient {
         if (client === null) {
           throw new Error('HTTP CLIENT IS NULL');
         }
       
         return client;
+      }
+      
+      /**
+       * The extra request options
+       */
+      export interface IRequestOptions {
+        headers?: _HttpHeaders;
+        observe?: HttpObserve;
+        responseType?: 'arraybuffer' | 'blob' | 'json' | 'text';
+        reportProgress?: boolean;
+        withCredentials?: boolean;
       }
     `;
   }
@@ -218,102 +204,28 @@ export default class MyGenerator extends CodeGenerator {
     `;
   }
 
-  /**
-   * src/app/core/api/SortingPd/api.d.ts
-   */
   public getBaseClassesInDeclaration() {
-    const content = `namespace ${this.dataSource.name || 'DEFS'} {
-      ${this.dataSource.baseClasses
-        .map(
-          base => `
-        export ${this.getBaseClassInDeclaration(base)}
-      `,
-        )
-        .join('\n')}
-    }
-    `;
-
-    return content;
+    return '';
   }
 
-  /**
-   * src/app/core/api/SortingPd/api.d.ts
-   */
   public getBaseClassesInDeclarationWithMultipleOrigins() {
-    return `
-      /* tslint:disable:no-any */
-      declare namespace DEFS {
-        export ${this.getBaseClassesInDeclaration()}
-      }
-    `;
+    return '';
   }
 
   public getBaseClassesInDeclarationWithSingleOrigin() {
-    return `
-      declare ${this.getBaseClassesInDeclaration()}
-    `;
+    return '';
   }
 
-  /**
-   * src/app/core/api/SortingPd/api.d.ts
-   */
   public getInterfaceContentInDeclaration(inter: Interface) {
-    const bodyParams = inter.getBodyParamsCode();
-    const params =
-      (bodyParams
-        ? `params?: Params, body?: ${bodyParams}`
-        : `params?: Params, body?: {}`) + ', options?: IRequestOptions,';
-
-    return `
-      export ${inter.getParamsCode()}
-      
-      export function request(${params}): Observable<${inter.responseType
-      .replace(/.*?ResponseResult</, '')
-      .slice(0, -1)}>;
-    `;
+    return '';
   }
 
-  /**
-   * src/app/core/api/SortingPd/api.d.ts
-   */
   public getModsDeclaration() {
-    const mods = this.dataSource.mods;
-
-    const content = `namespace ${this.dataSource.name || 'API'} {
-        ${mods
-          .map(
-            mod => `
-          /**
-           * ${mod.description || ''}
-           */
-          export namespace ${mod.name} {
-            ${mod.interfaces
-              // @ts-ignore
-              .map(this.getInterfaceInDeclaration.bind(this))
-              .join('\n')}
-          }
-        `,
-          )
-          .join('\n\n')}
-      }
-    `;
-
-    return content;
+    return '';
   }
 
-  /**
-   * src/app/core/api/SortingPd/api.d.ts
-   */
   public getInterfaceInDeclaration(inter: Interface) {
-    return `
-      /**
-        * ${inter.description || ''}
-        * ${inter.path}
-        */
-      export namespace ${inter.name} {
-        ${this.getInterfaceContentInDeclaration(inter)}
-      }
-    `;
+    return '';
   }
 
   public getModsDeclarationWithMultipleOrigins() {}
@@ -322,35 +234,11 @@ export default class MyGenerator extends CodeGenerator {
 
   /** 获取公共的类型定义代码 */
   public getCommonDeclaration() {
-    return `export interface IRequestOptions {
-              headers?: _HttpHeaders;
-              observe?: HttpObserve;
-              responseType?: 'arraybuffer' | 'blob' | 'json' | 'text';
-              reportProgress?: boolean;
-              withCredentials?: boolean;
-    }`;
+    return '';
   }
 
-  /**
-   * src/app/core/api/SortingPd/api.d.ts
-   */
   public getDeclaration() {
-    return `
-      /* tslint:disable:no-any */
-      import { _HttpHeaders, HttpObserve } from '@delon/theme/src/services/http/http.client';
-      import { Observable } from 'rxjs';
-      
-      // @ts-ignore
-      type ObjectMap<Key extends string | number | symbol = any, Value = any> = {
-        [key in Key]: Value;
-      }
-
-      ${this.getCommonDeclaration()}
-
-      ${this.getBaseClassesInDeclaration()}
-
-      ${this.getModsDeclaration()}
-    `;
+    return '';
   }
 
   /**
@@ -497,8 +385,8 @@ export default class MyGenerator extends CodeGenerator {
 
     import { Observable } from 'rxjs';
     // @ts-ignore: TS6133
-    import { DEFS, IRequestOptions } from '../../api';
-    import { httpClient } from '../../../http-client';
+    import * as DEFS from '../../models';
+    import { httpClient, IRequestOptions } from '../../../http-client';
 
     export ${inter.getParamsCode()}
     
