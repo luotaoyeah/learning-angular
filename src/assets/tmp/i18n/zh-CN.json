@@ -137,6 +137,7 @@
   "menu.blog.working-with-dom-in-angular": "Working With DOM In Angular: Unexpected Consequences And Optimization Techniques",
   "menu.blog.here-is-what-you-need-to-know-about-dynamic-components-in-angular": "Here Is What You Need To Know About Dynamic Components In Angular",
   "menu.blog.do-you-still-think-that-ngzone-is-required-for-change-detection-in-angular": "Do You Still Think That NgZone Is Required For Change Detection In Angular",
+  "menu.blog.everything-you-need-to-know-about-change-detection": "Everything You Need To Know About Change Detection In Angular",
   "menu.search.placeholder": "搜索...",
   "menu.fullscreen": "全屏",
   "menu.fullscreen.exit": "退出全屏",

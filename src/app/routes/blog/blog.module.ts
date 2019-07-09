@@ -6,6 +6,7 @@ import { AGentleIntroductionIntoChangeDetectionInAngularModule } from './a-gentl
 import { WorkingWithDomInAngularModule } from './working-with-dom-in-angular/working-with-dom-in-angular.module';
 import { HereIsWhatYouNeedToKnowAboutDynamicComponentsModule } from './here-is-what-you-need-to-know-about-dynamic-components/here-is-what-you-need-to-know-about-dynamic-components.module';
 import { DoYouStillThinkThatNgzoneIsRequiredForChangeDetectionInAngularModule } from './do-you-still-think-that-ngzone-is-required-for-change-detection-in-angular/do-you-still-think-that-ngzone-is-required-for-change-detection-in-angular.module';
+import { EverythingYouNeedToKnowAboutChangeDetectionModule } from './everything-you-need-to-know-about-change-detection/everything-you-need-to-know-about-change-detection.module';
 
 @NgModule({
   declarations: [],
@@ -17,6 +18,7 @@ import { DoYouStillThinkThatNgzoneIsRequiredForChangeDetectionInAngularModule } 
     WorkingWithDomInAngularModule,
     HereIsWhatYouNeedToKnowAboutDynamicComponentsModule,
     DoYouStillThinkThatNgzoneIsRequiredForChangeDetectionInAngularModule,
+    EverythingYouNeedToKnowAboutChangeDetectionModule,
   ],
 })
 export class BlogModule {}
