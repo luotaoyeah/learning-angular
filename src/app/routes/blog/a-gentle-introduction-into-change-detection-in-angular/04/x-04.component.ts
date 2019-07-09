@@ -24,7 +24,7 @@ export class X04Component {
      *
      *
      * https://blog.angularindepth.com/a-gentle-introduction-into-change-detection-in-angular-33f9ffff6f10#c431
-     * 但是使用 setInterval() 会造成另外一个问题, 就是它会自动触发 change detection cycle,
+     * 但是使用 setInterval() 会造成另外一个问题, 就是它也会自动触发 change detection cycle,
      * 所以相当于存在一个无限循环的 change detection cycle 永远在执行, 如何解决呢?
      *
      * 之所以 setInterval() 会触发 change detection cycle, 是因为 angular 使用了 zone.js 这个库,
