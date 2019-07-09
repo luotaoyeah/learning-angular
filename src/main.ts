@@ -17,6 +17,7 @@ const bootstrap = () => {
   return platformBrowserDynamic()
     .bootstrapModule(AppModule, {
       defaultEncapsulation: ViewEncapsulation.Emulated,
+      ngZone: 'zone.js',
     })
     .then(res => {
       // tslint:disable-next-line:no-any

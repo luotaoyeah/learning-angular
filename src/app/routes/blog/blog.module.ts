@@ -5,6 +5,7 @@ import { NeverAgainBeConfusedWhenImplementingControlvalueaccessorModule } from '
 import { AGentleIntroductionIntoChangeDetectionInAngularModule } from './a-gentle-introduction-into-change-detection-in-angular/a-gentle-introduction-into-change-detection-in-angular.module';
 import { WorkingWithDomInAngularModule } from './working-with-dom-in-angular/working-with-dom-in-angular.module';
 import { HereIsWhatYouNeedToKnowAboutDynamicComponentsModule } from './here-is-what-you-need-to-know-about-dynamic-components/here-is-what-you-need-to-know-about-dynamic-components.module';
+import { DoYouStillThinkThatNgzoneIsRequiredForChangeDetectionInAngularModule } from './do-you-still-think-that-ngzone-is-required-for-change-detection-in-angular/do-you-still-think-that-ngzone-is-required-for-change-detection-in-angular.module';
 
 @NgModule({
   declarations: [],
@@ -15,6 +16,7 @@ import { HereIsWhatYouNeedToKnowAboutDynamicComponentsModule } from './here-is-w
     AGentleIntroductionIntoChangeDetectionInAngularModule,
     WorkingWithDomInAngularModule,
     HereIsWhatYouNeedToKnowAboutDynamicComponentsModule,
+    DoYouStillThinkThatNgzoneIsRequiredForChangeDetectionInAngularModule,
   ],
 })
 export class BlogModule {}

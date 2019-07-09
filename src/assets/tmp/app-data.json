@@ -612,6 +612,11 @@
           "i18n": "menu.blog.here-is-what-you-need-to-know-about-dynamic-components-in-angular",
           "icon": "anticon anticon-info-circle",
           "link": "/blog/here-is-what-you-need-to-know-about-dynamic-components-in-angular"
+        },
+        {
+          "i18n": "menu.blog.do-you-still-think-that-ngzone-is-required-for-change-detection-in-angular",
+          "icon": "anticon anticon-info-circle",
+          "link": "/blog/do-you-still-think-that-ngzone-is-required-for-change-detection-in-angular"
         }
       ]
     }
