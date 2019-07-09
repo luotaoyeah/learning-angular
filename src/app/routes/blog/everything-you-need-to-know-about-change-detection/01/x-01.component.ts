@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 /*
- * https://blog.angularindepth.com/everything-you-need-to-know-about-change-detection-in-angular-8006c51d206f
+ * https://blog.angularindepth.com/everything-you-need-to-know-about-change-detection-in-angular-8006c51d206f#5672
  */
 @Component({
   selector: 'app-x-01',
