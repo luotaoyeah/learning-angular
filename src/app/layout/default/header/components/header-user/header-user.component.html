@@ -11,7 +11,8 @@
   ></nz-avatar>
   {{ settings.user.name }}
 </div>
-<nz-dropdown-menu #menuTpl="nzDropdownMenu">
+
+<nz-dropdown-menu #menuTpl="nzDropdownMenu" nzNoAnimation>
   <div nz-menu class="width-sm">
     <div nz-menu-item routerLink="/account/settings">
       <i nz-icon type="setting" class="mr-sm"></i>
