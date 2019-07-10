@@ -1,0 +1,15 @@
+<p>
+  <code>change detection</code> 的逻辑代码主要是包含在
+  <code>checkAndUpdateView()</code> 方法里面的, 该方法会从某个 component
+  开始顺着这棵树递归执行
+</p>
+
+<p>
+  对于如下的三个嵌套组件, 它们的生命周期函数的执行顺序如下, 其中, 更新 binding
+  即更新 DOM 是在 <code>ngAfterContentChecked()</code> 之后进行的
+</p>
+<p>
+  <img src="assets/images/20190710192810.png" />
+</p>
+
+<app-x-03-a></app-x-03-a>
