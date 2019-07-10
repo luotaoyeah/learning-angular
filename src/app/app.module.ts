@@ -12,7 +12,7 @@ import {
   HttpClient,
   HttpClientModule,
 } from '@angular/common/http';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { default as ngLang } from '@angular/common/locales/en';
 import { en_US as zorroLang, NZ_I18N } from 'ng-zorro-antd';
 import {
@@ -172,7 +172,7 @@ const APPINIT_PROVIDES = [
 @NgModule({
   declarations: [AppComponent, PageNotFoundComponent],
   imports: [
-    NoopAnimationsModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
     DelonModule.forRoot(),
