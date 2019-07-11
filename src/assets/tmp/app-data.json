@@ -622,6 +622,11 @@
           "i18n": "menu.blog.everything-you-need-to-know-about-change-detection",
           "icon": "anticon anticon-info-circle",
           "link": "/blog/everything-you-need-to-know-about-change-detection"
+        },
+        {
+          "i18n": "menu.blog.boosting-performance-of-angular-applications-with-manual-change-detection",
+          "icon": "anticon anticon-info-circle",
+          "link": "/blog/boosting-performance-of-angular-applications-with-manual-change-detection"
         }
       ]
     }
