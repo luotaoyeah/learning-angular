@@ -1,5 +1,8 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
 
+/*
+ * https://blog.angularindepth.com/everything-you-need-to-know-about-change-detection-in-angular-8006c51d206f#47e3
+ */
 @Component({
   selector: 'app-x-04-01',
   templateUrl: './x-04-01.component.html',
