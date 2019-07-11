@@ -139,6 +139,7 @@
   "menu.blog.do-you-still-think-that-ngzone-is-required-for-change-detection-in-angular": "Do You Still Think That NgZone Is Required For Change Detection In Angular",
   "menu.blog.everything-you-need-to-know-about-change-detection": "Everything You Need To Know About Change Detection In Angular",
   "menu.blog.boosting-performance-of-angular-applications-with-manual-change-detection": "Boosting Performance Of Angular Applications With Manual Change Detection",
+  "menu.blog.if-you-think-ngdocheck-means-your-component-is-being-checked": "If You Think Ng Do Check Means Your Component Is Being Checked",
   "menu.search.placeholder": "搜索...",
   "menu.fullscreen": "全屏",
   "menu.fullscreen.exit": "退出全屏",

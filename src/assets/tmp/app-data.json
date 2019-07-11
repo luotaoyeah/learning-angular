@@ -627,6 +627,11 @@
           "i18n": "menu.blog.boosting-performance-of-angular-applications-with-manual-change-detection",
           "icon": "anticon anticon-info-circle",
           "link": "/blog/boosting-performance-of-angular-applications-with-manual-change-detection"
+        },
+        {
+          "i18n": "menu.blog.if-you-think-ngdocheck-means-your-component-is-being-checked",
+          "icon": "anticon anticon-info-circle",
+          "link": "/blog/if-you-think-ngdocheck-means-your-component-is-being-checked"
         }
       ]
     }

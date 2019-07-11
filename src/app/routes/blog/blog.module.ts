@@ -8,6 +8,7 @@ import { HereIsWhatYouNeedToKnowAboutDynamicComponentsModule } from './here-is-w
 import { DoYouStillThinkThatNgzoneIsRequiredForChangeDetectionInAngularModule } from './do-you-still-think-that-ngzone-is-required-for-change-detection-in-angular/do-you-still-think-that-ngzone-is-required-for-change-detection-in-angular.module';
 import { EverythingYouNeedToKnowAboutChangeDetectionModule } from './everything-you-need-to-know-about-change-detection/everything-you-need-to-know-about-change-detection.module';
 import { BoostingPerformanceOfAngularApplicationsWithManualChangeDetectionModule } from './boosting-performance-of-angular-applications-with-manual-change-detection/boosting-performance-of-angular-applications-with-manual-change-detection.module';
+import { IfYouThinkNgdocheckMeansYourComponentIsBeingCheckedModule } from './if-you-think-ngdocheck-means-your-component-is-being-checked/if-you-think-ngdocheck-means-your-component-is-being-checked.module';
 
 @NgModule({
   declarations: [],
@@ -21,6 +22,7 @@ import { BoostingPerformanceOfAngularApplicationsWithManualChangeDetectionModule
     DoYouStillThinkThatNgzoneIsRequiredForChangeDetectionInAngularModule,
     EverythingYouNeedToKnowAboutChangeDetectionModule,
     BoostingPerformanceOfAngularApplicationsWithManualChangeDetectionModule,
+    IfYouThinkNgdocheckMeansYourComponentIsBeingCheckedModule,
   ],
 })
 export class BlogModule {}
