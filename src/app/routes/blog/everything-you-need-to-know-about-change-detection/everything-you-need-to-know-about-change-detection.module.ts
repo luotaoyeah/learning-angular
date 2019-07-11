@@ -15,6 +15,8 @@ import { X0402AComponent } from './04/02/x-04-02.a.component';
 import { X0403Component } from './04/03/x-04-03.component';
 import { X0402BComponent } from './04/02/x-04-02.b.component';
 import { X0403AComponent } from './04/03/x-04-03.a.component';
+import { X0404Component } from './04/04/x-04-04.component';
+import { X0404AComponent } from './04/04/x-04-04.a.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { X0403AComponent } from './04/03/x-04-03.a.component';
     X0402BComponent,
     X0403Component,
     X0403AComponent,
+    X0404Component,
+    X0404AComponent,
   ],
   imports: [
     EverythingYouNeedToKnowAboutChangeDetectionRoutingModule,
