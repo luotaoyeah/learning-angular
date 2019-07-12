@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, DoCheck } from '@angular/core';
 
 @Component({
-  selector: 'app-x-01-1',
+  selector: 'app-x-01-a',
   template: '',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
