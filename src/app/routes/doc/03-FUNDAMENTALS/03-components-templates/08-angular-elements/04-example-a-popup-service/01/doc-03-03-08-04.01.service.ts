@@ -7,6 +7,7 @@ import {
   Injector,
 } from '@angular/core';
 import { Doc0303080401Component } from './doc-03-03-08-04.01.component';
+import { NgElement, WithProperties } from '@angular/elements';
 
 @Injectable()
 export class Doc0303080401Service {
@@ -36,14 +37,33 @@ export class Doc0303080401Service {
       [],
       element,
     );
+    componentRef.instance.message = message;
 
     componentRef.instance.closed.subscribe(() => {
       document.body.removeChild(element);
       this.applicationRef.detachView(componentRef.hostView);
     });
 
-    componentRef.instance.message = message;
     document.body.appendChild(element);
     this.applicationRef.attachView(componentRef.hostView);
+  }
+
+  /**
+   *
+   * @param message Message
+   */
+  public showAsElement(message: string) {
+    const element: NgElement &
+      WithProperties<Doc0303080401Component> = document.createElement(
+      'app-doc-03-03-08-04-01-element',
+      // tslint:disable-next-line:no-any
+    ) as any;
+
+    element.message = message;
+    element.addEventListener('closed', () => {
+      document.body.removeChild(element);
+    });
+
+    document.body.appendChild(element);
   }
 }

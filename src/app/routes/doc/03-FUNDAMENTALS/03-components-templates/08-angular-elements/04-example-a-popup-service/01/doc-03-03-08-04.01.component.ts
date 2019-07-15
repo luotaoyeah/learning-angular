@@ -4,7 +4,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   selector: 'app-doc-03-03-08-04-01',
   template: `
     <span> {{ message | uppercase }}</span>
-    <button (click)="closed.next()">&#x2716;</button>
+    <button (click)="closed.next()" nz-button>&#x2716;</button>
   `,
   styles: [
     `
