@@ -85,7 +85,10 @@
               "node_modules/ajv/dist/ajv.bundle.js",
               "node_modules/@antv/g2/dist/g2.min.js",
               "node_modules/@antv/data-set/dist/data-set.min.js",
-              "node_modules/@antv/g2-plugin-slider/dist/g2-plugin-slider.min.js"
+              "node_modules/@antv/g2-plugin-slider/dist/g2-plugin-slider.min.js",
+              {
+                "input": "node_modules/document-register-element/build/document-register-element.js"
+              }
             ],
             "es5BrowserSupport": true,
             "resourcesOutputPath": "img"
