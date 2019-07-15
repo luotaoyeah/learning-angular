@@ -4,16 +4,16 @@ import {
   ViewChild,
   ViewContainerRef,
 } from '@angular/core';
-import { Doc030308001Component } from '../03-03-08-001/doc-03-03-08-001.component';
+import { Doc03030700Component } from '../00/doc-03-03-07-00.component';
 
 /*
  * https://angular.io/guide/dynamic-component-loader
  */
 @Component({
-  selector: 'app-doc-03-03-08-02',
-  templateUrl: './doc-03-03-08-02.component.html',
+  selector: 'app-doc-03-03-07-02',
+  templateUrl: './doc-03-03-07-02.component.html',
 })
-export class Doc03030802Component {
+export class Doc03030702Component {
   @ViewChild('tpl01', { read: ViewContainerRef, static: true })
   public viewContainerRef!: ViewContainerRef;
 
@@ -21,7 +21,7 @@ export class Doc03030802Component {
 
   public load() {
     const componentFactory = this.componentFactoryResolver.resolveComponentFactory(
-      Doc030308001Component,
+      Doc03030700Component,
     );
 
     this.viewContainerRef.clear();

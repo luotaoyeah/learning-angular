@@ -1,30 +1,36 @@
 import { Component, ComponentFactoryResolver, ViewChild } from '@angular/core';
-import { Doc030308Directive } from '../directives/doc-03-03-08.directive';
-import { Doc030308001Component } from '../03-03-08-001/doc-03-03-08-001.component';
+import { Doc03030700Component } from './00/doc-03-03-07-00.component';
+import { Doc030307Directive } from './directives/doc-03-03-07.directive';
 
 /*
  * https://angular.io/guide/dynamic-component-loader
  */
 @Component({
-  selector: 'app-doc-03-03-08-01',
-  templateUrl: './doc-03-03-08-01.component.html',
+  selector: 'app-doc-03-03-07',
+  templateUrl: './doc-03-03-07.component.html',
 })
-export class Doc03030801Component {
-  @ViewChild(Doc030308Directive, { static: true })
-  public doc030308Directive!: Doc030308Directive;
+export class Doc030307Component {
+  @ViewChild(Doc030307Directive, { static: false })
+  public doc030308Directive!: Doc030307Directive;
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver) {}
 
-  public load() {
+  /**
+   * LOAD
+   */
+  public loadComponent(): void {
     const componentFactory = this.componentFactoryResolver.resolveComponentFactory(
-      Doc030308001Component,
+      Doc03030700Component,
     );
 
     this.doc030308Directive.viewContainerRef.clear();
     this.doc030308Directive.viewContainerRef.createComponent(componentFactory);
   }
 
-  public unload() {
+  /**
+   * UNLOAD
+   */
+  public unloadComponent(): void {
     this.doc030308Directive.viewContainerRef.clear();
   }
 }
