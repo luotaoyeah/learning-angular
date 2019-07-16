@@ -6,6 +6,7 @@ import { Doc03030801Component } from './01-angular-elements-overview/doc-03-03-0
 import { Doc03030804Component } from './04-example-a-popup-service/doc-03-03-08-04.component';
 import { Doc0303080401Component } from './04-example-a-popup-service/01/doc-03-03-08-04.01.component';
 import { Doc0303080401Service } from './04-example-a-popup-service/01/doc-03-03-08-04.01.service';
+import { Doc03030805Component } from './05-typings-for-custom-elements/doc-03-03-08-05.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { Doc0303080401Service } from './04-example-a-popup-service/01/doc-03-03-
     Doc03030801Component,
     Doc03030804Component,
     Doc0303080401Component,
+    Doc03030805Component,
   ],
   providers: [Doc0303080401Service],
   imports: [SharedModule, Doc030308RoutingModule],
