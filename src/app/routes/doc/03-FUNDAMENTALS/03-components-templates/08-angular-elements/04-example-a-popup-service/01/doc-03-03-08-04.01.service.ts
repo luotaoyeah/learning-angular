@@ -18,28 +18,20 @@ export class Doc0303080401Service {
   ) {}
 
   /**
-   *
+   * 通过 dynamic component 的方式来使用这个组件
    * @param message Message
    */
   public showAsComponent(message: string) {
-    const element: HTMLElement = document.createElement(
-      'app-doc-03-03-08-04-01',
-    );
+    const element: HTMLElement = document.createElement('app-doc-03-03-08-04-01');
 
-    const factory: ComponentFactory<
-      Doc0303080401Component
-    > = this.componentFactoryResolver.resolveComponentFactory(
+    const factory: ComponentFactory<Doc0303080401Component> = this.componentFactoryResolver.resolveComponentFactory(
       Doc0303080401Component,
     );
 
-    const componentRef: ComponentRef<Doc0303080401Component> = factory.create(
-      this.injector,
-      [],
-      element,
-    );
+    const componentRef: ComponentRef<Doc0303080401Component> = factory.create(this.injector, [], element);
     componentRef.instance.message = message;
 
-    componentRef.instance.closed.subscribe(() => {
+    componentRef.instance.close.subscribe(() => {
       document.body.removeChild(element);
       this.applicationRef.detachView(componentRef.hostView);
     });
@@ -49,21 +41,20 @@ export class Doc0303080401Service {
   }
 
   /**
-   *
+   * 通过 custom element 的方式来使用这个组件, 此时这个 custom element 就跟普通的 DOM 标签一样使用(如: div/span/p)
    * @param message Message
    */
   public showAsElement(message: string) {
-    const element: NgElement &
-      WithProperties<Doc0303080401Component> = document.createElement(
+    const el: NgElement & WithProperties<Doc0303080401Component> = document.createElement(
       'app-doc-03-03-08-04-01-element',
       // tslint:disable-next-line:no-any
     ) as any;
 
-    element.message = message;
-    element.addEventListener('closed', () => {
-      document.body.removeChild(element);
+    el.message = message;
+    el.addEventListener('close', () => {
+      document.body.removeChild(el);
     });
 
-    document.body.appendChild(element);
+    document.body.appendChild(el);
   }
 }
