@@ -1,0 +1,47 @@
+<p>
+  injector 根据层级关系可以分为以下几种：
+</p>
+<ul>
+  <li>
+    <b>platform injector：</b>
+    <p>
+      内部使用，一般不会对它进行配置，它是 app root injector 的 parent injector
+    </p>
+  </li>
+  <li>
+    <b>root injector</b>
+    <p>
+      整个应用的顶级 injector，实际上就是 AppModule 的 injector，可以在 AppModule 中使用 @NgModule.providers
+      进行配置，也可以直接在 service 中使用 @Injectable.providedIn: 'root' 进行配置
+    </p>
+  </li>
+  <li>
+    <b>module injector</b>
+    <p>
+      NgModule 层级的 injector，可以通过 @NgModule.providers 进行配置，也可以直接在 servide 中使用
+      @Injectable.providedIn: SomeModule 进行配置；如果是一个 lazy-loaded module，则应该通过 @NgModule.providers
+      进行配置，否则的话这个 service 可能会被 tree-shake 掉
+    </p>
+  </li>
+  <li>
+    <b>component injector</b>
+    <p>component 层级的 injector，可以通过 @Component.providers 进行配置</p>
+    <p>
+      component injector 只能对该 component 以及它的下级 component 进行注入，不能对其他地方进行注入
+    </p>
+  </li>
+</ul>
+
+<hr />
+<nz-collapse [nzAccordion]="true">
+  <nz-collapse-panel nzHeader="@Injectable Level Configuration">
+    <app-doc-03-07-02-01-01></app-doc-03-07-02-01-01>
+  </nz-collapse-panel>
+  <nz-collapse-panel nzHeader="@NgModule Level Configuration">
+    <app-doc-03-07-02-01-02></app-doc-03-07-02-01-02>
+  </nz-collapse-panel>
+  <nz-collapse-panel nzHeader="@Component Level Configuration">
+    <app-doc-03-07-02-01-03></app-doc-03-07-02-01-03>
+    <app-doc-03-07-02-01-03></app-doc-03-07-02-01-03>
+  </nz-collapse-panel>
+</nz-collapse>

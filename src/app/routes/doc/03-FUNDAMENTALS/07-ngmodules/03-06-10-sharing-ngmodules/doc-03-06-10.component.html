@@ -1,0 +1,11 @@
+<nz-collapse [nzAccordion]="true">
+  <nz-collapse-panel nzHeader="Sharing Modules" nzExpandedIcon="caret-right">
+    <p>
+      可以将一些通用的功能放到一个 shared module 中，其他 module 可以直接引入这个 shared module
+    </p>
+    <p>
+      shared module 中可以包含 declarables（component，directive，pipe），也可以包含 service，对于 service
+      的共享，需要使用一定的机制来保证 singleton service，通常的做法是使用 forRoot()/forChild() 模式
+    </p>
+  </nz-collapse-panel>
+</nz-collapse>

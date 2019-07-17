@@ -1,13 +1,9 @@
 import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
-import {
-  _HttpClient,
-  TitleService,
-  VERSION as VERSION_ALAIN,
-} from '@delon/theme';
+import { _HttpClient, TitleService, VERSION as VERSION_ALAIN } from '@delon/theme';
 import { NzModalService, VERSION as VERSION_ZORRO } from 'ng-zorro-antd';
-import { Doc0306080201Service } from './routes/doc/03-FUNDAMENTALS/03-07-ngmodules/03-06-08-singleton-services/03-06-08-02-the-for-root-pattern/doc-03-06-08-02-01/service/doc-03-06-08-02-01.service';
+import { Doc0306080201Service } from './routes/doc/03-FUNDAMENTALS/07-ngmodules/03-06-08-singleton-services/03-06-08-02-the-for-root-pattern/doc-03-06-08-02-01/service/doc-03-06-08-02-01.service';
 import { setHttpClient } from '@app/core/api/http-client';
 
 @Component({
@@ -24,27 +20,17 @@ export class AppComponent implements OnInit {
     private doc0306080201Service: Doc0306080201Service,
     httpClient: _HttpClient,
   ) {
-    renderer2.setAttribute(
-      elementRef.nativeElement,
-      'ng-alain-version',
-      VERSION_ALAIN.full,
-    );
-    renderer2.setAttribute(
-      elementRef.nativeElement,
-      'ng-zorro-version',
-      VERSION_ZORRO.full,
-    );
+    renderer2.setAttribute(elementRef.nativeElement, 'ng-alain-version', VERSION_ALAIN.full);
+    renderer2.setAttribute(elementRef.nativeElement, 'ng-zorro-version', VERSION_ZORRO.full);
 
     setHttpClient(httpClient);
   }
 
   public ngOnInit() {
-    this.router.events
-      .pipe(filter(evt => evt instanceof NavigationEnd))
-      .subscribe(() => {
-        this.titleService.setTitle();
-        this.modalService.closeAll();
-      });
+    this.router.events.pipe(filter(evt => evt instanceof NavigationEnd)).subscribe(() => {
+      this.titleService.setTitle();
+      this.modalService.closeAll();
+    });
 
     // @ts-ignore
     window.DOC_0306080201_SERVICE_01 = this.doc0306080201Service;

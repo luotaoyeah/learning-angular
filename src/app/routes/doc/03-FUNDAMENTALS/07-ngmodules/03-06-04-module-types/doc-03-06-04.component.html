@@ -1,0 +1,136 @@
+<nz-collapse [nzAccordion]="true">
+  <nz-collapse-panel nzHeader="Types of Feature Modules">
+    <p>
+      NgModule 大体上可以分为 5 类：
+    </p>
+
+    <nz-collapse [nzAccordion]="true">
+      <nz-collapse-panel nzHeader="Domain Module">
+        <p>
+          领域模块，或者叫做业务模块，通常专注于某个特定的领域，或者说特定的一个业务
+        </p>
+        <p>
+          通常会包含很多的 declarables，但是这些 declarables 都是它自己使用，不会输出；它通常只会输出（export）一个 root
+          component
+        </p>
+        <p>
+          总结来说：
+        </p>
+        <ul>
+          <li>declarations：有，但是都是它自己使用，不会输出</li>
+          <li>exports：有，只会输出一个 root component</li>
+          <li>providers：少有</li>
+          <li>
+            imported by：可以被其他的 feature module 引入，比如被 routed module 引入
+          </li>
+        </ul>
+
+        <p>
+          所以 domain module 的应用场景就是：比较大的 module 下面的一个比较小的 module，这个大的 module 可能是一个
+          routed module
+        </p>
+      </nz-collapse-panel>
+      <nz-collapse-panel nzHeader="Routed Module">
+        <p>
+          routed module 是一个特殊的 domain module，它不需要输出 root component，因为它的 root component 不是在其他的
+          component 中使用，而是通过路由导航进行加载
+        </p>
+
+        <p>
+          routed module 通常可以使用 lazy-loading 来进行加载，也因此不需要被其他 NgModule 引入
+        </p>
+
+        <p>
+          总结来说：
+        </p>
+        <ul>
+          <li>
+            declarations：有，因为 routed module 也是一个 domain module，它的 declarables 都是自己使用，不会输出
+          </li>
+          <li>
+            export：无，跟 domain module 不一样，routed module 的 root component
+            是通过路由导航来进行加载，所以不需要进行输出
+          </li>
+          <li>
+            providers：少有
+          </li>
+          <li>
+            imported by：如果使用 lazy-laoding，则不需要被其他 module 引入；如果不使用 lazy-loading，而是使用
+            eager-loading，则需要被其他的 module 引入
+          </li>
+        </ul>
+      </nz-collapse-panel>
+      <nz-collapse-panel nzHeader="Routing Module">
+        <p>
+          路由配置模块，通常跟某个 routed module 一起出现，并且在命名上有一定的约定： 假如 routed module
+          的命名如下：foo.module.ts（FooModule），则对应的 routing module
+          的命名如下：foo-routing.module.ts（FooRoutingModule）
+        </p>
+        <p>
+          routing module 主要进行路由相关配置
+        </p>
+        <p>
+          routing module 只能被它对应的 routed module 引入
+        </p>
+        <p>
+          routing module 可以提供一些 guard 相关的 providers
+        </p>
+        <p>
+          总结来说：
+        </p>
+        <ul>
+          <li>declarations：无</li>
+          <li>
+            export：RouterModule，routing module 通常会 re-export RouterModule，这样 routed module 引入了这个 routing
+            moudle 之后，就可以直接使用 RouterModule 提供的功能，如：RouterLink
+          </li>
+          <li>
+            providers：guard 相关的 providers
+          </li>
+          <li>imported by：routed module</li>
+        </ul>
+      </nz-collapse-panel>
+      <nz-collapse-panel nzHeader="Service Module">
+        <p>
+          服务模块，通过 providers 提供一些工具服务，包括数据访问，消息服务等等
+        </p>
+        <p>
+          service module 只需要定义 providers，不需要定义 declarations，也不需要输入功能
+        </p>
+        <p>
+          service module 只能被 AppModule 引入
+        </p>
+        <p>总结来说：</p>
+        <ul>
+          <li>declarations：无</li>
+          <li>export：无</li>
+          <li>providers：有，service module 主要就是通过 providers 提供服务</li>
+          <li>
+            imported by：AppModule，service module 之能被 root module 引入
+          </li>
+        </ul>
+      </nz-collapse-panel>
+      <nz-collapse-panel nzHeader="Widget Module">
+        <p>
+          功能模块，主要就是提供 declarables（component，directive，pipe）给其他的 module 使用，大部分的 UI 库，比如
+          NG-ZORRO 就是一个 widget module
+        </p>
+        <p>总结来说：</p>
+        <ul>
+          <li>
+            declaratons：有，widget module 会定义很多的 component，directive，pipe
+          </li>
+          <li>
+            providers：少有
+          </li>
+          <li>
+            exports：有，widget module 的大部分的 declarables 都会输出
+          </li>
+          <li>
+            imported by：其他的 feature module 都可以引入 widget module，使用它提供的 declarables
+          </li>
+        </ul>
+      </nz-collapse-panel>
+    </nz-collapse>
+  </nz-collapse-panel>
+</nz-collapse>

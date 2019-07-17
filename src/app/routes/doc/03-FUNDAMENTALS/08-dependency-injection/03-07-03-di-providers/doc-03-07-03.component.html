@@ -1,0 +1,46 @@
+<nz-collapse [nzAccordion]="true">
+  <nz-collapse-panel nzHeader="Dependency Providers" nzExpandedIcon="caret-right">
+    <p>
+      injector 内部维护了一个 token 到 provider 的映射，我们在注册一个 provider 的时候，实际上就是往这个 map
+      里面添加一个数据，当 injector 需要给某个地方注入某个 service 时，就会根据 token 找到对应的 provider，然后使用这个
+      provider 来创建对应的 service 实例
+    </p>
+
+    <p>
+      因此，每一个 service 都必须先配置一个 provider，injector 才知道怎么注入它的实例
+    </p>
+
+    <p>
+      provider 有很多种类型，最常见的就是直接使用 service class 作为它的 provider，当我们直接使用 @Injectable.providedIn
+      来配置时，或者直接将 service class 添加到 providers 中时，就表示将这个 service class 作为这个 service 的 provider
+    </p>
+
+    <p>
+      对于 service class provider 来说，当 injector 需要创建它的实例时，会直接使用 new 通过 constructor 来创建实例
+    </p>
+  </nz-collapse-panel>
+
+  <nz-collapse-panel nzHeader="The Provider Object Literal">
+    <app-doc-03-07-03-01></app-doc-03-07-03-01>
+  </nz-collapse-panel>
+
+  <nz-collapse-panel nzHeader="Alternative Class Providers">
+    <app-doc-03-07-03-02></app-doc-03-07-03-02>
+  </nz-collapse-panel>
+
+  <nz-collapse-panel nzHeader="Value Providers">
+    <app-doc-03-07-03-03></app-doc-03-07-03-03>
+  </nz-collapse-panel>
+
+  <nz-collapse-panel nzHeader="Factory Providers">
+    <app-doc-03-07-03-04></app-doc-03-07-03-04>
+  </nz-collapse-panel>
+
+  <nz-collapse-panel nzHeader="Predefined Tokens And Multiple Providers">
+    <app-doc-03-07-03-05></app-doc-03-07-03-05>
+  </nz-collapse-panel>
+
+  <nz-collapse-panel nzHeader="Tree-Shakable Providers">
+    <app-doc-03-07-03-06></app-doc-03-07-03-06>
+  </nz-collapse-panel>
+</nz-collapse>

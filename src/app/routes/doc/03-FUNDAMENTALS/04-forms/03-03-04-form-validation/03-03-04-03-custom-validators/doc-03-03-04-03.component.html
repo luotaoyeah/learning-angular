@@ -1,0 +1,37 @@
+<form [formGroup]="formGroup">
+  <input
+    type="text"
+    nz-input
+    formControlName="name"
+    [ngStyle]="{
+      width: '200px',
+      marginBottom: '3px'
+    }"
+  />
+  <div *ngIf="formGroup.invalid && (formGroup.dirty || formGroup.touched)">
+    <nz-alert *ngIf="nameControl.errors?.required" nzType="error" nzMessage="REQUIRED"> </nz-alert>
+    <nz-alert *ngIf="nameControl.errors?.forbiddenName" nzType="error" nzMessage="FORBIDDEN"> </nz-alert>
+  </div>
+</form>
+
+<nz-divider [nzDashed]="true"></nz-divider>
+
+<form>
+  <input
+    type="text"
+    name="name02"
+    nz-input
+    required
+    appForbiddenNameValidator="foo"
+    [(ngModel)]="name"
+    #nameEl="ngModel"
+    [ngStyle]="{
+      width: '200px',
+      marginBottom: '3px'
+    }"
+  />
+  <div *ngIf="nameEl.invalid && (nameEl.dirty || nameEl.touched)">
+    <nz-alert nzType="error" nzMessage="REQUIRED" *ngIf="nameEl.errors?.required"> </nz-alert>
+    <nz-alert nzType="error" nzMessage="FORBIDDEN" *ngIf="nameEl.errors?.forbiddenName"> </nz-alert>
+  </div>
+</form>

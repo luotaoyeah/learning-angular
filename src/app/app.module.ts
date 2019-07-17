@@ -7,19 +7,11 @@ import {
   Provider,
   Type,
 } from '@angular/core';
-import {
-  HTTP_INTERCEPTORS,
-  HttpClient,
-  HttpClientModule,
-} from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { default as ngLang } from '@angular/common/locales/en';
 import { en_US as zorroLang, NZ_I18N } from 'ng-zorro-antd';
-import {
-  ALAIN_I18N_TOKEN,
-  DELON_LOCALE,
-  en_US as delonLang,
-} from '@delon/theme';
+import { ALAIN_I18N_TOKEN, DELON_LOCALE, en_US as delonLang } from '@delon/theme';
 import { registerLocaleData } from '@angular/common';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -31,29 +23,26 @@ import { SharedModule } from '@app/shared';
 import { AppComponent } from './app.component';
 import { RoutesModule } from './routes/routes.module';
 import { LayoutModule } from './layout/layout.module';
-import { Doc0306070102Service } from './routes/doc/03-FUNDAMENTALS/03-07-ngmodules/03-06-07-providers/03-06-07-01-providing-a-service/service/doc-03-06-07-01-02.service';
-import { Doc03060802Service } from './routes/doc/03-FUNDAMENTALS/03-07-ngmodules/03-06-08-singleton-services/03-06-08-01-providing-a-singleton-service/service/doc-03-06-08-02.service';
-import { Doc0306080201Module } from './routes/doc/03-FUNDAMENTALS/03-07-ngmodules/03-06-08-singleton-services/03-06-08-02-the-for-root-pattern/doc-03-06-08-02-01/doc-03-06-08-02-01.module';
-import { Doc0306080201Service } from './routes/doc/03-FUNDAMENTALS/03-07-ngmodules/03-06-08-singleton-services/03-06-08-02-the-for-root-pattern/doc-03-06-08-02-01/service/doc-03-06-08-02-01.service';
-import { Doc0306080301Module } from './routes/doc/03-FUNDAMENTALS/03-07-ngmodules/03-06-08-singleton-services/03-06-08-03-prevent-reimport-of-the-ngmodule/doc-03-06-08-03-01/doc-03-06-08-03-01.module';
-import { Doc03061201Service } from './routes/doc/03-FUNDAMENTALS/03-07-ngmodules/03-06-12-ngmodule-faq/03-06-12-01/service/doc-03-06-12-01.service';
-import { Doc030702010201Service } from './routes/doc/03-FUNDAMENTALS/03-08-dependency-injection/03-07-02-hierarchical-dependency-injection/03-07-02-01-where-to-configure-providers/03-07-02-01-02/service/doc-03-07-02-01-02-01.service';
+import { Doc0306070102Service } from './routes/doc/03-FUNDAMENTALS/07-ngmodules/03-06-07-providers/03-06-07-01-providing-a-service/service/doc-03-06-07-01-02.service';
+import { Doc03060802Service } from './routes/doc/03-FUNDAMENTALS/07-ngmodules/03-06-08-singleton-services/03-06-08-01-providing-a-singleton-service/service/doc-03-06-08-02.service';
+import { Doc0306080201Module } from './routes/doc/03-FUNDAMENTALS/07-ngmodules/03-06-08-singleton-services/03-06-08-02-the-for-root-pattern/doc-03-06-08-02-01/doc-03-06-08-02-01.module';
+import { Doc0306080201Service } from './routes/doc/03-FUNDAMENTALS/07-ngmodules/03-06-08-singleton-services/03-06-08-02-the-for-root-pattern/doc-03-06-08-02-01/service/doc-03-06-08-02-01.service';
+import { Doc0306080301Module } from './routes/doc/03-FUNDAMENTALS/07-ngmodules/03-06-08-singleton-services/03-06-08-03-prevent-reimport-of-the-ngmodule/doc-03-06-08-03-01/doc-03-06-08-03-01.module';
+import { Doc03061201Service } from './routes/doc/03-FUNDAMENTALS/07-ngmodules/03-06-12-ngmodule-faq/03-06-12-01/service/doc-03-06-12-01.service';
+import { Doc030702010201Service } from './routes/doc/03-FUNDAMENTALS/08-dependency-injection/03-07-02-hierarchical-dependency-injection/03-07-02-01-where-to-configure-providers/03-07-02-01-02/service/doc-03-07-02-01-02-01.service';
 import { PageNotFoundComponent } from './comn/page-not-found/page-not-found.component';
-import { Doc0307030603Service } from './routes/doc/03-FUNDAMENTALS/03-08-dependency-injection/03-07-03-di-providers/03-07-03-06-tree-shakable-providers/service/doc-03-07-03-06-03.service';
-import { Doc0308050301Interceptor } from './routes/doc/03-FUNDAMENTALS/03-09-httpclient/03-08-05-advanced-usage/03-08-05-03-intercepting-requests-and-responses/service/doc-03-08-05-03-01.interceptor';
-import { Doc0308050302Interceptor } from './routes/doc/03-FUNDAMENTALS/03-09-httpclient/03-08-05-advanced-usage/03-08-05-03-intercepting-requests-and-responses/service/doc-03-08-05-03-02.interceptor';
-import { Doc0308050303Interceptor } from './routes/doc/03-FUNDAMENTALS/03-09-httpclient/03-08-05-advanced-usage/03-08-05-03-intercepting-requests-and-responses/service/doc-03-08-05-03-03.interceptor';
-import { Doc03080502Interceptor } from './routes/doc/03-FUNDAMENTALS/03-09-httpclient/03-08-05-advanced-usage/03-08-05-02-debouncing-requests/service/doc-03-08-05-02.interceptor';
-import { Doc0308050304Interceptor } from './routes/doc/03-FUNDAMENTALS/03-09-httpclient/03-08-05-advanced-usage/03-08-05-03-intercepting-requests-and-responses/service/doc-03-08-05-03-04.interceptor';
+import { Doc0307030603Service } from './routes/doc/03-FUNDAMENTALS/08-dependency-injection/03-07-03-di-providers/03-07-03-06-tree-shakable-providers/service/doc-03-07-03-06-03.service';
+import { Doc0308050301Interceptor } from './routes/doc/03-FUNDAMENTALS/09-httpclient/03-08-05-advanced-usage/03-08-05-03-intercepting-requests-and-responses/service/doc-03-08-05-03-01.interceptor';
+import { Doc0308050302Interceptor } from './routes/doc/03-FUNDAMENTALS/09-httpclient/03-08-05-advanced-usage/03-08-05-03-intercepting-requests-and-responses/service/doc-03-08-05-03-02.interceptor';
+import { Doc0308050303Interceptor } from './routes/doc/03-FUNDAMENTALS/09-httpclient/03-08-05-advanced-usage/03-08-05-03-intercepting-requests-and-responses/service/doc-03-08-05-03-03.interceptor';
+import { Doc03080502Interceptor } from './routes/doc/03-FUNDAMENTALS/09-httpclient/03-08-05-advanced-usage/03-08-05-02-debouncing-requests/service/doc-03-08-05-02.interceptor';
+import { Doc0308050304Interceptor } from './routes/doc/03-FUNDAMENTALS/09-httpclient/03-08-05-advanced-usage/03-08-05-03-intercepting-requests-and-responses/service/doc-03-08-05-03-04.interceptor';
 import { StoreModule, USER_PROVIDED_META_REDUCERS } from '@ngrx/store';
 import { metaReducers, reducers } from './reducers';
 import { MetaReducer02 } from './routes/pkgs/ngrx/store/04-recipes/04-01-inject-reducers/store/reducers/04-01.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './app.effects';
-import {
-  NavigationActionTiming,
-  StoreRouterConnectingModule,
-} from '@ngrx/router-store';
+import { NavigationActionTiming, StoreRouterConnectingModule } from '@ngrx/router-store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '@app/env/environment';
 import { X01CustomRouterStateSerializer } from './routes/pkgs/ngrx/router-store/02-configuration/service/x-01-custom-router-state-serializer';
@@ -93,9 +82,7 @@ const I18NSERVICE_MODULES = [
   }),
 ];
 
-const I18NSERVICE_PROVIDES = [
-  { provide: ALAIN_I18N_TOKEN, useClass: I18NService, multi: false },
-];
+const I18NSERVICE_PROVIDES = [{ provide: ALAIN_I18N_TOKEN, useClass: I18NService, multi: false }];
 
 const FORM_MODULES = [JsonSchemaModule];
 

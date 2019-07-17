@@ -23,31 +23,46 @@ const CRISES = [
 function init(app: Application) {
   app.get('/doc/03/10/02/heroes', (req: Request, res: Response) => {
     setTimeout(() => {
-      res.jsonp(HEROES);
+      res.jsonp({
+        state: true,
+        data: HEROES,
+      });
     }, 1000);
   });
 
   app.get('/doc/03/10/02/heroes/:id', (req: Request, res: Response) => {
     setTimeout(() => {
-      res.jsonp(HEROES.find(i => i.id === Number(req.params.id)));
+      res.jsonp({
+        state: true,
+        data: HEROES.find(i => i.id === Number(req.params.id)),
+      });
     }, 1000);
   });
 
   app.get('/doc/03/10/02/crises', (req: Request, res: Response) => {
     setTimeout(() => {
-      res.jsonp(CRISES);
+      res.jsonp({
+        state: true,
+        data: CRISES,
+      });
     }, 1000);
   });
 
   app.get('/doc/03/10/02/crises/:id', (req: Request, res: Response) => {
     setTimeout(() => {
-      res.jsonp(CRISES.find(i => i.id === Number(req.params.id)));
+      res.jsonp({
+        state: true,
+        data: CRISES.find(i => i.id === Number(req.params.id)),
+      });
     }, 1000);
   });
 
   app.put('/doc/03/10/02/crises/:id', (req: Request, res: Response) => {
     setTimeout(() => {
-      res.jsonp(CRISES.find(i => i.id === Number(req.params.id)));
+      res.jsonp({
+        state: true,
+        data: CRISES.find(i => i.id === Number(req.params.id)),
+      });
     }, 1000);
   });
 }

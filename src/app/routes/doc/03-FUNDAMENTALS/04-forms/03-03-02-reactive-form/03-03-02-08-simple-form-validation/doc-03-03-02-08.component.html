@@ -1,0 +1,33 @@
+<form [formGroup]="profileFormGroup" (ngSubmit)="handleSubmit()">
+  <label for="name">
+    NAME:
+    <input type="text" nz-input id="name" formControlName="name" />
+  </label>
+
+  <span formGroupName="address">
+    <label for="street">
+      STREET:
+      <input type="text" nz-input id="street" formControlName="street" />
+    </label>
+    <label for="zip">
+      ZIP:
+      <input type="text" nz-input id="zip" formControlName="zip" />
+    </label>
+  </span>
+
+  <nz-divider [nzDashed]="true"></nz-divider>
+  <p><code>AbstractControl.status</code> 属性用来标识表单是否通过验证, 可选值为: VALID, INVALID, PENDING, DISABLED</p>
+
+  <div>
+    <button nz-button (click)="$event.preventDefault()">
+      {{ profileFormGroup.status }}
+    </button>
+  </div>
+  <nz-divider [nzDashed]="true"></nz-divider>
+
+  <div>
+    <button type="submit" nz-button [disabled]="profileFormGroup.invalid">
+      SUBMIT
+    </button>
+  </div>
+</form>
