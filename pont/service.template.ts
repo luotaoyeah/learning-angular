@@ -348,7 +348,9 @@ export default class MyGenerator extends CodeGenerator {
 
     export ${inter.getParamsCode()}
     
-    export function request(${requestParams}): Observable<${inter.responseType}> {
+    export function request(${requestParams}): Observable<${inter.responseType
+      .replace(/.*?ResponseResult</, '')
+      .slice(0, -1)}> {
       return httpClient().request(
         '${inter.method}',
         '${inter.path}',
