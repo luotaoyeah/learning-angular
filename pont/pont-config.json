@@ -15,5 +15,10 @@
   ],
   "outDir": "../src/app/core/api",
   "templatePath": "./service.template",
-  "transformPath": "./transform.template"
+  "transformPath": "./transform.template",
+  "prettierConfig": {
+    "printWidth": 120,
+    "singleQuote": true,
+    "trailingComma": "all"
+  }
 }

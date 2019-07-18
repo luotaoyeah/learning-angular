@@ -9,12 +9,9 @@ export class FileStructures extends Pont.FileStructures {
   public getMultipleOriginsFileStructures() {
     // tslint:disable-next-line:no-any
     const files: any = {};
-    // @ts-ignore
     this.generators.forEach(generator => {
       const dataSource = generator.dataSource.name;
-      const dsFiles = this.getOriginFileStructures(generator, true);
-
-      files[dataSource] = dsFiles;
+      files[dataSource] = this.getOriginFileStructures(generator, true);
     });
 
     return {
@@ -240,7 +237,12 @@ export default class MyGenerator extends CodeGenerator {
           ? `<${base.templateArgs.map((ignored, index) => `T${index}`).join(', ')}>`
           : '';
 
+      const desc: string = base.description || '';
+
       return `
+        /**
+         * ${desc}
+         */
         export class ${base.name}${T} {
           ${base.properties
             .map(p => p.toPropertyCodeWithInitValue(base.name + T).replace(/\*\/\n/, '*/\npublic '))
@@ -339,18 +341,21 @@ export default class MyGenerator extends CodeGenerator {
     return `
     /* tslint:disable:no-any */
 
-    /**
-     * ${inter.description || ''}
-     */
-
     import { Observable } from 'rxjs';
     // @ts-ignore: TS6133
     import * as DEFS from '../../models';
     import { httpClient, IRequestOptions } from '../../../http-client';
 
     export ${inter.getParamsCode()}
-    
-    export function request(${requestParams}): Observable<${
+
+    /**
+     * ${inter.description || ''}
+     *
+     * @param params Query params
+     * @param body Body params
+     * @param options Additional request options
+     */
+    export function ${inter.name}(${requestParams}): Observable<${
       inter.responseType === 'any' ? 'any' : inter.responseType.replace(/.*?ResponseResult</, '').slice(0, -1)
     }> {
       return httpClient().request(
@@ -370,13 +375,15 @@ export default class MyGenerator extends CodeGenerator {
    * src/app/core/api/SortingPd/Controllers/SortingParameterController/index.ts
    */
   public getModIndex(mod: Mod) {
+    const desc: string = (mod.description || '').replace(/\n/g, '\n* ');
+
     return `
-      /**
-       * ${mod.description || ''}
+      /*
+       * ${desc}
        */
       ${mod.interfaces
         .map(inter => {
-          return `import * as ${inter.name} from './${inter.name}';`;
+          return `import { ${inter.name} } from './${inter.name}';`;
         })
         .join('\n')}
 

@@ -1,22 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { API, DEFS } from '@app/core/api';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
 })
-export class HomeComponent implements OnInit {
-  public ngOnInit(): void {
-    API.SortingPd.SortingParameterController.GetAllValues.request({}).subscribe(
-      value => {
-        value.items.forEach(item => {
-          console.log(item.updateBy);
-        });
-      },
-    );
-
-    const sort: DEFS.SortingPd.SortingParameter = new DEFS.SortingPd.SortingParameter();
-
-    console.log(sort);
-  }
-}
+export class HomeComponent {}
