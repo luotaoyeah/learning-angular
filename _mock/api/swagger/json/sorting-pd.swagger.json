@@ -1,217 +1,262 @@
 {
   "swagger": "2.0",
   "info": {
-    "version": "v1",
     "title": "AIFactoryPlatform - Kengic Core HTTP API",
     "description": "The Core Microservice HTTP API. This is a Data-Driven/CRUD microservice sample",
-    "termsOfService": "Terms Of Service"
+    "version": "v1"
   },
   "paths": {
+    "/": {
+      "get": {
+        "tags": ["Home"],
+        "summary": "Gets the index.",
+        "produces": ["text/plain", "application/json", "text/json"],
+        "responses": {
+          "302": {
+            "description": "Redirect"
+          },
+          "default": {
+            "description": "Unexpected Error",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      }
+    },
     "/api/v1/OperatedTracing/GetValues": {
       "get": {
         "tags": ["OperatedTracing"],
         "summary": "GetValues.",
-        "operationId": "GetValues",
-        "consumes": [],
         "produces": ["application/json"],
         "parameters": [
           {
+            "in": "query",
             "name": "pageSize",
-            "in": "query",
             "description": "pageSize.",
-            "required": false,
             "type": "integer",
             "format": "int32"
           },
           {
+            "in": "query",
             "name": "pageIndex",
-            "in": "query",
             "description": "pageIndex.",
-            "required": false,
             "type": "integer",
             "format": "int32"
           },
           {
-            "name": "queryCondition",
             "in": "query",
+            "name": "queryCondition",
             "description": "queryCondition.",
-            "required": false,
-            "type": "string"
+            "type": "string",
+            "default": ""
+          },
+          {
+            "in": "query",
+            "name": "beginTime",
+            "description": "beginTime.",
+            "type": "string",
+            "format": "date-time",
+            "default": ""
+          },
+          {
+            "in": "query",
+            "name": "endTime",
+            "description": "endTime.",
+            "type": "string",
+            "format": "date-time",
+            "default": ""
           }
         ],
         "responses": {
           "200": {
             "description": "Success",
             "schema": {
-              "$ref": "#/definitions/ResponseResult[Page[OperatedTracing]]"
+              "$ref": "#/definitions/OperatedTracingPageResponseResult"
             }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
           }
-        }
+        },
+        "security": [{}]
       }
     },
     "/api/v1/OperatedTracing/Deletes": {
       "put": {
         "tags": ["OperatedTracing"],
         "summary": "Deletes.",
-        "operationId": "Deletes",
-        "consumes": [],
         "produces": ["application/json"],
         "parameters": [
           {
-            "name": "ids",
             "in": "query",
+            "name": "ids",
             "description": "ids.",
-            "required": false,
-            "type": "string"
+            "type": "string",
+            "default": ""
           }
         ],
         "responses": {
           "200": {
             "description": "Success",
-            "schema": { "$ref": "#/definitions/ResponseResult[Int32]" }
+            "schema": {
+              "$ref": "#/definitions/Int32ResponseResult"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
           }
-        }
+        },
+        "security": [{}]
       }
     },
     "/api/v1/SortingParameter/GetAllValues": {
       "get": {
         "tags": ["SortingParameter"],
         "summary": "GetAllValues.",
-        "operationId": "GetAllValues",
-        "consumes": [],
         "produces": ["application/json"],
-        "parameters": [],
         "responses": {
           "200": {
             "description": "Success",
             "schema": {
-              "$ref": "#/definitions/ResponseResult[Page[SortingParameter]]"
+              "$ref": "#/definitions/SortingParameterPageResponseResult"
             }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
           }
-        }
+        },
+        "security": [{}]
       }
     },
     "/api/v1/SortingParameter/Update": {
       "put": {
         "tags": ["SortingParameter"],
         "summary": "Update.",
-        "operationId": "Update",
-        "consumes": [
-          "application/json-patch+json",
-          "application/json",
-          "text/json",
-          "application/*+json"
-        ],
+        "consumes": ["application/json", "text/json", "application/*+json"],
         "produces": ["application/json"],
         "parameters": [
           {
-            "name": "valueModel",
             "in": "body",
-            "description": "valueModel.",
-            "required": false,
-            "schema": { "$ref": "#/definitions/UpdateParam" }
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UpdateParam"
+            }
           }
         ],
         "responses": {
           "200": {
             "description": "Success",
-            "schema": { "$ref": "#/definitions/ResponseResult[String]" }
+            "schema": {
+              "$ref": "#/definitions/StringResponseResult"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
           }
-        }
+        },
+        "security": [{}]
       }
     },
     "/api/v1/SortingPdWorkTask/GetValues": {
       "get": {
         "tags": ["SortingPdWorkTask"],
         "summary": "GetValues.",
-        "operationId": "GetValues",
-        "consumes": [],
         "produces": ["application/json"],
         "parameters": [
           {
+            "in": "query",
             "name": "pageSize",
-            "in": "query",
             "description": "pageSize.",
-            "required": false,
             "type": "integer",
             "format": "int32"
           },
           {
+            "in": "query",
             "name": "pageIndex",
-            "in": "query",
             "description": "pageIndex.",
-            "required": false,
             "type": "integer",
             "format": "int32"
           },
-          { "name": "Id", "in": "query", "required": false, "type": "string" },
           {
+            "in": "query",
+            "name": "Id",
+            "description": "Gets or sets the identifier.",
+            "type": "string"
+          },
+          {
+            "in": "query",
             "name": "MessageType",
-            "in": "query",
-            "required": false,
+            "description": "Gets or sets the type of the message.",
             "type": "string",
-            "enum": [
-              "Default",
-              "InductSuccess",
-              "InductFailure",
-              "RequestWithoutDestination",
-              "RequestWithDestination"
-            ]
+            "enum": ["Default", "InductSuccess", "InductFailure", "RequestWithoutDestination", "RequestWithDestination"]
           },
           {
+            "in": "query",
             "name": "TracingId",
-            "in": "query",
-            "required": false,
+            "description": "Gets or sets the identifier of the tracing.",
             "type": "string"
           },
           {
+            "in": "query",
             "name": "NodeId",
-            "in": "query",
-            "required": false,
+            "description": "Gets or sets the identifier of the node.",
             "type": "string"
           },
           {
+            "in": "query",
             "name": "Barcode",
-            "in": "query",
-            "required": false,
+            "description": "Gets or sets the barcode.",
             "type": "string"
           },
           {
+            "in": "query",
             "name": "Induct",
-            "in": "query",
-            "required": false,
+            "description": "Gets or sets the induct.",
             "type": "string"
           },
           {
+            "in": "query",
             "name": "InductMode",
-            "in": "query",
-            "required": false,
+            "description": "Gets or sets the induct mode.",
             "type": "string"
           },
           {
-            "name": "InductTime",
             "in": "query",
-            "required": false,
+            "name": "InductTime",
+            "description": "Gets or sets the induct time.",
             "type": "string",
             "format": "date-time"
           },
           {
-            "name": "Destination",
             "in": "query",
-            "required": false,
+            "name": "Destination",
+            "description": "Gets or sets the Destination for the.",
             "type": "string"
           },
           {
-            "name": "Weight",
             "in": "query",
-            "required": false,
+            "name": "Weight",
+            "description": "Gets or sets the weight.",
             "type": "number",
             "format": "double"
           },
           {
-            "name": "Status",
             "in": "query",
-            "required": false,
+            "name": "Status",
+            "description": "Gets or sets the status.",
             "type": "string",
             "enum": [
               "Default",
@@ -230,35 +275,35 @@
             ]
           },
           {
+            "in": "query",
             "name": "CreateBy",
-            "in": "query",
-            "required": false,
+            "description": "Gets or sets who create this object.",
             "type": "string"
           },
           {
+            "in": "query",
             "name": "CreateTime",
-            "in": "query",
-            "required": false,
+            "description": "Gets or sets the create time.",
             "type": "string",
             "format": "date-time"
           },
           {
-            "name": "UpdateBy",
             "in": "query",
-            "required": false,
+            "name": "UpdateBy",
+            "description": "Gets or sets who update this object.",
             "type": "string"
           },
           {
-            "name": "UpdateTime",
             "in": "query",
-            "required": false,
+            "name": "UpdateTime",
+            "description": "Gets or sets the update time.",
             "type": "string",
             "format": "date-time"
           },
           {
-            "name": "Comments",
             "in": "query",
-            "required": false,
+            "name": "Comments",
+            "description": "Gets or sets the comments.",
             "type": "string"
           }
         ],
@@ -266,159 +311,286 @@
           "200": {
             "description": "Success",
             "schema": {
-              "$ref": "#/definitions/ResponseResult[Page[SortingPdWorkTask]]"
+              "$ref": "#/definitions/SortingPdWorkTaskPageResponseResult"
             }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
           }
-        }
+        },
+        "security": [{}]
       }
     }
   },
   "definitions": {
-    "ResponseResult[Page[OperatedTracing]]": {
+    "ProblemDetails": {
       "type": "object",
       "properties": {
-        "data": { "$ref": "#/definitions/Page[OperatedTracing]" },
-        "state": { "type": "boolean" },
-        "message": { "type": "string" }
-      }
-    },
-    "Page[OperatedTracing]": {
-      "type": "object",
-      "properties": {
-        "total": { "format": "int32", "type": "integer" },
-        "items": {
-          "uniqueItems": false,
-          "type": "array",
-          "items": { "$ref": "#/definitions/OperatedTracing" }
+        "type": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "status": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "detail": {
+          "type": "string"
+        },
+        "instance": {
+          "type": "string"
+        },
+        "extensions": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object"
+          },
+          "readOnly": true
         }
       }
     },
     "OperatedTracing": {
+      "description": "OperatedTracing.",
       "type": "object",
       "properties": {
-        "id": { "type": "string" },
-        "action": { "type": "string" },
-        "content": { "type": "string" },
-        "operator": { "type": "string" },
-        "operatoedTime": { "format": "date-time", "type": "string" },
-        "comments": { "type": "string" }
+        "id": {
+          "description": "Gets or sets the identifier.",
+          "type": "string"
+        },
+        "action": {
+          "description": "Gets or sets the action.",
+          "type": "string"
+        },
+        "content": {
+          "description": "Gets or sets the content.",
+          "type": "string"
+        },
+        "operator": {
+          "description": "Gets or sets the operator.",
+          "type": "string"
+        },
+        "operatoedTime": {
+          "format": "date-time",
+          "description": "Gets or sets the operatoed time.",
+          "type": "string"
+        },
+        "comments": {
+          "description": "Gets or sets the comments.",
+          "type": "string"
+        }
       }
     },
-    "ResponseResult[Int32]": {
+    "OperatedTracingPage": {
       "type": "object",
       "properties": {
-        "data": { "format": "int32", "type": "integer" },
-        "state": { "type": "boolean" },
-        "message": { "type": "string" }
-      }
-    },
-    "ResponseResult[Page[SortingParameter]]": {
-      "type": "object",
-      "properties": {
-        "data": { "$ref": "#/definitions/Page[SortingParameter]" },
-        "state": { "type": "boolean" },
-        "message": { "type": "string" }
-      }
-    },
-    "Page[SortingParameter]": {
-      "type": "object",
-      "properties": {
-        "total": { "format": "int32", "type": "integer" },
+        "total": {
+          "format": "int32",
+          "type": "integer"
+        },
         "items": {
-          "uniqueItems": false,
           "type": "array",
-          "items": { "$ref": "#/definitions/SortingParameter" }
+          "items": {
+            "$ref": "#/definitions/OperatedTracing"
+          }
+        }
+      }
+    },
+    "OperatedTracingPageResponseResult": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/OperatedTracingPage"
+        },
+        "state": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "Int32ResponseResult": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "state": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
         }
       }
     },
     "SortingParameter": {
+      "description": "SortingParameter.",
       "type": "object",
       "properties": {
-        "id": { "type": "string" },
-        "code": { "type": "string" },
-        "name": { "type": "string" },
-        "description": { "type": "string" },
-        "value": { "type": "string" },
-        "createBy": { "type": "string" },
-        "createTime": { "format": "date-time", "type": "string" },
-        "updateBy": { "type": "string" },
-        "updateTime": { "format": "date-time", "type": "string" },
-        "comments": { "type": "string" },
-        "foo": { "$ref": "#/definitions/Foo" },
-        "foos": {
-          "uniqueItems": false,
-          "type": "array",
-          "items": { "$ref": "#/definitions/Foo" }
+        "id": {
+          "description": "Gets or sets the identifier.",
+          "type": "string"
+        },
+        "code": {
+          "description": "Gets or sets the code.",
+          "type": "string"
+        },
+        "name": {
+          "description": "Gets or sets the name.",
+          "type": "string"
+        },
+        "description": {
+          "description": "Gets or sets the description.",
+          "type": "string"
+        },
+        "value": {
+          "description": "Gets or sets the value.",
+          "type": "string"
+        },
+        "createBy": {
+          "description": "Gets or sets who create this object.",
+          "type": "string"
+        },
+        "createTime": {
+          "format": "date-time",
+          "description": "Gets or sets the create time.",
+          "type": "string"
+        },
+        "updateBy": {
+          "description": "Gets or sets who update this object.",
+          "type": "string"
+        },
+        "updateTime": {
+          "format": "date-time",
+          "description": "Gets or sets the update time.",
+          "type": "string"
+        },
+        "comments": {
+          "description": "Gets or sets the comments.",
+          "type": "string"
         }
       }
     },
-    "Foo": {
+    "SortingParameterPage": {
       "type": "object",
       "properties": {
-        "id": { "type": "string" },
-        "code": { "type": "string" },
-        "name": { "type": "string" }
+        "total": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortingParameter"
+          }
+        }
+      }
+    },
+    "SortingParameterPageResponseResult": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/SortingParameterPage"
+        },
+        "state": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        }
       }
     },
     "UpdateParam": {
       "description": "SortingParameter UpdateParam.",
       "type": "object",
       "properties": {
-        "code": { "description": "Code.", "type": "string" },
-        "value": { "description": "Value.", "type": "string" },
-        "comments": { "description": "Comments.", "type": "string" }
+        "code": {
+          "description": "Gets or sets code.",
+          "type": "string"
+        },
+        "name": {
+          "description": "Gets or sets name.",
+          "type": "string"
+        },
+        "value": {
+          "description": "Gets or sets value.",
+          "type": "string"
+        },
+        "comments": {
+          "description": "Gets or sets comments.",
+          "type": "string"
+        }
       }
     },
-    "ResponseResult[String]": {
+    "StringResponseResult": {
       "type": "object",
       "properties": {
-        "data": { "type": "string" },
-        "state": { "type": "boolean" },
-        "message": { "type": "string" }
-      }
-    },
-    "ResponseResult[Page[SortingPdWorkTask]]": {
-      "type": "object",
-      "properties": {
-        "data": { "$ref": "#/definitions/Page[SortingPdWorkTask]" },
-        "state": { "type": "boolean" },
-        "message": { "type": "string" }
-      }
-    },
-    "Page[SortingPdWorkTask]": {
-      "type": "object",
-      "properties": {
-        "total": { "format": "int32", "type": "integer" },
-        "items": {
-          "uniqueItems": false,
-          "type": "array",
-          "items": { "$ref": "#/definitions/SortingPdWorkTask" }
+        "data": {
+          "type": "string"
+        },
+        "state": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
         }
       }
     },
     "SortingPdWorkTask": {
+      "description": "SortingPdWorkTask.",
       "type": "object",
       "properties": {
-        "id": { "type": "string" },
-        "messageType": {
-          "enum": [
-            "Default",
-            "InductSuccess",
-            "InductFailure",
-            "RequestWithoutDestination",
-            "RequestWithDestination"
-          ],
+        "id": {
+          "description": "Gets or sets the identifier.",
           "type": "string"
         },
-        "tracingId": { "type": "string" },
-        "nodeId": { "type": "string" },
-        "barcode": { "type": "string" },
-        "induct": { "type": "string" },
-        "inductMode": { "type": "string" },
-        "inductTime": { "format": "date-time", "type": "string" },
-        "destination": { "type": "string" },
-        "weight": { "format": "double", "type": "number" },
+        "messageType": {
+          "description": "Gets or sets the type of the message.",
+          "enum": ["Default", "InductSuccess", "InductFailure", "RequestWithoutDestination", "RequestWithDestination"],
+          "type": "string"
+        },
+        "tracingId": {
+          "description": "Gets or sets the identifier of the tracing.",
+          "type": "string"
+        },
+        "nodeId": {
+          "description": "Gets or sets the identifier of the node.",
+          "type": "string"
+        },
+        "barcode": {
+          "description": "Gets or sets the barcode.",
+          "type": "string"
+        },
+        "induct": {
+          "description": "Gets or sets the induct.",
+          "type": "string"
+        },
+        "inductMode": {
+          "description": "Gets or sets the induct mode.",
+          "type": "string"
+        },
+        "inductTime": {
+          "format": "date-time",
+          "description": "Gets or sets the induct time.",
+          "type": "string"
+        },
+        "destination": {
+          "description": "Gets or sets the Destination for the.",
+          "type": "string"
+        },
+        "weight": {
+          "format": "double",
+          "description": "Gets or sets the weight.",
+          "type": "number"
+        },
         "status": {
+          "description": "Gets or sets the status.",
           "enum": [
             "Default",
             "Create",
@@ -436,26 +608,87 @@
           ],
           "type": "string"
         },
-        "createBy": { "type": "string" },
-        "createTime": { "format": "date-time", "type": "string" },
-        "updateBy": { "type": "string" },
-        "updateTime": { "format": "date-time", "type": "string" },
-        "comments": { "type": "string" }
+        "createBy": {
+          "description": "Gets or sets who create this object.",
+          "type": "string"
+        },
+        "createTime": {
+          "format": "date-time",
+          "description": "Gets or sets the create time.",
+          "type": "string"
+        },
+        "updateBy": {
+          "description": "Gets or sets who update this object.",
+          "type": "string"
+        },
+        "updateTime": {
+          "format": "date-time",
+          "description": "Gets or sets the update time.",
+          "type": "string"
+        },
+        "comments": {
+          "description": "Gets or sets the comments.",
+          "type": "string"
+        }
+      }
+    },
+    "SortingPdWorkTaskPage": {
+      "type": "object",
+      "properties": {
+        "total": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SortingPdWorkTask"
+          }
+        }
+      }
+    },
+    "SortingPdWorkTaskPageResponseResult": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/SortingPdWorkTaskPage"
+        },
+        "state": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        }
       }
     }
   },
   "securityDefinitions": {
     "oauth2": {
+      "type": "oauth2",
       "flow": "implicit",
-      "authorizationUrl": "/connect/authorize",
-      "tokenUrl": "/connect/token",
-      "scopes": { "Sorter": "Sorters API" },
-      "type": "oauth2"
+      "authorizationUrl": "file:///connect/authorize",
+      "tokenUrl": "file:///connect/authorize",
+      "scopes": {
+        "Sorter": "Sorters API"
+      }
     }
   },
   "tags": [
-    { "name": "OperatedTracing", "description": "OperatedTracing." },
-    { "name": "SortingParameter", "description": "SortingParameter." },
-    { "name": "SortingPdWorkTask", "description": "SortingPdWorkTask." }
+    {
+      "name": "Home",
+      "description": "A controller for handling homes.\r\nImplements the Microsoft.AspNetCore.Mvc.ControllerBase."
+    },
+    {
+      "name": "OperatedTracing",
+      "description": "OperatedTracing.\r\nImplements the Microsoft.AspNetCore.Mvc.ControllerBase."
+    },
+    {
+      "name": "SortingParameter",
+      "description": "SortingParameter.\r\nImplements the Microsoft.AspNetCore.Mvc.ControllerBase."
+    },
+    {
+      "name": "SortingPdWorkTask",
+      "description": "SortingPdWorkTask.\r\nImplements the Microsoft.AspNetCore.Mvc.ControllerBase."
+    }
   ]
 }

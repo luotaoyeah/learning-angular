@@ -29,10 +29,7 @@ export class FileStructures extends Pont.FileStructures {
     return '';
   }
 
-  public getBaseClassesInDeclaration(
-    originCode: string,
-    usingMultipleOrigins: boolean,
-  ) {
+  public getBaseClassesInDeclaration(originCode: string, usingMultipleOrigins: boolean) {
     return '';
   }
 
@@ -40,10 +37,7 @@ export class FileStructures extends Pont.FileStructures {
     return '';
   }
 
-  public getOriginFileStructures(
-    generator: CodeGenerator,
-    usingMultipleOrigins = false,
-  ) {
+  public getOriginFileStructures(generator: CodeGenerator, usingMultipleOrigins = false) {
     // tslint:disable-next-line:no-any
     const mods: any = {};
     const dataSource = generator.dataSource;
@@ -60,10 +54,9 @@ export class FileStructures extends Pont.FileStructures {
           inter.path = `${dataSource.name.toLowerCase()}${inter.path}`;
         }
 
-        currentMod[`${inter.name}.ts`] = generator.getInterfaceContent.bind(
-          generator,
-          inter,
-        );
+        inter.name = inter.name.replace(/(^get)|(^post)|(^put)|(^delete)/, '') || 'None';
+
+        currentMod[`${inter.name}.ts`] = generator.getInterfaceContent.bind(generator, inter);
         currentMod['index.ts'] = generator.getModIndex.bind(generator, mod);
       });
       mods[mod.name] = currentMod;
@@ -108,9 +101,7 @@ export class FileStructures extends Pont.FileStructures {
 
   public getDataSourcesTs() {
     // @ts-ignore
-    const dataSources: Array<string> = this.generators.map(
-      (generator: CodeGenerator) => generator.dataSource.name,
-    );
+    const dataSources: Array<string> = this.generators.map((generator: CodeGenerator) => generator.dataSource.name);
 
     return `
       ${dataSources
@@ -120,15 +111,11 @@ export class FileStructures extends Pont.FileStructures {
         .join('\n')}
 
       export namespace DEFS {
-        ${dataSources
-          .map(name => `export import ${name} = ${name}Defs;`)
-          .join('\n')}
+        ${dataSources.map(name => `export import ${name} = ${name}Defs;`).join('\n')}
       }
 
       export namespace API {
-        ${dataSources
-          .map(name => `export import ${name} = ${name}Api;`)
-          .join('\n')}
+        ${dataSources.map(name => `export import ${name} = ${name}Api;`).join('\n')}
       };
     `;
   }
@@ -184,19 +171,13 @@ export default class MyGenerator extends CodeGenerator {
   /** 获取某个基类的类型定义代码 */
   public getBaseClassInDeclaration(base: BaseClass) {
     if (base.templateArgs && base.templateArgs.length) {
-      return `class ${base.name}<${base.templateArgs
-        .map((ignored, index) => `T${index}`)
-        .join(', ')}> {
-        ${base.properties
-          .map(prop => prop.toPropertyCode().replace(/\*\/\n/, '*/\npublic '))
-          .join('\n')}
+      return `class ${base.name}<${base.templateArgs.map((ignored, index) => `T${index}`).join(', ')}> {
+        ${base.properties.map(prop => prop.toPropertyCode().replace(/\*\/\n/, '*/\npublic ')).join('\n')}
       }
       `;
     }
     return `class ${base.name} {
-      ${base.properties
-        .map(prop => prop.toPropertyCode().replace(/\*\/\n/, '*/\npublic '))
-        .join('\n')}
+      ${base.properties.map(prop => prop.toPropertyCode().replace(/\*\/\n/, '*/\npublic ')).join('\n')}
     }
     `;
   }
@@ -256,19 +237,13 @@ export default class MyGenerator extends CodeGenerator {
     const classes = this.dataSource.baseClasses.map(base => {
       const T =
         base.templateArgs && base.templateArgs.length > 0
-          ? `<${base.templateArgs
-              .map((ignored, index) => `T${index}`)
-              .join(', ')}>`
+          ? `<${base.templateArgs.map((ignored, index) => `T${index}`).join(', ')}>`
           : '';
 
       return `
         export class ${base.name}${T} {
           ${base.properties
-            .map(p =>
-              p
-                .toPropertyCodeWithInitValue(base.name + T)
-                .replace(/\*\/\n/, '*/\npublic '),
-            )
+            .map(p => p.toPropertyCodeWithInitValue(base.name + T).replace(/\*\/\n/, '*/\npublic '))
             .filter(id => id)
             .join('\n')}
             
@@ -279,11 +254,7 @@ export default class MyGenerator extends CodeGenerator {
                   switch (key) {
                   ${base.properties
                     .map(p => {
-                      if (
-                        !['', 'number', 'string', 'boolean', 'Array'].includes(
-                          p.dataType.typeName,
-                        )
-                      ) {
+                      if (!['', 'number', 'string', 'boolean', 'Array', 'ObjectMap'].includes(p.dataType.typeName)) {
                         return (
                           "case '" +
                           p.name +
@@ -308,11 +279,7 @@ export default class MyGenerator extends CodeGenerator {
                         }
                       }
 
-                      return (
-                        "case '" +
-                        p.name +
-                        "':Reflect.set(this, key, value);break;"
-                      );
+                      return "case '" + p.name + "':Reflect.set(this, key, value);break;";
                     })
                     .join('\n')}
                     default:
@@ -328,8 +295,14 @@ export default class MyGenerator extends CodeGenerator {
 
     if (this.dataSource.name) {
       return `
+        /* tslint:disable:no-any */
         import { isNil } from 'lodash-es';
         import { DtoUtil } from '@app/core/utils';
+        
+        // @ts-ignore
+        type ObjectMap<K extends string | number | symbol = any, V = any> = {
+          [key in K]: V;
+        }
 
         export namespace ${this.dataSource.name} {
           ${classes.join('\n')}
@@ -361,8 +334,7 @@ export default class MyGenerator extends CodeGenerator {
     const requestParams =
       (bodyParmas
         ? `params: Params = {}, body: ${bodyParmas} = ${bodyInitValue}`
-        : `params: Params = {}, body: {} = {}`) +
-      ', options: IRequestOptions = {},';
+        : `params: Params = {}, body: {} = {}`) + ', options: IRequestOptions = {},';
 
     return `
     /**
@@ -376,9 +348,7 @@ export default class MyGenerator extends CodeGenerator {
 
     export ${inter.getParamsCode()}
     
-    export function request(${requestParams}): Observable<${inter.responseType
-      .replace(/.*?ResponseResult</, '')
-      .slice(0, -1)}> {
+    export function request(${requestParams}): Observable<${inter.responseType}> {
       return httpClient().request(
         '${inter.method}',
         '${inter.path}',
