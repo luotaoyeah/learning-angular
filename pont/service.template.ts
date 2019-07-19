@@ -103,11 +103,11 @@ export class FileStructures extends Pont.FileStructures {
     return `
       ${dataSources
         .map(name => {
-          return `import { DEFS as ${name}Defs, ${name} as ${name}Api } from './${name}';`;
+          return `import { DEF as ${name}Defs, ${name} as ${name}Api } from './${name}';`;
         })
         .join('\n')}
 
-      export namespace DEFS {
+      export namespace DEF {
         ${dataSources.map(name => `export import ${name} = ${name}Defs;`).join('\n')}
       }
 
@@ -220,10 +220,10 @@ export default class MyGenerator extends CodeGenerator {
    */
   public getIndex() {
     return `
-        import { ${this.dataSource.name} as DEFS } from './models';
+        import { ${this.dataSource.name} as DEF } from './models';
         import * as ${this.dataSource.name} from './Controllers';
 
-        export { DEFS, ${this.dataSource.name} };
+        export { DEF, ${this.dataSource.name} };
       `;
   }
 
@@ -343,7 +343,7 @@ export default class MyGenerator extends CodeGenerator {
 
     import { Observable } from 'rxjs';
     // @ts-ignore: TS6133
-    import * as DEFS from '../../models';
+    import * as DEF from '../../models';
     import { httpClient, IRequestOptions } from '../../../http-client';
 
     export ${inter.getParamsCode()}
