@@ -1,25 +1,10 @@
-/**
- * 进一步对基础模块的导入提炼
- * 有关模块注册指导原则请参考：https://github.com/ng-alain/ng-alain/issues/180
- */
-import {
-  ModuleWithProviders,
-  NgModule,
-  Optional,
-  SkipSelf,
-} from '@angular/core';
+import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
 import { throwIfAlreadyLoaded } from '@app/core';
-
 import { AlainThemeModule } from '@delon/theme';
-import {
-  PageHeaderConfig,
-  ReuseTabService,
-  ReuseTabStrategy,
-  STConfig,
-} from '@delon/abc';
+import { PageHeaderConfig, ReuseTabService, ReuseTabStrategy, STConfig } from '@delon/abc';
 import { DelonAuthConfig } from '@delon/auth';
 import { RouteReuseStrategy } from '@angular/router';
-import { DelonACLConfig } from '@delon/acl';
+import { DelonACLConfig, DelonACLModule } from '@delon/acl';
 
 // tslint:disable-next-line:no-any
 const REUSETAB_PROVIDES: Array<any> = [
@@ -69,7 +54,7 @@ const GLOBAL_CONFIG_PROVIDES = [
 // endregion
 
 @NgModule({
-  imports: [AlainThemeModule.forRoot()],
+  imports: [AlainThemeModule.forRoot(), DelonACLModule.forRoot()],
 })
 export class DelonModule {
   constructor(

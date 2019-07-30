@@ -14,16 +14,12 @@ import { NtJsonPipe } from './pipes/nt-json.pipe';
 // tslint:disable-next-line:no-any
 const THIRDMODULES: Array<any> = [NgZorroAntdModule, CountdownModule];
 
-// region your componets & directives
-
 // tslint:disable-next-line:no-any
 const COMPONENTS: Array<any> = [];
 // tslint:disable-next-line:no-any
 const DIRECTIVES: Array<Type<any> | Array<any>> = [];
 // tslint:disable-next-line:no-any
 const PIPES: Array<Type<any> | Array<any>> = [NtJsonPipe];
-
-// endregion
 
 @NgModule({
   declarations: [...COMPONENTS, ...DIRECTIVES, ...PIPES],
@@ -37,7 +33,7 @@ const PIPES: Array<Type<any> | Array<any>> = [NtJsonPipe];
     ReactiveFormsModule,
     AlainThemeModule.forChild(),
     DelonABCModule,
-    DelonACLModule.forRoot(),
+    DelonACLModule,
     DelonFormModule,
     ...THIRDMODULES,
   ],
