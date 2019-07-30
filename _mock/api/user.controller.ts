@@ -8,11 +8,8 @@ import { Request, Response } from 'express-serve-static-core';
 function init(app: Application) {
   app.post('/login', (req: Request, res: Response) => {
     const data = req.body;
-    if (
-      !['admin'].includes(data.username) ||
-      !['admin'].includes(data.password)
-    ) {
-      res.jsonp({ msg: `invalid username or password（admin/admin）` });
+    if (!['admin'].includes(data.username) || !['admin'].includes(data.password)) {
+      res.jsonp({ msg: `invalid username or password` });
       return;
     }
 
