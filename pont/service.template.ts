@@ -256,7 +256,9 @@ export default class MyGenerator extends CodeGenerator {
                   switch (key) {
                   ${base.properties
                     .map(p => {
-                      if (!['', 'number', 'string', 'boolean', 'Array', 'ObjectMap'].includes(p.dataType.typeName)) {
+                      if (
+                        !['', 'number', 'string', 'boolean', 'Array', 'ObjectMap', 'Page'].includes(p.dataType.typeName)
+                      ) {
                         return (
                           "case '" +
                           p.name +
@@ -269,7 +271,10 @@ export default class MyGenerator extends CodeGenerator {
                       if (p.dataType.typeName === 'Array') {
                         if (p.dataType.typeArgs.length === 1) {
                           const typeArg = p.dataType.typeArgs[0];
-                          if (typeArg.templateIndex === -1) {
+                          if (
+                            typeArg.templateIndex === -1 &&
+                            !['string', 'number', 'boolean'].includes(typeArg.typeName)
+                          ) {
                             return (
                               "case '" +
                               p.name +
@@ -333,20 +338,26 @@ export default class MyGenerator extends CodeGenerator {
       }
     }
 
-    const requestParams =
+    const requestParamsClassName: string = `${inter.name}Param`;
+    const requestParams: string =
       (bodyParmas
-        ? `params: Params = {}, body: ${bodyParmas} = ${bodyInitValue}`
-        : `params: Params = {}, body: {} = {}`) + ', options: IRequestOptions = {},';
+        ? `params: ${requestParamsClassName} = {}, body: ${bodyParmas} = ${bodyInitValue}`
+        : `params: ${requestParamsClassName} = {}, body: {} = {}`) + ', options: IRequestOptions = {},';
+
+    const responseType: string =
+      inter.responseType === 'any' ? 'any' : inter.responseType.replace(/.*?ResponseResult</, '').slice(0, -1);
 
     return `
     /* tslint:disable:no-any */
 
     import { Observable } from 'rxjs';
+    import { map } from 'rxjs/operators';
+    import { DtoUtil } from '@app/core/utils';
     // @ts-ignore: TS6133
     import * as DEF from '../../models';
     import { httpClient, IRequestOptions } from '../../../http-client';
 
-    export ${inter.getParamsCode()}
+    export ${inter.getParamsCode(requestParamsClassName)}
 
     /**
      * ${inter.description || ''}
@@ -355,9 +366,7 @@ export default class MyGenerator extends CodeGenerator {
      * @param body Body params
      * @param options Additional request options
      */
-    export function ${inter.name}(${requestParams}): Observable<${
-      inter.responseType === 'any' ? 'any' : inter.responseType.replace(/.*?ResponseResult</, '').slice(0, -1)
-    }> {
+    export function ${inter.name}(${requestParams}): Observable<${responseType}> {
       return httpClient().request(
         '${inter.method}',
         '${inter.path}',
@@ -366,9 +375,34 @@ export default class MyGenerator extends CodeGenerator {
           body,
           ...options,
         },
-      );
+      ).pipe(map(value=>{
+        ${this.getResponseConvertion(responseType)}
+      }));
     }
    `;
+  }
+
+  /**
+   * Convert response to DTO
+   * @param responseType The responseType string
+   */
+  private getResponseConvertion(responseType: string): string {
+    if (responseType.startsWith('Array<DEF.')) {
+      const dtoTypeName: string = responseType.replace(/.*?Array</, '').slice(0, -1);
+      return `return DtoUtil.fromArray(${dtoTypeName}, value);`;
+    } else if (responseType.includes('.Page<DEF.')) {
+      const pageTypeName: string = responseType.substring(0, responseType.indexOf('.Page<') + 5);
+      const dtoTypeName: string = responseType.replace(/.*?Page</, '').slice(0, -1);
+      return `
+        const page = DtoUtil.from<${pageTypeName}<${dtoTypeName}>>(${pageTypeName}, value);
+        page.items = DtoUtil.fromArray(${dtoTypeName}, page.items);
+        return page;
+      `;
+    } else if (responseType.startsWith('DEF.')) {
+      return `return DtoUtil.from(${responseType}, value);`;
+    }
+
+    return 'return value';
   }
 
   /**
@@ -383,12 +417,12 @@ export default class MyGenerator extends CodeGenerator {
        */
       ${mod.interfaces
         .map(inter => {
-          return `import { ${inter.name} } from './${inter.name}';`;
+          return `import { ${inter.name}, ${inter.name}Param } from './${inter.name}';`;
         })
         .join('\n')}
 
       export {
-        ${mod.interfaces.map(inter => inter.name).join(',\n')}
+        ${mod.interfaces.map(inter => `${inter.name}, ${inter.name}Param`).join(',\n')}
       }
     `;
   }

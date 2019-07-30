@@ -1,14 +1,32 @@
 {
   "origins": [
     {
-      "name": "SortingPd",
-      "originUrl": "http://localhost:42002/SortingPd/swagger.json",
+      "name": "Identity",
+      "originUrl": "http://localhost:5105/identity/swagger/v1/swagger.json",
+      "usingMultipleOrigins": true,
+      "usingOperationId": false
+    },
+    {
+      "name": "SortingDe",
+      "originUrl": "http://localhost:5201/sortingde/swagger/v1/swagger.json",
       "usingMultipleOrigins": true,
       "usingOperationId": false
     },
     {
       "name": "SortingDr",
-      "originUrl": "http://localhost:42002/SortingDr/swagger.json",
+      "originUrl": "http://localhost:5202/sortingdr/swagger/v1/swagger.json",
+      "usingMultipleOrigins": true,
+      "usingOperationId": false
+    },
+    {
+      "name": "SortingOv",
+      "originUrl": "http://localhost:5203/sortingov/swagger/v1/swagger.json",
+      "usingMultipleOrigins": true,
+      "usingOperationId": false
+    },
+    {
+      "name": "SortingPd",
+      "originUrl": "http://localhost:5204/sortingpd/swagger/v1/swagger.json",
       "usingMultipleOrigins": true,
       "usingOperationId": false
     }
