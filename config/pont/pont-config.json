@@ -31,7 +31,7 @@
       "usingOperationId": false
     }
   ],
-  "outDir": "../src/app/core/api",
+  "outDir": "../../src/app/core/api",
   "templatePath": "./service.template",
   "transformPath": "./transform.template",
   "prettierConfig": {
