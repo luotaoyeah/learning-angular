@@ -4,3 +4,6 @@ _mock
 coverage
 dist
 node_modules
+projects/learning-angular-lib/coverage
+projects/learning-angular-lib/node_modules
+projects/learning-angular-schematics/node_modules
