@@ -1,6 +1,6 @@
 .circleci
 .doc
-_mock
+.mock
 coverage
 dist
 node_modules

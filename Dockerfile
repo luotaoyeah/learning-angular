@@ -1,4 +1,4 @@
-# docker build -t learning-angular . && docker run -p 88:80 -p 8888:8888 learning-angular
+# docker build -t learning-angular . && docker run -p 4200:80 -p 8888:8888 learning-angular
 
 # stage-build
 FROM node:12 AS stage-build

@@ -22,7 +22,7 @@
     "codecov": "codecov --token=7f372a79-168a-42b9-be13-b752aef85ecf",
     "build:learning-angular-lib": "ng build learning-angular-lib",
     "test:learning-angular-lib": "ng test learning-angular-lib",
-    "json-server": "ts-node _mock",
+    "json-server": "ts-node .mock",
     "pont:generate": "pont generate"
   },
   "dependencies": {
