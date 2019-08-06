@@ -1,5 +1,3 @@
-# docker build -t learning-angular . && docker run -p 4200:80 -p 8888:8888 learning-angular
-
 # stage-build
 FROM node:12 AS stage-build
 
@@ -22,6 +20,5 @@ WORKDIR /app
 COPY /config/nginx/nginx.conf /etc/nginx/nginx.conf
 
 EXPOSE 80
-EXPOSE 8888
 
 CMD ["nginx", "-g", "daemon off;"]
