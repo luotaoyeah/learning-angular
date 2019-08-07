@@ -132,7 +132,8 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "browserTarget": "learning-angular:build",
-            "proxyConfig": ".mock/proxy.json"
+            "proxyConfig": ".mock/proxy.json",
+            "port": 3011
           },
           "configurations": {
             "production": {
@@ -191,7 +192,7 @@
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
             "devServerTarget": "learning-angular:serve",
-            "port": 42001
+            "port": 3012
           },
           "configurations": {
             "production": {

@@ -28,7 +28,7 @@ app.use(jsonServer.router(db));
 /*
  * 启动模拟服务
  */
-const port = 42002;
+const port = 3013;
 app.listen(port, () => {
   console.log('--------------------------------------------------');
   console.log(`json-server is running at http://localhost:${port}`);
