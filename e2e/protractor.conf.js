@@ -13,7 +13,7 @@ exports.config = {
     },
   },
   directConnect: true,
-  baseUrl: 'http://localhost:3011/',
+  baseUrl: 'http://localhost:4200/',
   framework: 'jasmine',
   jasmineNodeOpts: {
     showColors: true,

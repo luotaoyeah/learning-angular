@@ -5,5 +5,7 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
-    ports:
-      - 3011:80
+
+networks:
+  default:
+    name: learning-angular-network
