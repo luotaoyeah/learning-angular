@@ -61,9 +61,7 @@ export class DefaultInterceptor implements HttpInterceptor {
    * Handle success response
    * @param response The response
    */
-  private handleSuccess(
-    response: HttpResponseBase,
-  ): Observable<HttpResponseBase> {
+  private handleSuccess(response: HttpResponseBase): Observable<HttpResponseBase> {
     const { status } = response;
 
     if (status > 0) {
@@ -72,14 +70,8 @@ export class DefaultInterceptor implements HttpInterceptor {
 
     switch (200) {
       case status:
-        if (
-          response instanceof HttpResponse &&
-          !some(this.WHITELIST_URLS, reg => reg.test(response.url || ''))
-        ) {
-          const body = DtoUtil.from<ResponseResult<unknown>>(
-            ResponseResult,
-            response.body,
-          );
+        if (response instanceof HttpResponse && !some(this.WHITELIST_URLS, reg => reg.test(response.url || ''))) {
+          const body = DtoUtil.from<ResponseResult<unknown>>(ResponseResult, response.body);
           if (body && !body.state) {
             return throwError(
               new HttpErrorResponse({
@@ -90,9 +82,7 @@ export class DefaultInterceptor implements HttpInterceptor {
               }),
             );
           } else {
-            return of(
-              new HttpResponse(Object.assign(response, { body: body.data })),
-            );
+            return of(new HttpResponse(Object.assign(response, { body: body.data })));
           }
         }
         break;
@@ -107,9 +97,7 @@ export class DefaultInterceptor implements HttpInterceptor {
    * Handle error response
    * @param response The response
    */
-  private handleError(
-    response: HttpErrorResponse,
-  ): Observable<HttpErrorResponse> {
+  private handleError(response: HttpErrorResponse): Observable<HttpEvent<HttpErrorResponse>> {
     const { status, statusText } = response;
 
     if (status > 0) {
@@ -138,10 +126,7 @@ export class DefaultInterceptor implements HttpInterceptor {
 
     const message: string = statusText || CODE_MESSAGES[status];
 
-    this.nzNotificationService.error(
-      this.translateService.instant('interceptors.default.request-error'),
-      message,
-    );
+    this.nzNotificationService.error(this.translateService.instant('interceptors.default.request-error'), message);
 
     return throwError(response);
   }
@@ -163,10 +148,7 @@ export class DefaultInterceptor implements HttpInterceptor {
     return httpHandler.handle(httpRequest.clone({ url })).pipe(
       // tslint:disable-next-line:no-any
       mergeMap((event: any) => {
-        if (
-          event instanceof HttpResponse ||
-          event instanceof HttpErrorResponse
-        ) {
+        if (event instanceof HttpResponse || event instanceof HttpErrorResponse) {
           return this.handleSuccess(event);
         }
 

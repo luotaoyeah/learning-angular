@@ -1,9 +1,4 @@
-<span
-  nz-dropdown
-  nzPlacement="bottomRight"
-  [nzDropdownMenu]="menuTpl"
-  [class.mr-sm]="!showLangText"
->
+<span nz-dropdown nzPlacement="bottomRight" [nzDropdownMenu]="menuTpl" [class.mr-sm]="!showLangText">
   <div *ngIf="showLangText">
     <i nz-icon nzType="global" class="mr-sm"></i>
     {{ 'menu.header.lang' | translate }}
@@ -13,7 +8,7 @@
   </span>
 </span>
 
-<nz-dropdown-menu #menuTpl="nzDropdownMenu" nzNoAnimation>
+<nz-dropdown-menu #menuTpl="nzDropdownMenu">
   <ul
     nz-menu
     [ngStyle]="{

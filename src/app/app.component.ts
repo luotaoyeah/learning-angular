@@ -1,10 +1,9 @@
 import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
-import { _HttpClient, TitleService, VERSION as VERSION_ALAIN } from '@delon/theme';
+import { TitleService, VERSION as VERSION_ALAIN } from '@delon/theme';
 import { NzModalService, VERSION as VERSION_ZORRO } from 'ng-zorro-antd';
 import { Doc0306080201Service } from './routes/doc/03-FUNDAMENTALS/07-ngmodules/03-06-08-singleton-services/03-06-08-02-the-for-root-pattern/doc-03-06-08-02-01/service/doc-03-06-08-02-01.service';
-import { setHttpClient } from '@app/core/api/http-client';
 
 @Component({
   selector: 'app-root',
@@ -18,12 +17,9 @@ export class AppComponent implements OnInit {
     private titleService: TitleService,
     private modalService: NzModalService,
     private doc0306080201Service: Doc0306080201Service,
-    httpClient: _HttpClient,
   ) {
     renderer2.setAttribute(elementRef.nativeElement, 'ng-alain-version', VERSION_ALAIN.full);
     renderer2.setAttribute(elementRef.nativeElement, 'ng-zorro-version', VERSION_ZORRO.full);
-
-    setHttpClient(httpClient);
   }
 
   public ngOnInit() {

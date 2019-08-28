@@ -1,4 +1,4 @@
-<nz-collapse [nzAccordion]="true" nzNoAnimation>
+<nz-collapse [nzAccordion]="true">
   <nz-collapse-panel nzHeader="LOGIN" nzExpandedIcon="caret-right" [nzActive]="true">
     <button *ngIf="!authService.isLogin" nz-button nzType="primary" (click)="login()">
       LOGIN
