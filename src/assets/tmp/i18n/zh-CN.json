@@ -148,7 +148,6 @@
   "menu.header.lock.title": "锁屏",
   "menu.main": "导航菜单",
   "menu.account": "用户管理",
-  "menu.account.settings": "个人设置",
   "menu.account.logout": "退出登录",
   "reuse-tab.i18n.close": "关闭",
   "reuse-tab.i18n.close-other": "关闭其它",
