@@ -66,7 +66,7 @@ const LANG_PROVIDES = [
 
 // region load i18n language files
 
-class CustomTranslateLoader implements TranslateLoader {
+export class CustomTranslateLoader implements TranslateLoader {
   public getTranslation(lang: string): Observable<{ [index: string]: string }> {
     return from(import(`./core/consts/i18n/${lang}`));
   }

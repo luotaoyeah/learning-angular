@@ -1,11 +1,16 @@
 # stage-build
 FROM node:12 AS stage-build
 
-WORKDIR /app
-COPY . .
+ENV DISABLE_OPENCOLLECTIVE=1
 
 WORKDIR /app
+COPY package.json ./package.json
+COPY package-lock.json ./package-lock.json
+
 RUN npm install --production --no-save
+
+WORKDIR /app
+COPY . .
 
 WORKDIR /app
 RUN npm run build:prod
