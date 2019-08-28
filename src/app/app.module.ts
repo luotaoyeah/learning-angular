@@ -7,14 +7,13 @@ import {
   Provider,
   Type,
 } from '@angular/core';
-import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { default as ngLang } from '@angular/common/locales/en';
 import { en_US as zorroLang, NZ_I18N } from 'ng-zorro-antd';
 import { ALAIN_I18N_TOKEN, DELON_LOCALE, en_US as delonLang } from '@delon/theme';
 import { registerLocaleData } from '@angular/common';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { JsonSchemaModule } from '@app/shared/json-schema/json-schema.module';
 import { JWTInterceptor } from '@delon/auth';
 import { DelonModule } from './delon.module';
@@ -48,6 +47,7 @@ import { environment } from '@app/env/environment';
 import { X01CustomRouterStateSerializer } from './routes/pkgs/ngrx/router-store/02-configuration/service/x-01-custom-router-state-serializer';
 import { AppRoutingModule } from './app-routing.module';
 import { DefaultInterceptor, I18NService, StartupService } from '@app/core';
+import { from, Observable } from 'rxjs';
 
 const LANG = {
   abbr: 'en',
@@ -64,23 +64,24 @@ const LANG_PROVIDES = [
   { provide: DELON_LOCALE, useValue: LANG.delon },
 ];
 
-/**
- * Load i18n language files
- * @param httpClient HttpClient
- */
-export function I18nHttpLoaderFactory(httpClient: HttpClient) {
-  return new TranslateHttpLoader(httpClient, `assets/tmp/i18n/`, '.json');
+// region load i18n language files
+
+class CustomTranslateLoader implements TranslateLoader {
+  public getTranslation(lang: string): Observable<{ [index: string]: string }> {
+    return from(import(`./core/consts/i18n/${lang}`));
+  }
 }
 
-const I18NSERVICE_MODULES = [
+const I18N_SERVICE_MODULES = [
   TranslateModule.forRoot({
     loader: {
       provide: TranslateLoader,
-      useFactory: I18nHttpLoaderFactory,
-      deps: [HttpClient],
+      useClass: CustomTranslateLoader,
     },
   }),
 ];
+
+// endregion
 
 const I18NSERVICE_PROVIDES = [{ provide: ALAIN_I18N_TOKEN, useClass: I18NService, multi: false }];
 
@@ -169,7 +170,7 @@ const APPINIT_PROVIDES = [
     RoutesModule,
     Doc0306080201Module.forRoot(),
     Doc0306080301Module,
-    ...I18NSERVICE_MODULES,
+    ...I18N_SERVICE_MODULES,
     ...FORM_MODULES,
     ...GLOBAL_THIRD_MODULES,
     StoreModule.forRoot(reducers, { metaReducers }),

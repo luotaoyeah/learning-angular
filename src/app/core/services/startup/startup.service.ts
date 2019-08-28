@@ -1,12 +1,5 @@
 import { Inject, Injectable } from '@angular/core';
-import { zip } from 'rxjs';
-import {
-  _HttpClient,
-  ALAIN_I18N_TOKEN,
-  MenuService,
-  SettingsService,
-  TitleService,
-} from '@delon/theme';
+import { _HttpClient, ALAIN_I18N_TOKEN, MenuService, SettingsService, TitleService } from '@delon/theme';
 import { TranslateService } from '@ngx-translate/core';
 import { NzIconService } from 'ng-zorro-antd';
 import { ICONS_AUTO } from '../../../../style-icons-auto';
@@ -38,20 +31,13 @@ export class StartupService {
   // @ts-ignore: TS6133
   // tslint:disable-next-line:no-any
   private viaHttp(resolve: any, reject: any) {
-    zip(
-      this.httpClient.get(
-        `assets/tmp/i18n/${this.i18NService.defaultLang}.json`,
-      ),
-      this.httpClient.get('assets/tmp/app-data.json'),
-    ).subscribe(
-      ([langData, appData]) => {
-        // setting language data
-        this.translateService.setTranslation(
-          this.i18NService.defaultLang,
-          langData,
-        );
-        this.translateService.setDefaultLang(this.i18NService.defaultLang);
+    import(`../../consts/i18n/${this.i18NService.defaultLang}`).then(({ I18N }) => {
+      this.translateService.setTranslation(this.i18NService.defaultLang, I18N);
+      this.translateService.setDefaultLang(this.i18NService.defaultLang);
+    });
 
+    this.httpClient.get('assets/tmp/app-data.json').subscribe(
+      appData => {
         // tslint:disable-next-line:no-any
         const res: any = appData;
         // 应用信息：包括站点名、描述、年份
