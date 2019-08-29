@@ -1,31 +1,25 @@
-<p>
-  synchronous validator function 相关的类型和接口有 <code>ValidatorFn</code> 和 <code>Validator</code> , asynchronous
-  validator function 对应的类型和接口是 <code>AsyncValidatorFn</code> 和 <code>AsyncValidator</code>
-</p>
-
-<p>
-  synchronous validator function 返回的是 true 或者 false, asynchronous validator function 返回的是一个
-  <code>Promise</code> 或者 <code>Observable</code> 对象, 如果返回的是 observable 对象, 则它必须是一个 finite
-  observable, 即必须在某个时刻调用 complete()
-</p>
-
-<p>
-  当所有的 synchronous validator function 都验证成功之后, 才会执行 asynchronous validator function, 这是为了性能考虑
-</p>
-
-<p>
-  validator function 在执行的过程中, <code>FormControl</code> 处于 <code>PENDDING</code> 状态, 可以通过
-  <code>AbstractControl.pending</code> 属性判断
-</p>
-
-<nz-divider [nzDashed]="true"></nz-divider>
-
 <form [formGroup]="formGroup">
-  <nz-input-group [nzSuffix]="suffixIconLoading">
+  <nz-input-group [class.has-error]="nameControl.errors?.unique" [nzSuffix]="suffixIconLoading">
     <input type="text" nz-input formControlName="name" />
   </nz-input-group>
+
   <ng-template #suffixIconLoading>
-    <i *ngIf="nameControl.pending" nz-icon nzType="loading" nzTheme="outline"></i>
+    <!--
+        当验证正在进行中时, 控件的 pending 属性为 true
+    -->
+    <i *ngIf="nameControl.pending" nz-icon nzTheme="outline" nzType="loading"></i>
   </ng-template>
-  <nz-alert *ngIf="nameControl.errors?.unique" nzType="error" nzMessage="UNIQUE"></nz-alert>
+
+  <div
+    *ngIf="formGroup.invalid && (formGroup.dirty || formGroup.touched)"
+    [ngStyle]="{
+      display: 'inline-block',
+      width: '200px',
+      marginLeft: '10px'
+    }"
+  >
+    <nz-alert *ngIf="nameControl.errors?.required" nzMessage="必填" nzType="error"></nz-alert>
+
+    <nz-alert *ngIf="nameControl.errors?.unique" nzMessage="名称已被占用" nzType="error"></nz-alert>
+  </div>
 </form>

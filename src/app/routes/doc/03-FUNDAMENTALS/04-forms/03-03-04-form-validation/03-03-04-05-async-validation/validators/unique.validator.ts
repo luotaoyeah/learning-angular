@@ -1,25 +1,19 @@
-import { AbstractControl, AsyncValidator, ValidationErrors } from '@angular/forms';
-import { Observable, Subscriber } from 'rxjs';
-import { Injectable } from '@angular/core';
+import { AbstractControl, AsyncValidatorFn, ValidationErrors } from '@angular/forms';
+import { Observable, of } from 'rxjs';
+import { catchError, delay, map } from 'rxjs/operators';
 
-@Injectable({
-  providedIn: 'root',
-})
-export class UniqueValidator implements AsyncValidator {
-  /**
-   *
-   * @param control the form model
-   */
-  public validate(control: AbstractControl): Promise<ValidationErrors | null> | Observable<ValidationErrors | null> {
-    return new Observable((subscriber: Subscriber<ValidationErrors | null>) => {
-      setTimeout(() => {
-        subscriber.next(control.value === 'foo' ? { unique: { value: control.value } } : null);
+export function uniqueValidator(): AsyncValidatorFn {
+  return (control: AbstractControl): Promise<ValidationErrors | null> | Observable<ValidationErrors | null> => {
+    return of(0).pipe(
+      delay(1000),
+      map(() => {
+        if (control.value === 'foo') {
+          return { unique: true };
+        }
 
-        /*
-         * async validator function 返回的 observable 必须调用 complete() 方法结束
-         */
-        subscriber.complete();
-      }, 2000);
-    });
-  }
+        return null;
+      }),
+      catchError(() => of(null)),
+    );
+  };
 }

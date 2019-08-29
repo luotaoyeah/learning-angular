@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
-import { UniqueValidator } from './validators/unique.validator';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { uniqueValidator } from './validators/unique.validator';
 
 /*
  * https://angular.io/guide/form-validation#async-validation
@@ -8,22 +8,23 @@ import { UniqueValidator } from './validators/unique.validator';
 @Component({
   selector: 'app-doc-03-03-04-05',
   templateUrl: './doc-03-03-04-05.component.html',
+  styleUrls: ['./doc-03-03-04-05.component.less'],
 })
 export class Doc03030405Component {
   public formGroup: FormGroup = new FormGroup({
     name: new FormControl('', {
       /*
-       * 考虑到 async validator function 的性能影响,
-       * 对于比较耗费时间的 async validator, 可以将验证策略设置为 blur,
-       * 即当表单失去焦点时, 才进行验证,
-       * 默认是在每次 change 的时候都会进行验证
+       * updateOn 默认为 change, 表示只要数据发生变更就会进行验证,
+       * 为了提升性能, 对于比较耗时的异步验证, 可以将 updateOn 设置为 blur, 即当表单失去焦点时, 才进行验证,
        */
       updateOn: 'blur',
-      asyncValidators: [this.uniqueValidator.validate.bind(this.uniqueValidator)],
+      /*
+       * 由于性能原因, 只有当所有的同步验证都验证通过之后, 才会进行异步验证
+       */
+      validators: [Validators.required],
+      asyncValidators: [uniqueValidator()],
     }),
   });
-
-  constructor(private uniqueValidator: UniqueValidator) {}
 
   get nameControl(): FormControl {
     return this.formGroup.get('name') as FormControl;
