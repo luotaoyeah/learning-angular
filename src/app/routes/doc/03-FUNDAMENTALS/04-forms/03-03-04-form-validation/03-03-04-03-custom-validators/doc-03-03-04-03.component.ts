@@ -8,13 +8,13 @@ import { forbiddenNameValidator } from './validators/forbidden-name.validator';
 @Component({
   selector: 'app-doc-03-03-04-03',
   templateUrl: './doc-03-03-04-03.component.html',
+  styleUrls: ['./doc-03-03-04-03.component.less'],
 })
 export class Doc03030403Component {
   public formGroup: FormGroup = new FormGroup({
     name: new FormControl('', {
       /*
-       * custom validator function 如何在 reactive form 中使用 ?
-       * 直接跟 built-in validator function 一样使用
+       * custom validator function 跟 built-in validator function 的用法一样
        */
       validators: [Validators.required, forbiddenNameValidator(/foo/)],
     }),

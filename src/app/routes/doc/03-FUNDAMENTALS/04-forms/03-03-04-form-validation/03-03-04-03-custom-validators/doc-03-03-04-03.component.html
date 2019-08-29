@@ -1,37 +1,62 @@
 <form [formGroup]="formGroup">
-  <input
-    type="text"
-    nz-input
-    formControlName="name"
+  <div
+    [class.has-error]="nameControl.invalid && (nameControl.dirty || nameControl.touched)"
+    [ngStyle]="{ display: 'inline-block' }"
+  >
+    <input
+      [ngStyle]="{
+        width: '200px',
+        marginBottom: '3px'
+      }"
+      formControlName="name"
+      nz-input
+      type="text"
+    />
+  </div>
+
+  <div
+    *ngIf="formGroup.invalid && (formGroup.dirty || formGroup.touched)"
     [ngStyle]="{
+      display: 'inline-block',
       width: '200px',
-      marginBottom: '3px'
+      marginLeft: '10px'
     }"
-  />
-  <div *ngIf="formGroup.invalid && (formGroup.dirty || formGroup.touched)">
-    <nz-alert *ngIf="nameControl.errors?.required" nzType="error" nzMessage="REQUIRED"> </nz-alert>
-    <nz-alert *ngIf="nameControl.errors?.forbiddenName" nzType="error" nzMessage="FORBIDDEN"> </nz-alert>
+  >
+    <nz-alert *ngIf="nameControl.errors?.required" nzMessage="必填" nzType="error"></nz-alert>
+
+    <nz-alert *ngIf="nameControl.errors?.forbiddenName" nzMessage="敏感词汇" nzType="error"></nz-alert>
   </div>
 </form>
 
 <nz-divider [nzDashed]="true"></nz-divider>
 
 <form>
-  <input
-    type="text"
-    name="name02"
-    nz-input
-    required
-    appForbiddenNameValidator="foo"
-    [(ngModel)]="name"
-    #nameEl="ngModel"
+  <div [class.has-error]="nameEl.invalid && (nameEl.dirty || nameEl.touched)" [ngStyle]="{ display: 'inline-block' }">
+    <input
+      #nameEl="ngModel"
+      [(ngModel)]="name"
+      [ngStyle]="{
+        width: '200px',
+        marginBottom: '3px'
+      }"
+      appForbiddenNameValidator="foo"
+      name="name02"
+      nz-input
+      required
+      type="text"
+    />
+  </div>
+
+  <div
+    *ngIf="nameEl.invalid && (nameEl.dirty || nameEl.touched)"
     [ngStyle]="{
+      display: 'inline-block',
       width: '200px',
-      marginBottom: '3px'
+      marginLeft: '10px'
     }"
-  />
-  <div *ngIf="nameEl.invalid && (nameEl.dirty || nameEl.touched)">
-    <nz-alert nzType="error" nzMessage="REQUIRED" *ngIf="nameEl.errors?.required"> </nz-alert>
-    <nz-alert nzType="error" nzMessage="FORBIDDEN" *ngIf="nameEl.errors?.forbiddenName"> </nz-alert>
+  >
+    <nz-alert *ngIf="nameEl.errors?.required" nzMessage="必填" nzType="error"></nz-alert>
+
+    <nz-alert *ngIf="nameEl.errors?.forbiddenName" nzMessage="敏感词汇" nzType="error"></nz-alert>
   </div>
 </form>
