@@ -8,9 +8,9 @@ import { Component } from '@angular/core';
   templateUrl: './doc-03-03-06-03-02.component.html',
 })
 export class Doc0303060302Component {
-  public active: boolean = false;
+  public isActive: boolean = false;
 
   public toggleActive() {
-    this.active = !this.active;
+    this.isActive = !this.isActive;
   }
 }
