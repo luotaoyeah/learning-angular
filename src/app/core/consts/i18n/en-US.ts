@@ -1,3 +1,6 @@
+import { HeaderStorageComponentI18n } from '../../../layout/default/header/storage/header-storage.component.i18n';
+import { HeaderFullScreenComponentI18n } from '../../../layout/default/header/fullscreen/header-fullscreen.component.i18n';
+
 const I18N = {
   'menu.home': 'HOME',
   'menu.home.home': 'HOME',
@@ -149,15 +152,7 @@ const I18N = {
     'Boosting Performance Of Angular Applications With Manual Change Detection',
   'menu.blog.if-you-think-ngdocheck-means-your-component-is-being-checked':
     'If You Think Ng Do Check Means Your Component Is Being Checked',
-  'menu.search.placeholder': 'Search...',
-  'menu.fullscreen': 'Fullscreen',
-  'menu.fullscreen.exit': 'Exit Fullscreen',
-  'menu.clear.local.storage': 'Clear Local Storage',
-  'menu.header.lang': 'Language',
-  'menu.header.lock.title': 'Lock',
-  'menu.main': 'Navigation',
-  'menu.account': 'Account',
-  'menu.account.logout': 'Logout',
+  'menu.account.logout': 'LOGOUT',
   'reuse-tab.i18n.close': 'Close',
   'reuse-tab.i18n.close-other': 'Close Others',
   'reuse-tab.i18n.close-right': 'Close Right',
@@ -176,6 +171,9 @@ const I18N = {
   'app.login.login-failed': 'Login Failed',
   'validation.password.required': 'Please enter your password',
   'interceptors.default.request-error': 'REQUEST ERROR',
+
+  ...HeaderStorageComponentI18n.EN,
+  ...HeaderFullScreenComponentI18n.EN,
 };
 
 export { I18N };

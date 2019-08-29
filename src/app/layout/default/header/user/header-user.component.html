@@ -1,0 +1,18 @@
+<div
+  [nzDropdownMenu]="menuTpl"
+  class="alain-default__nav-item d-flex align-items-center px-sm"
+  nz-dropdown
+  nzPlacement="bottomRight"
+>
+  <nz-avatar [nzSrc]="settingsService.user.avatar" class="mr-sm" nzSize="small"></nz-avatar>
+  {{ settingsService.user.name }}
+</div>
+
+<nz-dropdown-menu #menuTpl="nzDropdownMenu">
+  <div class="width-sm" nz-menu>
+    <div (click)="logout()" nz-menu-item>
+      <i class="mr-sm" nz-icon nzType="logout"></i>
+      {{ 'menu.account.logout' | i18n }}
+    </div>
+  </div>
+</nz-dropdown-menu>

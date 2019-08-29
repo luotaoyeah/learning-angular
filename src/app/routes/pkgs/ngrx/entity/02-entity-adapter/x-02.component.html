@@ -1,15 +1,12 @@
 <nz-collapse [nzAccordion]="true">
-  <nz-collapse-panel
-    nzHeader="createEntityAdapter()"
-    nzExpandedIcon="caret-right"
-  >
+  <nz-collapse-panel nzHeader="createEntityAdapter()" nzExpandedIcon="caret-right">
     <button nz-button (click)="loadUsers()">LOAD</button>
     <button nz-button (click)="clearUsers()">CLEAR</button>
 
     <nz-divider [nzDashed]="true"></nz-divider>
 
     <ng-template #nzSpinTpl>
-      <i nz-icon type="loading" style="font-size: 24px;"></i>
+      <i nz-icon nzType="loading" style="font-size: 24px;"></i>
     </ng-template>
     <nz-table
       #userTable

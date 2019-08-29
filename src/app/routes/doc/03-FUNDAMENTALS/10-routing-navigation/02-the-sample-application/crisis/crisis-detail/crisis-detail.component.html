@@ -1,7 +1,7 @@
 <nz-collapse [nzAccordion]="true">
   <nz-collapse-panel [nzHeader]="'CRISIS'" nzExpandedIcon="caret-right" [nzActive]="true">
     <ng-template #nzSpinTpl>
-      <i nz-icon type="loading" style="font-size: 24px;"></i>
+      <i nz-icon nzType="loading" style="font-size: 24px;"></i>
     </ng-template>
     <nz-spin [nzSpinning]="crisisDetailResolverService.loading" [nzIndicator]="nzSpinTpl">
       <form *ngIf="!!crisis" nz-form>

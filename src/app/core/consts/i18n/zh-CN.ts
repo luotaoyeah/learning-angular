@@ -1,3 +1,6 @@
+import { HeaderStorageComponentI18n } from '../../../layout/default/header/storage/header-storage.component.i18n';
+import { HeaderFullScreenComponentI18n } from '../../../layout/default/header/fullscreen/header-fullscreen.component.i18n';
+
 const I18N = {
   'menu.home': 'HOME',
   'menu.home.home': 'HOME',
@@ -149,14 +152,6 @@ const I18N = {
     'Boosting Performance Of Angular Applications With Manual Change Detection',
   'menu.blog.if-you-think-ngdocheck-means-your-component-is-being-checked':
     'If You Think Ng Do Check Means Your Component Is Being Checked',
-  'menu.search.placeholder': '搜索...',
-  'menu.fullscreen': '全屏',
-  'menu.fullscreen.exit': '退出全屏',
-  'menu.clear.local.storage': '清除本地缓存',
-  'menu.header.lang': '语言',
-  'menu.header.lock.title': '锁屏',
-  'menu.main': '导航菜单',
-  'menu.account': '用户管理',
   'menu.account.logout': '退出登录',
   'reuse-tab.i18n.close': '关闭',
   'reuse-tab.i18n.close-other': '关闭其它',
@@ -176,6 +171,9 @@ const I18N = {
   'app.login.login-failed': '登录失败',
   'validation.password.required': '请输入密码',
   'interceptors.default.request-error': '请求失败',
+
+  ...HeaderStorageComponentI18n.CN,
+  ...HeaderFullScreenComponentI18n.CN,
 };
 
 export { I18N };

@@ -1,23 +1,18 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from '@app/shared';
-import { LayoutDefaultComponent } from './default/default.component';
-import { LayoutFullScreenComponent } from './fullscreen/fullscreen.component';
-import { HeaderComponent } from './default/header/header.component';
+import { LayoutDefaultComponent } from './default/layout-default.component';
+import { LayoutHeaderComponent } from './default/header/layout-header.component';
 import { SidebarComponent } from './default/sidebar/sidebar.component';
-import { HeaderSearchComponent } from './default/header/components/search.component';
-import { HeaderNotifyComponent } from './default/header/components/notify.component';
-import { HeaderFullScreenComponent } from './default/header/components/fullscreen.component';
-import { HeaderStorageComponent } from './default/header/components/storage.component';
+import { HeaderFullScreenComponent } from './default/header/fullscreen/header-fullscreen.component';
+import { HeaderStorageComponent } from './default/header/storage/header-storage.component';
 import { LayoutPassportComponent } from './passport/passport.component';
-import { HeaderUserComponent } from './default/header/components/header-user/header-user.component';
-import { HeaderI18nComponent } from './default/header/components/i18n/header-i18n.component';
-import { HeaderSettingComponent } from './default/header/components/setting/header-setting.component';
+import { HeaderUserComponent } from './default/header/user/header-user.component';
+import { HeaderI18nComponent } from './default/header/i18n/header-i18n.component';
+import { HeaderSettingComponent } from './default/header/setting/header-setting.component';
 
-const COMPONENTS = [LayoutDefaultComponent, LayoutFullScreenComponent, HeaderComponent, SidebarComponent];
+const COMPONENTS = [LayoutDefaultComponent, LayoutHeaderComponent, SidebarComponent];
 
 const HEADERCOMPONENTS = [
-  HeaderSearchComponent,
-  HeaderNotifyComponent,
   HeaderFullScreenComponent,
   HeaderI18nComponent,
   HeaderSettingComponent,

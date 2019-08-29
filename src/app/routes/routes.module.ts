@@ -1,19 +1,14 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from '@app/shared';
 import { RoutesRoutingModule } from './routes-routing.module';
-import { LoginComponent } from './passport/login/login.component';
-import { CallbackComponent } from './callback/callback.component';
-import { UserLockComponent } from './passport/lock/lock.component';
+import { PassportLoginComponent } from '../layout/passport/login/passport-login.component';
+import { CallbackComponent } from '../layout/callback/callback.component';
 import { HomeComponent } from './home/home.component';
 
-const COMPONENTS = [LoginComponent, CallbackComponent, UserLockComponent];
-
-// tslint:disable-next-line:no-any
-const COMPONENTS_NOROUNT: Array<any> = [];
+const COMPONENTS = [PassportLoginComponent, CallbackComponent];
 
 @NgModule({
   imports: [SharedModule, RoutesRoutingModule],
-  declarations: [...COMPONENTS, ...COMPONENTS_NOROUNT, HomeComponent],
-  entryComponents: COMPONENTS_NOROUNT,
+  declarations: [...COMPONENTS, HomeComponent],
 })
 export class RoutesModule {}

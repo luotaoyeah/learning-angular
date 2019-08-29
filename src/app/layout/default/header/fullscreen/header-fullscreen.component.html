@@ -1,0 +1,7 @@
+<i nz-icon [nzType]="status ? 'fullscreen-exit' : 'fullscreen'" class="mr-sm"></i>
+{{
+  (status
+    ? 'src/app/layout/default/header/components/fullscreen/fullscreen.fullscreen-exit'
+    : 'src/app/layout/default/header/components/fullscreen/fullscreen.fullscreen'
+  ) | i18n
+}}

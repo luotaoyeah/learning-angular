@@ -24,7 +24,7 @@
         </nz-input-group>
         <ng-template #suffixIconButton>
           <button nz-button nzSearch nzType="danger" (click)="removeAlias(i)">
-            <i nz-icon type="delete"></i>
+            <i nz-icon nzType="delete"></i>
           </button>
         </ng-template>
       </div>
@@ -34,7 +34,7 @@
   <button nz-button>{{ profileFormGroup.status }}</button>
 
   <button nz-button (click)="addAlias()">
-    <i nz-icon type="plus-circle"></i>
+    <i nz-icon nzType="plus-circle"></i>
     ADD ALIAS
   </button>
 

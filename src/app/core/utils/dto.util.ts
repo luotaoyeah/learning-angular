@@ -1,4 +1,4 @@
-import { map } from 'lodash-es';
+import { map } from 'lodash';
 
 /**
  * DTO utils
@@ -44,7 +44,7 @@ class DtoUtil {
       return [];
     }
 
-    return Reflect.ownKeys(dto) as (Array<keyof C>);
+    return Reflect.ownKeys(dto) as Array<keyof C>;
   }
 }
 

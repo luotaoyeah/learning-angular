@@ -1,7 +1,7 @@
 import { IAppState } from '../state/i-app-state';
 import { createSelector, MemoizedSelectorWithProps } from '@ngrx/store';
 import { ICounter } from '../state/i-counter';
-import { find } from 'lodash-es';
+import { find } from 'lodash';
 
 interface IProps {
   id: string;
@@ -20,29 +20,15 @@ const selectCounterMultiply01: MemoizedSelectorWithProps<
   IAppState,
   IProps,
   Array<number>
-> = createSelector(
-  selectCounter,
-  (counters: Array<ICounter>, props: IProps) =>
-    counters.map((counter: ICounter) => counter.value * props.multiply),
+> = createSelector(selectCounter, (counters: Array<ICounter>, props: IProps) =>
+  counters.map((counter: ICounter) => counter.value * props.multiply),
 );
 
-const selectCounterMultiply02: MemoizedSelectorWithProps<
-  IAppState,
-  IProps,
-  number
-> = createSelector(
-  createSelector(
-    selectCounter,
-    selectCounterById,
-  ),
+const selectCounterMultiply02: MemoizedSelectorWithProps<IAppState, IProps, number> = createSelector(
+  createSelector(selectCounter, selectCounterById),
   (counter: ICounter, props: IProps) => {
     return counter.value * props.multiply;
   },
 );
 
-export {
-  IProps,
-  selectCounter,
-  selectCounterMultiply01,
-  selectCounterMultiply02,
-};
+export { IProps, selectCounter, selectCounterMultiply01, selectCounterMultiply02 };

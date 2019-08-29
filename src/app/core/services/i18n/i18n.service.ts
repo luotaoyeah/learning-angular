@@ -44,7 +44,7 @@ const LANGS: { [key: string]: LangData } = {
     abbr: 'CN',
   },
   'en-US': {
-    text: 'English',
+    text: 'ENGLISH',
     ng: ngEn,
     zorro: en_US,
     dateFns: df_en,
@@ -71,8 +71,7 @@ export class I18NService implements AlainI18NService {
     private delonLocaleService: DelonLocaleService,
     private translateService: TranslateService,
   ) {
-    const defaultLang =
-      settingsService.layout.lang || translateService.getBrowserLang();
+    const defaultLang = settingsService.layout.lang || translateService.getBrowserLang();
     // `@ngx-translate/core` 预先知道支持哪些语言
     const langs: Array<string> = this.langs.map(item => item.code);
     translateService.addLangs(langs);
@@ -93,11 +92,7 @@ export class I18NService implements AlainI18NService {
   get change(): Observable<string> {
     return this.change$
       .asObservable()
-      .pipe(
-        filter<string | null, string>(
-          (w: string | null): w is string => w != null,
-        ),
-      );
+      .pipe(filter<string | null, string>((w: string | null): w is string => w != null));
   }
 
   public use(lang: string): void {
@@ -126,10 +121,6 @@ export class I18NService implements AlainI18NService {
 
   /** 当前语言 */
   get currentLang() {
-    return (
-      this.translateService.currentLang ||
-      this.translateService.getDefaultLang() ||
-      this._default
-    );
+    return this.translateService.currentLang || this.translateService.getDefaultLang() || this._default;
   }
 }
