@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { SharedModule } from '@app/shared';
 import { Doc030306RoutingModule } from './doc-03-03-06-routing.module';
 import { Doc030306Component } from './doc-03-03-06.component';
-import { Doc03020601Component } from './03-02-06-01-using-component-styles/doc-03-02-06-01.component';
+import { Doc03030601Component } from './01-using-component-styles/doc-03-03-06-01.component';
 import { Doc03020602Component } from './03-02-06-02-style-scope/doc-03-02-06-02.component';
 import { Doc0302060201Component } from './03-02-06-02-style-scope/doc-03-02-06-02-01.component';
 import { Doc03030603Component } from './03-03-06-03-special-selectors/doc-03-03-06-03.component';
@@ -29,7 +29,7 @@ import { Doc030306030201Component } from './03-03-06-03-special-selectors/03-03-
 @NgModule({
   declarations: [
     Doc030306Component,
-    Doc03020601Component,
+    Doc03030601Component,
     Doc03020602Component,
     Doc0302060201Component,
     Doc03030603Component,

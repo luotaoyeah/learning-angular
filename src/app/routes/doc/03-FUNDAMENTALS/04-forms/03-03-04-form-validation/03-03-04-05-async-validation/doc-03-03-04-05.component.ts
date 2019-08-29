@@ -15,7 +15,7 @@ export class Doc03030405Component {
     name: new FormControl('', {
       /*
        * updateOn 默认为 change, 表示只要数据发生变更就会进行验证,
-       * 为了提升性能, 对于比较耗时的异步验证, 可以将 updateOn 设置为 blur, 即当表单失去焦点时, 才进行验证,
+       * 为了提升性能, 对于比较耗时的异步验证, 可以将 updateOn 设置为 blur, 即当表单失去焦点时, 才进行验证
        */
       updateOn: 'blur',
       /*
