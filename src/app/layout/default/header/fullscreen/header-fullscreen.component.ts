@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, HostListener } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import * as screenfull from 'screenfull';
 
 @Component({
@@ -7,7 +7,6 @@ import * as screenfull from 'screenfull';
   host: {
     '[class.d-block]': 'true',
   },
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderFullScreenComponent {
   public status = false;

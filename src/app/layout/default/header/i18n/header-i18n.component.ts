@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Inject, Input } from '@angular/core';
+import { Component, Inject, Input } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { ALAIN_I18N_TOKEN, SettingsService } from '@delon/theme';
 import { InputBoolean } from '@delon/util';
@@ -7,7 +7,6 @@ import { I18NService } from '@app/core';
 @Component({
   selector: 'header-i18n',
   templateUrl: './header-i18n.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderI18nComponent {
   /** whether to display language text */

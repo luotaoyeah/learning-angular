@@ -1,5 +1,5 @@
-import { Component, HostListener, ChangeDetectionStrategy } from '@angular/core';
-import { NzModalService, NzMessageService } from 'ng-zorro-antd';
+import { Component, HostListener } from '@angular/core';
+import { NzMessageService, NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -8,7 +8,6 @@ import { TranslateService } from '@ngx-translate/core';
   host: {
     '[class.d-block]': 'true',
   },
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderStorageComponent {
   constructor(
