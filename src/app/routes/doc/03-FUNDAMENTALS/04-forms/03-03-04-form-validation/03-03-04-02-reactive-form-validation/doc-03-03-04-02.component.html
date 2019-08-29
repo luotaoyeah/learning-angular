@@ -1,38 +1,30 @@
 <form [formGroup]="formGroup">
-  <input
-    type="text"
-    formControlName="name"
-    nz-input
+  <div [class.has-error]="nameControl.invalid && (nameControl.dirty || nameControl.touched)">
+    <input
+      [ngStyle]="{
+        width: '200px',
+        marginBottom: '3px'
+      }"
+      formControlName="name"
+      nz-input
+      type="text"
+    />
+  </div>
+
+  <div
+    *ngIf="nameControl.invalid && (nameControl.dirty || nameControl.touched)"
     [ngStyle]="{
-      width: '200px',
-      marginBottom: '3px'
+      display: 'inline-block',
+      width: '300px',
+      marginLeft: '10px'
     }"
-  />
-  <div *ngIf="nameControl.invalid && (nameControl.dirty || nameControl.touched)">
-    <nz-alert
-      *ngIf="nameControl.invalid && nameControl.errors?.required"
-      nzType="error"
-      nzMessage="REQUIRED"
-    ></nz-alert>
+  >
+    <nz-alert *ngIf="nameControl.invalid && nameControl.errors?.required" nzMessage="必填" nzType="error"></nz-alert>
+
     <nz-alert
       *ngIf="nameControl.invalid && nameControl.errors?.minlength"
+      nzMessage="长度不够"
       nzType="error"
-      nzMessage="MINLENGTH"
     ></nz-alert>
   </div>
 </form>
-
-<nz-divider [nzDashed]="true"></nz-divider>
-
-<p>
-  对于 reactive form 来说, validator function 是直接在 component class 中的 form control 对象上设置的, 即在创建
-  <code>FormControl</code> 实例的时候, 通过构造函数参数设置 validator functions, validator function 有两种:
-</p>
-<ul>
-  <li>
-    sync validator
-  </li>
-  <li>
-    async validator
-  </li>
-</ul>
