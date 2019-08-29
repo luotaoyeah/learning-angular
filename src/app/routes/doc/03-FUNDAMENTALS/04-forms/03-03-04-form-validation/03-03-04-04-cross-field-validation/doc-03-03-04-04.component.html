@@ -1,36 +1,46 @@
 <form [formGroup]="formGroup">
   <label>
-    PASSWORD:
+    <span [ngStyle]="{ width: '80px', display: 'inline-block' }">密码:</span>
     <input
-      type="text"
-      name="password"
+      [ngStyle]="{
+        width: '200px',
+        marginBottom: '5px'
+      }"
       formControlName="password"
       nz-input
-      [ngStyle]="{
-        width: '200px',
-        marginBottom: '3px'
-      }"
+      type="text"
     />
   </label>
+
   <br />
-  <label>
-    REPEAT PASSWORD:
+
+  <label
+    [class.has-error]="
+      formGroup.errors?.repeatPassword && (repeatPasswordControl.dirty || repeatPasswordControl.touched)
+    "
+  >
+    <span [ngStyle]="{ width: '80px', display: 'inline-block' }">重复密码:</span>
     <input
-      type="text"
-      name="repeatPassword"
+      [ngStyle]="{
+        width: '200px',
+        marginBottom: '5px'
+      }"
       formControlName="repeatPassword"
       nz-input
-      [ngStyle]="{
-        width: '200px',
-        marginBottom: '3px'
-      }"
+      type="text"
     />
   </label>
-  <nz-alert
-    *ngIf="formGroup.errors?.repeatPassword && (formGroup.dirty || formGroup.touched)"
-    nzType="error"
-    nzMessage="MUST THE SAME"
-  ></nz-alert>
+
+  <div
+    *ngIf="formGroup.errors?.repeatPassword && (repeatPasswordControl.dirty || repeatPasswordControl.touched)"
+    [ngStyle]="{
+      display: 'inline-block',
+      width: '200px',
+      marginLeft: '10px'
+    }"
+  >
+    <nz-alert nzMessage="密码必须相同" nzType="error"></nz-alert>
+  </div>
 </form>
 
 <nz-divider [nzDashed]="true"></nz-divider>

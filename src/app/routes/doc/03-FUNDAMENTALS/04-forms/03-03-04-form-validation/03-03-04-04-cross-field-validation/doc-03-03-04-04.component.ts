@@ -8,6 +8,7 @@ import { passwordValidator } from './validators/password.validator';
 @Component({
   selector: 'app-doc-03-03-04-04',
   templateUrl: './doc-03-03-04-04.component.html',
+  styleUrls: ['./doc-03-03-04-04.component.less'],
 })
 export class Doc03030404Component {
   public formGroup: FormGroup = new FormGroup(
@@ -20,9 +21,9 @@ export class Doc03030404Component {
       }),
     },
     /*
-     * 如果某个表单验证涉及到多个字段, 比如验证'重复密码'必须跟'密码'相同,
-     * 此时, 需要将 validator function 放到 formGroup 上去,
-     * 这样就可以通过 formGroup 同时访问到这两个字段
+     * 如果要验证多个字段, 比如验证'重复密码'必须跟'密码'相同,
+     * 则需要将 validator function 设置到这些字段共同的上级控件上, 比如这里的 formGroup,
+     * 这样就可以通过 formGroup 同时获取到这两个字段
      */
     {
       validators: [passwordValidator('password', 'repeatPassword')],
@@ -31,4 +32,8 @@ export class Doc03030404Component {
 
   public password: string = '';
   public repeatPassword: string = '';
+
+  public get repeatPasswordControl(): FormControl {
+    return this.formGroup.get('repeatPassword') as FormControl;
+  }
 }
