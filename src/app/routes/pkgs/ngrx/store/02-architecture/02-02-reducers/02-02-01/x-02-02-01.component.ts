@@ -19,8 +19,8 @@ export class X020201Component implements OnInit {
    * 通过 select 过滤我们需要的数据
    */
   constructor(private store: Store<IState>) {
-    this.count01$ = this.store.pipe(select('02-02'));
-    this.count02$ = this.store.pipe(select('02-02', 'count'));
+    this.count01$ = this.store.pipe(select((state: IState) => state));
+    this.count02$ = this.store.pipe(select('count'));
   }
 
   public ngOnInit() {}

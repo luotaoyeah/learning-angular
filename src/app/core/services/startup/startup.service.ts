@@ -32,33 +32,30 @@ export class StartupService {
   // tslint:disable-next-line:no-any
   private viaHttp(resolve: any, reject: any) {
     import(`../../consts/i18n/${this.i18NService.defaultLang}`).then(({ I18N }) => {
+      this.settingsService.setLayout('lang', this.i18NService.defaultLang);
       this.translateService.setTranslation(this.i18NService.defaultLang, I18N);
       this.translateService.setDefaultLang(this.i18NService.defaultLang);
+
+      this.httpClient.get('assets/tmp/app-data.json').subscribe(
+        appData => {
+          this.reuseTabService.keepingScroll = true;
+          this.reuseTabService.mode = ReuseTabMatchMode.Menu;
+
+          // tslint:disable-next-line:no-any
+          const res: any = appData;
+          this.settingsService.setApp(res.app);
+          this.settingsService.setUser(res.user);
+          this.menuService.add(res.menu);
+          this.titleService.suffix = '';
+        },
+        () => {
+          resolve(null);
+        },
+        () => {
+          resolve(null);
+        },
+      );
     });
-
-    this.httpClient.get('assets/tmp/app-data.json').subscribe(
-      appData => {
-        // tslint:disable-next-line:no-any
-        const res: any = appData;
-        // 应用信息：包括站点名、描述、年份
-        this.settingsService.setApp(res.app);
-        // 用户信息：包括姓名、头像、邮箱地址
-        this.settingsService.setUser(res.user);
-        // 初始化菜单
-        this.menuService.add(res.menu);
-        // 设置页面标题的后缀
-        this.titleService.suffix = '';
-
-        this.reuseTabService.keepingScroll = true;
-        this.reuseTabService.mode = ReuseTabMatchMode.Menu;
-      },
-      () => {
-        resolve(null);
-      },
-      () => {
-        resolve(null);
-      },
-    );
   }
 
   // tslint:disable-next-line:no-any
