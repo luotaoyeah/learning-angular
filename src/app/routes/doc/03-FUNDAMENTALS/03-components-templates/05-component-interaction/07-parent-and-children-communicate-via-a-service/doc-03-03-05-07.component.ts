@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import { Doc03030507Service } from './service/doc-03-03-05-07.service';
 
+/*
+ * https://angular.io/guide/component-interaction#parent-and-children-communicate-via-a-service
+ */
 @Component({
   selector: 'app-doc-03-03-05-07',
   templateUrl: './doc-03-03-05-07.component.html',
   /*
-   * 通过父组件的 providers 注册 service 之后,
-   * 在子组件中就可以直接注入这个 service 并使用,
-   * 并且父组件和子组件注入的是同一个 service 实例
+   * 通过父组件的 `providers` 选项注册一个 service 之后, 在子组件中就可以直接注入这个 service 实例,
+   * 并且父组件和子组件注入的是同一个 service 实例, 从而实现数据共享
    */
   providers: [Doc03030507Service],
 })
