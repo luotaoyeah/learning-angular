@@ -13,7 +13,7 @@ import { Doc0303050401Component } from './04-parent-listens-for-child-event/doc-
 import { Doc03030505Component } from './05-parent-interacts-with-child-via-local-variable/doc-03-03-05-05.component';
 import { Doc0303050501Component } from './05-parent-interacts-with-child-via-local-variable/doc-03-03-05-05.01.component';
 import { Doc03030506Component } from './06-parent-calls-an-viewchild/doc-03-03-05-06.component';
-import { Doc0303050601Component } from './06-parent-calls-an-viewchild/doc-03-03-05-06-01.component';
+import { Doc0303050601Component } from './06-parent-calls-an-viewchild/doc-03-03-05-06.01.component';
 import { Doc03030507Component } from './07-parent-and-children-communicate-via-a-service/doc-03-03-05-07.component';
 import { Doc0303050701Component } from './07-parent-and-children-communicate-via-a-service/doc-03-03-05-07-01.component';
 import { AccordionModule } from 'primeng/accordion';
