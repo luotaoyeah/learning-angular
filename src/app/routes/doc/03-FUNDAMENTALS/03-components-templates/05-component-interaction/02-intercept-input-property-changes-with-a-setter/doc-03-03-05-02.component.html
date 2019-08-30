@@ -1,3 +1,11 @@
-<input type="text" [(ngModel)]="bar" nz-input />
-&nbsp;
+<input
+  [(ngModel)]="bar"
+  [ngStyle]="{
+    width: '200px',
+    marginRight: '10px'
+  }"
+  nz-input
+  type="text"
+/>
+
 <app-doc-03-03-05-02-01 [foo]="'FOO'" [bar]="bar"></app-doc-03-03-05-02-01>

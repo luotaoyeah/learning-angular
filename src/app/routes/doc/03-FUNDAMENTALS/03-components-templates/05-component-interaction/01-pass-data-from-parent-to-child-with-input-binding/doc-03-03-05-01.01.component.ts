@@ -10,7 +10,7 @@ export class Doc0303050101Component {
    * 在父组件的模板中就可以通过这个 attribute 传递数据给子组件
    */
   @Input()
-  public foo: string = 'FOO DEFAULT';
+  public foo: string = '<FOO DEFAULT>';
 
   /*
    * input property 在模板中的 attribute 的名称默认就是这个属性名称,
@@ -20,5 +20,5 @@ export class Doc0303050101Component {
    */
   // tslint:disable-next-line:no-input-rename
   @Input('myBar')
-  public bar: string = 'BAR DEFAULT';
+  public bar: string = '<BAR DEFAULT>';
 }
