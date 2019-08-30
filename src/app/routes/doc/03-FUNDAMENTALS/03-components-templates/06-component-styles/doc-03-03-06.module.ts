@@ -17,7 +17,6 @@ import { Doc0303060402Component } from './04-loading-component-styles/02-style-f
 import { Doc0303060403Component } from './04-loading-component-styles/03-template-inline-styles/doc-03-03-06-04-03.component';
 import { Doc0303060404Component } from './04-loading-component-styles/04-template-link-tags/doc-03-03-06-04-04.component';
 import { Doc03030605Component } from './05-view-encapsulation/doc-03-03-06-05.component';
-import { AccordionModule } from 'primeng/primeng';
 import { Doc0303060501Component } from './05-view-encapsulation/01/doc-03-03-06-05-01.component';
 import { Doc0303060502Component } from './05-view-encapsulation/02/doc-03-03-06-05-02.component';
 import { Doc0303060503Component } from './05-view-encapsulation/03/doc-03-03-06-05-03.component';
@@ -52,6 +51,6 @@ import { Doc030306030201Component } from './03-special-selectors/02-host-context
     Doc0303060503Component,
     Doc03030606Component,
   ],
-  imports: [SharedModule, AccordionModule, Doc030306RoutingModule],
+  imports: [SharedModule, Doc030306RoutingModule],
 })
 export class Doc030306Module {}

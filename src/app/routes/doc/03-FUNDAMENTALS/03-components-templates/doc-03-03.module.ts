@@ -3,12 +3,7 @@ import { NgModule } from '@angular/core';
 import { Doc0303RoutingModule } from './doc-03-03-routing.module';
 import { Doc030201Component } from './01-displaying-data/doc-03-02-01.component';
 import { PanelModule } from 'primeng/panel';
-import {
-  AccordionModule,
-  ButtonModule,
-  MessagesModule,
-  SelectButtonModule,
-} from 'primeng/primeng';
+import { AccordionModule, ButtonModule, MessagesModule, SelectButtonModule } from 'primeng/primeng';
 import { ToastModule } from 'primeng/toast';
 import { Doc03020101Component } from './01-displaying-data/03-02-01-01/doc-03-02-01-01.component';
 import { Doc03020102Component } from './01-displaying-data/03-02-01-02/doc-03-02-01-02.component';
@@ -41,21 +36,6 @@ import { Doc0302040701Component } from './04-lifecycle-hooks/03-02-04-07-after-v
 import { Doc03020408Component } from './04-lifecycle-hooks/03-02-04-08-after-content/doc-03-02-04-08.component';
 import { Doc0302040801Component } from './04-lifecycle-hooks/03-02-04-08-after-content/doc-03-02-04-08-01.component';
 import { Doc0302040802Component } from './04-lifecycle-hooks/03-02-04-08-after-content/doc-03-02-04-08-02.component';
-import { Doc030205Component } from './05-component-interaction/doc-03-02-05.component';
-import { Doc03020501Component } from './05-component-interaction/03-02-05-01-pass-data-from-parent-to-child-with-input-binding/doc-03-02-05-01.component';
-import { Doc0302050101Component } from './05-component-interaction/03-02-05-01-pass-data-from-parent-to-child-with-input-binding/doc-03-02-05-01-01.component';
-import { Doc03020502Component } from './05-component-interaction/03-02-05-02-intercept-input-property-changes-with-a-setter/doc-03-02-05-02.component';
-import { Doc0302050201Component } from './05-component-interaction/03-02-05-02-intercept-input-property-changes-with-a-setter/doc-03-02-05-02-01.component';
-import { Doc03020503Component } from './05-component-interaction/03-02-05-03-intercept-input-property-changes-with-ngonchanges/doc-03-02-05-03.component';
-import { Doc0302050301Component } from './05-component-interaction/03-02-05-03-intercept-input-property-changes-with-ngonchanges/doc-03-02-05-03-01.component';
-import { Doc03020504Component } from './05-component-interaction/03-02-05-04-parent-listens-for-child-event/doc-03-02-05-04.component';
-import { Doc0302050401Component } from './05-component-interaction/03-02-05-04-parent-listens-for-child-event/doc-03-02-05-04-01.component';
-import { Doc03020505Component } from './05-component-interaction/03-02-05-05-parent-interacts-with-child-via-local-variable/doc-03-02-05-05.component';
-import { Doc0302050501Component } from './05-component-interaction/03-02-05-05-parent-interacts-with-child-via-local-variable/doc-03-02-05-05-01.component';
-import { Doc03020506Component } from './05-component-interaction/03-02-05-06-parent-calls-an-viewchild/doc-03-02-05-06.component';
-import { Doc0302050601Component } from './05-component-interaction/03-02-05-06-parent-calls-an-viewchild/doc-03-02-05-06-01.component';
-import { Doc03020507Component } from './05-component-interaction/03-02-05-07-parent-and-children-communicate-via-a-service/doc-03-02-05-07.component';
-import { Doc0302050701Component } from './05-component-interaction/03-02-05-07-parent-and-children-communicate-via-a-service/doc-03-02-05-07-01.component';
 import { Doc030209Component } from './09-attribute-directives/doc-03-02-09.component';
 import { Doc03020901Component } from './09-attribute-directives/03-02-09-01-directives-overview/doc-03-02-09-01.component';
 import { Doc03020902Component } from './09-attribute-directives/03-02-09-02-build-a-simple-attribute-directive/doc-03-02-09-02.component';
@@ -81,6 +61,7 @@ import { Doc030307Module } from './07-dynamic-components/doc-03-03-07.module';
 import { Doc030310Module } from './10-structural-directives/doc-03-03-10.module';
 import { Doc030211Module } from './11-pipes/doc-03-02-11.module';
 import { Doc030308Module } from './08-angular-elements/doc-03-03-08.module';
+import { Doc030305Module } from './05-component-interaction/doc-03-03-05.module';
 
 // tslint:enable:max-line-length
 
@@ -122,22 +103,6 @@ import { Doc030308Module } from './08-angular-elements/doc-03-03-08.module';
     Doc03020408Component,
     Doc0302040801Component,
     Doc0302040802Component,
-    /* 03-02-05 */
-    Doc030205Component,
-    Doc03020501Component,
-    Doc0302050101Component,
-    Doc03020502Component,
-    Doc0302050201Component,
-    Doc03020503Component,
-    Doc0302050301Component,
-    Doc03020504Component,
-    Doc0302050401Component,
-    Doc03020505Component,
-    Doc0302050501Component,
-    Doc03020506Component,
-    Doc0302050601Component,
-    Doc03020507Component,
-    Doc0302050701Component,
     /* 03-02-09 */
     Doc030209Component,
     Doc03020901Component,
@@ -169,6 +134,7 @@ import { Doc030308Module } from './08-angular-elements/doc-03-03-08.module';
     MessagesModule,
     SharedModule,
     Doc030302Module,
+    Doc030305Module,
     Doc030306Module,
     Doc030307Module,
     Doc030308Module,
