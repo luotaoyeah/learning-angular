@@ -1,5 +1,26 @@
 :host {
-  p {
-    color: #222;
+  /*
+     [_nghost-twj-c9] button[_ngcontent-twj-c9]
+   */
+
+  button {
+    color: red;
   }
+
+  ::ng-deep {
+    /*
+       [_nghost-twj-c9] button
+     */
+
+    button {
+      border-color: red;
+    }
+  }
+}
+
+/*
+   button[_ngcontent-twj-c9]
+ */
+button {
+  font-weight: bold;
 }
