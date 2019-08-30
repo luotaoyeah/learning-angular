@@ -9,7 +9,7 @@ import { Doc0303050201Component } from './02-intercept-input-property-changes-wi
 import { Doc03030503Component } from './03-intercept-input-property-changes-with-ngonchanges/doc-03-03-05-03.component';
 import { Doc0303050301Component } from './03-intercept-input-property-changes-with-ngonchanges/doc-03-03-05-03.01.component';
 import { Doc03030504Component } from './04-parent-listens-for-child-event/doc-03-03-05-04.component';
-import { Doc0303050401Component } from './04-parent-listens-for-child-event/doc-03-03-05-04-01.component';
+import { Doc0303050401Component } from './04-parent-listens-for-child-event/doc-03-03-05-04.01.component';
 import { Doc03030505Component } from './05-parent-interacts-with-child-via-local-variable/doc-03-03-05-05.component';
 import { Doc0303050501Component } from './05-parent-interacts-with-child-via-local-variable/doc-03-03-05-05-01.component';
 import { Doc03030506Component } from './06-parent-calls-an-viewchild/doc-03-03-05-06.component';
