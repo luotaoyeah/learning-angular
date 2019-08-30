@@ -3,7 +3,7 @@ import { SharedModule } from '@app/shared';
 import { Doc030305RoutingModule } from './doc-03-03-05-routing.module';
 import { Doc030305Component } from './doc-03-03-05.component';
 import { Doc03030501Component } from './01-pass-data-from-parent-to-child-with-input-binding/doc-03-03-05-01.component';
-import { Doc0302050101Component } from './01-pass-data-from-parent-to-child-with-input-binding/doc-03-02-05-01-01.component';
+import { Doc0303050101Component } from './01-pass-data-from-parent-to-child-with-input-binding/doc-03-03-05-01.01.component';
 import { Doc03030502Component } from './02-intercept-input-property-changes-with-a-setter/doc-03-03-05-02.component';
 import { Doc0303050201Component } from './02-intercept-input-property-changes-with-a-setter/doc-03-03-05-02-01.component';
 import { Doc03030503Component } from './03-intercept-input-property-changes-with-ngonchanges/doc-03-03-05-03.component';
@@ -23,7 +23,7 @@ import { ButtonModule } from 'primeng/button';
   declarations: [
     Doc030305Component,
     Doc03030501Component,
-    Doc0302050101Component,
+    Doc0303050101Component,
     Doc03030502Component,
     Doc0303050201Component,
     Doc03030503Component,
