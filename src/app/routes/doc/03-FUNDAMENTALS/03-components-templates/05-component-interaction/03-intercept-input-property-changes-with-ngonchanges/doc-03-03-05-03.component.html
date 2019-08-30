@@ -1,5 +1,10 @@
-<p-button label="update major" (onClick)="updateMajor()"></p-button>
-&nbsp;
-<p-button label="update minor" (onClick)="updateMinor()"></p-button>
-&nbsp;
-<app-doc-03-03-05-03-01 [major]="major" [minor]="minor"></app-doc-03-03-05-03-01>
+<button (click)="updateMajor()" nz-button>UPDATE MAJOR</button>
+<button (click)="updateMinor()" nz-button>UPDATE MINOR</button>
+
+<app-doc-03-03-05-03-01
+  [major]="major"
+  [minor]="minor"
+  [ngStyle]="{
+    marginLeft: '10px'
+  }"
+></app-doc-03-03-05-03-01>

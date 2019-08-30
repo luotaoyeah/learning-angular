@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
 
+/*
+ * https://angular.io/guide/component-interaction#intercept-input-property-changes-with-ngonchanges
+ */
 @Component({
   selector: 'app-doc-03-03-05-03',
   templateUrl: './doc-03-03-05-03.component.html',
 })
 export class Doc03030503Component {
-  public minor = 0;
-  public major = 0;
+  public major: number = 0;
+  public minor: number = 0;
 
   public updateMajor() {
     this.minor = 0;

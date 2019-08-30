@@ -7,7 +7,7 @@ import { Doc0303050101Component } from './01-pass-data-from-parent-to-child-with
 import { Doc03030502Component } from './02-intercept-input-property-changes-with-a-setter/doc-03-03-05-02.component';
 import { Doc0303050201Component } from './02-intercept-input-property-changes-with-a-setter/doc-03-03-05-02.01.component';
 import { Doc03030503Component } from './03-intercept-input-property-changes-with-ngonchanges/doc-03-03-05-03.component';
-import { Doc0303050301Component } from './03-intercept-input-property-changes-with-ngonchanges/doc-03-03-05-03-01.component';
+import { Doc0303050301Component } from './03-intercept-input-property-changes-with-ngonchanges/doc-03-03-05-03.01.component';
 import { Doc03030504Component } from './04-parent-listens-for-child-event/doc-03-03-05-04.component';
 import { Doc0303050401Component } from './04-parent-listens-for-child-event/doc-03-03-05-04-01.component';
 import { Doc03030505Component } from './05-parent-interacts-with-child-via-local-variable/doc-03-03-05-05.component';
