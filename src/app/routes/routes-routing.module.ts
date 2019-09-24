@@ -1,17 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SimpleGuard } from '@delon/auth';
 import { LayoutDefaultComponent } from '../layout/default/layout-default.component';
-import { LayoutPassportComponent } from '../layout/passport/passport.component';
-import { PassportLoginComponent } from '../layout/passport/login/passport-login.component';
-import { CallbackComponent } from '../layout/callback/callback.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
     path: '',
     component: LayoutDefaultComponent,
-    canActivate: [SimpleGuard],
     children: [
       /*
        * redirectTo 后面的路径可以是相对路径, 也可以是绝对路径(以 / 开头),
@@ -54,12 +49,6 @@ const routes: Routes = [
       },
     ],
   },
-  {
-    path: 'passport',
-    component: LayoutPassportComponent,
-    children: [{ path: 'login', component: PassportLoginComponent, data: { title: '登录' } }],
-  },
-  { path: 'callback/:type', component: CallbackComponent },
   { path: '**', redirectTo: 'exception/404' },
 ];
 

@@ -10,16 +10,12 @@ if (!commitRegExp.test(message)) {
   console.log('\n--------------------------------------------------');
 
   console.error(
-    `  ${chalk.bgRed.white('ERROR')} ${chalk.red(
-      `invalid commit message format.`,
-    )}\n\n` +
+    `  ${chalk.bgRed.white('ERROR')} ${chalk.red(`INVALID COMMIT MESSAGE FORMAT.`)}\n\n` +
       chalk.red(`  valid examples:\n`) +
       `    ${chalk.green(`feat(compiler): add 'comments' option`)}\n` +
-      `    ${chalk.green(
-        `fix(model): handle events on blur (close #28)`,
-      )}\n\n` +
-      chalk.red(`  see .doc/COMMIT_CONVENTION.md for more details.`),
+      `    ${chalk.green(`fix(model): handle events on blur (close #28)`)}`,
   );
+
   console.log('--------------------------------------------------\n');
 
   process.exit(1);

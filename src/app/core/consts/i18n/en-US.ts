@@ -1,6 +1,3 @@
-import { HeaderStorageComponentI18n } from '../../../layout/default/header/storage/header-storage.component.i18n';
-import { HeaderFullScreenComponentI18n } from '../../../layout/default/header/fullscreen/header-fullscreen.component.i18n';
-
 const I18N = {
   'menu.home': 'HOME',
   'menu.home.home': 'HOME',
@@ -171,9 +168,6 @@ const I18N = {
   'app.login.login-failed': 'Login Failed',
   'validation.password.required': 'Please enter your password',
   'interceptors.default.request-error': 'REQUEST ERROR',
-
-  ...HeaderStorageComponentI18n.EN,
-  ...HeaderFullScreenComponentI18n.EN,
 };
 
 export { I18N };
