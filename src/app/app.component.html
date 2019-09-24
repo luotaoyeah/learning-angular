@@ -10,23 +10,260 @@
   <mat-menu #animals="matMenu">
     <button mat-menu-item [routerLink]="'/home'">首页</button>
 
-    <button mat-menu-item [routerLink]="'/doc/02'">SETUP</button>
+    <button mat-menu-item [matMenuTriggerFor]="docTpl">DOC</button>
+    <mat-menu #docTpl="matMenu">
+      <button mat-menu-item [routerLink]="'/doc/02'">SETUP</button>
 
-    <button mat-menu-item [matMenuTriggerFor]="vertebrates">
-      <a [routerLink]="'/home'">首页</a>
-    </button>
-    <mat-menu #vertebrates="matMenu">
-      <button mat-menu-item [matMenuTriggerFor]="fish">Fishes</button>
-      <mat-menu #fish="matMenu">
-        <button mat-menu-item>Baikal oilfish</button>
-        <button mat-menu-item>Bala shark</button>
-        <button mat-menu-item>Ballan wrasse</button>
-        <button mat-menu-item>Bamboo shark</button>
-        <button mat-menu-item>Banded killifish</button>
+      <button mat-menu-item [matMenuTriggerFor]="fundamentalTpl">FUNDAMENTAL</button>
+      <mat-menu #fundamentalTpl="matMenu">
+        <button mat-menu-item [routerLink]="'/doc/tutorial/dashboard'">Tour Of Heroes App</button>
+
+        <button mat-menu-item [matMenuTriggerFor]="architectureTpl">Architecture</button>
+        <mat-menu #architectureTpl="matMenu">
+          <button mat-menu-item [routerLink]="'/doc/03/02/intro-into-component'">Intro to Components</button>
+          <button mat-menu-item [routerLink]="'/doc/03/02/di'">Intro to Services and DI</button>
+        </mat-menu>
+
+        <button mat-menu-item [matMenuTriggerFor]="comoponentsTemplatesTpl">Comoponents & Templates</button>
+        <mat-menu #comoponentsTemplatesTpl="matMenu">
+          <button mat-menu-item [routerLink]="'/doc/03/03/01'">Displaying Data</button>
+          <button mat-menu-item [routerLink]="'/doc/03/03/02'">Template Syntax</button>
+          <button mat-menu-item [routerLink]="'/doc/03/03/03'">User Input</button>
+          <button mat-menu-item [routerLink]="'/doc/03/03/04'">Lifecycle Hooks</button>
+          <button mat-menu-item [routerLink]="'/doc/03/03/05'">Component Interaction</button>
+          <button mat-menu-item [routerLink]="'/doc/03/03/06'">Component Styles</button>
+          <button mat-menu-item [routerLink]="'/doc/03/03/07'">Dynamic Components</button>
+          <button mat-menu-item [routerLink]="'/doc/03/03/08'">Angular Elements</button>
+          <button mat-menu-item [routerLink]="'/doc/03/03/09'">Attribute Directives</button>
+          <button mat-menu-item [routerLink]="'/doc/03/03/10'">Structural Directives</button>
+          <button mat-menu-item [routerLink]="'/doc/03/03/11'">Pipes</button>
+        </mat-menu>
+
+        <button mat-menu-item [matMenuTriggerFor]="formTpl">Form</button>
+        <mat-menu #formTpl="matMenu">
+          <button mat-menu-item [routerLink]="'/doc/03/04/01'">Introduction</button>
+          <button mat-menu-item [routerLink]="'/doc/03/04/02'">Reactive Form</button>
+          <button mat-menu-item [routerLink]="'/doc/03/04/03'">Template-Driven Form</button>
+          <button mat-menu-item [routerLink]="'/doc/03/04/04'">Form Validation</button>
+          <button mat-menu-item [routerLink]="'/doc/03/04/05'">Dynamic Forms</button>
+        </mat-menu>
+
+        <button mat-menu-item [matMenuTriggerFor]="observablesRxJSTpl">Observables & RxJS</button>
+        <mat-menu #observablesRxJSTpl="matMenu">
+          <button mat-menu-item [routerLink]="'/doc/03/05/01'">Observables</button>
+          <button mat-menu-item [routerLink]="'/doc/03/05/02'">The RxJS Library</button>
+          <button mat-menu-item [routerLink]="'/doc/03/05/03'">Observables In Angular</button>
+          <button mat-menu-item [routerLink]="'/doc/03/05/04'">Practical Usage</button>
+          <button mat-menu-item [routerLink]="'/doc/03/05/05'">Compare To Other Techniques</button>
+        </mat-menu>
+
+        <button mat-menu-item [routerLink]="'/doc/03/06'">Bootstrapping</button>
+
+        <button mat-menu-item [matMenuTriggerFor]="ngModulesTpl">NgModules</button>
+        <mat-menu #ngModulesTpl="matMenu">
+          <button mat-menu-item [routerLink]="'/doc/03/07/01'">NgModules Introduction</button>
+          <button mat-menu-item [routerLink]="'/doc/03/07/02'">JavaScript Modules vs. NgModules</button>
+          <button mat-menu-item [routerLink]="'/doc/03/07/03'">Frequently Used Modules</button>
+          <button mat-menu-item [routerLink]="'/doc/03/07/04'">Types of Feature Modules</button>
+          <button mat-menu-item [routerLink]="'/doc/03/07/05'">Entry Components</button>
+          <button mat-menu-item [routerLink]="'/doc/03/07/06'">Feature Modules</button>
+          <button mat-menu-item [routerLink]="'/doc/03/07/07'">Providers</button>
+          <button mat-menu-item [routerLink]="'/doc/03/07/08'">Singleton services</button>
+          <button mat-menu-item [routerLink]="'/doc/03/07/09'">Lazy Loading Feature Modules</button>
+          <button mat-menu-item [routerLink]="'/doc/03/07/10'">Sharing Modules</button>
+          <button mat-menu-item [routerLink]="'/doc/03/07/11'">NgModule API</button>
+          <button mat-menu-item [routerLink]="'/doc/03/07/12'">NgModule FAQs</button>
+        </mat-menu>
+
+        <button mat-menu-item [matMenuTriggerFor]="dependencyInjectionTpl">Dependency Injection</button>
+        <mat-menu #dependencyInjectionTpl="matMenu">
+          <button mat-menu-item [routerLink]="'/doc/03/08/01'">Dependency Injection in Angular</button>
+          <button mat-menu-item [routerLink]="'/doc/03/08/02'">Hierarchical Dependency Injectors</button>
+          <button mat-menu-item [routerLink]="'/doc/03/08/03'">Dependency Providers</button>
+          <button mat-menu-item [routerLink]="'/doc/03/08/04'">Dependency Injection in Action</button>
+          <button mat-menu-item [routerLink]="'/doc/03/08/05'">Navigate the component tree with DI</button>
+        </mat-menu>
+
+        <button mat-menu-item [routerLink]="'/doc/03/09'">HttpClient</button>
+
+        <button mat-menu-item [routerLink]="'/doc/03/10'">Routing & Navigation</button>
+
+        <button mat-menu-item [matMenuTriggerFor]="animationsTpl">Animations</button>
+        <mat-menu #animationsTpl="matMenu">
+          <button mat-menu-item [routerLink]="'/doc/03/11/01'">Introduction</button>
+          <button mat-menu-item [routerLink]="'/doc/03/11/02'">Transitions And Triggers</button>
+          <button mat-menu-item [routerLink]="'/doc/03/11/03'">Complex Sequences</button>
+          <button mat-menu-item [routerLink]="'/doc/03/11/04'">Reusable Animations</button>
+          <button mat-menu-item [routerLink]="'/doc/03/11/05'">Route Transition Animations</button>
+        </mat-menu>
       </mat-menu>
 
-      <button mat-menu-item>Birds</button>
-      <button mat-menu-item>Mammals</button>
+      <button mat-menu-item [matMenuTriggerFor]="techniquesTpl">TECHNIQUES</button>
+      <mat-menu #techniquesTpl="matMenu">
+        <button mat-menu-item [routerLink]="'/doc/04/02'">i18n</button>
+
+        <button mat-menu-item [matMenuTriggerFor]="angularLibrariesTpl">Angular Libraries</button>
+        <mat-menu #angularLibrariesTpl="matMenu">
+          <button mat-menu-item [routerLink]="'/doc/04/06/03'">Creating Libraries</button>
+        </mat-menu>
+
+        <button mat-menu-item [matMenuTriggerFor]="schematicsTpl">Schematics</button>
+        <mat-menu #schematicsTpl="matMenu">
+          <button mat-menu-item [routerLink]="'/doc/04/07/01'">Schematics Overview</button>
+          <button mat-menu-item [routerLink]="'/doc/04/07/02'">Authoring Schematics</button>
+          <button mat-menu-item [routerLink]="'/doc/04/07/03'">Schematics for Libraries</button>
+        </mat-menu>
+      </mat-menu>
+
+      <button mat-menu-item [matMenuTriggerFor]="devWorkflowTpl">DEV WORKFLOW</button>
+      <mat-menu #devWorkflowTpl="matMenu">
+        <button mat-menu-item [routerLink]="'/doc/05/04'">Testing</button>
+      </mat-menu>
+
+      <button mat-menu-item [matMenuTriggerFor]="configurationTpl">CONFIGURATION</button>
+      <mat-menu #configurationTpl="matMenu">
+        <button mat-menu-item [routerLink]="'/doc/06/02'">Workspace Configuration</button>
+      </mat-menu>
+
+      <button mat-menu-item [matMenuTriggerFor]="cliTpl">CLI</button>
+      <mat-menu #cliTpl="matMenu">
+        <button mat-menu-item [routerLink]="'/doc/08/01'">Overview</button>
+        <button mat-menu-item [routerLink]="'/doc/08/02'">ng add</button>
+        <button mat-menu-item [routerLink]="'/doc/08/03'">ng build</button>
+        <button mat-menu-item [routerLink]="'/doc/08/04'">ng config</button>
+        <button mat-menu-item [routerLink]="'/doc/08/05'">ng doc</button>
+        <button mat-menu-item [routerLink]="'/doc/08/06'">ng e2e</button>
+        <button mat-menu-item [routerLink]="'/doc/08/07'">ng generate</button>
+        <button mat-menu-item [routerLink]="'/doc/08/08'">ng help</button>
+        <button mat-menu-item [routerLink]="'/doc/08/09'">ng lint</button>
+        <button mat-menu-item [routerLink]="'/doc/08/10'">ng new</button>
+        <button mat-menu-item [routerLink]="'/doc/08/11'">ng run</button>
+        <button mat-menu-item [routerLink]="'/doc/08/12'">ng serve</button>
+        <button mat-menu-item [routerLink]="'/doc/08/13'">ng test</button>
+        <button mat-menu-item [routerLink]="'/doc/08/14'">ng update</button>
+        <button mat-menu-item [routerLink]="'/doc/08/15'">ng version</button>
+        <button mat-menu-item [routerLink]="'/doc/08/16'">ng xi18n</button>
+      </mat-menu>
+
+      <button mat-menu-item [matMenuTriggerFor]="apiTpl">API</button>
+      <mat-menu #apiTpl="matMenu">
+        <button mat-menu-item [matMenuTriggerFor]="angularCoreTpl">@angular/core</button>
+        <mat-menu #angularCoreTpl="matMenu">
+          <button mat-menu-item [routerLink]="'/doc/09/01/01'">Entry Points</button>
+          <button mat-menu-item [routerLink]="'/doc/09/01/02'">Primary Entry Point Exports</button>
+        </mat-menu>
+
+        <button mat-menu-item [matMenuTriggerFor]="angularCommonTpl">@angular/common</button>
+        <mat-menu #angularCommonTpl="matMenu">
+          <button mat-menu-item [routerLink]="'/doc/09/02/02'">Primary Entry Point Exports</button>
+        </mat-menu>
+      </mat-menu>
+    </mat-menu>
+
+    <button mat-menu-item [matMenuTriggerFor]="packageTpl">PACKAGE</button>
+    <mat-menu #packageTpl="matMenu">
+      <button mat-menu-item [matMenuTriggerFor]="ngAlainTpl">ng-alain</button>
+      <mat-menu #ngAlainTpl="matMenu">
+        <button mat-menu-item [matMenuTriggerFor]="delonTpl">delon</button>
+        <mat-menu #delonTpl="matMenu">
+          <button mat-menu-item [routerLink]="'/pkgs/ng-alain/delon/abc'">abc</button>
+          <button mat-menu-item [routerLink]="'/pkgs/ng-alain/delon/acl'">acl</button>
+        </mat-menu>
+      </mat-menu>
+
+      <button mat-menu-item [matMenuTriggerFor]="jasmineTpl">jasmine</button>
+      <mat-menu #jasmineTpl="matMenu">
+        <button mat-menu-item [routerLink]="'/pkgs/jasmine/global'">global</button>
+        <button mat-menu-item [routerLink]="'/pkgs/jasmine/namespace'">namespace</button>
+      </mat-menu>
+
+      <button mat-menu-item [routerLink]="'/pkgs/ngx-translate'">ngx-translate</button>
+
+      <button mat-menu-item [matMenuTriggerFor]="ngrxTpl">ngrx</button>
+      <mat-menu #ngrxTpl="matMenu">
+        <button mat-menu-item [matMenuTriggerFor]="storeTpl">STORE</button>
+        <mat-menu #storeTpl="matMenu">
+          <button mat-menu-item [routerLink]="'/pkgs/ngrx/store/01'">Getting Started</button>
+          <button mat-menu-item [routerLink]="'/pkgs/ngrx/store/02'">Architecture</button>
+          <button mat-menu-item [routerLink]="'/pkgs/ngrx/store/03'">Advanced</button>
+          <button mat-menu-item [routerLink]="'/pkgs/ngrx/store/04'">Recipes</button>
+          <button mat-menu-item [routerLink]="'/pkgs/ngrx/store/05'">Testing</button>
+        </mat-menu>
+
+        <button mat-menu-item [matMenuTriggerFor]="effectsTpl">EFFECTS</button>
+        <mat-menu #effectsTpl="matMenu">
+          <button mat-menu-item [routerLink]="'/pkgs/ngrx/effects/01'">Overview</button>
+          <button mat-menu-item [routerLink]="'/pkgs/ngrx/effects/02'">Testing</button>
+          <button mat-menu-item [routerLink]="'/pkgs/ngrx/effects/03'">Lifecycle</button>
+        </mat-menu>
+
+        <button mat-menu-item [matMenuTriggerFor]="lifecycleTpl">Lifecycle</button>
+        <mat-menu #lifecycleTpl="matMenu">
+          <button mat-menu-item [routerLink]="'/pkgs/ngrx/router-store/01'">Actions</button>
+          <button mat-menu-item [routerLink]="'/pkgs/ngrx/router-store/02'">Configuration</button>
+        </mat-menu>
+
+        <button mat-menu-item [matMenuTriggerFor]="entityTpl">ENTITY</button>
+        <mat-menu #entityTpl="matMenu">
+          <button mat-menu-item [routerLink]="'/pkgs/ngrx/entity/01'">Entity Interfaces</button>
+          <button mat-menu-item [routerLink]="'/pkgs/ngrx/entity/02'">Entity Adapter</button>
+        </mat-menu>
+
+        <button mat-menu-item [matMenuTriggerFor]="schematicsTpl">SCHEMATICS</button>
+        <mat-menu #schematicsTpl="matMenu">
+          <button mat-menu-item [routerLink]="'/pkgs/ngrx/schematics/01'">Schematics</button>
+        </mat-menu>
+      </mat-menu>
+
+      <button mat-menu-item [matMenuTriggerFor]="angularGridster2Tpl">angular-gridster2</button>
+      <mat-menu #angularGridster2Tpl="matMenu">
+        <button mat-menu-item [routerLink]="'/pkgs/angular-gridster2/01'">Home</button>
+        <button mat-menu-item [routerLink]="'/pkgs/angular-gridster2/02'">API</button>
+        <button mat-menu-item [routerLink]="'/pkgs/angular-gridster2/03'">Compact</button>
+        <button mat-menu-item [routerLink]="'/pkgs/angular-gridster2/04'">Display Grid</button>
+        <button mat-menu-item [routerLink]="'/pkgs/angular-gridster2/05'">Drag</button>
+        <button mat-menu-item [routerLink]="'/pkgs/angular-gridster2/06'">Grid Margins</button>
+      </mat-menu>
+    </mat-menu>
+
+    <button mat-menu-item [matMenuTriggerFor]="blogTpl">BLOG</button>
+    <mat-menu #blogTpl="matMenu">
+      <button mat-menu-item [routerLink]="'/blog/a-comprehensive-guide-to-angular-onpush'">
+        A Comprehensive Guide to Angular onPush Change Detection Strategy
+      </button>
+      <button mat-menu-item [routerLink]="'/blog/never-again-be-confused-when-implementing-controlvalueaccessor'">
+        Never Again Be Confused When Implementing Control Value Accessor In Angular Forms
+      </button>
+      <button mat-menu-item [routerLink]="'/blog/a-gentle-introduction-into-change-detection-in-angular'">
+        A Gentle Introduction Into Change Detection In Angular
+      </button>
+      <button
+        mat-menu-item
+        [routerLink]="'/blog/working-with-dom-in-angular-unexpected-consequences-and-optimization-techniques'"
+      >
+        Working With DOM In Angular: Unexpected Consequences And Optimization Techniques
+      </button>
+      <button mat-menu-item [routerLink]="'/blog/here-is-what-you-need-to-know-about-dynamic-components-in-angular'">
+        Here Is What You Need To Know About Dynamic Components In Angular
+      </button>
+      <button
+        mat-menu-item
+        [routerLink]="'/blog/do-you-still-think-that-ngzone-is-required-for-change-detection-in-angular'"
+      >
+        Do You Still Think That NgZone Is Required For Change Detection In Angular
+      </button>
+      <button mat-menu-item [routerLink]="'/blog/everything-you-need-to-know-about-change-detection'">
+        Everything You Need To Know About Change Detection In Angular
+      </button>
+      <button
+        mat-menu-item
+        [routerLink]="'/blog/boosting-performance-of-angular-applications-with-manual-change-detection'"
+      >
+        Boosting Performance Of Angular Applications With Manual Change Detection
+      </button>
+      <button mat-menu-item [routerLink]="'/blog/if-you-think-ngdocheck-means-your-component-is-being-checked'">
+        If You Think Ng Do Check Means Your Component Is Being Checked
+      </button>
     </mat-menu>
   </mat-menu>
 </button>
