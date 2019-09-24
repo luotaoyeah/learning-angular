@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from '@app/shared';
 import { LayoutDefaultComponent } from './default/layout-default.component';
-import { SidebarComponent } from './default/sidebar/sidebar.component';
 
-const COMPONENTS = [LayoutDefaultComponent, SidebarComponent];
+const COMPONENTS = [LayoutDefaultComponent];
 
 @NgModule({
   imports: [SharedModule],
