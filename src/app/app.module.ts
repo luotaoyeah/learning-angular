@@ -8,7 +8,7 @@ import {
   Type,
 } from '@angular/core';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { default as ngLang } from '@angular/common/locales/en';
 import { en_US as zorroLang, NZ_I18N } from 'ng-zorro-antd';
 import { ALAIN_I18N_TOKEN, DELON_LOCALE, en_US as delonLang } from '@delon/theme';
@@ -160,7 +160,7 @@ const APPINIT_PROVIDES = [
 @NgModule({
   declarations: [AppComponent, PageNotFoundComponent],
   imports: [
-    NoopAnimationsModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
     DelonModule.forRoot(),
