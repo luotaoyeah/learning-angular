@@ -9,7 +9,7 @@ const options = {
   stylesDir: path.join(root, './src'),
   antdStylesDir: path.join(root, './node_modules/ng-zorro-antd'),
   varFile: path.join(root, './scripts/var.less'),
-  mainLessFile: path.join(root, './src/styles.less'),
+  mainLessFile: path.join(root, './src/style.less'),
   themeVariables: ['@primary-color'],
   outputFilePath,
 };

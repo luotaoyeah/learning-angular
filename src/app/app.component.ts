@@ -7,7 +7,7 @@ import { Doc0306080201Service } from './routes/doc/03-FUNDAMENTALS/07-ngmodules/
 
 @Component({
   selector: 'app-root',
-  template: '<router-outlet></router-outlet>',
+  templateUrl: './app.component.html',
 })
 export class AppComponent implements OnInit {
   constructor(
