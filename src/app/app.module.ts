@@ -14,14 +14,12 @@ import { en_US as zorroLang, NZ_I18N } from 'ng-zorro-antd';
 import { ALAIN_I18N_TOKEN, DELON_LOCALE, en_US as delonLang } from '@delon/theme';
 import { registerLocaleData } from '@angular/common';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { JsonSchemaModule } from '@app/shared/json-schema/json-schema.module';
 import { JWTInterceptor } from '@delon/auth';
 import { DelonModule } from './delon.module';
 import { CoreModule } from '@app/core/core.module';
 import { SharedModule } from '@app/shared';
 import { AppComponent } from './app.component';
 import { RoutesModule } from './routes/routes.module';
-import { LayoutModule } from './layout/layout.module';
 import { Doc0306070102Service } from './routes/doc/03-FUNDAMENTALS/07-ngmodules/03-06-07-providers/03-06-07-01-providing-a-service/service/doc-03-06-07-01-02.service';
 import { Doc03060802Service } from './routes/doc/03-FUNDAMENTALS/07-ngmodules/03-06-08-singleton-services/03-06-08-01-providing-a-singleton-service/service/doc-03-06-08-02.service';
 import { Doc0306080201Module } from './routes/doc/03-FUNDAMENTALS/07-ngmodules/03-06-08-singleton-services/03-06-08-02-the-for-root-pattern/doc-03-06-08-02-01/doc-03-06-08-02-01.module';
@@ -29,7 +27,6 @@ import { Doc0306080201Service } from './routes/doc/03-FUNDAMENTALS/07-ngmodules/
 import { Doc0306080301Module } from './routes/doc/03-FUNDAMENTALS/07-ngmodules/03-06-08-singleton-services/03-06-08-03-prevent-reimport-of-the-ngmodule/doc-03-06-08-03-01/doc-03-06-08-03-01.module';
 import { Doc03061201Service } from './routes/doc/03-FUNDAMENTALS/07-ngmodules/03-06-12-ngmodule-faq/03-06-12-01/service/doc-03-06-12-01.service';
 import { Doc030702010201Service } from './routes/doc/03-FUNDAMENTALS/08-dependency-injection/03-07-02-hierarchical-dependency-injection/03-07-02-01-where-to-configure-providers/03-07-02-01-02/service/doc-03-07-02-01-02-01.service';
-import { PageNotFoundComponent } from './comn/page-not-found/page-not-found.component';
 import { Doc0307030603Service } from './routes/doc/03-FUNDAMENTALS/08-dependency-injection/03-07-03-di-providers/03-07-03-06-tree-shakable-providers/service/doc-03-07-03-06-03.service';
 import { Doc0308050301Interceptor } from './routes/doc/03-FUNDAMENTALS/09-httpclient/03-08-05-advanced-usage/03-08-05-03-intercepting-requests-and-responses/service/doc-03-08-05-03-01.interceptor';
 import { Doc0308050302Interceptor } from './routes/doc/03-FUNDAMENTALS/09-httpclient/03-08-05-advanced-usage/03-08-05-03-intercepting-requests-and-responses/service/doc-03-08-05-03-02.interceptor';
@@ -84,8 +81,6 @@ const I18N_SERVICE_MODULES = [
 // endregion
 
 const I18NSERVICE_PROVIDES = [{ provide: ALAIN_I18N_TOKEN, useClass: I18NService, multi: false }];
-
-const FORM_MODULES = [JsonSchemaModule];
 
 /*
  * 因为 HttpClientModule 可能需要依赖 interceptors, 因此 interceptors 需要和 HttpClientModule 注册到同一个 injector 中,
@@ -158,7 +153,7 @@ const APPINIT_PROVIDES = [
 // #endregion
 
 @NgModule({
-  declarations: [AppComponent, PageNotFoundComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserAnimationsModule,
     HttpClientModule,
@@ -166,12 +161,10 @@ const APPINIT_PROVIDES = [
     DelonModule.forRoot(),
     CoreModule,
     SharedModule,
-    LayoutModule,
     RoutesModule,
     Doc0306080201Module.forRoot(),
     Doc0306080301Module,
     ...I18N_SERVICE_MODULES,
-    ...FORM_MODULES,
     ...GLOBAL_THIRD_MODULES,
     StoreModule.forRoot(reducers, { metaReducers }),
     EffectsModule.forRoot([AppEffects]),

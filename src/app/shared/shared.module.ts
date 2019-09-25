@@ -13,15 +13,19 @@ import { NtJsonPipe } from './pipes/nt-json.pipe';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { PageNotFoundComponent } from '@app/shared/components/page-not-found/page-not-found.component';
 
 // tslint:disable-next-line:no-any
 const THIRDMODULES: Array<any> = [NgZorroAntdModule, CountdownModule, MatMenuModule, MatButtonModule, MatIconModule];
 
 // tslint:disable-next-line:no-any
+const COMPONENTS: Array<Type<any> | Array<any>> = [PageNotFoundComponent];
+
+// tslint:disable-next-line:no-any
 const PIPES: Array<Type<any> | Array<any>> = [NtJsonPipe];
 
 @NgModule({
-  declarations: [...PIPES],
+  declarations: [...COMPONENTS, ...PIPES],
   imports: [
     CommonModule,
     FormsModule,
@@ -47,6 +51,7 @@ const PIPES: Array<Type<any> | Array<any>> = [NtJsonPipe];
     DelonFormModule,
     TranslateModule,
     ...THIRDMODULES,
+    ...COMPONENTS,
     ...PIPES,
   ],
 })
