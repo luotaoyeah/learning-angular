@@ -1,4 +1,4 @@
-import { Inject, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import {
   HttpErrorResponse,
@@ -12,9 +12,7 @@ import {
 import { Observable, of, throwError } from 'rxjs';
 import { catchError, mergeMap } from 'rxjs/operators';
 import { NzNotificationService } from 'ng-zorro-antd';
-import { _HttpClient } from '@delon/theme';
 import { environment } from '@app/env/environment';
-import { DA_SERVICE_TOKEN, ITokenService } from '@delon/auth';
 import { TranslateService } from '@ngx-translate/core';
 import { ResponseResult } from '@app/core/vm';
 import { some } from 'lodash';
@@ -51,9 +49,6 @@ export class DefaultInterceptor implements HttpInterceptor {
   constructor(
     private nzNotificationService: NzNotificationService,
     private router: Router,
-    private httpClient: _HttpClient,
-    @Inject(DA_SERVICE_TOKEN)
-    private tokenService: ITokenService,
     private translateService: TranslateService,
   ) {}
 
@@ -63,10 +58,6 @@ export class DefaultInterceptor implements HttpInterceptor {
    */
   private handleSuccess(response: HttpResponseBase): Observable<HttpResponseBase> {
     const { status } = response;
-
-    if (status > 0) {
-      this.httpClient.end();
-    }
 
     switch (200) {
       case status:
@@ -100,13 +91,8 @@ export class DefaultInterceptor implements HttpInterceptor {
   private handleError(response: HttpErrorResponse): Observable<HttpEvent<HttpErrorResponse>> {
     const { status, statusText } = response;
 
-    if (status > 0) {
-      this.httpClient.end();
-    }
-
     switch (status) {
       case 401:
-        this.tokenService.clear();
         setTimeout(() => {
           this.router.navigateByUrl('/passport/login');
         });

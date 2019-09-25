@@ -7,7 +7,6 @@ import {
   GridsterItemComponentInterface,
   GridType,
 } from 'angular-gridster2';
-import { SettingsNotify, SettingsService } from '@delon/theme';
 
 /*
  * https://tiberiuzuld.github.io/angular-gridster2/drag
@@ -22,29 +21,15 @@ export class X05Component implements OnInit {
   public options: GridsterConfig = {};
   public items: Array<GridsterItem> = [];
 
-  constructor(public settingsService: SettingsService) {}
-
-  public static handleDragStart(
-    item: GridsterItem,
-    itemComponent: GridsterItemComponentInterface,
-    event: MouseEvent,
-  ) {
+  public static handleDragStart(item: GridsterItem, itemComponent: GridsterItemComponentInterface, event: MouseEvent) {
     console.log(`[${X05Component.name}] [start]\n`, item, itemComponent, event);
   }
 
-  public static handleDragStop(
-    item: GridsterItem,
-    itemComponent: GridsterItemComponentInterface,
-    event: MouseEvent,
-  ) {
+  public static handleDragStop(item: GridsterItem, itemComponent: GridsterItemComponentInterface, event: MouseEvent) {
     console.log(`[${X05Component.name}] [stop]\n`, item, itemComponent, event);
   }
 
-  public static handleDragOverlap(
-    source: GridsterItem,
-    target: GridsterItem,
-    grid?: GridsterComponentInterface,
-  ) {
+  public static handleDragOverlap(source: GridsterItem, target: GridsterItem, grid?: GridsterComponentInterface) {
     console.log(`[${X05Component.name}] [overlap]\n`, source, target, grid);
   }
 
@@ -92,14 +77,6 @@ export class X05Component implements OnInit {
       { cols: 1, rows: 1, y: 3, x: 4 },
       { cols: 1, rows: 1, y: 0, x: 6 },
     ];
-
-    this.settingsService.notify.subscribe((notify: SettingsNotify) => {
-      if (notify.type === 'layout') {
-        if (this.options.api && this.options.api.resize) {
-          this.options.api.resize();
-        }
-      }
-    });
   }
 
   public handleOptionsChange() {

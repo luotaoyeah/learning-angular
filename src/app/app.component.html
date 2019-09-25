@@ -164,15 +164,6 @@
 
     <button mat-menu-item [matMenuTriggerFor]="packageTpl">PACKAGE</button>
     <mat-menu #packageTpl="matMenu">
-      <button mat-menu-item [matMenuTriggerFor]="ngAlainTpl">ng-alain</button>
-      <mat-menu #ngAlainTpl="matMenu">
-        <button mat-menu-item [matMenuTriggerFor]="delonTpl">delon</button>
-        <mat-menu #delonTpl="matMenu">
-          <button mat-menu-item [routerLink]="'/pkgs/ng-alain/delon/abc'">abc</button>
-          <button mat-menu-item [routerLink]="'/pkgs/ng-alain/delon/acl'">acl</button>
-        </mat-menu>
-      </mat-menu>
-
       <button mat-menu-item [matMenuTriggerFor]="jasmineTpl">jasmine</button>
       <mat-menu #jasmineTpl="matMenu">
         <button mat-menu-item [routerLink]="'/pkgs/jasmine/global'">global</button>
@@ -270,4 +261,11 @@
   </mat-menu>
 </button>
 
-<router-outlet></router-outlet>
+<div
+  [ngStyle]="{
+    height: 'calc(100% - 57px)',
+    padding: '10px'
+  }"
+>
+  <router-outlet></router-outlet>
+</div>

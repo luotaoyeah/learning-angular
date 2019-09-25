@@ -18,10 +18,6 @@ const routes: Routes = [
     loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule),
   },
   {
-    path: 'pkgs/ng-alain',
-    loadChildren: () => import('./pkgs/ng-alain/ng-alain.module').then(m => m.NgAlainModule),
-  },
-  {
     path: 'pkgs/jasmine',
     loadChildren: () => import('./pkgs/jasmine/jasmine.module').then(m => m.JasmineModule),
   },

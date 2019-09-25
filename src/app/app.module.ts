@@ -1,7 +1,6 @@
 import { APP_BOOTSTRAP_LISTENER, NgModule, Provider } from '@angular/core';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { JWTInterceptor } from '@delon/auth';
 import { CoreModule } from '@app/core/core.module';
 import { SharedModule } from '@app/shared';
 import { AppComponent } from './app.component';
@@ -37,11 +36,6 @@ import { DefaultInterceptor } from '@app/core';
  * 多个 interceptors 的注册顺序, 决定了它们的执行顺序
  */
 const INTERCEPTOR_PROVIDES: Array<Provider> = [
-  {
-    provide: HTTP_INTERCEPTORS,
-    useClass: JWTInterceptor,
-    multi: true,
-  },
   {
     provide: HTTP_INTERCEPTORS,
     useClass: DefaultInterceptor,

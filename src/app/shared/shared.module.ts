@@ -2,10 +2,6 @@ import { NgModule, Type } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { AlainThemeModule } from '@delon/theme';
-import { DelonABCModule } from '@delon/abc';
-import { DelonACLModule } from '@delon/acl';
-import { DelonFormModule } from '@delon/form';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { CountdownModule } from 'ngx-countdown';
@@ -34,10 +30,6 @@ const PIPES: Array<Type<any> | Array<any>> = [NtJsonPipe];
      * 要使用 reactive form, 则必须引入 ReactiveFormsModule
      */
     ReactiveFormsModule,
-    AlainThemeModule.forChild(),
-    DelonABCModule,
-    DelonACLModule,
-    DelonFormModule,
     ...THIRDMODULES,
   ],
   exports: [
@@ -45,10 +37,6 @@ const PIPES: Array<Type<any> | Array<any>> = [NtJsonPipe];
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
-    AlainThemeModule,
-    DelonABCModule,
-    DelonACLModule,
-    DelonFormModule,
     TranslateModule,
     ...THIRDMODULES,
     ...COMPONENTS,

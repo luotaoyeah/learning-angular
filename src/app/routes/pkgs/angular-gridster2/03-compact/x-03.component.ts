@@ -1,11 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import {
-  CompactType,
-  GridsterConfig,
-  GridsterItem,
-  GridType,
-} from 'angular-gridster2';
-import { SettingsNotify, SettingsService } from '@delon/theme';
+import { CompactType, GridsterConfig, GridsterItem, GridType } from 'angular-gridster2';
 
 /*
  * https://tiberiuzuld.github.io/angular-gridster2/compact
@@ -19,8 +13,6 @@ import { SettingsNotify, SettingsService } from '@delon/theme';
 export class X03Component implements OnInit {
   public options: GridsterConfig = {};
   public items: Array<GridsterItem> = [];
-
-  constructor(public settingsService: SettingsService) {}
 
   public ngOnInit() {
     this.options = {
@@ -49,14 +41,6 @@ export class X03Component implements OnInit {
       { cols: 1, rows: 1, y: 3, x: 4 },
       { cols: 1, rows: 1, y: 0, x: 6 },
     ];
-
-    this.settingsService.notify.subscribe((notify: SettingsNotify) => {
-      if (notify.type === 'layout') {
-        if (this.options.api && this.options.api.resize) {
-          this.options.api.resize();
-        }
-      }
-    });
   }
 
   public handleCompactTypeChange(type: CompactType) {

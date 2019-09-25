@@ -4,7 +4,6 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { HeroService } from '../services/hero.service';
 import { switchMap } from 'rxjs/operators';
 import { of } from 'rxjs';
-import { ReuseTabService } from '@delon/abc';
 
 @Component({
   selector: 'app-hero-detail',
@@ -15,14 +14,7 @@ export class HeroDetailComponent implements OnInit {
   public hero: Hero | null = null;
   public loading: boolean = false;
 
-  constructor(
-    private router: Router,
-    private activatedRoute: ActivatedRoute,
-    private heroService: HeroService,
-    reuseTabService: ReuseTabService,
-  ) {
-    reuseTabService.title = 'HERO';
-  }
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private heroService: HeroService) {}
 
   public ngOnInit() {
     /*
