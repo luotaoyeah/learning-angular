@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Crisis } from '../models/crisis';
-import { HttpHeaders } from '@angular/common/http';
-import { _HttpClient } from '@delon/theme';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CrisisService {
-  constructor(private httpClient: _HttpClient) {}
+  constructor(private httpClient: HttpClient) {}
 
   /**
    * 获取危机列表

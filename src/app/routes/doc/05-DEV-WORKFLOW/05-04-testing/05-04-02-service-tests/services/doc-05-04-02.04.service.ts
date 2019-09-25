@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { _HttpClient } from '@delon/theme';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 class Doc05040204Service {
-  constructor(private httpClient: _HttpClient) {}
+  constructor(private httpClient: HttpClient) {}
 
   public getHeroes(): Observable<Array<Hero>> {
     return this.httpClient.get<Array<Hero>>('api/heroes');

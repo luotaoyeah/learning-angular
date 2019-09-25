@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from '../store/state/user';
-import { _HttpClient } from '@delon/theme';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class X02Service {
-  constructor(private httpClient: _HttpClient) {}
+  constructor(private httpClient: HttpClient) {}
 
   /**
    * 加载用户列表
    */
   public listUsers(): Observable<Array<User>> {
-    return this.httpClient.get('api/pkgs/ngrx/entity/02/users');
+    return this.httpClient.get<Array<User>>('api/pkgs/ngrx/entity/02/users');
   }
 }

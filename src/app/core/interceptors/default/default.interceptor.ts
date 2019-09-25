@@ -13,7 +13,6 @@ import { Observable, of, throwError } from 'rxjs';
 import { catchError, mergeMap } from 'rxjs/operators';
 import { NzNotificationService } from 'ng-zorro-antd';
 import { environment } from '@app/env/environment';
-import { TranslateService } from '@ngx-translate/core';
 import { ResponseResult } from '@app/core/vm';
 import { some } from 'lodash';
 import { DtoUtil } from '@app/core/utils';
@@ -46,11 +45,7 @@ export class DefaultInterceptor implements HttpInterceptor {
    */
   private readonly WHITELIST_URLS: Array<RegExp> = [/\/assets\//];
 
-  constructor(
-    private nzNotificationService: NzNotificationService,
-    private router: Router,
-    private translateService: TranslateService,
-  ) {}
+  constructor(private nzNotificationService: NzNotificationService, private router: Router) {}
 
   /**
    * Handle success response
@@ -112,7 +107,7 @@ export class DefaultInterceptor implements HttpInterceptor {
 
     const message: string = statusText || CODE_MESSAGES[status];
 
-    this.nzNotificationService.error(this.translateService.instant('interceptors.default.request-error'), message);
+    this.nzNotificationService.error('请求错误', message);
 
     return throwError(response);
   }

@@ -4,7 +4,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
-import { CountdownModule } from 'ngx-countdown';
 import { NtJsonPipe } from './pipes/nt-json.pipe';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
@@ -12,7 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { PageNotFoundComponent } from '@app/shared/components/page-not-found/page-not-found.component';
 
 // tslint:disable-next-line:no-any
-const THIRDMODULES: Array<any> = [NgZorroAntdModule, CountdownModule, MatMenuModule, MatButtonModule, MatIconModule];
+const THIRDMODULES: Array<any> = [NgZorroAntdModule, MatMenuModule, MatButtonModule, MatIconModule];
 
 // tslint:disable-next-line:no-any
 const COMPONENTS: Array<Type<any> | Array<any>> = [PageNotFoundComponent];

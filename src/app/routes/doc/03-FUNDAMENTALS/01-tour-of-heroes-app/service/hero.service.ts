@@ -27,7 +27,7 @@ export class HeroService {
   /*
    * 声明一个 parameter property，完成 service 的注入
    */
-  constructor(private http: HttpClient, private messageService: MessageService) {}
+  constructor(private httpClient: HttpClient, private messageService: MessageService) {}
 
   /**
    * 获取英雄列表
@@ -37,7 +37,7 @@ export class HeroService {
      * 通常来讲，一个 Observable 可以多次返回，
      * 但是对于 HttpClient 来讲，它的请求方法返回的 Observable 只会返回一次
      */
-    return this.http.get<Array<Hero>>(this.heroesUrl).pipe(
+    return this.httpClient.get<Array<Hero>>(this.heroesUrl).pipe(
       tap(() => {
         this.log('[加载英雄列表]');
       }),
@@ -50,7 +50,7 @@ export class HeroService {
    * @param id 英雄ID
    */
   public getHero(id: number): Observable<Hero> {
-    return this.http.get<Hero>(`${this.heroesUrl}/${id}`).pipe(
+    return this.httpClient.get<Hero>(`${this.heroesUrl}/${id}`).pipe(
       tap(() => {
         this.log(`[查询英雄]: [ id = ${id} ]`);
       }),
@@ -64,7 +64,7 @@ export class HeroService {
    */
   // tslint:disable-next-line:no-any
   public updateHero(hero: Hero): Observable<any> {
-    return this.http
+    return this.httpClient
       .put<Hero>(this.heroesUrl, hero, {
         headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
       })
@@ -82,7 +82,7 @@ export class HeroService {
    * @param hero 英雄
    */
   public addHero(hero: Hero): Observable<Hero> {
-    return this.http
+    return this.httpClient
       .post<Hero>(this.heroesUrl, hero, {
         headers: new HttpHeaders({
           'Content-Type': 'application/json',
@@ -101,7 +101,7 @@ export class HeroService {
    * @param hero 英雄
    */
   public deleteHero(hero: Hero): Observable<Hero> {
-    return this.http
+    return this.httpClient
       .delete<Hero>(`${this.heroesUrl}/${hero.id}`, {
         headers: new HttpHeaders({
           'Content-Type': 'application/json',
@@ -124,7 +124,7 @@ export class HeroService {
       return of([]);
     }
 
-    return this.http.get<Array<Hero>>(`${this.heroesUrl}/?name=${term.trim()}`).pipe(
+    return this.httpClient.get<Array<Hero>>(`${this.heroesUrl}/?name=${term.trim()}`).pipe(
       tap(() => {
         this.log(`[搜索英雄]: [ term = ${term}]`);
       }),

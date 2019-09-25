@@ -11,7 +11,7 @@ import { CrisisDetailResolverService } from '../services/crisis-detail-resolver.
 })
 export class CrisisListComponent implements OnInit {
   public crises: Array<Crisis> = [];
-  public crisisTableLoading: boolean = false;
+  public crisesFetching: boolean = false;
   public selectedCrisisId: number = 0;
 
   constructor(
@@ -22,10 +22,10 @@ export class CrisisListComponent implements OnInit {
   ) {}
 
   public ngOnInit() {
-    this.crisisTableLoading = true;
+    this.crisesFetching = true;
     this.crisisService.getCrises().subscribe((crises: Array<Crisis>) => {
       this.crises = crises;
-      this.crisisTableLoading = false;
+      this.crisesFetching = false;
     });
 
     this.activatedRoute.paramMap.subscribe((params: ParamMap) => {
