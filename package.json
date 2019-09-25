@@ -4,11 +4,10 @@
   "author": "luotao",
   "private": true,
   "scripts": {
-    "build:ci": "npm run color-less && node --max-old-space-size=3072 ./node_modules/@angular/cli/bin/ng build learning-angular --prod --optimization=false --extract-licenses=false --build-optimizer=false",
+    "build:ci": "node --max-old-space-size=3072 ./node_modules/@angular/cli/bin/ng build learning-angular --prod --optimization=false --extract-licenses=false --build-optimizer=false",
     "build:learning-angular-lib": "ng build learning-angular-lib",
-    "build:prod": "npm run color-less && node --max-old-space-size=4096 ./node_modules/@angular/cli/bin/ng build learning-angular --prod",
+    "build:prod": "node --max-old-space-size=4096 ./node_modules/@angular/cli/bin/ng build learning-angular --prod",
     "codecov": "codecov --token=7f372a79-168a-42b9-be13-b752aef85ecf",
-    "color-less": "node scripts/color-less.js",
     "e2e": "ng e2e learning-angular-e2e",
     "hmr": "ng serve learning-angular --configuration=hmr",
     "json-server": "ts-node .mock",
@@ -17,7 +16,7 @@
     "lint:style": "stylelint \"src/**/*.less\"",
     "lint:ts": "ng lint learning-angular",
     "ng": "ng",
-    "start": "npm run color-less && ng serve learning-angular",
+    "start": "ng serve learning-angular",
     "test": "ng test learning-angular",
     "test:learning-angular-lib": "ng test learning-angular-lib"
   },

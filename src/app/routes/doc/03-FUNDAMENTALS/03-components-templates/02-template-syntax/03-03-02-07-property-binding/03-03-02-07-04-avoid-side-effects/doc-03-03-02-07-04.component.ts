@@ -9,6 +9,6 @@ import { Component } from '@angular/core';
 })
 export class Doc0303020704Component {
   public getPicUrl(): string {
-    return 'assets/images/20190328090519.jpg';
+    return 'assets/img/20190328090519.jpg';
   }
 }

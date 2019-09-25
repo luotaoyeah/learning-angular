@@ -10,24 +10,6 @@
     "defaultCollection": "@ngrx/schematics"
   },
   "schematics": {
-    "ng-alain:module": {
-      "routing": true,
-      "spec": false
-    },
-    "ng-alain:list": {
-      "spec": false
-    },
-    "ng-alain:edit": {
-      "spec": false,
-      "modal": true
-    },
-    "ng-alain:view": {
-      "spec": false,
-      "modal": true
-    },
-    "ng-alain:curd": {
-      "spec": false
-    },
     "@schematics/angular:module": {
       "routing": true,
       "spec": true
@@ -79,8 +61,7 @@
               "src/style.less",
               "node_modules/primeicons/primeicons.css",
               "node_modules/primeng/resources/themes/nova-light/theme.css",
-              "node_modules/primeng/resources/primeng.min.css",
-              "src/assets/styles/primeng.custom.css"
+              "node_modules/primeng/resources/primeng.min.css"
             ],
             "scripts": [
               "node_modules/ajv/dist/ajv.bundle.js",
