@@ -1,21 +1,7 @@
-import {
-  APP_BOOTSTRAP_LISTENER,
-  APP_INITIALIZER,
-  LOCALE_ID,
-  ModuleWithProviders,
-  NgModule,
-  Provider,
-  Type,
-} from '@angular/core';
+import { APP_BOOTSTRAP_LISTENER, NgModule, Provider } from '@angular/core';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { default as ngLang } from '@angular/common/locales/en';
-import { en_US as zorroLang, NZ_I18N } from 'ng-zorro-antd';
-import { ALAIN_I18N_TOKEN, DELON_LOCALE, en_US as delonLang } from '@delon/theme';
-import { registerLocaleData } from '@angular/common';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { JWTInterceptor } from '@delon/auth';
-import { DelonModule } from './delon.module';
 import { CoreModule } from '@app/core/core.module';
 import { SharedModule } from '@app/shared';
 import { AppComponent } from './app.component';
@@ -43,44 +29,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '@app/env/environment';
 import { X01CustomRouterStateSerializer } from './routes/pkgs/ngrx/router-store/02-configuration/service/x-01-custom-router-state-serializer';
 import { AppRoutingModule } from './app-routing.module';
-import { DefaultInterceptor, I18NService, StartupService } from '@app/core';
-import { from, Observable } from 'rxjs';
-
-const LANG = {
-  abbr: 'en',
-  ng: ngLang,
-  zorro: zorroLang,
-  delon: delonLang,
-};
-
-registerLocaleData(LANG.ng, LANG.abbr);
-
-const LANG_PROVIDES = [
-  { provide: LOCALE_ID, useValue: LANG.abbr },
-  { provide: NZ_I18N, useValue: LANG.zorro },
-  { provide: DELON_LOCALE, useValue: LANG.delon },
-];
-
-// region load i18n language files
-
-export class CustomTranslateLoader implements TranslateLoader {
-  public getTranslation(lang: string): Observable<{ [index: string]: string }> {
-    return from(import(`./core/consts/i18n/${lang}`));
-  }
-}
-
-const I18N_SERVICE_MODULES = [
-  TranslateModule.forRoot({
-    loader: {
-      provide: TranslateLoader,
-      useClass: CustomTranslateLoader,
-    },
-  }),
-];
-
-// endregion
-
-const I18NSERVICE_PROVIDES = [{ provide: ALAIN_I18N_TOKEN, useClass: I18NService, multi: false }];
+import { DefaultInterceptor } from '@app/core';
 
 /*
  * 因为 HttpClientModule 可能需要依赖 interceptors, 因此 interceptors 需要和 HttpClientModule 注册到同一个 injector 中,
@@ -125,47 +74,17 @@ const INTERCEPTOR_PROVIDES: Array<Provider> = [
   },
 ];
 
-// region global third module
-const GLOBAL_THIRD_MODULES: Array<
-  // tslint:disable-next-line:no-any
-  Type<any> | ModuleWithProviders<{}> | Array<any>
-> = [];
-
-// endregion
-
-export function StartupServiceFactory(
-  startupService: StartupService,
-  // tslint:disable-next-line:no-any
-): () => any {
-  return () => startupService.load();
-}
-
-const APPINIT_PROVIDES = [
-  StartupService,
-  {
-    provide: APP_INITIALIZER,
-    useFactory: StartupServiceFactory,
-    deps: [StartupService],
-    multi: true,
-  },
-];
-
-// #endregion
-
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
-    DelonModule.forRoot(),
     CoreModule,
     SharedModule,
     RoutesModule,
     Doc0306080201Module.forRoot(),
     Doc0306080301Module,
-    ...I18N_SERVICE_MODULES,
-    ...GLOBAL_THIRD_MODULES,
     StoreModule.forRoot(reducers, { metaReducers }),
     EffectsModule.forRoot([AppEffects]),
     StoreRouterConnectingModule.forRoot({
@@ -179,10 +98,7 @@ const APPINIT_PROVIDES = [
     }),
   ],
   providers: [
-    ...LANG_PROVIDES,
     ...INTERCEPTOR_PROVIDES,
-    ...I18NSERVICE_PROVIDES,
-    ...APPINIT_PROVIDES,
     /*
      * 显式地将某个 service 声明在 root NgModule 的 providers 中,
      * 等价于在该 service 的 @Injectable 中使用 providedIn: 'root'
