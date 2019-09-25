@@ -1,7 +1,5 @@
 import { Application } from 'express';
-
-const jsonServer = require('json-server');
-const db = require('./db');
+import * as jsonServer from 'json-server';
 
 const app: Application = jsonServer.create();
 
@@ -13,19 +11,9 @@ app.use(
   }),
 );
 
-// region 自定义的接口
-
-require('./api/user.controller').init(app);
 require('./api/pkgs/ngrx/01').init(app);
 require('./api/doc/03/10/02/doc-03-10-02').init(app);
 
-// endregion
-
-app.use(jsonServer.router(db));
-
-/*
- * 启动模拟服务
- */
 const port = 3013;
 app.listen(port, () => {
   console.log('--------------------------------------------------');
