@@ -10,6 +10,7 @@ describe('jasmine.global.spyOnProperty.01', () => {
       get(): string {
         return 'FOO';
       },
+      configurable: true,
     });
     const spy: Spy = spyOnProperty(obj, 'name', 'get');
 

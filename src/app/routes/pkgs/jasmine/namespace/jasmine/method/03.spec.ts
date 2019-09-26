@@ -17,7 +17,7 @@ describe('jasmine.namespace.jasmine.method.any.01', () => {
      * 在 jasmine@2.x 中，下面的测试是通过的，
      * 在 jasmine@3.x 中，下面的测试将会失败
      */
-    expect(null).toEqual(jasmine.any(Object));
+    expect(null).not.toEqual(jasmine.any(Object));
   });
 
   it('02', () => {

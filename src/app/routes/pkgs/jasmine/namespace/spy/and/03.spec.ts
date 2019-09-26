@@ -6,7 +6,6 @@
 describe('jasmine.namespace.spy.and.identity.01', () => {
   it('01', () => {
     const spyFoo = jasmine.createSpy('foobar');
-    // @ts-ignore
-    expect(spyFoo.and.identity()).toEqual('foobar');
+    expect(spyFoo.and.identity).toEqual('foobar');
   });
 });

@@ -12,7 +12,6 @@
     "hmr": "ng serve learning-angular --configuration=hmr",
     "json-server": "ts-node --project .mock/tsconfig.json .mock",
     "lint": "npm run lint:ts && npm run lint:style",
-    "lint-staged": "lint-staged",
     "lint:style": "stylelint \"src/**/*.less\"",
     "lint:ts": "ng lint learning-angular",
     "ng": "ng",
