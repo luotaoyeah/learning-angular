@@ -9,9 +9,9 @@
  */
 
 describe('jasmine.namespace.jasmine.method.addCustomEqualityTester.01', () => {
-  // tslint:disable-next-line:no-any
+
   const foo: any = { a: 'a', b: 'b' };
-  // tslint:disable-next-line:no-any
+
   const bar: any = { a: 'a', c: 'c' };
 
   it('01', () => {
@@ -19,7 +19,7 @@ describe('jasmine.namespace.jasmine.method.addCustomEqualityTester.01', () => {
   });
 
   it('02', () => {
-    // tslint:disable-next-line:no-any
+
     jasmine.addCustomEqualityTester((x: any, y: any) => {
       console.log('CUSTOM EQUALITY TESTER');
 
@@ -41,7 +41,7 @@ describe('jasmine.namespace.jasmine.method.addCustomEqualityTester.01', () => {
      * 如果上一个自定义比较方法返回的是 undefined，则会执行下一个自定义方法
      */
 
-    // tslint:disable-next-line:no-any
+
     jasmine.addCustomEqualityTester((x: any, y: any) => {
       if (x.a && y.a && x.a === y.a) {
         return true;
@@ -52,7 +52,7 @@ describe('jasmine.namespace.jasmine.method.addCustomEqualityTester.01', () => {
       return undefined;
     });
 
-    // tslint:disable-next-line:no-any
+
     jasmine.addCustomEqualityTester((x: any, y: any) => {
       if (x.b && y.b && x.b === y.b) {
         result += 'BAR';

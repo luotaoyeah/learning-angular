@@ -11,9 +11,9 @@ class DtoUtil {
    * @param data The response data
    */
   public static from<T>(
-    // tslint:disable-next-line:no-any
+
     Ctor: new (...args: Array<any>) => T,
-    // tslint:disable-next-line:no-any
+
     data?: any | null,
   ): T {
     return new Ctor(data);
@@ -26,9 +26,9 @@ class DtoUtil {
    * @param data The response data
    */
   public static fromArray<T>(
-    // tslint:disable-next-line:no-any
+
     Ctor: new (...args: Array<any>) => T,
-    // tslint:disable-next-line:no-any
+
     data?: Array<any> | null,
   ): Array<T> {
     return map(data, item => DtoUtil.from<T>(Ctor, item));

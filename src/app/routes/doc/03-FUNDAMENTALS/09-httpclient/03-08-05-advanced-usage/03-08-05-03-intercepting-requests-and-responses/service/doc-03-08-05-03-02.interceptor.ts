@@ -5,10 +5,10 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class Doc0308050302Interceptor implements HttpInterceptor {
   public intercept(
-    // tslint:disable-next-line:no-any
+
     httpRequest: HttpRequest<any>,
     httpHandler: HttpHandler,
-    // tslint:disable-next-line:no-any
+
   ): Observable<HttpEvent<any>> {
     if (httpRequest.url.includes('doc-03-08-05-03')) {
       /*

@@ -62,7 +62,7 @@ export class HeroService {
    * 更新英雄
    * @param hero 英雄
    */
-  // tslint:disable-next-line:no-any
+
   public updateHero(hero: Hero): Observable<any> {
     return this.httpClient
       .put<Hero>(this.heroesUrl, hero, {
@@ -72,7 +72,7 @@ export class HeroService {
         tap(() => {
           this.log(`[更新英雄]: [ id = ${hero.id}]`);
         }),
-        // tslint:disable-next-line:no-any
+
         catchError(this.handleError<any>(`updateHero`)),
       );
   }
@@ -146,7 +146,7 @@ export class HeroService {
    * @param result 默认结果
    */
   private handleError<T>(operation: string = 'operation', result?: T) {
-    // tslint:disable-next-line:no-any
+
     return (err: any): Observable<T> => {
       this.log(`${operation} FAILED: ${err.body.error}`);
       return of(result as T);

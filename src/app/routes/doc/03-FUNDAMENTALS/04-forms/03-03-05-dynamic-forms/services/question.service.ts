@@ -5,9 +5,9 @@ import { TextboxQuestion } from '../vms/question-textbox';
 
 @Injectable()
 export class QuestionService {
-  // tslint:disable-next-line:no-any
+
   public getQuestions(): Array<QuestionBase<any>> {
-    // tslint:disable-next-line:no-any
+
     const questions: Array<QuestionBase<any>> = [
       new DropdownQuestion({
         key: 'brave',

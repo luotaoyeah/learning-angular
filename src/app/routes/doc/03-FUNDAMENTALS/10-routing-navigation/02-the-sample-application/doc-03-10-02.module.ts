@@ -16,7 +16,7 @@ export class Doc031002Module {
      * 包含了所有的 feature module 中的路由配置,
      * 但是没有包含尚未加载的 asynchronous feature module 的
      */
-    // tslint:disable-next-line:no-any
+
     (window as any).__ROUTE_CONFIG__ = router.config;
   }
 }

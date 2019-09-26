@@ -11,7 +11,7 @@ import { IdentityAction } from '../store/actions/03.actions';
   styles: [],
 })
 export class X0305Component implements OnInit {
-  // tslint:disable-next-line:no-any
+
   constructor(private store: Store<any>) {}
 
   public ngOnInit() {}

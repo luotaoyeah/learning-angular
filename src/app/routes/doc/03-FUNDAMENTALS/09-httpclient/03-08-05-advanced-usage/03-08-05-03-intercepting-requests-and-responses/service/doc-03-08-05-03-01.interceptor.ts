@@ -29,10 +29,10 @@ export class Doc0308050301Interceptor implements HttpInterceptor {
    *     HttpEventType.User：            用户自定义的事件
    */
   public intercept(
-    // tslint:disable-next-line:no-any
+
     httpRequest: HttpRequest<any>,
     httpHandler: HttpHandler,
-    // tslint:disable-next-line:no-any
+
   ): Observable<HttpEvent<any>> {
     if (httpRequest.url.includes('doc-03-08-05-03')) {
       let url = httpRequest.url;

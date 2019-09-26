@@ -21,9 +21,9 @@ export class Doc03080502Service {
         }),
       })
       .pipe(
-        // tslint:disable-next-line:no-any
+
         map((data: any) => {
-          // tslint:disable-next-line:no-any
+
           return data.results.map((entry: any) => ({
             name: entry.name[0],
             version: entry.version[0],

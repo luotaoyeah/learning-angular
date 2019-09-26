@@ -10,13 +10,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { PageNotFoundComponent } from '@app/shared/components/page-not-found/page-not-found.component';
 
-// tslint:disable-next-line:no-any
 const THIRDMODULES: Array<any> = [NgZorroAntdModule, MatMenuModule, MatButtonModule, MatIconModule];
 
-// tslint:disable-next-line:no-any
 const COMPONENTS: Array<Type<any> | Array<any>> = [PageNotFoundComponent];
 
-// tslint:disable-next-line:no-any
 const PIPES: Array<Type<any> | Array<any>> = [NtJsonPipe];
 
 @NgModule({

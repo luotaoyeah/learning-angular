@@ -113,10 +113,10 @@ export class DefaultInterceptor implements HttpInterceptor {
   }
 
   public intercept(
-    // tslint:disable-next-line:no-any
+
     httpRequest: HttpRequest<any>,
     httpHandler: HttpHandler,
-    // tslint:disable-next-line:no-any
+
   ): Observable<HttpEvent<any>> {
     //region prepend request prefix
     let url = httpRequest.url;
@@ -127,7 +127,7 @@ export class DefaultInterceptor implements HttpInterceptor {
     //endregion
 
     return httpHandler.handle(httpRequest.clone({ url })).pipe(
-      // tslint:disable-next-line:no-any
+
       mergeMap((event: any) => {
         if (event instanceof HttpResponse || event instanceof HttpErrorResponse) {
           return this.handleSuccess(event);

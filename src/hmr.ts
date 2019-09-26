@@ -3,12 +3,12 @@ import { createNewHosts } from '@angularclass/hmr';
 import { NzModalService } from 'ng-zorro-antd';
 
 export const hmrBootstrap = (
-  // tslint:disable-next-line:no-any
+
   module: any,
-  // tslint:disable-next-line:no-any
+
   bootstrap: () => Promise<NgModuleRef<any>>,
 ) => {
-  // tslint:disable-next-line:no-any
+
   let ngModule: NgModuleRef<any>;
   module.hot.accept();
   bootstrap().then(mod => (ngModule = mod));

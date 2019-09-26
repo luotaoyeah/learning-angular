@@ -16,10 +16,10 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class Doc0308050304Interceptor implements HttpInterceptor {
   public intercept(
-    // tslint:disable-next-line:no-any
+
     httpRequest: HttpRequest<any>,
     httpHandler: HttpHandler,
-    // tslint:disable-next-line:no-any
+
   ): Observable<HttpEvent<any>> {
     if (httpRequest.url.includes('doc-03-08-05-03-04')) {
       const delay = 500;
@@ -35,7 +35,7 @@ function createUploadEvents(delay: number) {
   const total = 12345678;
   const chunkSize = Math.ceil(total / chunks);
 
-  // tslint:disable-next-line:no-any
+
   return new Observable<HttpEvent<any>>(observer => {
     observer.next({ type: HttpEventType.Sent });
 

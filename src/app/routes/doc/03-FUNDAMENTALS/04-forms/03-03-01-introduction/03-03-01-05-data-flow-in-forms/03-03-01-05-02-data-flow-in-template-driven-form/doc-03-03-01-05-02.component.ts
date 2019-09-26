@@ -26,9 +26,9 @@ export class Doc0303010502Component implements OnInit {
             emitViewToModelChange?: boolean;
           },
         ) => void,
-        // tslint:disable-next-line:no-any
+
         thisArg: any,
-        // tslint:disable-next-line:no-any
+
         argArray?: any,
       ): void {
         /*
@@ -48,13 +48,7 @@ export class Doc0303010502Component implements OnInit {
     });
 
     this.ngModel.viewToModelUpdate = new Proxy(this.ngModel.viewToModelUpdate, {
-      apply(
-        target: (newValue: string) => void,
-        // tslint:disable-next-line:no-any no-any
-        thisArg: any,
-        // tslint:disable-next-line:no-any no-any
-        argArray?: any,
-      ): void {
+      apply(target: (newValue: string) => void, thisArg: any, argArray?: any): void {
         /*
          * ③ 调用 NgModel.viewToModelUpdate() 方法, 触发 ngModelChange 事件
          */

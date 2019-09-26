@@ -8,7 +8,7 @@ import { HttpClient, HttpRequest } from '@angular/common/http';
 export class Doc0308050304Service {
   constructor(private httpClient: HttpClient) {}
 
-  // tslint:disable-next-line:no-any
+
   public upload(file: File): Observable<any> {
     /*
      * 通过 HttpRequest() 手动构建一个请求对象，

@@ -10,7 +10,7 @@ import { of } from 'rxjs/internal/observable/of';
   providedIn: 'root',
 })
 export class Doc031002PreloadingStrategyService implements PreloadingStrategy {
-  // tslint:disable-next-line:no-any
+
   public preload(route: Route, fn: () => Observable<any>): Observable<any> {
     if (route.data && route.data.preload) {
       console.log(`[${Doc031002PreloadingStrategyService.name}]\n${route.path}`);

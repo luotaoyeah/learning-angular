@@ -4,9 +4,9 @@ import { QuestionBase } from '../vms/question-base';
 
 @Injectable()
 export class QuestionControlService {
-  // tslint:disable-next-line:no-any
+
   public toFormGroup(questions: QuestionBase<any>[]): FormGroup {
-    // tslint:disable-next-line:no-any
+
     const formGroup: FormGroup = new FormGroup({});
 
     questions.forEach(question => {

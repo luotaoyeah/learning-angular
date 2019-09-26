@@ -31,7 +31,7 @@ describe('jasmine.namespace.jasmine.method.addMatchers.01', () => {
         customEqualityTesters: Array<CustomEqualityTester>,
       ): CustomMatcher {
         return {
-          // tslint:disable-next-line:no-any
+
           compare(actual: any, expected?: any): CustomMatcherResult {
             const pass = 'foo' in actual;
 
@@ -77,7 +77,7 @@ describe('jasmine.namespace.jasmine.method.addMatchers.01', () => {
            * 如果定义了 jasmine.CustomMatcher.negativeCompare() 方法，
            * 则在使用 .not 时，会直接调用 negativeCompare() 方法
            */
-          // tslint:disable-next-line:no-any
+
           negativeCompare(actual: any): CustomMatcherResult {
             console.log('toBeBar.negativeCompare()');
             const pass = !('bar' in actual);

@@ -64,7 +64,7 @@ describe('Doc030806Component', () => {
      * 除了可以使用请求地址进行匹配之外，还可以使用自定义的逻辑进行匹配
      */
     const testRequest = httpTestingController.expectOne(
-      // tslint:disable-next-line:no-any
+
       (httpRequest: HttpRequest<any>) => {
         return httpRequest.headers.has('H01');
       },

@@ -5,7 +5,6 @@ import { Observable } from 'rxjs';
 import { AppEffects } from './app.effects';
 
 describe('AppEffects', () => {
-  // tslint:disable-next-line:no-any prefer-const
   let actions$: Observable<any>;
   let effects: AppEffects;
 

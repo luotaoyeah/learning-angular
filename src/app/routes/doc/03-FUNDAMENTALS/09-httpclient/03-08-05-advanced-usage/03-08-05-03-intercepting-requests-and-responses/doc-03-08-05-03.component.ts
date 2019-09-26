@@ -25,7 +25,7 @@ export class Doc03080503Component implements OnInit {
       this.doc0308050304Service
         .upload(file)
         .pipe(
-          // tslint:disable-next-line:no-any
+
           tap((httpEvent: HttpEvent<any>) => {
             if (httpEvent.type === HttpEventType.UploadProgress) {
               this.percent = Math.round(

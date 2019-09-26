@@ -17,7 +17,7 @@ export class X01Component {
    */
   constructor(applicationRef: ApplicationRef) {
     applicationRef.tick = new Proxy(applicationRef.tick, {
-      // tslint:disable-next-line:no-any
+
       apply(target: () => void, thisArg: any, argArray?: any): any {
         console.log(`[${X01Component.name}]\ntick()`, new Date().toISOString());
         return target.apply(thisArg, argArray);

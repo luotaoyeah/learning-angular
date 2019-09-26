@@ -8,7 +8,7 @@ import { QuestionBase } from '../vms/question-base';
 })
 export class DynamicFormQuestionComponent {
   @Input()
-  // tslint:disable-next-line:no-any
+
   public question: QuestionBase<any> = new QuestionBase();
   @Input()
   public formGroup: FormGroup = new FormGroup({});

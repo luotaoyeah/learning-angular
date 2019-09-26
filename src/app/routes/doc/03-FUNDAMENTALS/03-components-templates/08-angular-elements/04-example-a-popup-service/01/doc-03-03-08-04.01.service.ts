@@ -47,7 +47,7 @@ export class Doc0303080401Service {
   public showAsElement(message: string) {
     const el: NgElement & WithProperties<Pick<Doc0303080401Component, 'message'>> = document.createElement(
       'app-doc-03-03-08-04-01-element',
-      // tslint:disable-next-line:no-any
+
     ) as any;
 
     el.message = message;

@@ -10,7 +10,7 @@ import { QuestionControlService } from '../services/question-control.service';
 })
 export class DynamicFormComponent implements OnInit {
   @Input()
-  // tslint:disable-next-line:no-any
+
   public questions: Array<QuestionBase<any>> = [];
 
   public formGroup!: FormGroup;

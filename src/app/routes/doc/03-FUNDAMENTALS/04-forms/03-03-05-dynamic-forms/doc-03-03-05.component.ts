@@ -11,7 +11,7 @@ import { QuestionBase } from './vms/question-base';
   providers: [QuestionService],
 })
 export class Doc030305Component {
-  // tslint:disable-next-line:no-any
+
   public questions: Array<QuestionBase<any>>;
 
   constructor(questionService: QuestionService) {
