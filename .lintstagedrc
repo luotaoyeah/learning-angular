@@ -1,10 +1,7 @@
 {
-  "linters": {
-    "src/**/*.ts": ["tslint -c tslint.json"],
-    "projects/learning-angular-lib/src/**/*.ts": ["tslint -c projects/learning-angular-lib/tslint.json"],
-    "src/**/*.less": ["npm run lint:style"],
-    "projects/learning-angular-lib/src/**/*.less": ["npm run lint:style"],
-    "*.{ts,js,json,html,css,scss,less,md,yml}": ["prettier --write", "git add"]
-  },
-  "ignore": ["src/assets/*"]
+  "src/**/*.ts": ["eslint"],
+  "projects/learning-angular-lib/src/**/*.ts": ["eslint"],
+  "src/**/*.less": ["npm run lint:style"],
+  "projects/learning-angular-lib/src/**/*.less": ["npm run lint:style"],
+  "*.{ts,js,json,html,css,scss,less,md,yml}": ["prettier --write"]
 }
