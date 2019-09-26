@@ -30,10 +30,6 @@ const routes: Routes = [
     loadChildren: () => import('./pkgs/ngrx/ngrx.module').then(m => m.NgrxModule),
   },
   {
-    path: 'pkgs/angular-gridster2',
-    loadChildren: () => import('./pkgs/angular-gridster2/angular-gridster2.module').then(m => m.AngularGridster2Module),
-  },
-  {
     path: 'exception',
     loadChildren: () => import('./exception/exception.module').then(m => m.ExceptionModule),
   },
