@@ -1,19 +1,13 @@
-<p-accordionTab header="NgClass" [transitionOptions]="'0ms'">
-  <p>使用 class binding 可以控制单个 class 的添加和移除</p>
-  <p-button
-    label="class binding"
-    [class.foo]="isFoo"
-    (onClick)="isFoo = !isFoo"
-  ></p-button>
+<p>使用 class binding 可以控制单个 class 的添加和移除</p>
+<p-button label="class binding" [class.foo]="isFoo" (onClick)="isFoo = !isFoo"></p-button>
 
-  <hr />
-  <p>使用 NgClass binding 可以同时控制多个 class 的添加和移除</p>
-  <p-button
-    label="NgClass binding"
-    [ngClass]="{
-      foo: isFoo,
-      bar: isBar
-    }"
-    (onClick)="isFoo = !isFoo; isBar = !isBar"
-  ></p-button>
-</p-accordionTab>
+<hr />
+<p>使用 NgClass binding 可以同时控制多个 class 的添加和移除</p>
+<p-button
+  label="NgClass binding"
+  [ngClass]="{
+    foo: isFoo,
+    bar: isBar
+  }"
+  (onClick)="isFoo = !isFoo; isBar = !isBar"
+></p-button>

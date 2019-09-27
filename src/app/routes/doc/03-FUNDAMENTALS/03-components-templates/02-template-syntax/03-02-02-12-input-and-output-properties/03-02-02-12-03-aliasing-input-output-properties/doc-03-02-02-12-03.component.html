@@ -1,20 +1,12 @@
-<p-accordionTab
-  header="Aliasing Input/Output Properties"
-  [transitionOptions]="'0ms'"
->
-  <p-toast
-    [showTransitionOptions]="'0ms'"
-    [hideTransitionOptions]="'0ms'"
-  ></p-toast>
+<p-toast [showTransitionOptions]="'0ms'" [hideTransitionOptions]="'0ms'"></p-toast>
 
-  <app-doc-03-02-02-12-03-01
-    [myFoo]="'foobar'"
-    (myBar)="
-      messageService.add({
-        severity: 'success',
-        summary: '提示',
-        detail: $event
-      })
-    "
-  ></app-doc-03-02-02-12-03-01>
-</p-accordionTab>
+<app-doc-03-02-02-12-03-01
+  [myFoo]="'foobar'"
+  (myBar)="
+    messageService.add({
+      severity: 'success',
+      summary: '提示',
+      detail: $event
+    })
+  "
+></app-doc-03-02-02-12-03-01>

@@ -1,29 +1,14 @@
-<p-accordionTab
-  header="Binding to a Different Component"
-  [transitionOptions]="'0ms'"
->
-  <p-toast
-    [showTransitionOptions]="'0ms'"
-    hideTransitionOptions="0ms"
-  ></p-toast>
+<p-toast [showTransitionOptions]="'0ms'" hideTransitionOptions="0ms"></p-toast>
 
-  <p>
-    在 template 中使用该 component class 中的 property 时，该 property 即可以是
-    public 的，也可以是 private 的
-  </p>
-  <p-button [label]="foo"></p-button>
-  &nbsp;
-  <p-button [label]="bar"></p-button>
+<p>
+  在 template 中使用该 component class 中的 property 时，该 property 即可以是 public 的，也可以是 private 的
+</p>
+<p-button [label]="foo"></p-button>
+&nbsp;
+<p-button [label]="bar"></p-button>
 
-  <hr />
-  <p>
-    依赖注入（dependency injection）通常声明为 private parameter property
-    也可以在 template 中使用
-  </p>
-  <p-button
-    label="FOO"
-    (onClick)="
-      messageService.add({ severity: 'info', summary: '提示', detail: 'FOO' })
-    "
-  ></p-button>
-</p-accordionTab>
+<hr />
+<p>
+  依赖注入（dependency injection）通常声明为 private parameter property 也可以在 template 中使用
+</p>
+<p-button label="FOO" (onClick)="messageService.add({ severity: 'info', summary: '提示', detail: 'FOO' })"></p-button>

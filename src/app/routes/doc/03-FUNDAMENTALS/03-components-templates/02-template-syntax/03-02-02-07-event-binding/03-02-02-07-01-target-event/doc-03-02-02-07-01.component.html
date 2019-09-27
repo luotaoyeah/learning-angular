@@ -1,18 +1,11 @@
-<p-accordionTab header="Target Event" [transitionOptions]="'0ms'">
-  <p-toast
-    [showTransitionOptions]="'0ms'"
-    [hideTransitionOptions]="'0ms'"
-  ></p-toast>
+<p-toast [showTransitionOptions]="'0ms'" [hideTransitionOptions]="'0ms'"></p-toast>
 
-  <p>
-    event binding 有两种语法形式：(click)="onClick()" 和 on-click="onClick()"
-  </p>
-  <p-button label="CLICK ME" (onClick)="handleClick01()"></p-button>
-  &nbsp;
-  <p-button label="CLICK IT" on-onClick="handleClick01()"></p-button>
+<p>
+  event binding 有两种语法形式：(click)="onClick()" 和 on-click="onClick()"
+</p>
+<p-button label="CLICK ME" (onClick)="handleClick01()"></p-button>
+&nbsp;
+<p-button label="CLICK IT" on-onClick="handleClick01()"></p-button>
 
-  <p>event binding 支持 component 上的自定义事件</p>
-  <app-doc-03-02-02-07-01-01
-    (ntClick)="handleClick02($event)"
-  ></app-doc-03-02-02-07-01-01>
-</p-accordionTab>
+<p>event binding 支持 component 上的自定义事件</p>
+<app-doc-03-02-02-07-01-01 (ntClick)="handleClick02($event)"></app-doc-03-02-02-07-01-01>

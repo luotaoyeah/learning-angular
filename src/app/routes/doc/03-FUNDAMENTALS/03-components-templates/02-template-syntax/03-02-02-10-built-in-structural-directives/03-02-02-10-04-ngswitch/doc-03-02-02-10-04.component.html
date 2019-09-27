@@ -1,28 +1,13 @@
-<p-accordionTab header="NgSwitch" [transitionOptions]="'0ms'">
-  <p>
-    NgSwitch 类似于 JS 中的 switch 语句，需要跟 NgSwitchCase 和 NgSwitchDefault
-    配合使用
-  </p>
-  <p-selectButton [options]="items" [(ngModel)]="item"></p-selectButton>
-  <br />
-  <br />
-  <ng-container *ngIf="!!item">
-    <div [ngSwitch]="item">
-      <p-button
-        *ngSwitchCase="'FOO'"
-        label="FOO BUTTON"
-        styleClass="ui-button-success"
-      ></p-button>
-      <p-button
-        *ngSwitchCase="'BAR'"
-        label="BAR BUTTON"
-        styleClass="ui-button-danger"
-      ></p-button>
-      <p-button
-        *ngSwitchDefault
-        label="DEFAULT BUTTON"
-        styleClass="ui-button-info"
-      ></p-button>
-    </div>
-  </ng-container>
-</p-accordionTab>
+<p>
+  NgSwitch 类似于 JS 中的 switch 语句，需要跟 NgSwitchCase 和 NgSwitchDefault 配合使用
+</p>
+<p-selectButton [options]="items" [(ngModel)]="item"></p-selectButton>
+<br />
+<br />
+<ng-container *ngIf="!!item">
+  <div [ngSwitch]="item">
+    <p-button *ngSwitchCase="'FOO'" label="FOO BUTTON" styleClass="ui-button-success"></p-button>
+    <p-button *ngSwitchCase="'BAR'" label="BAR BUTTON" styleClass="ui-button-danger"></p-button>
+    <p-button *ngSwitchDefault label="DEFAULT BUTTON" styleClass="ui-button-info"></p-button>
+  </div>
+</ng-container>

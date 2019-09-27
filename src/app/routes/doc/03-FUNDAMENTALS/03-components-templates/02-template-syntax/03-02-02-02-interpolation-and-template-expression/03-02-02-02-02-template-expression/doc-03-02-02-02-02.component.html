@@ -1,10 +1,8 @@
-<p-accordionTab header="Template Expressions" [transitionOptions]="'0ms'">
-  <!--
+<!--
     template 中的 expression 有多种语法形式
   -->
-  <p>
-    <span id="{{ foo }}">{{ foo }}</span>
-    <span [id]="foo">{{ foo }}</span>
-    <span [id]="foo + '02'">{{ foo }}</span>
-  </p>
-</p-accordionTab>
+<p>
+  <span id="{{ foo }}">{{ foo }}</span>
+  <span [id]="foo">{{ foo }}</span>
+  <span [id]="foo + '02'">{{ foo }}</span>
+</p>
