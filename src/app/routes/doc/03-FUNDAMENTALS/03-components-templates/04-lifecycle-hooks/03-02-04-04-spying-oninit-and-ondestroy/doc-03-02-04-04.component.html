@@ -1,11 +1,11 @@
 <p>
-  directive 也有对应的生命周期函数，通过将 directive 应用到某个 element
-  上，可以监视该 element 的 OnInit 和 OnDestroy 周期
+  directive 也有对应的生命周期函数，通过将 directive 应用到某个 element 上，可以监视该 element 的 OnInit 和 OnDestroy
+  周期
 </p>
-<p-button label="TOGGLE" (onClick)="displayChild = !displayChild"></p-button>
+<button (click)="displayChild = !displayChild">TOGGLE</button>
 <br />
 <br />
-<p-button *ngIf="displayChild" mySpy label="FOO"></p-button>
+<button *ngIf="displayChild" mySpy>TOGGLE</button>
 
 <hr />
 

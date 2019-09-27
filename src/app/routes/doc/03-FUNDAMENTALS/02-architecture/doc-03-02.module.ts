@@ -11,7 +11,6 @@ import { DashPipe } from './03-02-03-intro-to-component/dash.pipe';
 import { RadiusDirective } from './03-02-03-intro-to-component/radius.directive';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '@app/shared';
-import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [
@@ -27,6 +26,6 @@ import { ButtonModule } from 'primeng/button';
     DashPipe,
     RadiusDirective,
   ],
-  imports: [CommonModule, SharedModule, ...[ButtonModule], Doc0302RoutingModule],
+  imports: [CommonModule, SharedModule, Doc0302RoutingModule],
 })
 export class Doc0302Module {}

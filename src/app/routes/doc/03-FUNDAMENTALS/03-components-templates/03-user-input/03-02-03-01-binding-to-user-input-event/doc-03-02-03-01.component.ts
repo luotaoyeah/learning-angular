@@ -7,16 +7,9 @@ import { MessageService } from 'primeng/api';
   providers: [MessageService],
 })
 export class Doc03020301Component implements OnInit {
-  constructor(private messageService: MessageService) {}
-
   public ngOnInit() {}
 
   public handleClick(event: MouseEvent) {
-    this.messageService.clear();
-    this.messageService.add({
-      severity: 'info',
-      summary: '提示',
-      detail: (event.target as HTMLButtonElement).textContent || '',
-    });
+    alert((event.target as HTMLButtonElement).textContent || '');
   }
 }
