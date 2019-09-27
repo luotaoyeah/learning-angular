@@ -4,7 +4,7 @@ import { NzModalService } from 'ng-zorro-antd';
 @Component({
   selector: 'exception-500',
   template: `
-    <exception type="500" style="min-height: 500px; height: 80%;"></exception>
+    <div style="min-height: 500px; height: 80%;">500</div>
   `,
 })
 export class Exception500Component {
