@@ -1,7 +1,9 @@
 <p>
   NgSwitch 类似于 JS 中的 switch 语句，需要跟 NgSwitchCase 和 NgSwitchDefault 配合使用
 </p>
-<p-selectButton [options]="items" [(ngModel)]="item"></p-selectButton>
+<nz-radio-group [(ngModel)]="item" [nzButtonStyle]="'solid'">
+  <label nz-radio-button [nzValue]="i.label" *ngFor="let i of items">{{ i.value }}</label>
+</nz-radio-group>
 <br />
 <br />
 <ng-container *ngIf="!!item">
