@@ -2,8 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-doc-03-02-02-08-01',
-  template:
-    '<p-button (onClick)="increase()" label="+"></p-button>&nbsp;<p-button (onClick)="decrease()" label="-"></p-button>',
+  template: '<button (click)="increase()" >+</button>&nbsp;<button (click)="decrease()" >-</button>',
 })
 export class Doc0302020801Component implements OnInit {
   /*

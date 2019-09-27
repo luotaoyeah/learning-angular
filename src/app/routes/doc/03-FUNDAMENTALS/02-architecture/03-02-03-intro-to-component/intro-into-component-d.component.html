@@ -17,7 +17,7 @@
 
   <!-- template 中可以使用 directive 对 view 进行控制 -->
   <p>
-    <p-button label="TOGGLE" (onClick)="isSpanVisible = !isSpanVisible"></p-button>
+    <button nz-button (click)="isSpanVisible = !isSpanVisible">TOGGLE</button>
     &nbsp;
     <span *ngIf="isSpanVisible">{{ property01 }}</span>
   </p>

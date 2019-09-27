@@ -12,7 +12,6 @@ import { RadiusDirective } from './03-02-03-intro-to-component/radius.directive'
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '@app/shared';
 import { ButtonModule } from 'primeng/button';
-import { AccordionModule } from 'primeng/primeng';
 
 @NgModule({
   declarations: [
@@ -28,6 +27,6 @@ import { AccordionModule } from 'primeng/primeng';
     DashPipe,
     RadiusDirective,
   ],
-  imports: [CommonModule, SharedModule, ...[ButtonModule, AccordionModule], Doc0302RoutingModule],
+  imports: [CommonModule, SharedModule, ...[ButtonModule], Doc0302RoutingModule],
 })
 export class Doc0302Module {}

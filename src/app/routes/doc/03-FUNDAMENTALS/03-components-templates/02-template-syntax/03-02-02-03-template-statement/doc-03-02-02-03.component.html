@@ -7,26 +7,28 @@
 
 <hr />
 <p>template statement 可以是一个方法调用</p>
-<p-button label="CLICK ME" (onClick)="handleClick01()"></p-button>
+<button (click)="handleClick01()">CLICK ME</button>
 
 <hr />
 <p>template statement 可以是一条或者多条 js statements</p>
-<p-button
+<button
   label="CLICK ME"
-  (onClick)="
+  (click)="
     messageService.add({
       severity: 'success',
       summary: '提示',
       detail: 'CLICK ME'
     })
   "
-></p-button>
+>
+  CLICK ME
+</button>
 
 <hr />
 <p>
   template statement 中不能包含自增（++），自减（--），加等（+=），减等（-=）运算符号
 </p>
-<p-button [label]="i" (onClick)="i = i + 1"></p-button>
+<button (click)="i = i + 1">{{ i }}</button>
 
 <hr />
 

@@ -1,7 +1,7 @@
 <p>
   *ngIf 指令用来控制某个元素/组件在 DOM 中是否存在，当条件不成立时，组件会从 DOM 移除并销毁
 </p>
-<p-button label="toggle visible" (onClick)="visible = !visible"></p-button>&nbsp;
+<button (click)="visible = !visible">toggle visible</button>&nbsp;
 <app-doc-03-02-02-10-01-01 *ngIf="visible"></app-doc-03-02-02-10-01-01>
 
 <hr />

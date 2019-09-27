@@ -2,8 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-doc-03-02-02-07-03-01',
-  template:
-    '<p-button label="$event" (onClick)="someCustomEvent.emit({foo:\'FOO\'})"></p-button>',
+  template: '<button (click)="someCustomEvent.emit({foo:\'FOO\'})">$event</button>',
 })
 export class Doc030202070301Component implements OnInit {
   /*

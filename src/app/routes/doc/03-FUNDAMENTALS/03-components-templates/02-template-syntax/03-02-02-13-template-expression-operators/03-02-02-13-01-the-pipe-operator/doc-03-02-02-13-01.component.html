@@ -1,10 +1,10 @@
 <p>在 template 中可以使用 pipe operator（|），来对数据进行格式化处理</p>
-<p-button label="{{ 'foo' | uppercase }}"></p-button>
+<button>{{ 'foo' | uppercase }}</button>
 
 <hr />
 <p>可以同时应用多个 pipe operator</p>
-<p-button label="{{ 'Foo' | uppercase | lowercase }}"></p-button>
+<button>{{ 'Foo' | uppercase | lowercase }}</button>
 
 <hr />
 <p>pipe 后面可以传递参数，多个参数使用冒号（:）分隔</p>
-<p-button label="{{ 'the-pipe-opreator' | slice: 2:4 }}"></p-button>
+<button>{{ 'the-pipe-opreator' | slice: 2:4 }}</button>

@@ -19,16 +19,13 @@
     而事件处理函数传递的参数 $event 实际上是属于 template context 的
   -->
 <hr />
-<p-button label="CLICK ME" (onClick)="handleClick01($event)"></p-button>
+<button (click)="handleClick01($event)">CLICK ME</button>
 
 <!--
     如下，事件处理函数 handleClick02() 中的参数 hero 是属于 template input variable，
     而不是属于 component context 的
   -->
 <hr />
-<p-button
-  *ngFor="let hero of heroes"
-  (onClick)="handleClick02(hero)"
-  [label]="hero"
-  [style.marginRight]="'10px'"
-></p-button>
+<button *ngFor="let hero of heroes" (click)="handleClick02(hero)" [style.marginRight]="'10px'">
+  {{ hero }}
+</button>

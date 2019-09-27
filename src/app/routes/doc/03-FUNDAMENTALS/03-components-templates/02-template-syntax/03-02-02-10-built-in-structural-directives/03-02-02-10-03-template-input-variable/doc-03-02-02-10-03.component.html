@@ -1,17 +1,19 @@
 <p>如下，*ngFor 里面的迭代变量 value 称之为一个 template input variable</p>
-<ng-container *ngFor="let value of values"><p-button [label]="value"></p-button>&nbsp;</ng-container>
+<ng-container *ngFor="let value of values">
+  <button>{{ value }}</button>&nbsp;
+</ng-container>
 
 <hr />
 <p>可以使用下面的方式，获取到每次迭代的索引</p>
-<ng-container *ngFor="let value of values; let i = index"
-  ><p-button [label]="i + '. ' + value"></p-button>&nbsp;</ng-container
->
+<ng-container *ngFor="let value of values; let i = index">
+  <button>{{ i + '. ' + value }}</button>&nbsp;
+</ng-container>
 
 <hr />
 <p>
   默认情况下，当列表的数据发生变更时，比如添加一个元素，删除一个元素，修改一个元素，整个列表都会重新渲染
 </p>
-<p-button label="RESET" (onClick)="reset()"></p-button>
+<button (click)="reset()">RESET</button>
 <ul>
   <li *ngFor="let item of items">{{ item.name }}</li>
 </ul>
