@@ -2,7 +2,6 @@
 import { NgModule } from '@angular/core';
 import { Doc0303RoutingModule } from './doc-03-03-routing.module';
 import { Doc030201Component } from './01-displaying-data/doc-03-02-01.component';
-import { ToastModule } from 'primeng/toast';
 import { Doc03020101Component } from './01-displaying-data/03-02-01-01/doc-03-02-01-01.component';
 import { Doc03020102Component } from './01-displaying-data/03-02-01-02/doc-03-02-01-02.component';
 import { Doc03020103Component } from './01-displaying-data/03-02-01-03/doc-03-02-01-03.component';
@@ -124,7 +123,6 @@ import { Doc030305Module } from './05-component-interaction/doc-03-03-05.module'
   ],
   imports: [
     Doc0303RoutingModule,
-    ToastModule,
     SharedModule,
     Doc030302Module,
     Doc030305Module,

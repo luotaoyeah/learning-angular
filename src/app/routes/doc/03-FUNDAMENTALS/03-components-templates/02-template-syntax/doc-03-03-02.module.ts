@@ -55,8 +55,6 @@ import { Doc0302021303Component } from './03-02-02-13-template-expression-operat
 import { Doc03020214Component } from './03-02-02-14-built-in-template-functions/doc-03-02-02-14.component';
 import { Doc0302021401Component } from './03-02-02-14-built-in-template-functions/03-02-02-14-01-the-pipe-operator/doc-03-02-02-14-01.component';
 import { Doc030302RoutingModule } from './doc-03-03-02-routing.module';
-import { PanelModule } from 'primeng/panel';
-import { ToastModule } from 'primeng/toast';
 import { SharedModule } from '@app/shared';
 import { Doc03030205Component } from './03-03-02-05-data-binding-and-html/doc-03-03-02-05.component';
 import { Doc03030206Component } from './03-03-02-06-html-attribute-vs-dom-property/doc-03-03-02-06.component';
@@ -129,6 +127,6 @@ import { Doc0303020709Component } from './03-03-02-07-property-binding/03-03-02-
     Doc0302021401Component,
     [Doc0303020703Directive],
   ],
-  imports: [[PanelModule, ToastModule, SharedModule], Doc030302RoutingModule],
+  imports: [[SharedModule], Doc030302RoutingModule],
 })
 export class Doc030302Module {}

@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class MessageService {
   /** 消息列表 */
-  public messages: string[] = [];
+  public messages: Array<string> = [];
 
   /**
    * 添加一条消息
