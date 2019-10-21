@@ -1,4 +1,3 @@
-import 'hammerjs';
 import { enableProdMode, ViewEncapsulation } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
@@ -16,9 +15,7 @@ const bootstrap = () => {
       ngZone: 'zone.js',
     })
     .then(res => {
-
       if ((window as any).appBootstrap) {
-
         (window as any).appBootstrap();
       }
       return res;
@@ -26,7 +23,6 @@ const bootstrap = () => {
 };
 
 if (environment.hmr) {
-
   if ((module as any).hot) {
     hmrBootstrap(module, bootstrap);
   } else {
