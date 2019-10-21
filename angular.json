@@ -12,19 +12,19 @@
   "schematics": {
     "@schematics/angular:module": {
       "routing": true,
-      "spec": true
+      "skipTests": false
     },
     "@schematics/angular:component": {
-      "spec": true,
+      "skipTests": false,
       "flat": false,
       "inlineStyle": true,
       "inlineTemplate": false
     },
     "@schematics/angular:directive": {
-      "spec": true
+      "skipTests": false
     },
     "@schematics/angular:service": {
-      "spec": true
+      "skipTests": false
     }
   },
   "projects": {
@@ -42,6 +42,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "outputPath": "dist/learning-angular",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -88,10 +89,20 @@
                   "type": "initial",
                   "maximumWarning": "5mb",
                   "maximumError": "10mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
                 }
               ]
             },
             "hmr": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -188,6 +199,11 @@
           "options": {
             "tsConfig": "projects/learning-angular-lib/tsconfig.lib.json",
             "project": "projects/learning-angular-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/learning-angular-lib/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
