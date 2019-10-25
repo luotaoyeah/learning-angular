@@ -7,6 +7,7 @@ import MatchersUtil = jasmine.MatchersUtil;
 import CustomMatcher = jasmine.CustomMatcher;
 import CustomMatcherResult = jasmine.CustomMatcherResult;
 
+// eslint-disable-next-line @typescript-eslint/no-namespace
 declare namespace jasmine {
   interface Matchers<T> {
     toBeFoo(): boolean;
@@ -26,12 +27,8 @@ describe('jasmine.namespace.jasmine.method.addMatchers.01', () => {
        * 工厂方法（CustomMatcherFactory）接收两个参数，
        * 返回一个 CustomMatcher 对象
        */
-      toBeFoo(
-        util: MatchersUtil,
-        customEqualityTesters: Array<CustomEqualityTester>,
-      ): CustomMatcher {
+      toBeFoo(util: MatchersUtil, customEqualityTesters: ReadonlyArray<CustomEqualityTester>): CustomMatcher {
         return {
-
           compare(actual: any, expected?: any): CustomMatcherResult {
             const pass = 'foo' in actual;
 
@@ -62,10 +59,7 @@ describe('jasmine.namespace.jasmine.method.addMatchers.01', () => {
 
   it('02', () => {
     jasmine.addMatchers({
-      toBeBar(
-        util: MatchersUtil,
-        customEqualityTesters: Array<CustomEqualityTester>,
-      ): CustomMatcher {
+      toBeBar(util: MatchersUtil, customEqualityTesters: ReadonlyArray<CustomEqualityTester>): CustomMatcher {
         return {
           compare(): CustomMatcherResult {
             return { pass: true };

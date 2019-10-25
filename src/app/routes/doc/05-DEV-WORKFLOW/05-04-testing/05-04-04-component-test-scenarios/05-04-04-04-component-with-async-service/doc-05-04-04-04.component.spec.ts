@@ -1,11 +1,4 @@
-import {
-  async,
-  ComponentFixture,
-  fakeAsync,
-  flushMicrotasks,
-  TestBed,
-  tick,
-} from '@angular/core/testing';
+import { async, ComponentFixture, fakeAsync, flushMicrotasks, TestBed, tick } from '@angular/core/testing';
 import { Doc05040404Component } from './doc-05-04-04-04.component';
 import { Doc05040404Service } from './services/doc-05-04-04-04.service';
 import { defer, interval, Observable, of, throwError } from 'rxjs';
@@ -26,17 +19,14 @@ describe('Doc05040404Component', () => {
       providers: [
         {
           provide: Doc05040404Service,
-          useValue: jasmine.createSpyObj<Doc05040404Service>([
-            'Doc05040404Service',
-            'getNextNum',
-          ]),
+          useValue: jasmine.createSpyObj<Doc05040404Service>(['getNextNum']),
         },
       ],
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    MockDoc05040404Service = TestBed.get(Doc05040404Service);
+    MockDoc05040404Service = TestBed.inject(Doc05040404Service) as jasmine.SpyObj<Doc05040404Service>;
     fixture = TestBed.createComponent(Doc05040404Component);
     component = fixture.componentInstance;
     messageEl = (fixture.nativeElement as HTMLElement).querySelector('.num');
@@ -66,9 +56,7 @@ describe('Doc05040404Component', () => {
    * fakeAsync() 函数用来包装一个 function, 使之在 fakeAsync zone 里面执行
    */
   it('should display error message when service throw error', fakeAsync(() => {
-    MockDoc05040404Service.getNextNum.and.returnValue(
-      throwError(new Error('ERR01')),
-    );
+    MockDoc05040404Service.getNextNum.and.returnValue(throwError(new Error('ERR01')));
 
     fixture.detectChanges();
 
@@ -82,9 +70,7 @@ describe('Doc05040404Component', () => {
       expect(messageEl.textContent).toEqual('0');
     }
 
-    const errorMessageEl: HTMLDivElement | null = (fixture.nativeElement as HTMLElement).querySelector(
-      '.ant-alert',
-    );
+    const errorMessageEl: HTMLDivElement | null = (fixture.nativeElement as HTMLElement).querySelector('.ant-alert');
     expect(errorMessageEl).toBeTruthy();
     if (errorMessageEl) {
       expect(errorMessageEl.textContent).toEqual('ERR01');
@@ -203,9 +189,7 @@ describe('Doc05040404Component', () => {
       /*
        * 使用 defer() 创建一个 asynchronous observable
        */
-      MockDoc05040404Service.getNextNum.and.returnValue(
-        defer(() => Promise.resolve(9)),
-      );
+      MockDoc05040404Service.getNextNum.and.returnValue(defer(() => Promise.resolve(9)));
     });
 
     it('should not display num after #ngOnInit()', () => {
@@ -274,8 +258,7 @@ describe('Doc05040404Component', () => {
       if (messageEl) {
         expect(messageEl.textContent).toEqual('');
 
-        (MockDoc05040404Service.getNextNum.calls.mostRecent()
-          .returnValue as Observable<number>).subscribe(() => {
+        (MockDoc05040404Service.getNextNum.calls.mostRecent().returnValue as Observable<number>).subscribe(() => {
           fixture.detectChanges();
 
           if (messageEl) {

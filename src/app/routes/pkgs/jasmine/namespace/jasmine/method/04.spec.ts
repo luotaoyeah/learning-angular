@@ -14,16 +14,4 @@ describe('jasmine.namespace.jasmine.method.anything.01', () => {
   it('02', () => {
     expect([]).not.toContain(jasmine.anything());
   });
-
-  it('03', () => {
-    const obj = {
-      foo() {},
-    };
-
-    const spyFoo = spyOn(obj, 'foo');
-
-    obj.foo();
-
-    expect(spyFoo).not.toHaveBeenCalledWith(jasmine.anything());
-  });
 });

@@ -27,7 +27,7 @@ describe('Doc05040204Service', () => {
       ],
     });
 
-    service = TestBed.get(Doc05040204Service);
+    service = TestBed.inject(Doc05040204Service);
   });
 
   it('should return heroes by #getHeroes()', () => {

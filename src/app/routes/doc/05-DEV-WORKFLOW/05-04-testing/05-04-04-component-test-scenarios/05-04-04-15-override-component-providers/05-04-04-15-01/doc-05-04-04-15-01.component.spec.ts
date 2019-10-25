@@ -22,17 +22,14 @@ describe('Doc0504041501Component', () => {
       providers: [
         {
           provide: Doc05040415Service,
-          useValue: jasmine.createSpyObj<Doc05040415Service>(
-            'Doc05040415Service',
-            ['foo'],
-          ),
+          useValue: jasmine.createSpyObj<Doc05040415Service>('Doc05040415Service', ['foo']),
         },
       ],
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    Doc05040415ServiceStub = TestBed.get(Doc05040415Service);
+    Doc05040415ServiceStub = TestBed.inject(Doc05040415Service) as jasmine.SpyObj<Doc05040415Service>;
     fixture = TestBed.createComponent(Doc0504041501Component);
     component = fixture.componentInstance;
   });

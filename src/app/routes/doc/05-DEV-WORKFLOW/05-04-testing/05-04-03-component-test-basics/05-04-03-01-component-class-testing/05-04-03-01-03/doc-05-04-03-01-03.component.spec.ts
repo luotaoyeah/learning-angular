@@ -26,8 +26,8 @@ describe('Doc0504030103Component', () => {
       ],
     });
 
-    component = TestBed.get(Doc0504030103Component);
-    doc0504030103Service = TestBed.get(Doc0504030103Service);
+    component = TestBed.inject(Doc0504030103Component);
+    doc0504030103Service = TestBed.inject(Doc0504030103Service);
   });
 
   it('should have the default value of "" for #welcome', () => {

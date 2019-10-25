@@ -13,7 +13,7 @@ describe('src/app/routes/doc/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-te
   }));
 
   beforeEach(() => {
-    service = TestBed.get(Doc05040405Service);
+    service = TestBed.inject(Doc05040405Service);
   });
 
   it('should create', () => {
@@ -30,11 +30,7 @@ describe('src/app/routes/doc/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-te
       expectObservable(service.getNextNum()).toBe('a', { a: 1 });
       expectObservable(service.getNextNum()).toBe('a', { a: 2 });
       expectObservable(service.getNextNum()).toBe('a', { a: 3 });
-      expectObservable(service.getNextNum()).toBe(
-        '#',
-        undefined,
-        new Error('GREATER THAN 3'),
-      );
+      expectObservable(service.getNextNum()).toBe('#', undefined, new Error('GREATER THAN 3'));
     });
   });
 });

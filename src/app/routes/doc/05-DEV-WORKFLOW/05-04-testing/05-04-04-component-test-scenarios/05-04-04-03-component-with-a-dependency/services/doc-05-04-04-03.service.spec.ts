@@ -11,7 +11,7 @@ describe('src/app/routes/doc/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-te
   }));
 
   beforeEach(() => {
-    service = TestBed.get(Doc05040403Service);
+    service = TestBed.inject(Doc05040403Service);
   });
 
   it('should create', () => {

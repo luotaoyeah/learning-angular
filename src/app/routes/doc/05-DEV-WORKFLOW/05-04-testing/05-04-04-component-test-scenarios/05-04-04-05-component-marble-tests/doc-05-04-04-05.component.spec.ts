@@ -1,10 +1,4 @@
-import {
-  async,
-  ComponentFixture,
-  fakeAsync,
-  TestBed,
-  tick,
-} from '@angular/core/testing';
+import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { SharedModule } from '@app/shared';
 import { Doc05040405Component } from './doc-05-04-04-05.component';
 import { Doc05040405Service } from './services/doc-05-04-04-05.service';
@@ -27,17 +21,14 @@ describe('Doc05040405Component', () => {
       providers: [
         {
           provide: Doc05040405Service,
-          useValue: jasmine.createSpyObj<Doc05040405Service>(
-            'Doc05040405Service',
-            ['getNextNum'],
-          ),
+          useValue: jasmine.createSpyObj<Doc05040405Service>('Doc05040405Service', ['getNextNum']),
         },
       ],
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    MockDoc05040405Service = TestBed.get(Doc05040405Service);
+    MockDoc05040405Service = TestBed.inject(Doc05040405Service) as jasmine.SpyObj<Doc05040405Service>;
 
     fixture = TestBed.createComponent(Doc05040405Component);
     component = fixture.componentInstance;
@@ -77,7 +68,7 @@ describe('Doc05040405Component', () => {
    */
   it('should display the error message', fakeAsync(() => {
     getTestScheduler().run(({ cold, flush }: RunHelpers) => {
-      const observable01$ = cold('---#|', undefined, new Error('ERR01'));
+      const observable01$ = cold<number>('---#|', undefined, new Error('ERR01'));
 
       MockDoc05040405Service.getNextNum.and.returnValue(observable01$);
 

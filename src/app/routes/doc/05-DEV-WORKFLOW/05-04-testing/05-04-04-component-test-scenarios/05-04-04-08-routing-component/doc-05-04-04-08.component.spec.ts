@@ -45,10 +45,8 @@ describe('Doc05040408Component', () => {
 
     expect(RouterSpy.navigateByUrl as Spy).toHaveBeenCalledTimes(1);
 
-    const firstCallInfo: jasmine.CallInfo = (RouterSpy.navigateByUrl as Spy).calls.first();
+    const firstCallInfo = (RouterSpy.navigateByUrl as Spy).calls.first();
     expect(firstCallInfo.args[0]).toEqual('/doc/05/04/04/08/01');
-    expect(firstCallInfo.args[1]).toEqual(
-      jasmine.objectContaining({ queryParams: { foo: 99 } }),
-    );
+    expect(firstCallInfo.args[1]).toEqual(jasmine.objectContaining({ queryParams: { foo: 99 } }));
   });
 });

@@ -5,11 +5,10 @@
 import { Doc05040203Service } from './doc-05-04-02.03.service';
 import { TestBed } from '@angular/core/testing';
 import { Doc05040201Service } from './doc-05-04-02.01.service';
-import SpyObj = jasmine.SpyObj;
 
 describe('Doc05040203Service', () => {
   let service: Doc05040203Service;
-  let doc05040201ServiceSpyObj: SpyObj<Doc05040201Service>;
+  let doc05040201ServiceSpyObj: jasmine.SpyObj<Doc05040201Service>;
 
   beforeEach(() => {
     /*
@@ -25,19 +24,16 @@ describe('Doc05040203Service', () => {
           /*
            * 可以使用一个 SpyObj 对象, 来作为某个依赖的注入值
            */
-          useValue: jasmine.createSpyObj<Doc05040201Service>(
-            'Doc05040201Service',
-            ['getValue'],
-          ),
+          useValue: jasmine.createSpyObj<Doc05040201Service>('Doc05040201Service', ['getValue']),
         },
       ],
     });
 
     /*
-     * 通过 TestBed.get() 方法获取注入器中的某个 service 实例
+     * 通过 TestBed.inject() 方法获取注入器中的某个 service 实例
      */
-    doc05040201ServiceSpyObj = TestBed.get(Doc05040201Service);
-    service = TestBed.get(Doc05040203Service);
+    doc05040201ServiceSpyObj = TestBed.inject(Doc05040201Service) as jasmine.SpyObj<Doc05040201Service>;
+    service = TestBed.inject(Doc05040203Service);
   });
 
   it('should return a sync value by #getValue()', () => {
@@ -51,8 +47,6 @@ describe('Doc05040203Service', () => {
 
     expect(service.getValue()).toBe('BAR');
     expect(doc05040201ServiceSpyObj.getValue).toHaveBeenCalledTimes(1);
-    expect(
-      doc05040201ServiceSpyObj.getValue.calls.mostRecent().returnValue,
-    ).toBe('BAR');
+    expect(doc05040201ServiceSpyObj.getValue.calls.mostRecent().returnValue).toBe('BAR');
   });
 });
