@@ -1,18 +1,18 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "lib": ["es2018", "dom"],
     "declaration": true,
+    "lib": ["es2018", "dom"],
     "module": "commonjs",
     "moduleResolution": "node",
     "noEmitOnError": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
     "noImplicitThis": true,
-    "noUnusedParameters": false,
     "noUnusedLocals": true,
-    "rootDir": "schematics",
+    "noUnusedParameters": false,
     "outDir": "../../dist/learning-angular-lib/schematics",
+    "rootDir": "schematics",
     "skipDefaultLibCheck": true,
     "skipLibCheck": true,
     "sourceMap": true,
@@ -20,6 +20,6 @@
     "target": "es6",
     "types": ["jasmine", "node"]
   },
-  "include": ["schematics/**/*"],
-  "exclude": ["schematics/*/files/**/*"]
+  "exclude": ["schematics/*/files/**/*"],
+  "include": ["schematics/**/*"]
 }

@@ -6,9 +6,7 @@ describe('LearningAngularLibService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: LearningAngularLibService = TestBed.get(
-      LearningAngularLibService,
-    );
+    const service: LearningAngularLibService = TestBed.inject(LearningAngularLibService);
     expect(service).toBeTruthy();
   });
 });
