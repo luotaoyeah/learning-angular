@@ -1,4 +1,10 @@
 describe('jasmine.namespace.jasmine.member.02', () => {
+  const MAX_PRETTY_PRINT_DEPTH = jasmine.MAX_PRETTY_PRINT_DEPTH;
+
+  afterEach(() => {
+    jasmine.MAX_PRETTY_PRINT_DEPTH = MAX_PRETTY_PRINT_DEPTH;
+  });
+
   /*
    * jasmine.MAX_PRETTY_PRINT_DEPTH 属性，
    * 表示 jasmine 在打印一个 object 时，最大的嵌套层数，默认值为 8，

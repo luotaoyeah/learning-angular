@@ -221,10 +221,7 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "projects/learning-angular-lib/tsconfig.lib.json",
-              "projects/learning-angular-lib/tsconfig.spec.json"
-            ],
+            "tsConfig": ["projects/learning-angular-lib/tsconfig.lib.json", "projects/learning-angular-lib/tsconfig.spec.json"],
             "exclude": ["**/node_modules/**"]
           }
         }
