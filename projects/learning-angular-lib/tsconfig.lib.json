@@ -1,10 +1,10 @@
 {
   "angularCompilerOptions": {
-    "skipTemplateCodegen": true,
-    "strictMetadataEmit": true,
+    "enableResourceInlining": true,
     "fullTemplateTypeCheck": true,
+    "skipTemplateCodegen": true,
     "strictInjectionParameters": true,
-    "enableResourceInlining": true
+    "strictMetadataEmit": true
   },
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,

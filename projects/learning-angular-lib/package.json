@@ -3,11 +3,11 @@
   "version": "0.0.11",
   "schematics": "./schematics/collection.json",
   "scripts": {
-    "build:learning-angular-lib": "ng build learning-angular-lib",
+    "build:learning-angular-lib:prod": "ng build learning-angular-lib --prod",
     "build:learning-angular-lib:watch": "ng build learning-angular-lib --watch",
     "build:schematics": "..\\..\\node_modules\\.bin\\tsc -p tsconfig.schematics.json",
     "postbuild:schematics": "gulp copy",
-    "publish": "npm publish ../../dist/learning-angular-lib --access public"
+    "publish-2-npm": "npmrc luotao && npm publish ../../dist/learning-angular-lib --access public"
   },
   "peerDependencies": {
     "@angular/common": "^9.1.11",

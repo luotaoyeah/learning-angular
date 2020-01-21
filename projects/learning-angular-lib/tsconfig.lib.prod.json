@@ -1,6 +1,7 @@
 {
   "angularCompilerOptions": {
-    "enableIvy": false
+    "enableIvy": false,
+    "fullTemplateTypeCheck": false
   },
   "extends": "./tsconfig.lib.json"
 }
