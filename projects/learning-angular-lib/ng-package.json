@@ -2,7 +2,7 @@
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "../../dist/learning-angular-lib",
   "lib": {
-    "entryFile": "src/public-api.ts"
+    "entryFile": "src/index.ts"
   },
   "whitelistedNonPeerDependencies": ["jquery", "jquery-ui", "@types/jquery"]
 }

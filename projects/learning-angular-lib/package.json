@@ -1,6 +1,7 @@
 {
   "name": "@luotao/learning-angular-lib",
-  "version": "0.0.10",
+  "version": "0.0.11",
+  "schematics": "./schematics/collection.json",
   "scripts": {
     "build:learning-angular-lib": "ng build learning-angular-lib",
     "build:learning-angular-lib:watch": "ng build learning-angular-lib --watch",
@@ -9,10 +10,9 @@
     "publish": "npm publish ../../dist/learning-angular-lib --access public"
   },
   "peerDependencies": {
-    "@angular/common": "^9.0.7",
-    "@angular/core": "^9.0.7"
+    "@angular/common": "^9.1.11",
+    "@angular/core": "^9.1.11"
   },
-  "schematics": "./schematics/collection.json",
   "dependencies": {
     "@types/jquery": "^3.3.29",
     "jquery": "^3.2.1",
