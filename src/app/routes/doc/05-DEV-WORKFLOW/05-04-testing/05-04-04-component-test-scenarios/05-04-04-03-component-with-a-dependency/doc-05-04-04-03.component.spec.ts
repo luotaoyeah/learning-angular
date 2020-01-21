@@ -46,6 +46,9 @@ describe('Doc05040403Component', () => {
     expect(pEl).toBeTruthy();
 
     if (pEl) {
+      const doc05070403Service = fixture.debugElement.injector.get(Doc05040403Service);
+      doc05070403Service.name = 'FOO';
+
       fixture.detectChanges();
       expect(pEl.textContent).toEqual('FOOBAR');
     }
@@ -57,10 +60,9 @@ describe('Doc05040403Component', () => {
      * 从这里面可以获取这些 mock service
      */
 
-    const doc05070403Service = fixture.debugElement.injector.get(Doc05040403Service);
-    doc05070403Service.name = 'BAZ';
-
     if (pEl) {
+      const doc05070403Service = fixture.debugElement.injector.get(Doc05040403Service);
+      doc05070403Service.name = 'BAZ';
       fixture.detectChanges();
       expect(pEl.textContent).toEqual('BAZBAR');
     }

@@ -20,7 +20,6 @@ module.exports = {
       },
     ],
     '@typescript-eslint/ban-types': 'error',
-    '@typescript-eslint/class-name-casing': 'error',
     '@typescript-eslint/consistent-type-assertions': 'error',
     '@typescript-eslint/indent': 'off',
     '@typescript-eslint/no-empty-function': 'off',

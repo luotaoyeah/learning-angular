@@ -14,8 +14,8 @@ import { Component } from '@angular/core';
     `,
     `
       :host button {
-        color: #0000ff;
-        border-color: #0000ff;
+        color: #00f;
+        border-color: #00f;
       }
     `,
   ],

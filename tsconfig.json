@@ -10,23 +10,22 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": false,
-    "lib": ["es2018", "dom"],
-    "module": "esnext",
-    "moduleResolution": "node",
+    "lib": ["ESNext", "DOM"],
+    "module": "ESNext",
+    "moduleResolution": "Node",
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "outDir": "./dist/out-tsc",
     "paths": {
-      "@app/shared": ["app/shared/index"],
-      "@app/shared/*": ["app/shared/*"],
+      "@app/*": ["app/*"],
       "@app/core": ["app/core/index"],
-      "@app/core/*": ["app/core/*"],
+      "@app/shared": ["app/shared/index"],
       "@app/env/*": ["environments/*"]
     },
     "resolveJsonModule": true,
     "sourceMap": true,
     "strict": true,
-    "target": "es2015",
+    "target": "ESNext",
     "typeRoots": ["node_modules/@types"]
   }
 }

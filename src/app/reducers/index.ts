@@ -9,6 +9,4 @@ export const reducers: ActionReducerMap<IState> = {
   ngrxRouter: routerReducer,
 };
 
-export const metaReducers: MetaReducer<IState>[] = !environment.production
-  ? []
-  : [];
+export const metaReducers: Array<MetaReducer<IState>> = !environment.production ? [] : [];

@@ -8,8 +8,8 @@ export class Doc05040201Service {
   /**
    *
    */
-  public getValue(): string {
-    return 'FOO';
+  public getObservableValue(): Observable<string> {
+    return of('FOO');
   }
 
   /**
@@ -26,7 +26,7 @@ export class Doc05040201Service {
   /**
    *
    */
-  public getObservableValue(): Observable<string> {
-    return of('FOO');
+  public getValue(): string {
+    return 'FOO';
   }
 }

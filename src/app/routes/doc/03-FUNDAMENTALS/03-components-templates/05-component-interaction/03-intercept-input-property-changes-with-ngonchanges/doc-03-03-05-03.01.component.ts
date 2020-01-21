@@ -18,10 +18,7 @@ export class Doc0303050301Component implements OnChanges {
     for (const key in changes) {
       if (changes.hasOwnProperty(key)) {
         const prop = changes[key];
-        console.log(
-          `%c${Doc0303050301Component.name}.${key}(${prop.previousValue} -> ${prop.currentValue})`,
-          'color:#0000ff',
-        );
+        console.log(`%c${Doc0303050301Component.name}.${key}(${prop.previousValue} -> ${prop.currentValue})`, 'color:#00f');
       }
     }
   }
