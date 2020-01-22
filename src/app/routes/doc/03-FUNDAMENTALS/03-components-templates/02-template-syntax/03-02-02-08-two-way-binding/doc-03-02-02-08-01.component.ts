@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-doc-03-02-02-08-01',
+  selector: 'app--doc-03-02-02-08-01',
   template: '<button (click)="increase()" >+</button>&nbsp;<button (click)="decrease()" >-</button>',
 })
 export class Doc0302020801Component implements OnInit {

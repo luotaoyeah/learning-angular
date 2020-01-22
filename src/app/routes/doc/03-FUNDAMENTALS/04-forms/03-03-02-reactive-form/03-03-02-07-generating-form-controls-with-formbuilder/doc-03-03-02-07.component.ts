@@ -5,7 +5,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
  * https://angular.io/guide/reactive-forms#generating-form-controls-with-formbuilder
  */
 @Component({
-  selector: 'app-doc-03-03-02-07',
+  selector: 'app--doc-03-03-02-07',
   templateUrl: './doc-03-03-02-07.component.html',
 })
 export class Doc03030207Component {

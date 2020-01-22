@@ -2,8 +2,8 @@ import { Component, forwardRef, OnInit } from '@angular/core';
 import { ParentComponent } from './doc-03-07-05-02.service';
 
 @Component({
-  selector: 'app-doc-03-07-05-03',
-  template: '<app-doc-03-07-05-03-01></app-doc-03-07-05-03-01>',
+  selector: 'app--doc-03-07-05-03',
+  template: '<app--doc-03-07-05-03-01></app--doc-03-07-05-03-01>',
   providers: [
     {
       provide: ParentComponent,

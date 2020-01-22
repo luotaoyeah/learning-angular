@@ -4,7 +4,7 @@ import { ChangeDetectorRef, Component } from '@angular/core';
  * https://blog.angularindepth.com/everything-you-need-to-know-about-change-detection-in-angular-8006c51d206f#9567
  */
 @Component({
-  selector: 'app-x-04',
+  selector: 'app--x-04',
   templateUrl: './x-04.component.html',
 })
 export class X04Component {

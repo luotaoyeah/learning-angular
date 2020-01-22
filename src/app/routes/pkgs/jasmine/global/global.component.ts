@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-global',
+  selector: 'app--global',
   templateUrl: './global.component.html',
   styles: [],
 })

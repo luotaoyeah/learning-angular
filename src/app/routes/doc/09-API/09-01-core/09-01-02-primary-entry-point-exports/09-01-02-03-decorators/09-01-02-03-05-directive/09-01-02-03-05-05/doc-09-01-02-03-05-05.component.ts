@@ -6,7 +6,7 @@ import { Doc09010203050502Directive } from './directive/doc-09-01-02-03-05-05-02
  * https://angular.io/api/core/Directive#exportas
  */
 @Component({
-  selector: 'app-doc-09-01-02-03-05-05',
+  selector: 'app--doc-09-01-02-03-05-05',
   templateUrl: './doc-09-01-02-03-05-05.component.html',
 })
 export class Doc090102030505Component implements OnInit {

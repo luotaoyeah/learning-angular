@@ -5,7 +5,7 @@ import { tap } from 'rxjs/operators';
 import { HttpEvent, HttpEventType } from '@angular/common/http';
 
 @Component({
-  selector: 'app-doc-03-08-05-03',
+  selector: 'app--doc-03-08-05-03',
   templateUrl: './doc-03-08-05-03.component.html',
 })
 export class Doc03080503Component implements OnInit {

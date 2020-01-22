@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
+import { Hero } from '@app/routes/doc/03-FUNDAMENTALS/01-tour-of-heroes-app/service/hero';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { Observable } from 'rxjs';
-import { Hero } from './hero';
 
 @Injectable({
   providedIn: 'root',
 })
 export class InMemoryDataService implements InMemoryDbService {
-  public createDb(): {} | Observable<{}> | Promise<{}> {
+  public createDb(): Record<string, unknown> | Observable<Record<string, unknown>> | Promise<Record<string, unknown>> {
     const heroes: Array<Hero> = [
       { id: 11, name: 'Mr. Nice' },
       { id: 12, name: 'Narco' },
@@ -40,6 +40,6 @@ export class InMemoryDataService implements InMemoryDbService {
    * @param heroes 英雄列表
    */
   public getId(heroes: Array<Hero>): number {
-    return heroes.length > 0 ? Math.max(...heroes.map(i => i.id)) + 1 : 11;
+    return heroes.length > 0 ? Math.max(...heroes.map((i) => i.id)) + 1 : 11;
   }
 }

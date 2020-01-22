@@ -10,7 +10,7 @@ import { NzAlertComponent } from 'ng-zorro-antd';
  * https://blog.angularindepth.com/working-with-dom-in-angular-unexpected-consequences-and-optimization-techniques-682ac09f6866#a2b5
  */
 @Component({
-  selector: 'app-x-05',
+  selector: 'app--x-05',
   templateUrl: './x-05.component.html',
 })
 export class X05Component {

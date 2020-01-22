@@ -10,7 +10,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
  * https://github.com/ngx-translate/core#translateservice
  */
 @Component({
-  selector: 'app-ngx-translate-04',
+  selector: 'app--ngx-translate-04',
   templateUrl: './ngx-translate-04.component.html',
 })
 export class NgxTranslate04Component implements OnInit {

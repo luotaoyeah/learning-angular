@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Doc0307030301Service } from './service/doc-03-07-03-03-01.service';
 
 @Component({
-  selector: 'app-doc-03-07-03-03',
+  selector: 'app--doc-03-07-03-03',
   templateUrl: './doc-03-07-03-03.component.html',
   providers: [
     {

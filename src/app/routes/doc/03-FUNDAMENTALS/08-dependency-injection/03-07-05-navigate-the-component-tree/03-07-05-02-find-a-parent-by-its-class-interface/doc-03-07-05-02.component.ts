@@ -7,7 +7,7 @@ import { ParentComponent } from './doc-03-07-05-02.service';
  * child component 也知道这个 token，它就可以使用这个 token 注入 parent component
  */
 @Component({
-  selector: 'app-doc-03-07-05-02',
+  selector: 'app--doc-03-07-05-02',
   templateUrl: './doc-03-07-05-02.component.html',
   providers: [
     {

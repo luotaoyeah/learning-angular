@@ -4,7 +4,7 @@ import { IState } from '../store/state/i-state';
 import { select, Store } from '@ngrx/store';
 
 @Component({
-  selector: 'app-x-02-02-01',
+  selector: 'app--x-02-02-01',
   templateUrl: './x-02-02-01.component.html',
   styles: [],
 })

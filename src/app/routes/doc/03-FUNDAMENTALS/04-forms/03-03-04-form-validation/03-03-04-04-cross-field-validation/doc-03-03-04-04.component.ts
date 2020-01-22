@@ -6,7 +6,7 @@ import { passwordValidator } from './validators/password.validator';
  * https://angular.io/guide/form-validation#cross-field-validation
  */
 @Component({
-  selector: 'app-doc-03-03-04-04',
+  selector: 'app--doc-03-03-04-04',
   templateUrl: './doc-03-03-04-04.component.html',
   styleUrls: ['./doc-03-03-04-04.component.less'],
 })

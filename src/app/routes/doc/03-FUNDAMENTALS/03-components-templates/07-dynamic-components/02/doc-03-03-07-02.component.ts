@@ -10,7 +10,7 @@ import { Doc03030700Component } from '../00/doc-03-03-07-00.component';
  * https://angular.io/guide/dynamic-component-loader
  */
 @Component({
-  selector: 'app-doc-03-03-07-02',
+  selector: 'app--doc-03-03-07-02',
   templateUrl: './doc-03-03-07-02.component.html',
 })
 export class Doc03030702Component {

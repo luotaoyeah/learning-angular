@@ -5,7 +5,7 @@ import { Doc0303050601Component } from './doc-03-03-05-06.01.component';
  * https://angular.io/guide/component-interaction#parent-calls-an-viewchild
  */
 @Component({
-  selector: 'app-doc-03-03-05-06',
+  selector: 'app--doc-03-03-05-06',
   templateUrl: './doc-03-03-05-06.component.html',
 })
 export class Doc03030506Component {

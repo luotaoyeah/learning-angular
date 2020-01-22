@@ -4,7 +4,7 @@ import { Component, NgZone } from '@angular/core';
  * https://blog.angularindepth.com/boosting-performance-of-angular-applications-with-manual-change-detection-42cb396110fb#b49e
  */
 @Component({
-  selector: 'app-x-02',
+  selector: 'app--x-02',
   templateUrl: './x-02.component.html',
 })
 export class X02Component {

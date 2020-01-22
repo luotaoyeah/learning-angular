@@ -5,7 +5,7 @@ import { IPackageInfo } from './model/i-package-info';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-doc-03-08-05-02',
+  selector: 'app--doc-03-08-05-02',
   templateUrl: './doc-03-08-05-02.component.html',
 })
 export class Doc03080502Component implements OnInit {

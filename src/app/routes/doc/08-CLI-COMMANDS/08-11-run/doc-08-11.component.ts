@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
  * TODO https://angular.io/cli/run
  */
 @Component({
-  selector: 'app-doc-08-11',
+  selector: 'app--doc-08-11',
   templateUrl: './doc-08-11.component.html',
   styles: [],
 })

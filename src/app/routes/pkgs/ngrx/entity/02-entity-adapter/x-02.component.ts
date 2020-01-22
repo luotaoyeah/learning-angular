@@ -11,7 +11,7 @@ import { selectAllUsers, selectFeature } from './store/selectors/02.selectors';
  * https://ngrx.io/guide/entity/adapter
  */
 @Component({
-  selector: 'app-x-02',
+  selector: 'app--x-02',
   templateUrl: './x-02.component.html',
   styles: [],
 })

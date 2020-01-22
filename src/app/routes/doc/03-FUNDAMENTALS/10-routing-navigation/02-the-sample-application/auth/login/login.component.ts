@@ -3,7 +3,7 @@ import { AuthService } from '../services/auth.service';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-login',
+  selector: 'app--login',
   templateUrl: './login.component.html',
 })
 export class LoginComponent implements OnInit {

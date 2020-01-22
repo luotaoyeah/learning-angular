@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
  * https://ngrx.io/guide/schematics
  */
 @Component({
-  selector: 'app-schematics',
+  selector: 'app--schematics',
   templateUrl: './schematics.component.html',
   styles: [],
 })

@@ -2,7 +2,7 @@ import { Component, OnInit, Optional } from '@angular/core';
 import { Doc03070501Component } from './doc-03-07-05-01.component';
 
 @Component({
-  selector: 'app-doc-03-07-05-01-01',
+  selector: 'app--doc-03-07-05-01-01',
   template: '',
 })
 export class Doc0307050101Component implements OnInit {

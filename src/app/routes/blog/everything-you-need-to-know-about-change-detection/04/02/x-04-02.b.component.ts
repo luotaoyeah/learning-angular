@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'app-x-04-02-b',
+  selector: 'app--x-04-02-b',
   template: '<button nz-button>{{foo}}</button>',
 })
 export class X0402BComponent implements OnChanges {

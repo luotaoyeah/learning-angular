@@ -1,7 +1,7 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
-  selector: 'app-x-06-01',
+  selector: 'app--x-06-01',
   templateUrl: './x-06-01.component.html',
 })
 export class X0601Component implements OnChanges {

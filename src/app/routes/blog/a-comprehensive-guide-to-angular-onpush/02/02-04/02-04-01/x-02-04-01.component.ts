@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-x-02-04-01',
+  selector: 'app--x-02-04-01',
   templateUrl: './x-02-04-01.component.html',
   styles: [],
   changeDetection: ChangeDetectionStrategy.OnPush,

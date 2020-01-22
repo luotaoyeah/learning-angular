@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
  * https://angular.io/tutorial#tour-of-heroes-app-and-tutorial
  */
 @Component({
-  selector: 'app-doc-03-01',
+  selector: 'app--doc-03-01',
   templateUrl: './doc-03-01.component.html',
   styleUrls: ['./doc-03-01.component.scss'],
 })

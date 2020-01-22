@@ -7,7 +7,7 @@ import { catchError } from 'rxjs/operators';
  * https://angular.io/guide/testing#component-with-async-service
  */
 @Component({
-  selector: 'app-doc-05-04-04-04',
+  selector: 'app--doc-05-04-04-04',
   templateUrl: './doc-05-04-04-04.component.html',
 })
 export class Doc05040404Component implements OnInit {

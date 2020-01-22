@@ -6,7 +6,7 @@ import { forbiddenNameValidator } from './validators/forbidden-name.validator';
  * https://angular.io/guide/form-validation#custom-validators
  */
 @Component({
-  selector: 'app-doc-03-03-04-03',
+  selector: 'app--doc-03-03-04-03',
   templateUrl: './doc-03-03-04-03.component.html',
   styleUrls: ['./doc-03-03-04-03.component.less'],
 })

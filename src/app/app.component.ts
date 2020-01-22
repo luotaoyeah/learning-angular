@@ -6,7 +6,7 @@ import { Doc0306080201Service } from './routes/doc/03-FUNDAMENTALS/07-ngmodules/
 import { Subject } from 'rxjs';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app--root',
   templateUrl: './app.component.html',
 })
 export class AppComponent implements OnInit, OnDestroy {

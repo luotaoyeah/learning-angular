@@ -7,8 +7,8 @@ import { ParentComponent } from './doc-03-07-05-02.service';
  * 这时候，在注入 parent component 的时候，就必须使用 @SkipSelf() 从 parent injector 开始寻找
  */
 @Component({
-  selector: 'app-doc-03-07-05-03-01',
-  template: '<app-doc-03-07-05-03-02></app-doc-03-07-05-03-02>',
+  selector: 'app--doc-03-07-05-03-01',
+  template: '<app--doc-03-07-05-03-02></app--doc-03-07-05-03-02>',
   providers: [
     {
       provide: ParentComponent,

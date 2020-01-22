@@ -2,7 +2,7 @@ import { Component, ContentChild, OnInit } from '@angular/core';
 import { X020501Component } from './02-05-01/x-02-05-01.component';
 
 @Component({
-  selector: 'app-x-02-05',
+  selector: 'app--x-02-05',
   templateUrl: './x-02-05.component.html',
   styles: [],
 })

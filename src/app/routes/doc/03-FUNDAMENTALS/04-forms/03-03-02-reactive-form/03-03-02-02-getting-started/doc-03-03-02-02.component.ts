@@ -5,7 +5,7 @@ import { FormControl } from '@angular/forms';
  * https://angular.io/guide/reactive-forms#getting-started
  */
 @Component({
-  selector: 'app-doc-03-03-02-02',
+  selector: 'app--doc-03-03-02-02',
   templateUrl: './doc-03-03-02-02.component.html',
 })
 export class Doc03030202Component implements OnInit {

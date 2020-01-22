@@ -5,7 +5,7 @@ import { HeroService } from '../service/hero.service';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-hero-search',
+  selector: 'app--hero-search',
   templateUrl: './hero-search.component.html',
   styleUrls: ['./hero-search.component.scss'],
 })

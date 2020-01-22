@@ -5,7 +5,7 @@ import { FormControl, FormGroup } from '@angular/forms';
  * https://angular.io/guide/reactive-forms#partial-model-updates
  */
 @Component({
-  selector: 'app-doc-03-03-02-06',
+  selector: 'app--doc-03-03-02-06',
   templateUrl: './doc-03-03-02-06.component.html',
 })
 export class Doc03030206Component {

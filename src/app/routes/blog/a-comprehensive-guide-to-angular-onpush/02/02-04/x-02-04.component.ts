@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 @Component({
-  selector: 'app-x-02-04',
+  selector: 'app--x-02-04',
   templateUrl: './x-02-04.component.html',
   styles: [],
 })

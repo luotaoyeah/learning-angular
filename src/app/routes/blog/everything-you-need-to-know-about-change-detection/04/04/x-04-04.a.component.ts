@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'app-x-04-04-a',
+  selector: 'app--x-04-04-a',
   template:
     '<button nz-button>{{foo}}</button><button nz-button>{{bar.foo}}</button>',
 })

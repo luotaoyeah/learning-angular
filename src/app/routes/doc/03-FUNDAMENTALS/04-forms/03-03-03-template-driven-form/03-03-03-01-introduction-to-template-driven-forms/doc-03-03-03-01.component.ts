@@ -6,7 +6,7 @@ import { NgForm } from '@angular/forms';
  * https://angular.io/guide/forms#introduction-to-template-driven-forms
  */
 @Component({
-  selector: 'app-doc-03-03-03-01',
+  selector: 'app--doc-03-03-03-01',
   templateUrl: './doc-03-03-03-01.component.html',
   styleUrls: ['./doc-03-03-03-01.component.scss'],
 })

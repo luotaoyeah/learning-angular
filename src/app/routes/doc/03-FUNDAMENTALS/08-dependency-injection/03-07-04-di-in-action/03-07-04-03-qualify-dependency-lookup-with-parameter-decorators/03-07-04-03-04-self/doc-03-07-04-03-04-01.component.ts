@@ -2,7 +2,7 @@ import { Component, Inject, OnInit, Optional, Self, SkipSelf } from '@angular/co
 import { STORE_TOKEN } from './service/doc-03-07-04-03-04-01.service';
 
 @Component({
-  selector: 'app-doc-03-07-04-03-04-01',
+  selector: 'app--doc-03-07-04-03-04-01',
   template: '',
   providers: [
     {

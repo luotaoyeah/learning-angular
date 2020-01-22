@@ -4,7 +4,7 @@ import { Hero } from '../models/hero';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-hero-list',
+  selector: 'app--hero-list',
   templateUrl: './hero-list.component.html',
   styleUrls: ['./hero-list.component.scss'],
 })

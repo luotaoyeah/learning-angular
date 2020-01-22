@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-intro-into-component-c',
+  selector: 'app--intro-into-component-c',
   /*
    * 可以通过 template 指定内嵌的 template 代码，
    * 此时，不能再声明 templateUrl 配置

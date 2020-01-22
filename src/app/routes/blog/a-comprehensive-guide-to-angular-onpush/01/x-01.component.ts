@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'app-x-01',
+  selector: 'app--x-01',
   templateUrl: './x-01.component.html',
   styles: [],
   changeDetection: ChangeDetectionStrategy.Default,

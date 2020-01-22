@@ -4,7 +4,7 @@ import { IConfig } from './model/i-config';
 import { HttpResponse } from '@angular/common/http';
 
 @Component({
-  selector: 'app-doc-03-08-01',
+  selector: 'app--doc-03-08-01',
   templateUrl: './doc-03-08-01.component.html',
 })
 export class Doc030801Component implements OnInit {

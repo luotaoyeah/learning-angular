@@ -12,7 +12,7 @@ import { delay } from 'rxjs/operators';
  * https://angular.io/api/core/ChangeDetectionStrategy#members
  */
 @Component({
-  selector: 'app-doc-09-01-02-05-06-02',
+  selector: 'app--doc-09-01-02-05-06-02',
   templateUrl: './doc-09-01-02-05-06-02.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

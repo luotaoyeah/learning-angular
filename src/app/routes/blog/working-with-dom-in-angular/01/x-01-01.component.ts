@@ -1,7 +1,7 @@
 import { Component, DoCheck } from '@angular/core';
 
 @Component({
-  selector: 'app-x-01-01',
+  selector: 'app--x-01-01',
   template: '<p>{{foo}}</p>',
 })
 export class X0101Component implements DoCheck {

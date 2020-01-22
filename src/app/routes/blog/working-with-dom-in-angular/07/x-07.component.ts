@@ -11,7 +11,7 @@ import { X0701Component } from './x-07-01.component';
  * https://blog.angularindepth.com/working-with-dom-in-angular-unexpected-consequences-and-optimization-techniques-682ac09f6866#9724
  */
 @Component({
-  selector: 'app-x-07',
+  selector: 'app--x-07',
   templateUrl: './x-07.component.html',
 })
 export class X07Component {

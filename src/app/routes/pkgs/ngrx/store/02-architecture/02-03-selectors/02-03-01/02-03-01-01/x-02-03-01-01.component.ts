@@ -8,7 +8,7 @@ import { selectFeatureCount } from './store/selectors/02-03-01-01.selectors';
  * https://ngrx.io/guide/store/selectors#using-a-selector-for-one-piece-of-state
  */
 @Component({
-  selector: 'app-x-02-03-01-01',
+  selector: 'app--x-02-03-01-01',
   templateUrl: './x-02-03-01-01.component.html',
   styles: [],
 })

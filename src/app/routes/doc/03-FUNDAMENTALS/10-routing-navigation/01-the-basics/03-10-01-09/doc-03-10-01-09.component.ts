@@ -5,7 +5,7 @@ import { ActivatedRoute, Event, Router } from '@angular/router';
  * https://angular.io/guide/router#router-events
  */
 @Component({
-  selector: 'app-doc-03-10-01-09',
+  selector: 'app--doc-03-10-01-09',
   templateUrl: './doc-03-10-01-09.component.html',
 })
 export class Doc03100109Component implements OnInit {

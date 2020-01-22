@@ -5,7 +5,7 @@ import { NzMessageService } from 'ng-zorro-antd';
  * https://angular.io/api/core/HostListener
  */
 @Component({
-  selector: 'app-doc-09-01-02-03-08',
+  selector: 'app--doc-09-01-02-03-08',
   templateUrl: './doc-09-01-02-03-08.component.html',
   styleUrls: ['./doc-09-01-02-03-08.component.less'],
 })

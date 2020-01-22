@@ -6,7 +6,7 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'app-x-02-03-03',
+  selector: 'app--x-02-03-03',
   templateUrl: './x-02-03-03.component.html',
   styles: [],
   changeDetection: ChangeDetectionStrategy.OnPush,

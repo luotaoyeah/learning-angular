@@ -4,7 +4,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
  * https://angular.io/guide/testing#component-with-inputs-and-outputs
  */
 @Component({
-  selector: 'app-doc-05-04-04-06',
+  selector: 'app--doc-05-04-04-06',
   templateUrl: './doc-05-04-04-06.component.html',
 })
 export class Doc05040406Component {

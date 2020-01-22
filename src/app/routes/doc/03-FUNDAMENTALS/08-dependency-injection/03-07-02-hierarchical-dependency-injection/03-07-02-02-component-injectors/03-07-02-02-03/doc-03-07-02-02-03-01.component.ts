@@ -4,14 +4,14 @@ import { Doc030702020303Service } from './service/doc-03-07-02-02-03-03.service'
 import { Doc030702020302Service } from './service/doc-03-07-02-02-03-02.service';
 
 @Component({
-  selector: 'app-doc-03-07-02-02-03-01',
+  selector: 'app--doc-03-07-02-02-03-01',
   template: `
     <nz-card>
       <button nz-button>{{ foo }}</button>
       <button nz-button>{{ bar }}</button>
       <button nz-button>{{ baz }}</button>
       <hr />
-      <app-doc-03-07-02-02-03-01-01></app-doc-03-07-02-02-03-01-01>
+      <app--doc-03-07-02-02-03-01-01></app--doc-03-07-02-02-03-01-01>
     </nz-card>
   `,
   providers: [

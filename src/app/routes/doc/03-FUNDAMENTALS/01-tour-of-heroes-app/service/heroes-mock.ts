@@ -1,9 +1,9 @@
-import { Hero } from './hero';
+import { Hero } from '@app/routes/doc/03-FUNDAMENTALS/01-tour-of-heroes-app/service/hero';
 
 /**
  * 模拟数据
  */
-export const HEROES: Hero[] = [
+export const HEROES: Array<Hero> = [
   { id: 11, name: 'Mr. Nice' },
   { id: 12, name: 'Narco' },
   { id: 13, name: 'Bombasto' },

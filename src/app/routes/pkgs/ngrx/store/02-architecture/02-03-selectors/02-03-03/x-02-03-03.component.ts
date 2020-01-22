@@ -7,7 +7,7 @@ import { selectTotal } from './store/selectors/02-03-03.selectors';
  * https://ngrx.io/guide/store/selectors#resetting-memoized-selectors
  */
 @Component({
-  selector: 'app-x-02-03-03',
+  selector: 'app--x-02-03-03',
   templateUrl: './x-02-03-03.component.html',
   styles: [],
 })

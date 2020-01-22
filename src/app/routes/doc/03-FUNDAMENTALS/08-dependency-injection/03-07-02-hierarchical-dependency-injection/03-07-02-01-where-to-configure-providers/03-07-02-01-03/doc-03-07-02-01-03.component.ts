@@ -7,7 +7,7 @@ import { Doc030702010302ervice } from './service/doc-03-07-02-01-03-02.service';
  * 并且每个该 component 的实例会创建属于它自己的 injector，以及里面的 service 实例
  */
 @Component({
-  selector: 'app-doc-03-07-02-01-03',
+  selector: 'app--doc-03-07-02-01-03',
   templateUrl: './doc-03-07-02-01-03.component.html',
   providers: [Doc030702010301Service, Doc030702010302ervice],
 })

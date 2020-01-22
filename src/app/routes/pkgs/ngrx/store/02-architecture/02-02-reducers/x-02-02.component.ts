@@ -11,7 +11,7 @@ import {
  * https://ngrx.io/guide/store/reducers
  */
 @Component({
-  selector: 'app-x-02-02',
+  selector: 'app--x-02-02',
   templateUrl: './x-02-02.component.html',
   styles: [],
 })

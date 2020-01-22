@@ -6,7 +6,7 @@ import { uniqueValidator } from './validators/unique.validator';
  * https://angular.io/guide/form-validation#async-validation
  */
 @Component({
-  selector: 'app-doc-03-03-04-05',
+  selector: 'app--doc-03-03-04-05',
   templateUrl: './doc-03-03-04-05.component.html',
   styleUrls: ['./doc-03-03-04-05.component.less'],
 })

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-doc-fundamental-architecture-di',
+  selector: 'app--doc-fundamental-architecture-di',
   templateUrl: './doc-fundamental-architecture-di.component.html',
   styleUrls: ['./doc-fundamental-architecture-di.component.scss'],
 })

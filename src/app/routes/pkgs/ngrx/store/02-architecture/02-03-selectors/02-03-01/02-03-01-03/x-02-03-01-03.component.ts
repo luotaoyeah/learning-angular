@@ -15,7 +15,7 @@ import {
  * https://ngrx.io/guide/store/selectors#using-selectors-with-props
  */
 @Component({
-  selector: 'app-x-02-03-01-03',
+  selector: 'app--x-02-03-01-03',
   templateUrl: './x-02-03-01-03.component.html',
   styles: [],
 })

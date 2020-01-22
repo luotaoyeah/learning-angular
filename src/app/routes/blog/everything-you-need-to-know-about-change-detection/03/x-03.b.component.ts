@@ -7,8 +7,8 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'app-x-03-b',
-  template: '<app-x-03-c></app-x-03-c>',
+  selector: 'app--x-03-b',
+  template: '<app--x-03-c></app--x-03-c>',
 })
 export class X03BComponent
   implements

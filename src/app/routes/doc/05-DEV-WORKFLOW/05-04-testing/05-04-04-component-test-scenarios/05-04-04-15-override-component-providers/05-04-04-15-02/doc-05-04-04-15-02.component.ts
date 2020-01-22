@@ -5,7 +5,7 @@ import { Doc05040415Service } from '../services/doc-05-04-04-15.service';
  * https://angular.io/guide/testing#the-overridecomponent-method
  */
 @Component({
-  selector: 'app-doc-05-04-04-15-02',
+  selector: 'app--doc-05-04-04-15-02',
   templateUrl: './doc-05-04-04-15-02.component.html',
   providers: [Doc05040415Service],
 })

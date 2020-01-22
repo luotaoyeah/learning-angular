@@ -2,7 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { ILogger } from './service/doc-03-07-04-06-01.service';
 
 @Component({
-  selector: 'app-doc-03-07-04-06-01',
+  selector: 'app--doc-03-07-04-06-01',
   templateUrl: './doc-03-07-04-06-01.component.html',
   providers: [
     {

@@ -6,7 +6,7 @@ import { QuestionBase } from './vms/question-base';
  * https://angular.io/guide/dynamic-form
  */
 @Component({
-  selector: 'app-doc-03-03-05',
+  selector: 'app--doc-03-03-05',
   templateUrl: './doc-03-03-05.component.html',
   providers: [QuestionService],
 })

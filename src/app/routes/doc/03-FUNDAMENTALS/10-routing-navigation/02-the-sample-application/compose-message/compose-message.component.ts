@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-compose-message',
+  selector: 'app--compose-message',
   templateUrl: './compose-message.component.html',
   styleUrls: ['./compose-message.component.scss'],
 })

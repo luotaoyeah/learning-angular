@@ -9,7 +9,7 @@ import {
  * https://blog.angularindepth.com/working-with-dom-in-angular-unexpected-consequences-and-optimization-techniques-682ac09f6866#1970
  */
 @Component({
-  selector: 'app-x-04',
+  selector: 'app--x-04',
   templateUrl: './x-04.component.html',
 })
 export class X04Component {

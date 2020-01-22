@@ -4,7 +4,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
  * https://angular.io/guide/template-syntax#html-attribute-vs-dom-property
  */
 @Component({
-  selector: 'app-doc-03-03-02-06',
+  selector: 'app--doc-03-03-02-06',
   templateUrl: './doc-03-03-02-06.component.html',
 })
 export class Doc03030206Component {

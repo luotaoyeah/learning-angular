@@ -5,7 +5,7 @@ import { NgModel } from '@angular/forms';
  * https://angular.io/guide/forms-overview#data-flow-in-template-driven-forms
  */
 @Component({
-  selector: 'app-doc-03-03-01-05-02',
+  selector: 'app--doc-03-03-01-05-02',
   templateUrl: './doc-03-03-01-05-02.component.html',
 })
 export class Doc0303010502Component implements OnInit {

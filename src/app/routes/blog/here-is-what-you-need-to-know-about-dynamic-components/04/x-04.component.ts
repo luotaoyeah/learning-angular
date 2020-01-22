@@ -10,7 +10,7 @@ import {
  * https://blog.angularindepth.com/here-is-what-you-need-to-know-about-dynamic-components-in-angular-ac1e96167f9e#2b99
  */
 @Component({
-  selector: 'app-x-04',
+  selector: 'app--x-04',
   templateUrl: './x-04.component.html',
 })
 export class X04Component {

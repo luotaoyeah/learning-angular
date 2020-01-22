@@ -5,7 +5,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
  * https://angular.io/guide/reactive-forms#simple-form-validation
  */
 @Component({
-  selector: 'app-doc-03-03-02-08',
+  selector: 'app--doc-03-03-02-08',
   templateUrl: './doc-03-03-02-08.component.html',
 })
 export class Doc03030208Component {

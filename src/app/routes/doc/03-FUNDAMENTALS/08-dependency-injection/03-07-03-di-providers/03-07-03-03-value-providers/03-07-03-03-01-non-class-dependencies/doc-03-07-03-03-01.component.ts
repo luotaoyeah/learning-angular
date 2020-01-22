@@ -2,7 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { CONFIG_01, CONFIG_TOKEN_01, CONFIG_TOKEN_02, IConfig } from './doc-03-07-03-03-01-config';
 
 @Component({
-  selector: 'app-doc-03-07-03-03-01',
+  selector: 'app--doc-03-07-03-03-01',
   templateUrl: './doc-03-07-03-03-01.component.html',
   providers: [
     {

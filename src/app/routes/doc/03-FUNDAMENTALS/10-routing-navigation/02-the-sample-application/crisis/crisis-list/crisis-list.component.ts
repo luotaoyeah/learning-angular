@@ -5,7 +5,7 @@ import { CrisisService } from '../services/crisis.service';
 import { CrisisDetailResolverService } from '../services/crisis-detail-resolver.service';
 
 @Component({
-  selector: 'app-crisis-list',
+  selector: 'app--crisis-list',
   templateUrl: './crisis-list.component.html',
   styleUrls: ['./crisis-list.component.scss'],
 })

@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
  * https://angular.io/api/common/DatePipe#input-value
  */
 @Component({
-  selector: 'app-doc-09-02-02-06-03-01',
+  selector: 'app--doc-09-02-02-06-03-01',
   templateUrl: './doc-09-02-02-06-03-01.component.html',
 })
 export class Doc090202060301Component implements OnInit {

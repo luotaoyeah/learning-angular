@@ -8,7 +8,7 @@ import { CrisisDetailResolverService } from '../services/crisis-detail-resolver.
 import { NzModalService } from 'ng-zorro-antd';
 
 @Component({
-  selector: 'app-hero-detail',
+  selector: 'app--hero-detail',
   templateUrl: './crisis-detail.component.html',
   styleUrls: ['./crisis-detail.component.scss'],
 })

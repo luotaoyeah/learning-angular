@@ -4,7 +4,7 @@ import { ApplicationRef, Component } from '@angular/core';
  * https://blog.angularindepth.com/boosting-performance-of-angular-applications-with-manual-change-detection-42cb396110fb#b4fb
  */
 @Component({
-  selector: 'app-x-01',
+  selector: 'app--x-01',
   templateUrl: './x-01.component.html',
 })
 export class X01Component {

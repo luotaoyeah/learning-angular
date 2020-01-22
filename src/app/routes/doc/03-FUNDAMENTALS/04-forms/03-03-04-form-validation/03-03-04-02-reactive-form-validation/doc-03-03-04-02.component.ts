@@ -5,7 +5,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
  * https://angular.io/guide/form-validation#reactive-form-validation
  */
 @Component({
-  selector: 'app-doc-03-03-04-02',
+  selector: 'app--doc-03-03-04-02',
   templateUrl: './doc-03-03-04-02.component.html',
   styleUrls: ['./doc-03-03-04-02.component.less'],
 })

@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'app-doc-03-02-04-05-02',
+  selector: 'app--doc-03-02-04-05-02',
   template: '<p>{{bar.name}}</p>',
 })
 export class Doc0302040502Component implements OnInit, OnChanges {

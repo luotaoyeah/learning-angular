@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-doc-03-02-02-12-03-01',
+  selector: 'app--doc-03-02-02-12-03-01',
   template:
     '<button styleClass="ui-button-success" (click)="bar.emit(foo.toUpperCase())">app-doc-03-02-02-12-02-01</button>&nbsp;',
 })

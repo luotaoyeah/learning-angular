@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
  * https://ngrx.io/guide/router-store/actions
  */
 @Component({
-  selector: 'app-x-01',
+  selector: 'app--x-01',
   templateUrl: './x-01.component.html',
   styles: [],
 })

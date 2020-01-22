@@ -11,7 +11,7 @@ import { X0601Component } from './01/x-06-01.component';
  * https://blog.angularindepth.com/here-is-what-you-need-to-know-about-dynamic-components-in-angular-ac1e96167f9e#4591
  */
 @Component({
-  selector: 'app-x-06',
+  selector: 'app--x-06',
   templateUrl: './x-06.component.html',
 })
 export class X06Component {

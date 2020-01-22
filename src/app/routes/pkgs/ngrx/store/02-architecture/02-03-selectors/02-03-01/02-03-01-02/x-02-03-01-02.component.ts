@@ -14,7 +14,7 @@ import {
  * https://ngrx.io/guide/store/selectors#using-selectors-for-multiple-pieces-of-state
  */
 @Component({
-  selector: 'app-x-02-03-01-02',
+  selector: 'app--x-02-03-01-02',
   templateUrl: './x-02-03-01-02.component.html',
   styles: [],
 })

@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'app-x-03-c',
+  selector: 'app--x-03-c',
   template: '',
 })
 export class X03CComponent

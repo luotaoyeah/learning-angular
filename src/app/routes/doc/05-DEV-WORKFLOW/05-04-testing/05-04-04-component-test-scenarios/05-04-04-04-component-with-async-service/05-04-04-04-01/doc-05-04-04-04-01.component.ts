@@ -4,7 +4,7 @@ import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
  * https://angular.io/guide/testing#support-more-macrotasks
  */
 @Component({
-  selector: 'app-doc-05-04-04-04-01',
+  selector: 'app--doc-05-04-04-04-01',
   templateUrl: './doc-05-04-04-04-01.component.html',
 })
 export class Doc0504040401Component implements AfterViewInit {

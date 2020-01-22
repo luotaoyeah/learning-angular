@@ -6,7 +6,7 @@ import { switchMap } from 'rxjs/operators';
 import { of } from 'rxjs';
 
 @Component({
-  selector: 'app-hero-detail',
+  selector: 'app--hero-detail',
   templateUrl: './hero-detail.component.html',
   styleUrls: ['./hero-detail.component.less'],
 })

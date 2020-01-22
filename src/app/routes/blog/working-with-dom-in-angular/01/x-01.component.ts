@@ -10,7 +10,7 @@ import {
  * https://blog.angularindepth.com/working-with-dom-in-angular-unexpected-consequences-and-optimization-techniques-682ac09f6866#9355
  */
 @Component({
-  selector: 'app-x-01',
+  selector: 'app--x-01',
   templateUrl: './x-01.component.html',
 })
 export class X01Component {

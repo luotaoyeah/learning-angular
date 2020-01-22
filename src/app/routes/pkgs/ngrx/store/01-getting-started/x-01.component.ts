@@ -11,7 +11,7 @@ import {
  * https://ngrx.io/guide/store
  */
 @Component({
-  selector: 'app-x-01',
+  selector: 'app--x-01',
   templateUrl: './x-01.component.html',
   styles: [],
 })

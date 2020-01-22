@@ -3,7 +3,7 @@ import { NzButtonComponent } from 'ng-zorro-antd';
 import { Doc090102030304Directive } from './doc-09-01-02-03-03-04.directive';
 
 @Component({
-  selector: 'app-doc-09-01-02-03-03-04',
+  selector: 'app--doc-09-01-02-03-03-04',
   templateUrl: './doc-09-01-02-03-03-04.component.html',
 })
 export class Doc090102030304Component implements AfterContentInit {

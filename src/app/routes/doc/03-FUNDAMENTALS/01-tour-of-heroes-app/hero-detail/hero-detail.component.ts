@@ -5,7 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { HeroService } from '../service/hero.service';
 
 @Component({
-  selector: 'app-hero-detail',
+  selector: 'app--hero-detail',
   templateUrl: './hero-detail.component.html',
   styleUrls: ['./hero-detail.component.scss'],
 })

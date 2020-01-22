@@ -7,7 +7,7 @@ import {
 import { X050101Component } from './x-05-01-01.component';
 
 @Component({
-  selector: 'app-x-05-01',
+  selector: 'app--x-05-01',
   templateUrl: './x-05-01.component.html',
 })
 export class X0501Component {

@@ -7,7 +7,7 @@ import { AAction } from '../store/actions/03.actions';
  * https://ngrx.io/guide/effects/lifecycle#non-dispatching-effects
  */
 @Component({
-  selector: 'app-x-03-02',
+  selector: 'app--x-03-02',
   templateUrl: './x-03-02.component.html',
   styles: [],
 })

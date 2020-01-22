@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
  * https://angular.io/guide/structural-directives#inside-ngfor
  */
 @Component({
-  selector: 'app-doc-03-03-10-04',
+  selector: 'app--doc-03-03-10-04',
   templateUrl: './doc-03-03-10-04.component.html',
   styles: ['.odd{ color: #ff0000; }'],
 })

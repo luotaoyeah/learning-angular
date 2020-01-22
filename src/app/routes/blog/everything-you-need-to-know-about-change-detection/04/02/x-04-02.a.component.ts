@@ -7,9 +7,9 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'app-x-04-02-a',
+  selector: 'app--x-04-02-a',
   template:
-    '<button nz-button>{{foo}}</button><app-x-04-02-b [foo]="foo"></app-x-04-02-b>',
+    '<button nz-button>{{foo}}</button><app--x-04-02-b [foo]="foo"></app--x-04-02-b>',
 })
 export class X0402AComponent implements OnChanges {
   @Input()

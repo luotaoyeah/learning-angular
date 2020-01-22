@@ -6,7 +6,7 @@ import { IMovie } from '../vms/i-movie';
  * https://ngrx.io/guide/effects#comparison-with-component-based-side-effects
  */
 @Component({
-  selector: 'app-x-01-01',
+  selector: 'app--x-01-01',
   templateUrl: './x-01-01.component.html',
   styles: [],
 })

@@ -2,7 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { TOKEN } from './service/doc-03-07-04-03-03.service';
 
 @Component({
-  selector: 'app-doc-03-07-04-03-03',
+  selector: 'app--doc-03-07-04-03-03',
   templateUrl: './doc-03-07-04-03-03.component.html',
 })
 export class Doc0307040303Component implements OnInit {

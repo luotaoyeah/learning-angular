@@ -8,7 +8,7 @@ import { selectCount } from './store/selectors/02-03-02.selectors';
  * https://ngrx.io/guide/store/selectors#selecting-feature-states
  */
 @Component({
-  selector: 'app-x-02-03-02',
+  selector: 'app--x-02-03-02',
   templateUrl: './x-02-03-02.component.html',
   styles: [],
 })

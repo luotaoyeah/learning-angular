@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
  * https://ngrx.io/guide/store/selectors
  */
 @Component({
-  selector: 'app-x-02-03',
+  selector: 'app--x-02-03',
   templateUrl: './x-02-03.component.html',
   styles: [],
 })

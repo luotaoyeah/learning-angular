@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'app-x-04-03-a',
+  selector: 'app--x-04-03-a',
   template: '<button nz-button>{{len}}</button>',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

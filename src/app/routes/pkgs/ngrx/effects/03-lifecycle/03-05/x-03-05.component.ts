@@ -6,7 +6,7 @@ import { IdentityAction } from '../store/actions/03.actions';
  * https://ngrx.io/guide/effects/lifecycle#identify-effects-uniquely
  */
 @Component({
-  selector: 'app-x-03-05',
+  selector: 'app--x-03-05',
   templateUrl: './x-03-05.component.html',
   styles: [],
 })

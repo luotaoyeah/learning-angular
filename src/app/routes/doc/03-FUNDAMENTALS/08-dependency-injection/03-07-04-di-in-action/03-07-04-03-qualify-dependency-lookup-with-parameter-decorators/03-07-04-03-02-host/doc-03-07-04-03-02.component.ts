@@ -2,7 +2,7 @@ import { Component, Host, OnInit, Optional } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-doc-03-07-04-03-02',
+  selector: 'app--doc-03-07-04-03-02',
   templateUrl: './doc-03-07-04-03-02.component.html',
 })
 export class Doc0307040302Component implements OnInit {

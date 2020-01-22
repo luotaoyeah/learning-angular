@@ -9,7 +9,7 @@ import { AAction, BAction, CAction } from './store/actions/03-01.actions';
  * https://ngrx.io/guide/store/metareducers
  */
 @Component({
-  selector: 'app-x-03-01',
+  selector: 'app--x-03-01',
   templateUrl: './x-03-01.component.html',
   styles: [],
 })

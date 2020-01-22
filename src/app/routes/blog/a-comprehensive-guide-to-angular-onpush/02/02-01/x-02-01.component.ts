@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { IConfig } from '../vms/i-config';
 
 @Component({
-  selector: 'app-x-02-01',
+  selector: 'app--x-02-01',
   templateUrl: './x-02-01.component.html',
   styles: [],
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -6,7 +6,7 @@ import { Doc030307Directive } from './directives/doc-03-03-07.directive';
  * https://angular.io/guide/dynamic-component-loader
  */
 @Component({
-  selector: 'app-doc-03-03-07',
+  selector: 'app--doc-03-03-07',
   templateUrl: './doc-03-03-07.component.html',
 })
 export class Doc030307Component {

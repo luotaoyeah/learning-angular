@@ -9,7 +9,7 @@ import { AAction, BAction } from './store/actions/04-01.actions';
  * https://ngrx.io/guide/store/recipes/injecting
  */
 @Component({
-  selector: 'app-x-04-01',
+  selector: 'app--x-04-01',
   templateUrl: './x-04-01.component.html',
   styles: [],
 })

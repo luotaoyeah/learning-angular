@@ -5,7 +5,7 @@ import { Observable, Subscriber } from 'rxjs';
  * https://angular.io/api/common/AsyncPipe
  */
 @Component({
-  selector: 'app-doc-09-02-02-06-01',
+  selector: 'app--doc-09-02-02-06-01',
   templateUrl: './doc-09-02-02-06-01.component.html',
 })
 export class Doc0902020601Component implements OnInit {

@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
  * https://ngrx.io/guide/store/testing#testing-selectors
  */
 @Component({
-  selector: 'app-x-05-03',
+  selector: 'app--x-05-03',
   templateUrl: './x-05-03.component.html',
   styles: [],
 })

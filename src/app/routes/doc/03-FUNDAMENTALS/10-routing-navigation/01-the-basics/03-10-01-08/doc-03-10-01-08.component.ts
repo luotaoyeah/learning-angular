@@ -5,7 +5,7 @@ import { ActivatedRoute, Data, ParamMap, UrlSegment } from '@angular/router';
  * https://angular.io/guide/router#activated-route
  */
 @Component({
-  selector: 'app-doc-03-10-01-08',
+  selector: 'app--doc-03-10-01-08',
   templateUrl: './doc-03-10-01-08.component.html',
 })
 export class Doc03100108Component implements OnInit {

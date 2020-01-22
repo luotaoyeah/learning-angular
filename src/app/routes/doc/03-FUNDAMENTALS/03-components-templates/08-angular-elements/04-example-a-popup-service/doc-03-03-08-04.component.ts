@@ -7,7 +7,7 @@ import { Doc0303080401Component } from './01/doc-03-03-08-04.01.component';
  * https://angular.io/guide/elements#example-a-popup-service
  */
 @Component({
-  selector: 'app-doc-03-03-08-04',
+  selector: 'app--doc-03-03-08-04',
   templateUrl: './doc-03-03-08-04.component.html',
 })
 export class Doc03030804Component {

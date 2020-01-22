@@ -9,7 +9,7 @@ import {
 } from './service/doc-03-07-04-05.service';
 
 @Component({
-  selector: 'app-doc-03-07-04-05',
+  selector: 'app--doc-03-07-04-05',
   templateUrl: './doc-03-07-04-05.component.html',
   providers: [
     {

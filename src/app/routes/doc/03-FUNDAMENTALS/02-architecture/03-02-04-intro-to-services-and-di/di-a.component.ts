@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DiAService } from './service/di-a.service';
 
 @Component({
-  selector: 'app-di-a',
+  selector: 'app--di-a',
   templateUrl: './di-a.component.html',
   styleUrls: ['./di-a.component.scss'],
   /*

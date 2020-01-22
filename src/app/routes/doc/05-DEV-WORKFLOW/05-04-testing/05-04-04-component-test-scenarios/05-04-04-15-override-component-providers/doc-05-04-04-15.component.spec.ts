@@ -4,13 +4,13 @@ import { Component } from '@angular/core';
 import { SharedModule } from '@app/shared';
 
 @Component({
-  selector: 'app-doc-05-04-04-15-01',
+  selector: 'app--doc-05-04-04-15-01',
   template: '',
 })
 class Doc0504041501StubComponent {}
 
 @Component({
-  selector: 'app-doc-05-04-04-15-02',
+  selector: 'app--doc-05-04-04-15-02',
   template: '',
 })
 class Doc0504041502StubComponent {}

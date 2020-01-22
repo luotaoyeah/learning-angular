@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-doc-03-02-02-03-01',
+  selector: 'app--doc-03-02-02-03-01',
   templateUrl: './doc-03-02-02-03-01.component.html',
 })
 export class Doc0302020301Component implements OnInit {

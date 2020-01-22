@@ -5,7 +5,7 @@ import { FormControl, FormGroup } from '@angular/forms';
  * https://angular.io/guide/reactive-forms#creating-nested-form-groups
  */
 @Component({
-  selector: 'app-doc-03-03-02-05',
+  selector: 'app--doc-03-03-02-05',
   templateUrl: './doc-03-03-02-05.component.html',
 })
 export class Doc03030205Component {

@@ -9,7 +9,7 @@ import { FetchMoviesAction } from './store/actions/01-02.actions';
  * https://ngrx.io/guide/effects#writing-effects
  */
 @Component({
-  selector: 'app-x-01-02',
+  selector: 'app--x-01-02',
   templateUrl: './x-01-02.component.html',
   styles: [],
 })

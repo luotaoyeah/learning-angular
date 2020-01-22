@@ -3,7 +3,7 @@ import { Doc03070407Component } from './doc-03-07-04-07.component';
 import { Doc03070407Service } from './service/doc-03-07-04-07.service';
 
 @Component({
-  selector: 'app-doc-03-07-04-07-01',
+  selector: 'app--doc-03-07-04-07-01',
   templateUrl: './doc-03-07-04-07-01.component.html',
 })
 export class Doc0307040701Component extends Doc03070407Component {

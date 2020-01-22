@@ -3,7 +3,7 @@ import { interval, Observable } from 'rxjs';
 import { map, take } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-doc-03-02-11-06-01',
+  selector: 'app--doc-03-02-11-06-01',
   templateUrl: './doc-03-02-11-06-01.component.html',
 })
 export class Doc0302110601Component implements OnInit {

@@ -9,7 +9,7 @@ import {
  * https://blog.angularindepth.com/working-with-dom-in-angular-unexpected-consequences-and-optimization-techniques-682ac09f6866#5097
  */
 @Component({
-  selector: 'app-x-03',
+  selector: 'app--x-03',
   templateUrl: './x-03.component.html',
 })
 export class X03Component implements AfterViewInit {

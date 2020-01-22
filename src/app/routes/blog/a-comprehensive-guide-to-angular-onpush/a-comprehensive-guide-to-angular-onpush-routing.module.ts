@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AComprehensiveGuideToAngularOnpushComponent } from './a-comprehensive-guide-to-angular-onpush.component';
+import { AComprehensiveGuideToAngularOnpushComponent } from '@app/routes/blog/a-comprehensive-guide-to-angular-onpush/a-comprehensive-guide-to-angular-onpush.component';
 
 const routes: Routes = [
   {

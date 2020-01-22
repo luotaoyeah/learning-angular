@@ -4,7 +4,7 @@ import { Component, NgZone, OnInit } from '@angular/core';
  * https://blog.angularindepth.com/do-you-still-think-that-ngzone-zone-js-is-required-for-change-detection-in-angular-16f7a575afef#59e7
  */
 @Component({
-  selector: 'app-x-02',
+  selector: 'app--x-02',
   templateUrl: './x-02.component.html',
 })
 export class X02Component implements OnInit {

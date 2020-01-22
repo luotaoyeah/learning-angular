@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 import { IState } from '../store/state/i-state';
 
 @Component({
-  selector: 'app-x-01-01',
+  selector: 'app--x-01-01',
   templateUrl: './x-01-01.component.html',
   styles: [],
 })

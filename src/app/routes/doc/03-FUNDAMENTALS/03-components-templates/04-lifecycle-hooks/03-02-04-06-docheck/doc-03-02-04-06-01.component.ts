@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'app-doc-03-02-04-06-01',
+  selector: 'app--doc-03-02-04-06-01',
   template: '<div><button nz-button>{{barName}}</button></div>',
 })
 export class Doc0302040601Component implements OnChanges, DoCheck {
@@ -23,7 +23,7 @@ export class Doc0302040601Component implements OnChanges, DoCheck {
    * 也就因此不会触发 ngOnChanges() 的执行
    */
   public ngOnChanges(simpleChanges: SimpleChanges): void {
-    const barSimpleChange: SimpleChange = simpleChanges['bar'];
+    const barSimpleChange: SimpleChange = simpleChanges.bar;
     if (barSimpleChange && !barSimpleChange.firstChange) {
       console.log(`[${Doc0302040601Component.name}]\n`, 'ngOnChanges()');
     }

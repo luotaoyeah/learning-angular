@@ -3,7 +3,7 @@ import { Doc030701Service } from './service/doc-03-07-01.service';
 import { Doc03070102Service } from './service/doc-03-07-01-02.service';
 
 @Component({
-  selector: 'app-doc-03-07-01',
+  selector: 'app--doc-03-07-01',
   templateUrl: './doc-03-07-01.component.html',
 })
 export class Doc030701Component implements OnInit {

@@ -3,7 +3,7 @@ import { FormGroup } from '@angular/forms';
 import { QuestionBase } from '../vms/question-base';
 
 @Component({
-  selector: 'app-question',
+  selector: 'app--question',
   templateUrl: './dynamic-form-question.component.html',
 })
 export class DynamicFormQuestionComponent {

@@ -7,7 +7,7 @@ import {
 import { Doc0302040701Component } from './doc-03-02-04-07-01.component';
 
 @Component({
-  selector: 'app-doc-03-02-04-07',
+  selector: 'app--doc-03-02-04-07',
   templateUrl: './doc-03-02-04-07.component.html',
 })
 export class Doc03020407Component implements AfterViewInit, AfterViewChecked {

@@ -5,7 +5,7 @@ import { FormControl, FormGroup } from '@angular/forms';
  * https://angular.io/guide/reactive-forms#grouping-form-controls
  */
 @Component({
-  selector: 'app-doc-03-03-02-04',
+  selector: 'app--doc-03-03-02-04',
   templateUrl: './doc-03-03-02-04.component.html',
 })
 export class Doc03030204Component {

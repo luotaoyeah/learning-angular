@@ -2,7 +2,7 @@ import { AfterContentInit, Component, ContentChild } from '@angular/core';
 import { NzButtonComponent, NzTagComponent } from 'ng-zorro-antd';
 
 @Component({
-  selector: 'app-doc-09-01-02-03-03-03',
+  selector: 'app--doc-09-01-02-03-03-03',
   templateUrl: './doc-09-01-02-03-03-03.component.html',
 })
 export class Doc090102030303Component implements AfterContentInit {

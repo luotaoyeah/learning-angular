@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-doc-03-03-05-04-01',
+  selector: 'app--doc-03-03-05-04-01',
   templateUrl: './doc-03-03-05-04.01.component.html',
 })
 export class Doc0303050401Component {

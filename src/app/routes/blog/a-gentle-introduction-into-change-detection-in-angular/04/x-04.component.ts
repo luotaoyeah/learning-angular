@@ -4,7 +4,7 @@ import { Component, NgZone } from '@angular/core';
  * https://blog.angularindepth.com/a-gentle-introduction-into-change-detection-in-angular-33f9ffff6f10#61e7
  */
 @Component({
-  selector: 'app-x-04',
+  selector: 'app--x-04',
   templateUrl: './x-04.component.html',
 })
 export class X04Component {

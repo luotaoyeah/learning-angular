@@ -7,7 +7,7 @@ import { catchError } from 'rxjs/operators';
  * https://angular.io/guide/testing#component-marble-tests
  */
 @Component({
-  selector: 'app-doc-05-04-04-05',
+  selector: 'app--doc-05-04-04-05',
   templateUrl: './doc-05-04-04-05.component.html',
 })
 export class Doc05040405Component implements OnInit {

@@ -11,7 +11,7 @@ export const TOKEN = new InjectionToken<string>('some.token');
  * 等到 A 真正需要引用 B 时，就不会有问题了
  */
 @Component({
-  selector: 'app-doc-03-07-04-08',
+  selector: 'app--doc-03-07-04-08',
   templateUrl: './doc-03-07-04-08.component.html',
   providers: [
     {

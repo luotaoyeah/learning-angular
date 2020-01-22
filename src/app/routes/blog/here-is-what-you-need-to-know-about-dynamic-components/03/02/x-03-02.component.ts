@@ -4,7 +4,7 @@ import { AfterViewInit, Compiler, Component } from '@angular/core';
  * https://blog.angularindepth.com/here-is-what-you-need-to-know-about-dynamic-components-in-angular-ac1e96167f9e#2359
  */
 @Component({
-  selector: 'app-x-03-02',
+  selector: 'app--x-03-02',
   templateUrl: './x-03-02.component.html',
 })
 export class X0302Component implements AfterViewInit {

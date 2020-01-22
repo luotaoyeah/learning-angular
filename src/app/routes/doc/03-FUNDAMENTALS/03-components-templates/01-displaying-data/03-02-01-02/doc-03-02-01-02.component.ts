@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-doc-03-02-01-02',
+  selector: 'app--doc-03-02-01-02',
   template: `
     <p>
       可以使用 templateUrl 指定一个外部的模板文件

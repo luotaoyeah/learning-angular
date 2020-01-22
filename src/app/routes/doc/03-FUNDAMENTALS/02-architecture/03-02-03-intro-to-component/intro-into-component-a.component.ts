@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   /*
    * CSS 选择器，用来在 template 中标识当前组件
    */
-  selector: 'app-intro-into-component-a',
+  selector: 'app--intro-into-component-a',
   templateUrl: './intro-into-component-a.component.html',
   styleUrls: ['./intro-into-component-a.component.scss'],
 })
