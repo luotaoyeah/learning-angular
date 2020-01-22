@@ -1,54 +1,9 @@
 <nz-collapse [nzAccordion]="true">
-  <nz-collapse-panel
-    nzExpandedIcon="caret-right"
-    nzHeader="The Input Reference Changes"
-  >
-    <p>
-      当 component 的 change detection 设置为
-      <code>ChangeDetectionStrategy.OnPush</code> 时, 只有在某些情况下, angular
-      才会触发 change detection:
-    </p>
-
-    <ol>
-      <li>
-        当该 component 的某个 input property 的 reference 发生变更时
-      </li>
-      <li>
-        当该 component 或者它的 children 中触发了某个 DOM 事件时
-      </li>
-      <li>
-        手动触发:
-        <ul>
-          <li>
-            调用 ChangeDetectorRef.detectChanges() 方法触发该 component 及其下级
-            component 的 change detection cycle
-          </li>
-          <li>
-            调用 ApplicationRef.tick() 方法触发整个 application 的 change
-            detection cycle
-          </li>
-        </ul>
-      </li>
-    </ol>
-
-    <button nz-button (click)="handleClick01()">CLICK</button>
-    <button nz-button (click)="handleClick02()">CLICK</button>
-    <nz-divider [nzDashed]="true"></nz-divider>
-
-    <app--x-02-01 [config]="config"></app--x-02-01>
-  </nz-collapse-panel>
-
-  <nz-collapse-panel
-    nzExpandedIcon="caret-right"
-    nzHeader="An Event Originated From The Component Or One Of Its Children"
-  >
+  <nz-collapse-panel nzExpandedIcon="caret-right" nzHeader="An Event Originated From The Component Or One Of Its Children">
     <app--x-02-02></app--x-02-02>
   </nz-collapse-panel>
 
-  <nz-collapse-panel
-    nzExpandedIcon="caret-right"
-    nzHeader="We Run Change Detection Explicitly"
-  >
+  <nz-collapse-panel nzExpandedIcon="caret-right" nzHeader="We Run Change Detection Explicitly">
     <app--x-02-03></app--x-02-03>
   </nz-collapse-panel>
 
@@ -56,10 +11,7 @@
     <app--x-02-04></app--x-02-04>
   </nz-collapse-panel>
 
-  <nz-collapse-panel
-    nzExpandedIcon="caret-right"
-    nzHeader="OnPush and View Queries"
-  >
+  <nz-collapse-panel nzExpandedIcon="caret-right" nzHeader="OnPush and View Queries">
     <app--x-02-05>
       <app--x-02-05-01></app--x-02-05-01>
     </app--x-02-05>

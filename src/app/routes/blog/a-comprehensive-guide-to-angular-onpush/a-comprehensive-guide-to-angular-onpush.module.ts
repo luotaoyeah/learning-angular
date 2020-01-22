@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { X0101Component } from '@app/routes/blog/a-comprehensive-guide-to-angular-onpush/01/x-01-01.component';
 import { X01Component } from '@app/routes/blog/a-comprehensive-guide-to-angular-onpush/01/x-01.component';
-import { X0201Component } from '@app/routes/blog/a-comprehensive-guide-to-angular-onpush/02/02-01/x-02-01.component';
+import { X020101Component } from '@app/routes/blog/a-comprehensive-guide-to-angular-onpush/02/01/x-02-01-01.component';
+import { X0201Component } from '@app/routes/blog/a-comprehensive-guide-to-angular-onpush/02/01/x-02-01.component';
 import { X0202Component } from '@app/routes/blog/a-comprehensive-guide-to-angular-onpush/02/02-02/x-02-02.component';
 import { X020301Component } from '@app/routes/blog/a-comprehensive-guide-to-angular-onpush/02/02-03/02-03-01/x-02-03-01.component';
 import { X020302Component } from '@app/routes/blog/a-comprehensive-guide-to-angular-onpush/02/02-03/02-03-02/x-02-03-02.component';
@@ -23,6 +24,7 @@ import { SharedModule } from '@app/shared';
     X0101Component,
     X02Component,
     X0201Component,
+    X020101Component,
     X0202Component,
     X0203Component,
     X020301Component,
