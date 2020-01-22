@@ -1,0 +1,7 @@
+<div [ngStyle]="{ display: 'none' }">{{ runChangeDetection }}</div>
+
+<button mat-raised-button>{{ count }}</button>
+<button (click)="triggerClickEvent()" [ngStyle]="{ marginLeft: '5px' }" mat-raised-button>CLICK</button>
+<button (click)="triggerClickEventAndChange()" [ngStyle]="{ marginLeft: '5px' }" mat-raised-button>CLICK & CHANGE</button>
+
+<app--x-02-02-01></app--x-02-02-01>
