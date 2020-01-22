@@ -1,16 +1,2 @@
-<button nz-button>{{ foo }}</button>
-<nz-divider [nzDashed]="true"></nz-divider>
-
-<p>
-  component 有两种 change detection strategy:
-  <code>ChangeDetectionStrategy.Default</code> 和
-  <code>ChangeDetectionStrategy.OnPush</code> , 可以通过
-  <code>@Component.changeDetection</code> 属性进行配置, 默认为
-  <code>ChangeDetectionStrategy.Default</code>
-</p>
-
-<p>
-  默认的 change detection strategy 的效果为: 当应用发生变更时, angular 就会触发
-  change detection cycle, 去检查是否需要更新 view, 这些变更包括: user events,
-  timers, XHR, promises 等等, 这个过程可能会造成性能问题
-</p>
+<app--x-01-01></app--x-01-01>
+<button (click)="onClick()" [ngStyle]="{ marginLeft: '5px' }" mat-raised-button>trigger change detection</button>

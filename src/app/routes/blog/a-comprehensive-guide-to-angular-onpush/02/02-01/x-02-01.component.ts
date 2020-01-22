@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { IConfig } from '../vms/i-config';
+import { IConfig } from '@app/routes/blog/a-comprehensive-guide-to-angular-onpush/02/vms/i-config';
 
 @Component({
   selector: 'app--x-02-01',

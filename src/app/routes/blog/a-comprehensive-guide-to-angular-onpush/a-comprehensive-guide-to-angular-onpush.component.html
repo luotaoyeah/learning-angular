@@ -1,9 +1,14 @@
-<nz-collapse [nzAccordion]="true">
-  <nz-collapse-panel nzExpandedIcon="caret-right" nzHeader="Default Change Detection Strategy">
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>Default Change Detection Strategy</mat-panel-title>
+    </mat-expansion-panel-header>
     <app--x-01></app--x-01>
-  </nz-collapse-panel>
-
-  <nz-collapse-panel nzExpandedIcon="caret-right" nzHeader="OnPush Change Detection Strategy">
+  </mat-expansion-panel>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>OnPush Change Detection Strategy</mat-panel-title>
+    </mat-expansion-panel-header>
     <app--x-02></app--x-02>
-  </nz-collapse-panel>
-</nz-collapse>
+  </mat-expansion-panel>
+</mat-accordion>
