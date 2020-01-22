@@ -1,3 +1,5 @@
+polyfills.ts
+typings.d.ts
 .eslintrc.js
 husky.config.js
 lint-staged.config.js

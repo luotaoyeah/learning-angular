@@ -1,18 +1,8 @@
 import { Injectable } from '@angular/core';
-import {
-  ActivatedRouteSnapshot,
-  CanActivate,
-  CanActivateChild,
-  CanLoad,
-  Route,
-  Router,
-  RouterStateSnapshot,
-  UrlSegment,
-  UrlTree,
-} from '@angular/router';
-import { Observable, of } from 'rxjs';
-import { AuthService } from './auth.service';
+import { ActivatedRouteSnapshot, CanActivate, CanActivateChild, CanLoad, Route, Router, RouterStateSnapshot, UrlSegment, UrlTree } from '@angular/router';
+import { AuthService } from '@app/routes/doc/03-FUNDAMENTALS/10-routing-navigation/02-the-sample-application/auth/services/auth.service';
 import { NzMessageService } from 'ng-zorro-antd';
+import { Observable, of } from 'rxjs';
 import { delay, tap } from 'rxjs/operators';
 
 /*
@@ -30,10 +20,7 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
    * @param next 要跳转的路由
    * @param state 当前路由状态
    */
-  public canActivate(
-    next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot,
-  ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+  public canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     return this.isLogin(state.url);
   }
 
@@ -66,7 +53,7 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
    * @param segments UrlSegments
    */
   public canLoad(route: Route, segments: Array<UrlSegment>): Observable<boolean> | Promise<boolean> | boolean {
-    return this.isLogin(`/doc/03/10/02/${segments.map(i => i.path).join('/')}`);
+    return this.isLogin(`/doc/03/10/02/${segments.map((i) => i.path).join('/')}`);
   }
 
   /**
@@ -81,6 +68,7 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
     this.authService.redirectUrl = url;
     this.router.navigate(['/doc/03/10/02/login'], {
       queryParams: {
+        // eslint-disable-next-line camelcase
         session_id: 0,
       },
       fragment: 'anchor',

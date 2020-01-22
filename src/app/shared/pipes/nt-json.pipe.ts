@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'ntJson',
 })
 export class NtJsonPipe implements PipeTransform {
-  public transform(value: object): string {
+  public transform(value: Record<string, unknown>): string {
     return JSON.stringify(value, null, 2);
   }
 }

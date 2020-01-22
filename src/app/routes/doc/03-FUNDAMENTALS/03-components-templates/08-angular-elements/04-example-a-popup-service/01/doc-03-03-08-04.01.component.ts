@@ -6,33 +6,21 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./doc-03-03-08-04.01.component.less'],
 })
 export class Doc0303080401Component {
-  //region Input
+  @Output()
+  public close: EventEmitter<void> = new EventEmitter();
+
+  public _message: string = '';
+
+  get message(): string {
+    return this._message;
+  }
 
   @Input()
   set message(message: string) {
     this._message = message;
   }
 
-  get message(): string {
-    return this._message;
-  }
-
-  //endregion
-
-  public _message: string = '';
-
-  //region Output
-
-  @Output()
-  public close: EventEmitter<void> = new EventEmitter();
-
-  //endregion
-
-  //region Method
-
   public handleClose() {
     this.close.emit();
   }
-
-  //endregion
 }

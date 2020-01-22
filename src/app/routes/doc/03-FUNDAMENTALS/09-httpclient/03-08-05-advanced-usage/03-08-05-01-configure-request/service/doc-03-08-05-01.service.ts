@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class Doc03080501Service {
   constructor(private httpClient: HttpClient) {}
 
-  public getSomething(): Observable<object> {
+  public getSomething(): Observable<unknown> {
     /*
      * 可以配置请求的 headers 和 query params，
      * HttpHeaders.set() 方法可以链式调用，添加或者修改一个 header，

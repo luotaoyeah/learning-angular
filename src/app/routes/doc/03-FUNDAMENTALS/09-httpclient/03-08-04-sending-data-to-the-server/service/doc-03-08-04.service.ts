@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class Doc030804Service {
   constructor(private httpClient: HttpClient) {}
 
-  public request(): Observable<object> {
+  public request(): Observable<unknown> {
     /*
      * HttpClient 支持各种 HTTP METHOD 请求，GET/POST/PUT/DELETE/HEAD/OPTIONS/PATCH
      */

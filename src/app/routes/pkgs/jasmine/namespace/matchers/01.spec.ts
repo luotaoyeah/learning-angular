@@ -283,12 +283,12 @@ describe('jasmine.namespace.matchers.01', () => {
     }).toThrow();
 
     expect(() => {
-      // tslint:disable-next-line:no-string-throw
+      // eslint-disable-next-line no-throw-literal
       throw 'FOO';
     }).toThrow('FOO');
 
     expect(() => {
-      // tslint:disable-next-line:no-string-throw
+      // eslint-disable-next-line no-throw-literal
       throw 'FOO';
     }).not.toThrow('BAR');
 
@@ -308,7 +308,7 @@ describe('jasmine.namespace.matchers.01', () => {
      * 抛出的必须是一个 Error 对象
      */
     expect(() => {
-      // tslint:disable-next-line:no-string-throw
+      // eslint-disable-next-line no-throw-literal
       throw 'FOO';
     }).not.toThrowError();
 

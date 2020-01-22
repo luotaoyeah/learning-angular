@@ -1,10 +1,4 @@
-import {
-  async,
-  ComponentFixture,
-  fakeAsync,
-  TestBed,
-  tick,
-} from '@angular/core/testing';
+import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { Doc0504040401Component } from './doc-05-04-04-04-01.component';
 
 describe('Doc05040404Component', () => {
@@ -27,7 +21,8 @@ describe('Doc05040404Component', () => {
    */
   beforeEach(() => {
     // @ts-ignore
-    window['__zone_symbol__FakeAsyncTestMacroTask'] = [
+    // eslint-disable-next-line camelcase
+    window.__zone_symbol__FakeAsyncTestMacroTask = [
       {
         source: 'HTMLCanvasElement.toBlob',
         callbackArgs: [{ size: 200 }],
