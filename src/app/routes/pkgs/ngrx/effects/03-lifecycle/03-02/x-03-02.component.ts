@@ -9,7 +9,6 @@ import { AAction } from '../store/actions/03.actions';
 @Component({
   selector: 'app--x-03-02',
   templateUrl: './x-03-02.component.html',
-  styles: [],
 })
 export class X0302Component implements OnInit {
   constructor(private store: Store<{ 'pkgs-ngrx-effects-03': IState }>) {}

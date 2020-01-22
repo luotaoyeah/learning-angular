@@ -11,7 +11,6 @@ import { FetchMoviesAction } from './store/actions/01-02.actions';
 @Component({
   selector: 'app--x-01-02',
   templateUrl: './x-01-02.component.html',
-  styles: [],
 })
 export class X0102Component implements OnInit {
   public movies$: Observable<Array<IMovie>>;

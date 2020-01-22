@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app--doc-08-03',
   templateUrl: './doc-08-03.component.html',
-  styles: [],
 })
 export class Doc0803Component implements OnInit {
   public ngOnInit() {}

@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { IState } from '../../../../../reducers';
-import {
-  DecrementAction,
-  IncrementAction,
-  ResetAction,
-} from './store/actions/01.actions';
+import { DecrementAction, IncrementAction, ResetAction } from './store/actions/01.actions';
 
 /*
  * https://ngrx.io/guide/store
@@ -13,7 +9,6 @@ import {
 @Component({
   selector: 'app--x-01',
   templateUrl: './x-01.component.html',
-  styles: [],
 })
 export class X01Component implements OnInit {
   constructor(private store: Store<IState>) {}

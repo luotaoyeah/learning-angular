@@ -6,7 +6,6 @@ import { select, Store } from '@ngrx/store';
 @Component({
   selector: 'app--x-02-02-01',
   templateUrl: './x-02-02-01.component.html',
-  styles: [],
 })
 export class X020201Component implements OnInit {
   public count01$: Observable<IState>;

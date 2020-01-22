@@ -10,7 +10,6 @@ import { selectCount } from './store/selectors/02-03-02.selectors';
 @Component({
   selector: 'app--x-02-03-02',
   templateUrl: './x-02-03-02.component.html',
-  styles: [],
 })
 export class X020302Component implements OnInit {
   public count$: Observable<number>;

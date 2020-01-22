@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
       doc03060601 works!
     </p>
   `,
-  styles: [],
 })
 export class Doc03060601Component implements OnInit {
   public ngOnInit() {}

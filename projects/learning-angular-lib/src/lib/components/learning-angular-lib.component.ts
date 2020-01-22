@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
       LEARNING ANGULAR LIB
     </p>
   `,
-  styles: [],
 })
 export class LearningAngularLibComponent implements OnInit {
   constructor() {}

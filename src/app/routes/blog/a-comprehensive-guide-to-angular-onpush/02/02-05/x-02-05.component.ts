@@ -4,7 +4,6 @@ import { X020501Component } from './02-05-01/x-02-05-01.component';
 @Component({
   selector: 'app--x-02-05',
   templateUrl: './x-02-05.component.html',
-  styles: [],
 })
 export class X0205Component implements OnInit {
   @ContentChild(X020501Component, { static: false })

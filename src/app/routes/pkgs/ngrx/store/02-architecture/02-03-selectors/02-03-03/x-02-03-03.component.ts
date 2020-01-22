@@ -9,7 +9,6 @@ import { selectTotal } from './store/selectors/02-03-03.selectors';
 @Component({
   selector: 'app--x-02-03-03',
   templateUrl: './x-02-03-03.component.html',
-  styles: [],
 })
 export class X020303Component implements OnInit {
   public total01: number = 0;

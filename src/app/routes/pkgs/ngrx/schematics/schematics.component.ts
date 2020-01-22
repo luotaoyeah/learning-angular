@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app--schematics',
   templateUrl: './schematics.component.html',
-  styles: [],
 })
 export class SchematicsComponent implements OnInit {
   public ngOnInit() {}

@@ -4,11 +4,7 @@ import { IBook } from './store/state/i-book';
 import { createSelector, select, Store } from '@ngrx/store';
 import { IAppState } from './store/state/i-app-state';
 import { selectVisibleBooks } from './store/selectors/02-03-01-02.selectors';
-import {
-  ClearSelectedUserAction,
-  ResetSelectedUserAction,
-  SetSelectedUserAction,
-} from './store/actions/02-03-01-02.actions';
+import { ClearSelectedUserAction, ResetSelectedUserAction, SetSelectedUserAction } from './store/actions/02-03-01-02.actions';
 
 /*
  * https://ngrx.io/guide/store/selectors#using-selectors-for-multiple-pieces-of-state
@@ -16,7 +12,6 @@ import {
 @Component({
   selector: 'app--x-02-03-01-02',
   templateUrl: './x-02-03-01-02.component.html',
-  styles: [],
 })
 export class X02030102Component implements OnInit {
   public books$: Observable<Array<IBook>>;
@@ -26,14 +21,7 @@ export class X02030102Component implements OnInit {
       '02-03-01-02': IAppState;
     }>,
   ) {
-    this.books$ = store.pipe(
-      select(
-        createSelector(
-          (state: { '02-03-01-02': IAppState }) => state['02-03-01-02'],
-          selectVisibleBooks,
-        ),
-      ),
-    );
+    this.books$ = store.pipe(select(createSelector((state: { '02-03-01-02': IAppState }) => state['02-03-01-02'], selectVisibleBooks)));
   }
 
   public ngOnInit() {}

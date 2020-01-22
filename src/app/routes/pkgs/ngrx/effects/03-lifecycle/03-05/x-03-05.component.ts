@@ -8,10 +8,8 @@ import { IdentityAction } from '../store/actions/03.actions';
 @Component({
   selector: 'app--x-03-05',
   templateUrl: './x-03-05.component.html',
-  styles: [],
 })
 export class X0305Component implements OnInit {
-
   constructor(private store: Store<any>) {}
 
   public ngOnInit() {}

@@ -11,7 +11,6 @@ import { AAction, BAction } from './store/actions/04-01.actions';
 @Component({
   selector: 'app--x-04-01',
   templateUrl: './x-04-01.component.html',
-  styles: [],
 })
 export class X0401Component implements OnInit {
   public x$: Observable<number>;

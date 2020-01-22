@@ -4,7 +4,6 @@ import { IConfig } from '../vms/i-config';
 @Component({
   selector: 'app--x-02-01',
   templateUrl: './x-02-01.component.html',
-  styles: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class X0201Component {

@@ -13,21 +13,13 @@ import { selectAllUsers, selectFeature } from './store/selectors/02.selectors';
 @Component({
   selector: 'app--x-02',
   templateUrl: './x-02.component.html',
-  styles: [],
 })
 export class X02Component implements OnInit {
   public users$: Observable<Array<User>>;
   public userTableLoading: boolean = false;
 
   constructor(private store: Store<IAppState>, private x02Service: X02Service) {
-    this.users$ = this.store.pipe(
-      select(
-        createSelector(
-          selectFeature,
-          selectAllUsers,
-        ),
-      ),
-    );
+    this.users$ = this.store.pipe(select(createSelector(selectFeature, selectAllUsers)));
   }
 
   public ngOnInit() {}

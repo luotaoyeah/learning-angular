@@ -8,7 +8,6 @@ import { IMovie } from '../vms/i-movie';
 @Component({
   selector: 'app--x-01-01',
   templateUrl: './x-01-01.component.html',
-  styles: [],
 })
 export class X0101Component implements OnInit {
   public movies: Array<IMovie> = [];
