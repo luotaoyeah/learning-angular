@@ -10,9 +10,9 @@ export class X020302Component implements OnInit {
 
   constructor(private applicationRef: ApplicationRef) {}
 
-  get foo(): string {
-    console.log(`[${X020302Component.name}]\n`, 'FOO');
-    return 'FOO';
+  get runChangeDetection(): boolean {
+    console.log(`[${X020302Component.name}]\n`, 'runChangeDetection()');
+    return true;
   }
 
   public ngOnInit(): void {
