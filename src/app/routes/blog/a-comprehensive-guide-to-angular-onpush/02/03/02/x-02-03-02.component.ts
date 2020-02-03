@@ -1,4 +1,6 @@
 import { ApplicationRef, ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { interval } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app--x-02-03-02',
@@ -16,14 +18,14 @@ export class X020302Component implements OnInit {
   }
 
   public ngOnInit(): void {
-    setTimeout(() => {
-      this.count = 9;
-
-      /*
-       * ApplicationRef.tick() 方法,
-       * 触发整个 application 的 change detection cycle
-       */
-      this.applicationRef.tick();
-    }, 5000);
+    interval(1000)
+      .pipe(
+        tap((value) => {
+          this.count = value;
+          // `ApplicationRef.tick()` 方法, 触发整个应用的 change detection
+          this.applicationRef.tick();
+        }),
+      )
+      .subscribe();
   }
 }
