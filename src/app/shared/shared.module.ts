@@ -18,7 +18,9 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzListModule } from 'ng-zorro-antd/list';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzMessageModule } from 'ng-zorro-antd/message';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzProgressModule } from 'ng-zorro-antd/progress';
@@ -47,6 +49,8 @@ const NG_ZORRO_MODULES: Array<SafeAny> = [
   NzSelectModule,
   NzMessageModule,
   NzModalModule,
+  NzLayoutModule,
+  NzMenuModule,
 ];
 const MATERIAL_MODULES: Array<SafeAny> = [MatMenuModule, MatButtonModule, MatIconModule, MatExpansionModule];
 

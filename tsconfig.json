@@ -8,7 +8,7 @@
   },
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "src/",
+    "baseUrl": "./",
     "declaration": false,
     "downlevelIteration": true,
     "emitDecoratorMetadata": true,
@@ -21,11 +21,11 @@
     "noUnusedLocals": true,
     "outDir": "./dist/out-tsc",
     "paths": {
-      "@src/*": ["./*"],
-      "@app/*": ["app/*"],
-      "@app/core": ["app/core/index"],
-      "@app/shared": ["app/shared/index"],
-      "@app/env/*": ["environments/*"]
+      "@src/*": ["src/*"],
+      "@app/*": ["src/app/*"],
+      "@app/core": ["src/app/core/index"],
+      "@app/shared": ["src/app/shared/index"],
+      "@app/env/*": ["src/environments/*"]
     },
     "resolveJsonModule": true,
     "sourceMap": true,

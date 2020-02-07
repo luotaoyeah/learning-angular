@@ -1,6 +1,7 @@
-polyfills.ts
-typings.d.ts
 .eslintrc.js
+commit-msg.js
 husky.config.js
 lint-staged.config.js
+polyfills.ts
 prettier.config.js
+typings.d.ts
