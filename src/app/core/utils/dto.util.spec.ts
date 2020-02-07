@@ -5,7 +5,7 @@ class TestDTO {
   public foo: string = '';
 
   constructor(t: Partial<TestDTO> = {}) {
-    DtoUtil.keys(t).forEach(key => {
+    DtoUtil.keys(t).forEach((key) => {
       const value = Reflect.get(t, key);
       if (!isNil(value)) {
         switch (key) {
@@ -30,6 +30,7 @@ describe('src/app/core/utils/dto.util.ts', () => {
   });
 
   it('should get keys by #keys()', () => {
+    // @ts-ignore
     const keys = DtoUtil.keys<TestDTO>(new TestDTO());
     expect(keys).toEqual(jasmine.arrayWithExactContents(['foo']));
   });

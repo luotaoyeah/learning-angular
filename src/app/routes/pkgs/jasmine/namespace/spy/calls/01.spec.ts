@@ -8,10 +8,10 @@ describe('jasmine.namespace.spy.calls.any.01', () => {
   it('01', () => {
     const spyFoo = jasmine.createSpy('spyFoo');
 
-    expect(spyFoo.calls.SafeAny()).toBe(false);
+    expect(spyFoo.calls.any()).toBe(false);
 
     spyFoo();
-    expect(spyFoo.calls.SafeAny()).toBe(true);
+    expect(spyFoo.calls.any()).toBe(true);
     expect(spyFoo).toHaveBeenCalled();
   });
 });

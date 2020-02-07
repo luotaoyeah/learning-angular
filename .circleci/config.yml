@@ -21,7 +21,7 @@ jobs:
             - 'node_modules'
       - run:
           name: build
-          command: npm run build:learning-angular-lib
+          command: npm run build:learning-angular-lib:prod
 
   test-learning-angular-lib:
     working_directory: ~/learning-angular

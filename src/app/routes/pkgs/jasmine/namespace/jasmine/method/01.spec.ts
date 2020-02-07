@@ -8,6 +8,8 @@
  *     如果自定义比较方法返回 undefined，则继续调用 toEqual() 的默认比较方法进行比较
  */
 
+import { SafeAny } from '@src/typings';
+
 describe('jasmine.namespace.jasmine.method.addCustomEqualityTester.01', () => {
   const foo: SafeAny = { a: 'a', b: 'b' };
 
