@@ -31,54 +31,6 @@ export class HeroService {
   constructor(private httpClient: HttpClient, private messageService: MessageService) {}
 
   /**
-   * 获取英雄列表
-   */
-  public getHeroes(): Observable<Array<Hero>> {
-    /*
-     * 通常来讲，一个 Observable 可以多次返回，
-     * 但是对于 HttpClient 来讲，它的请求方法返回的 Observable 只会返回一次
-     */
-    return this.httpClient.get<Array<Hero>>(this.heroesUrl).pipe(
-      tap(() => {
-        this.log('[加载英雄列表]');
-      }),
-      catchError(this.handleError<Array<Hero>>('getHeroes', [])),
-    );
-  }
-
-  /**
-   * 根据ID获取英雄
-   * @param id 英雄ID
-   */
-  public getHero(id: number): Observable<Hero> {
-    return this.httpClient.get<Hero>(`${this.heroesUrl}/${id}`).pipe(
-      tap(() => {
-        this.log(`[查询英雄]: [ id = ${id} ]`);
-      }),
-      catchError(this.handleError<Hero>(`getHero id=${id}`)),
-    );
-  }
-
-  /**
-   * 更新英雄
-   * @param hero 英雄
-   */
-
-  public updateHero(hero: Hero): Observable<SafeAny> {
-    return this.httpClient
-      .put<Hero>(this.heroesUrl, hero, {
-        headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
-      })
-      .pipe(
-        tap(() => {
-          this.log(`[更新英雄]: [ id = ${hero.id}]`);
-        }),
-
-        catchError(this.handleError<SafeAny>(`updateHero`)),
-      );
-  }
-
-  /**
    * 添加英雄
    * @param hero 英雄
    */
@@ -117,6 +69,43 @@ export class HeroService {
   }
 
   /**
+   * 根据ID获取英雄
+   * @param id 英雄ID
+   */
+  public getHero(id: number): Observable<Hero> {
+    return this.httpClient.get<Hero>(`${this.heroesUrl}/${id}`).pipe(
+      tap(() => {
+        this.log(`[查询英雄]: [ id = ${id} ]`);
+      }),
+      catchError(this.handleError<Hero>(`getHero id=${id}`)),
+    );
+  }
+
+  /**
+   * 获取英雄列表
+   */
+  public getHeroes(): Observable<Array<Hero>> {
+    /*
+     * 通常来讲，一个 Observable 可以多次返回，
+     * 但是对于 HttpClient 来讲，它的请求方法返回的 Observable 只会返回一次
+     */
+    return this.httpClient.get<Array<Hero>>(this.heroesUrl).pipe(
+      tap(() => {
+        this.log('[加载英雄列表]');
+      }),
+      catchError(this.handleError<Array<Hero>>('getHeroes', [])),
+    );
+  }
+
+  /**
+   * 打印日志消息
+   * @param message 消息
+   */
+  public log(message: string): void {
+    this.messageService.add(`HeroService: ${message}`);
+  }
+
+  /**
    * 搜索英雄
    * @param term 关键字
    */
@@ -134,11 +123,22 @@ export class HeroService {
   }
 
   /**
-   * 打印日志消息
-   * @param message 消息
+   * 更新英雄
+   * @param hero 英雄
    */
-  public log(message: string): void {
-    this.messageService.add(`HeroService: ${message}`);
+
+  public updateHero(hero: Hero): Observable<SafeAny> {
+    return this.httpClient
+      .put<Hero>(this.heroesUrl, hero, {
+        headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+      })
+      .pipe(
+        tap(() => {
+          this.log(`[更新英雄]: [ id = ${hero.id}]`);
+        }),
+
+        catchError(this.handleError<SafeAny>(`updateHero`)),
+      );
   }
 
   /**
@@ -147,8 +147,8 @@ export class HeroService {
    * @param result 默认结果
    */
   private handleError<T>(operation: string = 'operation', result?: T) {
-    return (err: SafeAny): Observable<T> => {
-      this.log(`${operation} FAILED: ${err.body.error}`);
+    return (e: SafeAny): Observable<T> => {
+      this.log(`${operation} FAILED: ${e.message}`);
       return of(result as T);
     };
   }
