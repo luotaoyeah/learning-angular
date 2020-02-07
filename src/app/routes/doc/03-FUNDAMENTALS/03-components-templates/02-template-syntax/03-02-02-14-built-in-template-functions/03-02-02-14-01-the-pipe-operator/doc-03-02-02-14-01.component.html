@@ -1,6 +1,6 @@
 <p>
   TS 中可以使用 type assertion 进行类型断言，angular 在 template 中提供了一个特殊的函数 $any() 来实现类似的功能， $any()
-  函数的用法如下：$any(obj).prop，类似于 TS 中的如下语法：(obj as any).prop
+  函数的用法如下：$any(obj).prop，类似于 TS 中的如下语法：(obj as SafeAny).prop
 </p>
 <p>{{ $any(obj).prop }}</p>
 

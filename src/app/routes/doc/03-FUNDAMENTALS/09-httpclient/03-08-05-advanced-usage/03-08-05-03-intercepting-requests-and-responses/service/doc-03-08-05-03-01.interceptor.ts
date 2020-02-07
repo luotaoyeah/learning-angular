@@ -1,6 +1,7 @@
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
+import { SafeAny } from '../../../../../../../../typings';
 
 /*
  * 拦截器（interceptor）用来拦截请求和返回，
@@ -28,12 +29,7 @@ export class Doc0308050301Interceptor implements HttpInterceptor {
    *     HttpEventType.Response：        接收到响应体
    *     HttpEventType.User：            用户自定义的事件
    */
-  public intercept(
-
-    httpRequest: HttpRequest<any>,
-    httpHandler: HttpHandler,
-
-  ): Observable<HttpEvent<any>> {
+  public intercept(httpRequest: HttpRequest<SafeAny>, httpHandler: HttpHandler): Observable<HttpEvent<SafeAny>> {
     if (httpRequest.url.includes('doc-03-08-05-03')) {
       let url = httpRequest.url;
       url = `${url}?_=${Date.now()}`;

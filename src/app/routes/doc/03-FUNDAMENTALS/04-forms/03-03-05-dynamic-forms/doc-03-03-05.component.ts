@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SafeAny } from '../../../../../../typings';
 import { QuestionService } from './services/question.service';
 import { QuestionBase } from './vms/question-base';
 
@@ -11,8 +12,7 @@ import { QuestionBase } from './vms/question-base';
   providers: [QuestionService],
 })
 export class Doc030305Component {
-
-  public questions: Array<QuestionBase<any>>;
+  public questions: Array<QuestionBase<SafeAny>>;
 
   constructor(questionService: QuestionService) {
     this.questions = questionService.getQuestions();

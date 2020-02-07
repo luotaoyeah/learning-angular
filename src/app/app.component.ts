@@ -1,17 +1,19 @@
 import { Component, ElementRef, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import { NavigationCancel, NavigationEnd, NavigationError, RouteConfigLoadStart, Router } from '@angular/router';
-import { filter, takeUntil } from 'rxjs/operators';
-import { NzMessageService, NzModalService, VERSION as VERSION_ZORRO } from 'ng-zorro-antd';
-import { Doc0306080201Service } from './routes/doc/03-FUNDAMENTALS/07-ngmodules/03-06-08-singleton-services/03-06-08-02-the-for-root-pattern/doc-03-06-08-02-01/service/doc-03-06-08-02-01.service';
+import { NzMessageService } from 'ng-zorro-antd/message';
+import { NzModalService } from 'ng-zorro-antd/modal';
+import { VERSION as VERSION_ZORRO } from 'ng-zorro-antd/version';
 import { Subject } from 'rxjs';
+import { filter, takeUntil } from 'rxjs/operators';
+import { Doc0306080201Service } from './routes/doc/03-FUNDAMENTALS/07-ngmodules/03-06-08-singleton-services/03-06-08-02-the-for-root-pattern/doc-03-06-08-02-01/service/doc-03-06-08-02-01.service';
 
 @Component({
   selector: 'app--root',
   templateUrl: './app.component.html',
 })
 export class AppComponent implements OnInit, OnDestroy {
-  private unsubscribe$ = new Subject<void>();
   public isFetching: boolean = false;
+  private unsubscribe$ = new Subject<void>();
 
   constructor(
     private router: Router,
@@ -23,7 +25,7 @@ export class AppComponent implements OnInit, OnDestroy {
   ) {
     renderer2.setAttribute(elementRef.nativeElement, 'ng-zorro-version', VERSION_ZORRO.full);
 
-    this.router.events.pipe(takeUntil(this.unsubscribe$)).subscribe(evt => {
+    this.router.events.pipe(takeUntil(this.unsubscribe$)).subscribe((evt) => {
       if (!this.isFetching && evt instanceof RouteConfigLoadStart) {
         this.isFetching = true;
       }
@@ -48,18 +50,18 @@ export class AppComponent implements OnInit, OnDestroy {
     });
   }
 
+  public ngOnDestroy() {
+    const { unsubscribe$ } = this;
+    unsubscribe$.next();
+    unsubscribe$.complete();
+  }
+
   public ngOnInit() {
-    this.router.events.pipe(filter(evt => evt instanceof NavigationEnd)).subscribe(() => {
+    this.router.events.pipe(filter((evt) => evt instanceof NavigationEnd)).subscribe(() => {
       this.modalService.closeAll();
     });
 
     // @ts-ignore
     window.DOC_0306080201_SERVICE_01 = this.doc0306080201Service;
-  }
-
-  public ngOnDestroy() {
-    const { unsubscribe$ } = this;
-    unsubscribe$.next();
-    unsubscribe$.complete();
   }
 }

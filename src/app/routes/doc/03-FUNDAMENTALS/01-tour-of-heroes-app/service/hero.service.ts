@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { SafeAny } from '../../../../../../typings';
 import { Hero } from './hero';
 import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -63,7 +64,7 @@ export class HeroService {
    * @param hero 英雄
    */
 
-  public updateHero(hero: Hero): Observable<any> {
+  public updateHero(hero: Hero): Observable<SafeAny> {
     return this.httpClient
       .put<Hero>(this.heroesUrl, hero, {
         headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
@@ -73,7 +74,7 @@ export class HeroService {
           this.log(`[更新英雄]: [ id = ${hero.id}]`);
         }),
 
-        catchError(this.handleError<any>(`updateHero`)),
+        catchError(this.handleError<SafeAny>(`updateHero`)),
       );
   }
 
@@ -146,8 +147,7 @@ export class HeroService {
    * @param result 默认结果
    */
   private handleError<T>(operation: string = 'operation', result?: T) {
-
-    return (err: any): Observable<T> => {
+    return (err: SafeAny): Observable<T> => {
       this.log(`${operation} FAILED: ${err.body.error}`);
       return of(result as T);
     };

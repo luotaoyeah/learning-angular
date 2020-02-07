@@ -1,4 +1,5 @@
 import { map } from 'lodash';
+import { SafeAny } from '../../../typings';
 
 /**
  * DTO utils
@@ -10,7 +11,7 @@ class DtoUtil {
    * @param Ctor The model class
    * @param data The response data
    */
-  public static from<T>(Ctor: new (...args: Array<any>) => T, data?: any | null): T {
+  public static from<T>(Ctor: new (...args: Array<SafeAny>) => T, data?: SafeAny | null): T {
     return new Ctor(data);
   }
 
@@ -20,7 +21,7 @@ class DtoUtil {
    * @param Ctor The model class
    * @param data The response data
    */
-  public static fromArray<T>(Ctor: new (...args: Array<any>) => T, data?: Array<any> | null): Array<T> {
+  public static fromArray<T>(Ctor: new (...args: Array<SafeAny>) => T, data?: Array<SafeAny> | null): Array<T> {
     return map(data, (item) => DtoUtil.from<T>(Ctor, item));
   }
 

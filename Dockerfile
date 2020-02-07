@@ -1,5 +1,5 @@
 # stage-build
-FROM node:12 AS stage-build
+FROM node:14.14 AS stage-build
 
 ENV DISABLE_OPENCOLLECTIVE=1
 
@@ -22,7 +22,7 @@ WORKDIR /app
 COPY --from=stage-build /app/dist .
 
 WORKDIR /app
-COPY /config/nginx/nginx.conf /etc/nginx/nginx.conf
+COPY /deploy/nginx.conf /etc/nginx/nginx.conf
 
 EXPOSE 80
 

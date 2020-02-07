@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SafeAny } from '../../../../../../../typings';
 import { Doc03080503Service } from './service/doc-03-08-05-03.service';
 import { Doc0308050304Service } from './service/doc-03-08-05-03-04.service';
 import { tap } from 'rxjs/operators';
@@ -25,8 +26,7 @@ export class Doc03080503Component implements OnInit {
       this.doc0308050304Service
         .upload(file)
         .pipe(
-
-          tap((httpEvent: HttpEvent<any>) => {
+          tap((httpEvent: HttpEvent<SafeAny>) => {
             if (httpEvent.type === HttpEventType.UploadProgress) {
               this.percent = Math.round(
                 // tslint:disable-next-line:no-non-null-assertion

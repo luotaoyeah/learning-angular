@@ -1,4 +1,5 @@
 import { ApplicationRef, Component } from '@angular/core';
+import { SafeAny } from '../../../../../typings';
 
 /*
  * https://blog.angularindepth.com/boosting-performance-of-angular-applications-with-manual-change-detection-42cb396110fb#b4fb
@@ -17,8 +18,7 @@ export class X01Component {
    */
   constructor(applicationRef: ApplicationRef) {
     applicationRef.tick = new Proxy(applicationRef.tick, {
-
-      apply(target: () => void, thisArg: any, argArray?: any): any {
+      apply(target: () => void, thisArg: SafeAny, argArray?: SafeAny): SafeAny {
         console.log(`[${X01Component.name}]\ntick()`, new Date().toISOString());
         return target.apply(thisArg, argArray);
       },

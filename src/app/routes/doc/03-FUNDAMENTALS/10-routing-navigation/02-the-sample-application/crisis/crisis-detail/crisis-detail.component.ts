@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Crisis } from '../models/crisis';
 import { ActivatedRoute, Data, Router } from '@angular/router';
-import { CrisisService } from '../services/crisis.service';
+import { NzModalService } from 'ng-zorro-antd/modal';
 import { Observable } from 'rxjs';
 import { ICanDeactivateComponent } from '../../auth/services/can-deactivate.guard';
+import { Crisis } from '../models/crisis';
 import { CrisisDetailResolverService } from '../services/crisis-detail-resolver.service';
-import { NzModalService } from 'ng-zorro-antd';
+import { CrisisService } from '../services/crisis.service';
 
 @Component({
   selector: 'app--hero-detail',
@@ -26,6 +26,32 @@ export class CrisisDetailComponent implements OnInit, ICanDeactivateComponent {
     public crisisDetailResolverService: CrisisDetailResolverService,
     private nzModalService: NzModalService,
   ) {}
+
+  public canDeactivate(): Observable<boolean> | Promise<boolean> | boolean {
+    if (!this.crisis || this.crisis.name === this.crisisModel.name) {
+      return true;
+    }
+
+    return new Promise((resolve: (result: boolean) => void) => {
+      this.nzModalService.confirm({
+        nzTitle: '确认',
+        nzContent: '确认离开?',
+        nzOnOk() {
+          resolve(true);
+        },
+        nzOnCancel() {
+          resolve(false);
+        },
+      });
+    });
+  }
+
+  public cancel() {
+    if (this.crisis) {
+      this.crisisModel.name = this.crisis.name;
+    }
+    this.gotoCrisesPage();
+  }
 
   public ngOnInit() {
     /*
@@ -48,35 +74,9 @@ export class CrisisDetailComponent implements OnInit, ICanDeactivateComponent {
     }
   }
 
-  public cancel() {
-    if (this.crisis) {
-      this.crisisModel.name = this.crisis.name;
-    }
-    this.gotoCrisesPage();
-  }
-
   private gotoCrisesPage() {
     this.router.navigate(['../', { id: this.crisis ? this.crisis.id : '', foo: 'foo' }], {
       relativeTo: this.activatedRoute,
-    });
-  }
-
-  public canDeactivate(): Observable<boolean> | Promise<boolean> | boolean {
-    if (!this.crisis || this.crisis.name === this.crisisModel.name) {
-      return true;
-    }
-
-    return new Promise((resolve: (result: boolean) => void) => {
-      this.nzModalService.confirm({
-        nzTitle: '确认',
-        nzContent: '确认离开?',
-        nzOnOk() {
-          resolve(true);
-        },
-        nzOnCancel() {
-          resolve(false);
-        },
-      });
     });
   }
 }

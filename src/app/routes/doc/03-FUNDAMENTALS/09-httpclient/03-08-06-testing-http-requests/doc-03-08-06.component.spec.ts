@@ -63,7 +63,7 @@ describe('Doc030806Component', () => {
      * HttpTestingController.expectOne() 方法，
      * 除了可以使用请求地址进行匹配之外，还可以使用自定义的逻辑进行匹配
      */
-    const testRequest = httpTestingController.expectOne((httpRequest: HttpRequest<any>) => {
+    const testRequest = httpTestingController.expectOne((httpRequest: HttpRequest<SafeAny>) => {
       return httpRequest.headers.has('H01');
     });
 

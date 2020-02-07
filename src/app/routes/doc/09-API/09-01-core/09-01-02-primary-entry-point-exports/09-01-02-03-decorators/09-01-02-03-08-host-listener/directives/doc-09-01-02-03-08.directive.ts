@@ -1,5 +1,5 @@
 import { Directive, HostListener } from '@angular/core';
-import { NzMessageService } from 'ng-zorro-antd';
+import { NzMessageService } from 'ng-zorro-antd/message';
 
 @Directive({
   selector: '[appDoc0901020308]',

@@ -29,7 +29,7 @@ describe('jasmine.namespace.jasmine.method.addMatchers.01', () => {
        */
       toBeFoo(util: MatchersUtil, customEqualityTesters: ReadonlyArray<CustomEqualityTester>): CustomMatcher {
         return {
-          compare(actual: any, expected?: any): CustomMatcherResult {
+          compare(actual: SafeAny, expected?: SafeAny): CustomMatcherResult {
             const pass = 'foo' in actual;
 
             /*
@@ -72,7 +72,7 @@ describe('jasmine.namespace.jasmine.method.addMatchers.01', () => {
            * 则在使用 .not 时，会直接调用 negativeCompare() 方法
            */
 
-          negativeCompare(actual: any): CustomMatcherResult {
+          negativeCompare(actual: SafeAny): CustomMatcherResult {
             console.log('toBeBar.negativeCompare()');
             const pass = !('bar' in actual);
             return {

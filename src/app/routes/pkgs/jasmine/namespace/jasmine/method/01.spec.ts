@@ -9,18 +9,16 @@
  */
 
 describe('jasmine.namespace.jasmine.method.addCustomEqualityTester.01', () => {
+  const foo: SafeAny = { a: 'a', b: 'b' };
 
-  const foo: any = { a: 'a', b: 'b' };
-
-  const bar: any = { a: 'a', c: 'c' };
+  const bar: SafeAny = { a: 'a', c: 'c' };
 
   it('01', () => {
     expect(foo).not.toEqual(bar);
   });
 
   it('02', () => {
-
-    jasmine.addCustomEqualityTester((x: any, y: any) => {
+    jasmine.addCustomEqualityTester((x: SafeAny, y: SafeAny) => {
       console.log('CUSTOM EQUALITY TESTER');
 
       if (x.a && y.a && x.a === y.a) {
@@ -41,8 +39,7 @@ describe('jasmine.namespace.jasmine.method.addCustomEqualityTester.01', () => {
      * 如果上一个自定义比较方法返回的是 undefined，则会执行下一个自定义方法
      */
 
-
-    jasmine.addCustomEqualityTester((x: any, y: any) => {
+    jasmine.addCustomEqualityTester((x: SafeAny, y: SafeAny) => {
       if (x.a && y.a && x.a === y.a) {
         return true;
       }
@@ -52,8 +49,7 @@ describe('jasmine.namespace.jasmine.method.addCustomEqualityTester.01', () => {
       return undefined;
     });
 
-
-    jasmine.addCustomEqualityTester((x: any, y: any) => {
+    jasmine.addCustomEqualityTester((x: SafeAny, y: SafeAny) => {
       if (x.b && y.b && x.b === y.b) {
         result += 'BAR';
         return true;

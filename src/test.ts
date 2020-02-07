@@ -15,8 +15,7 @@ import 'zone.js/dist/zone-patch-rxjs-fake-async';
 import { getTestBed } from '@angular/core/testing';
 import { BrowserDynamicTestingModule, platformBrowserDynamicTesting } from '@angular/platform-browser-dynamic/testing';
 
-
-declare const require: any;
+declare const require: SafeAny;
 
 // First, initialize the Angular testing environment.
 getTestBed().initTestEnvironment(BrowserDynamicTestingModule, platformBrowserDynamicTesting());

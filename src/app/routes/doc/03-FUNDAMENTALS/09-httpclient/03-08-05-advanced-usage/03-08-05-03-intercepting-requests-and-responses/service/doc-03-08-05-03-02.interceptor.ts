@@ -1,15 +1,11 @@
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { SafeAny } from '../../../../../../../../typings';
 
 @Injectable()
 export class Doc0308050302Interceptor implements HttpInterceptor {
-  public intercept(
-
-    httpRequest: HttpRequest<any>,
-    httpHandler: HttpHandler,
-
-  ): Observable<HttpEvent<any>> {
+  public intercept(httpRequest: HttpRequest<SafeAny>, httpHandler: HttpHandler): Observable<HttpEvent<SafeAny>> {
     if (httpRequest.url.includes('doc-03-08-05-03')) {
       /*
        * 在拦截器中，有两种方式可以修改 http headers，

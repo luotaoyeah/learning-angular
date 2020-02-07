@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 // tslint:disable-next-line:max-line-length
 import { Doc031002PreloadingStrategyService } from './routes/doc/03-FUNDAMENTALS/10-routing-navigation/02-the-sample-application/services/doc-03-10-02-preloading-strategy.service';
-import { environment } from '@app/env/environment';
 
 @NgModule({
   /*
@@ -32,7 +31,7 @@ import { environment } from '@app/env/environment';
        * 这种风格更加直观, 且可以跟 SSR (Server Side Rendering) 进行结合,
        * 可以通过 useHash 选项来启用 # 风格
        */
-      useHash: environment.useHash,
+      useHash: false,
       scrollPositionRestoration: 'top',
     }),
   ],

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { SafeAny } from '../../../../../../../typings';
 import { QuestionBase } from '../vms/question-base';
 import { QuestionControlService } from '../services/question-control.service';
 
@@ -10,8 +11,7 @@ import { QuestionControlService } from '../services/question-control.service';
 })
 export class DynamicFormComponent implements OnInit {
   @Input()
-
-  public questions: Array<QuestionBase<any>> = [];
+  public questions: Array<QuestionBase<SafeAny>> = [];
 
   public formGroup!: FormGroup;
   public payLoad: string = '';

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Router } from '@angular/router';
 import { SharedModule } from '@app/shared';
+import { SafeAny } from '../../../../../../typings';
 import { Doc031002Component } from './doc-03-10-02.component';
 import { ComposeMessageComponent } from './compose-message/compose-message.component';
 import { Doc031002RoutingModule } from './doc-03-10-02-routing.module';
@@ -17,6 +18,6 @@ export class Doc031002Module {
      * 但是没有包含尚未加载的 asynchronous feature module 的
      */
 
-    (window as any).__ROUTE_CONFIG__ = router.config;
+    (window as SafeAny).__ROUTE_CONFIG__ = router.config;
   }
 }

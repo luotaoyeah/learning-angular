@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
+import { SafeAny } from '../../../../../../../typings';
 import { DropdownQuestion } from '../vms/question-dropdown';
 import { QuestionBase } from '../vms/question-base';
 import { TextboxQuestion } from '../vms/question-textbox';
 
 @Injectable()
 export class QuestionService {
-
-  public getQuestions(): Array<QuestionBase<any>> {
-
-    const questions: Array<QuestionBase<any>> = [
+  public getQuestions(): Array<QuestionBase<SafeAny>> {
+    const questions: Array<QuestionBase<SafeAny>> = [
       new DropdownQuestion({
         key: 'brave',
         label: 'BRAVERY RATING',

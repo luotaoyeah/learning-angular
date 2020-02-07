@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { SafeAny } from '../../../../../../../typings';
 import { QuestionBase } from '../vms/question-base';
 
 @Component({
@@ -8,8 +9,7 @@ import { QuestionBase } from '../vms/question-base';
 })
 export class DynamicFormQuestionComponent {
   @Input()
-
-  public question: QuestionBase<any> = new QuestionBase();
+  public question: QuestionBase<SafeAny> = new QuestionBase();
   @Input()
   public formGroup: FormGroup = new FormGroup({});
 

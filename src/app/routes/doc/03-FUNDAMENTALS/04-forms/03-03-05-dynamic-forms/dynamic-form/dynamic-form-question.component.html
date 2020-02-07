@@ -6,12 +6,12 @@
       *ngSwitchCase="'textbox'"
       [id]="question.key"
       [formControlName]="question.key"
-      [type]="question.type"
+      [type]="question.controlType"
       nz-input
     />
 
     <nz-select *ngSwitchCase="'dropdown'" [id]="question.key" [formControlName]="question.key">
-      <ng-container *ngFor="let option of question.options">
+      <ng-container *ngFor="let option of question.value">
         <nz-option [nzValue]="option.key" [nzLabel]="option.value"></nz-option>
       </ng-container>
     </nz-select>

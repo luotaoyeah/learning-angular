@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SafeAny } from '../../../../../../../../typings';
 
 @Component({
   selector: 'app--doc-03-02-02-02-01',
@@ -12,7 +13,7 @@ export class Doc0302020201Component implements OnInit {
    * 因此，可以通过覆写 toString() 方法，提供自定义的 string 类型转换方式
    */
 
-  public foo: any = {
+  public foo: SafeAny = {
     toString() {
       return '[[FOO]]';
     },

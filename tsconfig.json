@@ -1,6 +1,10 @@
 {
   "angularCompilerOptions": {
-    "disableTypeScriptVersionCheck": true
+    "disableTypeScriptVersionCheck": true,
+    "enableIvy": true,
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true
   },
   "compileOnSave": false,
   "compilerOptions": {
@@ -17,6 +21,7 @@
     "noUnusedLocals": true,
     "outDir": "./dist/out-tsc",
     "paths": {
+      "@src/*": ["./*"],
       "@app/*": ["app/*"],
       "@app/core": ["app/core/index"],
       "@app/shared": ["app/shared/index"],

@@ -4,7 +4,7 @@ jobs:
   build-learning-angular-lib:
     working_directory: ~/learning-angular
     docker:
-      - image: circleci/node:12-browsers
+      - image: circleci/node:14.14-browsers
     steps:
       - checkout
       - restore_cache:
@@ -26,7 +26,7 @@ jobs:
   test-learning-angular-lib:
     working_directory: ~/learning-angular
     docker:
-      - image: circleci/node:12-browsers
+      - image: circleci/node:14.14-browsers
     steps:
       - checkout
       - restore_cache:
@@ -48,7 +48,7 @@ jobs:
   build-learning-angular:
     working_directory: ~/learning-angular
     docker:
-      - image: circleci/node:12-browsers
+      - image: circleci/node:14.14-browsers
     steps:
       - checkout
       - restore_cache:
@@ -67,7 +67,7 @@ jobs:
   test-learning-angular:
     working_directory: ~/learning-angular
     docker:
-      - image: circleci/node:12-browsers
+      - image: circleci/node:14.14-browsers
     steps:
       - checkout
       - restore_cache:

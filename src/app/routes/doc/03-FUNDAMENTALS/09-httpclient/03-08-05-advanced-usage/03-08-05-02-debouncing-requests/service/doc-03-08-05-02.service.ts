@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { SafeAny } from '../../../../../../../../typings';
 import { IPackageInfo } from '../model/i-package-info';
 import { map } from 'rxjs/operators';
 
@@ -21,10 +22,8 @@ export class Doc03080502Service {
         }),
       })
       .pipe(
-
-        map((data: any) => {
-
-          return data.results.map((entry: any) => ({
+        map((data: SafeAny) => {
+          return data.results.map((entry: SafeAny) => ({
             name: entry.name[0],
             version: entry.version[0],
             description: entry.description[0],

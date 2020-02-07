@@ -5,7 +5,11 @@ import { IState } from '../store/state/i-state';
   name: 'count',
 })
 export class CountPipe implements PipeTransform {
-  public transform(state: IState): number {
-    return state.count;
+  public transform(state: IState | null): number {
+    if (state) {
+      return state.count;
+    } else {
+      return 0;
+    }
   }
 }

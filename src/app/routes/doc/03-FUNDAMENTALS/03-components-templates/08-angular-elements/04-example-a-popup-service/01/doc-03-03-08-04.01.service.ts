@@ -6,6 +6,7 @@ import {
   Injectable,
   Injector,
 } from '@angular/core';
+import { SafeAny } from '../../../../../../../../typings';
 import { Doc0303080401Component } from './doc-03-03-08-04.01.component';
 import { NgElement, WithProperties } from '@angular/elements';
 
@@ -47,8 +48,7 @@ export class Doc0303080401Service {
   public showAsElement(message: string) {
     const el: NgElement & WithProperties<Pick<Doc0303080401Component, 'message'>> = document.createElement(
       'app-doc-03-03-08-04-01-element',
-
-    ) as any;
+    ) as SafeAny;
 
     el.message = message;
     el.addEventListener('close', () => {

@@ -1,5 +1,6 @@
 import { AfterContentInit, Component, ContentChild } from '@angular/core';
-import { NzButtonComponent, NzTagComponent } from 'ng-zorro-antd';
+import { NzButtonComponent } from 'ng-zorro-antd/button';
+import { NzTagComponent } from 'ng-zorro-antd/tag';
 
 @Component({
   selector: 'app--doc-09-01-02-03-03-03',

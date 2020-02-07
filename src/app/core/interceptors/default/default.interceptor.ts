@@ -1,13 +1,22 @@
-import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse, HttpResponseBase } from '@angular/common/http';
+import {
+  HttpErrorResponse,
+  HttpEvent,
+  HttpHandler,
+  HttpInterceptor,
+  HttpRequest,
+  HttpResponse,
+  HttpResponseBase,
+} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { DtoUtil } from '@app/core/utils';
 import { ResponseResult } from '@app/core/vm';
 import { environment } from '@app/env/environment';
 import { some } from 'lodash';
-import { NzNotificationService } from 'ng-zorro-antd';
+import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { Observable, of, throwError } from 'rxjs';
 import { catchError, mergeMap } from 'rxjs/operators';
+import { SafeAny } from '../../../../typings';
 
 const CODE_MESSAGES: { [index: number]: string } = {
   200: 'OK',
@@ -37,7 +46,7 @@ export class DefaultInterceptor implements HttpInterceptor {
 
   constructor(private nzNotificationService: NzNotificationService, private router: Router) {}
 
-  public intercept(httpRequest: HttpRequest<any>, httpHandler: HttpHandler): Observable<HttpEvent<any>> {
+  public intercept(httpRequest: HttpRequest<SafeAny>, httpHandler: HttpHandler): Observable<HttpEvent<SafeAny>> {
     let url = httpRequest.url;
 
     if (!url.startsWith('https://') && !url.startsWith('http://')) {
@@ -45,7 +54,7 @@ export class DefaultInterceptor implements HttpInterceptor {
     }
 
     return httpHandler.handle(httpRequest.clone({ url })).pipe(
-      mergeMap((event: any) => {
+      mergeMap((event: SafeAny) => {
         if (event instanceof HttpResponse || event instanceof HttpErrorResponse) {
           return this.handleSuccess(event);
         }

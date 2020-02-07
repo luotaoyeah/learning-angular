@@ -1,5 +1,5 @@
 import { AfterContentInit, Component, ContentChild } from '@angular/core';
-import { NzButtonComponent } from 'ng-zorro-antd';
+import { NzButtonComponent } from 'ng-zorro-antd/button';
 import { Doc090102030304Directive } from './doc-09-01-02-03-03-04.directive';
 
 @Component({

@@ -42,6 +42,13 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "@ant-design/colors",
+              "jquery",
+              "jquery-ui/ui/widgets/slider.js",
+              "lodash",
+              "rxjs/internal/observable/of"
+            ],
             "aot": true,
             "outputPath": "dist/learning-angular",
             "index": "src/index.html",
@@ -64,7 +71,6 @@
                 "input": "node_modules/document-register-element/build/document-register-element.js"
               }
             ],
-            "es5BrowserSupport": true,
             "resourcesOutputPath": "img"
           },
           "configurations": {
@@ -221,7 +227,10 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["projects/learning-angular-lib/tsconfig.lib.json", "projects/learning-angular-lib/tsconfig.spec.json"],
+            "tsConfig": [
+              "projects/learning-angular-lib/tsconfig.lib.json",
+              "projects/learning-angular-lib/tsconfig.spec.json"
+            ],
             "exclude": ["**/node_modules/**"]
           }
         }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { SafeAny } from '../../../../../../../typings';
 import { IdentityAction } from '../store/actions/03.actions';
 
 /*
@@ -10,7 +11,7 @@ import { IdentityAction } from '../store/actions/03.actions';
   templateUrl: './x-03-05.component.html',
 })
 export class X0305Component implements OnInit {
-  constructor(private store: Store<any>) {}
+  constructor(private store: Store<SafeAny>) {}
 
   public ngOnInit() {}
 

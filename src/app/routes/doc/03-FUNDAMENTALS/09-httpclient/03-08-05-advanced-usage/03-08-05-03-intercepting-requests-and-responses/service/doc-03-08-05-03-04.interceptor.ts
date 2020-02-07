@@ -9,18 +9,14 @@ import {
   HttpResponse,
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { SafeAny } from '../../../../../../../../typings';
 
 /*
  * 模拟文件上传过程
  */
 @Injectable()
 export class Doc0308050304Interceptor implements HttpInterceptor {
-  public intercept(
-
-    httpRequest: HttpRequest<any>,
-    httpHandler: HttpHandler,
-
-  ): Observable<HttpEvent<any>> {
+  public intercept(httpRequest: HttpRequest<SafeAny>, httpHandler: HttpHandler): Observable<HttpEvent<SafeAny>> {
     if (httpRequest.url.includes('doc-03-08-05-03-04')) {
       const delay = 500;
       return createUploadEvents(delay);
@@ -35,8 +31,7 @@ function createUploadEvents(delay: number) {
   const total = 12345678;
   const chunkSize = Math.ceil(total / chunks);
 
-
-  return new Observable<HttpEvent<any>>(observer => {
+  return new Observable<HttpEvent<SafeAny>>((observer) => {
     observer.next({ type: HttpEventType.Sent });
 
     uploadLoop(0);

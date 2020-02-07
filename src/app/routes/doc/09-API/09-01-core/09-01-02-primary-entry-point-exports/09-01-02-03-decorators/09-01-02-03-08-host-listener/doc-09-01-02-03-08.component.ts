@@ -1,5 +1,5 @@
 import { Component, HostListener } from '@angular/core';
-import { NzMessageService } from 'ng-zorro-antd';
+import { NzMessageService } from 'ng-zorro-antd/message';
 
 /*
  * https://angular.io/api/core/HostListener

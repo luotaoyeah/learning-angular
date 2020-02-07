@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { PreloadingStrategy, Route } from '@angular/router';
 import { Observable } from 'rxjs';
 import { of } from 'rxjs/internal/observable/of';
+import { SafeAny } from '../../../../../../../typings';
 
 /*
  * https://angular.io/guide/router#preloading-background-loading-of-feature-areas
@@ -10,8 +11,7 @@ import { of } from 'rxjs/internal/observable/of';
   providedIn: 'root',
 })
 export class Doc031002PreloadingStrategyService implements PreloadingStrategy {
-
-  public preload(route: Route, fn: () => Observable<any>): Observable<any> {
+  public preload(route: Route, fn: () => Observable<SafeAny>): Observable<SafeAny> {
     if (route.data && route.data.preload) {
       console.log(`[${Doc031002PreloadingStrategyService.name}]\n${route.path}`);
 

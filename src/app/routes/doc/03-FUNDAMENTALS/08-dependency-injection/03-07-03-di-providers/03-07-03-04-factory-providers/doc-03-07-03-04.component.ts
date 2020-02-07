@@ -16,7 +16,7 @@ import { Doc0307030401Service } from './service/doc-03-07-03-04-01.service';
        * 即 useFactory 的参数必须跟 deps 中的 token 一一对应
        */
       useFactory: (doc0307030401Service: Doc0307030401Service) => {
-        return new Doc0307030402Service(doc0307030401Service, 'BAR');
+        return new Doc0307030402Service(doc0307030401Service);
       },
       deps: [Doc0307030401Service],
     },

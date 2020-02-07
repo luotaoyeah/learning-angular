@@ -3,6 +3,7 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
 import { environment } from '@app/env/environment';
 import { hmrBootstrap } from './hmr';
+import { SafeAny } from './typings';
 
 if (environment.production) {
   enableProdMode();
@@ -14,16 +15,16 @@ const bootstrap = () => {
       defaultEncapsulation: ViewEncapsulation.Emulated,
       ngZone: 'zone.js',
     })
-    .then(res => {
-      if ((window as any).appBootstrap) {
-        (window as any).appBootstrap();
+    .then((res) => {
+      if ((window as SafeAny).appBootstrap) {
+        (window as SafeAny).appBootstrap();
       }
       return res;
     });
 };
 
 if (environment.hmr) {
-  if ((module as any).hot) {
+  if ((module as SafeAny).hot) {
     hmrBootstrap(module, bootstrap);
   } else {
     console.error('HMR is not enabled for webpack-dev-server!');

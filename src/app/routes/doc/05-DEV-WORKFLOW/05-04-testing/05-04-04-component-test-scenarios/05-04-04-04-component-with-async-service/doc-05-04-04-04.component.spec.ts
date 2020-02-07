@@ -46,7 +46,7 @@ describe('Doc05040404Component', () => {
 
     if (messageEl) {
       expect(messageEl.textContent).toEqual('1');
-      expect(MockDoc05040404Service.getNextNum.calls.any()).toBe(true);
+      expect(MockDoc05040404Service.getNextNum.calls.SafeAny()).toBe(true);
     }
   });
 

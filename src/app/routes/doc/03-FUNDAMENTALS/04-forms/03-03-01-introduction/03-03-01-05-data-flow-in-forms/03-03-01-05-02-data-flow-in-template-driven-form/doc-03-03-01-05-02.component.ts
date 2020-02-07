@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgModel } from '@angular/forms';
+import { SafeAny } from '../../../../../../../../typings';
 
 /*
  * https://angular.io/guide/forms-overview#data-flow-in-template-driven-forms
@@ -27,9 +28,9 @@ export class Doc0303010502Component implements OnInit {
           },
         ) => void,
 
-        thisArg: any,
+        thisArg: SafeAny,
 
-        argArray?: any,
+        argArray?: SafeAny,
       ): void {
         /*
          * ① 调用 FormControl.setValue() 方法, 更新 FormControl 对象的数据
@@ -48,7 +49,7 @@ export class Doc0303010502Component implements OnInit {
     });
 
     this.ngModel.viewToModelUpdate = new Proxy(this.ngModel.viewToModelUpdate, {
-      apply(target: (newValue: string) => void, thisArg: any, argArray?: any): void {
+      apply(target: (newValue: string) => void, thisArg: SafeAny, argArray?: SafeAny): void {
         /*
          * ③ 调用 NgModel.viewToModelUpdate() 方法, 触发 ngModelChange 事件
          */

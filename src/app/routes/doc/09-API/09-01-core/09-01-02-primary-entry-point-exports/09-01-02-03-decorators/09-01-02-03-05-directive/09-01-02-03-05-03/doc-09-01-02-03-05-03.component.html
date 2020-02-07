@@ -1,19 +1,6 @@
-<nz-divider
-  nzText="doc-09-01-02-03-05-03-01"
-  [nzOrientation]="'left'"
-  [nzDashed]="true"
-></nz-divider>
+<nz-divider [nzDashed]="true" [nzOrientation]="'left'" nzText="doc-09-01-02-03-05-03-01"></nz-divider>
 <p>
-  如果多个不同的 directive 拥有相同名称的 output
-  property，则当它们同时使用时，它们都可以绑定到这个 output property，
+  如果多个不同的 directive 拥有相同名称的 output property，则当它们同时使用时，它们都可以绑定到这个 output property，
   即当任意某个 directive 发出了对应的事件，绑定的处理函数都会被执行
 </p>
-<button
-  #btn
-  nz-button
-  appDoc09010203050301
-  appDoc09010203050302
-  (appDoc09010203050301ChangeColor)="btn.el.style.color = $event"
->
-  FOO
-</button>
+<button #btn appDoc09010203050301 appDoc09010203050302 nz-button>FOO</button>

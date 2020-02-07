@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
-import { NzModalService } from 'ng-zorro-antd';
+import { NzModalService } from 'ng-zorro-antd/modal';
 
 @Component({
   selector: 'exception-404',
-  template: `
-    <div style="min-height: 500px; height: 80%;">404</div>
-  `,
+  template: ` <div style="min-height: 500px; height: 80%;">404</div> `,
 })
 export class Exception404Component {
   constructor(modalSrv: NzModalService) {

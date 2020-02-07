@@ -7,21 +7,21 @@
 describe('jasmine.namespace.jasmine.method.any.01', () => {
   it('01', () => {
     expect({}).not.toEqual(Object);
-    expect({}).toEqual(jasmine.any(Object));
+    expect({}).toEqual(jasmine.SafeAny(Object));
 
-    expect(() => {}).toEqual(jasmine.any(Function));
+    expect(() => {}).toEqual(jasmine.SafeAny(Function));
 
-    expect([]).toEqual(jasmine.any(Array));
+    expect([]).toEqual(jasmine.SafeAny(Array));
 
     /*
      * 在 jasmine@2.x 中，下面的测试是通过的，
      * 在 jasmine@3.x 中，下面的测试将会失败
      */
-    expect(null).not.toEqual(jasmine.any(Object));
+    expect(null).not.toEqual(jasmine.SafeAny(Object));
   });
 
   it('02', () => {
-    expect(['0']).toContain(jasmine.any(String));
+    expect(['0']).toContain(jasmine.SafeAny(String));
   });
 
   it('03', () => {
@@ -33,6 +33,6 @@ describe('jasmine.namespace.jasmine.method.any.01', () => {
     obj.foo('x');
 
     expect(spyFoo).not.toHaveBeenCalledWith('y');
-    expect(spyFoo).toHaveBeenCalledWith(jasmine.any(String));
+    expect(spyFoo).toHaveBeenCalledWith(jasmine.SafeAny(String));
   });
 });

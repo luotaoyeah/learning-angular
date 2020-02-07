@@ -13,8 +13,8 @@
     }"
   />
   <div *ngIf="nameEl.invalid && (nameEl.dirty || nameEl.touched)">
-    <nz-alert *ngIf="nameEl.errors.required" nzType="error" nzMessage="REQUIRED"></nz-alert>
-    <nz-alert *ngIf="nameEl.errors.minlength" nzType="error" nzMessage="MINLENGTH"></nz-alert>
+    <nz-alert *ngIf="nameEl.errors?.required" nzType="error" nzMessage="REQUIRED"></nz-alert>
+    <nz-alert *ngIf="nameEl.errors?.minlength" nzType="error" nzMessage="MINLENGTH"></nz-alert>
   </div>
 </form>
 

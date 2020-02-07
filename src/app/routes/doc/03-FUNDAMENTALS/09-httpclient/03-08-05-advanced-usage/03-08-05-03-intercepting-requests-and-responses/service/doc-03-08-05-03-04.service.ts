@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpRequest } from '@angular/common/http';
+import { SafeAny } from '../../../../../../../../typings';
 
 @Injectable({
   providedIn: 'root',
@@ -8,8 +9,7 @@ import { HttpClient, HttpRequest } from '@angular/common/http';
 export class Doc0308050304Service {
   constructor(private httpClient: HttpClient) {}
 
-
-  public upload(file: File): Observable<any> {
+  public upload(file: File): Observable<SafeAny> {
     /*
      * 通过 HttpRequest() 手动构建一个请求对象，
      * 然后通过 reportProgress 配置，报告文件上传进度事件（HttpEventType.UploadProgress）,
