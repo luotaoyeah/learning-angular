@@ -1,5 +1,4 @@
 .circleci
-.doc
 .mock
 coverage
 dist
