@@ -174,48 +174,6 @@
       "prefix": "",
       "projectType": "application",
       "root": "e2e/"
-    },
-    "learning-angular-lib": {
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/learning-angular-lib/tsconfig.lib.prod.json"
-            }
-          },
-          "options": {
-            "project": "projects/learning-angular-lib/ng-package.json",
-            "tsConfig": "projects/learning-angular-lib/tsconfig.lib.json"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "exclude": ["**/node_modules/**"],
-            "tsConfig": [
-              "projects/learning-angular-lib/tsconfig.lib.json",
-              "projects/learning-angular-lib/tsconfig.spec.json"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "browsers": "ChromeHeadlessNoSandbox",
-            "codeCoverage": true,
-            "karmaConfig": "projects/learning-angular-lib/karma.conf.js",
-            "main": "projects/learning-angular-lib/src/test.ts",
-            "progress": false,
-            "tsConfig": "projects/learning-angular-lib/tsconfig.spec.json",
-            "watch": false
-          }
-        }
-      },
-      "prefix": "lib",
-      "projectType": "library",
-      "root": "projects/learning-angular-lib",
-      "sourceRoot": "projects/learning-angular-lib/src"
     }
   },
   "schematics": {

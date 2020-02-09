@@ -7,14 +7,13 @@
     "build:ci": "node --max-old-space-size=3072 ./node_modules/@angular/cli/bin/ng build learning-angular --prod --optimization=false --extract-licenses=false --build-optimizer=false",
     "build:prod": "node --max-old-space-size=4096 ./node_modules/@angular/cli/bin/ng build learning-angular --prod",
     "codecov": "codecov --token=7f372a79-168a-42b9-be13-b752aef85ecf",
-    "e2e": "node --max-old-space-size=4096 ./node_modules/@angular/cli/bin/ng e2e learning-angular-e2e",
     "eslint": "eslint src/**/*.ts",
     "hmr": "node --max-old-space-size=4096 ./node_modules/@angular/cli/bin/ng serve learning-angular --configuration=hmr",
     "json-server": "ts-node --project .mock/tsconfig.json .mock",
     "lint:style": "stylelint \"src/**/*.less\"",
     "start": "node --max-old-space-size=4096 ./node_modules/@angular/cli/bin/ng serve learning-angular",
-    "test": "node --max-old-space-size=4096 ./node_modules/@angular/cli/bin/ng test learning-angular",
-    "test:learning-angular-lib": "node --max-old-space-size=4096 ./node_modules/@angular/cli/bin/ng test learning-angular-lib"
+    "test:e2e": "node --max-old-space-size=4096 ./node_modules/@angular/cli/bin/ng e2e learning-angular-e2e",
+    "test:unit": "node --max-old-space-size=4096 ./node_modules/@angular/cli/bin/ng test learning-angular"
   },
   "dependencies": {
     "@angular-devkit/build-angular": "0.1002.0",

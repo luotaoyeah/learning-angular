@@ -1,1 +1,0 @@
-[ngrx](https://ngrx.io/)

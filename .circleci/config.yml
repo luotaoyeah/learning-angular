@@ -1,50 +1,6 @@
 version: 2.1
 
 jobs:
-  build-learning-angular-lib:
-    working_directory: ~/learning-angular
-    docker:
-      - image: circleci/node:14.14-browsers
-    steps:
-      - checkout
-      - restore_cache:
-          key: learning-angular-{{ .Branch }}-{{ checksum "package-lock.json" }}
-      - run:
-          name: install learning-angular-lib
-          command: cd projects/learning-angular-lib && npm install
-      - run:
-          name: install
-          command: npm install
-      - save_cache:
-          key: learning-angular-{{ .Branch }}-{{ checksum "package-lock.json" }}
-          paths:
-            - 'node_modules'
-      - run:
-          name: build
-          command: npm run build:learning-angular-lib:prod
-
-  test-learning-angular-lib:
-    working_directory: ~/learning-angular
-    docker:
-      - image: circleci/node:14.14-browsers
-    steps:
-      - checkout
-      - restore_cache:
-          key: learning-angular-{{ .Branch }}-{{ checksum "package-lock.json" }}
-      - run:
-          name: install learning-angular-lib
-          command: cd projects/learning-angular-lib && npm install
-      - run:
-          name: install
-          command: npm install
-      - save_cache:
-          key: learning-angular-{{ .Branch }}-{{ checksum "package-lock.json" }}
-          paths:
-            - 'node_modules'
-      - run:
-          name: unit test
-          command: npm run test:learning-angular-lib
-
   build-learning-angular:
     working_directory: ~/learning-angular
     docker:
@@ -80,11 +36,11 @@ jobs:
           paths:
             - 'node_modules'
       - run:
-          name: unit test
-          command: npm run test
+          name: test:unit
+          command: npm run test:unit
       - run:
-          name: e2e test
-          command: npm run e2e
+          name: test:e2e
+          command: npm run test:e2e
       - run:
           name: codecov
           command: npm run codecov
@@ -93,10 +49,6 @@ workflows:
   version: 2
   learning-angular-workflow:
     jobs:
-      - build-learning-angular-lib
-      - test-learning-angular-lib:
-          requires:
-            - build-learning-angular-lib
       - build-learning-angular
       - test-learning-angular:
           requires:
