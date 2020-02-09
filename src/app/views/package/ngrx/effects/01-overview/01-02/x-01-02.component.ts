@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { IMovie } from '../vms/i-movie';
+import { IMovie } from '@app/views/package/ngrx/effects/01-overview/vms/i-movie';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { IAppState, selectMovies } from './store/selectors/01-02.selectors';
-import { FetchMoviesAction } from './store/actions/01-02.actions';
+import { IAppState, selectMovies } from '@app/views/package/ngrx/effects/01-overview/01-02/store/selectors/01-02.selectors';
+import { FetchMoviesAction } from '@app/views/package/ngrx/effects/01-overview/01-02/store/actions/01-02.actions';
 
 /*
  * https://ngrx.io/guide/effects#writing-effects

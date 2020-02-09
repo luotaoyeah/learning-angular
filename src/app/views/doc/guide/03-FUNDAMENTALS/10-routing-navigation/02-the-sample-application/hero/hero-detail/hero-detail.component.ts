@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Hero } from '../models/hero';
+import { Hero } from '@app/views/doc/guide/03-FUNDAMENTALS/10-routing-navigation/02-the-sample-application/hero/models/hero';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { HeroService } from '../services/hero.service';
+import { HeroService } from '@app/views/doc/guide/03-FUNDAMENTALS/10-routing-navigation/02-the-sample-application/hero/services/hero.service';
 import { switchMap } from 'rxjs/operators';
 import { of } from 'rxjs';
 

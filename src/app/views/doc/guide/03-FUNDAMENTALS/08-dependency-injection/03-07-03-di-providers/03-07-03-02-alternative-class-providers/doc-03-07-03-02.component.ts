@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Doc0307030201Service } from './service/doc-03-07-03-02-01.service';
-import { Doc0307030202Service } from './service/doc-03-07-03-02-02.service';
-import { Doc0307030203Service } from './service/doc-03-07-03-02-03.service';
+import { Doc0307030201Service } from '@app/views/doc/guide/03-FUNDAMENTALS/08-dependency-injection/03-07-03-di-providers/03-07-03-02-alternative-class-providers/service/doc-03-07-03-02-01.service';
+import { Doc0307030202Service } from '@app/views/doc/guide/03-FUNDAMENTALS/08-dependency-injection/03-07-03-di-providers/03-07-03-02-alternative-class-providers/service/doc-03-07-03-02-02.service';
+import { Doc0307030203Service } from '@app/views/doc/guide/03-FUNDAMENTALS/08-dependency-injection/03-07-03-di-providers/03-07-03-02-alternative-class-providers/service/doc-03-07-03-02-03.service';
 import { Doc0307030204Service } from '@app/views/doc/guide/03-FUNDAMENTALS/08-dependency-injection/03-07-03-di-providers/03-07-03-02-alternative-class-providers/service/doc-03-07-03-02-04.service';
 
 @Component({

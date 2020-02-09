@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HeroService } from '../services/hero.service';
-import { Hero } from '../models/hero';
+import { HeroService } from '@app/views/doc/guide/03-FUNDAMENTALS/10-routing-navigation/02-the-sample-application/hero/services/hero.service';
+import { Hero } from '@app/views/doc/guide/03-FUNDAMENTALS/10-routing-navigation/02-the-sample-application/hero/models/hero';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 
 @Component({

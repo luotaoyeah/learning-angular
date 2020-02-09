@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Doc030801Service } from './service/doc-03-08-01.service';
-import { IConfig } from './model/i-config';
+import { Doc030801Service } from '@app/views/doc/guide/03-FUNDAMENTALS/09-httpclient/03-08-01-getting-json-data/service/doc-03-08-01.service';
+import { IConfig } from '@app/views/doc/guide/03-FUNDAMENTALS/09-httpclient/03-08-01-getting-json-data/model/i-config';
 import { HttpResponse } from '@angular/common/http';
 
 @Component({

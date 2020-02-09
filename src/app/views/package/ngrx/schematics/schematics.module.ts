@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SchematicsRoutingModule } from './schematics-routing.module';
+import { SchematicsRoutingModule } from '@app/views/package/ngrx/schematics/schematics-routing.module';
 import { SharedModule } from '@app/shared';
-import { SchematicsComponent } from './schematics.component';
+import { SchematicsComponent } from '@app/views/package/ngrx/schematics/schematics.component';
 
 @NgModule({
   declarations: [SchematicsComponent],

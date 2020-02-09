@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Doc030702010301Service } from './service/doc-03-07-02-01-03-01.service';
-import { Doc030702010302ervice } from './service/doc-03-07-02-01-03-02.service';
+import { Doc030702010301Service } from '@app/views/doc/guide/03-FUNDAMENTALS/08-dependency-injection/03-07-02-hierarchical-dependency-injection/03-07-02-01-where-to-configure-providers/03-07-02-01-03/service/doc-03-07-02-01-03-01.service';
+import { Doc030702010302ervice } from '@app/views/doc/guide/03-FUNDAMENTALS/08-dependency-injection/03-07-02-hierarchical-dependency-injection/03-07-02-01-where-to-configure-providers/03-07-02-01-03/service/doc-03-07-02-01-03-02.service';
 
 /*
  * 通过 @Component.providers 配置的 providers，只能在当前 component 以及它的下级 component 中使用，

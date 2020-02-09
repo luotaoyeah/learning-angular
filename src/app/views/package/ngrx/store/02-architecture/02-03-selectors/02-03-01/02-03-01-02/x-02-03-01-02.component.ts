@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IBook } from './store/state/i-book';
+import { IBook } from '@app/views/package/ngrx/store/02-architecture/02-03-selectors/02-03-01/02-03-01-02/store/state/i-book';
 import { createSelector, select, Store } from '@ngrx/store';
-import { IAppState } from './store/state/i-app-state';
-import { selectVisibleBooks } from './store/selectors/02-03-01-02.selectors';
-import { ClearSelectedUserAction, ResetSelectedUserAction, SetSelectedUserAction } from './store/actions/02-03-01-02.actions';
+import { IAppState } from '@app/views/package/ngrx/store/02-architecture/02-03-selectors/02-03-01/02-03-01-02/store/state/i-app-state';
+import { selectVisibleBooks } from '@app/views/package/ngrx/store/02-architecture/02-03-selectors/02-03-01/02-03-01-02/store/selectors/02-03-01-02.selectors';
+import { ClearSelectedUserAction, ResetSelectedUserAction, SetSelectedUserAction } from '@app/views/package/ngrx/store/02-architecture/02-03-selectors/02-03-01/02-03-01-02/store/actions/02-03-01-02.actions';
 
 /*
  * https://ngrx.io/guide/store/selectors#using-selectors-for-multiple-pieces-of-state

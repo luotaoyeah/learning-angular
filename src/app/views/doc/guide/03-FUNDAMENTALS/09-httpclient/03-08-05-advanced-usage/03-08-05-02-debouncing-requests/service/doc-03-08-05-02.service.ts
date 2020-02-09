@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { SafeAny } from '@src/typings';
-import { IPackageInfo } from '../model/i-package-info';
+import { IPackageInfo } from '@app/views/doc/guide/03-FUNDAMENTALS/09-httpclient/03-08-05-advanced-usage/03-08-05-02-debouncing-requests/model/i-package-info';
 import { map } from 'rxjs/operators';
 
 @Injectable({

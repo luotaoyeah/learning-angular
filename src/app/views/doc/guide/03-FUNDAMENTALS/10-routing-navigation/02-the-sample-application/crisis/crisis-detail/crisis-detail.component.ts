@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Data, Router } from '@angular/router';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { Observable } from 'rxjs';
-import { ICanDeactivateComponent } from '../../auth/services/can-deactivate.guard';
-import { Crisis } from '../models/crisis';
-import { CrisisDetailResolverService } from '../services/crisis-detail-resolver.service';
-import { CrisisService } from '../services/crisis.service';
+import { ICanDeactivateComponent } from '@app/views/doc/guide/03-FUNDAMENTALS/10-routing-navigation/02-the-sample-application/auth/services/can-deactivate.guard';
+import { Crisis } from '@app/views/doc/guide/03-FUNDAMENTALS/10-routing-navigation/02-the-sample-application/crisis/models/crisis';
+import { CrisisDetailResolverService } from '@app/views/doc/guide/03-FUNDAMENTALS/10-routing-navigation/02-the-sample-application/crisis/services/crisis-detail-resolver.service';
+import { CrisisService } from '@app/views/doc/guide/03-FUNDAMENTALS/10-routing-navigation/02-the-sample-application/crisis/services/crisis.service';
 
 @Component({
   selector: 'app--hero-detail',

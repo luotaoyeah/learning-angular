@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Router } from '@angular/router';
 import { SharedModule } from '@app/shared';
-import { SafeAny } from '../../../../../../../typings';
-import { Doc031002Component } from './doc-03-10-02.component';
-import { ComposeMessageComponent } from './compose-message/compose-message.component';
-import { Doc031002RoutingModule } from './doc-03-10-02-routing.module';
+import { SafeAny } from '@src/typings';
+import { Doc031002Component } from '@app/views/doc/guide/03-FUNDAMENTALS/10-routing-navigation/02-the-sample-application/doc-03-10-02.component';
+import { ComposeMessageComponent } from '@app/views/doc/guide/03-FUNDAMENTALS/10-routing-navigation/02-the-sample-application/compose-message/compose-message.component';
+import { Doc031002RoutingModule } from '@app/views/doc/guide/03-FUNDAMENTALS/10-routing-navigation/02-the-sample-application/doc-03-10-02-routing.module';
 
 @NgModule({
   declarations: [Doc031002Component, ComposeMessageComponent],

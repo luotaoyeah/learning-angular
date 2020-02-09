@@ -1,4 +1,4 @@
-import { IState } from '../state/i-state';
+import { IState } from '@app/views/package/ngrx/store/05-testing/05-03-testing-selectors/store/state/i-state';
 import { createSelector } from '@ngrx/store';
 
 const selectEvens = (state: IState): Array<number> => state.evens;

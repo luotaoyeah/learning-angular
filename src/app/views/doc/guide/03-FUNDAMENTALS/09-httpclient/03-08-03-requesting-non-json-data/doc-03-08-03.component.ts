@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Doc030803Service } from './service/doc-03-08-03.service';
+import { Doc030803Service } from '@app/views/doc/guide/03-FUNDAMENTALS/09-httpclient/03-08-03-requesting-non-json-data/service/doc-03-08-03.service';
 
 @Component({
   selector: 'app--doc-03-08-03',

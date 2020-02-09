@@ -1,6 +1,6 @@
-import { Doc0504041501Component } from './doc-05-04-04-15-01.component';
+import { Doc0504041501Component } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-test-scenarios/05-04-04-15-override-component-providers/05-04-04-15-01/doc-05-04-04-15-01.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { Doc05040415Service } from '../services/doc-05-04-04-15.service';
+import { Doc05040415Service } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-test-scenarios/05-04-04-15-override-component-providers/services/doc-05-04-04-15.service';
 
 describe('Doc0504041501Component', () => {
   let fixture: ComponentFixture<Doc0504041501Component>;

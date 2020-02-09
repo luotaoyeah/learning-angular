@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType, OnIdentifyEffects } from '@ngrx/effects';
-import { ActionTypeEnum } from '../store/actions/03.actions';
+import { ActionTypeEnum } from '@app/views/package/ngrx/effects/03-lifecycle/store/actions/03.actions';
 import { tap } from 'rxjs/operators';
 
 @Injectable()

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { X01Component } from './01-entity-interfaces/x-01.component';
-import { X02Component } from './02-entity-adapter/x-02.component';
+import { X01Component } from '@app/views/package/ngrx/entity/01-entity-interfaces/x-01.component';
+import { X02Component } from '@app/views/package/ngrx/entity/02-entity-adapter/x-02.component';
 
 const routes: Routes = [
   {

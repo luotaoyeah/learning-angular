@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, Router } from '@angular/router';
-import { Crisis } from '../models/crisis';
+import { Crisis } from '@app/views/doc/guide/03-FUNDAMENTALS/10-routing-navigation/02-the-sample-application/crisis/models/crisis';
 import { EMPTY, Observable } from 'rxjs';
-import { CrisisService } from './crisis.service';
+import { CrisisService } from '@app/views/doc/guide/03-FUNDAMENTALS/10-routing-navigation/02-the-sample-application/crisis/services/crisis.service';
 import { mergeMap, take } from 'rxjs/operators';
 import { of } from 'rxjs/internal/observable/of';
 

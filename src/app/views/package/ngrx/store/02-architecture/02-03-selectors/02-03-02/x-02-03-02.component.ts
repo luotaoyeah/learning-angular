@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { IState } from '@app/views/package/ngrx/store/02-architecture/02-03-selectors/02-03-02/store/state/i-state';
 import { Observable } from 'rxjs';
-import { selectCount } from './store/selectors/02-03-02.selectors';
+import { selectCount } from '@app/views/package/ngrx/store/02-architecture/02-03-selectors/02-03-02/store/selectors/02-03-02.selectors';
 
 /*
  * https://ngrx.io/guide/store/selectors#selecting-feature-states

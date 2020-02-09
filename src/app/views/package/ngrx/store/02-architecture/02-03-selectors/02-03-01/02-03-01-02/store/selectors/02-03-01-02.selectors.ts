@@ -1,7 +1,7 @@
-import { IAppState } from '../state/i-app-state';
+import { IAppState } from '@app/views/package/ngrx/store/02-architecture/02-03-selectors/02-03-01/02-03-01-02/store/state/i-app-state';
 import { createSelector, MemoizedSelector } from '@ngrx/store';
-import { IUser } from '../state/i-user';
-import { IBook } from '../state/i-book';
+import { IUser } from '@app/views/package/ngrx/store/02-architecture/02-03-selectors/02-03-01/02-03-01-02/store/state/i-user';
+import { IBook } from '@app/views/package/ngrx/store/02-architecture/02-03-selectors/02-03-01/02-03-01-02/store/state/i-book';
 
 const selectUser = (state: IAppState) => state.selectedUser;
 const selectAllBooks = (state: IAppState) => state.allBooks;

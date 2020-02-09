@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdminComponent } from './admin/admin.component';
-import { ManageHeroesComponent } from './manage-heroes/manage-heroes.component';
-import { ManageCrisesComponent } from './manage-crises/manage-crises.component';
-import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
-import { AuthGuard } from '../auth/services/auth.guard';
+import { AdminComponent } from '@app/views/doc/guide/03-FUNDAMENTALS/10-routing-navigation/02-the-sample-application/admin/admin/admin.component';
+import { ManageHeroesComponent } from '@app/views/doc/guide/03-FUNDAMENTALS/10-routing-navigation/02-the-sample-application/admin/manage-heroes/manage-heroes.component';
+import { ManageCrisesComponent } from '@app/views/doc/guide/03-FUNDAMENTALS/10-routing-navigation/02-the-sample-application/admin/manage-crises/manage-crises.component';
+import { AdminDashboardComponent } from '@app/views/doc/guide/03-FUNDAMENTALS/10-routing-navigation/02-the-sample-application/admin/admin-dashboard/admin-dashboard.component';
+import { AuthGuard } from '@app/views/doc/guide/03-FUNDAMENTALS/10-routing-navigation/02-the-sample-application/auth/services/auth.guard';
 
 const routes: Routes = [
   {

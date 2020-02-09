@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { Doc0310Component } from './doc-03-10.component';
-import { Doc03100108Component } from './01-the-basics/03-10-01-08/doc-03-10-01-08.component';
+import { Doc0310Component } from '@app/views/doc/guide/03-FUNDAMENTALS/10-routing-navigation/doc-03-10.component';
+import { Doc03100108Component } from '@app/views/doc/guide/03-FUNDAMENTALS/10-routing-navigation/01-the-basics/03-10-01-08/doc-03-10-01-08.component';
 
 const routes: Routes = [
   {

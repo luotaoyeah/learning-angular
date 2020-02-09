@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CrisisListComponent } from './crisis-list/crisis-list.component';
-import { CrisisDetailComponent } from './crisis-detail/crisis-detail.component';
-import { CrisisComponent } from './crisis.component';
-import { CrisisHomeComponent } from './crisis-home/crisis-home.component';
-import { CanDeactivateGuard } from '../auth/services/can-deactivate.guard';
-import { CrisisDetailResolverService } from './services/crisis-detail-resolver.service';
+import { CrisisListComponent } from '@app/views/doc/guide/03-FUNDAMENTALS/10-routing-navigation/02-the-sample-application/crisis/crisis-list/crisis-list.component';
+import { CrisisDetailComponent } from '@app/views/doc/guide/03-FUNDAMENTALS/10-routing-navigation/02-the-sample-application/crisis/crisis-detail/crisis-detail.component';
+import { CrisisComponent } from '@app/views/doc/guide/03-FUNDAMENTALS/10-routing-navigation/02-the-sample-application/crisis/crisis.component';
+import { CrisisHomeComponent } from '@app/views/doc/guide/03-FUNDAMENTALS/10-routing-navigation/02-the-sample-application/crisis/crisis-home/crisis-home.component';
+import { CanDeactivateGuard } from '@app/views/doc/guide/03-FUNDAMENTALS/10-routing-navigation/02-the-sample-application/auth/services/can-deactivate.guard';
+import { CrisisDetailResolverService } from '@app/views/doc/guide/03-FUNDAMENTALS/10-routing-navigation/02-the-sample-application/crisis/services/crisis-detail-resolver.service';
 
 const routes: Routes = [
   {

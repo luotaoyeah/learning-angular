@@ -1,5 +1,5 @@
-import { Doc030701Component } from './doc-03-07-01.component';
-import { Doc030701Service } from './service/doc-03-07-01.service';
+import { Doc030701Component } from '@app/views/doc/guide/03-FUNDAMENTALS/08-dependency-injection/03-07-01-angular-dependency-injection/doc-03-07-01.component';
+import { Doc030701Service } from '@app/views/doc/guide/03-FUNDAMENTALS/08-dependency-injection/03-07-01-angular-dependency-injection/service/doc-03-07-01.service';
 
 describe('Doc030701Component', () => {
   let component: Doc030701Component;

@@ -1,5 +1,5 @@
-import { IState } from '../state/i-state';
-import { ActionTypeEnum, ActionUnion } from '../actions/01-02.actions';
+import { IState } from '@app/views/package/ngrx/effects/01-overview/01-02/store/state/i-state';
+import { ActionTypeEnum, ActionUnion } from '@app/views/package/ngrx/effects/01-overview/01-02/store/actions/01-02.actions';
 
 function x0102Reducer(state: IState = { movies: [] }, action: ActionUnion) {
   switch (action.type) {

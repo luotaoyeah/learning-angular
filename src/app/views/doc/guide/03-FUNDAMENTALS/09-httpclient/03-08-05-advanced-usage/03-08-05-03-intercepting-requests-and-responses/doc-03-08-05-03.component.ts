@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SafeAny } from '@src/typings';
-import { Doc03080503Service } from './service/doc-03-08-05-03.service';
-import { Doc0308050304Service } from './service/doc-03-08-05-03-04.service';
+import { Doc03080503Service } from '@app/views/doc/guide/03-FUNDAMENTALS/09-httpclient/03-08-05-advanced-usage/03-08-05-03-intercepting-requests-and-responses/service/doc-03-08-05-03.service';
+import { Doc0308050304Service } from '@app/views/doc/guide/03-FUNDAMENTALS/09-httpclient/03-08-05-advanced-usage/03-08-05-03-intercepting-requests-and-responses/service/doc-03-08-05-03-04.service';
 import { tap } from 'rxjs/operators';
 import { HttpEvent, HttpEventType } from '@angular/common/http';
 

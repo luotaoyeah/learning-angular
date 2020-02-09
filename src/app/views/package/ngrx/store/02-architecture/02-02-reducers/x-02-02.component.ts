@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { IState } from './store/state/i-state';
-import { DecrementAction, IncrementAction, ResetAction } from './store/actions/02-02.actions';
+import { IState } from '@app/views/package/ngrx/store/02-architecture/02-02-reducers/store/state/i-state';
+import { DecrementAction, IncrementAction, ResetAction } from '@app/views/package/ngrx/store/02-architecture/02-02-reducers/store/actions/02-02.actions';
 
 /*
  * https://ngrx.io/guide/store/reducers

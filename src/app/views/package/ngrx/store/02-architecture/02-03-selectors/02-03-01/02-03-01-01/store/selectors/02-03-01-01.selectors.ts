@@ -1,6 +1,6 @@
-import { IAppState } from '../state/i-app-state';
+import { IAppState } from '@app/views/package/ngrx/store/02-architecture/02-03-selectors/02-03-01/02-03-01-01/store/state/i-app-state';
 import { createSelector, MemoizedSelector } from '@ngrx/store';
-import { IFeatureState } from '../state/i-feature-state';
+import { IFeatureState } from '@app/views/package/ngrx/store/02-architecture/02-03-selectors/02-03-01/02-03-01-01/store/state/i-feature-state';
 
 /**
  *

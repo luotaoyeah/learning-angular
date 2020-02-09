@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { IAppState } from './store/state/i-state';
+import { IAppState } from '@app/views/package/ngrx/entity/02-entity-adapter/store/state/i-state';
 import { createSelector, select, Store } from '@ngrx/store';
-import { ClearUsersAction, LoadUsersAction } from './store/actions/02.actions';
-import { X02Service } from './service/x02.service';
-import { User } from './store/state/user';
+import { ClearUsersAction, LoadUsersAction } from '@app/views/package/ngrx/entity/02-entity-adapter/store/actions/02.actions';
+import { X02Service } from '@app/views/package/ngrx/entity/02-entity-adapter/service/x02.service';
+import { User } from '@app/views/package/ngrx/entity/02-entity-adapter/store/state/user';
 import { Observable } from 'rxjs';
-import { selectAllUsers, selectFeature } from './store/selectors/02.selectors';
+import { selectAllUsers, selectFeature } from '@app/views/package/ngrx/entity/02-entity-adapter/store/selectors/02.selectors';
 
 /*
  * https://ngrx.io/guide/entity/adapter

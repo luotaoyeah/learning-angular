@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Crisis } from '../models/crisis';
+import { Crisis } from '@app/views/doc/guide/03-FUNDAMENTALS/10-routing-navigation/02-the-sample-application/crisis/models/crisis';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { CrisisService } from '../services/crisis.service';
-import { CrisisDetailResolverService } from '../services/crisis-detail-resolver.service';
+import { CrisisService } from '@app/views/doc/guide/03-FUNDAMENTALS/10-routing-navigation/02-the-sample-application/crisis/services/crisis.service';
+import { CrisisDetailResolverService } from '@app/views/doc/guide/03-FUNDAMENTALS/10-routing-navigation/02-the-sample-application/crisis/services/crisis-detail-resolver.service';
 
 @Component({
   selector: 'app--crisis-list',

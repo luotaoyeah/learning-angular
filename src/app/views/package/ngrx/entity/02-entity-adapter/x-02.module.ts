@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import { X02Component } from './x-02.component';
+import { X02Component } from '@app/views/package/ngrx/entity/02-entity-adapter/x-02.component';
 import { StoreModule } from '@ngrx/store';
-import { NGRX_STATE_KEY } from './store/state/i-state';
-import { x02Reducer } from './store/reducers/02.reducers';
+import { NGRX_STATE_KEY } from '@app/views/package/ngrx/entity/02-entity-adapter/store/state/i-state';
+import { x02Reducer } from '@app/views/package/ngrx/entity/02-entity-adapter/store/reducers/02.reducers';
 import { SharedModule } from '@app/shared';
 
 @NgModule({

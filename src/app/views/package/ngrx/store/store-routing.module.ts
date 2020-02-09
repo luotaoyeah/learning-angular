@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { X01Component } from './01-getting-started/x-01.component';
-import { X02Component } from './02-architecture/x-02.component';
-import { X03Component } from './03-advanced/x-03.component';
-import { X04Component } from './04-recipes/x-04.component';
-import { X05Component } from './05-testing/x-05.component';
+import { X01Component } from '@app/views/package/ngrx/store/01-getting-started/x-01.component';
+import { X02Component } from '@app/views/package/ngrx/store/02-architecture/x-02.component';
+import { X03Component } from '@app/views/package/ngrx/store/03-advanced/x-03.component';
+import { X04Component } from '@app/views/package/ngrx/store/04-recipes/x-04.component';
+import { X05Component } from '@app/views/package/ngrx/store/05-testing/x-05.component';
 
 const routes: Routes = [
   {

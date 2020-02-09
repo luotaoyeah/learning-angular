@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit, Optional } from '@angular/core';
-import { TOKEN_01, TOKEN_02 } from './service/doc-03-07-04-06-02.service';
+import { TOKEN_01, TOKEN_02 } from '@app/views/doc/guide/03-FUNDAMENTALS/08-dependency-injection/03-07-04-di-in-action/03-07-04-06-provider-token-alternatives/03-07-04-06-02/service/doc-03-07-04-06-02.service';
 
 @Component({
   selector: 'app--doc-03-07-04-06-02',

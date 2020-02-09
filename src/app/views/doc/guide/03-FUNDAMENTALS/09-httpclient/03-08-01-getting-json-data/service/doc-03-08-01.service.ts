@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IConfig } from '../model/i-config';
+import { IConfig } from '@app/views/doc/guide/03-FUNDAMENTALS/09-httpclient/03-08-01-getting-json-data/model/i-config';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 

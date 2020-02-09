@@ -1,10 +1,13 @@
-import { APP_BOOTSTRAP_LISTENER, NgModule, Provider } from '@angular/core';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { APP_BOOTSTRAP_LISTENER, NgModule, Provider } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CoreModule } from '@app/core/core.module';
-import { SharedModule } from '@app/shared';
+import { AppRoutingModule } from '@app/app-routing.module';
 import { AppComponent } from '@app/app.component';
-import { ViewsModule } from '@app/views/views.module';
+import { AppEffects } from '@app/app.effects';
+import { DefaultInterceptor } from '@app/core';
+import { CoreModule } from '@app/core/core.module';
+import { environment } from '@app/env/environment';
+import { SharedModule } from '@app/shared';
 import { Doc0306070102Service } from '@app/views/doc/guide/03-FUNDAMENTALS/07-ngmodules/03-06-07-providers/03-06-07-01-providing-a-service/service/doc-03-06-07-01-02.service';
 import { Doc03060802Service } from '@app/views/doc/guide/03-FUNDAMENTALS/07-ngmodules/03-06-08-singleton-services/03-06-08-01-providing-a-singleton-service/service/doc-03-06-08-02.service';
 import { Doc0306080201Module } from '@app/views/doc/guide/03-FUNDAMENTALS/07-ngmodules/03-06-08-singleton-services/03-06-08-02-the-for-root-pattern/doc-03-06-08-02-01/doc-03-06-08-02-01.module';
@@ -13,22 +16,19 @@ import { Doc0306080301Module } from '@app/views/doc/guide/03-FUNDAMENTALS/07-ngm
 import { Doc03061201Service } from '@app/views/doc/guide/03-FUNDAMENTALS/07-ngmodules/03-06-12-ngmodule-faq/03-06-12-01/service/doc-03-06-12-01.service';
 import { Doc030702010201Service } from '@app/views/doc/guide/03-FUNDAMENTALS/08-dependency-injection/03-07-02-hierarchical-dependency-injection/03-07-02-01-where-to-configure-providers/03-07-02-01-02/service/doc-03-07-02-01-02-01.service';
 import { Doc0307030603Service } from '@app/views/doc/guide/03-FUNDAMENTALS/08-dependency-injection/03-07-03-di-providers/03-07-03-06-tree-shakable-providers/service/doc-03-07-03-06-03.service';
+import { Doc03080502Interceptor } from '@app/views/doc/guide/03-FUNDAMENTALS/09-httpclient/03-08-05-advanced-usage/03-08-05-02-debouncing-requests/service/doc-03-08-05-02.interceptor';
 import { Doc0308050301Interceptor } from '@app/views/doc/guide/03-FUNDAMENTALS/09-httpclient/03-08-05-advanced-usage/03-08-05-03-intercepting-requests-and-responses/service/doc-03-08-05-03-01.interceptor';
 import { Doc0308050302Interceptor } from '@app/views/doc/guide/03-FUNDAMENTALS/09-httpclient/03-08-05-advanced-usage/03-08-05-03-intercepting-requests-and-responses/service/doc-03-08-05-03-02.interceptor';
 import { Doc0308050303Interceptor } from '@app/views/doc/guide/03-FUNDAMENTALS/09-httpclient/03-08-05-advanced-usage/03-08-05-03-intercepting-requests-and-responses/service/doc-03-08-05-03-03.interceptor';
-import { Doc03080502Interceptor } from '@app/views/doc/guide/03-FUNDAMENTALS/09-httpclient/03-08-05-advanced-usage/03-08-05-02-debouncing-requests/service/doc-03-08-05-02.interceptor';
 import { Doc0308050304Interceptor } from '@app/views/doc/guide/03-FUNDAMENTALS/09-httpclient/03-08-05-advanced-usage/03-08-05-03-intercepting-requests-and-responses/service/doc-03-08-05-03-04.interceptor';
-import { StoreModule, USER_PROVIDED_META_REDUCERS } from '@ngrx/store';
-import { metaReducers, reducers } from './reducers';
-import { MetaReducer02 } from '@app/views/package/ngrx/store/04-recipes/04-01-inject-reducers/store/reducers/04-01.reducer';
-import { EffectsModule } from '@ngrx/effects';
-import { AppEffects } from '@app/app.effects';
-import { NavigationActionTiming, StoreRouterConnectingModule } from '@ngrx/router-store';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { environment } from '@app/env/environment';
 import { X01CustomRouterStateSerializer } from '@app/views/package/ngrx/router-store/02-configuration/service/x-01-custom-router-state-serializer';
-import { AppRoutingModule } from '@app/app-routing.module';
-import { DefaultInterceptor } from '@app/core';
+import { MetaReducer02 } from '@app/views/package/ngrx/store/04-recipes/04-01-inject-reducers/store/reducers/04-01.reducer';
+import { ViewsModule } from '@app/views/views.module';
+import { EffectsModule } from '@ngrx/effects';
+import { NavigationActionTiming, StoreRouterConnectingModule } from '@ngrx/router-store';
+import { StoreModule, USER_PROVIDED_META_REDUCERS } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { metaReducers, reducers } from './reducers';
 
 /*
  * 因为 HttpClientModule 可能需要依赖 interceptors, 因此 interceptors 需要和 HttpClientModule 注册到同一个 injector 中,

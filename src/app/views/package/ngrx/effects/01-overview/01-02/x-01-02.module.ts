@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
-import { X0102Component } from './x-01-02.component';
+import { X0102Component } from '@app/views/package/ngrx/effects/01-overview/01-02/x-01-02.component';
 import { SharedModule } from '@app/shared';
 import { StoreModule } from '@ngrx/store';
-import { x0102Reducer } from './store/reducers/01-02.reducers';
+import { x0102Reducer } from '@app/views/package/ngrx/effects/01-overview/01-02/store/reducers/01-02.reducers';
 import { EffectsModule } from '@ngrx/effects';
-import { X0102Effects } from './effects/01-02.effects';
+import { X0102Effects } from '@app/views/package/ngrx/effects/01-overview/01-02/effects/01-02.effects';
 
 @NgModule({
   declarations: [X0102Component],

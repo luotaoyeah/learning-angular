@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { X0305Component } from './x-03-05.component';
+import { X0305Component } from '@app/views/package/ngrx/effects/03-lifecycle/03-05/x-03-05.component';
 import { EffectsModule } from '@ngrx/effects';
-import { X030501Effects, X030502Effects } from '../effects/03-05.effects';
+import { X030501Effects, X030502Effects } from '@app/views/package/ngrx/effects/03-lifecycle/effects/03-05.effects';
 import { SharedModule } from '@app/shared';
 
 @NgModule({

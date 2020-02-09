@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { Doc0504040901Component } from './doc-05-04-04-09-01.component';
+import { Doc0504040901Component } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-test-scenarios/05-04-04-09-routed-component/05-04-04-09-01/doc-05-04-04-09-01.component';
 import { SharedModule } from '@app/shared';
-import { ActivatedRouteStub } from './activated-route-stub';
+import { ActivatedRouteStub } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-test-scenarios/05-04-04-09-routed-component/05-04-04-09-01/activated-route-stub';
 import { ActivatedRoute } from '@angular/router';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';

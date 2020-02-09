@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import { StoreModule } from './store/store.module';
-import { EffectsModule } from './effects/effects.module';
-import { RouterStoreModule } from './router-store/router-store.module';
-import { EntityModule } from './entity/entity.module';
-import { SchematicsModule } from './schematics/schematics.module';
+import { StoreModule } from '@app/views/package/ngrx/store/store.module';
+import { EffectsModule } from '@app/views/package/ngrx/effects/effects.module';
+import { RouterStoreModule } from '@app/views/package/ngrx/router-store/router-store.module';
+import { EntityModule } from '@app/views/package/ngrx/entity/entity.module';
+import { SchematicsModule } from '@app/views/package/ngrx/schematics/schematics.module';
 
 @NgModule({
   declarations: [],

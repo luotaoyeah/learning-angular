@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { IState } from '../store/state/i-state';
-import { AAction } from '../store/actions/03.actions';
+import { IState } from '@app/views/package/ngrx/effects/03-lifecycle/store/state/i-state';
+import { AAction } from '@app/views/package/ngrx/effects/03-lifecycle/store/actions/03.actions';
 
 /*
  * https://ngrx.io/guide/effects/lifecycle#non-dispatching-effects

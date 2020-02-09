@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { X01Component } from './01-overview/x-01.component';
-import { X02Component } from './02-testing/x-02.component';
-import { X03Component } from './03-lifecycle/x-03.component';
+import { X01Component } from '@app/views/package/ngrx/effects/01-overview/x-01.component';
+import { X02Component } from '@app/views/package/ngrx/effects/02-testing/x-02.component';
+import { X03Component } from '@app/views/package/ngrx/effects/03-lifecycle/x-03.component';
 
 const routes: Routes = [
   {

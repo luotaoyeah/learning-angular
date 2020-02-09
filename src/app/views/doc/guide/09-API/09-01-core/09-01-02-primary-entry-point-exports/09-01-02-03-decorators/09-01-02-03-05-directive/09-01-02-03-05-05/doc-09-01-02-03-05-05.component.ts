@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Doc09010203050501Directive } from './directive/doc-09-01-02-03-05-05-01.directive';
-import { Doc09010203050502Directive } from './directive/doc-09-01-02-03-05-05-02.directive';
+import { Doc09010203050501Directive } from '@app/views/doc/guide/09-API/09-01-core/09-01-02-primary-entry-point-exports/09-01-02-03-decorators/09-01-02-03-05-directive/09-01-02-03-05-05/directive/doc-09-01-02-03-05-05-01.directive';
+import { Doc09010203050502Directive } from '@app/views/doc/guide/09-API/09-01-core/09-01-02-primary-entry-point-exports/09-01-02-03-decorators/09-01-02-03-05-directive/09-01-02-03-05-05/directive/doc-09-01-02-03-05-05-02.directive';
 
 /*
  * https://angular.io/api/core/Directive#exportas

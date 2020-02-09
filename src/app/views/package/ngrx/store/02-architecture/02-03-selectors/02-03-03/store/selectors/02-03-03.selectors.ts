@@ -1,4 +1,4 @@
-import { IState } from '../state/i-state';
+import { IState } from '@app/views/package/ngrx/store/02-architecture/02-03-selectors/02-03-03/store/state/i-state';
 import { createSelector } from '@ngrx/store';
 
 const selectFeature = (rootState: { '02-03-03': IState }) => {

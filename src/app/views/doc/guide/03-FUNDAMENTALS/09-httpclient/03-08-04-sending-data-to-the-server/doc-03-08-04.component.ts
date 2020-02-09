@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Doc030804Service } from './service/doc-03-08-04.service';
+import { Doc030804Service } from '@app/views/doc/guide/03-FUNDAMENTALS/09-httpclient/03-08-04-sending-data-to-the-server/service/doc-03-08-04.service';
 
 @Component({
   selector: 'app--doc-03-08-04',

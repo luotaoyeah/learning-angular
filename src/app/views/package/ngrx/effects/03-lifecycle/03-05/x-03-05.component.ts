@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { SafeAny } from '../../../../../../../typings';
-import { IdentityAction } from '../store/actions/03.actions';
+import { SafeAny } from '@src/typings';
+import { IdentityAction } from '@app/views/package/ngrx/effects/03-lifecycle/store/actions/03.actions';
 
 /*
  * https://ngrx.io/guide/effects/lifecycle#identify-effects-uniquely

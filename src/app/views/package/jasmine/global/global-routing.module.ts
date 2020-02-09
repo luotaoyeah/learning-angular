@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { GlobalComponent } from './global.component';
+import { GlobalComponent } from '@app/views/package/jasmine/global/global.component';
 
 const routes: Routes = [
   {

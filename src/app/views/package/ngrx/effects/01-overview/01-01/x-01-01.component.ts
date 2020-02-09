@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { X01Service } from '../services/x-01.service';
-import { IMovie } from '../vms/i-movie';
+import { X01Service } from '@app/views/package/ngrx/effects/01-overview/services/x-01.service';
+import { IMovie } from '@app/views/package/ngrx/effects/01-overview/vms/i-movie';
 
 /*
  * https://ngrx.io/guide/effects#comparison-with-component-based-side-effects

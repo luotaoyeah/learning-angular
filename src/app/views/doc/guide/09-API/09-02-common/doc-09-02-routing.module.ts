@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { Doc090202Component } from './09-02-02-primary-entry-point-exports/doc-09-02-02.component';
+import { Doc090202Component } from '@app/views/doc/guide/09-API/09-02-common/09-02-02-primary-entry-point-exports/doc-09-02-02.component';
 
 const routes: Routes = [
   {

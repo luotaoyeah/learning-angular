@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { COLOR } from './doc-03-07-01-mock';
-import { Doc03070101Service } from './doc-03-07-01-01.service';
+import { COLOR } from '@app/views/doc/guide/03-FUNDAMENTALS/08-dependency-injection/03-07-01-angular-dependency-injection/service/doc-03-07-01-mock';
+import { Doc03070101Service } from '@app/views/doc/guide/03-FUNDAMENTALS/08-dependency-injection/03-07-01-angular-dependency-injection/service/doc-03-07-01-01.service';
 
 @Injectable({
   providedIn: 'root',

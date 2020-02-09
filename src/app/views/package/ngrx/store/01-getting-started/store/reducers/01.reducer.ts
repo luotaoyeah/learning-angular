@@ -1,5 +1,5 @@
-import { ActionTypeEnum, ActionUnion } from '../actions/01.actions';
-import { IState } from '../state/i-state';
+import { ActionTypeEnum, ActionUnion } from '@app/views/package/ngrx/store/01-getting-started/store/actions/01.actions';
+import { IState } from '@app/views/package/ngrx/store/01-getting-started/store/state/i-state';
 
 const initialState: IState = {
   count: 0,

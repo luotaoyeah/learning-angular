@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { NamespaceModule } from './namespace/namespace.module';
-import { GlobalModule } from './global/global.module';
+import { NamespaceModule } from '@app/views/package/jasmine/namespace/namespace.module';
+import { GlobalModule } from '@app/views/package/jasmine/global/global.module';
 
 @NgModule({
   imports: [NamespaceModule, GlobalModule],

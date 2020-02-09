@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { AuthRoutingModule } from './auth-routing.module';
-import { LoginComponent } from './login/login.component';
+import { AuthRoutingModule } from '@app/views/doc/guide/03-FUNDAMENTALS/10-routing-navigation/02-the-sample-application/auth/auth-routing.module';
+import { LoginComponent } from '@app/views/doc/guide/03-FUNDAMENTALS/10-routing-navigation/02-the-sample-application/auth/login/login.component';
 import { SharedModule } from '@app/shared';
 
 @NgModule({
