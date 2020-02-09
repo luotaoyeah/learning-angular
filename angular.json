@@ -77,7 +77,7 @@
             ],
             "index": "src/index.html",
             "main": "src/main.ts",
-            "outputPath": "dist/learning-angular",
+            "outputPath": "dist",
             "polyfills": "src/polyfills.ts",
             "resourcesOutputPath": "img",
             "scripts": [
