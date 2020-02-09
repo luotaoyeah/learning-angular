@@ -1,6 +1,6 @@
 import { AfterContentInit, Component, ContentChild } from '@angular/core';
 import { NzButtonComponent } from 'ng-zorro-antd/button';
-import { Doc090102030304Directive } from './doc-09-01-02-03-03-04.directive';
+import { Doc090102030304Directive } from '@app/views/doc/guide/09-API/09-01-core/09-01-02-primary-entry-point-exports/09-01-02-03-decorators/09-01-02-03-03-content-child/09-01-02-03-03-04/doc-09-01-02-03-03-04.directive';
 
 @Component({
   selector: 'app--doc-09-01-02-03-03-04',

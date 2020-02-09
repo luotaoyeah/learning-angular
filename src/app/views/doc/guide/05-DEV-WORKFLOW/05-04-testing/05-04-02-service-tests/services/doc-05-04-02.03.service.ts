@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Doc05040201Service } from './doc-05-04-02.01.service';
+import { Doc05040201Service } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-02-service-tests/services/doc-05-04-02.01.service';
 
 @Injectable({
   providedIn: 'root',

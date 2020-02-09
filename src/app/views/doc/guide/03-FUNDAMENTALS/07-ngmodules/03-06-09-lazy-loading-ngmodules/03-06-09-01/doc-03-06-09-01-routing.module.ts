@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { Doc03060901Component } from './doc-03-06-09-01.component';
+import { Doc03060901Component } from '@app/views/doc/guide/03-FUNDAMENTALS/07-ngmodules/03-06-09-lazy-loading-ngmodules/03-06-09-01/doc-03-06-09-01.component';
 
 const routes: Routes = [
   {

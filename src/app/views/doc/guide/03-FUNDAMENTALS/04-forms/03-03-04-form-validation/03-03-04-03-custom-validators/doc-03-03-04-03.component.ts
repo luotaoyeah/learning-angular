@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { forbiddenNameValidator } from './validators/forbidden-name.validator';
+import { forbiddenNameValidator } from '@app/views/doc/guide/03-FUNDAMENTALS/04-forms/03-03-04-form-validation/03-03-04-03-custom-validators/validators/forbidden-name.validator';
 
 /*
  * https://angular.io/guide/form-validation#custom-validators

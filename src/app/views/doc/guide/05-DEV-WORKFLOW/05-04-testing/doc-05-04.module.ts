@@ -40,7 +40,7 @@ import { Doc0504030203Component } from './05-04-03-component-test-basics/05-04-0
 import { Doc0504030204Component } from './05-04-03-component-test-basics/05-04-03-02-component-dom-testing/05-04-03-02-04/doc-05-04-03-02-04.component';
 import { Doc0504040401Component } from './05-04-04-component-test-scenarios/05-04-04-04-component-with-async-service/05-04-04-04-01/doc-05-04-04-04-01.component';
 import { Doc050406Component } from './05-04-06-pipe-testing/doc-05-04-06.component';
-import { Doc050406Pipe } from './05-04-06-pipe-testing/pipes/doc-05-04-06.pipe';
+import { Doc050406Pipe } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-06-pipe-testing/pipes/doc-05-04-06.pipe';
 
 @NgModule({
   declarations: [

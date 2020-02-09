@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IConfig } from '../model/i-config';
+import { IConfig } from '@app/views/doc/guide/03-FUNDAMENTALS/09-httpclient/03-08-02-error-handling/model/i-config';
 import { Observable, throwError } from 'rxjs';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, retry } from 'rxjs/operators';

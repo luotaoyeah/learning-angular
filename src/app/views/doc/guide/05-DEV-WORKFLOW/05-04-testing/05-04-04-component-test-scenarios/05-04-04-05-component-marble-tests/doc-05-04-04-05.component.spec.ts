@@ -1,7 +1,7 @@
 import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { SharedModule } from '@app/shared';
-import { Doc05040405Component } from './doc-05-04-04-05.component';
-import { Doc05040405Service } from './services/doc-05-04-04-05.service';
+import { Doc05040405Component } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-test-scenarios/05-04-04-05-component-marble-tests/doc-05-04-04-05.component';
+import { Doc05040405Service } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-test-scenarios/05-04-04-05-component-marble-tests/services/doc-05-04-04-05.service';
 import { getTestScheduler } from 'jasmine-marbles';
 import { RunHelpers } from 'rxjs/internal/testing/TestScheduler';
 import { ColdObservable } from 'rxjs/internal/testing/ColdObservable';

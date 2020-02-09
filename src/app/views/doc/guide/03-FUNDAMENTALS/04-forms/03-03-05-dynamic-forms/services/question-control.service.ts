@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { QuestionBase } from '@app/views/doc/guide/03-FUNDAMENTALS/04-forms/03-03-05-dynamic-forms/vms/question-base';
-import { SafeAny } from '../../../../../../../../typings';
+import { SafeAny } from '@src/typings';
 
 @Injectable()
 export class QuestionControlService {

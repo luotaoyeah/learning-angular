@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { Doc030301Component } from './03-03-01-introduction/doc-03-03-01.component';
-import { Doc030302Component } from './03-03-02-reactive-form/doc-03-03-02.component';
-import { Doc030303Component } from './03-03-03-template-driven-form/doc-03-03-03.component';
-import { Doc030304Component } from './03-03-04-form-validation/doc-03-03-04.component';
-import { Doc030305Component } from './03-03-05-dynamic-forms/doc-03-03-05.component';
+import { Doc030301Component } from '@app/views/doc/guide/03-FUNDAMENTALS/04-forms/03-03-01-introduction/doc-03-03-01.component';
+import { Doc030302Component } from '@app/views/doc/guide/03-FUNDAMENTALS/04-forms/03-03-02-reactive-form/doc-03-03-02.component';
+import { Doc030303Component } from '@app/views/doc/guide/03-FUNDAMENTALS/04-forms/03-03-03-template-driven-form/doc-03-03-03.component';
+import { Doc030304Component } from '@app/views/doc/guide/03-FUNDAMENTALS/04-forms/03-03-04-form-validation/doc-03-03-04.component';
+import { Doc030305Component } from '@app/views/doc/guide/03-FUNDAMENTALS/04-forms/03-03-05-dynamic-forms/doc-03-03-05.component';
 
 const routes: Routes = [
   {

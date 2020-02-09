@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Hero } from '../models/hero';
+import { Hero } from '@app/views/doc/guide/03-FUNDAMENTALS/10-routing-navigation/02-the-sample-application/hero/models/hero';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({

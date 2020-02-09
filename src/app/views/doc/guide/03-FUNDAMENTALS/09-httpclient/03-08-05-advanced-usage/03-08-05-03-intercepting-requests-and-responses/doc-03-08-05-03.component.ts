@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SafeAny } from '../../../../../../../../typings';
+import { SafeAny } from '@src/typings';
 import { Doc03080503Service } from './service/doc-03-08-05-03.service';
 import { Doc0308050304Service } from './service/doc-03-08-05-03-04.service';
 import { tap } from 'rxjs/operators';

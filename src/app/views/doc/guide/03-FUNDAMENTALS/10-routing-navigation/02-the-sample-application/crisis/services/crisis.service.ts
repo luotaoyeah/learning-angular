@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Crisis } from '../models/crisis';
+import { Crisis } from '@app/views/doc/guide/03-FUNDAMENTALS/10-routing-navigation/02-the-sample-application/crisis/models/crisis';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 
 @Injectable({

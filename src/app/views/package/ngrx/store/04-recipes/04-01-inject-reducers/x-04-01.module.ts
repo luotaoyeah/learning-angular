@@ -1,12 +1,12 @@
 import { InjectionToken, NgModule } from '@angular/core';
-import { X0401Component } from './x-04-01.component';
+import { X0401Component } from '@app/views/package/ngrx/store/04-recipes/04-01-inject-reducers/x-04-01.component';
 import { SharedModule } from '@app/shared';
 import { ActionReducer, StoreModule } from '@ngrx/store';
-import { metaReducer01, X0401Reducer } from './store/reducers/04-01.reducer';
-import { IState } from './store/state/i-state';
-import { ActionUnion } from './store/actions/04-01.actions';
+import { metaReducer01, X0401Reducer } from '@app/views/package/ngrx/store/04-recipes/04-01-inject-reducers/store/reducers/04-01.reducer';
+import { IState } from '@app/views/package/ngrx/store/04-recipes/04-01-inject-reducers/store/state/i-state';
+import { ActionUnion } from '@app/views/package/ngrx/store/04-recipes/04-01-inject-reducers/store/actions/04-01.actions';
 import { StoreConfig } from '@ngrx/store/src/store_module';
-import { X0401Service } from './service/x-04-01.service';
+import { X0401Service } from '@app/views/package/ngrx/store/04-recipes/04-01-inject-reducers/service/x-04-01.service';
 
 const X0401_REDUCER_TOKEN: InjectionToken<
   ActionReducer<IState, ActionUnion>

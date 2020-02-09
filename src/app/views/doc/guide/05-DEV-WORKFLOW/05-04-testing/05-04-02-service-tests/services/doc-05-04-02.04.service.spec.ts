@@ -2,7 +2,7 @@
  * https://angular.io/guide/testing#testing-http-services
  */
 
-import { Doc05040204Service, Hero } from './doc-05-04-02.04.service';
+import { Doc05040204Service, Hero } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-02-service-tests/services/doc-05-04-02.04.service';
 import { TestBed } from '@angular/core/testing';
 import { defer } from 'rxjs';
 import { HttpErrorResponse, HttpClient } from '@angular/common/http';

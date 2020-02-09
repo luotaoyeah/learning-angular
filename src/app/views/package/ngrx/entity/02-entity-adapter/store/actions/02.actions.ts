@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { User } from '../state/user';
+import { User } from '@app/views/package/ngrx/entity/02-entity-adapter/store/state/user';
 
 enum ActionTypeEnum {
   LOAD_USERS = '[User] LOAD_USERS',

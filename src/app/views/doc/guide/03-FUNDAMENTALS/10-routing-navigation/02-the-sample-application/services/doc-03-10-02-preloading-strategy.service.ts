@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { PreloadingStrategy, Route } from '@angular/router';
 import { Observable } from 'rxjs';
 import { of } from 'rxjs/internal/observable/of';
-import { SafeAny } from '../../../../../../../../typings';
+import { SafeAny } from '@src/typings';
 
 /*
  * https://angular.io/guide/router#preloading-background-loading-of-feature-areas

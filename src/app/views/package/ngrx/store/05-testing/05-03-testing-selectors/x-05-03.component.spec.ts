@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { X0503Component } from './x-05-03.component';
-import { selectTotal } from './store/selectors/05-03.selectors';
+import { X0503Component } from '@app/views/package/ngrx/store/05-testing/05-03-testing-selectors/x-05-03.component';
+import { selectTotal } from '@app/views/package/ngrx/store/05-testing/05-03-testing-selectors/store/selectors/05-03.selectors';
 
 describe('X0503Component', () => {
   let component: X0503Component;

@@ -1,6 +1,6 @@
 import { Directive } from '@angular/core';
 import { AbstractControl, NG_VALIDATORS, ValidationErrors, Validator } from '@angular/forms';
-import { passwordValidator } from './password.validator';
+import { passwordValidator } from '@app/views/doc/guide/03-FUNDAMENTALS/04-forms/03-03-04-form-validation/03-03-04-04-cross-field-validation/validators/password.validator';
 
 @Directive({
   selector: '[appPasswordValidator]',

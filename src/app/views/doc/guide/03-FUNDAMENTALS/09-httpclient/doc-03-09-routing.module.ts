@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { Doc0309Component } from './doc-03-09.component';
+import { Doc0309Component } from '@app/views/doc/guide/03-FUNDAMENTALS/09-httpclient/doc-03-09.component';
 
 const routes: Routes = [
   {

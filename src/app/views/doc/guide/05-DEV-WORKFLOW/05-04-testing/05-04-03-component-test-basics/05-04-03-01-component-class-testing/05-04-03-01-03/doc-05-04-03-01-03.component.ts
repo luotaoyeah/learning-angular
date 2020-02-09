@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Doc0504030103Service } from './services/doc-05-04-03-01-03.service';
+import { Doc0504030103Service } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-03-component-test-basics/05-04-03-01-component-class-testing/05-04-03-01-03/services/doc-05-04-03-01-03.service';
 
 /*
  * https://angular.io/guide/testing#component-class-testing

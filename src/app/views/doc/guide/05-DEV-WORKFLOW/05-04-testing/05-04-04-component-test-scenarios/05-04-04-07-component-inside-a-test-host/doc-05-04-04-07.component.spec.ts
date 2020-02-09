@@ -1,4 +1,4 @@
-import { Doc05040407Component } from './doc-05-04-04-07.component';
+import { Doc05040407Component } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-test-scenarios/05-04-04-07-component-inside-a-test-host/doc-05-04-04-07.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Component, DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';

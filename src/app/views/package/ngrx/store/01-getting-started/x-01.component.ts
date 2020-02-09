@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { IState } from '../../../../../reducers';
+import { IState } from '@app/reducers';
 import { DecrementAction, IncrementAction, ResetAction } from './store/actions/01.actions';
 
 /*

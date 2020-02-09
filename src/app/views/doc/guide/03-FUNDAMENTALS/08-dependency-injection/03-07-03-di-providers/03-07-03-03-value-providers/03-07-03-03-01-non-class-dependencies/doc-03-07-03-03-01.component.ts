@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { CONFIG_01, CONFIG_TOKEN_01, CONFIG_TOKEN_02, IConfig } from './doc-03-07-03-03-01-config';
+import { CONFIG_01, CONFIG_TOKEN_01, CONFIG_TOKEN_02, IConfig } from '@app/views/doc/guide/03-FUNDAMENTALS/08-dependency-injection/03-07-03-di-providers/03-07-03-03-value-providers/03-07-03-03-01-non-class-dependencies/doc-03-07-03-03-01-config';
 
 @Component({
   selector: 'app--doc-03-07-03-03-01',

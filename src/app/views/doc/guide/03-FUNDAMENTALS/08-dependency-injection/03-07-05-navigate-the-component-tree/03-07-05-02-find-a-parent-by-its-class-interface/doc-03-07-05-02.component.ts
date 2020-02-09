@@ -1,5 +1,5 @@
 import { Component, forwardRef, OnInit } from '@angular/core';
-import { ParentComponent } from './doc-03-07-05-02.service';
+import { ParentComponent } from '@app/views/doc/guide/03-FUNDAMENTALS/08-dependency-injection/03-07-05-navigate-the-component-tree/03-07-05-02-find-a-parent-by-its-class-interface/doc-03-07-05-02.service';
 
 /*
  * 如果 child component 不能提前知道 parent component 的类型，

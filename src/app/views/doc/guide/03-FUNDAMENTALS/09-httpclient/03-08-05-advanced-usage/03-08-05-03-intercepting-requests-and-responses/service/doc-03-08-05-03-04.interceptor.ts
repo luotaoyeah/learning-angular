@@ -9,7 +9,7 @@ import {
   HttpResponse,
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { SafeAny } from '../../../../../../../../../typings';
+import { SafeAny } from '@src/typings';
 
 /*
  * 模拟文件上传过程

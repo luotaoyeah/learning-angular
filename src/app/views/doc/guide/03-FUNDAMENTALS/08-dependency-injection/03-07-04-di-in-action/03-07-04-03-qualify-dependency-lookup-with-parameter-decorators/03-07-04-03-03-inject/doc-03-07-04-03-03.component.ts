@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { TOKEN } from './service/doc-03-07-04-03-03.service';
+import { TOKEN } from '@app/views/doc/guide/03-FUNDAMENTALS/08-dependency-injection/03-07-04-di-in-action/03-07-04-03-qualify-dependency-lookup-with-parameter-decorators/03-07-04-03-03-inject/service/doc-03-07-04-03-03.service';
 
 @Component({
   selector: 'app--doc-03-07-04-03-03',

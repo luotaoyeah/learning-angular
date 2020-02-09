@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Hero } from '../vms/hero';
+import { Hero } from '@app/views/doc/guide/03-FUNDAMENTALS/04-forms/03-03-03-template-driven-form/vms/hero';
 import { NgForm } from '@angular/forms';
 
 /*

@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { Doc05040409Component } from './doc-05-04-04-09.component';
+import { Doc05040409Component } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-test-scenarios/05-04-04-09-routed-component/doc-05-04-04-09.component';
 import { SharedModule } from '@app/shared';
 import { Router } from '@angular/router';
 import { DebugElement } from '@angular/core';

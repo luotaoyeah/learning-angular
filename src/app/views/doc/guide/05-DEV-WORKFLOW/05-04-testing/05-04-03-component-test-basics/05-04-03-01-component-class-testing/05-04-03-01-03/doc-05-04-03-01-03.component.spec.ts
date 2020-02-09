@@ -1,6 +1,6 @@
-import { Doc0504030103Component } from './doc-05-04-03-01-03.component';
+import { Doc0504030103Component } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-03-component-test-basics/05-04-03-01-component-class-testing/05-04-03-01-03/doc-05-04-03-01-03.component';
 import { TestBed } from '@angular/core/testing';
-import { Doc0504030103Service } from './services/doc-05-04-03-01-03.service';
+import { Doc0504030103Service } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-03-component-test-basics/05-04-03-01-component-class-testing/05-04-03-01-03/services/doc-05-04-03-01-03.service';
 
 class MockDoc0504030103Service {
   public isLoggedIn: boolean = true;

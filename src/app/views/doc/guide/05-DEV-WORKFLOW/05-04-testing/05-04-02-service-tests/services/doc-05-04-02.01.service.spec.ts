@@ -2,7 +2,7 @@
  * https://angular.io/guide/testing#service-tests
  */
 
-import { Doc05040201Service } from './doc-05-04-02.01.service';
+import { Doc05040201Service } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-02-service-tests/services/doc-05-04-02.01.service';
 
 /*
  * 对于简单的 service, 可以不依赖于 angular 提供的测试工具, 直接进行测试

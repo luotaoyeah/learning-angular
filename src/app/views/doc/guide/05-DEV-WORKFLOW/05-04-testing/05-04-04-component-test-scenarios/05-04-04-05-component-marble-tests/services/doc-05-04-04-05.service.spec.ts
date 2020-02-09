@@ -1,4 +1,4 @@
-import { Doc05040405Service } from './doc-05-04-04-05.service';
+import { Doc05040405Service } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-test-scenarios/05-04-04-05-component-marble-tests/services/doc-05-04-04-05.service';
 import { async, TestBed } from '@angular/core/testing';
 import { getTestScheduler } from 'jasmine-marbles';
 import { RunHelpers } from 'rxjs/internal/testing/TestScheduler';

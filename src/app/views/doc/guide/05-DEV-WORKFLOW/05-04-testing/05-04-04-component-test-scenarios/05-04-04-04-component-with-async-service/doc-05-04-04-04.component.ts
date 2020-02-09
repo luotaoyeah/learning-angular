@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Doc05040404Service } from './services/doc-05-04-04-04.service';
+import { Doc05040404Service } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-test-scenarios/05-04-04-04-component-with-async-service/services/doc-05-04-04-04.service';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 

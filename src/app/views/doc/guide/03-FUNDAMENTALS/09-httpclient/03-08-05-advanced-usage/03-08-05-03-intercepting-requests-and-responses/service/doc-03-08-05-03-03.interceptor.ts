@@ -2,7 +2,7 @@ import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse } fr
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { SafeAny } from '../../../../../../../../../typings';
+import { SafeAny } from '@src/typings';
 
 @Injectable()
 export class Doc0308050303Interceptor implements HttpInterceptor {

@@ -2,9 +2,9 @@
  * https://angular.io/guide/testing#testing-services-with-the-testbed
  */
 
-import { Doc05040203Service } from './doc-05-04-02.03.service';
+import { Doc05040203Service } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-02-service-tests/services/doc-05-04-02.03.service';
 import { TestBed } from '@angular/core/testing';
-import { Doc05040201Service } from './doc-05-04-02.01.service';
+import { Doc05040201Service } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-02-service-tests/services/doc-05-04-02.01.service';
 
 describe('Doc05040203Service', () => {
   let service: Doc05040203Service;

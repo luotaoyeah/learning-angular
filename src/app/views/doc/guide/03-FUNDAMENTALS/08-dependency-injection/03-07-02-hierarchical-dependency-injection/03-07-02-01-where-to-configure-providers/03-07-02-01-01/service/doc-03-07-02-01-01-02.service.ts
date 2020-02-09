@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Doc0307020101Module } from '../doc-03-07-02-01-01.module';
+import { Doc0307020101Module } from '@app/views/doc/guide/03-FUNDAMENTALS/08-dependency-injection/03-07-02-hierarchical-dependency-injection/03-07-02-01-where-to-configure-providers/03-07-02-01-01/doc-03-07-02-01-01.module';
 
 /*
  * 如果在 @Injectable 中配置了 providedIn: SomeModule，

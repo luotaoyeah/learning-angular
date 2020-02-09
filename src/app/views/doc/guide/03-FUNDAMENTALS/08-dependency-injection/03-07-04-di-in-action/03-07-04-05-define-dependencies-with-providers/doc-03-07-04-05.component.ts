@@ -6,7 +6,7 @@ import {
   SOME_TOKEN_02,
   SOME_TOKEN_03,
   SOME_TOKEN_04,
-} from './service/doc-03-07-04-05.service';
+} from '@app/views/doc/guide/03-FUNDAMENTALS/08-dependency-injection/03-07-04-di-in-action/03-07-04-05-define-dependencies-with-providers/service/doc-03-07-04-05.service';
 
 @Component({
   selector: 'app--doc-03-07-04-05',

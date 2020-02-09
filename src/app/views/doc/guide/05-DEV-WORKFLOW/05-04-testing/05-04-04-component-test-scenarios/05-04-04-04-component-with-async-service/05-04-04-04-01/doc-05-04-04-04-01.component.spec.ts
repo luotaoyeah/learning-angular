@@ -1,5 +1,5 @@
 import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
-import { Doc0504040401Component } from './doc-05-04-04-04-01.component';
+import { Doc0504040401Component } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-test-scenarios/05-04-04-04-component-with-async-service/05-04-04-04-01/doc-05-04-04-04-01.component';
 
 describe('Doc05040404Component', () => {
   let fixture: ComponentFixture<Doc0504040401Component>;

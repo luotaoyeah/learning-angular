@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { Doc0504030201Component } from './doc-05-04-03-02-01.component';
+import { Doc0504030201Component } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-03-component-test-basics/05-04-03-02-component-dom-testing/05-04-03-02-01/doc-05-04-03-02-01.component';
 
 describe('Doc0504030201Component', () => {
   let component: Doc0504030201Component;

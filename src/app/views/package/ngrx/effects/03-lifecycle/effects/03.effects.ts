@@ -11,7 +11,7 @@ import {
   AAction,
   ActionTypeEnum,
   InitAction,
-} from '../store/actions/03.actions';
+} from '@app/views/package/ngrx/effects/03-lifecycle/store/actions/03.actions';
 import { Action } from '@ngrx/store';
 
 @Injectable()

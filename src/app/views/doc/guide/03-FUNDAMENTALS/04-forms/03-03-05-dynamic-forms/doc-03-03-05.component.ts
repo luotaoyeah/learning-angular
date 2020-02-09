@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { SafeAny } from '../../../../../../../typings';
-import { QuestionService } from './services/question.service';
-import { QuestionBase } from './vms/question-base';
+import { SafeAny } from '@src/typings';
+import { QuestionService } from '@app/views/doc/guide/03-FUNDAMENTALS/04-forms/03-03-05-dynamic-forms/services/question.service';
+import { QuestionBase } from '@app/views/doc/guide/03-FUNDAMENTALS/04-forms/03-03-05-dynamic-forms/vms/question-base';
 
 /*
  * https://angular.io/guide/dynamic-form

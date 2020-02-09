@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { Doc05040412Component } from './doc-05-04-04-12.component';
+import { Doc05040412Component } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-test-scenarios/05-04-04-12-use-a-page-object/doc-05-04-04-12.component';
 import { SharedModule } from '@app/shared';
 
 describe('src/app/routes/doc/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-test-scenarios/05-04-04-12-use-a-page-object/doc-05-04-04-12.component.ts', () => {

@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Actions, Effect, ofType } from '@ngrx/effects';
-import { X01Service } from '../../services/x-01.service';
 import {
   ActionTypeEnum,
   SetMoviesAction,
-} from '../store/actions/01-02.actions';
+} from '@app/views/package/ngrx/effects/01-overview/01-02/store/actions/01-02.actions';
+import { X01Service } from '@app/views/package/ngrx/effects/01-overview/services/x-01.service';
+import { Actions, Effect, ofType } from '@ngrx/effects';
 import { EMPTY } from 'rxjs';
 import { catchError, map, mergeMap } from 'rxjs/operators';
 
@@ -21,7 +21,7 @@ class X0102Effects {
     ofType(ActionTypeEnum.FetchMovies),
     mergeMap(() =>
       this.x01Service.listMovies().pipe(
-        map(movies => new SetMoviesAction(movies)),
+        map((movies) => new SetMoviesAction(movies)),
         catchError(() => EMPTY),
       ),
     ),

@@ -1,4 +1,4 @@
-import { Doc0504030102Component } from './doc-05-04-03-01-02.component';
+import { Doc0504030102Component } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-03-component-test-basics/05-04-03-01-component-class-testing/05-04-03-01-02/doc-05-04-03-01-02.component';
 
 describe('Doc0504030102Component', () => {
   let component: Doc0504030102Component;

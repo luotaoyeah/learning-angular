@@ -1,7 +1,7 @@
-import { IState } from '../state/i-state';
-import { ActionTypeEnum, ActionUnion } from '../actions/03-01.actions';
+import { IState } from '@app/views/package/ngrx/store/03-advanced/03-01-meta-reducer/store/state/i-state';
+import { ActionTypeEnum, ActionUnion } from '@app/views/package/ngrx/store/03-advanced/03-01-meta-reducer/store/actions/03-01.actions';
 import { ActionReducer } from '@ngrx/store';
-import { X0301Component } from '../../x-03-01.component';
+import { X0301Component } from '@app/views/package/ngrx/store/03-advanced/03-01-meta-reducer/x-03-01.component';
 
 const initialState: IState = {
   x: 'A',

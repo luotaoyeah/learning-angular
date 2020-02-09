@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { Doc030307Component } from './doc-03-03-07.component';
+import { Doc030307Component } from '@app/views/doc/guide/03-FUNDAMENTALS/03-components-templates/07-dynamic-components/doc-03-03-07.component';
 
 const routes: Routes = [
   {

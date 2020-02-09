@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Doc03070306Module } from '../doc-03-07-03-06.module';
+import { Doc03070306Module } from '@app/views/doc/guide/03-FUNDAMENTALS/08-dependency-injection/03-07-03-di-providers/03-07-03-06-tree-shakable-providers/doc-03-07-03-06.module';
 
 /*
  * 使用 @Injectable.providedIn 注册，可以实现 tree-shaking

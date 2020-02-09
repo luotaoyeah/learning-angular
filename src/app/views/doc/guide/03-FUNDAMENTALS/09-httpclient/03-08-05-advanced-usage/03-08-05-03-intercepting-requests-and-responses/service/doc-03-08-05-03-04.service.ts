@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpRequest } from '@angular/common/http';
-import { SafeAny } from '../../../../../../../../../typings';
+import { SafeAny } from '@src/typings';
 
 @Injectable({
   providedIn: 'root',

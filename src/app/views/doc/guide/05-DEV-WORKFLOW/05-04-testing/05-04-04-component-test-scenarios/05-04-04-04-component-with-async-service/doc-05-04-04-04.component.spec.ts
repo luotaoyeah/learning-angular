@@ -1,6 +1,6 @@
 import { async, ComponentFixture, fakeAsync, flushMicrotasks, TestBed, tick } from '@angular/core/testing';
-import { Doc05040404Component } from './doc-05-04-04-04.component';
-import { Doc05040404Service } from './services/doc-05-04-04-04.service';
+import { Doc05040404Component } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-test-scenarios/05-04-04-04-component-with-async-service/doc-05-04-04-04.component';
+import { Doc05040404Service } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-test-scenarios/05-04-04-04-component-with-async-service/services/doc-05-04-04-04.service';
 import { defer, interval, Observable, of, throwError } from 'rxjs';
 import { SharedModule } from '@app/shared';
 import { delay, take } from 'rxjs/operators';

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { IState } from './store/state/i-state';
-import { selectTotal } from './store/selectors/02-03-03.selectors';
+import { IState } from '@app/views/package/ngrx/store/02-architecture/02-03-selectors/02-03-03/store/state/i-state';
+import { selectTotal } from '@app/views/package/ngrx/store/02-architecture/02-03-selectors/02-03-03/store/selectors/02-03-03.selectors';
 
 /*
  * https://ngrx.io/guide/store/selectors#resetting-memoized-selectors

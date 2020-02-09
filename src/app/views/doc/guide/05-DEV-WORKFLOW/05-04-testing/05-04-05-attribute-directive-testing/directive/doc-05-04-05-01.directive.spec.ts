@@ -1,6 +1,6 @@
 import { Component, DebugElement } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { Doc05040501Directive } from './doc-05-04-05-01.directive';
+import { Doc05040501Directive } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-05-attribute-directive-testing/directive/doc-05-04-05-01.directive';
 import { By } from '@angular/platform-browser';
 
 /*

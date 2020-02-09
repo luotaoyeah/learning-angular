@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { IState } from '../store/state/i-state';
+import { IState } from '@app/views/package/ngrx/store/02-architecture/02-02-reducers/store/state/i-state';
 
 @Pipe({
   name: 'count',

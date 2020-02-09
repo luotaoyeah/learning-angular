@@ -1,6 +1,6 @@
-import { IAppState } from '../state/i-app-state';
+import { IAppState } from '@app/views/package/ngrx/store/02-architecture/02-03-selectors/02-03-01/02-03-01-03/store/state/i-app-state';
 import { createSelector, MemoizedSelectorWithProps } from '@ngrx/store';
-import { ICounter } from '../state/i-counter';
+import { ICounter } from '@app/views/package/ngrx/store/02-architecture/02-03-selectors/02-03-01/02-03-01-03/store/state/i-counter';
 import { find } from 'lodash';
 
 interface IProps {

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Doc030702010201Service } from './service/doc-03-07-02-01-02-01.service';
+import { Doc030702010201Service } from '@app/views/doc/guide/03-FUNDAMENTALS/08-dependency-injection/03-07-02-hierarchical-dependency-injection/03-07-02-01-where-to-configure-providers/03-07-02-01-02/service/doc-03-07-02-01-02-01.service';
 
 @Component({
   selector: 'app--doc-03-07-02-01-02',

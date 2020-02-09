@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { select, Store } from '@ngrx/store';
-import { IState } from './store/state/i-state';
-import { selectX } from './store/selectors/04-01.selectors';
-import { AAction, BAction } from './store/actions/04-01.actions';
+import { IState } from '@app/views/package/ngrx/store/04-recipes/04-01-inject-reducers/store/state/i-state';
+import { selectX } from '@app/views/package/ngrx/store/04-recipes/04-01-inject-reducers/store/selectors/04-01.selectors';
+import { AAction, BAction } from '@app/views/package/ngrx/store/04-recipes/04-01-inject-reducers/store/actions/04-01.actions';
 
 /*
  * https://ngrx.io/guide/store/recipes/injecting

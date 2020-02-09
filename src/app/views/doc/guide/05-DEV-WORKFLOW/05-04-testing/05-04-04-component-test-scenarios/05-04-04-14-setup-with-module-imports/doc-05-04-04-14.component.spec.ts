@@ -1,4 +1,4 @@
-import { Doc05040414Component } from './doc-05-04-04-14.component';
+import { Doc05040414Component } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-test-scenarios/05-04-04-14-setup-with-module-imports/doc-05-04-04-14.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { SharedModule } from '@app/shared';
 

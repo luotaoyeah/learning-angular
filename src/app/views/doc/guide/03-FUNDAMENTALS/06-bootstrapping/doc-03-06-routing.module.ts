@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { Doc0306Component } from './doc-03-06.component';
+import { Doc0306Component } from '@app/views/doc/guide/03-FUNDAMENTALS/06-bootstrapping/doc-03-06.component';
 
 const routes: Routes = [
   {

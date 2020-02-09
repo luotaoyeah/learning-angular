@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { SafeAny } from '../../../../../../../../typings';
-import { QuestionBase } from '../vms/question-base';
-import { QuestionControlService } from '../services/question-control.service';
+import { SafeAny } from '@src/typings';
+import { QuestionBase } from '@app/views/doc/guide/03-FUNDAMENTALS/04-forms/03-03-05-dynamic-forms/vms/question-base';
+import { QuestionControlService } from '@app/views/doc/guide/03-FUNDAMENTALS/04-forms/03-03-05-dynamic-forms/services/question-control.service';
 
 @Component({
   selector: 'app--dynamic-form',

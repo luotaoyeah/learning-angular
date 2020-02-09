@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Doc03060601Component } from './doc03060601/doc03060601.component';
+import { Doc03060601Component } from '@app/views/doc/guide/03-FUNDAMENTALS/07-ngmodules/03-06-06-feature-modules/doc-03-06-06-01/doc03060601/doc03060601.component';
 
 @NgModule({
   declarations: [Doc03060601Component],

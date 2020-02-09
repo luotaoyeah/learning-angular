@@ -1,6 +1,6 @@
 import { Directive, Input } from '@angular/core';
 import { AbstractControl, NG_VALIDATORS, ValidationErrors, Validator } from '@angular/forms';
-import { forbiddenNameValidator } from './forbidden-name.validator';
+import { forbiddenNameValidator } from '@app/views/doc/guide/03-FUNDAMENTALS/04-forms/03-03-04-form-validation/03-03-04-03-custom-validators/validators/forbidden-name.validator';
 
 /*
  * 如何在 template-driven form 中使用 custom validator function ?

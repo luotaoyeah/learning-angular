@@ -1,9 +1,9 @@
-import { IState } from '../state/i-state';
-import { ActionTypeEnum, ActionUnion } from '../actions/04-01.actions';
+import { IState } from '@app/views/package/ngrx/store/04-recipes/04-01-inject-reducers/store/state/i-state';
+import { ActionTypeEnum, ActionUnion } from '@app/views/package/ngrx/store/04-recipes/04-01-inject-reducers/store/actions/04-01.actions';
 import { Injectable } from '@angular/core';
-import { X0401Service } from '../../service/x-04-01.service';
+import { X0401Service } from '@app/views/package/ngrx/store/04-recipes/04-01-inject-reducers/service/x-04-01.service';
 import { ActionReducer, MetaReducer } from '@ngrx/store';
-import { X0401Component } from '../../x-04-01.component';
+import { X0401Component } from '@app/views/package/ngrx/store/04-recipes/04-01-inject-reducers/x-04-01.component';
 
 /*
  * 如果一个 reducer 中, 需要依赖其他的 service,

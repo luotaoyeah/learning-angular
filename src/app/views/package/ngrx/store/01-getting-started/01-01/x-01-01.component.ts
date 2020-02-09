@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { createFeatureSelector, createSelector, select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { IState } from '../store/state/i-state';
+import { IState } from '@app/views/package/ngrx/store/01-getting-started/store/state/i-state';
 
 @Component({
   selector: 'app--x-01-01',

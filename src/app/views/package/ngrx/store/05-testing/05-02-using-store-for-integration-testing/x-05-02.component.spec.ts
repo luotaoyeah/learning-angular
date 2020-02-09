@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { X0502Component } from './x-05-02.component';
+import { X0502Component } from '@app/views/package/ngrx/store/05-testing/05-02-using-store-for-integration-testing/x-05-02.component';
 
 describe('X0502Component', () => {
   let component: X0502Component;

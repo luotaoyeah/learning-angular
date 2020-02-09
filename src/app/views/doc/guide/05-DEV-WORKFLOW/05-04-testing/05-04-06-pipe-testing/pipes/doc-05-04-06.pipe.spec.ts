@@ -1,4 +1,4 @@
-import { Doc050406Pipe } from './doc-05-04-06.pipe';
+import { Doc050406Pipe } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-06-pipe-testing/pipes/doc-05-04-06.pipe';
 
 /*
  * 测试一个 pipe 时, 可以直接测试它的 transform() 方法

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { SafeAny } from '../../../../../../../../typings';
-import { DropdownQuestion } from '../vms/question-dropdown';
-import { QuestionBase } from '../vms/question-base';
-import { TextboxQuestion } from '../vms/question-textbox';
+import { SafeAny } from '@src/typings';
+import { DropdownQuestion } from '@app/views/doc/guide/03-FUNDAMENTALS/04-forms/03-03-05-dynamic-forms/vms/question-dropdown';
+import { QuestionBase } from '@app/views/doc/guide/03-FUNDAMENTALS/04-forms/03-03-05-dynamic-forms/vms/question-base';
+import { TextboxQuestion } from '@app/views/doc/guide/03-FUNDAMENTALS/04-forms/03-03-05-dynamic-forms/vms/question-textbox';
 
 @Injectable()
 export class QuestionService {

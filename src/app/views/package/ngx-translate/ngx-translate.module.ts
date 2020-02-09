@@ -1,18 +1,14 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NgxTranslateRoutingModule } from './ngx-translate-routing.module';
-import { NgxTranslateComponent } from './ngx-translate.component';
+import { NgModule } from '@angular/core';
 import { SharedModule } from '@app/shared';
-import { NgxTranslate01Component } from './01-translate-module/ngx-translate-01.component';
-import { NgxTranslate02Component } from './02-translate-pipe/ngx-translate-02.component';
-import { NgxTranslate03Component } from './03-translate-directive/ngx-translate-03.component';
-import { NgxTranslate04Component } from './04-translate-service/ngx-translate-04.component';
-import {
-  MissingTranslationHandler,
-  MissingTranslationHandlerParams,
-  TranslateModule,
-} from '@ngx-translate/core';
-import { NgxTranslate05Component } from './05-missing-translation-handler/ngx-translate-05.component';
+import { NgxTranslate01Component } from '@app/views/package/ngx-translate/01-translate-module/ngx-translate-01.component';
+import { NgxTranslate02Component } from '@app/views/package/ngx-translate/02-translate-pipe/ngx-translate-02.component';
+import { NgxTranslate03Component } from '@app/views/package/ngx-translate/03-translate-directive/ngx-translate-03.component';
+import { NgxTranslate04Component } from '@app/views/package/ngx-translate/04-translate-service/ngx-translate-04.component';
+import { NgxTranslate05Component } from '@app/views/package/ngx-translate/05-missing-translation-handler/ngx-translate-05.component';
+import { NgxTranslateRoutingModule } from '@app/views/package/ngx-translate/ngx-translate-routing.module';
+import { NgxTranslateComponent } from '@app/views/package/ngx-translate/ngx-translate.component';
+import { MissingTranslationHandler, MissingTranslationHandlerParams, TranslateModule } from '@ngx-translate/core';
 
 /*
  * 根据某个 key 找不到对应的 i18n 文本时的处理逻辑, 我们可以进行自定义,

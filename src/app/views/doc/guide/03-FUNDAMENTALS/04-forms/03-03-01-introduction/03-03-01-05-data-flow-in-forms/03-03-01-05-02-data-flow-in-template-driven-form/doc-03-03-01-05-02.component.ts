@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgModel } from '@angular/forms';
-import { SafeAny } from '../../../../../../../../../typings';
+import { SafeAny } from '@src/typings';
 
 /*
  * https://angular.io/guide/forms-overview#data-flow-in-template-driven-forms

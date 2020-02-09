@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { Doc0504030204Component } from './doc-05-04-03-02-04.component';
+import { Doc0504030204Component } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-03-component-test-basics/05-04-03-02-component-dom-testing/05-04-03-02-04/doc-05-04-03-02-04.component';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 

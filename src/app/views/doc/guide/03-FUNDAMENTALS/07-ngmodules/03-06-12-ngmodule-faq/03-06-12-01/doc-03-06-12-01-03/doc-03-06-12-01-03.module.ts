@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Doc0306120103Component } from './doc-03-06-12-01-03.component';
-import { Doc03061201Service } from '../service/doc-03-06-12-01.service';
+import { Doc0306120103Component } from '@app/views/doc/guide/03-FUNDAMENTALS/07-ngmodules/03-06-12-ngmodule-faq/03-06-12-01/doc-03-06-12-01-03/doc-03-06-12-01-03.component';
+import { Doc03061201Service } from '@app/views/doc/guide/03-FUNDAMENTALS/07-ngmodules/03-06-12-ngmodule-faq/03-06-12-01/service/doc-03-06-12-01.service';
 
 @NgModule({
   declarations: [Doc0306120103Component],

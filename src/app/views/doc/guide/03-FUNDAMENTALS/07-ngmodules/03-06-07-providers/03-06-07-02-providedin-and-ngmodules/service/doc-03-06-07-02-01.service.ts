@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Doc0307Module } from '../../../doc-03-07.module';
+import { Doc0307Module } from '@app/views/doc/guide/03-FUNDAMENTALS/07-ngmodules/doc-03-07.module';
 
 @Injectable({
   /*

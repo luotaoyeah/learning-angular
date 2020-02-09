@@ -3,7 +3,7 @@ import {
   createSelector,
   MemoizedSelector,
 } from '@ngrx/store';
-import { IState } from '../state/i-state';
+import { IState } from '@app/views/package/ngrx/store/04-recipes/04-01-inject-reducers/store/state/i-state';
 
 const selectFeature = createFeatureSelector<{ '04-01': IState }, IState>(
   '04-01',

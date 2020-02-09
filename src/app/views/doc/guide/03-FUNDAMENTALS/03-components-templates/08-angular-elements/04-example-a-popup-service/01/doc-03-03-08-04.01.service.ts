@@ -6,8 +6,8 @@ import {
   Injectable,
   Injector,
 } from '@angular/core';
-import { SafeAny } from '../../../../../../../../../typings';
-import { Doc0303080401Component } from './doc-03-03-08-04.01.component';
+import { SafeAny } from '@src/typings';
+import { Doc0303080401Component } from '@app/views/doc/guide/03-FUNDAMENTALS/03-components-templates/08-angular-elements/04-example-a-popup-service/01/doc-03-03-08-04.01.component';
 import { NgElement, WithProperties } from '@angular/elements';
 
 @Injectable()

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { passwordValidator } from './validators/password.validator';
+import { passwordValidator } from '@app/views/doc/guide/03-FUNDAMENTALS/04-forms/03-03-04-form-validation/03-03-04-04-cross-field-validation/validators/password.validator';
 
 /*
  * https://angular.io/guide/form-validation#cross-field-validation

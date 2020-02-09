@@ -1,7 +1,7 @@
 import { Component, Injector } from '@angular/core';
-import { Doc0303080401Service } from './01/doc-03-03-08-04.01.service';
+import { Doc0303080401Service } from '@app/views/doc/guide/03-FUNDAMENTALS/03-components-templates/08-angular-elements/04-example-a-popup-service/01/doc-03-03-08-04.01.service';
 import { createCustomElement, NgElementConstructor } from '@angular/elements';
-import { Doc0303080401Component } from './01/doc-03-03-08-04.01.component';
+import { Doc0303080401Component } from '@app/views/doc/guide/03-FUNDAMENTALS/03-components-templates/08-angular-elements/04-example-a-popup-service/01/doc-03-03-08-04.01.component';
 
 /*
  * https://angular.io/guide/elements#example-a-popup-service

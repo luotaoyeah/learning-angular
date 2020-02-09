@@ -1,7 +1,7 @@
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { SafeAny } from '../../../../../../../../../typings';
+import { SafeAny } from '@src/typings';
 
 /*
  * 拦截器（interceptor）用来拦截请求和返回，

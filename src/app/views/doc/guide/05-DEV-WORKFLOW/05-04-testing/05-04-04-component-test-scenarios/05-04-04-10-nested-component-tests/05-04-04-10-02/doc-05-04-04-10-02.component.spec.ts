@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { Doc0504041002Component } from './doc-05-04-04-10-02.component';
+import { Doc0504041002Component } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-test-scenarios/05-04-04-10-nested-component-tests/05-04-04-10-02/doc-05-04-04-10-02.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('Doc0504041002Component', () => {

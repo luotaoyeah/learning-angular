@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SchematicsComponent } from './schematics.component';
+import { SchematicsComponent } from '@app/views/package/ngrx/schematics/schematics.component';
 
 const routes: Routes = [
   {

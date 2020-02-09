@@ -1,5 +1,5 @@
 import { Component, OnInit, Optional } from '@angular/core';
-import { Doc03070501Component } from './doc-03-07-05-01.component';
+import { Doc03070501Component } from '@app/views/doc/guide/03-FUNDAMENTALS/08-dependency-injection/03-07-05-navigate-the-component-tree/03-07-05-01-find-a-parent-component-of-known-type/doc-03-07-05-01.component';
 
 @Component({
   selector: 'app--doc-03-07-05-01-01',

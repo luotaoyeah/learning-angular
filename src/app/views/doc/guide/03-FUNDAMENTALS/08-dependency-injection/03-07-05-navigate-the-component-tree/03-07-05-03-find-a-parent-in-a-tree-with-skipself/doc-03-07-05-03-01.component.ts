@@ -1,5 +1,5 @@
 import { Component, forwardRef, OnInit, Optional, SkipSelf } from '@angular/core';
-import { ParentComponent } from './doc-03-07-05-02.service';
+import { ParentComponent } from '@app/views/doc/guide/03-FUNDAMENTALS/08-dependency-injection/03-07-05-navigate-the-component-tree/03-07-05-03-find-a-parent-in-a-tree-with-skipself/doc-03-07-05-02.service';
 
 /*
  * 像这种组件，通过 class interface 注入了 parent component，

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Doc03060801Service } from './service/doc-03-06-08-01.service';
-import { Doc03060802Service } from './service/doc-03-06-08-02.service';
+import { Doc03060801Service } from '@app/views/doc/guide/03-FUNDAMENTALS/07-ngmodules/03-06-08-singleton-services/03-06-08-01-providing-a-singleton-service/service/doc-03-06-08-01.service';
+import { Doc03060802Service } from '@app/views/doc/guide/03-FUNDAMENTALS/07-ngmodules/03-06-08-singleton-services/03-06-08-01-providing-a-singleton-service/service/doc-03-06-08-02.service';
 
 @Component({
   selector: 'app--doc-03-06-08-01',

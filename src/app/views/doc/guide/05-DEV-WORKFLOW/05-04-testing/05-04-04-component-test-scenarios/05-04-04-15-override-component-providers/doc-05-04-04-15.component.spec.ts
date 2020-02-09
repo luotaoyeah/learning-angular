@@ -1,4 +1,4 @@
-import { Doc05040415Component } from './doc-05-04-04-15.component';
+import { Doc05040415Component } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-test-scenarios/05-04-04-15-override-component-providers/doc-05-04-04-15.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Component } from '@angular/core';
 import { SharedModule } from '@app/shared';

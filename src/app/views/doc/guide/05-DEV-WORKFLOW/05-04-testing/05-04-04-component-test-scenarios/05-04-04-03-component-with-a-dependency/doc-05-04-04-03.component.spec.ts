@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { Doc05040403Component } from './doc-05-04-04-03.component';
-import { Doc05040403Service } from './services/doc-05-04-04-03.service';
+import { Doc05040403Component } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-test-scenarios/05-04-04-03-component-with-a-dependency/doc-05-04-04-03.component';
+import { Doc05040403Service } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-test-scenarios/05-04-04-03-component-with-a-dependency/services/doc-05-04-04-03.service';
 
 /*
  * 在测试 component 的时候, 如果 component 依赖了其他的 service,

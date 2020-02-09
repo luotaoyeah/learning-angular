@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NgElement, WithProperties } from '@angular/elements';
-import { Doc0303080401Component } from '../04-example-a-popup-service/01/doc-03-03-08-04.01.component';
+import { Doc0303080401Component } from '@app/views/doc/guide/03-FUNDAMENTALS/03-components-templates/08-angular-elements/04-example-a-popup-service/01/doc-03-03-08-04.01.component';
 
 /*
  * https://angular.io/guide/elements#typings-for-custom-elements

@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { SafeAny } from '../../../../../../../../typings';
-import { QuestionBase } from '../vms/question-base';
+import { SafeAny } from '@src/typings';
+import { QuestionBase } from '@app/views/doc/guide/03-FUNDAMENTALS/04-forms/03-03-05-dynamic-forms/vms/question-base';
 
 @Component({
   selector: 'app--question',
