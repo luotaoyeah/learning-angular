@@ -1,0 +1,27 @@
+<p>
+  <code>RouterLinkActive</code> 是一个 directive, 用来配置一组 CSS 类, 如果当前页面的地址跟
+  <code>routerLinkActive</code> 所在的 <code>&lt;a&gt;</code> 标签的地址相匹配, 则这些 CSS 类会被添加到该
+  <code>a</code> 标签上, 反之会被移除
+</p>
+
+<p>
+  <button nz-button [routerLink]="['/doc', '03']" [routerLinkActive]="['active']">ACTIVE</button>
+</p>
+
+<p>
+  当 <code>RouterLinkActive.routerLinkActiveOptions.exact</code> 设为 <code>true</code> 时, 只有当 URL 精确匹配时,
+  才会激活该链接; 否则只要前面的部分匹配, 就会激活该链接
+</p>
+
+<p>
+  <button
+    nz-button
+    [routerLink]="['/doc', '03']"
+    [routerLinkActive]="['active']"
+    [routerLinkActiveOptions]="{
+      exact: true
+    }"
+  >
+    INACTIVE
+  </button>
+</p>

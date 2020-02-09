@@ -1,5 +1,5 @@
 import { map } from 'lodash';
-import { SafeAny } from '../../../typings';
+import { SafeAny } from '@src/typings';
 
 /**
  * DTO utils

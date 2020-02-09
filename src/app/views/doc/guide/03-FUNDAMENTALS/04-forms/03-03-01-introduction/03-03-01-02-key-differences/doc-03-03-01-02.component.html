@@ -1,0 +1,43 @@
+<p>reactive form 和 template-driven form 的主要区别:</p>
+
+<nz-table [nzBordered]="true" nzSize="middle" [nzData]="[{}]" [nzShowPagination]="false">
+  <thead>
+    <tr>
+      <th></th>
+      <th>REACTIVE FORM</th>
+      <th>TEMPLATE-DRIVEN FORM</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>setup(form model)</td>
+      <td>more explicit, created in component class</td>
+      <td>less explicit, created by directive</td>
+    </tr>
+    <tr>
+      <td>data model</td>
+      <td>structured</td>
+      <td>unstructured</td>
+    </tr>
+    <tr>
+      <td>predictability</td>
+      <td>synchronous</td>
+      <td>asynchronous</td>
+    </tr>
+    <tr>
+      <td>form validation</td>
+      <td>function</td>
+      <td>directive</td>
+    </tr>
+    <tr>
+      <td>mutability</td>
+      <td>immutable</td>
+      <td>mutable</td>
+    </tr>
+    <tr>
+      <td>scalability</td>
+      <td>low-level API access</td>
+      <td>abstraction on top of API</td>
+    </tr>
+  </tbody>
+</nz-table>

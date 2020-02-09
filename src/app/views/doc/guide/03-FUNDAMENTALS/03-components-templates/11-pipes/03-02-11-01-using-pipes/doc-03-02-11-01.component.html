@@ -1,0 +1,7 @@
+<p>
+  pipe 类似于 vue 中的 filter, 需要配合 pipe operator（|） 使用, 本质上 pipe 是一个 function,
+  用来对数据进行格式化转换操作, 可以接收其他参数
+</p>
+<button nz-button nzType="primary">
+  {{ birthday | date: 'yyyy-MM-dd' }}
+</button>

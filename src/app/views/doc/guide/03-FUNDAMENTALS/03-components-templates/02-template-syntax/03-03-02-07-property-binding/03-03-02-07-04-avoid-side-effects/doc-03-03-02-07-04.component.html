@@ -1,0 +1,8 @@
+<p>
+  property binding 后面的 expression 可以是一个简单的 expression, 也可以是一个方法调用, 如果是一个方法调用,
+  应该避免在该方法中包含 side effects
+</p>
+
+<p>这儿的 side effects 包括, 修改另外一个绑定到界面上的组件属性</p>
+
+<img [src]="getPicUrl()" [ngStyle]="{ width: '50px', height: '50px', borderRadius: '100%' }" />

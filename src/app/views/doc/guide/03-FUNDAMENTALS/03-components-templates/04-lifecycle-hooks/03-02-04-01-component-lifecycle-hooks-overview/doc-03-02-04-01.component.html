@@ -1,0 +1,9 @@
+<p>
+  component is a special directive，component and directive 都有一系列的 lifecycle hooks，每个 lifecycle 都有一个对应的
+  interface（如：OnInit），component 通过 implements 某个 interface 及其对应的 method，来添加该生命周期的钩子函数；每个
+  interface 包含一个 method，方法名称为 ng + 接口名称，如 OnInit 接口的 ngOnInit() 方法
+</p>
+<p>
+  因为 TS 最终会被编译为 JS，而 JS 中是不存在 interface 的，因此严格来讲，component 可以不需要 implements 某个
+  interface，只要实现了对应的 method（如 ngOnInit() 方法）就可以
+</p>

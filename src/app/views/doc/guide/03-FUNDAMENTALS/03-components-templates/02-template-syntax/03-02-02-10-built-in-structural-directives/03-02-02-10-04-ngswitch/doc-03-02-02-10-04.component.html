@@ -1,0 +1,13 @@
+<p>NgSwitch 类似于 JS 中的 switch 语句，需要跟 NgSwitchCase 和 NgSwitchDefault 配合使用</p>
+<nz-radio-group [(ngModel)]="item" [nzButtonStyle]="'solid'">
+  <label nz-radio-button [nzValue]="i.label" *ngFor="let i of items">{{ i.value }}</label>
+</nz-radio-group>
+<br />
+<br />
+<ng-container *ngIf="!!item">
+  <div [ngSwitch]="item">
+    <button *ngSwitchCase="'FOO'" styleClass="ui-button-success">"FOO BUTTON"</button>
+    <button *ngSwitchCase="'BAR'" styleClass="ui-button-danger">BAR BUTTON</button>
+    <button *ngSwitchDefault styleClass="ui-button-info">DEFAULT BUTTON</button>
+  </div>
+</ng-container>

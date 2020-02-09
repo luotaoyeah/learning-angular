@@ -1,0 +1,11 @@
+<p>
+  严格来讲, <code>NgZone</code> 并不是 <code>change detection</code> 的一部分, 它们之间的关系是:
+  <code>NgZone</code> 用来在执行某些异步操作时, 自动触发
+  <code>change detection cycle</code>
+</p>
+
+<p>如果没有 <code>NgZone</code>, 那么在这些场景中, 就不能自动触发 <code>change detection cycle</code>, 必须手动触发</p>
+
+<nz-divider [nzDashed]="true"></nz-divider>
+
+<button nz-button>{{ foo }}</button>

@@ -1,8 +1,0 @@
-<p>
-  interpolation 和 property binding 都可以避免 XSS 的问题, 区别在于,
-  interpolation 会将所有内容原样显示, 而 property binding 会对内存进行处理,
-  移除部分内容, 这个过程称之为 <code>sanitizing</code>
-</p>
-
-<p>{{ maliciousHTML }}</p>
-<p [innerHTML]="maliciousHTML"></p>

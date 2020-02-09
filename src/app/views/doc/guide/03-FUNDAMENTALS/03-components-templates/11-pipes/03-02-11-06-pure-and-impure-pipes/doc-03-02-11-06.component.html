@@ -1,0 +1,14 @@
+<button nz-button (click)="push01()" nzType="danger">PUSH</button>
+
+<div>
+  <ul>
+    <li *ngFor="let item of items | doc03021106">{{ item }}</li>
+  </ul>
+</div>
+
+<hr />
+<nz-collapse [nzAccordion]="true">
+  <nz-collapse-panel nzHeader="The Impure AsyncPipe" nzExpandedIcon="caret-right">
+    <app--doc-03-02-11-06-01></app--doc-03-02-11-06-01>
+  </nz-collapse-panel>
+</nz-collapse>

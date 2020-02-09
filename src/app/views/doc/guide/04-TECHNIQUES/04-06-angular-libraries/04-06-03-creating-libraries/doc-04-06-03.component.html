@@ -1,0 +1,20 @@
+<nz-collapse [nzAccordion]="true">
+  <nz-collapse-panel nzHeader="Creating Libraries" nzExpandedIcon="caret-right">
+    <p>
+      angular 中的 projects 有两种类型: application 和 library, 可以通过
+      angular.json#projects.learning-angular.projectType 属性配置类型
+    </p>
+
+    <p>如何创建一个 library 类型的 project ? 使用命令: `ng generate library &lt;library-name&gt;`</p>
+
+    <p>
+      angular application 的 builder 使用的是: @angular-devkit/build-angular:browser, angular library 的 builder
+      使用的是: @angular-devkit/build-ng-packagr:build, 这个 builder 的一个特性就是不需要指定 --prod, 自动就会使用 aot
+      进行编译
+    </p>
+
+    <nz-divider [nzDashed]="true"></nz-divider>
+    <lib-learning-angular-lib></lib-learning-angular-lib>
+    <button nz-button (click)="handleClick()">TEST</button>
+  </nz-collapse-panel>
+</nz-collapse>

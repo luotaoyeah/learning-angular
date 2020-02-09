@@ -16,7 +16,7 @@ import { some } from 'lodash';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { Observable, of, throwError } from 'rxjs';
 import { catchError, mergeMap } from 'rxjs/operators';
-import { SafeAny } from '../../../../typings';
+import { SafeAny } from '@src/typings';
 
 const CODE_MESSAGES: { [index: number]: string } = {
   200: 'OK',

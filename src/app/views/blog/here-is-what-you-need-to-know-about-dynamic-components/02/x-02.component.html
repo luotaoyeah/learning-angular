@@ -1,0 +1,21 @@
+<p>
+  angular 里面定义了 <code>NgModule</code> 的概念, 每一个组件只能属于某一个 <code>NgModule</code>, 不能同时属于多个
+  <code>NgModule</code>
+</p>
+
+<p>
+  <code>NgModule</code> 通过 <code>declarations</code> 来定义属于当前模块的组件, 如果某个组件可以输出给其他模块使用,
+  则将它定义在 <code>exports</code> 里面, 其他模块通过 <code>imports</code> 引入当前模块之后, 就可以使用这个输出的组件了
+</p>
+
+<p>
+  angular 在编译组件的时候, 会给某些组件生成 <code>factory</code>, 那么会给哪些组件生成 <code>factory</code> 呢?
+  一种是在 template 树中找到的组件, 二种是声明在 <code>entryComponents</code> 里面的组件
+</p>
+
+<p>
+  在任何一个组件中, 都可以通过注入
+  <code>ComponentFactoryResolver</code> 这个服务, 来获取某个组件的 <code>factory</code>, 需要注意的是,
+  这两个组件必须位于同一个模块中, 即要么它们是定义在同一个 <code>NgModule</code> 中的, 要么是通过
+  <code>imports</code> 引入了其所在的模块
+</p>

@@ -1,0 +1,47 @@
+<nz-collapse [nzAccordion]="true">
+  <nz-collapse-panel nzExpandedIcon="caret-right" nzHeader='class="foo"'>
+    <p>
+      class binding 跟普通的 property binding 类似, 但是它们之间有一些区别, 我们知道对于 property binding 来说,
+      如果使用的是
+      <code>someProperty="someValue"</code> 的形式, 则首先会去匹配对应的 directive input property, 然后会去匹配对应的
+      element attribute
+    </p>
+
+    <p>
+      而对于 class binding 来说, <code>class</code> 实际上是一个 <code>attribute</code>, 它对应的
+      <code>properrty</code> 是 <code>className</code>, 所以当我们使用 <code>class="someClass"</code> 的形式时,
+      实际上绑定的就是对应的
+      <code>attribute</code>
+    </p>
+
+    <p class="foo bar baz">FOO</p>
+  </nz-collapse-panel>
+
+  <nz-collapse-panel nzExpandedIcon="caret-right" nzHeader='[attr.class]="foo"'>
+    <p>
+      因为 <code>class</code> 是一个 <code>attribute</code>, 因此我们可以使用 attribute bingding 的语法来实现 class
+      binding, 此时, 如果同时存在 <code>class="x y z"</code>, 则它会被覆盖, 无论谁先谁后
+    </p>
+
+    <p [attr.class]="'foo bar baz'" class="x y z">FOO</p>
+  </nz-collapse-panel>
+
+  <nz-collapse-panel nzExpandedIcon="caret-right" nzHeader='[class]="foo"'>
+    <p>
+      可以使用 <code>[class]="'foo bar baz'"</code> 的形式来动态地绑定多个类名, 此时, 如果同时存在
+      <code>class="x y z"</code>, 则它会被覆盖, 无论谁先谁后
+    </p>
+
+    <p [class]="'foo bar baz'" class="x y z">FOO</p>
+  </nz-collapse-panel>
+
+  <nz-collapse-panel nzExpandedIcon="caret-right" nzHeader='[class.foo]="isFoo"'>
+    <p>
+      可以使用 <code>[class.foo]="isFoo"</code> 的形式来动态的添加移除一个类名, 此时, 如果同时存在
+      <code>class="x y z"</code>, 则它**不**会被覆盖, 会跟 <code>[class.foo]="isFoo"</code> 的结果进行合并
+    </p>
+
+    <p class="bar" [class.foo]="isFoo">FOO</p>
+    <button nz-button (click)="isFoo = !isFoo">{{ isFoo }}</button>
+  </nz-collapse-panel>
+</nz-collapse>
