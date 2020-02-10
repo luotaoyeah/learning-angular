@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 // tslint:disable-next-line:max-line-length
-import { Doc031002PreloadingStrategyService } from '@app/views/doc/guide/03-FUNDAMENTALS/10-routing-navigation/02-the-sample-application/services/doc-03-10-02-preloading-strategy.service';
+import { Doc031002PreloadingStrategyService } from '@app/views/doc/guide/main-concepts/10-routing-navigation/02-the-sample-application/services/doc-03-10-02-preloading-strategy.service';
 
 @NgModule({
   /*
