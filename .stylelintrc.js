@@ -20,6 +20,7 @@ module.exports = {
     'string-no-newline': null,
     'selector-type-no-unknown': null,
     'no-descending-specificity': null,
+    'selector-combinator-space-before': null,
     'length-zero-no-unit': null,
     'selector-pseudo-element-no-unknown': [
       true,

@@ -120,6 +120,6 @@ import { Doc030302Component } from '@app/views/doc/guide/main-concepts/templates
     Doc0302021401Component,
     [Doc0303020703Directive],
   ],
-  imports: [[SharedModule], Doc030302RoutingModule,AttributeBindingModule],
+  imports: [[SharedModule], Doc030302RoutingModule, AttributeBindingModule],
 })
 export class TemplatesModule {}
