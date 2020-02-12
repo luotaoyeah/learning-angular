@@ -10,6 +10,8 @@ import { Doc0308Module } from '@app/views/doc/guide/main-concepts/08-dependency-
 import { Doc0309Module } from '@app/views/doc/guide/main-concepts/09-httpclient/doc-03-09.module';
 import { Doc0310Module } from '@app/views/doc/guide/main-concepts/10-routing-navigation/doc-03-10.module';
 import { Doc0311Module } from '@app/views/doc/guide/main-concepts/11-animations/doc-03-11.module';
+import { DirectivesModule } from '@app/views/doc/guide/main-concepts/directives/directives.module';
+import { TemplatesModule } from '@app/views/doc/guide/main-concepts/templates/templates.module';
 
 @NgModule({
   imports: [
@@ -24,6 +26,8 @@ import { Doc0311Module } from '@app/views/doc/guide/main-concepts/11-animations/
     Doc0309Module,
     Doc0310Module,
     Doc0311Module,
+    TemplatesModule,
+    DirectivesModule,
   ],
 })
 export class MainConceptsModule {}

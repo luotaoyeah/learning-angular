@@ -17,17 +17,6 @@ import { Doc0302020703Component } from '@app/views/doc/guide/main-concepts/templ
 import { Doc03020207Component } from '@app/views/doc/guide/main-concepts/templates/03-02-02-07-event-binding/doc-03-02-02-07.component';
 import { Doc0302020801Component } from '@app/views/doc/guide/main-concepts/templates/03-02-02-08-two-way-binding/doc-03-02-02-08-01.component';
 import { Doc03020208Component } from '@app/views/doc/guide/main-concepts/templates/03-02-02-08-two-way-binding/doc-03-02-02-08.component';
-import { Doc0302020901Component } from '@app/views/doc/guide/main-concepts/templates/03-02-02-09-built-in-attribute-directives/03-02-02-09-01-ngclass/doc-03-02-02-09-01.component';
-import { Doc0302020902Component } from '@app/views/doc/guide/main-concepts/templates/03-02-02-09-built-in-attribute-directives/03-02-02-09-02-ngstyle/doc-03-02-02-09-02.component';
-import { Doc0302020903Component } from '@app/views/doc/guide/main-concepts/templates/03-02-02-09-built-in-attribute-directives/03-02-02-09-03-ngmodel/doc-03-02-02-09-03.component';
-import { Doc03020209Component } from '@app/views/doc/guide/main-concepts/templates/03-02-02-09-built-in-attribute-directives/doc-03-02-02-09.component';
-import { Doc030202100101Component } from '@app/views/doc/guide/main-concepts/templates/03-02-02-10-built-in-structural-directives/03-02-02-10-01-ngif/doc-03-02-02-10-01-01.component';
-import { Doc0302021001Component } from '@app/views/doc/guide/main-concepts/templates/03-02-02-10-built-in-structural-directives/03-02-02-10-01-ngif/doc-03-02-02-10-01.component';
-import { Doc030202100201Component } from '@app/views/doc/guide/main-concepts/templates/03-02-02-10-built-in-structural-directives/03-02-02-10-02-ngfor/doc-03-02-02-10-02-01.component';
-import { Doc0302021002Component } from '@app/views/doc/guide/main-concepts/templates/03-02-02-10-built-in-structural-directives/03-02-02-10-02-ngfor/doc-03-02-02-10-02.component';
-import { Doc0302021003Component } from '@app/views/doc/guide/main-concepts/templates/03-02-02-10-built-in-structural-directives/03-02-02-10-03-template-input-variable/doc-03-02-02-10-03.component';
-import { Doc0302021004Component } from '@app/views/doc/guide/main-concepts/templates/03-02-02-10-built-in-structural-directives/03-02-02-10-04-ngswitch/doc-03-02-02-10-04.component';
-import { Doc03020210Component } from '@app/views/doc/guide/main-concepts/templates/03-02-02-10-built-in-structural-directives/doc-03-02-02-10.component';
 import { Doc0302021101Component } from '@app/views/doc/guide/main-concepts/templates/03-02-02-11-template-reference-variable/doc-03-02-02-11-01.component';
 import { Doc03020211Component } from '@app/views/doc/guide/main-concepts/templates/03-02-02-11-template-reference-variable/doc-03-02-02-11.component';
 import { Doc0302021201Component } from '@app/views/doc/guide/main-concepts/templates/03-02-02-12-input-and-output-properties/03-02-02-12-01-binding-to-a-different-component/doc-03-02-02-12-01.component';
@@ -92,17 +81,6 @@ import { Doc030302Component } from '@app/views/doc/guide/main-concepts/templates
     Doc030202070301Component,
     Doc03020208Component,
     Doc0302020801Component,
-    Doc03020209Component,
-    Doc0302020901Component,
-    Doc0302020902Component,
-    Doc0302020903Component,
-    Doc03020210Component,
-    Doc0302021001Component,
-    Doc030202100101Component,
-    Doc0302021002Component,
-    Doc030202100201Component,
-    Doc0302021003Component,
-    Doc0302021004Component,
     Doc03020211Component,
     Doc0302021101Component,
     Doc03020212Component,

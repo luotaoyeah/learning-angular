@@ -52,7 +52,6 @@ import { Doc0302090401Directive } from '@app/views/doc/guide/main-concepts/03-co
 import { Doc0302090402Directive } from '@app/views/doc/guide/main-concepts/03-components-templates/09-attribute-directives/03-02-09-04-pass-values-into-the-directive-with-an-input-data-binding/directive/doc-03-02-09-04-02.directive';
 import { Doc0302090403Directive } from '@app/views/doc/guide/main-concepts/03-components-templates/09-attribute-directives/03-02-09-04-pass-values-into-the-directive-with-an-input-data-binding/directive/doc-03-02-09-04-03.directive';
 import { Doc0302090404Directive } from '@app/views/doc/guide/main-concepts/03-components-templates/09-attribute-directives/03-02-09-04-pass-values-into-the-directive-with-an-input-data-binding/directive/doc-03-02-09-04-04.directive';
-import { TemplatesModule } from '@app/views/doc/guide/main-concepts/templates/templates.module';
 import { Doc030306Module } from '@app/views/doc/guide/main-concepts/03-components-templates/06-component-styles/doc-03-03-06.module';
 import { Doc030307Module } from '@app/views/doc/guide/main-concepts/03-components-templates/07-dynamic-components/doc-03-03-07.module';
 import { Doc030310Module } from '@app/views/doc/guide/main-concepts/03-components-templates/10-structural-directives/doc-03-03-10.module';
@@ -124,7 +123,6 @@ import { Doc030305Module } from '@app/views/doc/guide/main-concepts/03-component
   imports: [
     Doc0303RoutingModule,
     SharedModule,
-    TemplatesModule,
     Doc030305Module,
     Doc030306Module,
     Doc030307Module,
