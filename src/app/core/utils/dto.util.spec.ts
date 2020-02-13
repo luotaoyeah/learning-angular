@@ -1,5 +1,5 @@
 import { DtoUtil } from '@app/core';
-import { isNil } from 'lodash';
+import { isNil } from 'lodash-es';
 
 class TestDTO {
   public foo: string = '';

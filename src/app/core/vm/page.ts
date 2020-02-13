@@ -1,7 +1,7 @@
 /**
  * Pagination data for backend response
  */
-import { isNil } from 'lodash';
+import { isNil } from 'lodash-es';
 import { DtoUtil } from '@app/core/utils';
 
 class Page<T> {
@@ -9,7 +9,7 @@ class Page<T> {
   public items: Array<T> = [];
 
   constructor(t: Partial<Page<T>> = {}) {
-    DtoUtil.keys(t).forEach(key => {
+    DtoUtil.keys(t).forEach((key) => {
       const value = Reflect.get(t, key);
       if (!isNil(value)) {
         Reflect.set(this, key, value);

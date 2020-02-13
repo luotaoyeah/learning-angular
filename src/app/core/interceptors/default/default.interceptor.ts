@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 import { DtoUtil } from '@app/core/utils';
 import { ResponseResult } from '@app/core/vm';
 import { environment } from '@app/env/environment';
-import { some } from 'lodash';
+import { some } from 'lodash-es';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { Observable, of, throwError } from 'rxjs';
 import { catchError, mergeMap } from 'rxjs/operators';
