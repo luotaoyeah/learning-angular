@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { Doc030302Component } from '@app/views/doc/guide/main-concepts/templates/doc-03-03-02.component';
+import { PipesComponent } from '@app/views/doc/guide/main-concepts/templates/pipes/pipes.component';
 
 const routes: Routes = [
   {
-    path: '03/03/02',
-    component: Doc030302Component,
+    path: 'guide/pipes',
+    component: PipesComponent,
   },
 ];
 
@@ -13,4 +13,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class Doc030302RoutingModule {}
+export class PipesRoutingModule {}

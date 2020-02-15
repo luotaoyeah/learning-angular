@@ -5,7 +5,6 @@ import { Doc0302020901Component } from '@app/views/doc/guide/main-concepts/direc
 import { Doc0302020902Component } from '@app/views/doc/guide/main-concepts/directives/built-in-directives/03-02-02-09-built-in-attribute-directives/03-02-02-09-02-ngstyle/doc-03-02-02-09-02.component';
 import { Doc0302020903Component } from '@app/views/doc/guide/main-concepts/directives/built-in-directives/03-02-02-09-built-in-attribute-directives/03-02-02-09-03-ngmodel/doc-03-02-02-09-03.component';
 import { Doc03020209Component } from '@app/views/doc/guide/main-concepts/directives/built-in-directives/03-02-02-09-built-in-attribute-directives/doc-03-02-02-09.component';
-import { Doc0302021003Component } from '@app/views/doc/guide/main-concepts/directives/built-in-directives/03-02-02-10-built-in-structural-directives/03-02-02-10-03-template-input-variable/doc-03-02-02-10-03.component';
 import { Doc0302021004Component } from '@app/views/doc/guide/main-concepts/directives/built-in-directives/03-02-02-10-built-in-structural-directives/03-02-02-10-04-ngswitch/doc-03-02-02-10-04.component';
 import { Doc03020210Component } from '@app/views/doc/guide/main-concepts/directives/built-in-directives/03-02-02-10-built-in-structural-directives/doc-03-02-02-10.component';
 import { BuiltInDirectivesComponent } from '@app/views/doc/guide/main-concepts/directives/built-in-directives/built-in-directives.component';
@@ -30,7 +29,6 @@ import { NzRadioModule } from 'ng-zorro-antd/radio';
     NgifComponent,
     NgforComponent,
     Ngfor01Component,
-    Doc0302021003Component,
     Doc0302021004Component,
   ],
   imports: [BuiltInDirectivesRoutingModule, NzButtonModule, NzCollapseModule, CommonModule, FormsModule, NzRadioModule],

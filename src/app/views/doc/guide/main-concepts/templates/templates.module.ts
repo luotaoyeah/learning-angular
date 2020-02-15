@@ -45,13 +45,14 @@ import { Doc0303020707Component } from '@app/views/doc/guide/main-concepts/templ
 import { Doc0303020708Component } from '@app/views/doc/guide/main-concepts/templates/03-03-02-07-property-binding/03-03-02-07-08-property-binding-vs-interpolation/doc-03-03-02-07-08.component';
 import { Doc0303020709Component } from '@app/views/doc/guide/main-concepts/templates/03-03-02-07-property-binding/03-03-02-07-09-content-security/doc-03-03-02-07-09.component';
 import { Doc03030207Component } from '@app/views/doc/guide/main-concepts/templates/03-03-02-07-property-binding/doc-03-03-02-07.component';
+import { PipesModule } from '@app/views/doc/guide/main-concepts/templates/pipes/pipes.module';
 import { AttributeBindingModule } from '@app/views/doc/guide/main-concepts/templates/attribute-binding/attribute-binding.module';
-import { Doc030302RoutingModule } from '@app/views/doc/guide/main-concepts/templates/doc-03-03-02-routing.module';
-import { Doc030302Component } from '@app/views/doc/guide/main-concepts/templates/doc-03-03-02.component';
+import { TemplatesRoutingModule } from '@app/views/doc/guide/main-concepts/templates/templates.routing.module';
+import { TemplatesComponent } from '@app/views/doc/guide/main-concepts/templates/templates.component';
 
 @NgModule({
   declarations: [
-    Doc030302Component,
+    TemplatesComponent,
     Doc03020201Component,
     Doc03020202Component,
     Doc0302020201Component,
@@ -98,6 +99,6 @@ import { Doc030302Component } from '@app/views/doc/guide/main-concepts/templates
     Doc0302021401Component,
     [Doc0303020703Directive],
   ],
-  imports: [[SharedModule], Doc030302RoutingModule, AttributeBindingModule],
+  imports: [[SharedModule], TemplatesRoutingModule, PipesModule, AttributeBindingModule],
 })
 export class TemplatesModule {}

@@ -55,7 +55,6 @@ import { Doc0302090404Directive } from '@app/views/doc/guide/main-concepts/03-co
 import { Doc030306Module } from '@app/views/doc/guide/main-concepts/03-components-templates/06-component-styles/doc-03-03-06.module';
 import { Doc030307Module } from '@app/views/doc/guide/main-concepts/03-components-templates/07-dynamic-components/doc-03-03-07.module';
 import { Doc030310Module } from '@app/views/doc/guide/main-concepts/03-components-templates/10-structural-directives/doc-03-03-10.module';
-import { Doc030211Module } from '@app/views/doc/guide/main-concepts/03-components-templates/11-pipes/doc-03-02-11.module';
 import { Doc030308Module } from '@app/views/doc/guide/main-concepts/03-components-templates/08-angular-elements/doc-03-03-08.module';
 import { Doc030305Module } from '@app/views/doc/guide/main-concepts/03-components-templates/05-component-interaction/doc-03-03-05.module';
 
@@ -128,7 +127,6 @@ import { Doc030305Module } from '@app/views/doc/guide/main-concepts/03-component
     Doc030307Module,
     Doc030308Module,
     Doc030310Module,
-    Doc030211Module,
   ],
 })
 export class Doc0303Module {}
