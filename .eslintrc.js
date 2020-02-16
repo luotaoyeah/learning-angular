@@ -113,7 +113,7 @@ module.exports = {
     'prefer-object-spread': 'error',
     radix: 'error',
     'space-in-parens': 'off',
-    'spaced-comment': 'error',
+    'spaced-comment': 'off',
     'use-isnan': 'error',
     'valid-typeof': 'off',
   },
