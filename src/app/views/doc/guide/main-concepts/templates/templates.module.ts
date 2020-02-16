@@ -8,13 +8,6 @@ import { Doc0302020204Component } from '@app/views/doc/guide/main-concepts/templ
 import { Doc03020202Component } from '@app/views/doc/guide/main-concepts/templates/03-02-02-02-interpolation-and-template-expression/doc-03-02-02-02.component';
 import { Doc0302020301Component } from '@app/views/doc/guide/main-concepts/templates/03-02-02-03-template-statement/03-02-02-03-01-statement-context/doc-03-02-02-03-01.component';
 import { Doc03020203Component } from '@app/views/doc/guide/main-concepts/templates/03-02-02-03-template-statement/doc-03-02-02-03.component';
-import { Doc030202070101Component } from '@app/views/doc/guide/main-concepts/templates/03-02-02-07-event-binding/03-02-02-07-01-target-event/doc-03-02-02-07-01-01.component';
-import { Doc0302020701Component } from '@app/views/doc/guide/main-concepts/templates/03-02-02-07-event-binding/03-02-02-07-01-target-event/doc-03-02-02-07-01.component';
-import { Doc030202070201Component } from '@app/views/doc/guide/main-concepts/templates/03-02-02-07-event-binding/03-02-02-07-02-$event-and-event-handling-statements/doc-03-02-02-07-02-01.component';
-import { Doc0302020702Component } from '@app/views/doc/guide/main-concepts/templates/03-02-02-07-event-binding/03-02-02-07-02-$event-and-event-handling-statements/doc-03-02-02-07-02.component';
-import { Doc030202070301Component } from '@app/views/doc/guide/main-concepts/templates/03-02-02-07-event-binding/03-02-02-07-03-custom-events-with-eventemitter/doc-03-02-02-07-03-01.component';
-import { Doc0302020703Component } from '@app/views/doc/guide/main-concepts/templates/03-02-02-07-event-binding/03-02-02-07-03-custom-events-with-eventemitter/doc-03-02-02-07-03.component';
-import { Doc03020207Component } from '@app/views/doc/guide/main-concepts/templates/03-02-02-07-event-binding/doc-03-02-02-07.component';
 import { Doc0302020801Component } from '@app/views/doc/guide/main-concepts/templates/03-02-02-08-two-way-binding/doc-03-02-02-08-01.component';
 import { Doc03020208Component } from '@app/views/doc/guide/main-concepts/templates/03-02-02-08-two-way-binding/doc-03-02-02-08.component';
 import { Doc0302021101Component } from '@app/views/doc/guide/main-concepts/templates/03-02-02-11-template-reference-variable/doc-03-02-02-11-01.component';
@@ -45,10 +38,11 @@ import { Doc0303020707Component } from '@app/views/doc/guide/main-concepts/templ
 import { Doc0303020708Component } from '@app/views/doc/guide/main-concepts/templates/03-03-02-07-property-binding/03-03-02-07-08-property-binding-vs-interpolation/doc-03-03-02-07-08.component';
 import { Doc0303020709Component } from '@app/views/doc/guide/main-concepts/templates/03-03-02-07-property-binding/03-03-02-07-09-content-security/doc-03-03-02-07-09.component';
 import { Doc03030207Component } from '@app/views/doc/guide/main-concepts/templates/03-03-02-07-property-binding/doc-03-03-02-07.component';
-import { PipesModule } from '@app/views/doc/guide/main-concepts/templates/pipes/pipes.module';
 import { AttributeBindingModule } from '@app/views/doc/guide/main-concepts/templates/attribute-binding/attribute-binding.module';
-import { TemplatesRoutingModule } from '@app/views/doc/guide/main-concepts/templates/templates.routing.module';
+import { EventBindingModule } from '@app/views/doc/guide/main-concepts/templates/event-binding/event-binding.module';
+import { PipesModule } from '@app/views/doc/guide/main-concepts/templates/pipes/pipes.module';
 import { TemplatesComponent } from '@app/views/doc/guide/main-concepts/templates/templates.component';
+import { TemplatesRoutingModule } from '@app/views/doc/guide/main-concepts/templates/templates.routing.module';
 
 @NgModule({
   declarations: [
@@ -73,13 +67,6 @@ import { TemplatesComponent } from '@app/views/doc/guide/main-concepts/templates
     Doc0303020707Component,
     Doc0303020708Component,
     Doc0303020709Component,
-    Doc03020207Component,
-    Doc0302020701Component,
-    Doc030202070101Component,
-    Doc0302020702Component,
-    Doc030202070201Component,
-    Doc0302020703Component,
-    Doc030202070301Component,
     Doc03020208Component,
     Doc0302020801Component,
     Doc03020211Component,
@@ -99,6 +86,6 @@ import { TemplatesComponent } from '@app/views/doc/guide/main-concepts/templates
     Doc0302021401Component,
     [Doc0303020703Directive],
   ],
-  imports: [[SharedModule], TemplatesRoutingModule, PipesModule, AttributeBindingModule],
+  imports: [[SharedModule], TemplatesRoutingModule, PipesModule, AttributeBindingModule, EventBindingModule],
 })
 export class TemplatesModule {}
