@@ -1,3 +1,4 @@
+import * as chalk from 'chalk';
 import { Application } from 'express';
 import * as jsonServer from 'json-server';
 
@@ -16,7 +17,5 @@ require('./api/doc/03/10/02/doc-03-10-02').init(app);
 
 const port = 3013;
 app.listen(port, () => {
-  console.log('--------------------------------------------------');
-  console.log(`json-server is running at http://localhost:${port}`);
-  console.log('--------------------------------------------------');
+  console.log(chalk.greenBright(`json-server is running at http://localhost:${port}`));
 });

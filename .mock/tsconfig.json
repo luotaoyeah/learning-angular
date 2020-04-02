@@ -3,11 +3,21 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "baseUrl": "./",
+    "declaration": false,
+    "downlevelIteration": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": false,
     "lib": ["ESNext", "DOM"],
     "module": "CommonJS",
     "moduleResolution": "Node",
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "outDir": "./dist/out-tsc",
+    "resolveJsonModule": true,
     "sourceMap": false,
-    "target": "ESNext"
-  },
-  "extends": "../tsconfig"
+    "strict": true,
+    "target": "ESNext",
+    "typeRoots": ["node_modules/@types"]
+  }
 }
