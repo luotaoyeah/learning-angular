@@ -1,8 +1,0 @@
-<ng-container *ngFor="let book of books$ | async">
-  <button nz-button>{{ book.name }}</button>
-</ng-container>
-
-<nz-divider [nzDashed]="true"></nz-divider>
-<button nz-button (click)="clearUser()">CLEAR</button>
-<button nz-button (click)="setUser()">SET USER</button>
-<button nz-button (click)="resetUser()">RESET USER</button>

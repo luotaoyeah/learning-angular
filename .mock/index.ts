@@ -12,7 +12,6 @@ app.use(
   }),
 );
 
-require('./api/pkgs/ngrx/01').init(app);
 require('./api/doc/03/10/02/doc-03-10-02').init(app);
 
 const port = 3013;

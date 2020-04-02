@@ -26,10 +26,6 @@ const routes: Routes = [
     loadChildren: () => import('./package/ngx-translate/ngx-translate.module').then((m) => m.NgxTranslateModule),
   },
   {
-    path: 'pkgs/ngrx',
-    loadChildren: () => import('./package/ngrx/ngrx.module').then((m) => m.NgrxModule),
-  },
-  {
     path: 'exception',
     loadChildren: () => import('./exception/exception.module').then((m) => m.ExceptionModule),
   },
