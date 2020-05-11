@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { Doc0504030201Component } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-03-component-test-basics/05-04-03-02-component-dom-testing/05-04-03-02-01/doc-05-04-03-02-01.component';
 
 describe('Doc0504030201Component', () => {
@@ -10,11 +10,13 @@ describe('Doc0504030201Component', () => {
    * 每一个 it() 称之为一个 spec（测试）,
    * beforeEach() 会在每一个 it() 执行之前执行, 包含的是公共的初始化代码
    */
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [Doc0504030201Component],
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [Doc0504030201Component],
+      }).compileComponents();
+    }),
+  );
 
   beforeEach(() => {
     /*

@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { Doc0504041001Component } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-test-scenarios/05-04-04-10-nested-component-tests/05-04-04-10-01/doc-05-04-04-10-01.component';
 import { Component } from '@angular/core';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { Doc0504041001Component } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-test-scenarios/05-04-04-10-nested-component-tests/05-04-04-10-01/doc-05-04-04-10-01.component';
 
 /*
  * 通常一个 parent component 的 template 里面会包含很多的 child component,
@@ -22,11 +22,13 @@ describe('Doc0504041001Component', () => {
   let fixture: ComponentFixture<Doc0504041001Component>;
   let component: Doc0504041001Component;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [Doc0504041001Component, NzAlertStubComponent],
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [Doc0504041001Component, NzAlertStubComponent],
+      }).compileComponents();
+    }),
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(Doc0504041001Component);

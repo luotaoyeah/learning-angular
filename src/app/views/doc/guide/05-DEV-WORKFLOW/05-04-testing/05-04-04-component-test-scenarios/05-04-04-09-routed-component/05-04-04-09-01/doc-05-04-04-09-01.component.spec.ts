@@ -1,10 +1,10 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { Doc0504040901Component } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-test-scenarios/05-04-04-09-routed-component/05-04-04-09-01/doc-05-04-04-09-01.component';
+import { DebugElement } from '@angular/core';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
 import { SharedModule } from '@app/shared';
 import { ActivatedRouteStub } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-test-scenarios/05-04-04-09-routed-component/05-04-04-09-01/activated-route-stub';
-import { ActivatedRoute } from '@angular/router';
-import { DebugElement } from '@angular/core';
-import { By } from '@angular/platform-browser';
+import { Doc0504040901Component } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-test-scenarios/05-04-04-09-routed-component/05-04-04-09-01/doc-05-04-04-09-01.component';
 
 describe('Doc0504040901Component', () => {
   let fixture: ComponentFixture<Doc0504040901Component>;
@@ -12,20 +12,22 @@ describe('Doc0504040901Component', () => {
   let activatedRouteStub: ActivatedRouteStub;
   let buttonDebugEl: DebugElement;
 
-  beforeEach(async(() => {
-    activatedRouteStub = new ActivatedRouteStub({});
+  beforeEach(
+    waitForAsync(() => {
+      activatedRouteStub = new ActivatedRouteStub({});
 
-    TestBed.configureTestingModule({
-      declarations: [Doc0504040901Component],
-      imports: [SharedModule],
-      providers: [
-        {
-          provide: ActivatedRoute,
-          useValue: activatedRouteStub,
-        },
-      ],
-    }).compileComponents();
-  }));
+      TestBed.configureTestingModule({
+        declarations: [Doc0504040901Component],
+        imports: [SharedModule],
+        providers: [
+          {
+            provide: ActivatedRoute,
+            useValue: activatedRouteStub,
+          },
+        ],
+      }).compileComponents();
+    }),
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(Doc0504040901Component);
@@ -45,8 +47,6 @@ describe('Doc0504040901Component', () => {
 
     fixture.detectChanges();
 
-    expect(
-      (buttonDebugEl.nativeElement as HTMLButtonElement).textContent,
-    ).toEqual('FOO');
+    expect((buttonDebugEl.nativeElement as HTMLButtonElement).textContent).toEqual('FOO');
   });
 });

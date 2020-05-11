@@ -1,16 +1,18 @@
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { Doc0504040101Component } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-test-scenarios/05-04-04-01-component-binding/05-04-04-01-01/doc-05-04-04-01-01.component';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 describe('Doc0504040101Component', () => {
   let component: Doc0504040101Component;
   let fixture: ComponentFixture<Doc0504040101Component>;
   let h1El: HTMLHeadingElement | null;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [Doc0504040101Component],
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [Doc0504040101Component],
+      }).compileComponents();
+    }),
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(Doc0504040101Component);

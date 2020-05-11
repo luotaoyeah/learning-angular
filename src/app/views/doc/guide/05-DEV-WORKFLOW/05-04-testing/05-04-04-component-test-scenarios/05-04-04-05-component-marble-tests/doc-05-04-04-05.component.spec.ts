@@ -1,11 +1,11 @@
-import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, TestBed, tick, waitForAsync } from '@angular/core/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from '@app/shared';
 import { Doc05040405Component } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-test-scenarios/05-04-04-05-component-marble-tests/doc-05-04-04-05.component';
 import { Doc05040405Service } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-test-scenarios/05-04-04-05-component-marble-tests/services/doc-05-04-04-05.service';
 import { getTestScheduler } from 'jasmine-marbles';
-import { RunHelpers } from 'rxjs/internal/testing/TestScheduler';
 import { ColdObservable } from 'rxjs/internal/testing/ColdObservable';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { RunHelpers } from 'rxjs/internal/testing/TestScheduler';
 
 describe('Doc05040405Component', () => {
   let fixture: ComponentFixture<Doc05040405Component>;
@@ -14,18 +14,20 @@ describe('Doc05040405Component', () => {
   let buttonEl: HTMLButtonElement | null;
   let spanEl: HTMLSpanElement | null;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [Doc05040405Component],
-      imports: [SharedModule, NoopAnimationsModule],
-      providers: [
-        {
-          provide: Doc05040405Service,
-          useValue: jasmine.createSpyObj<Doc05040405Service>('Doc05040405Service', ['getNextNum']),
-        },
-      ],
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [Doc05040405Component],
+        imports: [SharedModule, NoopAnimationsModule],
+        providers: [
+          {
+            provide: Doc05040405Service,
+            useValue: jasmine.createSpyObj<Doc05040405Service>('Doc05040405Service', ['getNextNum']),
+          },
+        ],
+      }).compileComponents();
+    }),
+  );
 
   beforeEach(() => {
     MockDoc05040405Service = TestBed.inject(Doc05040405Service) as jasmine.SpyObj<Doc05040405Service>;

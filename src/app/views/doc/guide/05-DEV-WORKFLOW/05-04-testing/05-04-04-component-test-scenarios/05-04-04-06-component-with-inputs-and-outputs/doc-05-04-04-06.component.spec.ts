@@ -1,8 +1,8 @@
-import { Doc05040406Component } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-test-scenarios/05-04-04-06-component-with-inputs-and-outputs/doc-05-04-04-06.component';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DebugElement } from '@angular/core';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { SharedModule } from '@app/shared';
+import { Doc05040406Component } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-test-scenarios/05-04-04-06-component-with-inputs-and-outputs/doc-05-04-04-06.component';
 
 describe('Doc05040406Component', () => {
   let fixture: ComponentFixture<Doc05040406Component>;
@@ -10,12 +10,14 @@ describe('Doc05040406Component', () => {
   let buttonDebugEl: DebugElement;
   let buttonEl: HTMLButtonElement;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [Doc05040406Component],
-      imports: [SharedModule],
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [Doc05040406Component],
+        imports: [SharedModule],
+      }).compileComponents();
+    }),
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(Doc05040406Component);

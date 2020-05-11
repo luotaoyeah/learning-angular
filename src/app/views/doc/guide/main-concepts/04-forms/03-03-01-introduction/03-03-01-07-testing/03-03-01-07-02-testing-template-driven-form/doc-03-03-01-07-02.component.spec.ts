@@ -1,4 +1,4 @@
-import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, TestBed, tick, waitForAsync } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { Doc0303010702Component } from '@app/views/doc/guide/main-concepts/04-forms/03-03-01-introduction/03-03-01-07-testing/03-03-01-07-02-testing-template-driven-form/doc-03-03-01-07-02.component';
 
@@ -6,12 +6,14 @@ describe('Doc0303010702Component', () => {
   let fixture: ComponentFixture<Doc0303010702Component>;
   let component: Doc0303010702Component;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [FormsModule],
-      declarations: [Doc0303010702Component],
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        imports: [FormsModule],
+        declarations: [Doc0303010702Component],
+      }).compileComponents();
+    }),
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(Doc0303010702Component);
@@ -24,9 +26,7 @@ describe('Doc0303010702Component', () => {
   });
 
   it('should update the color in the component', fakeAsync(() => {
-    const inputEl: HTMLInputElement | null = (fixture.debugElement.nativeElement as HTMLDivElement).querySelector<
-      HTMLInputElement
-    >('input');
+    const inputEl: HTMLInputElement | null = (fixture.debugElement.nativeElement as HTMLDivElement).querySelector<HTMLInputElement>('input');
 
     expect(inputEl).toBeTruthy();
 
@@ -46,9 +46,7 @@ describe('Doc0303010702Component', () => {
 
     tick();
 
-    const inputEl: HTMLInputElement | null = (fixture.debugElement.nativeElement as HTMLDivElement).querySelector<
-      HTMLInputElement
-    >('input');
+    const inputEl: HTMLInputElement | null = (fixture.debugElement.nativeElement as HTMLDivElement).querySelector<HTMLInputElement>('input');
 
     expect(inputEl).toBeTruthy();
 

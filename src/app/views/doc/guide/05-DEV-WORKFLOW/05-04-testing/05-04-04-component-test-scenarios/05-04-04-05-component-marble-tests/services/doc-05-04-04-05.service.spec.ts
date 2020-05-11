@@ -1,16 +1,18 @@
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { Doc05040405Service } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-test-scenarios/05-04-04-05-component-marble-tests/services/doc-05-04-04-05.service';
-import { async, TestBed } from '@angular/core/testing';
 import { getTestScheduler } from 'jasmine-marbles';
 import { RunHelpers } from 'rxjs/internal/testing/TestScheduler';
 
 describe('src/app/routes/doc/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-test-scenarios/05-04-04-05-component-marble-tests/services/doc-05-04-04-05.service.ts', () => {
   let service: Doc05040405Service;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      providers: [Doc05040405Service],
-    });
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        providers: [Doc05040405Service],
+      });
+    }),
+  );
 
   beforeEach(() => {
     service = TestBed.inject(Doc05040405Service);

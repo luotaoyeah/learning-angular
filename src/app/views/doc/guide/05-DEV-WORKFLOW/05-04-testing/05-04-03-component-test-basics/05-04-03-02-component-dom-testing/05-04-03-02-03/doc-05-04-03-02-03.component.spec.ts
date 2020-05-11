@@ -1,15 +1,17 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { Doc0504030203Component } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-03-component-test-basics/05-04-03-02-component-dom-testing/05-04-03-02-03/doc-05-04-03-02-03.component';
 
 describe('Doc0504030203Component', () => {
   let component: Doc0504030203Component;
   let fixture: ComponentFixture<Doc0504030203Component>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [Doc0504030203Component],
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [Doc0504030203Component],
+      }).compileComponents();
+    }),
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(Doc0504030203Component);

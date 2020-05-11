@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { SharedModule } from '@app/shared';
 import { Doc0504040103Component } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-test-scenarios/05-04-04-01-component-binding/05-04-04-01-03/doc-05-04-04-01-03.component';
 
@@ -17,12 +17,14 @@ describe('Doc0504040103Component', () => {
     jasmine.DEFAULT_TIMEOUT_INTERVAL = 1000 * 5;
   });
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [Doc0504040103Component],
-      imports: [SharedModule],
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [Doc0504040103Component],
+        imports: [SharedModule],
+      }).compileComponents();
+    }),
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(Doc0504040103Component);

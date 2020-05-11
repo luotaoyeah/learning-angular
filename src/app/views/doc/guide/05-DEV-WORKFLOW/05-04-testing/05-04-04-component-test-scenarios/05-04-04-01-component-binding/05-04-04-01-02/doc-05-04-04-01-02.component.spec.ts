@@ -1,26 +1,28 @@
+import { ComponentFixture, ComponentFixtureAutoDetect, TestBed, waitForAsync } from '@angular/core/testing';
 import { Doc0504040102Component } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-test-scenarios/05-04-04-01-component-binding/05-04-04-01-02/doc-05-04-04-01-02.component';
-import { async, ComponentFixture, ComponentFixtureAutoDetect, TestBed } from '@angular/core/testing';
 
 describe('Doc0504040102Component', () => {
   let fixture: ComponentFixture<Doc0504040102Component>;
   let component: Doc0504040102Component;
   let h1El: HTMLHeadingElement | null;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [Doc0504040102Component],
-      /*
-       * 默认情况下, 在测试时, angular 不会自动执行 change detection,
-       * 我们可以通过注册 providers 设置 ComponentFixtureAutoDetect 为 true 来启用自动执行
-       */
-      providers: [
-        {
-          provide: ComponentFixtureAutoDetect,
-          useValue: true,
-        },
-      ],
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [Doc0504040102Component],
+        /*
+         * 默认情况下, 在测试时, angular 不会自动执行 change detection,
+         * 我们可以通过注册 providers 设置 ComponentFixtureAutoDetect 为 true 来启用自动执行
+         */
+        providers: [
+          {
+            provide: ComponentFixtureAutoDetect,
+            useValue: true,
+          },
+        ],
+      }).compileComponents();
+    }),
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(Doc0504040102Component);

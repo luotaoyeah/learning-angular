@@ -41,7 +41,6 @@
                 }
               ],
               "buildOptimizer": true,
-              "extractCss": true,
               "extractLicenses": true,
               "fileReplacements": [
                 {
@@ -62,14 +61,24 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              { "glob": "**/*", "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/", "output": "/assets/" }
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+                "output": "/assets/"
+              }
             ],
             "index": "src/index.html",
             "main": "src/main.ts",
             "outputPath": "dist",
             "polyfills": "src/polyfills.ts",
             "resourcesOutputPath": "img",
-            "scripts": ["node_modules/ajv/dist/ajv.bundle.js", { "input": "node_modules/document-register-element/build/document-register-element.js" }],
+            "scripts": [
+              "node_modules/ajv/dist/ajv.bundle.js",
+              {
+                "input": "node_modules/document-register-element/build/document-register-element.js",
+                "inject": true
+              }
+            ],
             "styles": ["src/index.less"],
             "tsConfig": "tsconfig.app.json"
           }

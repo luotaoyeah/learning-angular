@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { Doc05040413Component } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-test-scenarios/05-04-04-13-calling-compilecomponents/doc-05-04-04-13.component';
 
 /*
@@ -16,23 +16,25 @@ describe('Doc05040413Component', () => {
    * TestBed.compileComponents() 方法是一个 asynchronous method,
    * 因此需要使用 async() 方法包装一下
    */
-  beforeEach(async(() => {
-    /*
-     * TestBedStatic.compileComponents() 方法调用之后,
-     * 就不能再对 TestBed 进行其他的配置了
-     */
-    TestBed.configureTestingModule({
-      declarations: [Doc05040413Component],
-    })
-      .compileComponents()
-      .then(() => {
-        /*
-         * TestBedStatic.compileComponents() 返回的是一个 Promise,
-         * 因此可以在 then() 方法的回调函数里面进行其他的配置,
-         * 此时, component 已经完成了编译
-         */
-      });
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      /*
+       * TestBedStatic.compileComponents() 方法调用之后,
+       * 就不能再对 TestBed 进行其他的配置了
+       */
+      TestBed.configureTestingModule({
+        declarations: [Doc05040413Component],
+      })
+        .compileComponents()
+        .then(() => {
+          /*
+           * TestBedStatic.compileComponents() 返回的是一个 Promise,
+           * 因此可以在 then() 方法的回调函数里面进行其他的配置,
+           * 此时, component 已经完成了编译
+           */
+        });
+    }),
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(Doc05040413Component);

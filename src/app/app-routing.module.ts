@@ -33,6 +33,7 @@ import { Doc031002PreloadingStrategyService } from '@app/views/doc/guide/main-co
        */
       useHash: false,
       scrollPositionRestoration: 'top',
+      relativeLinkResolution: 'legacy',
     }),
   ],
   /*

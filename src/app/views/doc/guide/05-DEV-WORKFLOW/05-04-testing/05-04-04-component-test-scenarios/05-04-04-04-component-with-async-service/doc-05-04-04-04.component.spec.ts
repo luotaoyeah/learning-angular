@@ -1,10 +1,10 @@
-import { async, ComponentFixture, fakeAsync, flushMicrotasks, TestBed, tick } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, flushMicrotasks, TestBed, tick, waitForAsync } from '@angular/core/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedModule } from '@app/shared';
 import { Doc05040404Component } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-test-scenarios/05-04-04-04-component-with-async-service/doc-05-04-04-04.component';
 import { Doc05040404Service } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-test-scenarios/05-04-04-04-component-with-async-service/services/doc-05-04-04-04.service';
 import { defer, interval, Observable, of, throwError } from 'rxjs';
-import { SharedModule } from '@app/shared';
 import { delay, take } from 'rxjs/operators';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('Doc05040404Component', () => {
   let fixture: ComponentFixture<Doc05040404Component>;
@@ -12,18 +12,20 @@ describe('Doc05040404Component', () => {
   let messageEl: HTMLButtonElement | null;
   let MockDoc05040404Service: jasmine.SpyObj<Doc05040404Service>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [Doc05040404Component],
-      imports: [SharedModule, NoopAnimationsModule],
-      providers: [
-        {
-          provide: Doc05040404Service,
-          useValue: jasmine.createSpyObj<Doc05040404Service>(['getNextNum']),
-        },
-      ],
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [Doc05040404Component],
+        imports: [SharedModule, NoopAnimationsModule],
+        providers: [
+          {
+            provide: Doc05040404Service,
+            useValue: jasmine.createSpyObj<Doc05040404Service>(['getNextNum']),
+          },
+        ],
+      }).compileComponents();
+    }),
+  );
 
   beforeEach(() => {
     MockDoc05040404Service = TestBed.inject(Doc05040404Service) as jasmine.SpyObj<Doc05040404Service>;
@@ -218,33 +220,36 @@ describe('Doc05040404Component', () => {
      * fakeAsync() 有一个缺点, 就是在它里面不能执行 XHR 请求,
      * 如果需要执行 XHR 请求, 需要使用 async() 方法
      */
-    it('should display num after #getNextNum() in #async()', async(() => {
-      fixture.detectChanges();
+    it(
+      'should display num after #getNextNum() in #async()',
+      waitForAsync(() => {
+        fixture.detectChanges();
 
-      if (messageEl) {
-        expect(messageEl.textContent).toEqual('');
+        if (messageEl) {
+          expect(messageEl.textContent).toEqual('');
 
-        /*
-         * 在 fakeAsync() 中使用的是 tick(),
-         * 在 async() 中使用的是 ComponentFixture.whenStable(),
-         * ComponentFixture.whenStable() 方法在本次 event loop 的 task queue 清空之后返回,
-         * 也就是所有的 async task 执行完毕之后
-         *
-         * ComponentFixture.isStable() 方法, 可以用来判断 whether the fixture is stable or not
-         */
-        expect(fixture.isStable()).toBe(false);
-        fixture.whenStable().then(() => {
-          expect(fixture.isStable()).toBe(true);
+          /*
+           * 在 fakeAsync() 中使用的是 tick(),
+           * 在 async() 中使用的是 ComponentFixture.whenStable(),
+           * ComponentFixture.whenStable() 方法在本次 event loop 的 task queue 清空之后返回,
+           * 也就是所有的 async task 执行完毕之后
+           *
+           * ComponentFixture.isStable() 方法, 可以用来判断 whether the fixture is stable or not
+           */
+          expect(fixture.isStable()).toBe(false);
+          fixture.whenStable().then(() => {
+            expect(fixture.isStable()).toBe(true);
 
-          fixture.detectChanges();
+            fixture.detectChanges();
 
-          if (messageEl) {
-            expect(messageEl.textContent).toEqual('9');
-            expect(MockDoc05040404Service.getNextNum.calls.count()).toEqual(1);
-          }
-        });
-      }
-    }));
+            if (messageEl) {
+              expect(messageEl.textContent).toEqual('9');
+              expect(MockDoc05040404Service.getNextNum.calls.count()).toEqual(1);
+            }
+          });
+        }
+      }),
+    );
 
     /*
      * https://angular.io/guide/testing#jasmine-done

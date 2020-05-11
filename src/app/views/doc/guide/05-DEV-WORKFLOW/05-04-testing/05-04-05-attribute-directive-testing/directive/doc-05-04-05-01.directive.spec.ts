@@ -1,7 +1,7 @@
 import { Component, DebugElement } from '@angular/core';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { Doc05040501Directive } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-05-attribute-directive-testing/directive/doc-05-04-05-01.directive';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { Doc05040501Directive } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-05-attribute-directive-testing/directive/doc-05-04-05-01.directive';
 
 /*
  * 在测试 arrtibute directive 的时候, 通常可以构建一个 test component,
@@ -22,11 +22,13 @@ describe('src/app/routes/doc/05-DEV-WORKFLOW/05-04-testing/05-04-05-attribute-di
   let debugElements: Array<DebugElement>;
   let h2DebugElement: DebugElement;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [TestComponent, Doc05040501Directive],
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [TestComponent, Doc05040501Directive],
+      }).compileComponents();
+    }),
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TestComponent);
@@ -42,9 +44,7 @@ describe('src/app/routes/doc/05-DEV-WORKFLOW/05-04-testing/05-04-05-attribute-di
        */
       By.directive(Doc05040501Directive),
     );
-    h2DebugElement = fixture.debugElement.query(
-      By.css(':not([appDoc05040501])'),
-    );
+    h2DebugElement = fixture.debugElement.query(By.css(':not([appDoc05040501])'));
   });
 
   it('should create', () => {
@@ -53,22 +53,16 @@ describe('src/app/routes/doc/05-DEV-WORKFLOW/05-04-testing/05-04-05-attribute-di
   });
 
   it('should color 1st <h2> color yellow', () => {
-    expect(
-      (debugElements[0].nativeElement as HTMLHeadingElement).style.color,
-    ).toEqual('yellow');
+    expect((debugElements[0].nativeElement as HTMLHeadingElement).style.color).toEqual('yellow');
   });
 
   it('should color 2nd <h2> color w/ default color', () => {
     /*
      * angular 会将 directive 注册到它宿主元素的 injector 中
      */
-    const doc05070501Directive = debugElements[1].injector.get(
-      Doc05040501Directive,
-    ) as Doc05040501Directive;
+    const doc05070501Directive = debugElements[1].injector.get(Doc05040501Directive) as Doc05040501Directive;
 
-    expect(
-      (debugElements[1].nativeElement as HTMLHeadingElement).style.color,
-    ).toEqual(doc05070501Directive.defaultColor);
+    expect((debugElements[1].nativeElement as HTMLHeadingElement).style.color).toEqual(doc05070501Directive.defaultColor);
   });
 
   it('should bind <input> color to its value', () => {

@@ -1,14 +1,13 @@
-import { Doc05040407Component } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-test-scenarios/05-04-04-07-component-inside-a-test-host/doc-05-04-04-07.component';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Component, DebugElement } from '@angular/core';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { Doc05040407Component } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-test-scenarios/05-04-04-07-component-inside-a-test-host/doc-05-04-04-07.component';
 
 /*
  * 使用一个临时的 host component 用于测试
  */
 @Component({
-  template:
-    '<app-doc-05-04-04-07 [foo]="foo" (click01)="handleClick($event)"></app-doc-05-04-04-07>',
+  template: '<app-doc-05-04-04-07 [foo]="foo" (click01)="handleClick($event)"></app-doc-05-04-04-07>',
 })
 class TestHostComponent {
   public foo: string = 'foo';
@@ -28,11 +27,13 @@ describe('Doc05040407Component', () => {
   let component: TestHostComponent;
   let buttonDebugEl: DebugElement;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [TestHostComponent, Doc05040407Component],
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [TestHostComponent, Doc05040407Component],
+      }).compileComponents();
+    }),
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TestHostComponent);
@@ -48,9 +49,7 @@ describe('Doc05040407Component', () => {
   it('should display foo in uppercase', () => {
     fixture.detectChanges();
 
-    expect(
-      (buttonDebugEl.nativeElement as HTMLButtonElement).textContent,
-    ).toEqual('FOO');
+    expect((buttonDebugEl.nativeElement as HTMLButtonElement).textContent).toEqual('FOO');
   });
 
   it('should raise #click01 event', () => {

@@ -11,10 +11,6 @@ export class Doc05040408Component implements OnInit {
   public ngOnInit() {}
 
   public handleClick = () => {
-    this.router.navigateByUrl('/doc/05/04/04/08/01', {
-      queryParams: {
-        foo: 99,
-      },
-    });
+    this.router.navigateByUrl('/doc/05/04/04/08/01', /* Removed unsupported properties by Angular migration: queryParams. */ {});
   };
 }

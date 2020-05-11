@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { Doc05040403Component } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-test-scenarios/05-04-04-03-component-with-a-dependency/doc-05-04-04-03.component';
 import { Doc05040403Service } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-test-scenarios/05-04-04-03-component-with-a-dependency/services/doc-05-04-04-03.service';
 
@@ -17,20 +17,22 @@ describe('Doc05040403Component', () => {
   let component: Doc05040403Component;
   let pEl: HTMLParagraphElement | null;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [Doc05040403Component],
-      /*
-       * 通过 providers 注册 mock service
-       */
-      providers: [
-        {
-          provide: Doc05040403Service,
-          useValue: Doc05040403ServiceStub,
-        },
-      ],
-    });
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [Doc05040403Component],
+        /*
+         * 通过 providers 注册 mock service
+         */
+        providers: [
+          {
+            provide: Doc05040403Service,
+            useValue: Doc05040403ServiceStub,
+          },
+        ],
+      });
+    }),
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(Doc05040403Component);

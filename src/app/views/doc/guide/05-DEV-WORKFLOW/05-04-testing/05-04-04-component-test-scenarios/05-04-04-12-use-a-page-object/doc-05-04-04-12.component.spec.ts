@@ -1,18 +1,20 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { Doc05040412Component } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-test-scenarios/05-04-04-12-use-a-page-object/doc-05-04-04-12.component';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { SharedModule } from '@app/shared';
+import { Doc05040412Component } from '@app/views/doc/guide/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-test-scenarios/05-04-04-12-use-a-page-object/doc-05-04-04-12.component';
 
 describe('src/app/routes/doc/05-DEV-WORKFLOW/05-04-testing/05-04-04-component-test-scenarios/05-04-04-12-use-a-page-object/doc-05-04-04-12.component.ts', () => {
   let fixture: ComponentFixture<Doc05040412Component>;
   let component: Doc05040412Component;
   let page: Page;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [Doc05040412Component],
-      imports: [SharedModule],
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [Doc05040412Component],
+        imports: [SharedModule],
+      }).compileComponents();
+    }),
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(Doc05040412Component);
@@ -53,8 +55,6 @@ class Page {
   constructor(private fixture: ComponentFixture<Doc05040412Component>) {}
 
   private queryAll<T extends HTMLElement>(selector: string): NodeListOf<T> {
-    return (this.fixture.nativeElement as HTMLElement).querySelectorAll<T>(
-      selector,
-    );
+    return (this.fixture.nativeElement as HTMLElement).querySelectorAll<T>(selector);
   }
 }

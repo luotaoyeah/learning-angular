@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Doc0303010701Component } from '@app/views/doc/guide/main-concepts/04-forms/03-03-01-introduction/03-03-01-07-testing/03-03-01-07-01-testing-reactive-form/doc-03-03-01-07-01.component';
 
@@ -6,12 +6,14 @@ describe('Doc0303010701Component', () => {
   let fixture: ComponentFixture<Doc0303010701Component>;
   let component: Doc0303010701Component;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [ReactiveFormsModule],
-      declarations: [Doc0303010701Component],
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        imports: [ReactiveFormsModule],
+        declarations: [Doc0303010701Component],
+      }).compileComponents();
+    }),
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(Doc0303010701Component);
@@ -28,9 +30,7 @@ describe('Doc0303010701Component', () => {
    * 如下, 测试的式数据从 view 流到 model 的过程
    */
   it('should update the value of the input field', () => {
-    const inputEl: HTMLInputElement | null = (fixture.debugElement.nativeElement as HTMLDivElement).querySelector<
-      HTMLInputElement
-    >('input');
+    const inputEl: HTMLInputElement | null = (fixture.debugElement.nativeElement as HTMLDivElement).querySelector<HTMLInputElement>('input');
     if (inputEl) {
       expect(inputEl.value).toEqual('RED');
 
@@ -46,9 +46,7 @@ describe('Doc0303010701Component', () => {
   it('should update the value in the control', () => {
     component.colorFormControl.setValue('BLUE');
 
-    const inputEl: HTMLInputElement | null = (fixture.debugElement.nativeElement as HTMLDivElement).querySelector<
-      HTMLInputElement
-    >('input');
+    const inputEl: HTMLInputElement | null = (fixture.debugElement.nativeElement as HTMLDivElement).querySelector<HTMLInputElement>('input');
     if (inputEl) {
       expect(inputEl.value).toBe('BLUE');
     }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '@app/views/doc/guide/main-concepts/10-routing-navigation/02-the-sample-application/auth/services/auth.service';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { AuthService } from '@app/views/doc/guide/main-concepts/10-routing-navigation/02-the-sample-application/auth/services/auth.service';
 
 @Component({
   selector: 'app--login',
@@ -28,10 +28,7 @@ export class LoginComponent implements OnInit {
       if (this.authService.isLogin) {
         this.router.navigateByUrl(
           this.authService.redirectUrl ? this.router.parseUrl(this.authService.redirectUrl) : '/doc/03/10/02/admin',
-          {
-            queryParamsHandling: 'preserve',
-            preserveFragment: true,
-          },
+          /* Removed unsupported properties by Angular migration: queryParamsHandling, preserveFragment. */ {},
         );
       }
     });
