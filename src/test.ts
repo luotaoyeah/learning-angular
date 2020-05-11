@@ -13,7 +13,7 @@ import 'zone.js/dist/zone-patch-rxjs-fake-async';
  * 使用 fakeAsync(), async() 进行测试时,
  * 必须引入 'zone.js/dist/zone-testing'
  */
-import 'zone.js/dist/zone-testing';
+import 'zone.js/testing';
 
 declare const require: SafeAny;
 

@@ -28,7 +28,6 @@
               ]
             },
             "production": {
-              "aot": true,
               "budgets": [
                 {
                   "maximumError": "20mb",
@@ -57,7 +56,6 @@
           },
           "options": {
             "allowedCommonJsDependencies": ["@ant-design/colors", "jquery", "jquery-ui/ui/widgets/slider.js", "lodash", "rxjs/internal/observable/of"],
-            "aot": true,
             "assets": [
               "src/favicon.ico",
               "src/assets",
@@ -80,7 +78,13 @@
               }
             ],
             "styles": ["src/index.less"],
-            "tsConfig": "tsconfig.app.json"
+            "tsConfig": "tsconfig.app.json",
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           }
         },
         "extract-i18n": {

@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
       console.log(`[${LoginComponent.name}]\n`, `[session_id] ${queryMap.get('session_id')}`);
     });
 
-    this.activatedRoute.fragment.subscribe((fragment: string) => {
+    this.activatedRoute.fragment.subscribe((fragment: string | null) => {
       console.log(`[${LoginComponent.name}]\n`, `[fragment] ${fragment}`);
     });
   }

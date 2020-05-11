@@ -14,9 +14,9 @@ describe('jasmine.namespace.jasmine.member.01', () => {
   });
 
   it('02', () => {
-    return new Promise((resolve: () => void) => {
+    return new Promise((resolve: (value: string) => void, reject: () => void) => {
       setTimeout(() => {
-        resolve();
+        resolve('');
       }, 999);
     });
   });

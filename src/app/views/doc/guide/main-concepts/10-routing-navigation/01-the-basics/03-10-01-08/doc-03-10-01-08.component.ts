@@ -52,7 +52,7 @@ export class Doc03100108Component implements OnInit {
      * ActivatedRoute.fragment 属性,
      * 表示 URL 地址中的 fragment 部分, 如 /x/y#bottom 中的 bottom
      */
-    this.activatedRoute.fragment.subscribe((fragment: string) => {
+    this.activatedRoute.fragment.subscribe((fragment: string | null) => {
       console.assert(fragment === 'top');
     });
 
