@@ -57,22 +57,12 @@
             }
           },
           "options": {
-            "allowedCommonJsDependencies": [
-              "@ant-design/colors",
-              "jquery",
-              "jquery-ui/ui/widgets/slider.js",
-              "lodash",
-              "rxjs/internal/observable/of"
-            ],
+            "allowedCommonJsDependencies": ["@ant-design/colors", "jquery", "jquery-ui/ui/widgets/slider.js", "lodash", "rxjs/internal/observable/of"],
             "aot": true,
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              {
-                "glob": "**/*",
-                "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
-                "output": "/assets/"
-              }
+              { "glob": "**/*", "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/", "output": "/assets/" }
             ],
             "index": "src/index.html",
             "main": "src/main.ts",
