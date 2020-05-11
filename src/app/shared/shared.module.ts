@@ -1,10 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
-import { MatExpansionModule } from '@angular/material/expansion';
-import { MatIconModule } from '@angular/material/icon';
-import { MatMenuModule } from '@angular/material/menu';
 import { RouterModule } from '@angular/router';
 import { PageNotFoundComponent } from '@app/shared/components/page-not-found/page-not-found.component';
 import { NtJsonPipe } from '@app/shared/pipes/nt-json.pipe';
@@ -52,9 +48,8 @@ const NG_ZORRO_MODULES: Array<SafeAny> = [
   NzLayoutModule,
   NzMenuModule,
 ];
-const MATERIAL_MODULES: Array<SafeAny> = [MatMenuModule, MatButtonModule, MatIconModule, MatExpansionModule];
 
-const MODULES: Array<SafeAny> = [...NG_ZORRO_MODULES, ...MATERIAL_MODULES];
+const MODULES: Array<SafeAny> = [...NG_ZORRO_MODULES];
 
 const COMPONENTS: Array<SafeAny> = [PageNotFoundComponent];
 
@@ -63,15 +58,6 @@ const PIPES: Array<SafeAny> = [NtJsonPipe];
 @NgModule({
   declarations: [...COMPONENTS, ...PIPES],
   imports: [CommonModule, FormsModule, RouterModule, ReactiveFormsModule, ...MODULES],
-  exports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    RouterModule,
-    TranslateModule,
-    ...MODULES,
-    ...COMPONENTS,
-    ...PIPES,
-  ],
+  exports: [CommonModule, FormsModule, ReactiveFormsModule, RouterModule, TranslateModule, ...MODULES, ...COMPONENTS, ...PIPES],
 })
 export class SharedModule {}

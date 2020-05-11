@@ -69,13 +69,8 @@
             "outputPath": "dist",
             "polyfills": "src/polyfills.ts",
             "resourcesOutputPath": "img",
-            "scripts": [
-              "node_modules/ajv/dist/ajv.bundle.js",
-              {
-                "input": "node_modules/document-register-element/build/document-register-element.js"
-              }
-            ],
-            "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "src/index.less"],
+            "scripts": ["node_modules/ajv/dist/ajv.bundle.js", { "input": "node_modules/document-register-element/build/document-register-element.js" }],
+            "styles": ["src/index.less"],
             "tsConfig": "tsconfig.app.json"
           }
         },
@@ -121,7 +116,7 @@
             "polyfills": "src/polyfills.ts",
             "progress": false,
             "scripts": ["node_modules/ajv/dist/ajv.bundle.js"],
-            "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "src/index.less"],
+            "styles": ["src/index.less"],
             "tsConfig": "tsconfig.spec.json",
             "watch": false
           }
