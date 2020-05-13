@@ -1,13 +1,13 @@
 version: '3.7'
 
 services:
-  learning-angular:
+  luotao.learning-angular:
     build:
-      context: ..
+      context: './'
       dockerfile: ./Dockerfile
     ports:
       - 3012:80
 
 networks:
   default:
-    name: learning-angular-network
+    name: luotao.learning-angular-network

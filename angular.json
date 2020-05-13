@@ -138,11 +138,6 @@
       "prefix": "app",
       "projectType": "application",
       "root": "",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "less"
-        }
-      },
       "sourceRoot": "src"
     },
     "learning-angular-e2e": {
@@ -178,7 +173,8 @@
       "flat": false,
       "inlineStyle": true,
       "inlineTemplate": false,
-      "skipTests": false
+      "skipTests": false,
+      "style": "less"
     },
     "@schematics/angular:directive": {
       "skipTests": false
