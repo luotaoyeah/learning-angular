@@ -1,1 +1,30 @@
-ngxs
+<nz-layout [ngStyle]="{ height: '100%' }">
+  <nz-sider [ngStyle]="{ paddingTop: '50px' }" nzCollapsible nzWidth="400px">
+    <ul nz-menu nzMode="inline" nzTheme="dark">
+      <li nz-submenu nzTitle="recipes">
+        <ul>
+          <li [routerLink]="'/recipes/immutability-helpers'" nz-menu-item>immutability helpers</li>
+        </ul>
+      </li>
+    </ul>
+  </nz-sider>
+
+  <nz-layout [ngStyle]="{ height: '100%' }">
+    <nz-header [ngStyle]="{ position: 'fixed', zIndex: 1, width: '100%', padding: '0 24px' }">
+      <div [ngStyle]="{ color: '#ffffff', fontSize: '20px' }">NGXS</div>
+    </nz-header>
+
+    <nz-content
+      [ngStyle]="{
+        margin: '50px 0 0 0',
+        padding: '12px',
+        background: '#ffffff',
+        height: '100%',
+        overflowY: 'scroll',
+        overflowX: 'auto'
+      }"
+    >
+      <router-outlet></router-outlet>
+    </nz-content>
+  </nz-layout>
+</nz-layout>

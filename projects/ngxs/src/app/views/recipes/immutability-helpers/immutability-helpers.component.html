@@ -1,0 +1,12 @@
+<fieldset>
+  <legend>X</legend>
+  {{ x$ | async }}
+</fieldset>
+
+<fieldset>
+  <legend>Y</legend>
+  {{ y$ | async }}
+</fieldset>
+
+<button (click)="incrementX()" nz-button nzType="primary">x++</button>
+<button (click)="incrementY()" [ngStyle]="{ marginLeft: '12px' }" nz-button nzType="primary">y++</button>
