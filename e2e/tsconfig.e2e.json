@@ -1,9 +1,0 @@
-{
-  "compilerOptions": {
-    "module": "CommonJS",
-    "outDir": "../out-tsc/app",
-    "target": "ES5",
-    "types": ["jasmine", "jasminewd2", "node"]
-  },
-  "extends": "../tsconfig.json"
-}

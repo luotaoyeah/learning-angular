@@ -7,11 +7,8 @@
     "build:ci": "node --max-old-space-size=3072 ./node_modules/@angular/cli/bin/ng build learning-angular --prod --optimization=false --extract-licenses=false --build-optimizer=false",
     "build:prod": "ng build learning-angular --configuration production",
     "codecov": "codecov --token=7f372a79-168a-42b9-be13-b752aef85ecf",
-    "eslint": "eslint src/**/*.ts",
-    "lint:style": "stylelint \"src/**/*.less\"",
     "start": "ng serve learning-angular",
     "start:ngxs": "ng serve ngxs",
-    "test:e2e": "ng e2e learning-angular-e2e",
     "test:unit": "ng test learning-angular"
   },
   "dependencies": {
@@ -40,14 +37,10 @@
     "lodash-es": "4.17.21",
     "ng-packagr": "12.0.1",
     "ng-zorro-antd": "11.4.1",
-    "prettier-stylelint": "0.4.2",
     "rxjs": "6.6.7",
     "screenfull": "5.0.2",
-    "stylelint": "13.13.1",
-    "stylelint-config-standard": "22.0.0",
     "ts-node": "9.1.1",
     "tslib": "2.2.0",
-    "typescript": "4.2.4",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
@@ -57,15 +50,7 @@
     "@types/jasmine": "3.6.1",
     "@types/jasminewd2": "2.0.8",
     "@types/lodash-es": "4.17.4",
-    "@typescript-eslint/eslint-plugin": "4.24.0",
-    "@typescript-eslint/parser": "4.24.0",
     "codecov": "3.8.2",
-    "codelyzer": "6.0.2",
-    "eslint": "7.26.0",
-    "eslint-config-prettier": "8.3.0",
-    "eslint-plugin-import": "2.23.2",
-    "eslint-plugin-prefer-arrow": "1.2.3",
-    "husky": "4.3.8",
     "jasmine-core": "3.6.0",
     "jasmine-marbles": "0.6.0",
     "jasmine-spec-reporter": "5.0.2",
@@ -74,10 +59,8 @@
     "karma-coverage-istanbul-reporter": "3.0.3",
     "karma-jasmine": "4.0.1",
     "karma-jasmine-html-reporter": "1.5.4",
-    "lint-staged": "11.0.0",
+    "postcss": "8.4.13",
     "prettier": "2.3.0",
-    "protractor": "7.0.0",
-    "puppeteer": "5.4.1",
     "typescript": "~4.2.3"
   }
 }

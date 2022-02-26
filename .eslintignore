@@ -1,8 +1,0 @@
-.eslintrc.js
-commit-msg.js
-husky.config.js
-karma.conf.js
-lint-staged.config.js
-polyfills.ts
-prettier.config.js
-typings.ts
