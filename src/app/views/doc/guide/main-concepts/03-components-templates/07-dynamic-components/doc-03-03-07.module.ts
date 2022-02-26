@@ -8,17 +8,13 @@ import { Doc03030701Component } from '@app/views/doc/guide/main-concepts/03-comp
 import { Doc03030702Component } from '@app/views/doc/guide/main-concepts/03-components-templates/07-dynamic-components/02/doc-03-03-07-02.component';
 
 @NgModule({
-  declarations: [
-    Doc030307Component,
-    Doc03030701Component,
-    Doc03030702Component,
-    Doc03030700Component,
-    [Doc030307Directive],
-  ],
-  imports: [Doc030307RoutingModule, SharedModule],
-  /*
-   * 动态加载的 component 需要在 @NgModule.entryComponents 中声明
-   */
-  entryComponents: [Doc03030700Component],
+    declarations: [
+        Doc030307Component,
+        Doc03030701Component,
+        Doc03030702Component,
+        Doc03030700Component,
+        [Doc030307Directive],
+    ],
+    imports: [Doc030307RoutingModule, SharedModule]
 })
 export class Doc030307Module {}

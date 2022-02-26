@@ -121,7 +121,7 @@
             "main": "src/test.ts",
             "polyfills": "src/polyfills.ts",
             "progress": false,
-            "scripts": ["node_modules/ajv/dist/ajv.bundle.js"],
+            "scripts": [],
             "styles": ["src/index.less"],
             "tsConfig": "tsconfig.spec.json",
             "watch": false
@@ -165,13 +165,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "10mb",
+                  "maximumError": "10mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "512kb",
+                  "maximumError": "512kb"
                 }
               ],
               "fileReplacements": [

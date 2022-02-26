@@ -9,15 +9,14 @@ import { Doc0303080401Service } from '@app/views/doc/guide/main-concepts/03-comp
 import { Doc03030805Component } from '@app/views/doc/guide/main-concepts/03-components-templates/08-angular-elements/05-typings-for-custom-elements/doc-03-03-08-05.component';
 
 @NgModule({
-  declarations: [
-    Doc030308Component,
-    Doc03030801Component,
-    Doc03030804Component,
-    Doc0303080401Component,
-    Doc03030805Component,
-  ],
-  providers: [Doc0303080401Service],
-  imports: [SharedModule, Doc030308RoutingModule],
-  entryComponents: [Doc0303080401Component],
+    declarations: [
+        Doc030308Component,
+        Doc03030801Component,
+        Doc03030804Component,
+        Doc0303080401Component,
+        Doc03030805Component,
+    ],
+    providers: [Doc0303080401Service],
+    imports: [SharedModule, Doc030308RoutingModule]
 })
 export class Doc030308Module {}

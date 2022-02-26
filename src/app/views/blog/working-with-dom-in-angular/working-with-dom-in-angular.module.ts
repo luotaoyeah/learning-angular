@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from '@app/shared';
-import { NzAlertComponent } from 'ng-zorro-antd/alert';
 import { X0101Component } from '@app/views/blog/working-with-dom-in-angular/01/x-01-01.component';
 import { X01Component } from '@app/views/blog/working-with-dom-in-angular/01/x-01.component';
 import { X02Component } from '@app/views/blog/working-with-dom-in-angular/02/x-02.component';
@@ -16,21 +15,20 @@ import { WorkingWithDomInAngularRoutingModule } from '@app/views/blog/working-wi
 import { WorkingWithDomInAngularComponent } from '@app/views/blog/working-with-dom-in-angular/working-with-dom-in-angular.component';
 
 @NgModule({
-  declarations: [
-    WorkingWithDomInAngularComponent,
-    X01Component,
-    X0101Component,
-    X02Component,
-    X03Component,
-    X04Component,
-    X05Component,
-    X06Component,
-    X0601Component,
-    X07Component,
-    X0701Component,
-    X08Component,
-  ],
-  imports: [WorkingWithDomInAngularRoutingModule, SharedModule],
-  entryComponents: [NzAlertComponent, X0601Component, X0701Component],
+    declarations: [
+        WorkingWithDomInAngularComponent,
+        X01Component,
+        X0101Component,
+        X02Component,
+        X03Component,
+        X04Component,
+        X05Component,
+        X06Component,
+        X0601Component,
+        X07Component,
+        X0701Component,
+        X08Component,
+    ],
+    imports: [WorkingWithDomInAngularRoutingModule, SharedModule],
 })
 export class WorkingWithDomInAngularModule {}
