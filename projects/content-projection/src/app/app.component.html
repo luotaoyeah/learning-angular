@@ -1,5 +1,12 @@
-<app-comp-a>
-    BODY
-</app-comp-a>
+<app-comp-a> BODY </app-comp-a>
+
+<hr />
+
+<app-comp-b>
+    <div header>我会被插入 select="[header]" 的插槽.</div>
+    <div class="body">我会被插入 select=".body" 的插槽.</div>
+
+    <div>我会被插入默认的插槽, 因为我没有被其他的插槽选中.</div>
+</app-comp-b>
 
 <router-outlet></router-outlet>
