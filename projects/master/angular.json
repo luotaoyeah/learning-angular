@@ -76,14 +76,10 @@
                         "outputPath": "dist",
                         "polyfills": "src/polyfills.ts",
                         "resourcesOutputPath": "img",
-                        "scripts": [
-                            "node_modules/ajv/dist/ajv.bundle.js",
-                            {
-                                "input": "node_modules/document-register-element/build/document-register-element.js",
-                                "inject": true
-                            }
-                        ],
                         "styles": ["src/index.less"],
+                        "stylePreprocessorOptions": {
+                            "includePaths": ["node_modules/"]
+                        },
                         "tsConfig": "tsconfig.app.json",
                         "vendorChunk": true,
                         "extractLicenses": false,
@@ -129,6 +125,9 @@
                         "progress": false,
                         "scripts": [],
                         "styles": ["src/index.less"],
+                        "stylePreprocessorOptions": {
+                            "includePaths": ["node_modules/"]
+                        },
                         "tsConfig": "tsconfig.spec.json",
                         "watch": false
                     }
@@ -164,6 +163,9 @@
                         "inlineStyleLanguage": "less",
                         "assets": ["projects/ngxs/src/favicon.ico", "projects/ngxs/src/assets"],
                         "styles": ["projects/ngxs/src/styles.less"],
+                        "stylePreprocessorOptions": {
+                            "includePaths": ["node_modules/"]
+                        },
                         "scripts": []
                     },
                     "configurations": {
@@ -239,6 +241,9 @@
                         "inlineStyleLanguage": "less",
                         "assets": ["projects/content-projection/src/favicon.ico", "projects/content-projection/src/assets"],
                         "styles": ["projects/content-projection/src/styles.less"],
+                        "stylePreprocessorOptions": {
+                            "includePaths": ["node_modules/"]
+                        },
                         "scripts": []
                     },
                     "configurations": {

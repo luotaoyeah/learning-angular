@@ -3,8 +3,8 @@ version: '3.7'
 services:
   luotao.learning-angular:
     build:
-      context: './'
-      dockerfile: ./Dockerfile
+      context: '../'
+      dockerfile: ./docker/Dockerfile
     ports:
       - "3012:80"
 
