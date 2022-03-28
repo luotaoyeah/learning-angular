@@ -1,9 +1,0 @@
-{
-  "/api": {
-    "target": "http://localhost:3013",
-    "secure": false,
-    "logLevel": "debug",
-    "changeOrigin": true,
-    "xfwd": true
-  }
-}

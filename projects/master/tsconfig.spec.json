@@ -1,10 +1,9 @@
 {
-  "compilerOptions": {
-    "baseUrl": "./",
-    "outDir": "../dist/out-tsc/spec",
-    "types": ["jasmine", "node"]
-  },
-  "extends": "./tsconfig.json",
-  "files": ["src/test.ts", "src/polyfills.ts"],
-  "include": ["**/*.spec.ts", "**/*.d.ts", "app/core/consts/i18n/*.ts"]
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "outDir": "./out-tsc/spec",
+        "types": ["jasmine"]
+    },
+    "files": ["src/test.ts", "src/polyfills.ts"],
+    "include": ["src/**/*.spec.ts", "src/**/*.d.ts"]
 }

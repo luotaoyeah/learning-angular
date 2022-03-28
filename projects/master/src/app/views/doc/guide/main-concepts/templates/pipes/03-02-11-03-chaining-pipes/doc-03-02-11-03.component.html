@@ -1,5 +1,0 @@
-<p>多个 pipe 可以链式使用，上一个 pipe 的输出会作为下一个 pipe 的输入</p>
-<button (click)="toggleFormat()" nz-button nzType="default">切换格式</button>
-<button nz-button nzType="primary">
-  {{ (birthday | date: format) || '' | uppercase }}
-</button>

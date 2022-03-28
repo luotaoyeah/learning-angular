@@ -1,6 +1,0 @@
-<p>
-  默认情况下，当 DI 需要注入一个 service 时，会从当前的 injector 开始寻找对应的 provider，一直顺着 injector hierarchy
-  tree 找到 root injector 为止，如果最后没有找到对应的 provider，就会报错
-</p>
-
-<p>@Optional() 装饰器的作用是，如果最后找不到对应的 provider，则该 service 的值就为 null</p>
