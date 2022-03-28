@@ -1,0 +1,8 @@
+<ul>
+    <li *ngFor="let item of items; trackBy: trackBy">
+        <input type="text" />
+        {{ item.name }}
+    </li>
+</ul>
+
+<button (click)="onClick()">修改</button>

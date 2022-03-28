@@ -5,6 +5,10 @@ import { HomeComponent } from '@app/routes/home/home.component';
 const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
+    {
+        path: 'guide/built-in-directives',
+        loadChildren: () => import('../routes/built-in-directives/built-in-directives.module').then((m) => m.BuiltInDirectivesModule),
+    },
 ];
 
 @NgModule({
