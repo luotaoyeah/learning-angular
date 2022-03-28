@@ -1,0 +1,13 @@
+<input type="text" nz-input [(ngModel)]="color" />
+
+<nz-divider [nzDashed]="true"></nz-divider>
+
+<p>
+  在 template-driven 表单中, 不需要在 component class 中先声明一个
+  <code>FormControl</code> 实例对象, 而是通过 <code>NgModel(ngModel)</code> 指令直接绑定一个普通的组件属性
+</p>
+
+<p>
+  <code>NgModel</code> 指令会负责创建一个 <code>FormControl</code> 实例对象, 但是我们不能直接操作这个由它创建的
+  <code>FormControl</code> 实例对象
+</p>

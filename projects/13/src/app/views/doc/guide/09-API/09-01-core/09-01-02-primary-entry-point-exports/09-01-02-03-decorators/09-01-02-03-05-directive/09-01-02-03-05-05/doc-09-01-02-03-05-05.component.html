@@ -1,0 +1,18 @@
+<nz-divider
+  nzText="doc-09-01-02-03-05-05-01"
+  [nzOrientation]="'left'"
+  [nzDashed]="true"
+></nz-divider>
+
+<!--
+    一个 element 上可以同时声明多个 template reference variable
+-->
+<button
+  nz-button
+  appDoc09010203050501
+  #tpl01="appDoc09010203050501"
+  appDoc09010203050502
+  #tpl02="appDoc09010203050502"
+>
+  FOO
+</button>

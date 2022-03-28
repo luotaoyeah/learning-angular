@@ -1,0 +1,8 @@
+<p>如何在 angular 中创建一个 singleton service ？有三种方式：</p>
+<ul>
+  <li>将 @Injectable 的 providedIn 设置为 root</li>
+  <li>在 AppModule 的 providers 中声明这个 service</li>
+  <li>在一个 NgModule 的 providers 中声明这个 service，同时这个 NgModule 只被 AppModule 引入</li>
+</ul>
+
+<p>使用 providedIn: 'root' 这种方式是最推荐的，这种方式可以实现对 service 的 tree shaking</p>

@@ -1,0 +1,11 @@
+<p>可以通过 template reference variable 获取到元素引用，然后获取到元素的数据</p>
+<input
+  type="text"
+  #inputEl
+  (keyup)="handleKeyUp(inputEl.value)"
+  [ngStyle]="{
+    borderRadius: '3px',
+    outline: 'pointer'
+  }"
+/>
+<p>{{ values }}</p>

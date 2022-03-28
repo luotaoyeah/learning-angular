@@ -1,0 +1,83 @@
+<nz-collapse [nzAccordion]="true">
+  <nz-collapse-panel nzHeader="NgModule API" nzExpandedIcon="caret-right">
+    <p>@NgModule 的 metadata 中几个属性的含义：</p>
+
+    <ul>
+      <li>
+        declarations：
+        <p>
+          用来声明当前 NgModule 中包含哪些 declarables（component，directive，pipe）；template 中包含了
+          component，directive，pipe，那么它在编译的时候就回去解析这些 declarables，如何解析呢？
+        </p>
+        <ul>
+          <li>在 template 所属的 component 所属的 NgModule 的 declarations 中去寻找对应的定义</li>
+          <li>
+            在 template 所属的 component 所属的 NgModule 的 imports 中对应的 NgModule 的 exports 中去寻找对应的定义
+          </li>
+        </ul>
+
+        <p>同一个 declarable 只能在一个 NgModule 的 declarations 中定义，如果定义在多个 NgModule 中，会编译错误</p>
+      </li>
+
+      <li>
+        providers：
+        <p>
+          用来声明当前 NgModule 中包含哪些 providers，angular 会将这些 providers 注册到该 NgModule 的 injector
+          中去，如果该 NgModule 是 AppModule，则它的 injector 称之为 root injector
+        </p>
+        <p>
+          注册之后，该 NgModule 下面的所有 component，service，directive，pipe 中都可以注入这些 providers 对应的
+          services
+        </p>
+        <p>lazy-loaded module 也有它自己的 injector，这个 injector 通常就是 root injector 的 child injector</p>
+      </li>
+
+      <li>
+        imports：
+        <p>
+          用来引入其他的 NgModule，引入之后，这些 NgModule 中 exports 中的 component，directive，pipe 就相当于在当前
+          NgModule 中定义了，在当前 NgModule 中的 template 中就可以使用它们了
+        </p>
+        <p>比如，要使用 NgIf 则必须引入 CommonModule</p>
+      </li>
+
+      <li>
+        exports：
+        <p>
+          用来声明当前 NgModule 的 public API，包括 component，directive，pipe；declarations 中声明的 declarables 默认是
+          private 的，只能在当前 NgModule 中使用，通过 exports 将它们输入之后，其他引入当前 NgModule
+          的模块就可以使用这些输出的 declarables 了
+        </p>
+        <p>
+          同时，exports 中可以直接包含其他的 NgModule（即不需要在 imports 中声明），这样相当于将这些 NgModule 的 API
+          统一通过当前 NgModule 进行输出，可以更好的组织代码
+        </p>
+      </li>
+
+      <li>
+        bootstrap：
+        <p>
+          用来声明应用启动时需要加载的 component，bootstrap 中的 component 会自动被添加到 entryComponents
+          中去；在应用启动的时候，bootstrap 中的 component 的 template 会被插入到 HTML 中去
+        </p>
+      </li>
+
+      <li>
+        entryComponents：
+        <p>
+          用来声明 entry components，angular 中的 component 分为两类，一类是 entry component，一类是在 template
+          中直接使用的 component
+        </p>
+        <p>
+          entry component 有三种，一种是 bootstrap 中的 component，称之为 bootstraped component，一种是 route 配置中的
+          component，称之为 routed component，虽然它们都是 entry component，但是我们不需要显示地将他们声明在
+          entryComponents 中去，因为 angular 会自动将它们添加到 entryComponents 中去
+        </p>
+        <p>
+          第三种 entry component 就是 dynamic component，比如使用 ViewComponentRef.createComponent() 方法动态加载的
+          component，对于这些 component 我们就必须显示地将他们添加到 entryComponents 中去
+        </p>
+      </li>
+    </ul>
+  </nz-collapse-panel>
+</nz-collapse>

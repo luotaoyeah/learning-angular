@@ -1,0 +1,22 @@
+<input
+  type="text"
+  #inputEl
+  [ngStyle]="{
+    borderRadius: '3px',
+    outline: 'none'
+  }"
+  (keyup.enter)="addHero(inputEl)"
+  (blur)="addHero(inputEl)"
+/>
+<button
+  [ngStyle]="{
+    borderRadius: '3px',
+    outline: 'none'
+  }"
+  (click)="addHero(inputEl)"
+>
+  ADD
+</button>
+<ul>
+  <li *ngFor="let hero of heroes">{{ hero }}</li>
+</ul>

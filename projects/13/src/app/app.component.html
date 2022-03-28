@@ -1,0 +1,302 @@
+<nz-layout [ngStyle]="{ height: '100%' }">
+  <nz-sider [ngStyle]="{ paddingTop: '50px' }" nzCollapsible nzWidth="400px">
+    <ul nz-menu nzMode="inline" nzTheme="dark">
+      <li [routerLink]="'/home'" nz-menu-item>
+        <i nz-icon nzTheme="outline" nzType="info-circle"></i>
+        <span>HOME</span>
+      </li>
+
+      <li nz-submenu nzIcon="info-circle" nzTitle="DOC">
+        <ul>
+          <li [routerLink]="'/doc/02'" nz-menu-item>SETUP</li>
+
+          <li nz-submenu nzTitle="MAIN CONCEPTS">
+            <ul>
+              <li [routerLink]="'/doc/tutorial/dashboard'" nz-menu-item>TOUR OF HEROES APP</li>
+
+              <li nz-submenu nzTitle="ARCHITECTURE">
+                <ul>
+                  <li [routerLink]="'/doc/03/02/intro-into-component'" nz-menu-item>INTRO TO COMPONENTS</li>
+                  <li [routerLink]="'/doc/03/02/di'" nz-menu-item>INTRO TO SERVICES AND DI</li>
+                </ul>
+              </li>
+
+              <li nz-submenu nzTitle="TEMPLATES">
+                <ul>
+                  <li [routerLink]="'/doc/guide/pipes'" nz-menu-item>PIPES</li>
+                  <li [routerLink]="'/doc/guide/attribute-binding'" nz-menu-item>
+                    ATTRIBUTE, CLASS, AND STYLE BINDINGS
+                  </li>
+                  <li [routerLink]="'/doc/guide/event-binding'" nz-menu-item>EVENT BINDING</li>
+                  <li [routerLink]="'/doc/03/03/01'" nz-menu-item>DISPLAYING DATA</li>
+                  <li [routerLink]="'/doc/03/03/03'" nz-menu-item>USER INPUT</li>
+                  <li [routerLink]="'/doc/03/03/04'" nz-menu-item>LIFECYCLE HOOKS</li>
+                  <li [routerLink]="'/doc/03/03/05'" nz-menu-item>COMPONENT INTERACTION</li>
+                  <li [routerLink]="'/doc/03/03/06'" nz-menu-item>COMPONENT STYLES</li>
+                  <li [routerLink]="'/doc/03/03/07'" nz-menu-item>DYNAMIC COMPONENTS</li>
+                  <li [routerLink]="'/doc/03/03/08'" nz-menu-item>ANGULAR ELEMENTS</li>
+                  <li [routerLink]="'/doc/03/03/09'" nz-menu-item>ATTRIBUTE DIRECTIVES</li>
+                  <li [routerLink]="'/doc/03/03/10'" nz-menu-item>STRUCTURAL DIRECTIVES</li>
+                </ul>
+              </li>
+
+              <li nz-submenu nzTitle="DIRECTIVES">
+                <ul>
+                  <li [routerLink]="'/doc/guide/built-in-directives'" nz-menu-item>BUILT-IN DIRECTIVES</li>
+                </ul>
+              </li>
+
+              <li nz-submenu nzTitle="FORM">
+                <ul>
+                  <li [routerLink]="'/doc/03/04/01'" nz-menu-item>INTRODUCTION</li>
+                  <li [routerLink]="'/doc/03/04/02'" nz-menu-item>REACTIVE FORM</li>
+                  <li [routerLink]="'/doc/03/04/03'" nz-menu-item>TEMPLATE-DRIVEN FORM</li>
+                  <li [routerLink]="'/doc/03/04/04'" nz-menu-item>FORM VALIDATION</li>
+                  <li [routerLink]="'/doc/03/04/05'" nz-menu-item>DYNAMIC FORMS</li>
+                </ul>
+              </li>
+
+              <li nz-submenu nzTitle="OBSERVABLES & RXJS">
+                <ul>
+                  <li [routerLink]="'/doc/03/05/01'" nz-menu-item>OBSERVABLES</li>
+                  <li [routerLink]="'/doc/03/05/02'" nz-menu-item>THE RXJS LIBRARY</li>
+                  <li [routerLink]="'/doc/03/05/03'" nz-menu-item>OBSERVABLES IN ANGULAR</li>
+                  <li [routerLink]="'/doc/03/05/04'" nz-menu-item>PRACTICAL USAGE</li>
+                  <li [routerLink]="'/doc/03/05/05'" nz-menu-item>COMPARE TO OTHER TECHNIQUES</li>
+                </ul>
+              </li>
+
+              <li [routerLink]="'/doc/03/06'" nz-menu-item>BOOTSTRAPPING</li>
+
+              <li nz-submenu nzTitle="NGMODULES">
+                <ul>
+                  <li [routerLink]="'/doc/03/07/01'" nz-menu-item>NGMODULES INTRODUCTION</li>
+                  <li [routerLink]="'/doc/03/07/02'" nz-menu-item>JAVASCRIPT MODULES VS. NGMODULES</li>
+                  <li [routerLink]="'/doc/03/07/03'" nz-menu-item>FREQUENTLY USED MODULES</li>
+                  <li [routerLink]="'/doc/03/07/04'" nz-menu-item>TYPES OF FEATURE MODULES</li>
+                  <li [routerLink]="'/doc/03/07/05'" nz-menu-item>ENTRY COMPONENTS</li>
+                  <li [routerLink]="'/doc/03/07/06'" nz-menu-item>FEATURE MODULES</li>
+                  <li [routerLink]="'/doc/03/07/07'" nz-menu-item>PROVIDERS</li>
+                  <li [routerLink]="'/doc/03/07/08'" nz-menu-item>SINGLETON SERVICES</li>
+                  <li [routerLink]="'/doc/03/07/09'" nz-menu-item>LAZY LOADING FEATURE MODULES</li>
+                  <li [routerLink]="'/doc/03/07/10'" nz-menu-item>SHARING MODULES</li>
+                  <li [routerLink]="'/doc/03/07/11'" nz-menu-item>NGMODULE API</li>
+                  <li [routerLink]="'/doc/03/07/12'" nz-menu-item>NGMODULE FAQS</li>
+                </ul>
+              </li>
+
+              <li nz-submenu nzTitle="DEPENDENCY INJECTION">
+                <ul>
+                  <li [routerLink]="'/doc/03/08/01'" nz-menu-item>DEPENDENCY INJECTION IN ANGULAR</li>
+                  <li [routerLink]="'/doc/03/08/02'" nz-menu-item>HIERARCHICAL DEPENDENCY INJECTORS</li>
+                  <li [routerLink]="'/doc/03/08/03'" nz-menu-item>DEPENDENCY PROVIDERS</li>
+                  <li [routerLink]="'/doc/03/08/04'" nz-menu-item>DEPENDENCY INJECTION IN ACTION</li>
+                  <li [routerLink]="'/doc/03/08/05'" nz-menu-item>NAVIGATE THE COMPONENT TREE WITH DI</li>
+                </ul>
+              </li>
+
+              <li [routerLink]="'/doc/03/09'" nz-menu-item>HTTP CLIENT</li>
+
+              <li [routerLink]="'/doc/03/10'" nz-menu-item>ROUTING & NAVIGATION</li>
+
+              <li nz-submenu nzTitle="ANIMATIONS">
+                <ul>
+                  <li [routerLink]="'/doc/03/11/01'" nz-menu-item>INTRODUCTION</li>
+                  <li [routerLink]="'/doc/03/11/02'" nz-menu-item>TRANSITIONS AND TRIGGERS</li>
+                  <li [routerLink]="'/doc/03/11/03'" nz-menu-item>COMPLEX SEQUENCES</li>
+                  <li [routerLink]="'/doc/03/11/04'" nz-menu-item>REUSABLE ANIMATIONS</li>
+                  <li [routerLink]="'/doc/03/11/05'" nz-menu-item>ROUTE TRANSITION ANIMATIONS</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li nz-submenu nzTitle="TECHNIQUES">
+            <ul>
+              <li [routerLink]="'/doc/04/02'" nz-menu-item>I18N</li>
+
+              <li nz-submenu nzTitle="ANGULAR LIBRARIES">
+                <ul>
+                  <li [routerLink]="'/doc/04/06/03'" nz-menu-item>CREATING LIBRARIES</li>
+                </ul>
+              </li>
+
+              <li nz-submenu nzTitle="SCHEMATICS">
+                <ul>
+                  <li [routerLink]="'/doc/04/07/01'" nz-menu-item>SCHEMATICS OVERVIEW</li>
+                  <li [routerLink]="'/doc/04/07/02'" nz-menu-item>AUTHORING SCHEMATICS</li>
+                  <li [routerLink]="'/doc/04/07/03'" nz-menu-item>SCHEMATICS FOR LIBRARIES</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li nz-submenu nzTitle="DEV WORKFLOW">
+            <ul>
+              <li [routerLink]="'/doc/05/04'" nz-menu-item>TESTING</li>
+            </ul>
+          </li>
+
+          <li nz-submenu nzTitle="CONFIGURATION">
+            <ul>
+              <li [routerLink]="'/doc/06/02'" nz-menu-item>WORKSPACE CONFIGURATION</li>
+            </ul>
+          </li>
+
+          <li nz-submenu nzTitle="CLI">
+            <ul>
+              <li [routerLink]="'/doc/08/01'" nz-menu-item>OVERVIEW</li>
+              <li [routerLink]="'/doc/08/02'" nz-menu-item>ng add</li>
+              <li [routerLink]="'/doc/08/03'" nz-menu-item>ng build</li>
+              <li [routerLink]="'/doc/08/04'" nz-menu-item>ng config</li>
+              <li [routerLink]="'/doc/08/05'" nz-menu-item>ng doc</li>
+              <li [routerLink]="'/doc/08/06'" nz-menu-item>ng e2e</li>
+              <li [routerLink]="'/doc/08/07'" nz-menu-item>ng generate</li>
+              <li [routerLink]="'/doc/08/08'" nz-menu-item>ng help</li>
+              <li [routerLink]="'/doc/08/09'" nz-menu-item>ng lint</li>
+              <li [routerLink]="'/doc/08/10'" nz-menu-item>ng new</li>
+              <li [routerLink]="'/doc/08/11'" nz-menu-item>ng run</li>
+              <li [routerLink]="'/doc/08/12'" nz-menu-item>ng serve</li>
+              <li [routerLink]="'/doc/08/13'" nz-menu-item>ng test</li>
+              <li [routerLink]="'/doc/08/14'" nz-menu-item>ng update</li>
+              <li [routerLink]="'/doc/08/15'" nz-menu-item>ng version</li>
+              <li [routerLink]="'/doc/08/16'" nz-menu-item>ng xi18n</li>
+            </ul>
+          </li>
+
+          <li nz-submenu nzTitle="API">
+            <ul>
+              <li nz-submenu nzTitle="@angular/core">
+                <ul>
+                  <li [routerLink]="'/doc/09/01/01'" nz-menu-item>ENTRY POINTS</li>
+                  <li [routerLink]="'/doc/09/01/02'" nz-menu-item>PRIMARY ENTRY POINT EXPORTS</li>
+                </ul>
+              </li>
+
+              <li nz-submenu nzTitle="@angular/common">
+                <ul>
+                  <li [routerLink]="'/doc/09/02/02'" nz-menu-item>PRIMARY ENTRY POINT EXPORTS</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li nz-submenu nzTitle="PACKAGE">
+            <ul>
+              <li nz-submenu nzTitle="jasmine">
+                <ul>
+                  <li [routerLink]="'/pkgs/jasmine/global'" nz-menu-item>global</li>
+                  <li [routerLink]="'/pkgs/jasmine/namespace'" nz-menu-item>namespace</li>
+                </ul>
+              </li>
+
+              <li [routerLink]="'/pkgs/ngx-translate'" nz-menu-item>ngx-translate</li>
+
+              <li nz-submenu nzTitle="ngrx">
+                <ul>
+                  <li nz-submenu nzTitle="STORE">
+                    <ul>
+                      <li [routerLink]="'/pkgs/ngrx/store/01'" nz-menu-item>GETTING STARTED</li>
+                      <li [routerLink]="'/pkgs/ngrx/store/02'" nz-menu-item>ARCHITECTURE</li>
+                      <li [routerLink]="'/pkgs/ngrx/store/03'" nz-menu-item>ADVANCED</li>
+                      <li [routerLink]="'/pkgs/ngrx/store/04'" nz-menu-item>RECIPES</li>
+                      <li [routerLink]="'/pkgs/ngrx/store/05'" nz-menu-item>TESTING</li>
+                    </ul>
+                  </li>
+
+                  <li nz-submenu nzTitle="EFFECTS">
+                    <ul>
+                      <li [routerLink]="'/pkgs/ngrx/effects/01'" nz-menu-item>OVERVIEW</li>
+                      <li [routerLink]="'/pkgs/ngrx/effects/02'" nz-menu-item>TESTING</li>
+                      <li [routerLink]="'/pkgs/ngrx/effects/03'" nz-menu-item>LIFECYCLE</li>
+                    </ul>
+                  </li>
+
+                  <li nz-submenu nzTitle="LIFECYCLE">
+                    <ul>
+                      <li [routerLink]="'/pkgs/ngrx/router-store/01'" nz-menu-item>ACTIONS</li>
+                      <li [routerLink]="'/pkgs/ngrx/router-store/02'" nz-menu-item>CONFIGURATION</li>
+                    </ul>
+                  </li>
+
+                  <li nz-submenu nzTitle="ENTITY">
+                    <ul>
+                      <li [routerLink]="'/pkgs/ngrx/entity/01'" nz-menu-item>ENTITY INTERFACES</li>
+                      <li [routerLink]="'/pkgs/ngrx/entity/02'" nz-menu-item>ENTITY ADAPTER</li>
+                    </ul>
+                  </li>
+
+                  <li nz-submenu nzTitle="SCHEMATICS">
+                    <ul>
+                      <li [routerLink]="'/pkgs/ngrx/schematics/01'" nz-menu-item>SCHEMATICS</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li nz-submenu nzTitle="BLOG">
+            <ul>
+              <li [routerLink]="'/blog/a-comprehensive-guide-to-angular-onpush'" nz-menu-item>
+                A COMPREHENSIVE GUIDE TO ANGULAR ONPUSH CHANGE DETECTION STRATEGY
+              </li>
+              <li [routerLink]="'/blog/never-again-be-confused-when-implementing-controlvalueaccessor'" nz-menu-item>
+                NEVER AGAIN BE CONFUSED WHEN IMPLEMENTING CONTROL VALUE ACCESSOR IN ANGULAR FORMS
+              </li>
+              <li [routerLink]="'/blog/a-gentle-introduction-into-change-detection-in-angular'" nz-menu-item>
+                A GENTLE INTRODUCTION INTO CHANGE DETECTION IN ANGULAR
+              </li>
+              <li
+                [routerLink]="'/blog/working-with-dom-in-angular-unexpected-consequences-and-optimization-techniques'"
+                nz-menu-item
+              >
+                WORKING WITH DOM IN ANGULAR: UNEXPECTED CONSEQUENCES AND OPTIMIZATION TECHNIQUES
+              </li>
+              <li [routerLink]="'/blog/here-is-what-you-need-to-know-about-dynamic-components-in-angular'" nz-menu-item>
+                HERE IS WHAT YOU NEED TO KNOW ABOUT DYNAMIC COMPONENTS IN ANGULAR
+              </li>
+              <li
+                [routerLink]="'/blog/do-you-still-think-that-ngzone-is-required-for-change-detection-in-angular'"
+                nz-menu-item
+              >
+                DO YOU STILL THINK THAT NGZONE IS REQUIRED FOR CHANGE DETECTION IN ANGULAR
+              </li>
+              <li [routerLink]="'/blog/everything-you-need-to-know-about-change-detection'" nz-menu-item>
+                EVERYTHING YOU NEED TO KNOW ABOUT CHANGE DETECTION IN ANGULAR
+              </li>
+              <li
+                [routerLink]="'/blog/boosting-performance-of-angular-applications-with-manual-change-detection'"
+                nz-menu-item
+              >
+                BOOSTING PERFORMANCE OF ANGULAR APPLICATIONS WITH MANUAL CHANGE DETECTION
+              </li>
+              <li [routerLink]="'/blog/if-you-think-ngdocheck-means-your-component-is-being-checked'" nz-menu-item>
+                IF YOU THINK NG DO CHECK MEANS YOUR COMPONENT IS BEING CHECKED
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nz-sider>
+
+  <nz-layout [ngStyle]="{ height: '100%' }">
+    <nz-header [ngStyle]="{ position: 'fixed', zIndex: 1, width: '100%', padding: '0 24px' }">
+      <div [ngStyle]="{ color: '#ffffff', fontSize: '20px' }">@luotao/learning-angular</div>
+    </nz-header>
+
+    <nz-content
+      [ngStyle]="{
+        margin: '50px 0 0 0',
+        padding: '12px',
+        background: '#ffffff',
+        height: '100%',
+        overflowY: 'scroll',
+        overflowX: 'auto'
+      }"
+    >
+      <router-outlet></router-outlet>
+    </nz-content>
+  </nz-layout>
+</nz-layout>

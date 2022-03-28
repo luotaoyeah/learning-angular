@@ -1,0 +1,17 @@
+<fieldset>
+    <legend>
+        <ng-content select="[header]"></ng-content>
+    </legend>
+
+    <p>使用多个 ng-content 元素定义多个插槽, 最多只能有一个是默认插槽, 即它没有定义 select 属性. 其他的插槽必须定义 select 属性.</p>
+
+    <p>select 属性的值是一个 css 选择器, 表示满足这个选择器的内容才会插入这里.</p>
+
+    <div style="border: 1px solid red; border-radius: 5px; padding: 12px">
+        <ng-content select=".body"></ng-content>
+    </div>
+
+    <div style="border: 1px solid blue; border-radius: 5px; padding: 12px">
+        <ng-content></ng-content>
+    </div>
+</fieldset>

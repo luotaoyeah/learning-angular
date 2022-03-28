@@ -1,0 +1,37 @@
+<p>property binding 可以使用 <code>[property]="value"</code> 的语法形式</p>
+<p [textContent]="'FOO'"></p>
+
+<nz-divider [nzDashed]="true"></nz-divider>
+
+<p>property binding 也可以使用 <code>bind-property="value"</code> 的语法形式</p>
+<p bind-textContent="'FOO'"></p>
+
+<nz-divider [nzDashed]="true"></nz-divider>
+
+<p>
+  property binding 绑定的目标可以是 element property 或者 directive input property, angular 会首先检查是否存在对应的
+  directive input property, 再检查是否存在对应的 element property, 如果这两种属性都找不到, 则会报错
+</p>
+
+<p>
+  如下, 第一个绑定的是 <code>HTMLParagraphElement.textContent</code> 这个 <code>property</code>, 第二个绑定的是
+  <code>Doc0303020702Directive.textContent</code> 这个指令属性
+</p>
+
+<p [textContent]="'FOO'"></p>
+<p app0303020703 [textContent]="'FOO'"></p>
+
+<nz-divider [nzDashed]="true"></nz-divider>
+
+<p>
+  如果 propery binding 外面没有使用 <code>[]</code> 包裹, 则首先会检查是否存在对应的 directive input property,
+  再检查是否存在对应的 element attribute
+</p>
+
+<p>
+  如下, 第一个绑定的是 <code>textContent</code> 这个 <code>attribute</code>, 第二个绑定的是
+  <code>Doc0303020702Directive.textContent</code> 这个指令属性
+</p>
+
+<p textContent="FOO"></p>
+<p app0303020703 textContent="FOO"></p>

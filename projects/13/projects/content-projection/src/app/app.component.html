@@ -1,0 +1,21 @@
+<app-comp-a> BODY </app-comp-a>
+
+<hr />
+
+<app-comp-b>
+    <div header>我会被插入 select="[header]" 的插槽.</div>
+    <div class="body">我会被插入 select=".body" 的插槽.</div>
+
+    <div>我会被插入默认的插槽, 因为我没有被其他的插槽选中.</div>
+</app-comp-b>
+
+<hr />
+
+<app-comp-b>
+    <p>被插入的内容如果用了 ng-container 包裹, 则需要使用 ng-container 的 ngProjectAs 属性来指定选择器.</p>
+
+    <ng-container ngProjectAs="[header]">我会被插入 select="[header]" 的插槽.</ng-container>
+    <ng-container ngProjectAs=".body">我会被插入 select=".body" 的插槽.</ng-container>
+</app-comp-b>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,11 @@
+<h1>{{ title }}</h1>
+
+<nav>
+  <a [routerLink]="'/doc/tutorial/dashboard'">热门英雄</a>
+  &nbsp;
+  <a [routerLink]="'/doc/tutorial/heroes'">英雄列表</a>
+</nav>
+
+<router-outlet></router-outlet>
+
+<app--messages></app--messages>

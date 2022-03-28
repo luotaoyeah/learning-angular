@@ -1,0 +1,7 @@
+<button nz-button nzType="primary">
+  {{ (promise01 | async) || 'PENDING...' }}
+</button>
+<button nz-button (click)="handleClick()">RESOLVE</button>
+
+<nz-divider [nzDashed]="true"></nz-divider>
+<button nz-button>{{ observable01 | async }}</button>

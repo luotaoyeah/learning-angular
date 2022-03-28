@@ -1,0 +1,26 @@
+<ng-template
+  [ngTemplateOutlet]="tpl01"
+  [ngTemplateOutletContext]="{ $implicit: { foo: 'FOO' } }"
+></ng-template>
+
+<ng-template #tpl01 let-obj01>
+  <button nz-button>{{ obj01.foo }}</button>
+</ng-template>
+
+<nz-divider [nzDashed]="true"></nz-divider>
+
+<p>
+  <code>ngTemplateOutlet</code> 用来定义一个可以插入
+  <code>&lt;ng-template&gt;</code> 的插座, 接收一个
+  <code>TemplateRef</code> 类型的参数, 并将该
+  <code>TemplateRef</code> 插入到此处, 同时可以通过
+  <code>ngTemplateOutletContext</code> 给该 <code>TemplateRef</code> 传递一个
+  <code>context</code>
+  对象, 从而在该 <code>TemplateRef</code> 上可以通过 <code>let</code> 声明的
+  template input variable 来获取这个 <code>context</code> 对象中的属性
+</p>
+
+<p>
+  如果 input variable 没有指定参数值, 则表示获取默认的
+  <code>$implicit</code> 属性
+</p>

@@ -1,0 +1,39 @@
+<p>
+  angular.json 文件，位于 angular workspace 的根目录下面，里面提供了对整个
+  workspace 和所有的 projects 的默认配置，用来给 angular CLI 提供的工具使用
+</p>
+<p>angular.json 里面的路径都是相对于 workspace 的根目录</p>
+
+<p>angular.json 底层包含7个属性：</p>
+<ul>
+  <li>
+    <b>$schema</b>
+    schema 定义文件的地址
+  </li>
+  <li>
+    <b>version</b>
+    文件格式的版本号，最小为 1
+  </li>
+  <li>
+    <b>newProjectRoot</b>
+    新创建的 project 放在哪个文件夹下，使用 ng g application 或者 ng g library
+    创建的 project 都位于这个目录下面
+  </li>
+  <li>
+    <b>defaultProject</b>
+    默认的 project，当我们使用 ng generate 命令时，可以通过参数 --project 设置
+    target project，当我们没有指定时，就会使用这个 defaultProject
+  </li>
+  <li>
+    <b>schematics</b>
+    使用 ng generate 命令创建 schematics 的一些默认配置
+  </li>
+  <li>
+    <b>projects</b>
+    对每个 project 进行配置
+  </li>
+  <li>
+    <b>cli</b>
+    对 angular CLI 进行配置
+  </li>
+</ul>

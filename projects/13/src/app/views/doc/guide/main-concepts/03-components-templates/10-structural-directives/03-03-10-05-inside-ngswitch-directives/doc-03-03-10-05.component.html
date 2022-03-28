@@ -1,0 +1,33 @@
+<p>
+  NgSwitch 实际上是三个 directive 一起使用：NgSwitch，NgSwitchCase，NgSwitchDefault，其中 NgSwitch 是 attribute
+  directive，而 NgSwitchCase 和 NgSwitchDefault 是 structural directive
+</p>
+
+<nz-radio-group [(ngModel)]="hero" [nzButtonStyle]="'solid'">
+  <label nz-radio-button [nzValue]="item.value" *ngFor="let item of heroes">
+    {{ item.label }}
+  </label>
+</nz-radio-group>
+
+<nz-divider [nzDashed]="true"></nz-divider>
+
+<div [ngSwitch]="hero">
+  <button nz-button *ngSwitchCase="'FOO'">FOO</button>
+  <button nz-button *ngSwitchCase="'BAR'">BAR</button>
+  <button nz-button *ngSwitchDefault>DEFAULT</button>
+</div>
+
+<nz-divider [nzDashed]="true"></nz-divider>
+
+<p>跟 NgIf 和 NgForOf 一样，NgSwitchCase 和 NgSwitchDefault 也是语法糖，也会被编译为 ng-template 的形式</p>
+<div [ngSwitch]="hero">
+  <ng-template ngSwitchCase="FOO">
+    <button nz-button>FOO</button>
+  </ng-template>
+  <ng-template ngSwitchCase="BAR">
+    <button nz-button>BAR</button>
+  </ng-template>
+  <ng-template ngSwitchDefault>
+    <button nz-button>DEFAULT</button>
+  </ng-template>
+</div>

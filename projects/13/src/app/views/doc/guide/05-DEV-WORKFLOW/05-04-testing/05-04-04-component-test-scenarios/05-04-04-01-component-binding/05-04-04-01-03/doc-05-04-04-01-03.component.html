@@ -1,0 +1,16 @@
+<input
+  nz-input
+  [(ngModel)]="title"
+  [ngStyle]="{
+    width: '200px',
+    marginRight: '8px'
+  }"
+/>
+<button
+  nz-button
+  [ngStyle]="{
+    verticalAlign: 'bottom'
+  }"
+>
+  {{ title | uppercase }}
+</button>

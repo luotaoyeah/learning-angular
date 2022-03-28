@@ -1,0 +1,25 @@
+<form [formGroup]="formGroup">
+  <nz-input-group [class.has-error]="nameControl.errors?.unique" [nzSuffix]="suffixIconLoading">
+    <input type="text" nz-input formControlName="name" />
+  </nz-input-group>
+
+  <ng-template #suffixIconLoading>
+    <!--
+        当验证正在进行中时, 控件的 pending 属性为 true
+    -->
+    <i *ngIf="nameControl.pending" nz-icon nzTheme="outline" nzType="loading"></i>
+  </ng-template>
+
+  <div
+    *ngIf="formGroup.invalid && (formGroup.dirty || formGroup.touched)"
+    [ngStyle]="{
+      display: 'inline-block',
+      width: '200px',
+      marginLeft: '10px'
+    }"
+  >
+    <nz-alert *ngIf="nameControl.errors?.required" nzMessage="必填" nzType="error"></nz-alert>
+
+    <nz-alert *ngIf="nameControl.errors?.unique" nzMessage="名称已被占用" nzType="error"></nz-alert>
+  </div>
+</form>

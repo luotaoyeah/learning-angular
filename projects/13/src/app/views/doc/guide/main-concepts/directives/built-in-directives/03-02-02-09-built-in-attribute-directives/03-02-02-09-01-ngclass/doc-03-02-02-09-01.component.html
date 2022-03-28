@@ -1,0 +1,15 @@
+<p>使用 class binding 可以控制单个 class 的添加和移除</p>
+<button [class.foo]="isFoo" (click)="isFoo = !isFoo">class binding</button>
+
+<hr />
+<p>使用 NgClass binding 可以同时控制多个 class 的添加和移除</p>
+<button
+  label="NgClass binding"
+  [ngClass]="{
+    foo: isFoo,
+    bar: isBar
+  }"
+  (click)="isFoo = !isFoo; isBar = !isBar"
+>
+  NgClass binding
+</button>

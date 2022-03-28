@@ -1,0 +1,19 @@
+<!--
+    可以在模板中直接使用 <link> 标签引入外部样式文件,
+    这种方式等价于使用 `styles` 选项来添加样式规则, 但是优先级高于 `styleUrls` 和 `styles`
+-->
+
+<button nz-button>FOO</button>
+
+<!--
+ FIXME
+   升级到 angular 9 之后报错
+   ERROR in HostResourceLoader: loader(D:/proj/git/luotaoyeah/learning-angular/src/assets/style/201904030955.css) returned a Promise
+-->
+<!--<link rel="stylesheet" href="../../../../../../../../assets/style/201904030955.css" type="text/css" />-->
+
+<style>
+  button {
+    color: yellow;
+  }
+</style>

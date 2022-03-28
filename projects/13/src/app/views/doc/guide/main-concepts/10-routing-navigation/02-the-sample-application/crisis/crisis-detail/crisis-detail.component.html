@@ -1,0 +1,27 @@
+<nz-collapse [nzAccordion]="true">
+  <nz-collapse-panel [nzHeader]="'CRISIS'" nzExpandedIcon="caret-right" [nzActive]="true">
+    <ng-template #nzSpinTpl>
+      <i nz-icon nzType="loading" style="font-size: 24px"></i>
+    </ng-template>
+    <nz-spin [nzSpinning]="crisisDetailResolverService.loading" [nzIndicator]="nzSpinTpl">
+      <form *ngIf="!!crisis" nz-form>
+        <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24"> ID: </nz-form-label>
+          <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input [(ngModel)]="crisis.id" [ngModelOptions]="{ standalone: true }" [disabled]="true" />
+          </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24"> NAME: </nz-form-label>
+          <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input [(ngModel)]="crisisModel.name" [ngModelOptions]="{ standalone: true }" />
+          </nz-form-control>
+        </nz-form-item>
+      </form>
+
+      <button nz-button nzType="primary" (click)="save()">SAVE</button>
+      <button nz-button (click)="cancel()">CANCEL</button>
+    </nz-spin>
+  </nz-collapse-panel>
+</nz-collapse>

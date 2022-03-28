@@ -1,0 +1,22 @@
+<nz-collapse [nzAccordion]="true">
+  <nz-collapse-panel nzHeader="Bootstrapping">
+    <p>
+      一个 angular 应用是由很多的 NgModule 组成的，一个 angular 应用至少应该有一个 NgModule，即 root NgModule，通常这个
+      NgModule 的名称为 AppModule
+    </p>
+    <p>
+      declarations 用来声明当前 NgModule 定义了哪些 declarables，这些 declarables 包括 component，directive，pipe，一个
+      declarable 只能属于一个 NgModule，并且默认情况下，declarable 是只能在当前 NgModule 中使用的，其他的 NgModule
+      如果想要使用，需要当前 NgModule 将某个 declarable 输出（exports），然后其他的 NgModule 导入这个 NgModule（通过
+      imports），之后在其他的 NgModule 中就可以使用这些 declarables 了
+    </p>
+
+    <p>
+      bootstrap 用来定义一个或者多个 component，这些 component 会在应用启动的时候被插入到 DOM 中去，bootstrap 中的
+      component 会自动被添加到 entryComponents 中去
+    </p>
+  </nz-collapse-panel>
+  <nz-collapse-panel nzHeader="Using Directives With @NgModule">
+    <app--doc-03-05-01></app--doc-03-05-01>
+  </nz-collapse-panel>
+</nz-collapse>

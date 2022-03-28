@@ -1,0 +1,32 @@
+<p>
+  可以定义多个 <code>&lt;ng-content&gt;</code>, 然后通过
+  <code>select</code> 属性, 设置要将哪些内容插入到该
+  <code>&lt;ng-content&gt;</code> 中来
+</p>
+<p><code>select</code> 的值可以是各种 CSS selector</p>
+
+<p>
+  <nz-alert nzType="info" [nzMessage]="tpl01"></nz-alert>
+  <ng-template #tpl01>
+    <ng-content select="button"></ng-content>
+  </ng-template>
+</p>
+
+<p>
+  <nz-alert nzType="success" [nzMessage]="tpl02"></nz-alert>
+  <ng-template #tpl02>
+    <ng-content select="[some-custom-attr]"></ng-content>
+  </ng-template>
+</p>
+
+<p>
+  没有设置 <code>select</code> 属性的称之为默认的
+  <code>&lt;ng-content&gt;</code>, 所有没有被选中的内容, 都会插入到这里面来
+</p>
+
+<p>
+  <nz-alert nzType="error" [nzMessage]="tpl03"></nz-alert>
+  <ng-template #tpl03>
+    <ng-content></ng-content>
+  </ng-template>
+</p>

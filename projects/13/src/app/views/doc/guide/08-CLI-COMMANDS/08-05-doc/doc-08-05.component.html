@@ -1,0 +1,19 @@
+<nz-collapse [nzAccordion]="true">
+  <nz-collapse-panel nzHeader="ng doc" nzExpandedIcon="caret-right">
+    <p>
+      `ng doc &lt;key&gt;` 使用浏览器打开 `angular.io` 并搜索关键字 key
+    </p>
+    <p>
+      例如, 如果执行 `ng doc foo` 命令, 会打开浏览器并访问
+      https://angular.io/api?query=foo 这个地址, 从地址中可以看出, 实际搜索的是
+      angular API 的数据
+    </p>
+    <p>
+      如果指定了 --search 参数, 表示搜索整个 angular.io 站点, 此时, 会使用
+      google 的 site: 搜索特性进行搜索; 否则, 只搜索 API 文档
+    </p>
+    <p>
+      `ng doc` 的简写形式为 `ng d`
+    </p>
+  </nz-collapse-panel>
+</nz-collapse>

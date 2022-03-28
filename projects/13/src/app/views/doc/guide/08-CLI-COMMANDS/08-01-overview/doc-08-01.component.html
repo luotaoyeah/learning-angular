@@ -1,0 +1,26 @@
+<nz-collapse [nzAccordion]="true">
+  <nz-collapse-panel nzHeader="Overview" nzExpandedIcon="caret-right">
+    <p>
+      ng 命令的参数(arg)以 -- 开头(如: --dry-run), 参数通常都有一个 alias, alias
+      以 - 开头(如: -d)
+    </p>
+
+    <p>
+      ng 命令的参数(arg)和选项(option)可以使用 camelCase 命名(如: --dryRun),
+      也可以使用 dash-case(--dry-run) 命名方式
+    </p>
+
+    <p>
+      boolean 类型的 arg 有两种形式, 一种是 --inlineStyle, 用来设置为 true,
+      一种是 --onInlineStyle 用来取消设置, 恢复到默认值
+    </p>
+
+    <p>
+      参数中的相对路径都是相对于当前执行命令的目录
+    </p>
+
+    <p>
+      ng component 和 ng add 命令, 支持使用 schematics
+    </p>
+  </nz-collapse-panel>
+</nz-collapse>

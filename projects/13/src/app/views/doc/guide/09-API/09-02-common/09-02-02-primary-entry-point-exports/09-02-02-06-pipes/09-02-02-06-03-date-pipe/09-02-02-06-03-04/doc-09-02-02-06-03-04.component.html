@@ -1,0 +1,22 @@
+<p>
+  DatePipe 的第二个参数, 用来定义 timezone
+</p>
+<ul>
+  <li>
+    <p>
+      <button nz-button>
+        {{ now | date: 'yyyy-MM-dd HH:mm:ss.SSS' }}
+      </button>
+    </p>
+    <p>
+      <button nz-button>
+        {{ now | date: 'yyyy-MM-dd HH:mm:ss.SSS':'+0800' }}
+      </button>
+    </p>
+    <p>
+      <button nz-button>
+        {{ now | date: 'yyyy-MM-dd HH:mm:ss.SSS':'GMT+8' }}
+      </button>
+    </p>
+  </li>
+</ul>

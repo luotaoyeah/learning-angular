@@ -1,0 +1,23 @@
+<form [formGroup]="profileFormGroup">
+  <label for="name">
+    NAME:
+    <input type="text" nz-input id="name" formControlName="name" />
+  </label>
+
+  <div formGroupName="address">
+    <label for="street">
+      STREET:
+      <input type="text" nz-input id="street" formControlName="street" />
+    </label>
+    <label for="zip">
+      ZIP:
+      <input type="text" nz-input id="zip" formControlName="zip" />
+    </label>
+  </div>
+</form>
+
+<nz-divider [nzDashed]="true"></nz-divider>
+
+<div>
+  {{ profileFormGroup.value | json }}
+</div>

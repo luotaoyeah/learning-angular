@@ -1,0 +1,57 @@
+<p>architect 下面的每一个 target, 通常又包含三个配置选项：</p>
+<ul>
+  <li>
+    <b>builder</b>
+    指定要使用哪个 npm package 来创建这个 target
+  </li>
+  <li>
+    <b>options</b>
+    用来对 builder 进行默认配置
+    <p>
+      options 下面的配置选项, 大部分都是跟对应的命令 (ng build/ng serve/ng test)
+      后面的参数选项是一致的, 也就是说我们也可以使用对应的命令行参数来进行配置,
+      同时也有一些配置选项只能够在 options 下面进行配置:
+    </p>
+    <ul>
+      <li>
+        <b>fileReplacements</b>
+        用来替换某个配置文件, 实现在不同的环境下使用不同的配置文件
+      </li>
+      <li>
+        <b>stylePreprocessorOptions</b>
+        对 style preprocessor 进行配置
+      </li>
+      <li>
+        <b>assets</b>
+        全局静态资源文件路径列表, 默认包含 favicon.ico 和 /assets/
+      </li>
+      <li>
+        <b>styles</b>
+        全局样式文件路径列表, 支持 css/scss/sass/less/stylus
+      </li>
+      <li>
+        <b>scripts</b>
+        全局脚本文件路径列表, 相当于直接将它们通过 &lt;script&gt; 标签添加到
+        index.html 文件中
+      </li>
+      <li>
+        <b>budgets</b>
+        用来定义打包文件的尺寸限制
+      </li>
+    </ul>
+  </li>
+  <li>
+    <b>configurations</b>
+    <p>
+      用来对 builder 进行各种不同环境的配置, 如: production/hmr/stage 等等,
+      当通过 ng build 命令的 --configuration 参数指定某个特定的配置文件时,
+      就会使用对应的配置, 例如: 指定了 ng build --prod 参数, 则会使用
+      configurations#production 下面的配置
+    </p>
+    <p>
+      configurations 下面每一个环境的具体配置选项, 跟 options
+      下面的配置选项是完全一样的, 当使用某个具体的环境配置时,
+      它下面的配置就会覆盖 options 下面的同名配置
+    </p>
+  </li>
+</ul>

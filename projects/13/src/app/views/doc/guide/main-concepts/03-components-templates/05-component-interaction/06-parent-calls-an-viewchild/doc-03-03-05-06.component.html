@@ -1,0 +1,17 @@
+<div>
+  <button (click)="thumbUp()" nz-button>👍</button>
+  <button (click)="thumbDown()" nz-button>👎</button>
+</div>
+
+<div
+  [ngStyle]="{
+    marginTop: '10px',
+    marginBottom: '10px'
+  }"
+>
+  <app--doc-03-03-05-06-01></app--doc-03-03-05-06-01>
+</div>
+
+<div>
+  <button nz-button>{{ result }}</button>
+</div>

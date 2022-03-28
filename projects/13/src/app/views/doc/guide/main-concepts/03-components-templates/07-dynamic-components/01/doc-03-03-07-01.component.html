@@ -1,0 +1,27 @@
+<ng-template appDoc030307></ng-template>
+
+<nz-divider [nzDashed]="true"></nz-divider>
+
+<button nz-button (click)="load()">LOAD</button>
+<button nz-button (click)="unload()">UNLOAD</button>
+
+<nz-divider [nzDashed]="true"></nz-divider>
+
+<p>动态加载组件的一个整体流程 (假如要在组件 A 中动态加载组件 B):</p>
+<ul>
+  <li>在 A 所在的 <code>NgModule</code> 的 <code>entryComponents</code> 中声明 B</li>
+  <li>
+    在 A 的 template 中通过 <code>&lt;ng-template&gt;</code> 声明一个挂载点, 可以通过一个 directive 来标识这个挂载点
+  </li>
+  <li>在 A 中通过 <code>@ViewChild</code> 获取到挂载点上的 directive 实例</li>
+  <li>在 A 中注入 <code>ComponentFactoryResolver</code></li>
+  <li>
+    通过
+    <code>componentFactoryResolver.resolveComponentFactory(B)</code> 方法, 获取到 B 的 <code>ComponentFactory</code>
+  </li>
+  <li>
+    通过
+    <code>viewContainerRef.createElement(componentFactory)</code> 将 B 加载进来, 这个 <code>viewContainerRef</code> 是在
+    directive 中注入的
+  </li>
+</ul>

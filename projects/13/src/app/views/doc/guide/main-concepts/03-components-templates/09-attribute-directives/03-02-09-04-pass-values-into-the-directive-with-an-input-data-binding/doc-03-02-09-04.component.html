@@ -1,0 +1,14 @@
+<!--
+    如下，appDoc0302090401 和 appDoc0302090402 都有一个名为 borderColor 的 input property，
+    它们都可以获取到 borderColor="#00ff00" 这个 attribute data binding 的值
+-->
+<p appHighlight04 appDoc0302090401 borderColor="#00ff00" appDoc0302090402>
+  directive 跟 component 一样，可以通过 @Input() 设置 input properties
+</p>
+
+<p appHighlight04="#00ff00" [appDoc0302090403]="'#eb8583'">
+  可以通过 input property alias，将 input property 的名称设置为跟 directive 的 selector attribute 一样，这样，就可以在
+  attribute 后面直接设置该 input property 的值
+</p>
+
+<p [appDoc0302090404]="'#568aeb'">FOO</p>

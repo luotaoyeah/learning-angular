@@ -1,0 +1,16 @@
+<ng-container
+  *ngTemplateOutlet="tpl01; context: { $implicit: { foo: 'FOO' } }"
+></ng-container>
+
+<ng-template #tpl01 let-item>
+  <button nz-button>{{ item.foo }}</button>
+</ng-template>
+
+<nz-divider [nzDashed]="true"></nz-divider>
+
+<p>
+  跟所有的 structural directive 一样, <code>ngTemplateOutlet</code> 也可以使用
+  <code>*ngTemplateOutlet</code> 形式的语法糖, 其中使用
+  <code>context: {{ '{' }} {{ '}' }}</code> 的形式来定义
+  <code>context</code> 对象
+</p>

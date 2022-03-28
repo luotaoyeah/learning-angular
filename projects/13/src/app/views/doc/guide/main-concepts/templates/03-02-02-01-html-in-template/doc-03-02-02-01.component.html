@@ -1,0 +1,23 @@
+<!--
+    几乎所有的 HTML 标签都可以在 template 中使用，
+    除了 <html> <body> <head> <script> 等，
+    如果 template 中使用了 <script> 会报错
+  -->
+
+<!--
+    <style> 标签可以正常使用（不推荐）
+  -->
+<style>
+  p {
+    color: red;
+  }
+</style>
+
+<p>&lt;style&gt; 标签可以正常使用（不推荐）</p>
+
+<!--
+    <script> 标签会被直接忽略
+  -->
+<script>
+  console.warn('script tag in template');
+</script>

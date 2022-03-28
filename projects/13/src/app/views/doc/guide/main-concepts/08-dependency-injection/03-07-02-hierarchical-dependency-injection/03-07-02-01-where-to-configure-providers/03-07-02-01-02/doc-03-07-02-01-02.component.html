@@ -1,0 +1,11 @@
+<p>
+  如果某个 injectable 既配置了 providedIn: 'root'，又添加到了 AppModule 的 providers 中，则 AppModule 的 providers
+  中的会覆盖前者
+</p>
+<p>
+  因为 AppModule 的 injector 就是 root injector，在 AppModule 的 providers 中配置的 providers 就是注册给了 root injector
+</p>
+<p>
+  这也正好符合'在多个地方注册同一个 provider'时的优先级规则：如果某个 injectable 同时在 root injector
+  和其他地方进行了注册，则 root injector 中的会覆盖其他地方的
+</p>

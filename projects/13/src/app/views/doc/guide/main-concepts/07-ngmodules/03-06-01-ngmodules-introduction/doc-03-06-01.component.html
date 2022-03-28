@@ -1,0 +1,38 @@
+<nz-collapse [nzAccordion]="true">
+  <nz-collapse-panel nzHeader="NgModules Introduction">
+    <p>
+      模块化的好处是：通过多个模块来组成一个应用，同时可以通过各种其他的模块来对应用的功能进行扩展， angular
+      的官方库都是通过 NgModule
+      的形式来发布和使用的，如：FormsModule，RouterModule，HttpClientModule，很多其他的第三方库也是通过 NgModule
+      的形式来发布和使用的
+    </p>
+
+    <p>
+      NgModule 将 declarables（component，directive，pipe）组合在一起，形成一个统一的功能模块，每个 NgModule
+      各司其职，专注于自己的特定领域
+    </p>
+
+    <p>NgModule 也可以提供 service 供其他地方使用</p>
+
+    <p>NgModule 的各个配置项（metadata）的作用：</p>
+    <ul>
+      <li>declarations：定义当前的 NgModule 拥有哪些 declarables（component，directive，pipe）</li>
+      <li>
+        exports：定义当前的 NgModule 中哪些 declarables 是可以被其他 NgModule 访问并使用的，同时也定义了当前的 NgModule
+        中引入的其他的 NgModule 中哪些是可以被其他 NgModule 访问并使用的（re-export）
+      </li>
+      <li>
+        imports：引入其他的 NgModule，引入之后，这些被引入的 NgModule 中公共的 declarables 就可以被当前的 NgModule
+        访问并使用了
+      </li>
+      <li>providers：定义了当前的 NgModule 中的 injector 可以注册哪些 service</li>
+    </ul>
+
+    <p>
+      一个 angular 应用至少应该有一个 root module，通常命名为 AppModule，通过这个 root module 来启动这个应用，这个
+      AppModule 中需要通过 bootstrap 配置项来定义一个 bootstrap component，这个 bootstrap component
+      会在应用启动的时候被插入到 DOM 中去，同时，这个 bootstrap component 会自动被添加到 AppModule 的配置项的
+      entryComponents 中去
+    </p>
+  </nz-collapse-panel>
+</nz-collapse>
