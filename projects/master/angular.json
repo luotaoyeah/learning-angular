@@ -73,6 +73,9 @@
                             "browserTarget": "standalone-components:build:development"
                         }
                     },
+                    "options": {
+                        "port": 8888
+                    },
                     "defaultConfiguration": "development"
                 },
                 "extract-i18n": {

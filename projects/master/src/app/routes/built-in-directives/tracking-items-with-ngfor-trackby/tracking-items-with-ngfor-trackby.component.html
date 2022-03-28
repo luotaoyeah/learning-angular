@@ -1,8 +1,25 @@
-<ul>
-    <li *ngFor="let item of items; trackBy: trackBy">
-        <input type="text" />
-        {{ item.name }}
-    </li>
-</ul>
+<fieldset>
+    <legend></legend>
 
-<button (click)="onClick()">修改</button>
+    <ul>
+        <li *ngFor="let item of items; trackBy: trackBy">
+            <input type="text" />
+            {{ item.name }}
+        </li>
+    </ul>
+
+    <button (click)="onClick()">修改</button>
+</fieldset>
+
+<fieldset>
+    <legend></legend>
+
+    <ul>
+        <li *ngFor="let item of items02">
+            <input type="text" />
+            {{ item.name }}
+        </li>
+    </ul>
+
+    <button (click)="onClick02()">修改</button>
+</fieldset>
