@@ -6,5 +6,6 @@
       <entry key="MermaidLanguageExtension" value="false" />
       <entry key="PlantUMLLanguageExtension" value="false" />
     </enabledExtensions>
+    <option name="useCustomStylesheetText" value="true" />
   </component>
 </project>
