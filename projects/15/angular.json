@@ -67,6 +67,9 @@
     "schematics": {
         "@schematics/angular:component": {
             "skipTests": true
+        },
+        "@schematics/angular:directive": {
+            "skipTests": true
         }
     }
 }
