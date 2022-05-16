@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { CompAComponent } from './comp-a/comp-a.component';
 import { AModule } from './element-injector-hierarchy/a.module';
-import { TOKEN_A, TOKEN_B } from './element-injector-hierarchy/a.const';
+import { TOKEN_A, TOKEN_B, TOKEN_C } from './element-injector-hierarchy/a.const';
 
 @NgModule({
     declarations: [AppComponent],
@@ -11,6 +11,7 @@ import { TOKEN_A, TOKEN_B } from './element-injector-hierarchy/a.const';
     providers: [
         { provide: TOKEN_A, useValue: 'AppModule' },
         { provide: TOKEN_B, useValue: 'AppModule' },
+        { provide: TOKEN_C, useValue: 'AppModule' },
     ],
     bootstrap: [AppComponent],
 })

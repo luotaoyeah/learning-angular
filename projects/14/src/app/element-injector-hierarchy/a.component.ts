@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit, Optional, SkipSelf } from '@angular/core';
-import { TOKEN_A, TOKEN_B } from './a.const';
+import { TOKEN_A, TOKEN_B, TOKEN_C } from './a.const';
 
 /**
  * https://www.youtube.com/watch?v=G8zXugcYd7o&list=PLX7eV3JL9sfmJ6AaZj9eDlAKrJrEul4Vz
@@ -13,6 +13,7 @@ import { TOKEN_A, TOKEN_B } from './a.const';
     providers: [
         { provide: TOKEN_A, useValue: 'AComponent' },
         { provide: TOKEN_B, useValue: 'AComponent' },
+        { provide: TOKEN_C, useValue: 'AComponent' },
     ],
 })
 export class AComponent implements OnInit {
