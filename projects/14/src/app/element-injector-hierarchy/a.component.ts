@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit, Optional } from '@angular/core';
+import { Component, Inject, OnInit, Optional, Self } from '@angular/core';
 import { TOKEN_A, TOKEN_B } from './a.const';
 
 /**
@@ -10,7 +10,10 @@ import { TOKEN_A, TOKEN_B } from './a.const';
 @Component({
     selector: 'app-a',
     templateUrl: './a.component.html',
-    providers: [{ provide: TOKEN_A, useValue: 'AComponent' }],
+    providers: [
+        { provide: TOKEN_A, useValue: 'AComponent' },
+        { provide: TOKEN_B, useValue: 'AComponent' },
+    ],
 })
 export class AComponent implements OnInit {
     public constructor(
@@ -18,7 +21,7 @@ export class AComponent implements OnInit {
         @Optional()
         private a: string | null,
         @Inject(TOKEN_B)
-        @Optional()
+        @Self()
         private b: string | null,
     ) {}
 
