@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit, Optional } from '@angular/core';
-import { TOKEN_A } from './a.const';
+import { TOKEN_A, TOKEN_B } from './a.const';
 
 /**
  * https://www.youtube.com/watch?v=G8zXugcYd7o&list=PLX7eV3JL9sfmJ6AaZj9eDlAKrJrEul4Vz
@@ -16,10 +16,14 @@ export class AComponent implements OnInit {
     public constructor(
         @Inject(TOKEN_A)
         @Optional()
-        private a?: string,
+        private a: string | null,
+        @Inject(TOKEN_B)
+        @Optional()
+        private b: string | null,
     ) {}
 
     public ngOnInit(): void {
         console.log('a:', this.a);
+        console.log('b:', this.b);
     }
 }
