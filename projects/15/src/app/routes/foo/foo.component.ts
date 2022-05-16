@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RedDirective } from '../../shared/red.directive';
+import { RedDirective } from '../../shared/directives/red.directive';
 import { CompaComponent } from '../compa/compa.component';
 
 @Component({

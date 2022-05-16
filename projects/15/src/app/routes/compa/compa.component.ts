@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ColorDirective } from '../../shared/color.directive';
+import { ColorDirective } from '../../shared/directives/color.directive';
 
 @Component({
     selector: 'app-compa',
