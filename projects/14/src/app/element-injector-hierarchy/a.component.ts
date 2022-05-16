@@ -9,7 +9,30 @@ import { TOKEN_A, TOKEN_B, TOKEN_C } from './a.const';
  */
 @Component({
     selector: 'app-a',
-    templateUrl: './a.component.html',
+    template: `
+        <fieldset>
+            <legend>app-a</legend>
+
+            <p>directive 和 component 用的是同一个 element injector hierarchy.</p>
+
+            <fieldset>
+                <legend>element injector hierarchy:</legend>
+
+                <pre>
+        app-root
+            app-a
+                app-b
+                    appA | appB, 取决于 appA 和 appB 在 declarations 中的顺序
+                        app-c
+                            appC
+        </pre>
+            </fieldset>
+
+            <app-b appB appA>
+                <app-c appC></app-c>
+            </app-b>
+        </fieldset>
+    `,
     providers: [
         { provide: TOKEN_A, useValue: 'AComponent' },
         { provide: TOKEN_B, useValue: 'AComponent' },

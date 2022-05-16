@@ -5,7 +5,8 @@
     "schematics": {
         "@schematics/angular:component": {
             "skipTests": true,
-            "inlineStyle": true
+            "inlineStyle": true,
+            "inlineTemplate": true
         },
         "@schematics/angular:service": {
             "skipTests": true
@@ -84,6 +85,9 @@
                         "development": {
                             "browserTarget": "standalone-components:build:development"
                         }
+                    },
+                    "options": {
+                        "port": 4444
                     },
                     "defaultConfiguration": "development"
                 }

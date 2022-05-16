@@ -3,7 +3,7 @@ import { TOKEN_D } from './a.const';
 
 @Component({
     selector: 'app-c',
-    templateUrl: './c.component.html',
+    template: ` <p>c works!</p> `,
     // providers: [{ provide: TOKEN_C, useValue: 'CComponent' }],
 })
 export class CComponent {
