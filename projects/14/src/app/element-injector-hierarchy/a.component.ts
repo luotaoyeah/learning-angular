@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit, Optional, Self } from '@angular/core';
+import { Component, Inject, OnInit, Optional, SkipSelf } from '@angular/core';
 import { TOKEN_A, TOKEN_B } from './a.const';
 
 /**
@@ -21,7 +21,7 @@ export class AComponent implements OnInit {
         @Optional()
         private a: string | null,
         @Inject(TOKEN_B)
-        @Self()
+        @SkipSelf()
         private b: string | null,
     ) {}
 
