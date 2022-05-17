@@ -19,13 +19,14 @@ import { TOKEN_A, TOKEN_B, TOKEN_C } from './a.const';
                 <legend>element injector hierarchy:</legend>
 
                 <pre>
-        app-root
-            app-a
-                app-b
-                    appA | appB, 取决于 appA 和 appB 在 declarations 中的顺序
-                        app-c
-                            appC
-        </pre>
+app-root
+    app-a
+        app-b
+            appA | appB, 取决于 appA 和 appB 在 declarations 中的顺序
+                app-c
+                    appC
+                </pre
+                >
             </fieldset>
 
             <app-b appB appA>

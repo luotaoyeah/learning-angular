@@ -1,5 +1,6 @@
 import { Component, Inject, Optional } from '@angular/core';
 import { TOKEN_D } from './a.const';
+import { BComponent } from './b.component';
 
 @Component({
     selector: 'app-c',
@@ -11,7 +12,10 @@ export class CComponent {
         @Inject(TOKEN_D)
         @Optional()
         private d: string | null,
+        @Optional()
+        private bComponent: BComponent | null,
     ) {
         console.log('d:', this.d);
+        console.log('bComponent:', this.bComponent);
     }
 }
